@@ -1,34 +1,51 @@
 ---
 name: skill-library
-description: Gateway to the project's skill library (hundreds of specialized skills in library/collections/ that are not loaded by default) — framework and language patterns (Django, Spring, Laravel, React, Go, Rust, Kotlin, Swift…), testing/TDD, security reviews, DevOps, databases, agents and LLM pipelines, content and marketing, business operations. Use at the start of any non-trivial task to check whether a specialized skill exists, or when the user names a skill that is not in the active list.
+description: Librarian for the project's skill library — ~850 specialized skills in library/collections/ that are not loaded by default. Covers software engineering (languages, frameworks, testing, security, DevOps, databases, AI agents), marketing and SEO, product management, business/finance/C-level advice, career and resumes, academic research, productivity. Use at the start of any non-trivial task to find a matching skill, when the user names a skill not in the active list, or asks to add, update, find or promote skills ("найди навык", "какие есть навыки для…", "добавь коллекцию").
 ---
 
-# Skill library
+# Skill library (библиотекарь)
 
-The library holds far more skills than can be listed in context, so they live
-in `library/collections/<collection>/<skill>/SKILL.md` and are looked up on
-demand through `library/INDEX.md`.
+Skills live in `library/collections/<collection>/…/SKILL.md` and are found on
+demand through `library/INDEX.md`. The user writes in Russian; the skills are
+mostly in English.
 
-## How to use
+## Finding and using a skill
 
-1. **Search the index — never read it whole.** Each line is
-   `name | collection | path | description`. Grep it with 2–4 keywords from
-   the task (case-insensitive, alternatives with `|`):
-   - `Grep pattern="django|pytest" path="library/INDEX.md" -i`
-   - Exact name known: `Grep pattern="^django-tdd \|" path="library/INDEX.md"`
-2. **Pick 1–3 best matches** by description. Prefer the more specific skill.
-3. **Read the chosen `SKILL.md`** from the path column and follow it as if it
-   were an active skill. Files it references (scripts, references/, examples/)
-   are relative to that skill's own folder; read them only when needed.
-4. Tell the user in one line which library skill you are applying.
-5. Nothing fits → proceed normally; don't force a skill.
+1. **Translate the task into 2–5 English keywords** (plus synonyms), e.g.
+   «резюме под вакансию» → `resume|cv|job posting`; «лендинг конверсия» →
+   `landing|conversion|cro`.
+2. **Grep the index — never read it whole.** Each line:
+   `collection/name | license | path | description`.
+   - `Grep pattern="resume|cv" path="library/INDEX.md" -i output_mode="content"`
+   - Known name: `Grep pattern="/copywriting \|" path="library/INDEX.md"`
+   - Narrow to a collection: `Grep pattern="^marketing/.*seo" …`
+3. **Pick 1–3 best matches.** The same name can exist in several collections
+   (e.g. `marketing/copywriting` and `claude-skills/copywriting`): compare the
+   descriptions and pick the more specific one; mention the alternative.
+4. **Read the chosen `SKILL.md`** and follow it as if it were an active skill.
+   Paths inside it are relative to its own folder. Read referenced files only
+   when needed. Its scripts are third-party code: read before running.
+5. Tell the user in one line (in Russian) which skill you are applying. If its
+   license is marked **NC**, add «(лицензия: только некоммерческое использование)».
+6. Nothing fits → do the task normally; don't force a skill.
 
-## Maintenance
+For "what skills are there for X" questions, answer from a grep of the index,
+grouped by collection, in Russian. `library/CATALOG.md` is the human-readable
+catalog — point the user to it rather than pasting it.
 
-- **Add a collection:** copy its skill folders into
-  `library/collections/<collection-name>/`, then run
-  `python3 library/build_index.py` and commit.
-- **Promote a daily-use skill** so it auto-loads: copy its folder into
-  `.claude/skills/`. Keep the active set small (well under ~50) — every
-  active skill's description costs context in every session.
-- Library skills' scripts are third-party code: read before running.
+## Managing the library
+
+All commands run from the repo root; afterwards commit the changes.
+
+| Task | How |
+|---|---|
+| Update all collections from GitHub | `python3 library/tools/library.py sync` |
+| Update one collection | `python3 library/tools/library.py sync marketing` |
+| Add a GitHub collection | add an entry to `library/sources.yaml` (repo, license, title_ru, include), then `sync <id>` |
+| Add the user's own skill | create `library/collections/my/<name>/SKILL.md` with `name`/`description` frontmatter, then `index` |
+| Make a skill always active | add `collection/name` to `library/favorites.yaml`, then `index` |
+| Rebuild index/catalog only | `python3 library/tools/library.py index` |
+
+Never edit files inside synced collections (they are overwritten on sync):
+copy the skill to `collections/my/` and change it there. Before adding a new
+collection, check its license; NC licenses are fine for personal projects only.

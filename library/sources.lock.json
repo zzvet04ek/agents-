@@ -1,0 +1,44 @@
+{
+  "ecc": {
+    "repo": "https://github.com/affaan-m/ECC",
+    "ref": null,
+    "commit": "d2ef2680594f9a17526a6e1a2e18b3d242c5d17b",
+    "license": "MIT"
+  },
+  "claude-skills": {
+    "repo": "https://github.com/alirezarezvani/claude-skills",
+    "ref": null,
+    "commit": "91a1ddaab1ae8fe95b8ecd3e98419458db86a992",
+    "license": "MIT"
+  },
+  "marketing": {
+    "repo": "https://github.com/coreyhaines31/marketingskills",
+    "ref": null,
+    "commit": "9d6d7ce8d18eb155dc2f9762435f097e60cdad7c",
+    "license": "MIT"
+  },
+  "pm-skills": {
+    "repo": "https://github.com/deanpeters/Product-Manager-Skills",
+    "ref": null,
+    "commit": "cfcb697f14b8891d8b3ec43c16c3547df3e70e13",
+    "license": "CC-BY-NC-SA-4.0"
+  },
+  "pm-setup": {
+    "repo": "https://github.com/aakashg/pm-claude-code-setup",
+    "ref": null,
+    "commit": "9be80c62b3a49b3284bf07cd309f6c0add37d7c9",
+    "license": "MIT"
+  },
+  "career": {
+    "repo": "https://github.com/art2url/career-agent-skills",
+    "ref": "develop",
+    "commit": "d7cce4b7eada07d08e094165aafbbb03a9928e58",
+    "license": "MIT"
+  },
+  "academic": {
+    "repo": "https://github.com/Imbad0202/academic-research-skills",
+    "ref": null,
+    "commit": "06a2e6bd9743b68bb0ef2c5d161cf70abc00323e",
+    "license": "CC-BY-NC-4.0"
+  }
+}

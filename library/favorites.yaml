@@ -1,0 +1,10 @@
+# Избранные навыки — копируются в .claude/skills/ и всегда активны.
+# Остальные доступны через библиотекаря (skill-library).
+#
+# Пишите как коллекция/имя (имя смотрите в CATALOG.md), например:
+#   - marketing/copywriting
+#   - ecc/python-patterns
+# Держите список коротким (до ~30): описание каждого навыка занимает контекст.
+# После правки: python3 library/tools/library.py index
+
+favorites: []

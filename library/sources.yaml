@@ -1,0 +1,64 @@
+# Реестр коллекций навыков.
+#
+# Каждая коллекция — публичный GitHub-репозиторий. `library.py sync` клонирует
+# его, копирует пути из `include` (сохраняя структуру папок, чтобы работали
+# относительные ссылки внутри навыков) в library/collections/<id>/ и
+# записывает зафиксированный коммит в sources.lock.json.
+#
+#   repo      — URL репозитория
+#   ref       — ветка или тег (по умолчанию ветка по умолчанию)
+#   license   — SPDX-идентификатор; лицензии с NC = только некоммерческое использование
+#   title_ru  — название для CATALOG.md
+#   include   — пути в репозитории, которые копировать ("*" = все видимые папки верхнего уровня)
+#   exclude   — имена файлов/папок, которые пропускать на любом уровне (glob)
+#
+# Коллекция `my` здесь не описывается: это ваши собственные навыки,
+# синхронизация её никогда не трогает.
+
+defaults:
+  exclude: [".*", "node_modules", "__pycache__", "*.pyc", "evals", "plugin-evals*", "tests", "dist"]
+
+collections:
+  ecc:
+    repo: https://github.com/affaan-m/ECC
+    license: MIT
+    title_ru: "ECC — разработка, агенты, DevOps, безопасность, контент"
+    include: [skills]
+
+  claude-skills:
+    repo: https://github.com/alirezarezvani/claude-skills
+    license: MIT
+    title_ru: "Claude Skills — инженерия, бизнес, финансы, C-level, исследования"
+    include: ["*"]
+    exclude: [docs, documentation, standards]
+
+  marketing:
+    repo: https://github.com/coreyhaines31/marketingskills
+    license: MIT
+    title_ru: "Маркетинг — SEO, копирайтинг, конверсия, рост"
+    include: [skills]
+
+  pm-skills:
+    repo: https://github.com/deanpeters/Product-Manager-Skills
+    license: CC-BY-NC-SA-4.0
+    title_ru: "Продакт-менеджмент (Dean Peters)"
+    include: [skills]
+
+  pm-setup:
+    repo: https://github.com/aakashg/pm-claude-code-setup
+    license: MIT
+    title_ru: "PM Claude Code Setup — базовые навыки и шаблоны продакта"
+    include: [.claude/skills, templates]
+
+  career:
+    repo: https://github.com/art2url/career-agent-skills
+    ref: develop
+    license: MIT
+    title_ru: "Карьера — резюме, поиск работы, собеседования"
+    include: [skills]
+
+  academic:
+    repo: https://github.com/Imbad0202/academic-research-skills
+    license: CC-BY-NC-4.0
+    title_ru: "Академические исследования — статьи, рецензии, обзоры литературы"
+    include: [academic-paper, academic-paper-reviewer, academic-pipeline, deep-research, sr-screener, shared, agents]

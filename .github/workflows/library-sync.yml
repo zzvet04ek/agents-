@@ -1,0 +1,51 @@
+name: Library sync
+
+# Weekly: pull the latest skills from every collection in library/sources.yaml
+# and open a pull request if anything changed.
+on:
+  schedule:
+    - cron: "23 5 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: library-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install pyyaml==6.0.2
+
+      - run: python3 library/tools/library.py sync
+
+      - name: Open pull request with changes
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "Library is up to date."
+            exit 0
+          fi
+          branch="library-sync/$(date -u +%Y-%m-%d)"
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B "$branch"
+          git add -A library .claude/skills
+          git commit -q -m "Library sync $(date -u +%Y-%m-%d)"
+          git push -f origin "$branch"
+          summary=$(git diff --stat HEAD~1 -- library/sources.lock.json library/INDEX.md | tail -1)
+          gh pr view "$branch" >/dev/null 2>&1 || gh pr create \
+            --base "${{ github.ref_name }}" --head "$branch" \
+            --title "Library sync $(date -u +%Y-%m-%d)" \
+            --body "Автообновление коллекций навыков из исходных репозиториев. ${summary}"
