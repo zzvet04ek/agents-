@@ -526,7 +526,7 @@ ecc/swift-protocol-di-testing:
 ecc/swiftui-patterns:
   cat: dev-mobile
   what: Архитектура SwiftUI.
-  skills: @Observable; композиция представлений; навигация; производительность.
+  skills: Observable-макрос; композиция представлений; навигация; производительность.
   tasks: строить современный интерфейс iOS и macOS.
   with: ecc/swift-concurrency-6-2 ecc/liquid-glass-design ecc/accessibility
 
