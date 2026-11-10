@@ -1,0 +1,734 @@
+ecc/eval-harness:
+  cat: ai-agents
+  what: Разработка через оценки (EDD) для ИИ-сессий — сначала определяются проверки возможностей и регрессий, затем пишется код.
+  skills: оценки кодом, моделью, правилами и человеком; метрики pass@k; регрессионные eval.
+  tasks: формально проверять, что ИИ-разработка достигает цели и ничего не ломает.
+  with: ecc/agent-eval ecc/tdd-workflow ecc/verification-loop
+
+ecc/evm-token-decimals:
+  cat: web3
+  what: Защита от незаметных ошибок с десятичностью токенов в EVM-сетях.
+  skills: запрос decimals во время выполнения; кэш с учётом сети; дрейф точности у мостовых токенов; безопасная нормализация.
+  tasks: исключить ошибки в суммах у ботов, кошельков и DeFi-приложений.
+  with: ecc/defi-amm-security ecc/nodejs-keccak256
+
+ecc/exa-search:
+  cat: research
+  what: Нейропоиск через Exa MCP по вебу, коду, компаниям и людям.
+  skills: веб-поиск; поиск примеров кода; разведка по компаниям; поиск людей.
+  tasks: быстро найти актуальную информацию или примеры для исследования.
+  with: ecc/deep-research ecc/lead-intelligence ecc/market-research
+
+ecc/fal-ai-media:
+  cat: media
+  what: Генерация изображений, видео и аудио через fal.ai MCP.
+  skills: текст в изображение; текст и изображение в видео (Seedance, Kling, Veo 3); синтез речи.
+  tasks: создать визуал, ролик или озвучку для проекта.
+  with: ecc/video-editing ecc/remotion-video-creation ecc/content-engine
+
+ecc/fastapi-patterns:
+  cat: dev-backend
+  what: Лучшие практики FastAPI.
+  skills: структура проекта; схемы Pydantic v2; внедрение зависимостей; асинхронные обработчики; аутентификация; транзакционный сервисный слой.
+  tasks: построить или отревьюить сервис на FastAPI.
+  with: ecc/python-patterns ecc/python-testing ecc/api-design
+
+ecc/finance-billing-ops:
+  cat: finance
+  what: Анализ выручки, цен, возвратов и командного биллинга на основе фактических данных.
+  skills: срез продаж; сравнение тарифов; поиск дублирующих списаний; проверка модели биллинга.
+  tasks: понять реальные цифры выручки и проблемы биллинга.
+  with: ecc/customer-billing-ops ecc/investor-materials
+
+ecc/flox-environments:
+  cat: devops
+  what: Воспроизводимые кроссплатформенные окружения разработки на Flox (на базе Nix).
+  skills: декларативные окружения; тулчейны проекта; одинаковая среда на macOS и Linux.
+  tasks: настроить окружение проекта, которое одинаково работает у всех.
+  with: ecc/docker-patterns
+
+ecc/flutter-dart-code-review:
+  cat: dev-mobile
+  what: Чек-лист ревью кода Flutter и Dart независимо от библиотек.
+  skills: виджеты; паттерны состояния (BLoC, Riverpod, Provider, GetX, MobX); идиомы Dart; производительность.
+  tasks: провести ревью Flutter-приложения.
+  with: ecc/dart-flutter-patterns
+
+ecc/foundation-models-on-device:
+  cat: dev-mobile
+  what: Локальная LLM на устройствах Apple через фреймворк FoundationModels (iOS 26+).
+  skills: генерация текста; управляемая генерация через @Generable; вызов инструментов; потоковая выдача.
+  tasks: добавить ИИ-функции в iOS-приложение без облака.
+  with: ecc/swiftui-patterns ecc/swift-concurrency-6-2
+
+ecc/frontend-a11y:
+  cat: dev-frontend
+  what: Доступность в React и Next.js.
+  skills: семантичный HTML; ARIA; подписи форм; клавиатурная навигация; фокус; экранные дикторы.
+  tasks: сделать React-интерфейс доступным.
+  with: ecc/accessibility ecc/react-patterns
+
+ecc/frontend-design-direction:
+  cat: dev-frontend
+  what: Задание визуального направления для продакшен-интерфейсов.
+  skills: визуальный язык; иерархия; выбор стиля для сайтов, дашбордов, лендингов.
+  tasks: сделать интерфейс выразительным, а не шаблонным.
+  with: ecc/design-system ecc/make-interfaces-feel-better ecc/taste
+
+ecc/frontend-patterns:
+  cat: dev-frontend
+  what: Паттерны фронтенда на React и Next.js.
+  skills: компоненты; управление состоянием; оптимизация производительности; UI-практики.
+  tasks: построить или отревьюить React/Next.js-интерфейс.
+  with: ecc/react-patterns ecc/typescript-patterns ecc/e2e-testing
+
+ecc/frontend-slides:
+  cat: media
+  what: Эффектные HTML-презентации с анимацией с нуля или из файлов PowerPoint.
+  skills: вёрстка слайдов; анимации; конвертация PPT/PPTX в веб.
+  tasks: сделать презентацию для доклада или продукта.
+  with: ecc/investor-materials ecc/frontend-design-direction
+
+ecc/fsharp-testing:
+  cat: testing
+  what: Тестирование на F#.
+  skills: xUnit, FsUnit, Unquote; property-based тесты на FsCheck; интеграционные тесты.
+  tasks: писать тесты F#-проекта.
+  with: ecc/dotnet-patterns ecc/csharp-testing
+
+ecc/gan-style-harness:
+  cat: ai-agents
+  what: Обвязка «генератор–оценщик» по мотивам GAN для автономного создания качественных приложений.
+  skills: агент-генератор и агент-критик; итерации до прохождения оценки.
+  tasks: собрать фичу, где важна высокая планка качества, без постоянного участия человека.
+  with: ecc/eval-harness ecc/santa-method ecc/continuous-agent-loop
+
+ecc/gateguard:
+  cat: testing
+  what: Хук, который блокирует первую попытку правки или команды, пока агент не приведёт конкретные факты о коде.
+  skills: принуждение к исследованию перед правкой; проверка импортов и потоков данных.
+  tasks: снизить число «слепых» правок агента.
+  with: ecc/delivery-gate ecc/search-first ecc/hookify-rules
+
+ecc/generating-python-installer:
+  cat: dev-backend
+  what: Сборка компактного коммерческого установщика Python-приложения для Windows.
+  skills: компиляция Nuitka; уменьшение дистрибутива; анализ DLL; упаковка Inno Setup.
+  tasks: выпустить Python-программу как обычное Windows-приложение.
+  with: ecc/python-patterns ecc/windows-desktop-e2e
+
+ecc/git-workflow:
+  cat: eng-process
+  what: Git-процессы — ветвление, соглашения коммитов, чистая история, merge и rebase, конфликты.
+  skills: стратегии веток; приведение коммитов в порядок; разрешение конфликтов.
+  tasks: настроить командный git-процесс; навести порядок в истории перед мержем.
+  with: ecc/conventional-commit-review ecc/github-ops
+
+ecc/github-ops:
+  cat: devops
+  what: Операции с репозиториями GitHub через gh CLI.
+  skills: разбор issues; управление PR; CI/CD; релизы; мониторинг безопасности.
+  tasks: автоматизировать рутину по GitHub-репозиторию.
+  with: ecc/git-workflow ecc/issue-review ecc/deployment-patterns
+
+ecc/golang-patterns:
+  cat: dev-backend
+  what: Идиоматичный Go.
+  skills: соглашения языка; обработка ошибок; конкурентность; структура пакетов.
+  tasks: писать и ревьюить Go-код.
+  with: ecc/golang-testing ecc/error-handling
+
+ecc/golang-testing:
+  cat: testing
+  what: Тестирование на Go по TDD.
+  skills: табличные тесты; подтесты; бенчмарки; фаззинг; покрытие.
+  tasks: писать тесты Go-проекта.
+  with: ecc/golang-patterns ecc/tdd-workflow
+
+ecc/google-workspace-ops:
+  cat: productivity
+  what: Работа с Google Drive, Docs, Sheets и Slides как с единым рабочим пространством.
+  skills: поиск и сводка документов; трекеры; презентации; общие документы.
+  tasks: найти, обобщить или обновить материалы в Google Workspace.
+  with: ecc/knowledge-ops ecc/email-ops
+
+ecc/growth-log:
+  cat: productivity
+  what: Записи журнала роста, извлекающие переиспользуемые выводы из выполненной работы.
+  skills: первопричина; переносимое правило; узнаваемый сигнал.
+  tasks: превратить опыт в уроки, а не в дневник событий.
+  with: ecc/continuous-learning-v2 ecc/rules-distill
+
+ecc/healthcare-cdss-patterns:
+  cat: healthcare
+  what: Разработка систем поддержки клинических решений.
+  skills: проверка лекарственных взаимодействий; валидация доз; клинические шкалы (NEWS2, qSOFA); классификация алертов.
+  tasks: построить модуль клинических подсказок для медицинской системы.
+  with: ecc/healthcare-emr-patterns ecc/healthcare-eval-harness
+
+ecc/healthcare-emr-patterns:
+  cat: healthcare
+  what: Разработка электронных медицинских карт (EMR/EHR).
+  skills: клиническая безопасность; потоки приёма; генерация рецептов; разграничение доступа.
+  tasks: спроектировать медицинскую информационную систему.
+  with: ecc/healthcare-cdss-patterns ecc/healthcare-phi-compliance
+
+ecc/healthcare-eval-harness:
+  cat: healthcare
+  what: Оценка безопасности пациентов перед выпуском медицинского ПО.
+  skills: тесты точности CDSS; утечки PHI; целостность клинических процессов.
+  tasks: проверить медицинское приложение перед деплоем.
+  with: ecc/healthcare-cdss-patterns ecc/eval-harness
+
+ecc/healthcare-phi-compliance:
+  cat: healthcare
+  what: Защита медицинских и персональных данных в приложениях.
+  skills: классификация данных; доступ на уровне строк; неизменяемый журнал аудита; шифрование.
+  tasks: обеспечить соответствие требованиям по PHI и PII.
+  with: ecc/hipaa-compliance ecc/healthcare-emr-patterns
+
+ecc/hermes-imports:
+  cat: claude-setup
+  what: Конвертация локальных процессов Hermes в очищенные навыки ECC.
+  skills: удаление приватных данных; упаковка навыков для публикации.
+  tasks: подготовить свой процесс к публичному переиспользованию.
+  with: ecc/opensource-pipeline
+
+ecc/hexagonal-architecture:
+  cat: eng-process
+  what: Архитектура «порты и адаптеры» с чёткими границами домена.
+  skills: инверсия зависимостей; оркестрация use case; тестируемость.
+  tasks: спроектировать или переработать систему с изолированным доменом.
+  with: ecc/android-clean-architecture ecc/architecture-decision-records
+
+ecc/hipaa-compliance:
+  cat: healthcare
+  what: Точка входа для задач по HIPAA — PHI, договоры BAA, утечки.
+  skills: требования HIPAA; соглашения с подрядчиками; реагирование на утечки.
+  tasks: проверить продукт на соответствие HIPAA.
+  with: ecc/healthcare-phi-compliance ecc/security-review
+
+ecc/homelab-network-readiness:
+  cat: network
+  what: Чек-лист готовности домашней сети к VLAN, DNS-фильтрации и удалённому доступу.
+  skills: проверка оборудования; план сегментации; риски.
+  tasks: спланировать или проверить домашнюю сеть перед изменениями.
+  with: ecc/homelab-network-setup ecc/homelab-vlan-segmentation
+
+ecc/homelab-network-setup:
+  cat: network
+  what: Планирование домашней сети — шлюзы, коммутаторы, точки доступа, IP, DHCP, DNS, кабели.
+  skills: адресный план; резервирование DHCP; типичные ошибки новичков.
+  tasks: построить или переделать домашнюю сеть.
+  with: ecc/homelab-network-readiness ecc/homelab-pihole-dns
+
+ecc/homelab-pihole-dns:
+  cat: network
+  what: Pi-hole — установка, блок-листы, DNS-over-HTTPS, локальные записи, устранение проблем.
+  skills: блокировка рекламы; интеграция с DHCP; диагностика DNS.
+  tasks: настроить фильтрацию DNS дома.
+  with: ecc/homelab-network-setup ecc/homelab-vlan-segmentation
+
+ecc/homelab-vlan-segmentation:
+  cat: network
+  what: Разделение домашней сети на VLAN для IoT, гостей, доверенных устройств и серверов.
+  skills: UniFi, pfSense, OPNsense, MikroTik; транки; правила файрвола.
+  tasks: изолировать умные устройства и гостей от основной сети.
+  with: ecc/homelab-network-readiness ecc/homelab-wireguard-vpn
+
+ecc/homelab-wireguard-vpn:
+  cat: network
+  what: VPN-сервер WireGuard для доступа к домашней сети.
+  skills: ключи и пиры; раздельное и полное туннелирование; клиенты на телефоне и ноутбуке.
+  tasks: получить безопасный удалённый доступ к дому.
+  with: ecc/homelab-vlan-segmentation ecc/homelab-network-setup
+
+ecc/hookify-rules:
+  cat: claude-setup
+  what: Правила hookify — markdown-файлы, которые предупреждают или блокируют действия агента по шаблонам.
+  skills: события bash, файлов, промптов и остановки; регулярные выражения и условия.
+  tasks: ввести защитные правила для агента без программирования хуков.
+  with: ecc/delivery-gate ecc/gateguard ecc/safety-guard
+
+ecc/i18n-sync:
+  cat: docs
+  what: Перевод и синхронизация JSON-файлов локализации приложения.
+  skills: учёт использования ключей; терминология проекта; валидация.
+  tasks: добавить язык или новые ключи и обновить переводы.
+  with: ecc/visa-doc-translate
+
+ecc/inherit-legacy-style:
+  cat: eng-process
+  what: Защита от «стилевого дрейфа» ИИ в легаси-проекте.
+  skills: выявление неявных соглашений; разбор конфликтов с владельцем; запись правил стиля.
+  tasks: чтобы агент писал так же, как написан старый код.
+  with: ecc/coding-standards ecc/codebase-onboarding
+
+ecc/intent-driven-development:
+  cat: eng-process
+  what: Превращение размытых или важных изменений в проверяемые критерии приёмки.
+  skills: уточнение намерения; измеримые критерии; связь с реализацией.
+  tasks: прояснить требования до начала работы.
+  with: ecc/blueprint ecc/product-capability ecc/tdd-workflow
+
+ecc/inventory-demand-planning:
+  cat: operations
+  what: Планирование спроса и запасов для сетевой розницы.
+  skills: выбор метода прогноза; ABC/XYZ-анализ; страховой запас и точка заказа; промо и сезонность.
+  tasks: спрогнозировать спрос и оптимизировать запасы.
+  with: ecc/production-scheduling ecc/carrier-relationship-management
+
+ecc/investor-materials:
+  cat: finance
+  what: Питч-деки, one-pager, инвестмеморандумы, заявки в акселераторы и финмодели.
+  skills: структура питча; финансовая модель; материалы для фандрайзинга.
+  tasks: подготовить материалы для инвесторов.
+  with: ecc/investor-outreach ecc/market-research ecc/frontend-slides
+
+ecc/investor-outreach:
+  cat: finance
+  what: Холодные письма, тёплые интро, фоллоу-апы и апдейты для инвесторов.
+  skills: тексты для ангелов и фондов; регулярные апдейты.
+  tasks: провести коммуникацию в ходе привлечения инвестиций.
+  with: ecc/investor-materials ecc/brand-voice
+
+ecc/ios-icon-gen:
+  cat: dev-mobile
+  what: Генерация иконок iOS-приложения из SF Symbols или Iconify.
+  skills: наборы PNG для каталога ассетов Xcode.
+  tasks: быстро сделать иконки для iOS-приложения.
+  with: ecc/swiftui-patterns
+
+ecc/issue-review:
+  cat: eng-process
+  what: Ревью GitHub-issue по аналогии с ревью PR.
+  skills: сверка с текущим кодом; поиск дублей и прошлых PR; вывод о состоятельности.
+  tasks: разобрать новый баг-репорт или запрос.
+  with: ecc/github-ops ecc/change-impact
+
+ecc/iterative-retrieval:
+  cat: ai-agents
+  what: Пошаговое уточнение поиска контекста для субагентов.
+  skills: итеративный поиск; дополнение недостающего контекста.
+  tasks: обеспечить субагенту контекст, которого ему не хватает.
+  with: ecc/search-first ecc/team-agent-orchestration
+
+ecc/ito-baskets:
+  cat: web3
+  what: Чтение данных корзин и рынков предсказаний Itô.
+  skills: каталог корзин; сравнение с исследованием или вотчлистом.
+  tasks: проанализировать корзину рынка предсказаний.
+  with: ecc/prediction-market-oracle-research ecc/prediction-market-risk-review
+
+ecc/ito-compute:
+  cat: ai-agents
+  what: Аренда GPU через Itô — инвентарь, заявки RFQ, статус закупки.
+  skills: запрос вычислительных ресурсов; управление учётными данными устройств.
+  tasks: забронировать GPU для обучения или инференса.
+  with: ecc/ito-training ecc/ito-inference
+
+ecc/ito-inference:
+  cat: ai-agents
+  what: Запуск сервинга моделей на забронированных мощностях Itô.
+  skills: проверка доступности; подтверждённая передача задачи.
+  tasks: развернуть модель на арендованных GPU.
+  with: ecc/ito-compute
+
+ecc/ito-training:
+  cat: ai-agents
+  what: Запуск обучения моделей на забронированных мощностях Itô.
+  skills: проверка доступности; передача задачи обучения.
+  tasks: обучить модель на арендованных GPU.
+  with: ecc/ito-compute ecc/mle-workflow
+
+ecc/java-coding-standards:
+  cat: dev-backend
+  what: Стандарты Java для сервисов на Spring Boot и Quarkus.
+  skills: именование; неизменяемость; Optional; стримы; исключения; дженерики; реактивные паттерны.
+  tasks: писать и ревьюить Java-код.
+  with: ecc/springboot-patterns ecc/quarkus-patterns ecc/jpa-patterns
+
+ecc/jira-integration:
+  cat: project
+  what: Работа с задачами Jira через MCP или API.
+  skills: чтение тикетов; анализ требований; смена статусов; комментарии.
+  tasks: взять задачу из Jira и обновить её по ходу работы.
+  with: ecc/github-ops ecc/project-flow-ops
+
+ecc/jpa-patterns:
+  cat: data
+  what: JPA и Hibernate в Spring Boot.
+  skills: дизайн сущностей; связи; оптимизация запросов; транзакции; индексы; пагинация; пулы соединений.
+  tasks: спроектировать слой данных на JPA.
+  with: ecc/springboot-patterns ecc/postgres-patterns
+
+ecc/knowledge-ops:
+  cat: docs
+  what: Управление базой знаний на нескольких уровнях хранения — файлы, MCP-память, векторные БД, git.
+  skills: загрузка и синхронизация знаний; поиск; дедупликация.
+  tasks: собрать и поддерживать личную или командную базу знаний.
+  with: ecc/unified-memory ecc/google-workspace-ops
+
+ecc/kotlin-coroutines-flows:
+  cat: dev-mobile
+  what: Корутины и Flow в Kotlin для Android и KMP.
+  skills: структурная конкурентность; операторы Flow; StateFlow; ошибки; тестирование.
+  tasks: писать асинхронный код на Kotlin.
+  with: ecc/kotlin-patterns ecc/kotlin-testing
+
+ecc/kotlin-exposed-patterns:
+  cat: data
+  what: ORM Exposed от JetBrains.
+  skills: DSL-запросы; DAO; транзакции; HikariCP; миграции Flyway.
+  tasks: работать с БД в Kotlin-сервисе.
+  with: ecc/kotlin-ktor-patterns ecc/postgres-patterns
+
+ecc/kotlin-ktor-patterns:
+  cat: dev-backend
+  what: Серверы на Ktor.
+  skills: роутинг; плагины; аутентификация; Koin; kotlinx.serialization; WebSocket; тестирование.
+  tasks: построить серверное приложение на Ktor.
+  with: ecc/kotlin-patterns ecc/kotlin-exposed-patterns
+
+ecc/kotlin-patterns:
+  cat: dev-backend
+  what: Идиоматичный Kotlin.
+  skills: null safety; корутины; DSL; соглашения.
+  tasks: писать и ревьюить Kotlin-код.
+  with: ecc/kotlin-testing ecc/kotlin-coroutines-flows
+
+ecc/kotlin-testing:
+  cat: testing
+  what: Тестирование на Kotlin по TDD.
+  skills: Kotest; MockK; тесты корутин; property-based; покрытие Kover.
+  tasks: писать тесты Kotlin-проекта.
+  with: ecc/kotlin-patterns ecc/tdd-workflow
+
+ecc/kubernetes-patterns:
+  cat: devops
+  what: Kubernetes для продакшена.
+  skills: ресурсы; RBAC; пробы; автомасштабирование; ConfigMap и Secret; отладка kubectl.
+  tasks: развернуть и отладить приложение в кластере.
+  with: ecc/docker-patterns ecc/deployment-patterns ecc/dashboard-builder
+
+ecc/laravel-patterns:
+  cat: dev-backend
+  what: Архитектура Laravel.
+  skills: маршруты и контроллеры; Eloquent; сервисный слой; очереди; события; кэш; API-ресурсы.
+  tasks: построить или отревьюить Laravel-приложение.
+  with: ecc/laravel-tdd ecc/laravel-security ecc/laravel-verification
+
+ecc/laravel-plugin-discovery:
+  cat: dev-backend
+  what: Поиск и оценка пакетов Laravel через LaraPlugins.io MCP.
+  skills: здоровье пакета; совместимость с версиями PHP и Laravel.
+  tasks: выбрать подходящий пакет.
+  with: ecc/laravel-patterns
+
+ecc/laravel-security:
+  cat: security
+  what: Безопасность Laravel.
+  skills: аутентификация и авторизация; безопасный Eloquent; CSRF; XSS; API; безопасный деплой.
+  tasks: ревью безопасности Laravel-приложения.
+  with: ecc/laravel-patterns ecc/security-review
+
+ecc/laravel-tdd:
+  cat: testing
+  what: Тестирование Laravel.
+  skills: PHPUnit и Pest; фабрики моделей; HTTP-тесты; Sanctum; моки; покрытие.
+  tasks: писать тесты Laravel-проекта.
+  with: ecc/laravel-patterns ecc/tdd-workflow
+
+ecc/laravel-verification:
+  cat: testing
+  what: Цикл проверки Laravel-проекта перед релизом.
+  skills: окружение; линтеры; статический анализ; тесты с покрытием; скан безопасности.
+  tasks: финальная проверка перед PR или деплоем.
+  with: ecc/laravel-tdd ecc/laravel-security
+
+ecc/latency-critical-systems:
+  cat: devops
+  what: Оптимизация систем, чувствительных к задержкам — realtime-дашборды, рыночные данные, стриминг, очереди.
+  skills: отслеживание p50/p95/p99; хвосты задержек; кэши и очереди.
+  tasks: снизить и подтвердить задержки в критичной системе.
+  with: ecc/benchmark-optimization-loop ecc/redis-patterns
+
+ecc/lead-intelligence:
+  cat: sales
+  what: ИИ-конвейер разведки и аутрича по лидам вместо Apollo, Clay и ZoomInfo.
+  skills: скоринг сигналов; поиск тёплых путей; обогащение данных; персонализированные сообщения.
+  tasks: найти и приоритизировать потенциальных клиентов или партнёров.
+  with: ecc/exa-search ecc/connections-optimizer ecc/email-ops
+
+ecc/liquid-glass-design:
+  cat: dev-mobile
+  what: Дизайн-система Liquid Glass в iOS 26.
+  skills: стеклянный материал с размытием и отражениями; морфинг; SwiftUI, UIKit, WidgetKit.
+  tasks: сделать интерфейс в новом стиле iOS 26.
+  with: ecc/swiftui-patterns
+
+ecc/living-docs-governance:
+  cat: docs
+  what: Защита документации долгоживущего проекта от устаревания.
+  skills: роли документов (конституция, карта, статус, история); связка с инструкциями агента.
+  tasks: поддерживать документацию актуальной на протяжении жизни проекта.
+  with: ecc/docs-governance ecc/architecture-decision-records
+
+ecc/llm-trading-agent-security:
+  cat: web3
+  what: Безопасность автономных торговых агентов с доступом к кошельку.
+  skills: защита от prompt injection; лимиты трат; симуляция до отправки; circuit breaker; защита от MEV.
+  tasks: обезопасить агента, который совершает транзакции.
+  with: ecc/agent-security-hardening ecc/agent-payment-x402
+
+ecc/logistics-exception-management:
+  cat: operations
+  what: Обработка исключений в грузоперевозках — задержки, повреждения, потери, недостачи, споры.
+  skills: протоколы эскалации; особенности перевозчиков; претензии.
+  tasks: разрулить проблемную поставку.
+  with: ecc/carrier-relationship-management ecc/returns-reverse-logistics
+
+ecc/loop-design-check:
+  cat: ai-agents
+  what: Проектирование или ревью целевого цикла агента на типичные сбои.
+  skills: зацикливание; «обман» проверяющего; доведение неверного ответа до конца; машинно-проверяемые критерии остановки.
+  tasks: убедиться, что агентный цикл сходится к правильному результату.
+  with: ecc/continuous-agent-loop ecc/eval-harness
+
+ecc/mailtrap-email-integration:
+  cat: dev-backend
+  what: Интеграция отправки транзакционных писем через Mailtrap Email API.
+  skills: песочница; верификация домена; аутентификация API.
+  tasks: подключить отправку писем в приложении.
+  with: ecc/api-connector-builder
+
+ecc/make-interfaces-feel-better:
+  cat: dev-frontend
+  what: Конкретные детали дизайн-инжиниринга, делающие интерфейс отполированным.
+  skills: отступы; типографика; границы и тени; движение; зоны клика.
+  tasks: улучшить «ощущение» от интерфейса.
+  with: ecc/design-system ecc/motion-patterns ecc/frontend-design-direction
+
+ecc/manim-video:
+  cat: media
+  what: Анимационные объяснения технических концепций на Manim.
+  skills: графики; схемы систем; продуктовые демонстрации.
+  tasks: сделать обучающее видео об идее или системе.
+  with: ecc/video-editing ecc/remotion-video-creation
+
+ecc/market-research:
+  cat: research
+  what: Рыночные исследования, конкурентный анализ и due diligence с указанием источников.
+  skills: анализ рынка и отрасли; сводки для решений.
+  tasks: оценить рынок, конкурентов или стартап перед инвестицией.
+  with: ecc/deep-research ecc/competitive-platform-analysis ecc/investor-materials
+
+ecc/marketing-campaign:
+  cat: marketing
+  what: Планирование и запуск маркетинговой кампании от начала до конца.
+  skills: исследование аудитории; позиционирование; угол кампании; тексты лендинга; email-цепочки; посты.
+  tasks: провести кампанию под запуск или акцию.
+  with: ecc/content-engine ecc/brand-voice ecc/seo
+
+ecc/master-agreement-generator:
+  cat: compliance
+  what: Черновики рамочных договоров с контрагентами из шаблона и JSON-спецификации.
+  skills: подбор пунктов по роли; работа с приложением А.
+  tasks: быстро подготовить договор на ревью юристу.
+  with: ecc/esign-field-placement
+
+ecc/mcp-dependency-review:
+  cat: security
+  what: Статическая проверка конфигурации MCP на изменяемые ссылки на пакеты без запуска серверов.
+  skills: анализ .mcp.json и конфигов Cursor; риски цепочки поставок.
+  tasks: проверить MCP-конфиг перед одобрением или в CI.
+  with: ecc/agent-security-hardening ecc/security-scan
+
+ecc/mcp-server-patterns:
+  cat: ai-agents
+  what: Создание MCP-серверов на Node/TypeScript SDK.
+  skills: инструменты, ресурсы, промпты; валидация Zod; stdio и Streamable HTTP.
+  tasks: написать свой MCP-сервер для подключения сервиса к агенту.
+  with: ecc/agent-harness-construction ecc/mcp-dependency-review
+
+ecc/messages-ops:
+  cat: productivity
+  what: Работа с сообщениями и личными переписками.
+  skills: чтение SMS и личных сообщений; поиск одноразового кода; просмотр треда перед ответом.
+  tasks: найти сообщение или подготовить ответ.
+  with: ecc/email-ops ecc/unified-notifications-ops
+
+ecc/ml-adoption-playbook:
+  cat: ai-agents
+  what: Методика добавления машинного обучения в существующий код без ML.
+  skills: постановка задачи; готовность данных; архитектура; оценка; внедрение.
+  tasks: понять, нужна ли модель, и встроить её.
+  with: ecc/mle-workflow ecc/pytorch-patterns
+
+ecc/mle-workflow:
+  cat: ai-agents
+  what: Продакшен-процесс ML-инженерии.
+  skills: контракты данных; воспроизводимое обучение; оценка; деплой; мониторинг; откат.
+  tasks: вывести ML-модель в продакшен и сопровождать её.
+  with: ecc/ml-adoption-playbook ecc/pytorch-patterns ecc/recsys-pipeline-architect
+
+ecc/module-governance:
+  cat: eng-process
+  what: Локальные инструкции агента, доменный контекст и владение интерфейсами для бизнес-модуля.
+  skills: инструкции на уровне модуля; ссылки на контекст; владельцы интерфейсов.
+  tasks: создать новый модуль или изменить зону его ответственности.
+  with: ecc/module-regression ecc/context-and-decisions
+
+ecc/module-regression:
+  cat: testing
+  what: Контроль межмодульных регрессий через реестр REGRESSION.md.
+  skills: потребители каждого модуля; команды приёмки; прогон после изменений.
+  tasks: не сломать соседние модули в большом репозитории.
+  with: ecc/module-governance ecc/change-impact
+
+ecc/motion-advanced:
+  cat: dev-frontend
+  what: Продвинутая анимация в React/Next.js.
+  skills: drag and drop; жесты; анимация текста; рисование SVG; useAnimate; лоадеры.
+  tasks: сделать сложные интерактивные анимации.
+  with: ecc/motion-foundations ecc/motion-patterns
+
+ecc/motion-foundations:
+  cat: dev-frontend
+  what: Базовый слой анимации в React — токены движения, пружины, производительность, доступность, SSR.
+  skills: пресеты; адаптация под устройство; уважение reduced motion.
+  tasks: заложить единые правила анимации в проекте.
+  with: ecc/motion-patterns ecc/motion-advanced ecc/accessibility
+
+ecc/motion-patterns:
+  cat: dev-frontend
+  what: Готовые паттерны анимации — кнопки, модалки, тосты, переходы страниц, скролл.
+  skills: stagger; анимация выхода; layout-анимации.
+  tasks: добавить типовые анимации в интерфейс.
+  with: ecc/motion-foundations ecc/make-interfaces-feel-better
+
+ecc/mybatis-patterns:
+  cat: data
+  what: MyBatis и MyBatis-Spring.
+  skills: дизайн мапперов; SQL в XML и аннотациях; динамический SQL; транзакции; пакетная обработка.
+  tasks: работать с БД через MyBatis.
+  with: ecc/springboot-patterns ecc/mysql-patterns
+
+ecc/mysql-patterns:
+  cat: data
+  what: MySQL и MariaDB для продакшена.
+  skills: схемы; запросы; индексы; транзакции; репликация; пулы соединений.
+  tasks: спроектировать схему или ускорить запросы MySQL.
+  with: ecc/database-migrations ecc/mybatis-patterns
+
+ecc/nanoclaw-repl:
+  cat: claude-setup
+  what: NanoClaw — REPL от ECC без зависимостей с сессиями в markdown.
+  skills: переключение моделей; загрузка навыков; управление сессиями.
+  tasks: работать с моделями через лёгкий REPL.
+  with: ecc/ecc-guide
+
+ecc/nasiko-control-plane:
+  cat: claude-setup
+  what: Управление экспериментальным CLI Nasiko через ECC.
+  skills: проверка статуса; установка с согласия и предпросмотром.
+  tasks: установить и контролировать Nasiko.
+  with: ecc/configure-ecc
+
+ecc/nestjs-patterns:
+  cat: dev-backend
+  what: Архитектура NestJS.
+  skills: модули; контроллеры; провайдеры; валидация DTO; guards; interceptors; конфигурация.
+  tasks: построить бэкенд на NestJS.
+  with: ecc/typescript-patterns ecc/api-design
+
+ecc/netmiko-ssh-automation:
+  cat: network
+  what: Безопасная автоматизация сетевого оборудования на Python и Netmiko.
+  skills: сбор данных только на чтение; пакетный SSH; парсинг TextFSM; защищённые изменения конфигурации.
+  tasks: автоматизировать сбор данных или изменения на множестве устройств.
+  with: ecc/cisco-ios-patterns ecc/network-config-validation
+
+ecc/network-bgp-diagnostics:
+  cat: network
+  what: Диагностика BGP без внесения изменений.
+  skills: состояние соседей; обмен маршрутами; политики префиксов; AS-path.
+  tasks: найти причину проблемы с BGP-соседством или маршрутами.
+  with: ecc/network-interface-health ecc/cisco-ios-patterns
+
+ecc/network-config-validation:
+  cat: network
+  what: Проверки конфигурации маршрутизаторов и коммутаторов перед применением.
+  skills: опасные команды; дубли адресов; пересечения подсетей; риски управления.
+  tasks: проверить конфиг до выкатки.
+  with: ecc/cisco-ios-patterns ecc/netmiko-ssh-automation
+
+ecc/network-interface-health:
+  cat: network
+  what: Диагностика интерфейсов — ошибки, потери, CRC, дуплекс, флаппинг.
+  skills: анализ счётчиков и трендов на маршрутизаторах, коммутаторах и Linux.
+  tasks: выяснить, почему интерфейс работает плохо.
+  with: ecc/network-bgp-diagnostics
+
+ecc/nextjs-turbopack:
+  cat: dev-frontend
+  what: Next.js 16+ и Turbopack.
+  skills: инкрементальная сборка; кэширование; быстрый HMR; Turbopack против webpack.
+  tasks: ускорить разработку на Next.js.
+  with: ecc/frontend-patterns ecc/react-performance
+
+ecc/nodejs-keccak256:
+  cat: web3
+  what: Защита от ошибок хеширования Ethereum в JS/TS — sha3-256 в Node не равен Keccak-256.
+  skills: правильные библиотеки хеширования; селекторы и подписи.
+  tasks: избежать скрытых ошибок в Ethereum-коде.
+  with: ecc/evm-token-decimals
+
+ecc/nutrient-document-processing:
+  cat: productivity
+  what: Обработка документов через Nutrient DWS API.
+  skills: конвертация, OCR, извлечение, редактирование, подпись и заполнение PDF, DOCX, XLSX, PPTX.
+  tasks: автоматизировать работу с документами.
+  with: ecc/esign-field-placement
+
+ecc/nuxt4-patterns:
+  cat: dev-frontend
+  what: Приложения на Nuxt 4.
+  skills: безопасная гидратация; производительность; route rules; ленивая загрузка; useFetch и useAsyncData.
+  tasks: строить или ревьюить Nuxt-приложение.
+  with: ecc/vue-patterns
+
+ecc/openclaw-persona-forge:
+  cat: ai-agents
+  what: Создание персонажа для агента OpenClaw (навык на китайском).
+  skills: идентичность; описание «души» (SOUL.md); ролевые правила; имя.
+  tasks: придумать характер и правила поведения агента.
+  with: ecc/agentic-os
+
+ecc/opensource-pipeline:
+  cat: eng-process
+  what: Подготовка приватного проекта к публикации в open source — форк, очистка, упаковка.
+  skills: удаление секретов и приватных данных; упаковка; три агента по этапам.
+  tasks: безопасно выложить свой проект публично.
+  with: ecc/security-scan ecc/hermes-imports
+
+ecc/operator-approval-loop:
+  cat: ai-agents
+  what: Контракт одобрения оператором исходящих сообщений, подготовленных агентом.
+  skills: хеширование черновиков; решения с эпохами; квитанции доставки; аудит.
+  tasks: агент пишет, человек одобряет перед отправкой.
+  with: ecc/counterparty-channel-discipline ecc/email-ops
+
+ecc/orch-add-feature:
+  cat: eng-process
+  what: Оркестрация новой фичи от исследования до коммита через агентов ECC.
+  skills: исследование; план; TDD-реализация; ревью; коммит с проверкой.
+  tasks: собрать фичу целиком по отлаженному конвейеру.
+  with: ecc/orch-pipeline ecc/tdd-workflow ecc/blueprint
+
+ecc/orch-build-mvp:
+  cat: eng-process
+  what: Сборка рабочего MVP по документу дизайна или спецификации.
+  skills: тонкие вертикальные срезы; каркас первого среза; итеративное доведение.
+  tasks: превратить PRD или SDD в работающий прототип.
+  with: ecc/orch-pipeline ecc/orch-add-feature ecc/blueprint

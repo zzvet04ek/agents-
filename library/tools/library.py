@@ -288,10 +288,97 @@ def apply_favorites(skills: list[dict]) -> None:
         print(f"  ★ {matches[0]['collection']}/{name}")
 
 
+RU_DIR = LIB / "ru"
+RU_OUT = LIB / "SKILLS_RU.md"
+
+
+def write_skills_ru(skills: list[dict]) -> None:
+    """Build SKILLS_RU.md from ru/categories.yaml + ru/skills/*.yaml.
+
+    Each skills file maps "collection/name" to:
+      cat: category id · what: суть · skills: ключевые навыки
+      tasks: решаемые задачи · with: связанные навыки (через пробел)
+    """
+    cat_file = RU_DIR / "categories.yaml"
+    if not cat_file.exists():
+        return
+    cats = yaml.safe_load(cat_file.read_text(encoding="utf-8"))
+    entries: dict[str, dict] = {}
+    for f in sorted((RU_DIR / "skills").glob("*.yaml")):
+        try:
+            data = yaml.safe_load(f.read_text(encoding="utf-8")) or {}
+        except yaml.YAMLError as e:
+            raise SystemExit(f"{f.relative_to(REPO)}: {e}")
+        entries.update(data)
+
+    by_id = {f"{s['collection']}/{s['name']}": s for s in skills}
+    missing = sorted(k for k in by_id if k not in entries)
+    stale = sorted(k for k in entries if k not in by_id)
+    problems = []
+    groups: dict[str, list[tuple[str, dict]]] = {c: [] for c in cats}
+    for key, e in entries.items():
+        if key not in by_id:
+            continue
+        cat = e.get("cat", "other")
+        if cat not in cats:
+            problems.append(f"{key}: unknown category '{cat}'")
+            cat = "other"
+        for ref in str(e.get("with", "")).replace(",", " ").split():
+            if ref not in by_id:
+                problems.append(f"{key}: unknown related skill '{ref}'")
+        groups[cat].append((key, e))
+
+    total = sum(len(v) for v in groups.values())
+    out = ["# Навыки библиотеки — описание по категориям", "",
+           "Генерируется `library/tools/library.py index` из `library/ru/`. "
+           "Правьте описания в `library/ru/skills/*.yaml`, не здесь.", "",
+           f"Описано навыков: **{total}** из {len(by_id)}."
+           + (f" Без описания: {len(missing)} (см. конец файла)." if missing else ""), "",
+           "Для каждого навыка: суть, ключевые навыки, решаемые задачи и с чем сочетать. "
+           "Идентификатор `коллекция/имя` можно назвать Claude напрямую: "
+           "«возьми навык marketing/copywriting».", "",
+           "## Содержание", "", "| Категория | Навыков |", "|---|---|"]
+    for cid, c in cats.items():
+        if groups[cid]:
+            out.append(f"| [{c['title']}](#cat-{cid}) | {len(groups[cid])} |")
+    for cid, c in cats.items():
+        items = sorted(groups[cid], key=lambda kv: kv[0].split("/", 1)[1] + kv[0])
+        if not items:
+            continue
+        out += ["", "---", "", f"<a id=\"cat-{cid}\"></a>", f"## {c['title']}", "",
+                f"**Область применения.** {c['scope']}", "",
+                f"**Решаемые задачи.** {c['tasks']}", "",
+                f"**Типовые связки.** {c['chains']}", "",
+                f"Навыков в категории: {len(items)}."]
+        for key, e in items:
+            s = by_id[key]
+            out += ["", f"### `{key}`", "", clean(str(e.get("what", "")))]
+            out.append("")
+            if e.get("skills"):
+                out.append(f"- **Ключевые навыки:** {clean(str(e['skills']))}")
+            if e.get("tasks"):
+                out.append(f"- **Задачи:** {clean(str(e['tasks']))}")
+            rel = [r for r in str(e.get("with", "")).replace(",", " ").split() if r in by_id]
+            if rel:
+                out.append("- **Сочетается с:** " + ", ".join(f"`{r}`" for r in rel))
+            if is_nc(s["license"]):
+                out.append(f"- **Лицензия:** {s['license']} — только некоммерческое использование")
+    if missing:
+        out += ["", "---", "", "## Пока без русского описания", ""]
+        out += [f"- `{k}` — {first_sentence(by_id[k]['description'])}" for k in missing]
+    RU_OUT.write_text("\n".join(out) + "\n", encoding="utf-8")
+    for p in problems:
+        print(f"  ! ru: {p}")
+    if stale:
+        print(f"  ! ru: {len(stale)} описаний для удалённых навыков: {', '.join(stale[:10])}")
+    print(f"  ru: описано {total}/{len(by_id)}")
+
+
 def cmd_index() -> None:
     skills = collect_skills()
     write_index(skills)
     write_catalog(skills)
+    write_skills_ru(skills)
     apply_favorites(skills)
     print(f"Indexed {len(skills)} skills → {INDEX.relative_to(REPO)}, {CATALOG.relative_to(REPO)}")
 

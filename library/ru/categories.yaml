@@ -1,0 +1,170 @@
+# Категории для SKILLS_RU.md. Порядок здесь = порядок в файле.
+# scope — область применения, tasks — решаемые задачи, chains — типовые связки навыков.
+
+dev-backend:
+  title: Backend-разработка, языки и фреймворки
+  scope: Серверная логика, API и бизнес-код на Python, Node.js/TypeScript, Go, Rust, Java/Kotlin, C#, C++, PHP, Ruby, Perl и их фреймворках (Django, FastAPI, Spring Boot, Quarkus, Laravel, Rails, NestJS, Ktor).
+  tasks: Написание идиоматичного кода по стандартам языка; проектирование REST/GraphQL API; работа с ORM; фоновые задачи; обработка ошибок; ревью кода и рефакторинг.
+  chains: "*-patterns (как писать) → *-tdd / *-testing (тесты сначала) → *-security (защита) → *-verification (финальная проверка перед релизом); api-design + contract-first для согласования интерфейсов."
+
+dev-frontend:
+  title: Frontend, UI и дизайн интерфейсов
+  scope: Веб-интерфейсы на React, Next.js, Vue/Nuxt, Angular, Svelte, Vite; дизайн-системы, анимации, доступность, вёрстка презентаций и лендингов.
+  tasks: Компоненты и состояние; производительность рендеринга; дизайн-токены; анимации; доступность (WCAG); превращение макетов в код; визуальная доработка интерфейсов.
+  chains: "frontend-design-direction (визуальное направление) → *-patterns фреймворка → design-system / motion-* → accessibility / frontend-a11y → browser-qa / e2e-testing."
+
+dev-mobile:
+  title: Мобильная и десктопная разработка
+  scope: iOS (Swift, SwiftUI), Android (Kotlin, Jetpack Compose), кроссплатформа (Flutter, React Native, Kotlin Multiplatform), десктоп под Windows.
+  tasks: Архитектура приложения; UI и навигация; конкурентность и хранение данных; иконки и ассеты; тестирование на устройствах.
+  chains: "*-patterns платформы → архитектурный навык (android-clean-architecture) → *-testing → accessibility; для ИИ на устройстве — foundation-models-on-device."
+
+testing:
+  title: Тестирование и контроль качества кода
+  scope: Модульные, интеграционные и E2E-тесты, TDD, регрессия, качество и здоровье кода, проверки перед коммитом и релизом.
+  tasks: Тесты до кода (TDD); E2E на Playwright; поиск флаки-тестов; регрессия после ИИ-правок; ревью кода и PR; оценка покрытия; quality gates.
+  chains: "tdd-workflow → *-testing языка → e2e-testing / browser-qa → verification-loop → code-review / security-review перед мержем."
+
+security:
+  title: Безопасность
+  scope: Безопасность приложений, агентов, облака и смарт-контрактов; аудит, пентест-подготовка, секреты, зависимости, MCP-серверы.
+  tasks: Поиск уязвимостей (OWASP); ревью аутентификации и авторизации; защита ИИ-агентов от prompt injection; аудит цепочки поставок; подготовка к баг-баунти; харднинг конфигураций.
+  chains: "security-scan (быстрый скан) → security-review (глубокий разбор) → *-security фреймворка → исправление → повторная проверка; для агентов — agent-security-hardening + safety-guard."
+
+devops:
+  title: DevOps, инфраструктура, деплой и мониторинг
+  scope: CI/CD, Docker, Kubernetes, облака (AWS, GCP, Azure), Terraform, наблюдаемость, инциденты, производительность в проде.
+  tasks: Настройка пайплайнов и деплоя; контейнеризация; дашборды и алерты; мониторинг после релиза; разбор инцидентов; оптимизация затрат на облако.
+  chains: "docker-patterns → deployment-patterns / kubernetes-patterns → canary-watch после релиза → dashboard-builder для мониторинга → incident-разбор при сбоях."
+
+data:
+  title: Базы данных, данные и аналитика
+  scope: PostgreSQL, MySQL, ClickHouse, Redis, ORM (Prisma, JPA, MyBatis, Exposed), ETL и пайплайны данных, аналитика и BI.
+  tasks: Проектирование схем; оптимизация запросов; безопасные миграции; загрузка и выгрузка больших объёмов; сбор данных; метрики и отчёты.
+  chains: "*-patterns СУБД → database-migrations → data-throughput-accelerator для объёмов → dashboard-builder / аналитические навыки для отчётов."
+
+ai-agents:
+  title: AI, LLM и агентные системы
+  scope: Проектирование ИИ-агентов, мультиагентных систем, автономных циклов, RAG, промптов; оценка и стоимость LLM; ML-пайплайны.
+  tasks: Построение агента и набора инструментов; оркестрация нескольких агентов; оценка качества (eval); снижение стоимости токенов; память агента; отладка сбоев агента.
+  chains: "agent-harness-construction (инструменты агента) → autonomous-agent-harness / continuous-agent-loop (цикл) → eval-harness / agent-eval (оценка) → cost-aware-llm-pipeline (стоимость) → agent-security-hardening (защита)."
+
+eng-process:
+  title: Архитектура, планирование и процесс разработки
+  scope: Архитектурные решения, декомпозиция задач, планы на несколько PR, git-процессы, оценка влияния изменений, работа с унаследованным кодом.
+  tasks: План реализации фичи; ADR и фиксация решений; анализ влияния изменений; онбординг в чужой код; стандарты кода; сообщения коммитов; ретроспективы.
+  chains: "codebase-onboarding → blueprint / plan-* (план) → architecture-decision-records → реализация → change-impact → conventional-commit-review → git-workflow."
+
+claude-setup:
+  title: Настройка Claude Code и экосистемы ECC
+  scope: Конфигурация Claude Code и других агентных оболочек — навыки, хуки, память, контекст, стоимость, установка ECC.
+  tasks: Установка и настройка ECC; чистка конфигурации; контроль контекста и токенов; память между сессиями; создание и проверка навыков; хуки контроля качества.
+  chains: "configure-ecc → agent-sort (что оставить) → context-budget / token-budget-advisor → config-gc (чистка) → skill-stocktake (ревизия навыков)."
+
+docs:
+  title: Документация и управление знаниями
+  scope: Техническая документация, README, база знаний, живые документы, справочники по библиотекам, локализация.
+  tasks: Написание и актуализация документации; аудит документов; база знаний команды; поиск актуальной документации фреймворков; синхронизация переводов.
+  chains: "documentation-lookup (актуальные доки) → написание → docs-governance / living-docs-governance (аудит) → knowledge-ops (база знаний)."
+
+content:
+  title: Контент, тексты и бренд
+  scope: Статьи, посты, рассылки, голос бренда, публикации в соцсетях, редактура.
+  tasks: Длинные тексты в заданном стиле; контент-планы; адаптация под платформы; профиль голоса бренда; кросспостинг; редактура и вычитка.
+  chains: "brand-discovery → brand-voice → article-writing / content-engine → crosspost / social-publisher."
+
+marketing:
+  title: Маркетинг, SEO и рост
+  scope: SEO и AEO, копирайтинг, конверсия (CRO), реклама, email-маркетинг, запуски, аналитика маркетинга, growth.
+  tasks: SEO-аудит и стратегия; тексты лендингов; оптимизация конверсии страниц и форм; рекламные кампании; email-цепочки; ценообразование; запуск продукта; конкурентный анализ.
+  chains: "product-marketing-context (база знаний о продукте) → стратегия (content-strategy, launch-strategy) → тексты (copywriting) → CRO (page-cro) → аналитика (analytics-tracking) → A/B-тесты."
+
+sales:
+  title: Продажи, клиенты и поддержка
+  scope: Продажи B2B, лидогенерация, работа с клиентами, customer success, биллинг клиентов, партнёрства.
+  tasks: Поиск и квалификация лидов; холодные письма; подготовка к сделкам; удержание клиентов и снижение оттока; клиентская поддержка.
+  chains: "lead-intelligence / поиск лидов → cold-email → sales-материалы → customer-success / churn-prevention."
+
+product:
+  title: Продакт-менеджмент
+  scope: Работа продакт-менеджера от исследования проблемы до запуска — discovery, приоритизация, PRD, метрики, roadmap, позиционирование.
+  tasks: Формулировка проблемы и гипотез; интервью и исследования пользователей; PRD и пользовательские истории; приоритизация бэклога; метрики продукта; roadmap; позиционирование и ценообразование.
+  chains: "problem-statement / discovery → интервью (user-research) → PRD (prd-writer / prd-development) → приоритизация → roadmap → метрики (metrics-definer) → запуск (launch-checklist)."
+
+project:
+  title: Управление проектами и командами
+  scope: Планирование и ведение проектов, Agile/Scrum, Jira/Confluence, ресурсы и риски, управление командами разработки.
+  tasks: Планирование спринтов; статус-отчёты; управление рисками; ретроспективы; работа с Jira и Confluence; оргструктура и роли.
+  chains: "sprint-planner → ведение задач (jira-*) → статус-отчёты → ретроспектива."
+
+strategy:
+  title: Стратегия бизнеса и C-level
+  scope: Советники уровня CEO/CFO/CMO/CTO/COO и других руководителей, стратегия, рост, конкурентный анализ, организационное развитие.
+  tasks: Стратегические решения и сценарии; совет директоров и инвесторы; оргдизайн; конкурентная разведка; бизнес-модели; кризисные решения.
+  chains: "competitive-platform-analysis → benchmark-methodology → competitive-report-structure; council / C-level советники для решения → executive-материалы."
+
+finance:
+  title: Финансы, биллинг и инвестиции
+  scope: Финансовый анализ и модели, бюджет, бухгалтерия, налоги, биллинг и подписки, привлечение инвестиций.
+  tasks: Финансовые модели и прогнозы; анализ отчётности; юнит-экономика; управление подписками и возвратами; материалы для инвесторов; трейдинг-риски.
+  chains: "финансовая модель → анализ (financial-analyst) → investor-materials → investor-outreach; биллинг — customer-billing-ops / finance-billing-ops."
+
+compliance:
+  title: Регуляторика, комплаенс и качество (QMS)
+  scope: ISO 13485/9001/27001, MDR/FDA, GDPR, HIPAA, SOC 2, CMMC, аудит, системы менеджмента качества, договоры.
+  tasks: Подготовка к аудитам и сертификации; CAPA и несоответствия; оценка рисков; политика конфиденциальности данных; регистрация медизделий; шаблоны договоров.
+  chains: "оценка готовности (*-readiness) → риск-менеджмент → документы QMS → внутренний аудит → CAPA."
+
+operations:
+  title: Операции, логистика и закупки
+  scope: Цепочки поставок, логистика, закупки, производство, склад, таможня, энергоснабжение.
+  tasks: Планирование спроса и запасов; управление перевозчиками; таможенное оформление; исключения в логистике; возвраты; планирование производства; закупки энергии.
+  chains: "inventory-demand-planning → production-scheduling → carrier-relationship-management → logistics-exception-management → returns-reverse-logistics."
+
+career:
+  title: Карьера и HR
+  scope: Резюме, сопроводительные письма, поиск работы, собеседования, переговоры о зарплате, найм.
+  tasks: Проверка резюме под ATS; адаптация резюме под вакансию; сопроводительные письма; анализ соответствия вакансии; подготовка к интервью; переговоры о компенсации.
+  chains: "job-fit-analyzer → resume-customizer → ats-resume-checker → cover-letter-writer → подготовка к интервью → переговоры о зарплате."
+
+research:
+  title: Исследования и наука
+  scope: Глубокие исследования по веб-источникам, академические статьи, обзоры литературы, рецензирование, гранты, патенты, рыночные исследования.
+  tasks: Исследование с цитатами; систематический обзор литературы; написание и рецензирование статей; поиск в PubMed и патентных базах; оценка источников.
+  chains: "deep-research (сбор) → literature-review / scholar-evaluation (оценка) → academic-paper (написание) → academic-paper-reviewer (рецензия)."
+
+productivity:
+  title: Личная продуктивность и коммуникации
+  scope: Почта, мессенджеры, календарь, заметки, личная база знаний, еженедельные обзоры, принятие решений.
+  tasks: Разбор почты и черновики ответов; планирование недели; глубокая работа; подготовка к встречам; личная база знаний; уведомления.
+  chains: "email-ops / messages-ops (входящие) → планирование (weekly-review) → deep-work → заметки и база знаний."
+
+media:
+  title: Видео, графика и мультимедиа
+  scope: Создание и монтаж видео, анимации, генерация изображений и медиа, презентации, 3D.
+  tasks: Программные видео (Remotion, Manim); монтаж; генерация изображений и видео ИИ; слайды; демо-ролики интерфейсов.
+  chains: "сценарий (content-engine) → генерация медиа (fal-ai-media) → видео (remotion-video-creation / manim-video) → монтаж (video-editing)."
+
+network:
+  title: Сети и homelab
+  scope: Сетевое оборудование (Cisco), BGP, автоматизация сетей, домашняя лаборатория — VLAN, VPN, DNS.
+  tasks: Проверка и валидация конфигураций; диагностика BGP и интерфейсов; автоматизация по SSH; сегментация домашней сети; WireGuard VPN; Pi-hole.
+  chains: "homelab-network-readiness → homelab-network-setup → homelab-vlan-segmentation → homelab-pihole-dns / homelab-wireguard-vpn."
+
+web3:
+  title: Блокчейн, Web3 и трейдинг
+  scope: Смарт-контракты, DeFi, токены, платежи агентов, рынки предсказаний, торговые агенты.
+  tasks: Аудит безопасности смарт-контрактов; работа с токенами и десятичностью; платежи ИИ-агентов; исследование рынков предсказаний; риски торговых агентов.
+  chains: "defi-amm-security → evm-token-decimals → llm-trading-agent-security."
+
+healthcare:
+  title: Медицина и здравоохранение
+  scope: Медицинские информационные системы, клиническая поддержка решений, защита медицинских данных, клинические исследования.
+  tasks: Архитектура EMR; системы поддержки клинических решений; соответствие HIPAA и защита PHI; оценка медицинских ИИ-моделей.
+  chains: "healthcare-emr-patterns → healthcare-cdss-patterns → healthcare-phi-compliance / hipaa-compliance → healthcare-eval-harness."
+
+other:
+  title: Прочее
+  scope: Узкоспециализированные навыки, не попавшие в другие категории.
+  tasks: Разные специализированные задачи.
+  chains: "—"

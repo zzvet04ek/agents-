@@ -1,0 +1,734 @@
+ecc/accessibility:
+  cat: dev-frontend
+  what: Проектирование, реализация и аудит доступных интерфейсов по WCAG 2.2 AA для веба, iOS и Android.
+  skills: семантика и ARIA-роли; трейты и подсказки доступности в мобильных ОС; управление фокусом и клавиатурой; контраст и размер зон касания; поддержка экранных дикторов.
+  tasks: аудит интерфейса на доступность; исправление нарушений WCAG; подготовка к требованиям законодательства о доступности.
+  with: ecc/frontend-a11y ecc/browser-qa ecc/design-system
+
+ecc/agent-architecture-audit:
+  cat: ai-agents
+  what: Полная диагностика ИИ-агентов и LLM-приложений по 12 слоям стека с ранжированием проблем по критичности.
+  skills: поиск регрессий обёрток; загрязнение памяти агента; нарушения дисциплины инструментов; скрытые циклы самоисправления; искажения при выводе.
+  tasks: найти слой, в котором ломается агент; аудит агента перед выпуском; список исправлений в коде.
+  with: ecc/agent-introspection-debugging ecc/eval-harness ecc/agent-security-hardening
+
+ecc/agent-eval:
+  cat: ai-agents
+  what: Сравнение кодовых агентов (Claude Code, Aider, Codex и др.) на ваших задачах по доле успеха, стоимости, времени и стабильности.
+  skills: постановка сравнительных задач; метрики pass rate и стоимости; повторные прогоны для оценки стабильности.
+  tasks: выбрать агента для команды; измерить эффект изменения настроек агента цифрами, а не впечатлением.
+  with: ecc/eval-harness ecc/cost-tracking ecc/benchmark
+
+ecc/agent-harness-construction:
+  cat: ai-agents
+  what: Проектирование набора инструментов, пространства действий и формата наблюдений ИИ-агента для повышения доли успешных задач.
+  skills: дизайн инструментов и их описаний; форматирование ответов инструментов; сокращение лишних действий.
+  tasks: создать или переработать набор инструментов агента; повысить надёжность выполнения задач.
+  with: ecc/mcp-server-patterns ecc/agent-eval ecc/agentic-engineering
+
+ecc/agent-introspection-debugging:
+  cat: ai-agents
+  what: Структурированная самодиагностика сбоев ИИ-агента — фиксация, диагноз, ограниченное восстановление и отчёт.
+  skills: сбор контекста сбоя; гипотезы о причине; безопасный повторный запуск; отчёт с выводами.
+  tasks: разобрать неудачный запуск агента воспроизводимо, а не простым повтором.
+  with: ecc/agent-architecture-audit ecc/continuous-agent-loop
+
+ecc/agent-payment-x402:
+  cat: web3
+  what: Подключение платежей по протоколу x402 к ИИ-агентам с бюджетами на задачу и некастодиальными кошельками.
+  skills: бюджеты и лимиты расходов агента; кошельки в сетях Base, X Layer, Solana и EVM; расчёты через фасилитатор.
+  tasks: дать агенту возможность самостоятельно платить за API и сервисы под контролем лимитов.
+  with: ecc/agent-security-hardening ecc/llm-trading-agent-security
+
+ecc/agent-runtime-gateway-smoke-test:
+  cat: ai-agents
+  what: Дымовая проверка связки локального API агента, временного туннеля-шлюза и обратного вызова из удалённой песочницы.
+  skills: проверка без инструментов; восстановление исходного подключения приложения.
+  tasks: убедиться, что агентная инфраструктура связана правильно, перед реальной работой.
+  with: ecc/enterprise-agent-ops ecc/canary-watch
+
+ecc/agent-security-hardening:
+  cat: security
+  what: Защита агентных систем, которые обрабатывают недоверенный контент, вызывают инструменты, пишут файлы и работают с секретами.
+  skills: защита от prompt injection; изоляция инструментов; обращение с учётными данными; мультиарендная изоляция; безопасная память агента.
+  tasks: ревью безопасности агентного рантайма, шлюза инструментов или сервиса памяти.
+  with: ecc/safety-guard ecc/mcp-dependency-review ecc/security-review
+
+ecc/agent-self-evaluation:
+  cat: ai-agents
+  what: Самооценка агентом результата после задачи по пяти осям — точность, полнота, ясность, применимость, краткость.
+  skills: оценочная карта 1–5 с доказательствами; конкретные предложения по улучшению.
+  tasks: проверить качество своего ответа перед сдачей; найти слабые места результата.
+  with: ecc/verification-loop ecc/santa-method
+
+ecc/agent-sort:
+  cat: claude-setup
+  what: План установки ECC под конкретный репозиторий — сортировка навыков, команд, правил и хуков на «ежедневные» и «библиотечные».
+  skills: анализ репозитория; параллельные проходы ревью; обоснование каждого выбора.
+  tasks: урезать ECC до того, что реально нужно проекту; выбрать избранные навыки.
+  with: ecc/configure-ecc ecc/skill-stocktake ecc/context-budget
+
+ecc/agentic-engineering:
+  cat: ai-agents
+  what: Работа в роли агентного инженера — сначала оценки (eval), декомпозиция и маршрутизация моделей по стоимости.
+  skills: eval-first подход; разбиение работы на задачи для агентов; выбор модели под сложность задачи.
+  tasks: спланировать и выполнить инженерную работу силами агентов от начала до конца.
+  with: ecc/blueprint ecc/eval-harness ecc/cost-aware-llm-pipeline
+
+ecc/agentic-os:
+  cat: ai-agents
+  what: Построение постоянной мультиагентной «операционной системы» на Claude Code — ядро, агенты-специалисты, команды, файловая память, расписания.
+  skills: архитектура ядра; память в файлах; slash-команды; автоматизация по расписанию; состояние без внешних БД.
+  tasks: создать личную систему агентов со своей памятью и регулярными задачами.
+  with: ecc/autonomous-agent-harness ecc/unified-memory ecc/team-agent-orchestration
+
+ecc/ai-first-engineering:
+  cat: eng-process
+  what: Операционная модель команды, где значительную часть кода пишут ИИ-агенты.
+  skills: процессы ревью ИИ-кода; правила владения кодом; quality gates.
+  tasks: настроить процесс команды и ответственность для кодовой базы, написанной агентами.
+  with: ecc/agentic-engineering ecc/ai-regression-testing ecc/delivery-gate
+
+ecc/ai-regression-testing:
+  cat: testing
+  what: Регрессионное тестирование при ИИ-разработке — тесты API в песочнице без БД и ловушки для «слепых зон» модели.
+  skills: sandbox-тесты API; автоматические проверки на баги; защита от ситуации, когда одна модель пишет и ревьюит код.
+  tasks: покрыть регрессиями код, написанный ИИ; проверить изменения, которые ревьюила та же модель.
+  with: ecc/tdd-workflow ecc/verification-loop ecc/ai-first-engineering
+
+ecc/android-clean-architecture:
+  cat: dev-mobile
+  what: Clean Architecture для Android и Kotlin Multiplatform — модули, правила зависимостей, UseCase, репозитории, слой данных.
+  skills: модульная структура; направление зависимостей; UseCase и Repository; организация слоя данных.
+  tasks: спроектировать или навести порядок в архитектуре Android/KMP-проекта.
+  with: ecc/kotlin-patterns ecc/compose-multiplatform-patterns ecc/kotlin-coroutines-flows
+
+ecc/angular-developer:
+  cat: dev-frontend
+  what: Генерация кода и архитектурные советы по Angular — от сигналов и форм до SSR и тестирования.
+  skills: сигналы, linkedSignal, resource; формы; DI; роутинг; SSR; анимации; стили и Tailwind; Angular CLI.
+  tasks: создать проект, компоненты и сервисы Angular; применить лучшие практики реактивности.
+  with: ecc/typescript-patterns ecc/e2e-testing ecc/accessibility
+
+ecc/api-connector-builder:
+  cat: dev-backend
+  what: Добавление нового API-коннектора или провайдера строго по образцу уже существующих интеграций проекта.
+  skills: анализ существующего паттерна интеграций; повторение структуры без второй архитектуры.
+  tasks: подключить ещё один внешний сервис так же, как подключены остальные.
+  with: ecc/api-design ecc/error-handling ecc/contract-first
+
+ecc/api-design:
+  cat: dev-backend
+  what: Паттерны проектирования REST API для продакшена.
+  skills: именование ресурсов; коды статусов; пагинация и фильтрация; формат ошибок; версионирование; rate limiting.
+  tasks: спроектировать или отревьюить REST-эндпоинты.
+  with: ecc/contract-first ecc/backend-patterns ecc/error-handling
+
+ecc/architecture-decision-records:
+  cat: eng-process
+  what: Фиксация архитектурных решений в нумерованных ADR-файлах в docs/adr с контекстом, альтернативами и последствиями.
+  skills: формат ADR; индекс решений; описание компромиссов.
+  tasks: записать решение о выборе фреймворка или БД; объяснить, почему кодовая база устроена именно так.
+  with: ecc/context-and-decisions ecc/blueprint ecc/change-impact
+
+ecc/article-writing:
+  cat: content
+  what: Статьи, гайды, посты, туториалы и рассылки в узнаваемом голосе на основе примеров или брендбука.
+  skills: перенос стиля из образцов; структура длинного текста; достоверность и аргументация.
+  tasks: написать качественный длинный текст в едином голосе автора или бренда.
+  with: ecc/brand-voice ecc/content-engine ecc/seo
+
+ecc/automation-audit-ops:
+  cat: claude-setup
+  what: Инвентаризация автоматизаций — какие задания, хуки, коннекторы и MCP-серверы живы, сломаны, дублируются или отсутствуют.
+  skills: сбор доказательств; поиск пересечений; карта автоматизаций.
+  tasks: понять состояние автоматизаций прежде, чем что-то чинить.
+  with: ecc/config-gc ecc/workspace-surface-audit
+
+ecc/autonomous-agent-harness:
+  cat: ai-agents
+  what: Превращение Claude Code в автономную агентную систему с постоянной памятью, расписаниями, computer use и очередью задач.
+  skills: встроенные расписания и диспетчеризация; память; MCP-инструменты; очередь задач.
+  tasks: настроить агента, который работает непрерывно и сам ставит себе задачи.
+  with: ecc/agentic-os ecc/continuous-agent-loop ecc/enterprise-agent-ops
+
+ecc/autonomous-loops:
+  cat: ai-agents
+  what: Архитектуры автономных циклов Claude Code — от простых конвейеров до мультиагентных графов (оставлен для совместимости).
+  skills: последовательные пайплайны; RFC-управляемые DAG-системы.
+  tasks: справка по старым схемам циклов; для новых задач используйте continuous-agent-loop.
+  with: ecc/continuous-agent-loop ecc/ralphinho-rfc-pipeline
+
+ecc/backend-patterns:
+  cat: dev-backend
+  what: Архитектура бэкенда на Node.js, Express и API-роутах Next.js.
+  skills: структура API; доступ к данным; оптимизация запросов к БД; серверные лучшие практики.
+  tasks: построить или отревьюить серверную часть на Node.js.
+  with: ecc/api-design ecc/postgres-patterns ecc/error-handling
+
+ecc/benchmark:
+  cat: devops
+  what: Базовые замеры производительности и поиск регрессий — Core Web Vitals, задержки API, скорость сборки и тестов.
+  skills: LCP, INP, CLS и вес страницы; перцентили задержек API; сравнение до/после; хранение замеров в git.
+  tasks: проверить скорость страниц; разобрать жалобу «тормозит»; сравнить варианты стека.
+  with: ecc/benchmark-optimization-loop ecc/react-performance ecc/canary-watch
+
+ecc/benchmark-methodology:
+  cat: strategy
+  what: Оценка конкурентов по девяти взвешенным измерениям с рубриками 1–5 и картой напряжений.
+  skills: позиционирование, голос, визуал, упаковка предложения, доказательства, цены; профили конкурентов.
+  tasks: сравнить и оценить конкурентов перед сборкой отчёта.
+  with: ecc/competitive-platform-analysis ecc/competitive-report-structure ecc/market-research
+
+ecc/benchmark-optimization-loop:
+  cat: devops
+  what: Превращение просьбы «сделай быстрее» в измеряемый цикл оптимизации с проверкой корректности.
+  skills: замер базовой линии; варианты с одной гипотезой; контроль корректности; воспроизводимые команды.
+  tasks: ускорить код или систему и выбрать лучший вариант по цифрам.
+  with: ecc/benchmark ecc/latency-critical-systems ecc/data-throughput-accelerator
+
+ecc/bengali-nlp:
+  cat: ai-agents
+  what: Обработка текста на бенгальском языке для ИИ-приложений.
+  skills: нормализация Unicode; определение письменности; токенизация; лигатуры.
+  tasks: подготовить бенгальские тексты для NLP и LLM.
+  with: ecc/regex-vs-llm-structured-text
+
+ecc/blender-motion-state-inspection:
+  cat: media
+  what: Проверка персонажей, ригов, поз и анимации в Blender там, где скриншотов недостаточно.
+  skills: ретаргетинг анимации; контакт с землёй; направление взгляда; соответствие модели и движения.
+  tasks: найти ошибки в 3D-анимации персонажа.
+  with: ecc/video-editing
+
+ecc/blueprint:
+  cat: eng-process
+  what: Превращение цели из одной строки в пошаговый план для многосессионных и мультиагентных проектов.
+  skills: шаги размером в один PR; брифы с контекстом; граф зависимостей и параллельные шаги; состязательное ревью плана.
+  tasks: спланировать крупную фичу, рефакторинг или roadmap на несколько PR.
+  with: ecc/plan-orchestrate ecc/architecture-decision-records ecc/team-agent-orchestration
+
+ecc/brand-discovery:
+  cat: content
+  what: Многосессионное интервью об идентичности бренда по 8 модулям с итоговым брендбуком.
+  skills: техники лэддеринга и «5 почему»; проективные вопросы; сохранение ответов между сессиями.
+  tasks: создать или переосмыслить бренд; подготовить бриф для дизайнеров и копирайтеров.
+  with: ecc/brand-voice ecc/article-writing ecc/frontend-design-direction
+
+ecc/brand-voice:
+  cat: content
+  what: Профиль стиля письма на основе реальных текстов автора для повторного использования в контенте и переписке.
+  skills: анализ образцов; профиль голоса; защита от шаблонного «ИИ-стиля».
+  tasks: писать тексты, неотличимые по стилю от автора.
+  with: ecc/article-writing ecc/content-engine ecc/crosspost
+
+ecc/brownfield-retrospective:
+  cat: eng-process
+  what: Ретроспективный прогон инженерного процесса ECC по существующему проекту с реестром пробелов.
+  skills: аудит текущего состояния; реконструкция прошлых решений; реестр пробелов по 4 осям; исправления через план–TDD–ревью.
+  tasks: подключить процесс в середине проекта; принять унаследованную кодовую базу.
+  with: ecc/codebase-onboarding ecc/change-impact ecc/tdd-workflow
+
+ecc/browser-qa:
+  cat: testing
+  what: Автоматическая проверка UI после деплоя через браузер — ошибки консоли, Web Vitals, формы, визуальная регрессия, доступность.
+  skills: smoke-проверки; тесты форм и авторизации; скриншоты на трёх брейкпоинтах; аудит axe-core; вердикт SHIP/DO-NOT-SHIP.
+  tasks: проверить фичу на стейдже; оценить фронтенд-PR перед релизом.
+  with: ecc/e2e-testing ecc/canary-watch ecc/accessibility
+
+ecc/bun-runtime:
+  cat: dev-backend
+  what: Bun как рантайм, менеджер пакетов, бандлер и тест-раннер.
+  skills: выбор между Bun и Node; миграция; поддержка на Vercel.
+  tasks: решить, переходить ли на Bun, и выполнить переход.
+  with: ecc/typescript-patterns ecc/vite-patterns
+
+ecc/canary-watch:
+  cat: devops
+  what: Мониторинг и проверка развёрнутого URL после релиза.
+  skills: проверки HTTP-эндпоинтов и SSE; статические ресурсы; ошибки консоли; регрессии производительности.
+  tasks: post-deploy smoke-проверка после релиза, мержа или обновления зависимостей.
+  with: ecc/browser-qa ecc/benchmark ecc/deployment-patterns
+
+ecc/carrier-relationship-management:
+  cat: operations
+  what: Управление портфелем перевозчиков (FTL, LTL, интермодальные) от отбора до продления контрактов.
+  skills: проверка перевозчиков; переговоры о ставках и топливных надбавках; тендеры и маршрутные гайды; скоринг перевозчиков.
+  tasks: провести тендер на перевозки; оценить и перераспределить объёмы между перевозчиками.
+  with: ecc/logistics-exception-management ecc/inventory-demand-planning
+
+ecc/change-impact:
+  cat: eng-process
+  what: Анализ влияния изменения до его внесения и сверка плана с фактическим диффом после.
+  skills: пути вызовов; данные и схемы; API-контракты; тесты, документация, деплой, откат.
+  tasks: оценить «радиус поражения» рискованного изменения — миграции, авторизации, публичного API.
+  with: ecc/database-migrations ecc/architecture-decision-records ecc/module-regression
+
+ecc/cisco-ios-patterns:
+  cat: network
+  what: Ревью конфигураций Cisco IOS и IOS-XE.
+  skills: show-команды; иерархия конфигурации; wildcard-маски; размещение ACL; гигиена интерфейсов; проверка в окне изменений.
+  tasks: прочитать, написать или проверить конфиг Cisco; спланировать окно изменений.
+  with: ecc/network-config-validation ecc/netmiko-ssh-automation ecc/network-interface-health
+
+ecc/ck:
+  cat: claude-setup
+  what: Постоянная память проекта для Claude Code (Context Keeper) через команды /ck и хук начала сессии.
+  skills: сохранение состояния и следующих шагов; возобновление работы; краткий бриф проекта при старте.
+  tasks: продолжить проект в новой сессии без повторных объяснений.
+  with: ecc/unified-memory ecc/strategic-compact
+
+ecc/claude-devfleet:
+  cat: ai-agents
+  what: Оркестрация параллельных кодовых агентов через Claude DevFleet в изолированных worktree.
+  skills: планирование проекта; запуск агентов; мониторинг прогресса; структурированные отчёты.
+  tasks: распараллелить разработку между несколькими агентами.
+  with: ecc/dmux-workflows ecc/team-agent-orchestration ecc/blueprint
+
+ecc/click-path-audit:
+  cat: testing
+  what: Трассировка каждой кнопки интерфейса через всю цепочку изменений состояния.
+  skills: поиск функций, которые по отдельности работают, но гасят друг друга; проверка итогового состояния UI.
+  tasks: найти баги, когда пользователи жалуются на кнопки, а отладка ничего не нашла; проверка после рефакторинга состояния.
+  with: ecc/browser-qa ecc/e2e-testing ecc/react-testing
+
+ecc/clickhouse-io:
+  cat: data
+  what: ClickHouse для высоконагруженной аналитики — схемы, оптимизация запросов, инженерия данных.
+  skills: движки таблиц; партиционирование; оптимизация медленных аналитических запросов.
+  tasks: спроектировать схему или ускорить аналитический запрос в ClickHouse.
+  with: ecc/data-throughput-accelerator ecc/dashboard-builder
+
+ecc/code-tour:
+  cat: docs
+  what: Создание пошаговых экскурсий по коду в формате CodeTour с привязкой к файлам и строкам.
+  skills: туры под роль читателя; экскурсии по архитектуре, PR и разбору инцидентов.
+  tasks: онбординг нового разработчика; объяснить, как работает подсистема.
+  with: ecc/codebase-onboarding ecc/architecture-decision-records
+
+ecc/codebase-onboarding:
+  cat: eng-process
+  what: Анализ незнакомой кодовой базы и создание руководства для входа с картой архитектуры и стартовым CLAUDE.md.
+  skills: карта архитектуры; ключевые точки входа; соглашения проекта.
+  tasks: быстро войти в новый проект; настроить Claude Code для репозитория.
+  with: ecc/code-tour ecc/repo-scan ecc/brownfield-retrospective
+
+ecc/codehealth-mcp:
+  cat: testing
+  what: Оценка структурного здоровья кода в реальном времени через CodeScene MCP.
+  skills: ревью до правок; дельта оценки после изменений; гейты для коммитов и PR.
+  tasks: проверить, не ухудшил ли ИИ файл; рефакторинг с контролем качества.
+  with: ecc/plankton-code-quality ecc/coding-standards
+
+ecc/coding-standards:
+  cat: eng-process
+  what: Базовые межпроектные соглашения по коду — именование, читаемость, неизменяемость.
+  skills: правила именования; читаемость; ревью качества кода.
+  tasks: ревью кода, когда нет специализированного навыка под фреймворк.
+  with: ecc/codehealth-mcp ecc/error-handling
+
+ecc/competitive-platform-analysis:
+  cat: strategy
+  what: Определение и фильтрация набора конкурентов перед бенчмаркингом — кто конкурент, какого уровня, какие источники изучать.
+  skills: категоризация конкурентов; скоринговый фильтр; выбор источников.
+  tasks: первый шаг конкурентного анализа.
+  with: ecc/benchmark-methodology ecc/competitive-report-structure ecc/market-research
+
+ecc/competitive-report-structure:
+  cat: strategy
+  what: Сборка оценённых профилей конкурентов в отчёт для принятия решений.
+  skills: карта рынка; уровни конкурентов; матрица сравнения; анализ свободных ниш; стратегические рекомендации.
+  tasks: представить конкурентный анализ руководству или совету директоров.
+  with: ecc/benchmark-methodology ecc/competitive-platform-analysis ecc/investor-materials
+
+ecc/compose-multiplatform-patterns:
+  cat: dev-mobile
+  what: Compose Multiplatform и Jetpack Compose для KMP-проектов.
+  skills: управление состоянием; навигация; темы; производительность; платформенный UI.
+  tasks: построить UI на Compose для нескольких платформ.
+  with: ecc/kotlin-patterns ecc/android-clean-architecture ecc/kotlin-coroutines-flows
+
+ecc/config-gc:
+  cat: claude-setup
+  what: «Сборка мусора» в конфигурации Claude Code — поиск лишних, устаревших и бесполезных навыков, памяти, хуков и MCP.
+  skills: сканирование ~/.claude; классификация находок; удаление с подтверждением каждого пункта.
+  tasks: почистить раздутую конфигурацию; периодический аудит настроек.
+  with: ecc/skill-stocktake ecc/context-budget ecc/automation-audit-ops
+
+ecc/configure-ecc:
+  cat: claude-setup
+  what: Мастер установки и настройки ECC в диалоге — область установки, режим хуков, проверка.
+  skills: инвентаризация установки; выбор scope; профили хуков; превью и применение.
+  tasks: установить, обновить, перенастроить или починить ECC.
+  with: ecc/agent-sort ecc/ecc-guide ecc/skill-host-compat
+
+ecc/connections-optimizer:
+  cat: content
+  what: Ревизия сети контактов в X и LinkedIn — чистка подписок, рекомендации и тёплые сообщения в вашем голосе.
+  skills: анализ сети; рекомендации кого добавить; черновики сообщений.
+  tasks: перестроить соцсеть под текущие цели.
+  with: ecc/social-graph-ranker ecc/brand-voice ecc/lead-intelligence
+
+ecc/content-engine:
+  cat: content
+  what: Системы контента под каждую платформу — X, LinkedIn, TikTok, YouTube, рассылки.
+  skills: посты и треды; сценарии; контент-календари; переупаковка одного материала под разные платформы.
+  tasks: построить регулярный контент-поток; адаптировать материал под площадки.
+  with: ecc/crosspost ecc/brand-voice ecc/social-publisher
+
+ecc/content-hash-cache-pattern:
+  cat: dev-backend
+  what: Кэширование результатов дорогой обработки файлов по SHA-256 содержимого.
+  skills: кэш, не зависящий от пути; автоматическая инвалидация; отдельный сервисный слой.
+  tasks: ускорить повторную обработку файлов.
+  with: ecc/redis-patterns ecc/benchmark-optimization-loop
+
+ecc/context-and-decisions:
+  cat: docs
+  what: Ведение стабильного доменного контекста в CONTEXT.md и передача трудно обратимых решений в ADR.
+  skills: глоссарий домена; разведение значений терминов; границы модулей.
+  tasks: зафиксировать доменные термины, которые постоянно приходится объяснять.
+  with: ecc/architecture-decision-records ecc/docs-governance
+
+ecc/context-budget:
+  cat: claude-setup
+  what: Проверка оставшегося контекста через встроенный счётчик и, по запросу, аудит затрат контекста на компоненты.
+  skills: замер контекста; статический аудит навыков и правил.
+  tasks: узнать, сколько контекста осталось и что его съедает.
+  with: ecc/token-budget-advisor ecc/strategic-compact ecc/config-gc
+
+ecc/continuous-agent-loop:
+  cat: ai-agents
+  what: Непрерывные автономные циклы агентов с гейтами качества, оценками и восстановлением.
+  skills: самопроверка; eval-гейты; восстановление после сбоев.
+  tasks: запустить агента в цикле, который сам себя контролирует.
+  with: ecc/autonomous-agent-harness ecc/eval-harness ecc/loop-design-check
+
+ecc/continuous-learning:
+  cat: claude-setup
+  what: Устаревшая версия извлечения навыков из сессий; используйте continuous-learning-v2.
+  skills: хук на остановку сессии.
+  tasks: только для совместимости.
+  with: ecc/continuous-learning-v2
+
+ecc/continuous-learning-v2:
+  cat: claude-setup
+  what: Система обучения на основе «инстинктов» — наблюдает за сессиями и превращает выводы в навыки, команды и агентов.
+  skills: атомарные инстинкты с оценкой уверенности; привязка к проекту; продвижение в навыки.
+  tasks: сохранять уроки из сессий; постепенно наращивать собственные навыки.
+  with: ecc/skill-stocktake ecc/rules-distill
+
+ecc/contract-first:
+  cat: eng-process
+  what: Согласование фронтенда, бэкенда и сервисов через единый машинно-проверяемый контракт.
+  skills: OpenAPI, AsyncAPI, Protobuf, JSON Schema; генерация типов; проверка интеграции по контракту.
+  tasks: вести параллельную разработку без расхождения полей и моков.
+  with: ecc/api-design ecc/typescript-patterns ecc/e2e-testing
+
+ecc/conventional-commit-review:
+  cat: eng-process
+  what: Ревью изменений в индексе и черновик сообщения коммита по Conventional Commits.
+  skills: выбор типа и scope; длина и формат сообщения.
+  tasks: написать или исправить сообщение коммита.
+  with: ecc/git-workflow ecc/github-ops
+
+ecc/cost-aware-llm-pipeline:
+  cat: ai-agents
+  what: Снижение затрат на LLM API — маршрутизация моделей по сложности, бюджеты, ретраи, кэширование промптов.
+  skills: выбор модели под задачу; учёт бюджета; логика повторов; prompt caching.
+  tasks: уменьшить расходы на LLM; распределить задачи по уровням моделей.
+  with: ecc/prompt-caching-strategy ecc/cost-tracking ecc/token-budget-advisor
+
+ecc/cost-tracking:
+  cat: claude-setup
+  what: Отчёты по расходу токенов, затратам и бюджетам Claude Code из локального журнала ECC.
+  skills: разбивка по моделям, сессиям и датам; бюджеты.
+  tasks: узнать, сколько потрачено и на что.
+  with: ecc/cost-aware-llm-pipeline ecc/token-budget-advisor
+
+ecc/council:
+  cat: strategy
+  what: «Совет» из четырёх голосов для неоднозначных решений и выбора «делать или нет».
+  skills: структурированное несогласие; взвешивание компромиссов; итоговое решение.
+  tasks: выбрать из нескольких разумных вариантов.
+  with: ecc/council-multi-model ecc/recursive-decision-ledger
+
+ecc/council-multi-model:
+  cat: strategy
+  what: Дополнительная внешняя критика решения совета другой моделью (Codex) с явного согласия.
+  skills: попытка «сломать» итоговое решение; честная пометка источника критики.
+  tasks: перепроверить важное решение независимой моделью.
+  with: ecc/council
+
+ecc/counterparty-channel-discipline:
+  cat: ai-agents
+  what: Правила поведения агента в общих каналах с внешними участниками.
+  skills: отвечать только при упоминании; молчаливое наблюдение; защита внутреннего контекста; рискованное — только черновиком на одобрение.
+  tasks: безопасно подключить агента к групповым чатам и каналам с клиентами.
+  with: ecc/operator-approval-loop ecc/messages-ops ecc/agent-security-hardening
+
+ecc/cpp-coding-standards:
+  cat: dev-backend
+  what: Стандарты C++ на основе C++ Core Guidelines.
+  skills: современный безопасный C++; идиомы; владение ресурсами.
+  tasks: писать, ревьюить и рефакторить C++-код.
+  with: ecc/cpp-testing ecc/latency-critical-systems
+
+ecc/cpp-testing:
+  cat: testing
+  what: Тесты на C++ с GoogleTest и CTest.
+  skills: написание и исправление тестов; флаки-тесты; покрытие; санитайзеры.
+  tasks: добавить или починить тесты C++-проекта.
+  with: ecc/cpp-coding-standards ecc/tdd-workflow
+
+ecc/crosspost:
+  cat: content
+  what: Распространение контента по X, LinkedIn, Threads и Bluesky с адаптацией под каждую площадку.
+  skills: адаптация формата; запрет одинаковых постов на разных площадках.
+  tasks: опубликовать материал сразу на нескольких платформах.
+  with: ecc/content-engine ecc/social-publisher ecc/x-api
+
+ecc/csharp-testing:
+  cat: testing
+  what: Тестирование на C# и .NET — xUnit, FluentAssertions, моки, интеграционные тесты.
+  skills: организация тестов; моки; интеграционное тестирование.
+  tasks: написать или отревьюить тесты .NET-проекта.
+  with: ecc/dotnet-patterns ecc/tdd-workflow
+
+ecc/customer-billing-ops:
+  cat: finance
+  what: Операции с биллингом клиентов через Stripe и подобные сервисы.
+  skills: подписки; возвраты; разбор оттока; восстановление доступа к порталу оплаты; анализ тарифов.
+  tasks: помочь клиенту с оплатой; проверить состояние подписки.
+  with: ecc/finance-billing-ops ecc/email-ops
+
+ecc/customs-trade-compliance:
+  cat: operations
+  what: Таможенное и внешнеторговое соответствие в США, ЕС, Великобритании и Азии.
+  skills: классификация по ТН ВЭД (HS/HTS); инвойсы и декларации; Инкотермс 2020; соглашения о свободной торговле; проверка санкционных списков.
+  tasks: классифицировать товар; подготовить документы для импорта и экспорта; ответить на запрос таможни.
+  with: ecc/carrier-relationship-management ecc/logistics-exception-management
+
+ecc/dart-flutter-patterns:
+  cat: dev-mobile
+  what: Паттерны Dart и Flutter для продакшена.
+  skills: null safety; Freezed; асинхронность; архитектура виджетов; BLoC, Riverpod, Provider; GoRouter; Dio; тестирование.
+  tasks: писать и ревьюить Flutter-приложения.
+  with: ecc/flutter-dart-code-review ecc/accessibility
+
+ecc/dashboard-builder:
+  cat: devops
+  what: Дашборды мониторинга в Grafana, SigNoz и аналогах, отвечающие на реальные вопросы операторов.
+  skills: выбор метрик; структура панелей; уход от «витринных» дашбордов.
+  tasks: превратить метрики в рабочий дашборд.
+  with: ecc/canary-watch ecc/clickhouse-io ecc/kubernetes-patterns
+
+ecc/data-scraper-agent:
+  cat: data
+  what: Автоматический ИИ-агент сбора данных из публичных источников по расписанию на GitHub Actions.
+  skills: парсинг вакансий, цен, новостей; обогащение бесплатной LLM; хранение в Notion, Sheets, Supabase; обучение на обратной связи.
+  tasks: следить за источником данных и автоматически собирать результаты.
+  with: ecc/exa-search ecc/deep-research ecc/regex-vs-llm-structured-text
+
+ecc/data-throughput-accelerator:
+  cat: data
+  what: Диагностика и ускорение перемещения больших объёмов данных — загрузка, бэкфилл, экспорт, ETL.
+  skills: поиск настоящего узкого места; бенчмарк вариантов; синхронизация таблиц.
+  tasks: ускорить медленную загрузку или выгрузку данных.
+  with: ecc/benchmark-optimization-loop ecc/postgres-patterns ecc/clickhouse-io
+
+ecc/database-migrations:
+  cat: data
+  what: Безопасные обратимые миграции БД без простоя.
+  skills: expand-contract; конкурентные индексы; пакетные бэкфиллы; инструменты PostgreSQL, Prisma и др.
+  tasks: провести миграцию на продакшене без остановки сервиса.
+  with: ecc/postgres-patterns ecc/change-impact ecc/prisma-patterns
+
+ecc/deep-research:
+  cat: research
+  what: Исследовательские отчёты с цитатами по множеству веб-источников через MCP firecrawl и exa.
+  skills: план подвопросов; поиск и глубокое чтение; синтез с цитатами и уровнем уверенности.
+  tasks: подготовить обоснованный обзор темы.
+  with: ecc/exa-search ecc/research-ops ecc/market-research
+
+ecc/deepseek-harness-setup:
+  cat: claude-setup
+  what: Установка и работа ECC в оболочке DeepSeek Harness.
+  skills: корни навыков; мост хуков; совместимость команд.
+  tasks: перенести настройки ECC в DeepSeek Harness.
+  with: ecc/configure-ecc ecc/skill-host-compat
+
+ecc/defi-amm-security:
+  cat: web3
+  what: Чек-лист безопасности Solidity-контрактов AMM, пулов ликвидности и свопов.
+  skills: reentrancy и порядок CEI; атаки донатом и инфляцией; манипуляции оракулами; проскальзывание; права админа.
+  tasks: аудит или разработка DeFi-контрактов.
+  with: ecc/evm-token-decimals ecc/security-review
+
+ecc/delivery-gate:
+  cat: testing
+  what: Хук, не дающий Claude завершить работу, пока не пройдены проверки качества.
+  skills: детекция «отговорок» в тексте; проверка журнала обучения; контроль свободного места.
+  tasks: принудительно требовать готовность результата перед завершением.
+  with: ecc/verification-loop ecc/gateguard ecc/hookify-rules
+
+ecc/deployment-patterns:
+  cat: devops
+  what: Деплой веб-приложений — CI/CD, Docker, health checks, откат, готовность к продакшену.
+  skills: пайплайны CI/CD; контейнеризация; стратегии отката; чек-листы.
+  tasks: настроить конвейер поставки и деплой.
+  with: ecc/docker-patterns ecc/kubernetes-patterns ecc/canary-watch
+
+ecc/design-system:
+  cat: dev-frontend
+  what: Создание дизайн-системы из существующего кода или аудит визуальной согласованности.
+  skills: извлечение токенов (цвета, типографика, отступы, тени); CSS-переменные; документация дизайн-системы.
+  tasks: навести порядок в стилях; задокументировать визуальный язык.
+  with: ecc/frontend-design-direction ecc/accessibility ecc/make-interfaces-feel-better
+
+ecc/dev-team:
+  cat: eng-process
+  what: Имитация командной сессии с ролями PM, архитектор, разработчик и QA над одной задачей.
+  skills: взгляд с разных ролей; обсуждение компромиссов.
+  tasks: спроектировать фичу; отревьюить решение с нескольких сторон.
+  with: ecc/council ecc/blueprint ecc/product-lens
+
+ecc/django-celery:
+  cat: dev-backend
+  what: Фоновые задачи Django и Celery.
+  skills: конфигурация; дизайн задач; beat-расписания; ретраи; canvas; мониторинг и тесты.
+  tasks: добавить фоновые и периодические задачи в Django.
+  with: ecc/django-patterns ecc/redis-patterns ecc/django-tdd
+
+ecc/django-patterns:
+  cat: dev-backend
+  what: Архитектура Django — DRF, ORM, кэширование, сигналы, middleware.
+  skills: REST API на DRF; эффективные запросы ORM; кэш; структура продакшен-приложения.
+  tasks: построить или отревьюить Django-приложение.
+  with: ecc/django-tdd ecc/django-security ecc/django-verification
+
+ecc/django-security:
+  cat: security
+  what: Безопасность Django — аутентификация, авторизация, CSRF, SQL-инъекции, XSS, безопасный деплой.
+  skills: настройки безопасности; права доступа; защита от инъекций.
+  tasks: ревью безопасности Django-проекта.
+  with: ecc/django-patterns ecc/security-review ecc/django-verification
+
+ecc/django-tdd:
+  cat: testing
+  what: Тестирование Django по TDD с pytest-django и factory_boy.
+  skills: фабрики; моки; покрытие; тесты DRF API.
+  tasks: писать тесты Django или вести фичу через тесты.
+  with: ecc/django-patterns ecc/tdd-workflow ecc/python-testing
+
+ecc/django-verification:
+  cat: testing
+  what: Полный цикл проверки Django перед релизом.
+  skills: mypy, ruff, black; безопасность миграций; pytest с покрытием; pip-audit и bandit; ревью настроек.
+  tasks: финальная проверка Django-проекта перед PR или релизом.
+  with: ecc/django-tdd ecc/django-security ecc/verification-loop
+
+ecc/dmux-workflows:
+  cat: ai-agents
+  what: Оркестрация нескольких агентов в панелях tmux через dmux.
+  skills: параллельная работа Claude Code, Codex, OpenCode; разделение задач по панелям.
+  tasks: запустить несколько агентов одновременно и следить за ними.
+  with: ecc/claude-devfleet ecc/team-agent-orchestration ecc/terminal-ops
+
+ecc/docker-patterns:
+  cat: devops
+  what: Docker и Docker Compose — локальная разработка, безопасность контейнеров, сети, тома, многосервисные стеки.
+  skills: Dockerfile; compose; харднинг; сети и тома.
+  tasks: создать или отревьюить Docker-конфигурацию.
+  with: ecc/deployment-patterns ecc/kubernetes-patterns ecc/security-scan
+
+ecc/docs-governance:
+  cat: docs
+  what: Маршрутизация задач по управлению документацией и аудит ролей документов, ссылок и индексов ADR.
+  skills: аудит ссылок; индекс ADR; проверка доказательных ссылок.
+  tasks: проверить состояние документации проекта.
+  with: ecc/living-docs-governance ecc/architecture-decision-records ecc/context-and-decisions
+
+ecc/documentation-lookup:
+  cat: docs
+  what: Актуальная документация библиотек и фреймворков через Context7 MCP вместо устаревших знаний модели.
+  skills: справочник API; примеры кода; вопросы настройки.
+  tasks: получить точный ответ по свежей версии React, Next.js и других.
+  with: ecc/search-first
+
+ecc/dotnet-patterns:
+  cat: dev-backend
+  what: Идиоматичный C# и .NET.
+  skills: соглашения; DI; async/await; надёжная архитектура.
+  tasks: писать и ревьюить .NET-приложения.
+  with: ecc/csharp-testing ecc/error-handling
+
+ecc/dynamic-workflow-mode:
+  cat: ai-agents
+  what: Локальные для задачи обвязки, eval-гейты и извлечение навыков в адаптивных агентных режимах.
+  skills: обвязка под задачу; оценочные гейты; извлечение переиспользуемого навыка.
+  tasks: построить временную обвязку для сложной задачи агента.
+  with: ecc/eval-harness ecc/continuous-learning-v2
+
+ecc/e2e-testing:
+  cat: testing
+  what: E2E-тесты на Playwright.
+  skills: Page Object Model; конфигурация; интеграция в CI; артефакты; борьба с флаки-тестами.
+  tasks: написать E2E-тесты или починить нестабильные.
+  with: ecc/browser-qa ecc/tdd-workflow ecc/react-testing
+
+ecc/ecc-guide:
+  cat: claude-setup
+  what: Ответы на вопросы о составе ECC по живому содержимому репозитория.
+  skills: агенты, навыки, команды, хуки, правила, профили установки.
+  tasks: узнать, что входит в ECC и как этим пользоваться.
+  with: ecc/ecc-recipes ecc/configure-ecc
+
+ecc/ecc-recipes:
+  cat: claude-setup
+  what: Подбор группы команд ECC под описанный процесс с порядком запуска и условием остановки.
+  skills: рецепты команд; справочные семейства команд.
+  tasks: понять, какие команды ECC запускать для своей задачи.
+  with: ecc/ecc-guide
+
+ecc/ecc-tools-cost-audit:
+  cat: claude-setup
+  what: Аудит затрат и биллинга ECC Tools.
+  skills: поиск лавины PR; обход квот; утечка дорогих моделей; дубли задач.
+  tasks: расследовать всплеск затрат GitHub App.
+  with: ecc/cost-tracking
+
+ecc/email-ops:
+  cat: productivity
+  what: Разбор почты, черновики, проверка отправки и безопасные follow-up.
+  skills: сортировка входящих; черновики; верификация отправки.
+  tasks: навести порядок в почте; отправить и отследить письма.
+  with: ecc/messages-ops ecc/brand-voice ecc/unified-notifications-ops
+
+ecc/energy-procurement:
+  cat: operations
+  what: Закупка электроэнергии и газа для коммерческих и промышленных объектов.
+  skills: оптимизация тарифов; снижение платы за мощность; тендеры поставщиков; хеджирование; ВИЭ.
+  tasks: выбрать тариф и поставщика; снизить затраты на энергию.
+  with: ecc/inventory-demand-planning
+
+ecc/enterprise-agent-ops:
+  cat: ai-agents
+  what: Операционный контроль долгоживущих и облачных агентных систем.
+  skills: жизненный цикл; логи, метрики, трейсы; минимальные права; аварийный выключатель.
+  tasks: эксплуатировать агентов в продакшене безопасно и наблюдаемо.
+  with: ecc/autonomous-agent-harness ecc/agent-security-hardening ecc/dashboard-builder
+
+ecc/error-handling:
+  cat: dev-backend
+  what: Надёжная обработка ошибок в TypeScript, Python и Go.
+  skills: типизированные ошибки; error boundaries; ретраи; circuit breaker; понятные пользователю сообщения.
+  tasks: спроектировать типы ошибок и стратегию отказоустойчивости.
+  with: ecc/api-design ecc/backend-patterns ecc/python-patterns
+
+ecc/esign-field-placement:
+  cat: productivity
+  what: Детерминированная расстановка полей подписи, даты и текста в веб-конструкторе электронной подписи через браузер.
+  skills: фиксированная страница подписи; координаты полей; автоматизация браузера.
+  tasks: подготовить документ к электронной подписи без ошибок в полях.
+  with: ecc/master-agreement-generator ecc/browser-qa
