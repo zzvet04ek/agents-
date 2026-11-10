@@ -19,6 +19,12 @@ mostly in English.
    - `Grep pattern="resume|cv" path="library/INDEX.md" -i output_mode="content"`
    - Known name: `Grep pattern="/copywriting \|" path="library/INDEX.md"`
    - Narrow to a collection: `Grep pattern="^marketing/.*seo" …`
+   - Russian fallback: `library/SKILLS_RU.md` has a Russian description of
+     every skill, grouped by category (key abilities, tasks, «Сочетается с»).
+     Grep it with Russian words when English keywords miss, e.g.
+     `Grep pattern="резюме|вакансi" path="library/SKILLS_RU.md" -B6`
+     (the `### \`collection/name\`` heading is a few lines above the match).
+     Its «Сочетается с» line suggests skills to chain for multi-step tasks.
 3. **Pick 1–3 best matches.** The same name can exist in several collections
    (e.g. `marketing/copywriting` and `claude-skills/copywriting`): compare the
    descriptions and pick the more specific one; mention the alternative.
@@ -45,6 +51,7 @@ All commands run from the repo root; afterwards commit the changes.
 | Add the user's own skill | create `library/collections/my/<name>/SKILL.md` with `name`/`description` frontmatter, then `index` |
 | Make a skill always active | add `collection/name` to `library/favorites.yaml`, then `index` |
 | Rebuild index/catalog only | `python3 library/tools/library.py index` |
+| Describe new skills in Russian | after a sync, skills without a Russian entry are listed at the end of `SKILLS_RU.md`; add entries (`cat`, `what`, `skills`, `tasks`, `with`) to `library/ru/skills/*.yaml` — categories are in `library/ru/categories.yaml` — then `index` |
 
 Never edit files inside synced collections (they are overwritten on sync):
 copy the skill to `collections/my/` and change it there. Before adding a new

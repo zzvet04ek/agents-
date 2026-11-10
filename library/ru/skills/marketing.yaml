@@ -1,0 +1,370 @@
+marketing/ab-testing:
+  cat: marketing
+  what: Планирование, запуск и чтение A/B-тестов с ответами на спорные вопросы.
+  skills: реален ли результат; можно ли остановить тест; какая версия победила; стоит ли тестировать.
+  tasks: провести эксперимент и правильно его интерпретировать.
+  with: marketing/cro claude-skills/statistical-analyst
+
+marketing/ad-creative:
+  cat: marketing
+  what: Написание и оценка рекламных креативов — заголовки, основной текст, вариации для Google, Meta, LinkedIn.
+  skills: выбор хуков и углов; какие объявления запускать или отключать.
+  tasks: сделать рекламу, которая работает.
+  with: marketing/ads claude-skills/ad-creative
+
+marketing/ads:
+  cat: marketing
+  what: Планирование, запуск и исправление платной рекламы в Google, Meta и LinkedIn.
+  skills: стоит ли реклама денег; выбор канала; структура и бюджет кампаний.
+  tasks: запустить или починить рекламу.
+  with: marketing/ad-creative marketing/conversion-tracking claude-skills/paid-ads
+
+marketing/ai-seo:
+  cat: marketing
+  what: Попадание в ответы ИИ — ChatGPT, Perplexity, AI Overviews.
+  skills: почему ИИ цитирует конкурента; какой контент рекомендуется; оптимизация под ответы.
+  tasks: стать источником для ИИ-ассистентов.
+  with: claude-skills/aeo marketing/seo-audit marketing/schema
+
+marketing/analytics:
+  cat: marketing
+  what: Настройка и аудит аналитики, правильность расчёта метрик, план отслеживания и имена событий.
+  skills: план трекинга; проверка метрик; соглашения по событиям.
+  tasks: доверять цифрам в аналитике.
+  with: marketing/conversion-tracking marketing/attribution
+
+marketing/aso:
+  cat: marketing
+  what: Аудит и оптимизация страницы в App Store или Google Play.
+  skills: название, ключевые слова, скриншоты; причины падения загрузок.
+  tasks: увеличить установки приложения.
+  with: claude-skills/app-store-optimization
+
+marketing/attribution:
+  cat: marketing
+  what: Какой маркетинг на самом деле приносит выручку.
+  skills: модели атрибуции; каким цифрам доверять; распределение заслуг между каналами.
+  tasks: понять, какой канал реально работает.
+  with: marketing/analytics claude-skills/campaign-analytics
+
+marketing/churn-prevention:
+  cat: sales
+  what: Снижение оттока — сценарии отмены, опросы при уходе, предложения удержания.
+  skills: почему клиенты уходят; давать ли скидку или паузу.
+  tasks: удержать уходящих клиентов.
+  with: claude-skills/churn-prevention marketing/onboarding
+
+marketing/co-marketing:
+  cat: marketing
+  what: Совместный маркетинг с партнёрами.
+  skills: подходит ли партнёр; разница в размерах; разделение работы и лидов.
+  tasks: провести совместную кампанию.
+  with: claude-skills/partnerships-architect marketing/events
+
+marketing/cold-email:
+  cat: sales
+  what: Холодный B2B-аутрич — повод для письма, первые строки, цепочки.
+  skills: почему никто не отвечает; что работает в холодных письмах.
+  tasks: написать и запустить холодную рассылку.
+  with: marketing/prospecting claude-skills/cold-email
+
+marketing/community-marketing:
+  cat: marketing
+  what: Создание и рост онлайн-сообщества.
+  skills: стоит ли оно того; где размещать (Discord, Slack и др.); почему участники молчат.
+  tasks: построить живое сообщество вокруг продукта.
+  with: marketing/social marketing/events
+
+marketing/competitor-profiling:
+  cat: strategy
+  what: Досье на конкурентов с датами — цены, заявления, действия.
+  skills: проверка выводов о конкуренте; мониторинг изменений.
+  tasks: знать, что делают конкуренты.
+  with: marketing/competitors marketing/reverse-engineer-marketing
+
+marketing/competitors:
+  cat: marketing
+  what: Страницы сравнения и альтернатив — «X vs Y», «альтернатива X», «лучшие альтернативы X».
+  skills: что допустимо писать о конкуренте публично; структура страницы.
+  tasks: создать или проверить страницы сравнения.
+  with: marketing/competitor-profiling claude-skills/competitor-alternatives
+
+marketing/content-strategy:
+  cat: marketing
+  what: Планирование контента — какие темы приоритетны, тематические кластеры.
+  skills: о чём писать; почему посты не приводят клиентов.
+  tasks: составить контент-стратегию.
+  with: claude-skills/content-strategy marketing/seo-audit
+
+marketing/conversion-tracking:
+  cat: marketing
+  what: Отслеживание конверсий в Google Ads, Meta, GA4, LinkedIn, TikTok.
+  skills: настройка; аудит; почему конверсии пропадают или задваиваются.
+  tasks: наладить передачу конверсий в рекламные системы.
+  with: marketing/analytics marketing/ads
+
+marketing/copy-editing:
+  cat: content
+  what: Редактура, сокращение и вычитка существующего текста без переписывания с нуля.
+  skills: решения по каждой строке — оставить, убрать, изменить.
+  tasks: улучшить уже написанный текст.
+  with: marketing/copywriting claude-skills/copy-editing
+
+marketing/copywriting:
+  cat: marketing
+  what: Тексты страниц — главная, лендинг, цены, фичи.
+  skills: выбор заголовка, обещания и главного сообщения; диагностика.
+  tasks: написать или переписать текст страницы.
+  with: marketing/product-marketing marketing/cro claude-skills/copywriting
+
+marketing/cro:
+  cat: marketing
+  what: Больше конверсий со страницы или формы.
+  skills: почему страница не конвертирует; что менять первым; добавлять ли поля.
+  tasks: поднять конверсию.
+  with: marketing/copywriting marketing/ab-testing claude-skills/page-cro
+
+marketing/customer-research:
+  cat: research
+  what: Проведение и синтез исследований клиентов — цитаты, отзывы, обратная связь.
+  skills: что на самом деле значат отзывы; какие выводы безопасны.
+  tasks: понять клиентов по реальным данным.
+  with: pm-skills/voice-of-customer-miner marketing/product-marketing
+
+marketing/directory-submissions:
+  cat: marketing
+  what: Размещение продукта в каталогах стартапов, SaaS, ИИ, MCP и отзовиков.
+  skills: какие каталоги стоят усилий; работают ли размещения.
+  tasks: получить трафик и ссылки из каталогов.
+  with: marketing/link-building marketing/launch
+
+marketing/emails:
+  cat: marketing
+  what: Автоматические email-цепочки — приветствие, онбординг и другие.
+  skills: что отправлять и когда; работает ли цепочка.
+  tasks: создать или улучшить email-автоматизацию.
+  with: claude-skills/email-sequence marketing/onboarding
+
+marketing/events:
+  cat: marketing
+  what: Планирование, проведение, спонсорство и выступления на событиях — вебинары, конференции, стенды, митапы.
+  skills: окупаемость события; подготовка и фоллоу-ап.
+  tasks: решить, участвовать ли в событии, и получить результат.
+  with: claude-skills/webinar-marketing marketing/co-marketing
+
+marketing/free-tools:
+  cat: marketing
+  what: Бесплатные инструменты как маркетинг — калькуляторы, грейдеры, генераторы.
+  skills: стоит ли строить; какую идею выбрать.
+  tasks: привлекать трафик и лиды полезным инструментом.
+  with: claude-skills/free-tool-strategy marketing/lead-magnets
+
+marketing/image:
+  cat: media
+  what: Создание, генерация, редактирование и оптимизация маркетинговых изображений.
+  skills: выбор между генерацией, дизайном и фотосъёмкой; обложки блога и соцсетей.
+  tasks: сделать визуал для маркетинга.
+  with: ecc/fal-ai-media marketing/social
+
+marketing/influencer-marketing:
+  cat: marketing
+  what: Партнёрства с креаторами, инфлюенсерами и амбассадорами.
+  skills: подбор креаторов; оплата; права на контент; окупаемость интеграции.
+  tasks: запустить работу с блогерами.
+  with: marketing/social marketing/referrals
+
+marketing/launch:
+  cat: marketing
+  what: Запуск продукта или фичи.
+  skills: готов ли продукт; когда объявлять; Product Hunt; бета и ранний доступ.
+  tasks: спланировать громкий запуск.
+  with: claude-skills/launch-strategy pm-setup/launch-checklist
+
+marketing/lead-magnets:
+  cat: marketing
+  what: Лид-магниты — что отдавать за email и сколько спрашивать.
+  skills: чек-листы, гайды, шаблоны; закрытие контента; поля формы.
+  tasks: собирать контакты потенциальных клиентов.
+  with: marketing/emails marketing/free-tools
+
+marketing/link-building:
+  cat: marketing
+  what: Обратные ссылки и упоминания для роста позиций и цитирований ИИ.
+  skills: безопасные тактики; как получить ссылки.
+  tasks: нарастить ссылочный профиль.
+  with: marketing/directory-submissions marketing/public-relations
+
+marketing/marketing-council:
+  cat: marketing
+  what: Симуляция совета известных маркетологов (Сет Годин и др.) для решения.
+  skills: несколько экспертных взглядов на вопрос.
+  tasks: получить разные точки зрения на маркетинговое решение.
+  with: ecc/council marketing/marketing-plan
+
+marketing/marketing-ideas:
+  cat: marketing
+  what: Идеи и тактики роста для софтверного продукта.
+  skills: что попробовать с малым бюджетом; как получить первых клиентов.
+  tasks: найти новые способы привлечения.
+  with: claude-skills/marketing-ideas marketing/marketing-plan
+
+marketing/marketing-loops:
+  cat: marketing
+  what: Регулярные маркетинговые задачи, которые ИИ-агент выполняет по расписанию или триггеру.
+  skills: еженедельные и ежедневные автоматические проверки и действия.
+  tasks: автоматизировать маркетинговую рутину.
+  with: claude-skills/ai-decision-authority ecc/continuous-agent-loop
+
+marketing/marketing-plan:
+  cat: marketing
+  what: Полный маркетинговый или GTM-план для клиента, компании или своего продукта.
+  skills: последовательность и приоритеты маркетинговой работы.
+  tasks: составить маркетинговый план.
+  with: marketing/product-marketing claude-skills/marketing-strategy-pmm
+
+marketing/marketing-psychology:
+  cat: marketing
+  what: Психология в маркетинге — почему покупатели ведут себя так, как ведут.
+  skills: ментальные модели; честность тактик убеждения.
+  tasks: применить психологию этично.
+  with: claude-skills/marketing-psychology marketing/offers
+
+marketing/offers:
+  cat: marketing
+  what: Проектирование самого предложения — набор ценности, бонусы, гарантии, честная срочность.
+  skills: почему предложение не продаётся.
+  tasks: сделать оффер неотразимым.
+  with: marketing/pricing marketing/copywriting
+
+marketing/onboarding:
+  cat: product
+  what: Онбординг и активация — первый опыт, «ага-момент».
+  skills: почему новые пользователи не остаются; что делать в первой сессии.
+  tasks: улучшить удержание новичков.
+  with: claude-skills/onboarding-cro marketing/emails
+
+marketing/paywalls:
+  cat: marketing
+  what: Пейволы и моменты апгрейда в приложении.
+  skills: когда и насколько настойчиво просить оплату.
+  tasks: конвертировать бесплатных пользователей в платных.
+  with: claude-skills/paywall-upgrade-cro marketing/pricing
+
+marketing/popups:
+  cat: marketing
+  what: Попапы, модальные окна, слайд-ины, липкие плашки и баннеры.
+  skills: поможет или раздражает; когда показывать.
+  tasks: сделать полезный попап.
+  with: claude-skills/popup-cro marketing/lead-magnets
+
+marketing/pricing:
+  cat: marketing
+  what: Цены и упаковка — тарифы, метрика ценности.
+  skills: сколько брать; поднимать ли цены; как перевести текущих клиентов.
+  tasks: выстроить ценообразование.
+  with: claude-skills/pricing-strategy pm-skills/finance-based-pricing-advisor
+
+marketing/product-marketing:
+  cat: marketing
+  what: Документ продуктового маркетингового контекста — основа для всех маркетинговых навыков.
+  skills: позиционирование, ICP, сообщения в одном файле.
+  tasks: создать или обновить общий маркетинговый контекст.
+  with: claude-skills/marketing-context pm-skills/positioning-statement
+
+marketing/programmatic-seo:
+  cat: marketing
+  what: SEO-страницы в масштабе по шаблонам и данным.
+  skills: будет ли набор страниц ранжироваться или выглядеть «тонким».
+  tasks: создать сотни полезных страниц.
+  with: claude-skills/programmatic-seo marketing/site-architecture
+
+marketing/prospecting:
+  cat: sales
+  what: Поиск и квалификация потенциальных клиентов для аутрича.
+  skills: кого целить первым; какие сигналы покупки важнее.
+  tasks: составить список целевых клиентов.
+  with: marketing/cold-email ecc/lead-intelligence
+
+marketing/public-relations:
+  cat: marketing
+  what: Пресса и медиа — питчи, пресс-релизы, кризисы.
+  skills: что говорить журналисту; есть ли новость; работа в кризисе.
+  tasks: получить публикации в СМИ.
+  with: pm-skills/press-release marketing/link-building
+
+marketing/referrals:
+  cat: marketing
+  what: Реферальные и партнёрские программы, сарафанное радио.
+  skills: что вознаграждать; сколько платить; с какой петли начать.
+  tasks: запустить рост через рекомендации.
+  with: claude-skills/referral-program marketing/influencer-marketing
+
+marketing/reverse-engineer-marketing:
+  cat: strategy
+  what: Как вырос другой бизнес и что можно скопировать.
+  skills: журнал действий конкурента по датам.
+  tasks: учиться на росте конкурентов.
+  with: marketing/competitor-profiling
+
+marketing/revops:
+  cat: sales
+  what: Revenue operations — жизненный цикл лида, передача в продажи.
+  skills: когда лид готов для продаж; согласование маркетинга и продаж.
+  tasks: выстроить процесс передачи лидов.
+  with: claude-skills/revenue-operations marketing/sales-enablement
+
+marketing/sales-enablement:
+  cat: sales
+  what: Материалы для продаж — презентации, one-pager, работа с возражениями.
+  skills: что дать чемпиону или продавцу; ответы на возражения.
+  tasks: вооружить отдел продаж.
+  with: pm-skills/battle-card-builder marketing/revops
+
+marketing/schema:
+  cat: marketing
+  what: Разметка schema.org (JSON-LD) — добавление, исправление, проверка.
+  skills: выбор типа; допустимость разметки.
+  tasks: получить расширенные сниппеты.
+  with: claude-skills/schema-markup marketing/seo-audit
+
+marketing/seo-audit:
+  cat: marketing
+  what: Аудит и диагностика SEO.
+  skills: почему упал трафик; почему страница не ранжируется; canonical, hreflang, редиректы.
+  tasks: найти и исправить SEO-проблемы.
+  with: claude-skills/seo-audit marketing/site-architecture
+
+marketing/signup:
+  cat: marketing
+  what: Регистрация и старт триала.
+  skills: какие поля и шаги убрать; требовать ли карту; SSO.
+  tasks: повысить число регистраций.
+  with: claude-skills/signup-flow-cro marketing/onboarding
+
+marketing/site-architecture:
+  cat: marketing
+  what: Планирование и реструктуризация сайта.
+  skills: иерархия; навигация; URL; какие страницы нужны.
+  tasks: спроектировать структуру сайта.
+  with: claude-skills/site-architecture marketing/seo-audit
+
+marketing/sms:
+  cat: marketing
+  what: SMS, MMS и WhatsApp-маркетинг.
+  skills: брошенная корзина, возврат клиентов, промо; что разрешено законом.
+  tasks: решить, стоит ли SMS-канал, и запустить его.
+  with: marketing/emails
+
+marketing/social:
+  cat: content
+  what: Органический контент для LinkedIn, X, Instagram, TikTok, Facebook.
+  skills: что публиковать; какой формат выбрать; с какой площадки начать.
+  tasks: вести соцсети бренда.
+  with: claude-skills/social-content ecc/content-engine
+
+marketing/video:
+  cat: media
+  what: Создание видео с ИИ или кодом.
+  skills: выбор подхода — запись экрана, ИИ-аватар, генерация, шаблоны.
+  tasks: сделать маркетинговое видео.
+  with: ecc/remotion-video-creation claude-skills/video-content-strategist

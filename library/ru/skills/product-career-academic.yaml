@@ -1,0 +1,699 @@
+pm-skills/acquisition-channel-advisor:
+  cat: marketing
+  what: Оценка каналов привлечения по юнит-экономике, качеству клиентов и масштабируемости.
+  skills: масштабировать, тестировать или закрыть канал.
+  tasks: решить судьбу канала роста.
+  with: marketing/attribution pm-skills/saas-economics-efficiency-metrics
+
+pm-skills/agent-orchestration-advisor:
+  cat: ai-agents
+  what: Проектирование мультиагентных ИИ-процессов для продуктовых задач.
+  skills: границы агентов; передачи; мониторинг.
+  tasks: распределить сложную PM-задачу между агентами.
+  with: ecc/team-agent-orchestration claude-skills/agent-designer
+
+pm-skills/ai-shaped-readiness-advisor:
+  cat: product
+  what: Оценка зрелости продуктовой работы с ИИ — AI-first или AI-shaped.
+  skills: диагностика зрелости; следующая способность команды.
+  tasks: понять, как развивать работу с ИИ в продуктовой команде.
+  with: pm-skills/context-engineering-advisor
+
+pm-skills/altitude-horizon-framework:
+  cat: career
+  what: Переход от PM к директору через мышление «высотой» и «горизонтом».
+  skills: диагностика масштаба, горизонта и уровня лидерства.
+  tasks: понять, чего не хватает для роста до директора.
+  with: pm-skills/director-readiness-advisor
+
+pm-skills/ansoff-matrix:
+  cat: strategy
+  what: Варианты роста по матрице Ансоффа с оценкой рисков и последовательностью.
+  skills: рынки и продукты; доказательная база.
+  tasks: решить, откуда брать следующий рост.
+  with: pm-skills/organic-growth-advisor pm-skills/porters-five-forces
+
+pm-skills/autonomous-investigation:
+  cat: research
+  what: Протокол автономного исследования для всех навыков-расследований.
+  skills: план поиска; метки «факт, вывод, допущение»; уровни уверенности.
+  tasks: доверить ИИ исследование без контроля на каждом шаге.
+  with: pm-skills/company-intel ecc/deep-research
+
+pm-skills/battle-card-builder:
+  cat: sales
+  what: Конкурентная карточка для продавца на основе публичных данных с источниками.
+  skills: проверяемые утверждения; полевые действия.
+  tasks: дать продажам оружие против конкурента.
+  with: marketing/sales-enablement pm-skills/competitive-research-snapshot
+
+pm-skills/business-health-diagnostic:
+  cat: finance
+  what: Диагностика здоровья SaaS — рост, удержание, эффективность, капитал.
+  skills: комплексная оценка; приоритет срочных исправлений.
+  tasks: подготовить бизнес-ревью.
+  with: pm-skills/saas-revenue-growth-metrics pm-skills/saas-economics-efficiency-metrics
+
+pm-skills/company-intel:
+  cat: research
+  what: Исследование компании, отрасли или группы конкурентов через семь аналитических линз.
+  skills: веб-поиск; структурированная разведка для дальнейших решений.
+  tasks: собрать данные о компании или рынке.
+  with: pm-skills/company-research pm-skills/autonomous-investigation
+
+pm-skills/company-research:
+  cat: research
+  what: Бриф о компании — цитаты руководителей, продуктовая стратегия, оргконтекст.
+  skills: подготовка к интервью, партнёрству, конкурентному анализу.
+  tasks: узнать компанию перед встречей или собеседованием.
+  with: claude-skills/dossier career/job-fit-analyzer
+
+pm-skills/competitive-analysis-process:
+  cat: strategy
+  what: Полный конкурентный анализ в шесть шагов — от ландшафта до стратегического направления.
+  skills: оркестрация конкурентных навыков.
+  tasks: получить полную картину конкуренции.
+  with: pm-skills/market-landscape-scan pm-skills/competitive-research-snapshot
+
+pm-skills/competitive-intel-watch:
+  cat: strategy
+  what: Регулярный мониторинг изменений у конкурентов относительно прошлого снимка.
+  skills: только существенные сдвиги; доказательства.
+  tasks: отслеживать конкурентов по расписанию.
+  with: pm-skills/pricing-packaging-tracker claude-skills/competitive-intel
+
+pm-skills/competitive-research-snapshot:
+  cat: strategy
+  what: Снимок конкурентного ландшафта с источниками, матрицей сравнения и выводами.
+  skills: «и что из этого следует» для продукта.
+  tasks: обосновать продуктовое решение конкурентными данными.
+  with: pm-skills/battle-card-builder pm-skills/competitive-intel-watch
+
+pm-skills/context-engineering-advisor:
+  cat: ai-agents
+  what: Диагностика «напихивания» контекста против грамотной инженерии контекста.
+  skills: разгрузка промптов; управляемость ИИ-процессов.
+  tasks: когда ИИ-процесс раздут и нестабилен.
+  with: ecc/context-budget claude-skills/senior-prompt-engineer
+
+pm-skills/customer-journey-map:
+  cat: product
+  what: Карта пути клиента — этапы, точки контакта, действия, эмоции, метрики.
+  skills: диагностика сломанного опыта.
+  tasks: выровнять команду вокруг опыта клиента.
+  with: pm-skills/customer-journey-mapping-workshop claude-skills/ux-researcher-designer
+
+pm-skills/customer-journey-mapping-workshop:
+  cat: product
+  what: Воркшоп по карте пути клиента с адаптивными вопросами.
+  skills: этапы, боли, возможности.
+  tasks: провести командную сессию по CJM.
+  with: pm-skills/customer-journey-map pm-skills/workshop-facilitation
+
+pm-skills/derisk-measurement-advisor:
+  cat: product
+  what: Что измерять и тестировать, чтобы снизить риск продуктовой или ИИ-идеи.
+  skills: внутренние риски (DUFV) и внешние (PESTEL).
+  tasks: стресс-тест идеи до вложений.
+  with: pm-skills/pol-probe pm-skills/pestel-analysis
+
+pm-skills/director-readiness-advisor:
+  cat: career
+  what: Переход от PM к директору — подготовка, собеседования, первые месяцы.
+  skills: практические шаги при росте масштаба.
+  tasks: вырасти до директора продукта.
+  with: pm-skills/altitude-horizon-framework pm-skills/vp-cpo-readiness-advisor
+
+pm-skills/discovery-interview-prep:
+  cat: product
+  what: Подготовка интервью с клиентами — цель, сегмент, ограничения, метод.
+  skills: валидация проблемы; интервью об оттоке.
+  tasks: спланировать discovery-интервью.
+  with: pm-skills/discovery-process pm-setup/user-research
+
+pm-skills/discovery-process:
+  cat: product
+  what: Полный цикл discovery от гипотезы проблемы до проверенного решения.
+  skills: постановка; интервью; синтез; эксперименты.
+  tasks: пройти discovery структурированно.
+  with: pm-skills/problem-statement pm-skills/opportunity-solution-tree
+
+pm-skills/eol-checklist:
+  cat: product
+  what: Чек-лист закрытия продукта по фазам с владельцем на каждом пункте.
+  skills: операционный план сворачивания.
+  tasks: закрыть продукт без потерь.
+  with: pm-skills/eol-process
+
+pm-skills/eol-internal-enablement:
+  cat: product
+  what: FAQ поддержки, тезисы для продаж и работа с возражениями перед объявлением о закрытии.
+  skills: подготовка клиентских команд.
+  tasks: подготовить команду к закрытию продукта.
+  with: pm-skills/eol-message pm-skills/eol-process
+
+pm-skills/eol-message:
+  cat: product
+  what: Объявление о закрытии продукта нужного масштаба.
+  skills: обоснование; влияние на клиентов; следующие шаги.
+  tasks: сообщить клиентам о закрытии.
+  with: pm-skills/eol-stakeholder-sequence
+
+pm-skills/eol-process:
+  cat: product
+  what: Закрытие продукта целиком — решение, согласование, план, подготовка, объявление, закрытие.
+  skills: сквозной процесс EOL.
+  tasks: провести закрытие продукта.
+  with: pm-skills/eol-readiness-advisor pm-skills/eol-checklist
+
+pm-skills/eol-readiness-advisor:
+  cat: product
+  what: Оценка «закрывать или нет» и масштаб усилий на закрытие.
+  skills: go/no-go для вывода продукта.
+  tasks: когда говорят «надо бы это убить», но никто не решает.
+  with: pm-skills/lifecycle-play-advisor pm-skills/eol-process
+
+pm-skills/eol-stakeholder-sequence:
+  cat: product
+  what: С кем и в каком порядке говорить о закрытии продукта.
+  skills: последовательность разговоров; содержание каждого.
+  tasks: избежать конфликтов при закрытии.
+  with: pm-skills/stakeholder-mapping pm-skills/eol-message
+
+pm-skills/epic-breakdown-advisor:
+  cat: product
+  what: Разбиение эпиков на истории по паттернам Humanizing Work.
+  skills: паттерны разбиения.
+  tasks: когда задача слишком велика для оценки и поставки.
+  with: pm-skills/user-story-splitting pm-skills/user-story
+
+pm-skills/epic-hypothesis:
+  cat: product
+  what: Формулировка эпика как проверяемой гипотезы.
+  skills: целевой пользователь; ожидаемый результат; метод проверки.
+  tasks: определить крупную инициативу до roadmap.
+  with: pm-skills/epic-breakdown-advisor pm-skills/pol-probe
+
+pm-skills/executive-onboarding-playbook:
+  cat: career
+  what: План 30-60-90 дней для нового VP или CPO продукта.
+  skills: диагностический вход; отказ от преждевременных изменений.
+  tasks: успешно начать на руководящей позиции.
+  with: pm-skills/vp-cpo-readiness-advisor
+
+pm-skills/feature-investment-advisor:
+  cat: product
+  what: Оценка инвестиции в фичу по выручке, затратам, ROI и стратегии.
+  skills: экономическое обоснование фичи.
+  tasks: решить, стоит ли фича вложений.
+  with: pm-skills/prioritization-advisor claude-skills/business-investment-advisor
+
+pm-skills/finance-based-pricing-advisor:
+  cat: product
+  what: Оценка изменения цен по ARPU, конверсии, риску оттока, NRR и окупаемости.
+  skills: финансовая проверка ценового решения.
+  tasks: решить, выпускать ли изменение цен.
+  with: marketing/pricing claude-skills/pricing-strategist
+
+pm-skills/finance-metrics-quickref:
+  cat: finance
+  what: Быстрый справочник SaaS-метрик — формулы и бенчмарки.
+  skills: определения; формулы; ориентиры.
+  tasks: быстро вспомнить метрику во время анализа.
+  with: claude-skills/saas-metrics-coach
+
+pm-skills/incoming-request-advisor:
+  cat: product
+  what: Разбор входящего запроса — буквальная просьба против реальной «работы».
+  skills: декодирование сообщений в Slack, email, указаний.
+  tasks: понять, что на самом деле нужно стейкхолдеру.
+  with: pm-skills/jobs-to-be-done pm-skills/problem-statement
+
+pm-skills/intel-discipline-advisor:
+  cat: research
+  what: Выбор дисциплин разведки, периодичности и навыка для конкурентного или рыночного вопроса.
+  skills: триаж исследовательских вопросов.
+  tasks: понять, как исследовать вопрос.
+  with: pm-skills/intelligence-collection-disciplines
+
+pm-skills/intelligence-collection-disciplines:
+  cat: research
+  what: Конкурентная разведка по методикам спецслужб — восемь дисциплин от OSINT до MASINT.
+  skills: цепочки «сигнал–вывод»; слияние источников.
+  tasks: провести глубокую конкурентную разведку.
+  with: pm-skills/intel-discipline-advisor ecc/osint-investigation
+
+pm-skills/jobs-to-be-done:
+  cat: product
+  what: Выявление «работ», болей и выгод клиента в формате JTBD.
+  skills: неудовлетворённые потребности; перепозиционирование.
+  tasks: понять, зачем клиенты «нанимают» продукт.
+  with: pm-skills/problem-statement pm-skills/positioning-statement
+
+pm-skills/lean-ux-canvas:
+  cat: product
+  what: Lean UX Canvas v2.
+  skills: бизнес-проблема; допущения; что изучить дальше.
+  tasks: структурировать продуктовую гипотезу.
+  with: pm-skills/problem-framing-canvas pm-skills/pol-probe
+
+pm-skills/lifecycle-play-advisor:
+  cat: product
+  what: Диагностика стадии жизненного цикла продукта и выбор хода — продлить, заменить, вывести.
+  skills: оценка стадии; рекомендация.
+  tasks: решить судьбу угасающего продукта.
+  with: pm-skills/product-lifecycle-plays pm-skills/eol-readiness-advisor
+
+pm-skills/market-landscape-scan:
+  cat: strategy
+  what: Карта рынка — сегменты, игроки, заменители, свободные ниши с источниками.
+  skills: структура рынка.
+  tasks: оценить рынок перед входом.
+  with: pm-skills/tam-sam-som-calculator pm-skills/porters-five-forces
+
+pm-skills/opportunity-solution-tree:
+  cat: product
+  what: Дерево возможностей и решений от цели к тестам.
+  skills: связь результата, возможностей, решений и экспериментов.
+  tasks: превратить запрос стейкхолдера в продуктовую задачу.
+  with: pm-skills/discovery-process pm-skills/problem-statement
+
+pm-skills/organic-growth-advisor:
+  cat: strategy
+  what: Выбор пути органического роста — новые сегменты, география, каналы, продукты.
+  skills: где ограничение роста.
+  tasks: найти следующий источник роста.
+  with: pm-skills/ansoff-matrix pm-skills/acquisition-channel-advisor
+
+pm-skills/pestel-analysis:
+  cat: strategy
+  what: PESTEL-анализ — политические, экономические, социальные, технологические, экологические и правовые факторы.
+  skills: внешние силы, влияющие на продукт.
+  tasks: учесть внешние риски в стратегии.
+  with: pm-skills/pestel-delta-monitor pm-skills/swot-analysis
+
+pm-skills/pestel-delta-monitor:
+  cat: strategy
+  what: Квартальный пересмотр PESTEL — что изменилось, какие допущения сломались.
+  skills: мониторинг внешних факторов.
+  tasks: держать стратегию актуальной.
+  with: pm-skills/pestel-analysis
+
+pm-skills/pm-skill-creator:
+  cat: claude-setup
+  what: Создание нового PM-навыка через диалог.
+  skills: превращение идеи в навык по стандартам.
+  tasks: написать свой продуктовый навык.
+  with: pm-skills/skill-authoring-workflow claude-skills/write-a-skill
+
+pm-skills/pol-probe:
+  cat: product
+  what: «Проба жизнеспособности» для дешёвой проверки рискованной гипотезы.
+  skills: суровая правда до разработки.
+  tasks: проверить идею без полноценного продукта.
+  with: pm-skills/pol-probe-advisor pm-skills/epic-hypothesis
+
+pm-skills/pol-probe-advisor:
+  cat: product
+  what: Выбор типа пробы под гипотезу, риск и ресурсы.
+  skills: соответствие метода цели обучения.
+  tasks: подобрать правильный эксперимент.
+  with: pm-skills/pol-probe
+
+pm-skills/porters-five-forces:
+  cat: strategy
+  what: Анализ отрасли по пяти силам Портера с сигналами по каждой оценке.
+  skills: структура отрасли; пул прибыли.
+  tasks: оценить привлекательность рынка.
+  with: pm-skills/market-landscape-scan pm-skills/swot-analysis
+
+pm-skills/positioning-statement:
+  cat: marketing
+  what: Позиционирование в стиле Джеффри Мура.
+  skills: для кого; какая проблема; категория; отличие.
+  tasks: сформулировать позиционирование.
+  with: pm-skills/positioning-workshop marketing/product-marketing
+
+pm-skills/positioning-workshop:
+  cat: marketing
+  what: Воркшоп по позиционированию.
+  skills: целевой клиент; потребность; категория; выгоды; отличия.
+  tasks: когда сообщения о продукте звучат плоско.
+  with: pm-skills/positioning-statement claude-skills/marketing-strategy-pmm
+
+pm-skills/prd-development:
+  cat: product
+  what: Структурированный PRD — проблема, пользователи, решение, критерии успеха.
+  skills: от заметок discovery к документу для разработки.
+  tasks: написать полноценный PRD.
+  with: pm-setup/prd-writer pm-skills/user-story
+
+pm-skills/press-release:
+  cat: product
+  what: Пресс-релиз в стиле Amazon до начала разработки.
+  skills: определение ценности для клиента заранее.
+  tasks: согласовать видение нового продукта.
+  with: pm-skills/prd-development marketing/public-relations
+
+pm-skills/pricing-packaging-tracker:
+  cat: strategy
+  what: Отслеживание цен и упаковки конкурентов как временного ряда.
+  skills: тарифы, ограничения, изменения цен.
+  tasks: мониторить цены конкурентов ежемесячно.
+  with: pm-skills/competitive-intel-watch marketing/pricing
+
+pm-skills/prioritization-advisor:
+  cat: product
+  what: Выбор фреймворка приоритизации — RICE, ICE, ценность и усилия и др.
+  skills: подбор метода под стадию и контекст.
+  tasks: решить, как приоритизировать бэклог.
+  with: claude-skills/product-manager-toolkit pm-skills/feature-investment-advisor
+
+pm-skills/problem-framing-canvas:
+  cat: product
+  what: Канва постановки проблемы MITRE.
+  skills: чёткая формулировка проблемы до решений.
+  tasks: не бросаться к решению раньше времени.
+  with: pm-skills/problem-statement pm-skills/lean-ux-canvas
+
+pm-skills/problem-statement:
+  cat: product
+  what: Формулировка проблемы с позиции пользователя.
+  skills: кто заблокирован; что пытается сделать; почему важно; что чувствует.
+  tasks: зафиксировать проблему для discovery.
+  with: pm-skills/jobs-to-be-done pm-skills/problem-framing-canvas
+
+pm-skills/product-lifecycle-plays:
+  cat: product
+  what: Стадия жизненного цикла продукта и выбор хода — продление, замена или вывод.
+  skills: стратегии зрелых и угасающих продуктов.
+  tasks: решить, что делать со зрелым продуктом.
+  with: pm-skills/lifecycle-play-advisor
+
+pm-skills/product-sense-interview-answer:
+  cat: career
+  what: Структура устного ответа на продуктовом собеседовании.
+  skills: допущения; сегментация; приоритизация болей; компромиссы MVP.
+  tasks: подготовиться к product sense интервью.
+  with: career/mock-interview-coach
+
+pm-skills/product-strategy-session:
+  cat: product
+  what: Сквозная сессия продуктовой стратегии — позиционирование, discovery, roadmap.
+  skills: проверенное направление до обязательств.
+  tasks: определить стратегию продукта.
+  with: pm-skills/positioning-workshop pm-skills/roadmap-planning
+
+pm-skills/proto-persona:
+  cat: product
+  what: Прото-персона на основе текущих данных и знаний команды.
+  skills: рабочий профиль клиента до глубоких исследований.
+  tasks: быстро определить целевого пользователя.
+  with: claude-skills/ux-researcher-designer pm-skills/jobs-to-be-done
+
+pm-skills/recommendation-canvas:
+  cat: product
+  what: Оценка ИИ-идеи продукта по результатам, гипотезам, рискам и позиционированию.
+  skills: стоит ли ИИ-решение инвестиций.
+  tasks: обосновать или отклонить ИИ-фичу.
+  with: pm-skills/derisk-measurement-advisor claude-skills/chief-ai-officer-advisor
+
+pm-skills/roadmap-planning:
+  cat: product
+  what: Стратегический roadmap — приоритеты, эпики, согласование, последовательность.
+  skills: от стратегии к плану релизов.
+  tasks: составить roadmap.
+  with: pm-skills/prioritization-advisor claude-skills/roadmap-communicator
+
+pm-skills/saas-economics-efficiency-metrics:
+  cat: finance
+  what: Юнит-экономика и эффективность капитала SaaS.
+  skills: CAC payback, burn multiple и др.
+  tasks: понять, может ли бизнес эффективно масштабироваться.
+  with: pm-skills/saas-revenue-growth-metrics claude-skills/saas-metrics-coach
+
+pm-skills/saas-revenue-growth-metrics:
+  cat: finance
+  what: Метрики выручки, удержания и роста SaaS.
+  skills: моментум; отток; расширение; сигналы PMF.
+  tasks: диагностировать рост бизнеса.
+  with: pm-skills/business-health-diagnostic
+
+pm-skills/skill-authoring-workflow:
+  cat: claude-setup
+  what: Превращение сырого PM-контента в готовый к публикации навык.
+  skills: соблюдение стандартов репозитория.
+  tasks: оформить навык правильно.
+  with: pm-skills/pm-skill-creator
+
+pm-skills/stakeholder-engagement-advisor:
+  cat: product
+  what: План взаимодействия с конкретным стейкхолдером.
+  skills: подготовка к разговору; работа с сопротивлением.
+  tasks: выстроить важные отношения перед ключевым этапом.
+  with: pm-skills/stakeholder-mapping
+
+pm-skills/stakeholder-identification:
+  cat: product
+  what: Выявление всех стейкхолдеров до начала взаимодействия.
+  skills: полная карта заинтересованных сторон.
+  tasks: запустить инициативу без сюрпризов.
+  with: pm-skills/stakeholder-mapping
+
+pm-skills/stakeholder-mapping:
+  cat: product
+  what: Приоритизация стейкхолдеров по двум сеткам.
+  skills: стратегия вовлечения; чей голос усилить.
+  tasks: понять, с кем и как работать.
+  with: pm-skills/stakeholder-identification pm-skills/stakeholder-engagement-advisor
+
+pm-skills/storyboard:
+  cat: product
+  what: Сторибординг из шести кадров — путь пользователя от проблемы к решению.
+  skills: быстрый визуальный нарратив.
+  tasks: согласовать концепцию с командой.
+  with: pm-skills/customer-journey-map
+
+pm-skills/swot-analysis:
+  cat: strategy
+  what: SWOT компании по публичным источникам с перекрёстными выводами S-O и W-T.
+  skills: доказательный SWOT.
+  tasks: стратегический обзор своей компании или конкурента.
+  with: pm-skills/pestel-analysis pm-skills/porters-five-forces
+
+pm-skills/tam-sam-som-calculator:
+  cat: strategy
+  what: Расчёт TAM, SAM и SOM с явными допущениями и оговорками.
+  skills: методы оценки рынка.
+  tasks: оценить рынок для бизнес-кейса.
+  with: claude-skills/market-research pm-skills/market-landscape-scan
+
+pm-skills/user-story:
+  cat: product
+  what: Пользовательские истории в формате Майка Кона с критериями приёмки на Gherkin.
+  skills: истории, готовые к разработке.
+  tasks: превратить потребности в задачи.
+  with: pm-skills/user-story-splitting claude-skills/agile-product-owner
+
+pm-skills/user-story-mapping:
+  cat: product
+  what: Карта пользовательских историй — активности, шаги, задачи, релизные срезы.
+  skills: планирование MVP вокруг пути пользователя.
+  tasks: спланировать бэклог.
+  with: pm-skills/user-story-mapping-workshop pm-skills/user-story
+
+pm-skills/user-story-mapping-workshop:
+  cat: product
+  what: Воркшоп по карте историй с адаптивными вопросами.
+  skills: опорные активности; срезы релизов.
+  tasks: провести командную сессию по story mapping.
+  with: pm-skills/user-story-mapping pm-skills/workshop-facilitation
+
+pm-skills/user-story-splitting:
+  cat: product
+  what: Разбиение большой истории или эпика на поставляемые части.
+  skills: проверенные паттерны разбиения.
+  tasks: когда история слишком велика.
+  with: pm-skills/epic-breakdown-advisor
+
+pm-skills/voice-of-customer-miner:
+  cat: research
+  what: Анализ отзывов, магазинов приложений и форумов — неудовлетворённые потребности и слабости конкурентов.
+  skills: цитаты как доказательства; триггеры переключения.
+  tasks: узнать, чего хотят клиенты, без интервью.
+  with: marketing/customer-research pm-skills/jobs-to-be-done
+
+pm-skills/vp-cpo-readiness-advisor:
+  cat: career
+  what: Переход на позицию VP или CPO — подготовка, собеседования, первые месяцы.
+  skills: рост исполнительного масштаба.
+  tasks: вырасти до руководителя продукта.
+  with: pm-skills/executive-onboarding-playbook pm-skills/director-readiness-advisor
+
+pm-skills/workshop-facilitation:
+  cat: project
+  what: Проведение воркшопов в многоходовом формате.
+  skills: темп; варианты; отслеживание прогресса.
+  tasks: провести интерактивную командную сессию.
+  with: pm-skills/positioning-workshop pm-skills/user-story-mapping-workshop
+
+pm-setup/competitive-analysis:
+  cat: strategy
+  what: Конкурентный анализ по запросу «проанализируй конкурента» или «сравни нас с компанией».
+  skills: структурированное сравнение.
+  tasks: быстро разобрать конкурента.
+  with: claude-skills/competitive-teardown pm-skills/competitive-research-snapshot
+
+pm-setup/launch-checklist:
+  cat: product
+  what: Чек-лист готовности к запуску.
+  skills: предзапусковая проверка.
+  tasks: убедиться, что всё готово к релизу.
+  with: marketing/launch claude-skills/launch-strategy
+
+pm-setup/metrics-definer:
+  cat: product
+  what: Определение метрик успеха фичи или инициативы.
+  skills: KPI; что измерять.
+  tasks: понять, как измерить успех.
+  with: claude-skills/product-analytics
+
+pm-setup/prd-writer:
+  cat: product
+  what: Короткий PRD на 2–3 страницы — чёткий, с примерами.
+  skills: one-pager; спецификация фичи.
+  tasks: быстро написать PRD.
+  with: pm-skills/prd-development pm-skills/user-story
+
+pm-setup/sprint-planner:
+  cat: project
+  what: Планирование спринта и организация бэклога.
+  skills: что брать в работу.
+  tasks: собрать план спринта.
+  with: claude-skills/scrum-master claude-skills/agile-product-owner
+
+pm-setup/user-research:
+  cat: product
+  what: Синтез исследований и интервью.
+  skills: выводы из интервью; находки.
+  tasks: превратить интервью в инсайты.
+  with: claude-skills/interview-mapper pm-skills/discovery-interview-prep
+
+career/academic-research-cv:
+  cat: career
+  what: Академическое резюме для исследовательских и преподавательских позиций.
+  skills: публикации, гранты, преподавание, служение по нормам дисциплины.
+  tasks: подготовить CV для научной карьеры.
+  with: career/cover-letter-writer academic/academic-paper
+
+career/ats-resume-checker:
+  cat: career
+  what: Проверка и исправление резюме для систем ATS.
+  skills: проблемы форматирования; пункты с метриками; ключевые слова вакансии; оценка готовности.
+  tasks: чтобы резюме проходило автоматический отбор.
+  with: career/resume-customizer career/job-fit-analyzer
+
+career/career-pivot-planner:
+  cat: career
+  what: Пошаговый план смены карьеры.
+  skills: переносимые навыки; перевод опыта в новую отрасль; история перехода; мосты.
+  tasks: сменить профессию или отрасль.
+  with: career/linkedin-profile-booster career/resume-customizer
+
+career/compensation-negotiator:
+  cat: career
+  what: Переговоры о полном пакете компенсации.
+  skills: рыночные ставки; письмо с контрпредложением; разбор total comp; сравнение офферов.
+  tasks: получить лучшую зарплату и условия.
+  with: career/mock-interview-coach
+
+career/cover-letter-writer:
+  cat: career
+  what: Персонализированные сопроводительные письма.
+  skills: связь опыта с требованиями; цепляющее начало; объяснение пробелов.
+  tasks: написать письмо под вакансию.
+  with: career/resume-customizer career/job-fit-analyzer
+
+career/executive-leadership-resume:
+  cat: career
+  what: Резюме для позиций VP, директора и C-level.
+  skills: лидерский бренд; истории трансформаций; метрики P&L.
+  tasks: подготовить резюме руководителя.
+  with: career/linkedin-profile-booster pm-skills/vp-cpo-readiness-advisor
+
+career/job-fit-analyzer:
+  cat: career
+  what: Анализ вакансии на соответствие вам.
+  skills: оценка совпадения; пробелы в навыках; красные флаги; стоит ли откликаться.
+  tasks: решить, подаваться ли на вакансию.
+  with: career/resume-customizer pm-skills/company-research
+
+career/linkedin-profile-booster:
+  cat: career
+  what: Профиль LinkedIn для рекрутеров.
+  skills: заголовок; раздел «О себе»; ключевые слова; полнота профиля.
+  tasks: чтобы рекрутеры находили вас.
+  with: claude-skills/linkedin-profile career/career-pivot-planner
+
+career/mock-interview-coach:
+  cat: career
+  what: Тренировочные собеседования с ИИ-коучем.
+  skills: истории по STAR; поведенческие ответы; «расскажите о себе»; подготовка рекомендателей.
+  tasks: подготовиться к собеседованию.
+  with: pm-skills/product-sense-interview-answer career/compensation-negotiator
+
+career/portfolio-case-study:
+  cat: career
+  what: Кейсы для портфолио и креативные резюме, совместимые с ATS.
+  skills: история проекта; результаты до и после.
+  tasks: показать работу так, чтобы звали на интервью.
+  with: career/ats-resume-checker
+
+career/resume-customizer:
+  cat: career
+  what: Адаптация резюме под вакансию.
+  skills: порядок разделов; ключевые слова; версии резюме; оценка совпадения.
+  tasks: подогнать резюме под конкретную позицию.
+  with: career/ats-resume-checker career/cover-letter-writer
+
+career/software-engineer-resume:
+  cat: career
+  what: Резюме разработчика, которое приводит к собеседованиям.
+  skills: стек; пункты с метриками; проекты; профиль GitHub.
+  tasks: составить сильное резюме инженера.
+  with: career/ats-resume-checker career/portfolio-case-study
+
+academic/academic-paper:
+  cat: research
+  what: Конвейер написания научной статьи из 12 агентов с 11 режимами.
+  skills: план, структура, ревизия, аннотация, обзор литературы, конвертация формата, проверка цитат.
+  tasks: написать или доработать научную статью.
+  with: academic/academic-paper-reviewer academic/academic-pipeline
+
+academic/academic-paper-reviewer:
+  cat: research
+  what: Многостороннее рецензирование статьи панелью из пяти ролей.
+  skills: соответствие журналу; рецензенты по методам и предмету; редакторское решение.
+  tasks: получить рецензию до подачи в журнал.
+  with: academic/academic-paper ecc/scientific-thinking-scholar-evaluation
+
+academic/academic-pipeline:
+  cat: research
+  what: Оркестратор полного научного конвейера — исследование, написание, проверка, рецензия, доработки.
+  skills: этапы с проверками добросовестности.
+  tasks: пройти путь от идеи до готовой статьи.
+  with: academic/deep-research academic/academic-paper academic/academic-paper-reviewer
+
+academic/deep-research:
+  cat: research
+  what: Команда из 13 агентов для строгого академического исследования любой темы.
+  skills: 8 режимов — полное исследование, краткий бриф, разбор статьи и др.
+  tasks: провести глубокое исследование с академической строгостью.
+  with: academic/academic-pipeline ecc/deep-research
+
+academic/sr-screener:
+  cat: research
+  what: Отбор исследований для систематических, обзорных и быстрых обзоров по протоколу.
+  skills: правила включения из протокола или PROSPERO; скрининг.
+  tasks: провести отбор статей для систематического обзора.
+  with: claude-skills/litreview ecc/scientific-thinking-literature-review

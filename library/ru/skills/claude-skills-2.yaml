@@ -1,0 +1,909 @@
+claude-skills/deep-learning-book:
+  cat: ai-agents
+  what: Изучение и применение учебника «Deep Learning» Гудфеллоу, Бенжио и Курвилля с оценкой актуальности советов.
+  skills: указатель по всем 20 главам; что устарело, а что работает.
+  tasks: разобраться в теории глубокого обучения.
+  with: ecc/pytorch-patterns claude-skills/spinning-up-deep-rl
+
+claude-skills/deep-work:
+  cat: productivity
+  what: Планирование дня глубокой работы — тайм-блоки, бюджет поверхностной работы, защита часов фокуса.
+  skills: блокировка календаря; сокращение мелких задач; отслеживание фокуса.
+  tasks: организовать продуктивный день без отвлечений.
+  with: claude-skills/weekly-review claude-skills/capture
+
+claude-skills/deepread:
+  cat: research
+  what: Глубокое чтение книги, статьи, PDF или набора документов.
+  skills: извлечение утверждений и доказательств; карта знаний; обучение по тексту.
+  tasks: по-настоящему понять сложный материал.
+  with: claude-skills/research-summarizer claude-skills/llm-wiki
+
+claude-skills/demo-video:
+  cat: media
+  what: Демо-видео, обзор продукта или GIF по скриншотам или описанию сцен.
+  skills: оркестрация Playwright и монтажа; сценарий показа.
+  tasks: сделать видеопрезентацию фичи.
+  with: ecc/ui-demo ecc/video-editing
+
+claude-skills/dependency-auditor:
+  cat: security
+  what: Аудит зависимостей проекта на уязвимости CVE и лицензии с планом безопасного обновления.
+  skills: сканирование пакетов; проверка лицензий; план апгрейда.
+  tasks: убедиться, что зависимости безопасны перед релизом.
+  with: claude-skills/senior-secops ecc/security-scan
+
+claude-skills/design-qa:
+  cat: dev-frontend
+  what: Финальная проверка дизайна экрана или компонента перед сдачей.
+  skills: поиск «шаблонности» и недоделок в сгенерированном UI; чек-лист качества.
+  tasks: не выпустить сырой интерфейс.
+  with: ecc/make-interfaces-feel-better claude-skills/ui-design-system
+
+claude-skills/design-system:
+  cat: docs
+  what: Настройка брендовых параметров перед конвертацией markdown в HTML.
+  skills: онбординг из 10 вопросов; цвета, шрифты, стиль страниц.
+  tasks: задать единый стиль для HTML-документов.
+  with: claude-skills/markdown-html-orchestrator claude-skills/md-document
+
+claude-skills/docker-development:
+  cat: devops
+  what: Написание, оптимизация и ревью Dockerfile и docker-compose.
+  skills: слои и кэширование; размер образа; безопасность.
+  tasks: сделать контейнер меньше, быстрее и безопаснее.
+  with: ecc/docker-patterns claude-skills/senior-devops
+
+claude-skills/dossier:
+  cat: research
+  what: Досье на компанию, человека или организацию для due diligence или подготовки к встрече.
+  skills: проверка фактов; ключевые сведения; вопросы к встрече.
+  tasks: подготовиться к переговорам или проверить контрагента.
+  with: ecc/osint-investigation ecc/market-research
+
+claude-skills/email-sequence:
+  cat: marketing
+  what: Цепочки писем для подписчиков — приветственные, прогревающие, онбординг, реактивация.
+  skills: тайминг; триггеры; содержание писем.
+  tasks: настроить автоматическую email-рассылку.
+  with: marketing/emails claude-skills/copywriting
+
+claude-skills/email-template-builder:
+  cat: dev-backend
+  what: Транзакционные письма — шаблоны React Email, Resend, Postmark, SendGrid, SES.
+  skills: превью; локализация; тёмная тема; доставляемость.
+  tasks: сделать красивые и доставляемые системные письма.
+  with: ecc/mailtrap-email-integration
+
+claude-skills/embedded-iot-mentor:
+  cat: dev-backend
+  what: Наставник по встраиваемым и IoT-проектам — ESP32, STM32, Arduino, Pico.
+  skills: прошивки; печатные платы; MQTT; Home Assistant; дашборды датчиков.
+  tasks: собрать и запрограммировать устройство.
+  with: ecc/homelab-network-setup
+
+claude-skills/engineering-advanced-skills:
+  cat: eng-process
+  what: Выбор подходящего продвинутого инженерного навыка — агенты, RAG, MCP, CI/CD, БД, наблюдаемость, релизы.
+  skills: маршрутизация по навыкам.
+  tasks: понять, какой навык использовать.
+  with: claude-skills/engineering-skills
+
+claude-skills/engineering-skills:
+  cat: eng-process
+  what: Выбор инженерного навыка под задачу — архитектура, фронтенд, бэкенд, QA, DevOps, безопасность, ML, данные, облака.
+  skills: маршрутизация по навыкам инженерной команды.
+  tasks: найти правильного «специалиста» для задачи.
+  with: claude-skills/engineering-advanced-skills
+
+claude-skills/env-secrets-manager:
+  cat: security
+  what: Аудит .env, ротация учётных данных, поиск пропавших переменных, защита от утечек секретов.
+  skills: проверка секретов; план ротации.
+  tasks: навести порядок с секретами проекта.
+  with: claude-skills/secrets-vault-manager ecc/security-review
+
+claude-skills/epic-design:
+  cat: dev-frontend
+  what: Кинематографичный дизайн лендингов и hero-блоков — параллакс, scrollytelling, наложения.
+  skills: эффекты прокрутки; визуальная драматургия.
+  tasks: сделать впечатляющую посадочную страницу.
+  with: claude-skills/landing ecc/motion-advanced
+
+claude-skills/eu-ai-act-specialist:
+  cat: compliance
+  what: Специалист по EU AI Act — класс риска, процедура оценки соответствия, техническая документация.
+  skills: классификация; маршрут по ст. 43; приложение IV.
+  tasks: привести ИИ-систему в соответствие с регламентом.
+  with: claude-skills/ai-act-readiness claude-skills/iso42001-specialist
+
+claude-skills/eval:
+  cat: ai-agents
+  what: Ранжирование агентов AgentHub по метрике или решению судьи.
+  skills: сравнение результатов агентов.
+  tasks: определить, какой агент победил.
+  with: claude-skills/agenthub claude-skills/merge
+
+claude-skills/execute:
+  cat: strategy
+  what: Превращение одобренного решения в план на 90 дней с недельными вехами и ответственными.
+  skills: план исполнения; вехи; владельцы.
+  tasks: перейти от решения к действиям.
+  with: claude-skills/decide claude-skills/post-mortem
+
+claude-skills/executive-mentor:
+  cat: strategy
+  what: Наставник руководителя — стресс-тест плана, трудные решения, подготовка к сложному совету, честный разбор.
+  skills: жёсткие вопросы; разбор ошибок.
+  tasks: получить честную обратную связь по важному решению.
+  with: claude-skills/founder-coach claude-skills/hard-call
+
+claude-skills/experiment-designer:
+  cat: product
+  what: Планирование A/B-тестов и продуктовых экспериментов.
+  skills: гипотезы; размер выборки; приоритет; чтение результатов.
+  tasks: понять, сколько гнать тест и победил ли вариант.
+  with: claude-skills/statistical-analyst claude-skills/ab-test-setup
+
+claude-skills/extract:
+  cat: claude-setup
+  what: Превращение повторяющегося исправления или паттерна в переиспользуемый навык.
+  skills: SKILL.md; справочные документы; примеры.
+  tasks: сохранить находку как навык.
+  with: claude-skills/write-a-skill claude-skills/promote
+
+claude-skills/fable-goal:
+  cat: ai-agents
+  what: Написание промпта-цели для команды /goal вместо самой реализации.
+  skills: формулировка цели; критерии готовности.
+  tasks: поставить агенту долгую цель правильно.
+  with: ecc/prompt-optimizer
+
+claude-skills/fda-consultant-specialist:
+  cat: compliance
+  what: Консультант по FDA для медизделий.
+  skills: 510(k), De Novo или PMA; предикаты; QMSR (21 CFR 820); кибербезопасность устройств.
+  tasks: выбрать путь регистрации медизделия в США.
+  with: claude-skills/regulatory-affairs-head claude-skills/fda-qsr-audit-prep
+
+claude-skills/fda-qsr-audit-prep:
+  cat: compliance
+  what: Подготовка к инспекции FDA, внутреннему аудиту QMSR или ответу на форму 483.
+  skills: чек-листы; доказательства; ответы на замечания.
+  tasks: пройти инспекцию FDA.
+  with: claude-skills/fda-consultant-specialist claude-skills/qms-audit-expert
+
+claude-skills/feature-flags-architect:
+  cat: devops
+  what: Флаги функций и аварийные выключатели — внедрение, раскатка, удаление.
+  skills: план раскатки; борьба с долгом флагов.
+  tasks: безопасно выкатывать фичи постепенно.
+  with: ecc/deployment-patterns claude-skills/experiment-designer
+
+claude-skills/finance-skills:
+  cat: finance
+  what: Выбор финансового навыка — коэффициенты, DCF, прогнозы, SaaS-метрики, закрытие месяца.
+  skills: маршрутизация по финансовым навыкам.
+  tasks: понять, какой навык нужен для финансового вопроса.
+  with: claude-skills/financial-analyst claude-skills/saas-metrics-coach
+
+claude-skills/financial-analyst:
+  cat: finance
+  what: Анализ отчётности, оценка компании по DCF, анализ отклонений бюджета, скользящие прогнозы.
+  skills: финансовые коэффициенты; DCF; прогнозирование.
+  tasks: понять финансовое состояние и стоимость компании.
+  with: claude-skills/cfo-advisor claude-skills/stock-analysis
+
+claude-skills/fix:
+  cat: testing
+  what: Диагностика и исправление падающего или нестабильного Playwright-теста.
+  skills: поиск причины флаки; стабилизация.
+  tasks: починить сломанный E2E-тест.
+  with: claude-skills/pw ecc/e2e-testing
+
+claude-skills/focused-fix:
+  cat: eng-process
+  what: Исправление целиком сломанной фичи или модуля.
+  skills: карта всех файлов и зависимостей; сквозное исправление.
+  tasks: заставить работать сломанный модуль.
+  with: claude-skills/red-green-proof ecc/orch-fix-defect
+
+claude-skills/form-cro:
+  cat: marketing
+  what: Оптимизация форм заявки, контакта, демо и оформления заказа.
+  skills: оценка трения полей; сокращение полей; тексты формы.
+  tasks: повысить конверсию формы.
+  with: claude-skills/page-cro marketing/cro
+
+claude-skills/founder-coach:
+  cat: strategy
+  what: Коучинг основателя, который стал узким местом, не делегирует или выгорает.
+  skills: делегирование; аудит энергии и календаря; переход от исполнителя к CEO.
+  tasks: разгрузить основателя.
+  with: claude-skills/executive-mentor claude-skills/ceo-advisor
+
+claude-skills/founder-mode:
+  cat: strategy
+  what: Маршрутизация стратегического вопроса основателя к нужному советнику C-suite.
+  skills: выбор советника или совещания.
+  tasks: получить совет, когда непонятно, к кому идти.
+  with: claude-skills/chief-of-staff claude-skills/office-hours
+
+claude-skills/free-tool-strategy:
+  cat: marketing
+  what: Бесплатный инструмент как маркетинговый актив — калькулятор, грейдер, генератор.
+  skills: оценка трафика, лидов и затрат.
+  tasks: решить, стоит ли делать бесплатный инструмент.
+  with: marketing/free-tools claude-skills/programmatic-seo
+
+claude-skills/freeze:
+  cat: strategy
+  what: «Заморозка» необратимого решения, принятого под давлением, на период остывания.
+  skills: защита от поспешных решений.
+  tasks: не принимать необратимое решение сгоряча.
+  with: claude-skills/hard-call claude-skills/decide
+
+claude-skills/full-page-screenshot:
+  cat: testing
+  what: Полностраничные скриншоты веб-страниц.
+  skills: прокрутка в SPA; ленивые изображения; очень длинные страницы.
+  tasks: сделать скриншот всей страницы.
+  with: ecc/browser-qa
+
+claude-skills/gc-review:
+  cat: compliance
+  what: Критика term sheet, договора с клиентом, передачи IP или регуляторных рисков перед подписанием.
+  skills: позиция главного юриста.
+  tasks: проверить документ до подписи.
+  with: claude-skills/general-counsel-advisor
+
+claude-skills/gcp-cloud-architect:
+  cat: devops
+  what: Проектирование, развёртывание и снижение стоимости в Google Cloud.
+  skills: Cloud Run, GKE, Functions, Cloud SQL, BigQuery; миграция в GCP.
+  tasks: построить решение в GCP.
+  with: claude-skills/aws-solution-architect claude-skills/cloud-security
+
+claude-skills/gdpr-audit-prep:
+  cat: compliance
+  what: Подготовка к проверке по GDPR, аудиту после утечки или расследованию регулятора.
+  skills: чек-лист доказательств; пробелы.
+  tasks: пройти проверку GDPR.
+  with: claude-skills/gdpr-dsgvo-expert
+
+claude-skills/gdpr-dsgvo-expert:
+  cat: compliance
+  what: Работа по GDPR — сканирование кода на риски приватности, DPIA, запросы субъектов данных.
+  skills: оценка воздействия; сроки ответа по ст. 12(3).
+  tasks: обеспечить соответствие продукта GDPR.
+  with: claude-skills/gdpr-audit-prep ecc/healthcare-phi-compliance
+
+claude-skills/general-counsel-advisor:
+  cat: compliance
+  what: Юридический советник — договоры и term sheet, стратегия IP, регуляторные риски.
+  skills: MSA, SaaS, NDA, DPA, трудовые договоры; HIPAA, GDPR, FDA, финтех.
+  tasks: проверить договор или оценить правовой риск.
+  with: claude-skills/gc-review claude-skills/contract-and-proposal-writer
+
+claude-skills/generate:
+  cat: testing
+  what: Написание Playwright-тестов для страницы, компонента или фичи.
+  skills: генерация E2E-тестов по описанию.
+  tasks: быстро добавить E2E-тесты.
+  with: claude-skills/pw ecc/e2e-testing
+
+claude-skills/git-worktree-manager:
+  cat: eng-process
+  what: Параллельная работа нескольких веток или агентов в одном репозитории через worktree.
+  skills: изолированные порты и окружения.
+  tasks: запустить несколько агентов без конфликтов.
+  with: ecc/claude-devfleet ecc/team-agent-orchestration
+
+claude-skills/google-workspace-cli:
+  cat: productivity
+  what: Администрирование и автоматизация Google Workspace через gws CLI.
+  skills: Gmail, Drive, Sheets, Calendar, Docs, Chat, Tasks; настройка авторизации.
+  tasks: автоматизировать работу с Google Workspace из терминала.
+  with: ecc/google-workspace-ops
+
+claude-skills/grade-iterate:
+  cat: ai-agents
+  what: Оценка запущенного управляемого агента по рубрике и его улучшение.
+  skills: рубрика результата; итерации улучшения.
+  tasks: понять, достаточно ли хорош агент.
+  with: claude-skills/agent-launcher-orchestrator claude-skills/run-without-you
+
+claude-skills/grants:
+  cat: research
+  what: Поиск грантов NIH под исследование.
+  skills: подбор институтов и секций; объявления о финансировании.
+  tasks: найти источник финансирования исследования.
+  with: claude-skills/litreview academic/academic-pipeline
+
+claude-skills/grill-me:
+  cat: eng-process
+  what: Неустанные вопросы о плане или дизайне до полного взаимопонимания.
+  skills: проход по дереву решений.
+  tasks: проверить, всё ли продумано в плане.
+  with: claude-skills/grill-with-docs ecc/council
+
+claude-skills/grill-with-docs:
+  cat: eng-process
+  what: Стресс-тест плана против собственной документации проекта — глоссария и ADR.
+  skills: сверка с CONTEXT.md и docs/adr.
+  tasks: убедиться, что план не противоречит принятым решениям.
+  with: claude-skills/grill-me ecc/context-and-decisions
+
+claude-skills/handoff:
+  cat: productivity
+  what: Сжатие текущего разговора в документ передачи для другого агента.
+  skills: ссылки на PRD, планы, ADR и задачи.
+  tasks: передать работу без потери контекста.
+  with: claude-skills/session-handoff ecc/unified-memory
+
+claude-skills/hard-call:
+  cat: strategy
+  what: Решение, когда все варианты болезненны.
+  skills: метод 10/10/10; минимизация сожалений.
+  tasks: выбрать между сокращениями и плохим раундом, закрыть любимый продукт.
+  with: claude-skills/freeze claude-skills/executive-mentor
+
+claude-skills/helm-chart-builder:
+  cat: devops
+  what: Создание, ревью и защита Helm-чартов.
+  skills: values.yaml; шаблоны; сабчарты; RBAC; безопасность подов.
+  tasks: упаковать приложение для Kubernetes.
+  with: ecc/kubernetes-patterns claude-skills/kubernetes-operator
+
+claude-skills/hivemind:
+  cat: ai-agents
+  what: Делегирование рутины бесплатным воркерам opencode вместо токенов Claude.
+  skills: один воркер или рой разведчик–кодер–тестировщик.
+  tasks: сэкономить на рутинных задачах.
+  with: ecc/cost-aware-llm-pipeline ecc/dmux-workflows
+
+claude-skills/hub-init:
+  cat: ai-agents
+  what: Старт соревнования агентов AgentHub — задача, число агентов, критерии оценки.
+  skills: настройка соревнования.
+  tasks: запустить конкурс решений между агентами.
+  with: claude-skills/hub-run claude-skills/agenthub
+
+claude-skills/hub-run:
+  cat: ai-agents
+  what: Полный прогон соревнования AgentHub — инициализация, базовая линия, запуск, оценка, слияние.
+  skills: сквозной конвейер соревнования.
+  tasks: получить лучшее решение из нескольких агентов.
+  with: claude-skills/hub-init claude-skills/eval claude-skills/merge
+
+claude-skills/hub-status:
+  cat: ai-agents
+  what: Прогресс агентов AgentHub, ветки и состояние графа.
+  skills: мониторинг соревнования.
+  tasks: узнать, как идут агенты.
+  with: claude-skills/hub-run
+
+claude-skills/human-gate:
+  cat: eng-process
+  what: Страница ревью для одобрения человеком перед необратимым действием.
+  skills: план, спецификация, отчёт, миграция на подпись.
+  tasks: получить явное одобрение перед выпуском.
+  with: ecc/operator-approval-loop ecc/plan-canvas
+
+claude-skills/i18n-localization:
+  cat: docs
+  what: Интернационализация приложения — новые строки, новые языки, ревью переводов.
+  skills: пропущенные ключи; плейсхолдеры; встраивание i18n.
+  tasks: подготовить приложение к нескольким языкам.
+  with: ecc/i18n-sync
+
+claude-skills/inbox-setup:
+  cat: productivity
+  what: Первичная настройка сортировки почты через интервью о приоритетах.
+  skills: база знаний для разбора входящих.
+  tasks: настроить автоматический разбор почты.
+  with: claude-skills/inbox-triage
+
+claude-skills/inbox-triage:
+  cat: productivity
+  what: Разбор входящих писем по вашей базе приоритетов.
+  skills: классификация писем; что ответить, что отложить.
+  tasks: быстро обработать почту.
+  with: claude-skills/inbox-setup ecc/email-ops
+
+claude-skills/incident-commander:
+  cat: devops
+  what: Управление инцидентом в продакшене и разбор после него.
+  skills: классификация серьёзности; координация; post-incident review.
+  tasks: провести команду через сбой и сделать выводы.
+  with: claude-skills/runbook-generator claude-skills/observability-designer
+
+claude-skills/incident-response:
+  cat: security
+  what: Реагирование на подозрение во взломе по NIST SP 800-61.
+  skills: триаж; уровни SEV1–SEV4; эскалация; сбор цифровых улик.
+  tasks: действовать при подозрении на утечку или атаку.
+  with: claude-skills/threat-detection claude-skills/senior-secops
+
+claude-skills/information-security-manager-iso27001:
+  cat: compliance
+  what: Построение и ведение СУИБ по ISO 27001 в HealthTech и MedTech.
+  skills: оценка рисков; внедрение контролей; сертификация.
+  tasks: выстроить систему управления информационной безопасностью.
+  with: claude-skills/isms-audit-expert claude-skills/iso27001-audit-prep
+
+claude-skills/internal-comms:
+  cat: project
+  what: Внутренние объявления — реорганизация, новые инструменты, политика, смена руководства, сокращения, поглощение.
+  skills: структура объявления; FAQ; план коммуникаций.
+  tasks: сообщить команде о важных изменениях.
+  with: claude-skills/change-management claude-skills/team-communications
+
+claude-skills/internal-narrative:
+  cat: strategy
+  what: Единый нарратив компании для общих собраний, инвесторов, найма и кризисов.
+  skills: согласование историй для разных аудиторий.
+  tasks: рассказывать о компании последовательно.
+  with: claude-skills/board-deck-builder claude-skills/internal-comms
+
+claude-skills/interview:
+  cat: ai-agents
+  what: Интервью для определения рамок агента перед запуском.
+  skills: одна задача агента; лист сборки.
+  tasks: продумать агента до его создания.
+  with: claude-skills/stage-launch claude-skills/agent-launcher-orchestrator
+
+claude-skills/interview-mapper:
+  cat: research
+  what: Кодирование транскрипта интервью — клиентского, JTBD, экспертного, юзабилити, выходного.
+  skills: выдержки с цитатами; темы; инсайты.
+  tasks: разобрать интервью на факты и выводы.
+  with: claude-skills/product-research pm-setup/user-research
+
+claude-skills/interview-system-designer:
+  cat: career
+  what: Проектирование процесса найма — этапы интервью, матрица компетенций, рубрики, банк вопросов.
+  skills: калибровка интервьюеров; оценочные рубрики.
+  tasks: выстроить честный и эффективный найм.
+  with: claude-skills/chro-advisor
+
+claude-skills/intl-expansion:
+  cat: strategy
+  what: Выход на новую страну — выбор рынка, способ входа, локализация, регулирование, региональный GTM.
+  skills: оценка рынков; модели входа.
+  tasks: спланировать международную экспансию.
+  with: claude-skills/business-name-fit ecc/market-research
+
+claude-skills/isms-audit-expert:
+  cat: compliance
+  what: Аудит по ISO 27001 — внутренний или надзорный, доказательства по Приложению А, SoA, несоответствия.
+  skills: проведение аудита; классификация замечаний.
+  tasks: провести или пройти аудит ISO 27001.
+  with: claude-skills/information-security-manager-iso27001 claude-skills/iso27001-audit-prep
+
+claude-skills/iso13485-audit-prep:
+  cat: compliance
+  what: Подготовка к внутреннему аудиту ISO 13485 или закрытию DHF.
+  skills: чек-листы; сбор доказательств.
+  tasks: пройти аудит системы качества медизделий.
+  with: claude-skills/qms-audit-expert claude-skills/quality-manager-qms-iso13485
+
+claude-skills/iso27001-audit-prep:
+  cat: compliance
+  what: Подготовка к внутреннему, надзорному или первому аудиту ISO 27001.
+  skills: чек-листы; доказательства.
+  tasks: пройти аудит ISO 27001.
+  with: claude-skills/isms-audit-expert
+
+claude-skills/iso42001-specialist:
+  cat: compliance
+  what: Система управления ИИ по ISO/IEC 42001.
+  skills: анализ разрывов по разделам 4–10; реестр рисков ИИ; контроли Приложения А.
+  tasks: внедрить или проверить систему управления ИИ.
+  with: claude-skills/aims-audit claude-skills/eu-ai-act-specialist
+
+claude-skills/jira-expert:
+  cat: project
+  what: Настройка Jira и запросы — JQL, процессы, поля, автоматизация, дашборды.
+  skills: поиск и фильтры; workflow; автоматизация.
+  tasks: настроить Jira или найти нужные задачи.
+  with: claude-skills/confluence-expert ecc/jira-integration
+
+claude-skills/karpathy-coder:
+  cat: testing
+  what: Проверка диффа на переусложнение по четырём принципам Карпати.
+  skills: скрытые допущения; лишние абстракции; нехирургические правки; непроверенные цели.
+  tasks: упростить слишком «умный» код.
+  with: claude-skills/minimalist claude-skills/code-reviewer
+
+claude-skills/knowledge-ops:
+  cat: docs
+  what: Написание, проверка и чистка регламентов (SOP) и ранбуков.
+  skills: генерация SOP; проверка полноты 5W2H; ссылки.
+  tasks: навести порядок в инструкциях компании.
+  with: claude-skills/process-mapper claude-skills/runbook-generator
+
+claude-skills/kubernetes-operator:
+  cat: devops
+  what: Создание Kubernetes-операторов и CRD.
+  skills: controller-runtime, kubebuilder, operator-sdk, KOPF; валидация.
+  tasks: автоматизировать управление сервисом в кластере.
+  with: ecc/kubernetes-patterns claude-skills/helm-chart-builder
+
+claude-skills/landing:
+  cat: dev-frontend
+  what: Премиальный одностраничный HTML-лендинг с 3D CSS, эффектами GSAP и параллаксом.
+  skills: короткий бриф по позиционированию; эффекты прокрутки.
+  tasks: быстро сделать эффектную посадочную страницу.
+  with: claude-skills/epic-design claude-skills/copywriting
+
+claude-skills/landing-page-generator:
+  cat: dev-frontend
+  what: Лендинг или страница кампании как компонент Next.js на Tailwind.
+  skills: каркас страницы; секции; тексты.
+  tasks: добавить посадочную страницу в Next.js-проект.
+  with: claude-skills/page-cro claude-skills/copywriting
+
+claude-skills/launch-strategy:
+  cat: marketing
+  what: План запуска продукта или фичи — оценка готовности и поэтапный план по каналам.
+  skills: Product Hunt; поэтапный запуск; каналы.
+  tasks: спланировать запуск.
+  with: marketing/launch pm-setup/launch-checklist
+
+claude-skills/linkedin-analytics:
+  cat: marketing
+  what: Анализ эффективности постов в LinkedIn.
+  skills: почему упал охват; какие посты сработали; проверка гипотез.
+  tasks: понять, что работает в вашем LinkedIn.
+  with: claude-skills/linkedin-content claude-skills/linkedin-strategy
+
+claude-skills/linkedin-content:
+  cat: content
+  what: Посты для LinkedIn — истории, how-to, карусели, сценарии видео, опросы.
+  skills: хуки; формат; ревью черновика.
+  tasks: написать сильный пост для LinkedIn.
+  with: claude-skills/linkedin-strategy ecc/brand-voice
+
+claude-skills/linkedin-engagement:
+  cat: sales
+  what: Комментарии, запросы на связь, личные сообщения и аутрич в LinkedIn.
+  skills: выбор целей для комментариев; безопасные объёмы аутрича.
+  tasks: расширять сеть и находить клиентов в LinkedIn.
+  with: claude-skills/linkedin-profile ecc/connections-optimizer
+
+claude-skills/linkedin-profile:
+  cat: career
+  what: Аудит и переписывание профиля LinkedIn.
+  skills: заголовок; раздел «О себе»; опыт; Featured.
+  tasks: сделать профиль сильнее.
+  with: career/linkedin-profile-booster claude-skills/linkedin-strategy
+
+claude-skills/linkedin-skills:
+  cat: marketing
+  what: Маршрутизатор органического роста в LinkedIn с проверкой по правилам площадки.
+  skills: стратегия, профиль, посты, ритм, аутрич, аналитика.
+  tasks: понять, какой LinkedIn-навык нужен.
+  with: claude-skills/linkedin-strategy claude-skills/linkedin-content
+
+claude-skills/linkedin-strategy:
+  cat: marketing
+  what: План присутствия в LinkedIn — контентные столпы, позиционирование, ритм, рассылка.
+  skills: стратегия личного бренда.
+  tasks: выстроить системное ведение LinkedIn.
+  with: claude-skills/linkedin-content claude-skills/linkedin-analytics
+
+claude-skills/litreview:
+  cat: research
+  what: Обзор литературы — план поиска (PICO, SPIDER), поиск, отбор и синтез.
+  skills: выбор фреймворка; стратегии поиска; отбор источников.
+  tasks: начать литературный обзор или проект на его основе.
+  with: ecc/scientific-thinking-literature-review academic/sr-screener
+
+claude-skills/llm-cost-optimizer:
+  cat: ai-agents
+  what: Контроль затрат на LLM-функции — выбор модели, кэширование, лимиты токенов, расходы по фичам.
+  skills: маршрутизация; бюджеты; мониторинг затрат.
+  tasks: удержать стоимость ИИ-функций под контролем.
+  with: ecc/cost-aware-llm-pipeline ecc/prompt-caching-strategy
+
+claude-skills/llm-wiki:
+  cat: docs
+  what: «Второй мозг» в Obsidian, который поддерживает LLM.
+  skills: загрузка статей, книг, работ; связи между заметками.
+  tasks: вести личную базу знаний с помощью ИИ.
+  with: claude-skills/deepread ecc/knowledge-ops
+
+claude-skills/local-seo-manager:
+  cat: marketing
+  what: Локальное SEO — Google Business Profile, карты, страницы зон обслуживания, ответы на отзывы.
+  skills: ранжирование на картах; каталоги; репутация.
+  tasks: привлекать клиентов из локального поиска.
+  with: claude-skills/seo-audit ecc/seo
+
+claude-skills/loop-library:
+  cat: ai-agents
+  what: Каталог повторяемых циклов ИИ-агентов — поиск, сравнение, аудит, адаптация, проектирование.
+  skills: триггеры; действия; проверка; условия остановки.
+  tasks: подобрать или спроектировать надёжный агентный цикл.
+  with: ecc/loop-design-check ecc/continuous-agent-loop
+
+claude-skills/ma-playbook:
+  cat: strategy
+  what: Покупка или продажа компании — due diligence, оценка, условия, интеграция.
+  skills: сделки M&A; выход.
+  tasks: провести сделку слияния или поглощения.
+  with: claude-skills/financial-analyst claude-skills/general-counsel-advisor
+
+claude-skills/markdown-html-orchestrator:
+  cat: docs
+  what: Превращение markdown в одностраничный интерактивный HTML — документ, код-ревью или слайды.
+  skills: классификация документа; выбор шаблона.
+  tasks: сделать из markdown красивую веб-страницу.
+  with: claude-skills/md-document claude-skills/md-slides claude-skills/md-review
+
+claude-skills/market-research:
+  cat: research
+  what: Оценка размера рынка TAM, SAM, SOM сверху вниз и снизу вверх, выборки опросов, скоринг сегментов.
+  skills: расчёт рынка; размер выборки.
+  tasks: оценить рынок для бизнес-плана.
+  with: pm-skills/tam-sam-som-calculator ecc/market-research
+
+claude-skills/marketing-context:
+  cat: marketing
+  what: Общий маркетинговый контекст — ICP, позиционирование, голос бренда — до других маркетинговых навыков.
+  skills: документ контекста продукта.
+  tasks: начать любой маркетинговый проект с общей основы.
+  with: marketing/product-marketing claude-skills/marketing-ops
+
+claude-skills/marketing-demand-acquisition:
+  cat: marketing
+  what: Генерация спроса и платное привлечение в Google, LinkedIn, Meta, маркетинговый бюджет.
+  skills: распределение бюджета; сравнение каналов.
+  tasks: спланировать привлечение клиентов.
+  with: claude-skills/paid-ads claude-skills/campaign-analytics
+
+claude-skills/marketing-ideas:
+  cat: marketing
+  what: Идеи для маркетинга SaaS из 139 тактик по стадии, бюджету и каналу.
+  skills: подбор тактик под ситуацию.
+  tasks: найти новые способы роста.
+  with: marketing/marketing-ideas claude-skills/marketing-ops
+
+claude-skills/marketing-ops:
+  cat: marketing
+  what: Маршрутизатор сложных маркетинговых задач на несколько навыков.
+  skills: кампании через контент, SEO, CRO и каналы.
+  tasks: скоординировать многоканальную кампанию.
+  with: claude-skills/marketing-skills claude-skills/marketing-context
+
+claude-skills/marketing-psychology:
+  cat: marketing
+  what: Этичное применение психологии убеждения к странице, предложению или кампании (70+ моделей).
+  skills: поведенческая экономика; ментальные модели.
+  tasks: понять, почему люди не покупают, и что изменить.
+  with: marketing/marketing-psychology claude-skills/copywriting
+
+claude-skills/marketing-skills:
+  cat: marketing
+  what: Каталог 44 маркетинговых навыков с маршрутизацией.
+  skills: список навыков по группам.
+  tasks: найти нужный маркетинговый навык.
+  with: claude-skills/marketing-ops
+
+claude-skills/marketing-strategy-pmm:
+  cat: marketing
+  what: Продуктовое позиционирование, ICP, battlecards и план выхода на рынок по методу Эйприл Данфорд.
+  skills: позиционирование; конкурентные карточки; GTM.
+  tasks: сформулировать позиционирование продукта.
+  with: pm-skills/positioning-statement claude-skills/competitive-intel
+
+claude-skills/mcp-oauth-triage:
+  cat: ai-agents
+  what: Диагностика MCP-коннектора, который перестал проходить авторизацию.
+  skills: ошибки 401; обновление токена; аномалии OAuth.
+  tasks: починить сломанный MCP-коннектор.
+  with: claude-skills/mcp-server-builder ecc/mcp-server-patterns
+
+claude-skills/mcp-server-builder:
+  cat: ai-agents
+  what: Превращение API в MCP-сервер на Python или TypeScript.
+  skills: генерация обёрток инструментов; каркас сервера.
+  tasks: подключить свой API к агентам.
+  with: ecc/mcp-server-patterns claude-skills/mcp-oauth-triage
+
+claude-skills/md-document:
+  cat: docs
+  what: Длинный markdown (спецификация, RFC, отчёт) в HTML с оглавлением, поиском и копированием кода.
+  skills: разбор структуры; навигация.
+  tasks: сделать документ удобным для чтения в браузере.
+  with: claude-skills/markdown-html-orchestrator
+
+claude-skills/md-review:
+  cat: docs
+  what: Markdown-ревью кода с диффами в двухколоночную HTML-страницу.
+  skills: разбор диффов; выделение критичности.
+  tasks: красиво оформить ревью кода.
+  with: claude-skills/markdown-html-orchestrator claude-skills/code-reviewer
+
+claude-skills/md-slides:
+  cat: media
+  what: Markdown в HTML-презентацию с навигацией с клавиатуры, заметками докладчика и печатью в PDF.
+  skills: слайды из текста.
+  tasks: быстро сделать презентацию из заметок.
+  with: claude-skills/markdown-html-orchestrator ecc/frontend-slides
+
+claude-skills/mdr-745-specialist:
+  cat: compliance
+  what: Работа по EU MDR 2017/745.
+  skills: классификация по Приложению VIII; техфайл; клиническая оценка; PMS и PSUR.
+  tasks: вывести медизделие на рынок ЕС.
+  with: claude-skills/regulatory-affairs-head claude-skills/risk-management-specialist
+
+claude-skills/meeting-analyzer:
+  cat: productivity
+  what: Анализ транскриптов встреч — как вы звучите.
+  skills: доля речи; перебивания; вопросы; стиль общения.
+  tasks: улучшить поведение на встречах.
+  with: claude-skills/meetings
+
+claude-skills/meetings:
+  cat: productivity
+  what: Стоит ли собирать встречу, сколько она стоит, повестка с таймбоксами и целью.
+  skills: цена встречи; повестка; итоги.
+  tasks: проводить меньше и лучше встреч.
+  with: claude-skills/meeting-analyzer claude-skills/deep-work
+
+claude-skills/memory-engineering:
+  cat: ai-agents
+  what: Проектирование памяти агента — длинный контекст, RAG, граф или агентная память, что забывать.
+  skills: выбор архитектуры памяти; политика устаревания.
+  tasks: добавить агенту память правильно.
+  with: claude-skills/rag-architect ecc/unified-memory
+
+claude-skills/memory-review:
+  cat: claude-setup
+  what: Ревью авто-памяти агента — что сделать постоянным правилом, что удалить, что объединить.
+  skills: продвижение правил; чистка устаревшего.
+  tasks: поддерживать память агента в порядке.
+  with: claude-skills/memory-status claude-skills/promote
+
+claude-skills/memory-status:
+  cat: claude-setup
+  what: Проверка здоровья авто-памяти — объём, файлы тем, устаревшие записи.
+  skills: метрики памяти; рекомендации по чистке.
+  tasks: узнать, насколько заполнена память.
+  with: claude-skills/memory-review
+
+claude-skills/merge:
+  cat: ai-agents
+  what: Слияние победившей ветки AgentHub, архивирование остальных и чистка worktree.
+  skills: финализация соревнования.
+  tasks: забрать лучший результат.
+  with: claude-skills/eval claude-skills/hub-run
+
+claude-skills/meta-research:
+  cat: research
+  what: Исследование, когда ошибка дорога — стратегия, сравнение продуктов и рынков, проверка гипотезы.
+  skills: многоисточниковая проверка; оценка достоверности.
+  tasks: получить надёжный ответ на важный вопрос.
+  with: claude-skills/research ecc/deep-research
+
+claude-skills/migrate:
+  cat: testing
+  what: Перенос тестов с Cypress или Selenium на Playwright.
+  skills: конвертация тестов.
+  tasks: перейти на Playwright.
+  with: claude-skills/pw
+
+claude-skills/migration-architect:
+  cat: data
+  what: План миграции схем, БД и сервисов без простоя.
+  skills: поэтапный план; проверка совместимости; скрипты отката.
+  tasks: переехать без остановки сервиса.
+  with: ecc/database-migrations ecc/change-impact
+
+claude-skills/minimalist:
+  cat: eng-process
+  what: Писать минимум кода — без переусложнения и лишних зависимостей.
+  skills: YAGNI; переиспользование; лестница упрощения.
+  tasks: сделать решение проще.
+  with: claude-skills/karpathy-coder
+
+claude-skills/monorepo-navigator:
+  cat: devops
+  what: Монорепозитории — Turborepo, Nx, pnpm-workspace, Lerna.
+  skills: сборка только затронутого; удалённый кэш; переезд в монорепозиторий.
+  tasks: настроить или ускорить монорепозиторий.
+  with: ecc/vite-patterns
+
+claude-skills/month-end-close:
+  cat: finance
+  what: Закрытие месяца или квартала — чек-лист, календарь, сверки, ускорение.
+  skills: процесс закрытия; сверки счетов.
+  tasks: закрывать месяц быстрее и без ошибок.
+  with: claude-skills/financial-analyst
+
+claude-skills/ms365-tenant-manager:
+  cat: devops
+  what: Администрирование Microsoft 365 — Entra ID, Exchange Online, Teams, лицензии, условный доступ.
+  skills: управление пользователями; отчёты комплаенса.
+  tasks: администрировать M365 в организации.
+  with: claude-skills/google-workspace-cli
+
+claude-skills/named-persona-adversarial-review:
+  cat: testing
+  what: Ревью PR глазами известных инженеров на основе их задокументированных взглядов.
+  skills: архитектурная и UX-критика.
+  tasks: получить нестандартное ревью важного PR.
+  with: claude-skills/adversarial-reviewer
+
+claude-skills/notebooklm:
+  cat: research
+  what: Работа с Google NotebookLM — запросы, источники, аудио- и видеообзоры, отчёты, карточки, слайды.
+  skills: управление блокнотами.
+  tasks: использовать NotebookLM для изучения материалов.
+  with: claude-skills/deepread
+
+claude-skills/observability-designer:
+  cat: devops
+  what: Метрики, логи и трейсы для сервиса, борьба с шумными алертами, дашборды.
+  skills: SLI; настройка алертов.
+  tasks: сделать сервис наблюдаемым.
+  with: claude-skills/slo-architect ecc/dashboard-builder
+
+claude-skills/office-hours:
+  cat: strategy
+  what: Совет основателю после шести вопросов в стиле YC.
+  skills: диагностика ситуации; совет.
+  tasks: когда непонятно, что спрашивать.
+  with: claude-skills/founder-mode
+
+claude-skills/onboard:
+  cat: strategy
+  what: Интервью основателя для заполнения контекста компании виртуального C-suite.
+  skills: файл company-context.md.
+  tasks: дать советникам контекст.
+  with: claude-skills/cs-onboard
+
+claude-skills/onboarding-cro:
+  cat: marketing
+  what: Активация пользователя и первый опыт после регистрации.
+  skills: поиск провала активации; time-to-value.
+  tasks: улучшить онбординг продукта.
+  with: marketing/onboarding claude-skills/signup-flow-cro
+
+claude-skills/org-health-diagnostic:
+  cat: strategy
+  what: Проверка здоровья компании по 8 измерениям со светофором.
+  skills: оценка функций; зоны риска.
+  tasks: найти слабые места компании перед советом.
+  with: claude-skills/strategic-alignment
+
+claude-skills/page-cro:
+  cat: marketing
+  what: Аудит неконвертирующей страницы по секциям с ранжированием исправлений.
+  skills: главная, лендинг, цены, фичи.
+  tasks: поднять конверсию страницы.
+  with: marketing/cro claude-skills/copywriting
+
+claude-skills/paid-ads:
+  cat: marketing
+  what: Стратегия платной рекламы в Google, Meta, LinkedIn, X.
+  skills: структура; таргетинг; ставки; ретаргетинг; бюджеты.
+  tasks: настроить рекламные кампании.
+  with: marketing/ads claude-skills/ad-creative
+
+claude-skills/partnerships-architect:
+  cat: sales
+  what: Решение о партнёрстве — уровень (реферал, реселлер, OEM, интегратор, альянс), совместный GTM, разделение выручки.
+  skills: оценка партнёров; модели партнёрства.
+  tasks: выстроить партнёрскую программу.
+  with: claude-skills/channel-economics marketing/co-marketing
+
+claude-skills/passive-deal-screener:
+  cat: finance
+  what: Проверка частной инвестиционной сделки для пассивного инвестора.
+  skills: стресс-тест синдикаций, preferred equity, бридж-фондов, частного кредита.
+  tasks: решить, участвовать ли в сделке.
+  with: claude-skills/business-investment-advisor

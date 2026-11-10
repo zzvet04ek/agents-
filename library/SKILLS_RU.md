@@ -2,7 +2,7 @@
 
 Генерируется `library/tools/library.py index` из `library/ru/`. Правьте описания в `library/ru/skills/*.yaml`, не здесь.
 
-Описано навыков: **314** из 856. Без описания: 542 (см. конец файла).
+Описано навыков: **856** из 856.
 
 Для каждого навыка: суть, ключевые навыки, решаемые задачи и с чем сочетать. Идентификатор `коллекция/имя` можно назвать Claude напрямую: «возьми навык marketing/copywriting».
 
@@ -10,32 +10,33 @@
 
 | Категория | Навыков |
 |---|---|
-| [Backend-разработка, языки и фреймворки](#cat-dev-backend) | 28 |
-| [Frontend, UI и дизайн интерфейсов](#cat-dev-frontend) | 17 |
-| [Мобильная и десктопная разработка](#cat-dev-mobile) | 12 |
-| [Тестирование и контроль качества кода](#cat-testing) | 32 |
-| [Безопасность](#cat-security) | 11 |
-| [DevOps, инфраструктура, деплой и мониторинг](#cat-devops) | 13 |
-| [Базы данных, данные и аналитика](#cat-data) | 11 |
-| [AI, LLM и агентные системы](#cat-ai-agents) | 40 |
-| [Архитектура, планирование и процесс разработки](#cat-eng-process) | 27 |
-| [Настройка Claude Code и экосистемы ECC](#cat-claude-setup) | 27 |
-| [Документация и управление знаниями](#cat-docs) | 7 |
-| [Контент, тексты и бренд](#cat-content) | 8 |
-| [Маркетинг, SEO и рост](#cat-marketing) | 2 |
-| [Продажи, клиенты и поддержка](#cat-sales) | 2 |
-| [Продакт-менеджмент](#cat-product) | 2 |
-| [Управление проектами и командами](#cat-project) | 3 |
-| [Стратегия бизнеса и C-level](#cat-strategy) | 6 |
-| [Финансы, биллинг и инвестиции](#cat-finance) | 4 |
-| [Регуляторика, комплаенс и качество (QMS)](#cat-compliance) | 2 |
-| [Операции, логистика и закупки](#cat-operations) | 7 |
-| [Исследования и наука](#cat-research) | 10 |
-| [Личная продуктивность и коммуникации](#cat-productivity) | 8 |
-| [Видео, графика и мультимедиа](#cat-media) | 12 |
+| [Backend-разработка, языки и фреймворки](#cat-dev-backend) | 35 |
+| [Frontend, UI и дизайн интерфейсов](#cat-dev-frontend) | 25 |
+| [Мобильная и десктопная разработка](#cat-dev-mobile) | 13 |
+| [Тестирование и контроль качества кода](#cat-testing) | 52 |
+| [Безопасность](#cat-security) | 26 |
+| [DevOps, инфраструктура, деплой и мониторинг](#cat-devops) | 32 |
+| [Базы данных, данные и аналитика](#cat-data) | 23 |
+| [AI, LLM и агентные системы](#cat-ai-agents) | 85 |
+| [Архитектура, планирование и процесс разработки](#cat-eng-process) | 49 |
+| [Настройка Claude Code и экосистемы ECC](#cat-claude-setup) | 42 |
+| [Документация и управление знаниями](#cat-docs) | 15 |
+| [Контент, тексты и бренд](#cat-content) | 17 |
+| [Маркетинг, SEO и рост](#cat-marketing) | 90 |
+| [Продажи, клиенты и поддержка](#cat-sales) | 26 |
+| [Продакт-менеджмент](#cat-product) | 61 |
+| [Управление проектами и командами](#cat-project) | 14 |
+| [Стратегия бизнеса и C-level](#cat-strategy) | 64 |
+| [Финансы, биллинг и инвестиции](#cat-finance) | 20 |
+| [Регуляторика, комплаенс и качество (QMS)](#cat-compliance) | 32 |
+| [Операции, логистика и закупки](#cat-operations) | 13 |
+| [Карьера и HR](#cat-career) | 20 |
+| [Исследования и наука](#cat-research) | 37 |
+| [Личная продуктивность и коммуникации](#cat-productivity) | 23 |
+| [Видео, графика и мультимедиа](#cat-media) | 18 |
 | [Сети и homelab](#cat-network) | 10 |
 | [Блокчейн, Web3 и трейдинг](#cat-web3) | 8 |
-| [Медицина и здравоохранение](#cat-healthcare) | 5 |
+| [Медицина и здравоохранение](#cat-healthcare) | 6 |
 
 ---
 
@@ -48,7 +49,7 @@
 
 **Типовые связки.** *-patterns (как писать) → *-tdd / *-testing (тесты сначала) → *-security (защита) → *-verification (финальная проверка перед релизом); api-design + contract-first для согласования интерфейсов.
 
-Навыков в категории: 28.
+Навыков в категории: 35.
 
 ### `ecc/api-connector-builder`
 
@@ -57,6 +58,14 @@
 - **Ключевые навыки:** анализ существующего паттерна интеграций; повторение структуры без второй архитектуры.
 - **Задачи:** подключить ещё один внешний сервис так же, как подключены остальные.
 - **Сочетается с:** `ecc/api-design`, `ecc/error-handling`, `ecc/contract-first`
+
+### `claude-skills/api-design-reviewer`
+
+Ревью PR и спецификаций, меняющих REST API.
+
+- **Ключевые навыки:** линтер соглашений; детектор ломающих изменений; оценка дизайна.
+- **Задачи:** не допустить плохих или ломающих изменений API.
+- **Сочетается с:** `ecc/api-design`, `claude-skills/api-test-suite-builder`
 
 ### `ecc/api-design`
 
@@ -73,6 +82,14 @@
 - **Ключевые навыки:** структура API; доступ к данным; оптимизация запросов к БД; серверные лучшие практики.
 - **Задачи:** построить или отревьюить серверную часть на Node.js.
 - **Сочетается с:** `ecc/api-design`, `ecc/postgres-patterns`, `ecc/error-handling`
+
+### `claude-skills/boost-asio-pro`
+
+Сетевой C++-код на Boost.Asio и standalone Asio.
+
+- **Ключевые навыки:** TCP/UDP; SSL; таймеры; strands; io_context; корутины co_spawn и awaitable.
+- **Задачи:** писать и отлаживать сетевой C++-код.
+- **Сочетается с:** `ecc/cpp-coding-standards`, `ecc/latency-critical-systems`
 
 ### `ecc/bun-runtime`
 
@@ -121,6 +138,22 @@ Bun как рантайм, менеджер пакетов, бандлер и т
 - **Ключевые навыки:** соглашения; DI; async/await; надёжная архитектура.
 - **Задачи:** писать и ревьюить .NET-приложения.
 - **Сочетается с:** `ecc/csharp-testing`, `ecc/error-handling`
+
+### `claude-skills/email-template-builder`
+
+Транзакционные письма — шаблоны React Email, Resend, Postmark, SendGrid, SES.
+
+- **Ключевые навыки:** превью; локализация; тёмная тема; доставляемость.
+- **Задачи:** сделать красивые и доставляемые системные письма.
+- **Сочетается с:** `ecc/mailtrap-email-integration`
+
+### `claude-skills/embedded-iot-mentor`
+
+Наставник по встраиваемым и IoT-проектам — ESP32, STM32, Arduino, Pico.
+
+- **Ключевые навыки:** прошивки; печатные платы; MQTT; Home Assistant; дашборды датчиков.
+- **Задачи:** собрать и запрограммировать устройство.
+- **Сочетается с:** `ecc/homelab-network-setup`
 
 ### `ecc/error-handling`
 
@@ -250,6 +283,30 @@ Ruby on Rails 7.1+ и 8.x.
 - **Задачи:** писать безопасный и быстрый Rust-код.
 - **Сочетается с:** `ecc/rust-testing`, `ecc/latency-critical-systems`
 
+### `claude-skills/senior-backend`
+
+Разработка и исправление бэкенда — REST и GraphQL, авторизация, микросервисы, PostgreSQL, миграции, нагрузочные тесты.
+
+- **Ключевые навыки:** сквозная серверная разработка.
+- **Задачи:** построить или починить серверную часть.
+- **Сочетается с:** `ecc/backend-patterns`, `ecc/postgres-patterns`
+
+### `claude-skills/senior-fullstack`
+
+Старт fullstack-проекта или аудит кодовой базы.
+
+- **Ключевые навыки:** выбор стека (Next.js, FastAPI, MERN, Django); каркас; оценка качества кода.
+- **Задачи:** начать проект с правильного стека.
+- **Сочетается с:** `claude-skills/tech-stack-evaluator`, `claude-skills/saas-scaffolder`
+
+### `claude-skills/spec-to-repo`
+
+Создание нового репозитория-приложения по спецификации или идее.
+
+- **Ключевые навыки:** каркас проекта; стартовый код.
+- **Задачи:** «сделай мне приложение».
+- **Сочетается с:** `claude-skills/saas-scaffolder`, `ecc/orch-build-mvp`
+
 ### `ecc/springboot-patterns`
 
 Архитектура Spring Boot.
@@ -285,7 +342,15 @@ Ruby on Rails 7.1+ и 8.x.
 
 **Типовые связки.** frontend-design-direction (визуальное направление) → *-patterns фреймворка → design-system / motion-* → accessibility / frontend-a11y → browser-qa / e2e-testing.
 
-Навыков в категории: 17.
+Навыков в категории: 25.
+
+### `claude-skills/a11y-audit`
+
+Аудит и исправление доступности (WCAG 2.2 A/AA) в React, Next.js, Vue, Angular, Svelte и HTML со скриптами проверки.
+
+- **Ключевые навыки:** сканер доступности; проверка контраста; отчёт о соответствии; проверка в CI.
+- **Задачи:** найти и исправить нарушения доступности, затем перепроверить.
+- **Сочетается с:** `ecc/accessibility`, `claude-skills/code-reviewer`
 
 ### `ecc/accessibility`
 
@@ -303,6 +368,14 @@ Ruby on Rails 7.1+ и 8.x.
 - **Задачи:** создать проект, компоненты и сервисы Angular; применить лучшие практики реактивности.
 - **Сочетается с:** `ecc/typescript-patterns`, `ecc/e2e-testing`, `ecc/accessibility`
 
+### `claude-skills/design-qa`
+
+Финальная проверка дизайна экрана или компонента перед сдачей.
+
+- **Ключевые навыки:** поиск «шаблонности» и недоделок в сгенерированном UI; чек-лист качества.
+- **Задачи:** не выпустить сырой интерфейс.
+- **Сочетается с:** `ecc/make-interfaces-feel-better`, `claude-skills/ui-design-system`
+
 ### `ecc/design-system`
 
 Создание дизайн-системы из существующего кода или аудит визуальной согласованности.
@@ -310,6 +383,14 @@ Ruby on Rails 7.1+ и 8.x.
 - **Ключевые навыки:** извлечение токенов (цвета, типографика, отступы, тени); CSS-переменные; документация дизайн-системы.
 - **Задачи:** навести порядок в стилях; задокументировать визуальный язык.
 - **Сочетается с:** `ecc/frontend-design-direction`, `ecc/accessibility`, `ecc/make-interfaces-feel-better`
+
+### `claude-skills/epic-design`
+
+Кинематографичный дизайн лендингов и hero-блоков — параллакс, scrollytelling, наложения.
+
+- **Ключевые навыки:** эффекты прокрутки; визуальная драматургия.
+- **Задачи:** сделать впечатляющую посадочную страницу.
+- **Сочетается с:** `claude-skills/landing`, `ecc/motion-advanced`
 
 ### `ecc/frontend-a11y`
 
@@ -334,6 +415,22 @@ Ruby on Rails 7.1+ и 8.x.
 - **Ключевые навыки:** компоненты; управление состоянием; оптимизация производительности; UI-практики.
 - **Задачи:** построить или отревьюить React/Next.js-интерфейс.
 - **Сочетается с:** `ecc/react-patterns`, `ecc/typescript-patterns`, `ecc/e2e-testing`
+
+### `claude-skills/landing-page-generator`
+
+Лендинг или страница кампании как компонент Next.js на Tailwind.
+
+- **Ключевые навыки:** каркас страницы; секции; тексты.
+- **Задачи:** добавить посадочную страницу в Next.js-проект.
+- **Сочетается с:** `claude-skills/page-cro`, `claude-skills/copywriting`
+
+### `claude-skills/landing`
+
+Премиальный одностраничный HTML-лендинг с 3D CSS, эффектами GSAP и параллаксом.
+
+- **Ключевые навыки:** короткий бриф по позиционированию; эффекты прокрутки.
+- **Задачи:** быстро сделать эффектную посадочную страницу.
+- **Сочетается с:** `claude-skills/epic-design`, `claude-skills/copywriting`
 
 ### `ecc/make-interfaces-feel-better`
 
@@ -399,6 +496,30 @@ React 18/19.
 - **Задачи:** ускорить медленное React-приложение.
 - **Сочетается с:** `ecc/react-patterns`, `ecc/benchmark`, `ecc/nextjs-turbopack`
 
+### `claude-skills/saas-scaffolder`
+
+Каркас нового SaaS — авторизация, БД, биллинг Stripe и дашборд на Next.js, TypeScript, Tailwind, shadcn/ui.
+
+- **Ключевые навыки:** стартовый проект с типовыми функциями.
+- **Задачи:** быстро начать новый SaaS.
+- **Сочетается с:** `claude-skills/stripe-integration-expert`, `claude-skills/spec-to-repo`
+
+### `claude-skills/senior-frontend`
+
+Разработка и ревью фронтенда на React, Next.js, TypeScript, Tailwind.
+
+- **Ключевые навыки:** компоненты; каркас; производительность; размер бандла.
+- **Задачи:** построить качественный фронтенд.
+- **Сочетается с:** `ecc/react-patterns`, `ecc/react-performance`
+
+### `claude-skills/ui-design-system`
+
+Построение дизайн-системы — токены, документация компонентов, адаптивные шкалы, передача разработчикам.
+
+- **Ключевые навыки:** генерация токенов.
+- **Задачи:** создать дизайн-систему.
+- **Сочетается с:** `ecc/design-system`, `claude-skills/design-qa`
+
 ### `ecc/ui-to-vue`
 
 Пакетное превращение скриншотов и макетов в компоненты Vue 3.
@@ -434,7 +555,7 @@ Vue 3 Composition API.
 
 **Типовые связки.** *-patterns платформы → архитектурный навык (android-clean-architecture) → *-testing → accessibility; для ИИ на устройстве — foundation-models-on-device.
 
-Навыков в категории: 12.
+Навыков в категории: 13.
 
 ### `ecc/android-clean-architecture`
 
@@ -443,6 +564,14 @@ Clean Architecture для Android и Kotlin Multiplatform — модули, пр
 - **Ключевые навыки:** модульная структура; направление зависимостей; UseCase и Repository; организация слоя данных.
 - **Задачи:** спроектировать или навести порядок в архитектуре Android/KMP-проекта.
 - **Сочетается с:** `ecc/kotlin-patterns`, `ecc/compose-multiplatform-patterns`, `ecc/kotlin-coroutines-flows`
+
+### `claude-skills/apple-hig-expert`
+
+Проектирование и ревью интерфейсов iOS, macOS, watchOS, visionOS по Apple HIG.
+
+- **Ключевые навыки:** Liquid Glass; контраст; зоны касания; платформенные паттерны.
+- **Задачи:** проверить интерфейс на соответствие гайдлайнам Apple.
+- **Сочетается с:** `ecc/swiftui-patterns`, `ecc/liquid-glass-design`
 
 ### `ecc/compose-multiplatform-patterns`
 
@@ -543,7 +672,15 @@ React Native и Expo.
 
 **Типовые связки.** tdd-workflow → *-testing языка → e2e-testing / browser-qa → verification-loop → code-review / security-review перед мержем.
 
-Навыков в категории: 32.
+Навыков в категории: 52.
+
+### `claude-skills/adversarial-reviewer`
+
+Жёсткое критическое ревью диффа или PR через «враждебные» роли ревьюеров.
+
+- **Ключевые навыки:** поиск общих слепых зон; критика с разных позиций.
+- **Задачи:** получить честную жёсткую проверку перед мержем.
+- **Сочетается с:** `claude-skills/code-reviewer`, `ecc/santa-method`
 
 ### `ecc/ai-regression-testing`
 
@@ -553,6 +690,14 @@ React Native и Expo.
 - **Задачи:** покрыть регрессиями код, написанный ИИ; проверить изменения, которые ревьюила та же модель.
 - **Сочетается с:** `ecc/tdd-workflow`, `ecc/verification-loop`, `ecc/ai-first-engineering`
 
+### `claude-skills/api-test-suite-builder`
+
+Построение набора API-, интеграционных и контрактных тестов по маршрутам.
+
+- **Ключевые навыки:** позитивные сценарии; авторизация; ошибки валидации; граничные случаи.
+- **Задачи:** покрыть REST API тестами.
+- **Сочетается с:** `claude-skills/api-design-reviewer`, `ecc/tdd-workflow`
+
 ### `ecc/browser-qa`
 
 Автоматическая проверка UI после деплоя через браузер — ошибки консоли, Web Vitals, формы, визуальная регрессия, доступность.
@@ -560,6 +705,14 @@ React Native и Expo.
 - **Ключевые навыки:** smoke-проверки; тесты форм и авторизации; скриншоты на трёх брейкпоинтах; аудит axe-core; вердикт SHIP/DO-NOT-SHIP.
 - **Задачи:** проверить фичу на стейдже; оценить фронтенд-PR перед релизом.
 - **Сочетается с:** `ecc/e2e-testing`, `ecc/canary-watch`, `ecc/accessibility`
+
+### `claude-skills/browserstack`
+
+Запуск Playwright-тестов в BrowserStack на матрице браузеров.
+
+- **Ключевые навыки:** кросс-браузерное тестирование; Safari и Firefox.
+- **Задачи:** проверить сайт во всех нужных браузерах.
+- **Сочетается с:** `ecc/e2e-testing`, `claude-skills/coverage`
 
 ### `ecc/click-path-audit`
 
@@ -569,6 +722,14 @@ React Native и Expo.
 - **Задачи:** найти баги, когда пользователи жалуются на кнопки, а отладка ничего не нашла; проверка после рефакторинга состояния.
 - **Сочетается с:** `ecc/browser-qa`, `ecc/e2e-testing`, `ecc/react-testing`
 
+### `claude-skills/code-reviewer`
+
+Ревью кода — PR, дифф, коммит или фрагмент на TypeScript, Python, Go, Swift, Kotlin и других языках.
+
+- **Ключевые навыки:** корректность; безопасность; производительность; читаемость.
+- **Задачи:** провести ревью любого кода.
+- **Сочетается с:** `claude-skills/adversarial-reviewer`, `ecc/security-review`
+
 ### `ecc/codehealth-mcp`
 
 Оценка структурного здоровья кода в реальном времени через CodeScene MCP.
@@ -576,6 +737,14 @@ React Native и Expo.
 - **Ключевые навыки:** ревью до правок; дельта оценки после изменений; гейты для коммитов и PR.
 - **Задачи:** проверить, не ухудшил ли ИИ файл; рефакторинг с контролем качества.
 - **Сочетается с:** `ecc/plankton-code-quality`, `ecc/coding-standards`
+
+### `claude-skills/coverage`
+
+Поиск непокрытого тестами — страницы, сценарии, пробелы.
+
+- **Ключевые навыки:** карта покрытия; приоритизация недостающих тестов.
+- **Задачи:** понять, что ещё нужно протестировать.
+- **Сочетается с:** `ecc/test-collaboration`, `claude-skills/api-test-suite-builder`
 
 ### `ecc/cpp-testing`
 
@@ -625,6 +794,14 @@ E2E-тесты на Playwright.
 - **Задачи:** написать E2E-тесты или починить нестабильные.
 - **Сочетается с:** `ecc/browser-qa`, `ecc/tdd-workflow`, `ecc/react-testing`
 
+### `claude-skills/fix`
+
+Диагностика и исправление падающего или нестабильного Playwright-теста.
+
+- **Ключевые навыки:** поиск причины флаки; стабилизация.
+- **Задачи:** починить сломанный E2E-тест.
+- **Сочетается с:** `claude-skills/pw`, `ecc/e2e-testing`
+
 ### `ecc/fsharp-testing`
 
 Тестирование на F#.
@@ -632,6 +809,14 @@ E2E-тесты на Playwright.
 - **Ключевые навыки:** xUnit, FsUnit, Unquote; property-based тесты на FsCheck; интеграционные тесты.
 - **Задачи:** писать тесты F#-проекта.
 - **Сочетается с:** `ecc/dotnet-patterns`, `ecc/csharp-testing`
+
+### `claude-skills/full-page-screenshot`
+
+Полностраничные скриншоты веб-страниц.
+
+- **Ключевые навыки:** прокрутка в SPA; ленивые изображения; очень длинные страницы.
+- **Задачи:** сделать скриншот всей страницы.
+- **Сочетается с:** `ecc/browser-qa`
 
 ### `ecc/gateguard`
 
@@ -641,6 +826,14 @@ E2E-тесты на Playwright.
 - **Задачи:** снизить число «слепых» правок агента.
 - **Сочетается с:** `ecc/delivery-gate`, `ecc/search-first`, `ecc/hookify-rules`
 
+### `claude-skills/generate`
+
+Написание Playwright-тестов для страницы, компонента или фичи.
+
+- **Ключевые навыки:** генерация E2E-тестов по описанию.
+- **Задачи:** быстро добавить E2E-тесты.
+- **Сочетается с:** `claude-skills/pw`, `ecc/e2e-testing`
+
 ### `ecc/golang-testing`
 
 Тестирование на Go по TDD.
@@ -648,6 +841,14 @@ E2E-тесты на Playwright.
 - **Ключевые навыки:** табличные тесты; подтесты; бенчмарки; фаззинг; покрытие.
 - **Задачи:** писать тесты Go-проекта.
 - **Сочетается с:** `ecc/golang-patterns`, `ecc/tdd-workflow`
+
+### `claude-skills/karpathy-coder`
+
+Проверка диффа на переусложнение по четырём принципам Карпати.
+
+- **Ключевые навыки:** скрытые допущения; лишние абстракции; нехирургические правки; непроверенные цели.
+- **Задачи:** упростить слишком «умный» код.
+- **Сочетается с:** `claude-skills/minimalist`, `claude-skills/code-reviewer`
 
 ### `ecc/kotlin-testing`
 
@@ -673,6 +874,14 @@ E2E-тесты на Playwright.
 - **Задачи:** финальная проверка перед PR или деплоем.
 - **Сочетается с:** `ecc/laravel-tdd`, `ecc/laravel-security`
 
+### `claude-skills/migrate`
+
+Перенос тестов с Cypress или Selenium на Playwright.
+
+- **Ключевые навыки:** конвертация тестов.
+- **Задачи:** перейти на Playwright.
+- **Сочетается с:** `claude-skills/pw`
+
 ### `ecc/module-regression`
 
 Контроль межмодульных регрессий через реестр REGRESSION.md.
@@ -680,6 +889,14 @@ E2E-тесты на Playwright.
 - **Ключевые навыки:** потребители каждого модуля; команды приёмки; прогон после изменений.
 - **Задачи:** не сломать соседние модули в большом репозитории.
 - **Сочетается с:** `ecc/module-governance`, `ecc/change-impact`
+
+### `claude-skills/named-persona-adversarial-review`
+
+Ревью PR глазами известных инженеров на основе их задокументированных взглядов.
+
+- **Ключевые навыки:** архитектурная и UX-критика.
+- **Задачи:** получить нестандартное ревью важного PR.
+- **Сочетается с:** `claude-skills/adversarial-reviewer`
 
 ### `ecc/perl-testing`
 
@@ -696,6 +913,38 @@ E2E-тесты на Playwright.
 - **Ключевые навыки:** хуки на правку файла; автоисправления Claude.
 - **Задачи:** настроить автоматическую проверку качества при каждом изменении.
 - **Сочетается с:** `ecc/codehealth-mcp`, `ecc/hookify-rules`
+
+### `claude-skills/pr-review-expert`
+
+Пофайловое ревью PR на баги, безопасность и качество с вердиктом о мерже.
+
+- **Ключевые навыки:** построчный анализ; вердикт.
+- **Задачи:** отревьюить pull request.
+- **Сочетается с:** `claude-skills/code-reviewer`, `claude-skills/adversarial-reviewer`
+
+### `claude-skills/pw-init`
+
+Настройка Playwright в проекте.
+
+- **Ключевые навыки:** конфигурация; первые тесты.
+- **Задачи:** добавить E2E-тестирование.
+- **Сочетается с:** `claude-skills/pw`, `claude-skills/generate`
+
+### `claude-skills/pw-review`
+
+Ревью качества Playwright-тестов.
+
+- **Ключевые навыки:** лучшие практики; анти-паттерны.
+- **Задачи:** улучшить существующие тесты.
+- **Сочетается с:** `claude-skills/pw`
+
+### `claude-skills/pw`
+
+Всё про Playwright — тесты, флаки, миграция, CI, TestRail.
+
+- **Ключевые навыки:** маршрутизация по задачам Playwright.
+- **Задачи:** любая работа с E2E-тестами.
+- **Сочетается с:** `claude-skills/pw-init`, `claude-skills/generate`, `claude-skills/fix`
 
 ### `ecc/python-testing`
 
@@ -729,6 +978,22 @@ TDD для Quarkus.
 - **Задачи:** покрыть тестами интерфейс на React.
 - **Сочетается с:** `ecc/react-patterns`, `ecc/e2e-testing`
 
+### `claude-skills/red-green-proof`
+
+Доказательство бага — проверка причины, тест, падающий на текущем коде, затем исправление.
+
+- **Ключевые навыки:** проверка гипотезы о причине; red-green.
+- **Задачи:** исправлять баги только с доказательством.
+- **Сочетается с:** `ecc/orch-fix-defect`, `ecc/tdd-workflow`
+
+### `claude-skills/report`
+
+Сводка результатов Playwright-тестов.
+
+- **Ключевые навыки:** отчёт о прогоне.
+- **Задачи:** узнать, как прошли тесты.
+- **Сочетается с:** `claude-skills/pw`
+
 ### `ecc/rust-testing`
 
 Тестирование на Rust по TDD.
@@ -744,6 +1009,14 @@ TDD для Quarkus.
 - **Ключевые навыки:** оба должны одобрить; цикл исправления и повторного ревью.
 - **Задачи:** выпускать только то, что прошло двойную независимую проверку.
 - **Сочетается с:** `ecc/agent-self-evaluation`, `ecc/verification-loop`
+
+### `claude-skills/senior-qa`
+
+Тесты для React и Next.js — Jest, React Testing Library, MSW, Playwright, покрытие.
+
+- **Ключевые навыки:** стратегия тестирования фронтенда.
+- **Задачи:** покрыть тестами фронтенд.
+- **Сочетается с:** `ecc/react-testing`, `claude-skills/pw`
 
 ### `ecc/springboot-tdd`
 
@@ -769,6 +1042,14 @@ TDD для Spring Boot.
 - **Задачи:** сделать Swift-код тестируемым.
 - **Сочетается с:** `ecc/swiftui-patterns`, `ecc/tdd-workflow`
 
+### `claude-skills/tdd-guide`
+
+TDD и генерация тестов для Jest, Pytest, JUnit, Vitest, Mocha.
+
+- **Ключевые навыки:** red-green-refactor; фикстуры; моки; пробелы покрытия.
+- **Задачи:** писать тесты прежде кода.
+- **Сочетается с:** `ecc/tdd-workflow`, `claude-skills/coverage`
+
 ### `ecc/tdd-workflow`
 
 Разработка через тесты — падающий тест, минимальная реализация, рефакторинг с покрытием 80%+.
@@ -784,6 +1065,14 @@ TDD для Spring Boot.
 - **Ключевые навыки:** связь требований, правил, рисков и багов с TEST-ID; исполняемые проверки.
 - **Задачи:** понять, что покрыто тестами и чего не хватает.
 - **Сочетается с:** `ecc/tdd-workflow`, `ecc/module-regression`
+
+### `claude-skills/testrail`
+
+Синхронизация Playwright-тестов с TestRail.
+
+- **Ключевые навыки:** импорт и экспорт кейсов; публикация результатов.
+- **Задачи:** связать автотесты с тест-менеджментом.
+- **Сочетается с:** `claude-skills/pw`
 
 ### `ecc/verification-loop`
 
@@ -812,7 +1101,7 @@ E2E-тесты нативных Windows-приложений (WPF, WinForms, Win
 
 **Типовые связки.** security-scan (быстрый скан) → security-review (глубокий разбор) → *-security фреймворка → исправление → повторная проверка; для агентов — agent-security-hardening + safety-guard.
 
-Навыков в категории: 11.
+Навыков в категории: 26.
 
 ### `ecc/agent-security-hardening`
 
@@ -822,6 +1111,46 @@ E2E-тесты нативных Windows-приложений (WPF, WinForms, Win
 - **Задачи:** ревью безопасности агентного рантайма, шлюза инструментов или сервиса памяти.
 - **Сочетается с:** `ecc/safety-guard`, `ecc/mcp-dependency-review`, `ecc/security-review`
 
+### `claude-skills/ai-security`
+
+Оценка безопасности ИИ/ML-систем и LLM-агентов.
+
+- **Ключевые навыки:** prompt injection; джейлбрейки; инверсия модели; отравление данных; злоупотребление инструментами; MITRE ATLAS.
+- **Задачи:** провести аудит безопасности ИИ-системы.
+- **Сочетается с:** `ecc/agent-security-hardening`, `claude-skills/red-team`
+
+### `claude-skills/ciso-advisor`
+
+Советник по руководству безопасностью.
+
+- **Ключевые навыки:** программа безопасности; обоснование бюджета в деньгах; дорожная карта SOC 2, ISO 27001, HIPAA; отчёты совету.
+- **Задачи:** выстроить безопасность компании на уровне руководства.
+- **Сочетается с:** `claude-skills/ciso-review`, `claude-skills/compliance-os`
+
+### `claude-skills/ciso-review`
+
+Критика плана, затрагивающего данные клиентов, комплаенс или доступ к продакшену.
+
+- **Ключевые навыки:** позиция директора по безопасности.
+- **Задачи:** проверить план на риски безопасности.
+- **Сочетается с:** `claude-skills/ciso-advisor`
+
+### `claude-skills/cloud-security`
+
+Поиск ошибок конфигурации безопасности в AWS, Azure и GCP.
+
+- **Ключевые навыки:** эскалация привилегий IAM; публичные бакеты; открытые группы безопасности; пробелы в IaC.
+- **Задачи:** проверить облако на уязвимые настройки.
+- **Сочетается с:** `claude-skills/aws-solution-architect`, `claude-skills/ciso-advisor`
+
+### `claude-skills/dependency-auditor`
+
+Аудит зависимостей проекта на уязвимости CVE и лицензии с планом безопасного обновления.
+
+- **Ключевые навыки:** сканирование пакетов; проверка лицензий; план апгрейда.
+- **Задачи:** убедиться, что зависимости безопасны перед релизом.
+- **Сочетается с:** `claude-skills/senior-secops`, `ecc/security-scan`
+
 ### `ecc/django-security`
 
 Безопасность Django — аутентификация, авторизация, CSRF, SQL-инъекции, XSS, безопасный деплой.
@@ -829,6 +1158,22 @@ E2E-тесты нативных Windows-приложений (WPF, WinForms, Win
 - **Ключевые навыки:** настройки безопасности; права доступа; защита от инъекций.
 - **Задачи:** ревью безопасности Django-проекта.
 - **Сочетается с:** `ecc/django-patterns`, `ecc/security-review`, `ecc/django-verification`
+
+### `claude-skills/env-secrets-manager`
+
+Аудит .env, ротация учётных данных, поиск пропавших переменных, защита от утечек секретов.
+
+- **Ключевые навыки:** проверка секретов; план ротации.
+- **Задачи:** навести порядок с секретами проекта.
+- **Сочетается с:** `claude-skills/secrets-vault-manager`, `ecc/security-review`
+
+### `claude-skills/incident-response`
+
+Реагирование на подозрение во взломе по NIST SP 800-61.
+
+- **Ключевые навыки:** триаж; уровни SEV1–SEV4; эскалация; сбор цифровых улик.
+- **Задачи:** действовать при подозрении на утечку или атаку.
+- **Сочетается с:** `claude-skills/threat-detection`, `claude-skills/senior-secops`
 
 ### `ecc/laravel-security`
 
@@ -862,6 +1207,14 @@ E2E-тесты нативных Windows-приложений (WPF, WinForms, Win
 - **Задачи:** реализовать и проверить безопасность Quarkus-сервиса.
 - **Сочетается с:** `ecc/quarkus-patterns`, `ecc/security-review`
 
+### `claude-skills/red-team`
+
+Авторизованные red team-операции и анализ путей атаки.
+
+- **Ключевые навыки:** kill chain; MITRE ATT&CK; планирование.
+- **Задачи:** проверить защиту глазами атакующего.
+- **Сочетается с:** `claude-skills/security-pen-testing`, `claude-skills/threat-detection`
+
 ### `ecc/safety-guard`
 
 Защита от разрушительных операций агента.
@@ -870,6 +1223,14 @@ E2E-тесты нативных Windows-приложений (WPF, WinForms, Win
 - **Задачи:** работать с агентом на важных системах без риска потерь.
 - **Сочетается с:** `ecc/hookify-rules`, `ecc/agent-security-hardening`
 
+### `claude-skills/secrets-vault-manager`
+
+Хранилища секретов — HashiCorp Vault, AWS Secrets Manager, Azure Key Vault, GCP Secret Manager.
+
+- **Ключевые навыки:** настройка; ротация; аудит доступа.
+- **Задачи:** централизовать хранение секретов.
+- **Сочетается с:** `claude-skills/env-secrets-manager`
+
 ### `ecc/security-bounty-hunter`
 
 Поиск эксплуатируемых уязвимостей уровня баг-баунти в репозиториях.
@@ -877,6 +1238,22 @@ E2E-тесты нативных Windows-приложений (WPF, WinForms, Win
 - **Ключевые навыки:** удалённо достижимые уязвимости; отсев шума; подготовка отчёта.
 - **Задачи:** найти реальные уязвимости для отчёта.
 - **Сочетается с:** `ecc/security-review`, `ecc/security-scan`
+
+### `claude-skills/security-guidance`
+
+Хук безопасности, предупреждающий перед записью кода с инъекциями, XSS, SQLi, небезопасной десериализацией.
+
+- **Ключевые навыки:** установка и настройка хука.
+- **Задачи:** ловить уязвимости в момент написания.
+- **Сочетается с:** `ecc/safety-guard`, `ecc/security-review`
+
+### `claude-skills/security-pen-testing`
+
+Авторизованный пентест приложения или API.
+
+- **Ключевые навыки:** сканы уязвимостей; OWASP Top 10; аудит зависимостей; отчёт.
+- **Задачи:** проверить приложение на взлом.
+- **Сочетается с:** `claude-skills/red-team`, `ecc/security-bounty-hunter`
 
 ### `ecc/security-review`
 
@@ -894,6 +1271,30 @@ E2E-тесты нативных Windows-приложений (WPF, WinForms, Win
 - **Задачи:** убедиться, что настройки агента безопасны.
 - **Сочетается с:** `ecc/mcp-dependency-review`, `ecc/security-review`
 
+### `claude-skills/senior-secops`
+
+Поиск и исправление проблем безопасности приложений.
+
+- **Ключевые навыки:** ревью; исправление CVE; харднинг; секреты и авторизация; SOC 2, PCI-DSS, HIPAA, GDPR.
+- **Задачи:** закрыть уязвимости приложения.
+- **Сочетается с:** `claude-skills/senior-security`, `claude-skills/dependency-auditor`
+
+### `claude-skills/senior-security`
+
+Оценка безопасности дизайна или кода — модель угроз STRIDE, оценка рисков DREAD, поиск утечек секретов.
+
+- **Ключевые навыки:** моделирование угроз.
+- **Задачи:** понять, что может пойти не так с безопасностью.
+- **Сочетается с:** `claude-skills/senior-secops`, `ecc/security-review`
+
+### `claude-skills/skill-security-auditor`
+
+Проверка безопасности навыка или плагина из недоверенного источника перед установкой.
+
+- **Ключевые навыки:** скан скриптов, SKILL.md и зависимостей.
+- **Задачи:** убедиться, что навык безопасен.
+- **Сочетается с:** `ecc/security-scan`, `ecc/mcp-dependency-review`
+
 ### `ecc/springboot-security`
 
 Spring Security.
@@ -901,6 +1302,14 @@ Spring Security.
 - **Ключевые навыки:** аутентификация и авторизация; валидация; CSRF; секреты; заголовки; rate limiting.
 - **Задачи:** защитить Spring Boot-сервис.
 - **Сочетается с:** `ecc/springboot-patterns`, `ecc/security-review`
+
+### `claude-skills/threat-detection`
+
+Поиск угроз, проверка индикаторов компрометации и аномалий в логах.
+
+- **Ключевые навыки:** сигналы по MITRE ATT&CK; z-score аномалии.
+- **Задачи:** найти следы атаки.
+- **Сочетается с:** `claude-skills/incident-response`, `claude-skills/red-team`
 
 ---
 
@@ -913,7 +1322,23 @@ Spring Security.
 
 **Типовые связки.** docker-patterns → deployment-patterns / kubernetes-patterns → canary-watch после релиза → dashboard-builder для мониторинга → incident-разбор при сбоях.
 
-Навыков в категории: 13.
+Навыков в категории: 32.
+
+### `claude-skills/aws-solution-architect`
+
+Проектирование и расчёт стоимости архитектуры AWS.
+
+- **Ключевые навыки:** serverless, Lambda, API Gateway, DynamoDB, ECS, Aurora; CloudFormation; миграция в AWS.
+- **Задачи:** спроектировать решение в AWS и оценить затраты.
+- **Сочетается с:** `claude-skills/cloud-security`, `claude-skills/azure-cloud-architect`
+
+### `claude-skills/azure-cloud-architect`
+
+Проектирование и расчёт стоимости архитектуры Azure.
+
+- **Ключевые навыки:** AKS, App Service, Functions, Cosmos DB; Bicep и ARM; Azure DevOps; миграция.
+- **Задачи:** спроектировать решение в Azure.
+- **Сочетается с:** `claude-skills/aws-solution-architect`, `claude-skills/cloud-security`
 
 ### `ecc/benchmark-optimization-loop`
 
@@ -939,6 +1364,22 @@ Spring Security.
 - **Задачи:** post-deploy smoke-проверка после релиза, мержа или обновления зависимостей.
 - **Сочетается с:** `ecc/browser-qa`, `ecc/benchmark`, `ecc/deployment-patterns`
 
+### `claude-skills/chaos-engineering`
+
+Хаос-эксперименты, геймдеи и внесение сбоев.
+
+- **Ключевые навыки:** устойчивое состояние; критерии прерывания; отчёт после эксперимента.
+- **Задачи:** проверить устойчивость системы к сбоям.
+- **Сочетается с:** `claude-skills/incident-commander`, `ecc/kubernetes-patterns`
+
+### `claude-skills/ci-cd-pipeline-builder`
+
+Генерация CI/CD-конвейера по стеку репозитория — линт, тесты, сборка, деплой.
+
+- **Ключевые навыки:** определение стека; workflow для CI.
+- **Задачи:** добавить CI в репозиторий, где его нет.
+- **Сочетается с:** `ecc/deployment-patterns`, `ecc/github-ops`
+
 ### `ecc/dashboard-builder`
 
 Дашборды мониторинга в Grafana, SigNoz и аналогах, отвечающие на реальные вопросы операторов.
@@ -955,6 +1396,14 @@ Spring Security.
 - **Задачи:** настроить конвейер поставки и деплой.
 - **Сочетается с:** `ecc/docker-patterns`, `ecc/kubernetes-patterns`, `ecc/canary-watch`
 
+### `claude-skills/docker-development`
+
+Написание, оптимизация и ревью Dockerfile и docker-compose.
+
+- **Ключевые навыки:** слои и кэширование; размер образа; безопасность.
+- **Задачи:** сделать контейнер меньше, быстрее и безопаснее.
+- **Сочетается с:** `ecc/docker-patterns`, `claude-skills/senior-devops`
+
 ### `ecc/docker-patterns`
 
 Docker и Docker Compose — локальная разработка, безопасность контейнеров, сети, тома, многосервисные стеки.
@@ -962,6 +1411,14 @@ Docker и Docker Compose — локальная разработка, безоп
 - **Ключевые навыки:** Dockerfile; compose; харднинг; сети и тома.
 - **Задачи:** создать или отревьюить Docker-конфигурацию.
 - **Сочетается с:** `ecc/deployment-patterns`, `ecc/kubernetes-patterns`, `ecc/security-scan`
+
+### `claude-skills/feature-flags-architect`
+
+Флаги функций и аварийные выключатели — внедрение, раскатка, удаление.
+
+- **Ключевые навыки:** план раскатки; борьба с долгом флагов.
+- **Задачи:** безопасно выкатывать фичи постепенно.
+- **Сочетается с:** `ecc/deployment-patterns`, `claude-skills/experiment-designer`
 
 ### `ecc/flox-environments`
 
@@ -971,6 +1428,14 @@ Docker и Docker Compose — локальная разработка, безоп
 - **Задачи:** настроить окружение проекта, которое одинаково работает у всех.
 - **Сочетается с:** `ecc/docker-patterns`
 
+### `claude-skills/gcp-cloud-architect`
+
+Проектирование, развёртывание и снижение стоимости в Google Cloud.
+
+- **Ключевые навыки:** Cloud Run, GKE, Functions, Cloud SQL, BigQuery; миграция в GCP.
+- **Задачи:** построить решение в GCP.
+- **Сочетается с:** `claude-skills/aws-solution-architect`, `claude-skills/cloud-security`
+
 ### `ecc/github-ops`
 
 Операции с репозиториями GitHub через gh CLI.
@@ -978,6 +1443,30 @@ Docker и Docker Compose — локальная разработка, безоп
 - **Ключевые навыки:** разбор issues; управление PR; CI/CD; релизы; мониторинг безопасности.
 - **Задачи:** автоматизировать рутину по GitHub-репозиторию.
 - **Сочетается с:** `ecc/git-workflow`, `ecc/issue-review`, `ecc/deployment-patterns`
+
+### `claude-skills/helm-chart-builder`
+
+Создание, ревью и защита Helm-чартов.
+
+- **Ключевые навыки:** values.yaml; шаблоны; сабчарты; RBAC; безопасность подов.
+- **Задачи:** упаковать приложение для Kubernetes.
+- **Сочетается с:** `ecc/kubernetes-patterns`, `claude-skills/kubernetes-operator`
+
+### `claude-skills/incident-commander`
+
+Управление инцидентом в продакшене и разбор после него.
+
+- **Ключевые навыки:** классификация серьёзности; координация; post-incident review.
+- **Задачи:** провести команду через сбой и сделать выводы.
+- **Сочетается с:** `claude-skills/runbook-generator`, `claude-skills/observability-designer`
+
+### `claude-skills/kubernetes-operator`
+
+Создание Kubernetes-операторов и CRD.
+
+- **Ключевые навыки:** controller-runtime, kubebuilder, operator-sdk, KOPF; валидация.
+- **Задачи:** автоматизировать управление сервисом в кластере.
+- **Сочетается с:** `ecc/kubernetes-patterns`, `claude-skills/helm-chart-builder`
 
 ### `ecc/kubernetes-patterns`
 
@@ -995,6 +1484,38 @@ Kubernetes для продакшена.
 - **Задачи:** снизить и подтвердить задержки в критичной системе.
 - **Сочетается с:** `ecc/benchmark-optimization-loop`, `ecc/redis-patterns`
 
+### `claude-skills/monorepo-navigator`
+
+Монорепозитории — Turborepo, Nx, pnpm-workspace, Lerna.
+
+- **Ключевые навыки:** сборка только затронутого; удалённый кэш; переезд в монорепозиторий.
+- **Задачи:** настроить или ускорить монорепозиторий.
+- **Сочетается с:** `ecc/vite-patterns`
+
+### `claude-skills/ms365-tenant-manager`
+
+Администрирование Microsoft 365 — Entra ID, Exchange Online, Teams, лицензии, условный доступ.
+
+- **Ключевые навыки:** управление пользователями; отчёты комплаенса.
+- **Задачи:** администрировать M365 в организации.
+- **Сочетается с:** `claude-skills/google-workspace-cli`
+
+### `claude-skills/observability-designer`
+
+Метрики, логи и трейсы для сервиса, борьба с шумными алертами, дашборды.
+
+- **Ключевые навыки:** SLI; настройка алертов.
+- **Задачи:** сделать сервис наблюдаемым.
+- **Сочетается с:** `claude-skills/slo-architect`, `ecc/dashboard-builder`
+
+### `claude-skills/performance-profiler`
+
+Профилирование медленного эндпоинта, утечки памяти, нагрузки на CPU или большого бандла в Node.js, Python, Go.
+
+- **Ключевые навыки:** замеры до оптимизации; поиск горячих точек; бюджеты производительности.
+- **Задачи:** найти и устранить причину тормозов.
+- **Сочетается с:** `ecc/benchmark-optimization-loop`, `ecc/benchmark`
+
 ### `ecc/production-audit`
 
 Аудит готовности к продакшену по локальным данным без отправки кода наружу.
@@ -1003,6 +1524,38 @@ Kubernetes для продакшена.
 - **Задачи:** оценить, готово ли приложение к реальным пользователям.
 - **Сочетается с:** `ecc/security-review`, `ecc/deployment-patterns`, `ecc/canary-watch`
 
+### `claude-skills/runbook-generator`
+
+Ранбуки для деплоя, инцидентов, обслуживания и отката.
+
+- **Ключевые навыки:** инструкции по окружениям.
+- **Задачи:** подготовить сервис к эксплуатации до запуска.
+- **Сочетается с:** `claude-skills/incident-commander`, `claude-skills/knowledge-ops`
+
+### `claude-skills/senior-devops`
+
+CI/CD, инфраструктура как код, контейнеры и деплой в AWS, GCP, Azure.
+
+- **Ключевые навыки:** пайплайны сборки и деплоя.
+- **Задачи:** настроить поставку и инфраструктуру.
+- **Сочетается с:** `claude-skills/ci-cd-pipeline-builder`, `claude-skills/terraform-patterns`
+
+### `claude-skills/ship-gate`
+
+Предполётная проверка перед деплоем.
+
+- **Ключевые навыки:** сканирование кода на блокеры релиза.
+- **Задачи:** ответить на вопрос «можно ли выпускать».
+- **Сочетается с:** `ecc/production-audit`, `ecc/verification-loop`
+
+### `claude-skills/slo-architect`
+
+SLO, SLI, бюджеты ошибок и алерты по скорости сжигания бюджета.
+
+- **Ключевые навыки:** проектирование SLO; многооконные алерты.
+- **Задачи:** определить уровни надёжности сервиса.
+- **Сочетается с:** `claude-skills/observability-designer`
+
 ### `ecc/terminal-ops`
 
 Исполнение задач в репозитории с доказательствами — запуск команд, проверки, отладка CI, точечные исправления.
@@ -1010,6 +1563,14 @@ Kubernetes для продакшена.
 - **Ключевые навыки:** точные команды; фиксация результатов; узкие правки.
 - **Задачи:** проверить репозиторий или разобрать падение CI.
 - **Сочетается с:** `ecc/github-ops`, `ecc/verification-loop`
+
+### `claude-skills/terraform-patterns`
+
+Модули Terraform, бэкенды состояния, провайдеры, ревью безопасности IaC.
+
+- **Ключевые навыки:** анализ модулей; лучшие практики.
+- **Задачи:** писать надёжную инфраструктуру как код.
+- **Сочетается с:** `claude-skills/senior-devops`, `claude-skills/cloud-security`
 
 ### `ecc/uncloud`
 
@@ -1030,7 +1591,23 @@ Kubernetes для продакшена.
 
 **Типовые связки.** *-patterns СУБД → database-migrations → data-throughput-accelerator для объёмов → dashboard-builder / аналитические навыки для отчётов.
 
-Навыков в категории: 11.
+Навыков в категории: 23.
+
+### `claude-skills/browser-automation`
+
+Автоматизация браузера — парсинг сайтов, заполнение форм, извлечение данных.
+
+- **Ключевые навыки:** скрейпинг; заполнение веб-форм; структурированные данные со страниц.
+- **Задачи:** собрать данные с сайта или автоматизировать действия в браузере.
+- **Сочетается с:** `ecc/data-scraper-agent`, `ecc/browser-qa`
+
+### `claude-skills/chief-data-officer-advisor`
+
+Советник по стратегии данных.
+
+- **Ключевые навыки:** обучение на данных клиентов; хранилище, lakehouse или mesh; ценность данных для M&A; найм.
+- **Задачи:** принять решение по архитектуре и использованию данных.
+- **Сочетается с:** `claude-skills/cdo-review`, `claude-skills/database-designer`
 
 ### `ecc/clickhouse-io`
 
@@ -1039,6 +1616,14 @@ ClickHouse для высоконагруженной аналитики — сх
 - **Ключевые навыки:** движки таблиц; партиционирование; оптимизация медленных аналитических запросов.
 - **Задачи:** спроектировать схему или ускорить аналитический запрос в ClickHouse.
 - **Сочетается с:** `ecc/data-throughput-accelerator`, `ecc/dashboard-builder`
+
+### `claude-skills/data-quality-auditor`
+
+Профилирование данных перед анализом или обучением модели.
+
+- **Ключевые навыки:** пропуски; выбросы; распределения; качество данных.
+- **Задачи:** проверить датасет до использования.
+- **Сочетается с:** `ecc/mle-workflow`, `claude-skills/database-designer`
 
 ### `ecc/data-scraper-agent`
 
@@ -1056,6 +1641,14 @@ ClickHouse для высоконагруженной аналитики — сх
 - **Задачи:** ускорить медленную загрузку или выгрузку данных.
 - **Сочетается с:** `ecc/benchmark-optimization-loop`, `ecc/postgres-patterns`, `ecc/clickhouse-io`
 
+### `claude-skills/database-designer`
+
+Проектирование схемы БД — таблицы, связи, индексы, нормализация, SQL или NoSQL, план миграции.
+
+- **Ключевые навыки:** моделирование данных; выбор типа БД.
+- **Задачи:** спроектировать хранение данных приложения.
+- **Сочетается с:** `claude-skills/database-schema-designer`, `ecc/postgres-patterns`, `ecc/database-migrations`
+
 ### `ecc/database-migrations`
 
 Безопасные обратимые миграции БД без простоя.
@@ -1063,6 +1656,14 @@ ClickHouse для высоконагруженной аналитики — сх
 - **Ключевые навыки:** expand-contract; конкурентные индексы; пакетные бэкфиллы; инструменты PostgreSQL, Prisma и др.
 - **Задачи:** провести миграцию на продакшене без остановки сервиса.
 - **Сочетается с:** `ecc/postgres-patterns`, `ecc/change-impact`, `ecc/prisma-patterns`
+
+### `claude-skills/database-schema-designer`
+
+ER-диаграмма, нормализация и план миграции схемы.
+
+- **Ключевые навыки:** ERD; нормализованный DDL; шаги миграции.
+- **Задачи:** получить схему БД с диаграммой.
+- **Сочетается с:** `claude-skills/database-designer`, `ecc/database-migrations`
 
 ### `ecc/jpa-patterns`
 
@@ -1079,6 +1680,14 @@ ORM Exposed от JetBrains.
 - **Ключевые навыки:** DSL-запросы; DAO; транзакции; HikariCP; миграции Flyway.
 - **Задачи:** работать с БД в Kotlin-сервисе.
 - **Сочетается с:** `ecc/kotlin-ktor-patterns`, `ecc/postgres-patterns`
+
+### `claude-skills/migration-architect`
+
+План миграции схем, БД и сервисов без простоя.
+
+- **Ключевые навыки:** поэтапный план; проверка совместимости; скрипты отката.
+- **Задачи:** переехать без остановки сервиса.
+- **Сочетается с:** `ecc/database-migrations`, `ecc/change-impact`
 
 ### `ecc/mybatis-patterns`
 
@@ -1120,6 +1729,54 @@ Redis в продакшене.
 - **Задачи:** добавить кэш, очереди или блокировки на Redis.
 - **Сочетается с:** `ecc/postgres-patterns`, `ecc/django-celery`
 
+### `claude-skills/senior-data-engineer`
+
+Конвейеры данных — Airflow, Spark, dbt, Kafka, ETL/ELT, проверки качества.
+
+- **Ключевые навыки:** отладка падающих DAG; качество данных.
+- **Задачи:** построить или починить пайплайн данных.
+- **Сочетается с:** `ecc/data-throughput-accelerator`, `claude-skills/data-quality-auditor`
+
+### `claude-skills/senior-data-scientist`
+
+Дизайн экспериментов и анализ табличных данных.
+
+- **Ключевые навыки:** A/B-тесты; причинный вывод; признаки; оценка моделей.
+- **Задачи:** ответить на бизнес-вопрос данными.
+- **Сочетается с:** `claude-skills/statistical-analyst`, `claude-skills/experiment-designer`
+
+### `claude-skills/snowflake-development`
+
+Разработка в Snowflake.
+
+- **Ключевые навыки:** SQL; Dynamic Tables; Streams и Tasks; Cortex AI; Snowpark Python; dbt.
+- **Задачи:** строить аналитику и данные в Snowflake.
+- **Сочетается с:** `claude-skills/senior-data-engineer`
+
+### `claude-skills/sql-database-assistant`
+
+Написание, исправление и ускорение SQL.
+
+- **Ключевые навыки:** планы EXPLAIN; индексы; миграции ORM (Prisma, Drizzle, SQLAlchemy).
+- **Задачи:** ускорить медленный запрос.
+- **Сочетается с:** `ecc/postgres-patterns`, `ecc/database-migrations`
+
+### `claude-skills/statistical-analyst`
+
+Реальна ли разница — тесты значимости, доверительные интервалы, размер выборки, длительность теста.
+
+- **Ключевые навыки:** статистика для A/B.
+- **Задачи:** проверить результат эксперимента.
+- **Сочетается с:** `claude-skills/experiment-designer`, `claude-skills/senior-data-scientist`
+
+### `claude-skills/universal-scraping-architect`
+
+Скрейпер для сайтов, PDF и API с пагинацией с проверкой полей (Firecrawl или Python).
+
+- **Ключевые навыки:** извлечение; валидация данных.
+- **Задачи:** собрать структурированные данные из источника.
+- **Сочетается с:** `claude-skills/browser-automation`, `ecc/data-scraper-agent`
+
 ---
 
 <a id="cat-ai-agents"></a>
@@ -1131,7 +1788,7 @@ Redis в продакшене.
 
 **Типовые связки.** agent-harness-construction (инструменты агента) → autonomous-agent-harness / continuous-agent-loop (цикл) → eval-harness / agent-eval (оценка) → cost-aware-llm-pipeline (стоимость) → agent-security-hardening (защита).
 
-Навыков в категории: 40.
+Навыков в категории: 85.
 
 ### `ecc/agent-architecture-audit`
 
@@ -1140,6 +1797,14 @@ Redis в продакшене.
 - **Ключевые навыки:** поиск регрессий обёрток; загрязнение памяти агента; нарушения дисциплины инструментов; скрытые циклы самоисправления; искажения при выводе.
 - **Задачи:** найти слой, в котором ломается агент; аудит агента перед выпуском; список исправлений в коде.
 - **Сочетается с:** `ecc/agent-introspection-debugging`, `ecc/eval-harness`, `ecc/agent-security-hardening`
+
+### `claude-skills/agent-designer`
+
+Проектирование мультиагентных систем (супервизор, рой, конвейер) и схем инструментов.
+
+- **Ключевые навыки:** выбор топологии; дизайн инструментов; поиск узких мест по логам запусков.
+- **Задачи:** разделить работу между агентами; ускорить медленный запуск.
+- **Сочетается с:** `claude-skills/agent-workflow-designer`, `ecc/agent-harness-construction`
 
 ### `ecc/agent-eval`
 
@@ -1157,6 +1822,14 @@ Redis в продакшене.
 - **Задачи:** создать или переработать набор инструментов агента; повысить надёжность выполнения задач.
 - **Сочетается с:** `ecc/mcp-server-patterns`, `ecc/agent-eval`, `ecc/agentic-engineering`
 
+### `claude-skills/agent-harness`
+
+Доведение цели в одном из доменов репозитория до проверенного завершения через план задач.
+
+- **Ключевые навыки:** компиляция цели в план; проверка завершения.
+- **Задачи:** поручить агенту задачу с гарантированной проверкой результата.
+- **Сочетается с:** `claude-skills/agent-designer`, `ecc/continuous-agent-loop`
+
 ### `ecc/agent-introspection-debugging`
 
 Структурированная самодиагностика сбоев ИИ-агента — фиксация, диагноз, ограниченное восстановление и отчёт.
@@ -1164,6 +1837,47 @@ Redis в продакшене.
 - **Ключевые навыки:** сбор контекста сбоя; гипотезы о причине; безопасный повторный запуск; отчёт с выводами.
 - **Задачи:** разобрать неудачный запуск агента воспроизводимо, а не простым повтором.
 - **Сочетается с:** `ecc/agent-architecture-audit`, `ecc/continuous-agent-loop`
+
+### `claude-skills/agent-launcher-orchestrator`
+
+Создание, запуск, оценка и расписание Claude Managed Agents в вашем аккаунте Anthropic.
+
+- **Ключевые навыки:** сборка агента; ночные запуски; оценка качества.
+- **Задачи:** запустить своего облачного агента по расписанию.
+- **Сочетается с:** `claude-skills/agent-designer`, `claude-skills/agent-regression-evals`
+
+### `claude-skills/agent-memory`
+
+Управление памятью агента — продвижение исправлений в правила, чистка разросшегося CLAUDE.md.
+
+- **Ключевые навыки:** отслеживание происхождения правил; удаление дублей; структура памяти.
+- **Задачи:** перестать повторять агенту одни и те же исправления.
+- **Сочетается с:** `ecc/continuous-learning-v2`, `ecc/ck`
+
+### `pm-skills/agent-orchestration-advisor`
+
+Проектирование мультиагентных ИИ-процессов для продуктовых задач.
+
+- **Ключевые навыки:** границы агентов; передачи; мониторинг.
+- **Задачи:** распределить сложную PM-задачу между агентами.
+- **Сочетается с:** `ecc/team-agent-orchestration`, `claude-skills/agent-designer`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `claude-skills/agent-regression-evals`
+
+Регрессионные оценки перед выпуском изменений агента, промпта, модели или инструмента.
+
+- **Ключевые навыки:** повторные прогоны; сравнение кандидата с базой; вердикт о падении качества.
+- **Задачи:** убедиться, что изменение не ухудшило агента.
+- **Сочетается с:** `ecc/eval-harness`, `ecc/agent-eval`
+
+### `claude-skills/agent-run-forensics`
+
+Расследование прошлых запусков агента по фактам из логов.
+
+- **Ключевые навыки:** что изменил агент; действительно ли прошли тесты; проверка итоговой сводки.
+- **Задачи:** понять, почему агент сделал то, что сделал.
+- **Сочетается с:** `ecc/agent-introspection-debugging`, `claude-skills/collab-proof`
 
 ### `ecc/agent-runtime-gateway-smoke-test`
 
@@ -1181,6 +1895,22 @@ Redis в продакшене.
 - **Задачи:** проверить качество своего ответа перед сдачей; найти слабые места результата.
 - **Сочетается с:** `ecc/verification-loop`, `ecc/santa-method`
 
+### `claude-skills/agent-workflow-designer`
+
+Архитектура многошаговых LLM- и агентных конвейеров.
+
+- **Ключевые навыки:** выбор одного или нескольких агентов; борьба с разрастанием контекста; передачи между шагами.
+- **Задачи:** спроектировать конвейер или починить сломанные передачи.
+- **Сочетается с:** `claude-skills/agent-designer`, `ecc/blueprint`
+
+### `claude-skills/agenthub`
+
+Запуск нескольких агентов параллельно на одну задачу с выбором лучшего результата.
+
+- **Ключевые навыки:** параллельные варианты кода, текстов и исследований; сравнение результатов.
+- **Задачи:** получить лучший вариант из нескольких попыток.
+- **Сочетается с:** `claude-skills/board`, `ecc/gan-style-harness`
+
 ### `ecc/agentic-engineering`
 
 Работа в роли агентного инженера — сначала оценки (eval), декомпозиция и маршрутизация моделей по стоимости.
@@ -1196,6 +1926,38 @@ Redis в продакшене.
 - **Ключевые навыки:** архитектура ядра; память в файлах; slash-команды; автоматизация по расписанию; состояние без внешних БД.
 - **Задачи:** создать личную систему агентов со своей памятью и регулярными задачами.
 - **Сочетается с:** `ecc/autonomous-agent-harness`, `ecc/unified-memory`, `ecc/team-agent-orchestration`
+
+### `claude-skills/ar-loop`
+
+Запуск эксперимента autoresearch по расписанию — от 10 минут до раза в месяц.
+
+- **Ключевые навыки:** регулярные итерации улучшения.
+- **Задачи:** поставить автоматическую оптимизацию на поток.
+- **Сочетается с:** `claude-skills/autoresearch-agent`, `claude-skills/ar-status`
+
+### `claude-skills/ar-resume`
+
+Продолжение приостановленного эксперимента autoresearch с его ветки и истории.
+
+- **Ключевые навыки:** восстановление состояния эксперимента.
+- **Задачи:** вернуться к оптимизации после паузы.
+- **Сочетается с:** `claude-skills/autoresearch-agent`
+
+### `claude-skills/ar-run`
+
+Одна ручная итерация autoresearch — правка, оценка, сохранить или отбросить.
+
+- **Ключевые навыки:** шаг эксперимента с метрикой.
+- **Задачи:** сделать один шаг улучшения вручную.
+- **Сочетается с:** `claude-skills/autoresearch-agent`
+
+### `claude-skills/ar-status`
+
+Результаты и прогресс экспериментов autoresearch.
+
+- **Ключевые навыки:** сводка метрик; история итераций.
+- **Задачи:** узнать, как идёт эксперимент.
+- **Сочетается с:** `claude-skills/autoresearch-agent`
 
 ### `ecc/autonomous-agent-harness`
 
@@ -1213,6 +1975,14 @@ Redis в продакшене.
 - **Задачи:** справка по старым схемам циклов; для новых задач используйте continuous-agent-loop.
 - **Сочетается с:** `ecc/continuous-agent-loop`, `ecc/ralphinho-rfc-pipeline`
 
+### `claude-skills/autoresearch-agent`
+
+Измеримое улучшение файла методом проб — скорость кода, размер бандла, доля прохождения, оценка промпта.
+
+- **Ключевые навыки:** метрика цели; итерации; сохранение только улучшений.
+- **Задачи:** оптимизировать что-то по числовой метрике автоматически.
+- **Сочетается с:** `claude-skills/ar-run`, `claude-skills/ar-loop`, `ecc/benchmark-optimization-loop`
+
 ### `ecc/bengali-nlp`
 
 Обработка текста на бенгальском языке для ИИ-приложений.
@@ -1221,6 +1991,22 @@ Redis в продакшене.
 - **Задачи:** подготовить бенгальские тексты для NLP и LLM.
 - **Сочетается с:** `ecc/regex-vs-llm-structured-text`
 
+### `claude-skills/board`
+
+Доска сообщений AgentHub для координации конкурирующих агентов.
+
+- **Ключевые навыки:** публикация и чтение сообщений между агентами.
+- **Задачи:** координировать параллельных агентов.
+- **Сочетается с:** `claude-skills/agenthub`
+
+### `claude-skills/chief-ai-officer-advisor`
+
+Советник по ИИ-стратегии — API, дообучение или своя модель; классификация рисков; найм в ИИ.
+
+- **Ключевые навыки:** EU AI Act и законы штатов США; окупаемость своего хостинга; порядок найма.
+- **Задачи:** принять стратегическое решение по ИИ в компании.
+- **Сочетается с:** `claude-skills/caio-review`, `claude-skills/ai-act-readiness`
+
 ### `ecc/claude-devfleet`
 
 Оркестрация параллельных кодовых агентов через Claude DevFleet в изолированных worktree.
@@ -1228,6 +2014,15 @@ Redis в продакшене.
 - **Ключевые навыки:** планирование проекта; запуск агентов; мониторинг прогресса; структурированные отчёты.
 - **Задачи:** распараллелить разработку между несколькими агентами.
 - **Сочетается с:** `ecc/dmux-workflows`, `ecc/team-agent-orchestration`, `ecc/blueprint`
+
+### `pm-skills/context-engineering-advisor`
+
+Диагностика «напихивания» контекста против грамотной инженерии контекста.
+
+- **Ключевые навыки:** разгрузка промптов; управляемость ИИ-процессов.
+- **Задачи:** когда ИИ-процесс раздут и нестабилен.
+- **Сочетается с:** `ecc/context-budget`, `claude-skills/senior-prompt-engineer`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
 
 ### `ecc/continuous-agent-loop`
 
@@ -1252,6 +2047,14 @@ Redis в продакшене.
 - **Ключевые навыки:** отвечать только при упоминании; молчаливое наблюдение; защита внутреннего контекста; рискованное — только черновиком на одобрение.
 - **Задачи:** безопасно подключить агента к групповым чатам и каналам с клиентами.
 - **Сочетается с:** `ecc/operator-approval-loop`, `ecc/messages-ops`, `ecc/agent-security-hardening`
+
+### `claude-skills/deep-learning-book`
+
+Изучение и применение учебника «Deep Learning» Гудфеллоу, Бенжио и Курвилля с оценкой актуальности советов.
+
+- **Ключевые навыки:** указатель по всем 20 главам; что устарело, а что работает.
+- **Задачи:** разобраться в теории глубокого обучения.
+- **Сочетается с:** `ecc/pytorch-patterns`, `claude-skills/spinning-up-deep-rl`
 
 ### `ecc/dmux-workflows`
 
@@ -1285,6 +2088,22 @@ Redis в продакшене.
 - **Задачи:** формально проверять, что ИИ-разработка достигает цели и ничего не ломает.
 - **Сочетается с:** `ecc/agent-eval`, `ecc/tdd-workflow`, `ecc/verification-loop`
 
+### `claude-skills/eval`
+
+Ранжирование агентов AgentHub по метрике или решению судьи.
+
+- **Ключевые навыки:** сравнение результатов агентов.
+- **Задачи:** определить, какой агент победил.
+- **Сочетается с:** `claude-skills/agenthub`, `claude-skills/merge`
+
+### `claude-skills/fable-goal`
+
+Написание промпта-цели для команды /goal вместо самой реализации.
+
+- **Ключевые навыки:** формулировка цели; критерии готовности.
+- **Задачи:** поставить агенту долгую цель правильно.
+- **Сочетается с:** `ecc/prompt-optimizer`
+
 ### `ecc/gan-style-harness`
 
 Обвязка «генератор–оценщик» по мотивам GAN для автономного создания качественных приложений.
@@ -1292,6 +2111,54 @@ Redis в продакшене.
 - **Ключевые навыки:** агент-генератор и агент-критик; итерации до прохождения оценки.
 - **Задачи:** собрать фичу, где важна высокая планка качества, без постоянного участия человека.
 - **Сочетается с:** `ecc/eval-harness`, `ecc/santa-method`, `ecc/continuous-agent-loop`
+
+### `claude-skills/grade-iterate`
+
+Оценка запущенного управляемого агента по рубрике и его улучшение.
+
+- **Ключевые навыки:** рубрика результата; итерации улучшения.
+- **Задачи:** понять, достаточно ли хорош агент.
+- **Сочетается с:** `claude-skills/agent-launcher-orchestrator`, `claude-skills/run-without-you`
+
+### `claude-skills/hivemind`
+
+Делегирование рутины бесплатным воркерам opencode вместо токенов Claude.
+
+- **Ключевые навыки:** один воркер или рой разведчик–кодер–тестировщик.
+- **Задачи:** сэкономить на рутинных задачах.
+- **Сочетается с:** `ecc/cost-aware-llm-pipeline`, `ecc/dmux-workflows`
+
+### `claude-skills/hub-init`
+
+Старт соревнования агентов AgentHub — задача, число агентов, критерии оценки.
+
+- **Ключевые навыки:** настройка соревнования.
+- **Задачи:** запустить конкурс решений между агентами.
+- **Сочетается с:** `claude-skills/hub-run`, `claude-skills/agenthub`
+
+### `claude-skills/hub-run`
+
+Полный прогон соревнования AgentHub — инициализация, базовая линия, запуск, оценка, слияние.
+
+- **Ключевые навыки:** сквозной конвейер соревнования.
+- **Задачи:** получить лучшее решение из нескольких агентов.
+- **Сочетается с:** `claude-skills/hub-init`, `claude-skills/eval`, `claude-skills/merge`
+
+### `claude-skills/hub-status`
+
+Прогресс агентов AgentHub, ветки и состояние графа.
+
+- **Ключевые навыки:** мониторинг соревнования.
+- **Задачи:** узнать, как идут агенты.
+- **Сочетается с:** `claude-skills/hub-run`
+
+### `claude-skills/interview`
+
+Интервью для определения рамок агента перед запуском.
+
+- **Ключевые навыки:** одна задача агента; лист сборки.
+- **Задачи:** продумать агента до его создания.
+- **Сочетается с:** `claude-skills/stage-launch`, `claude-skills/agent-launcher-orchestrator`
 
 ### `ecc/iterative-retrieval`
 
@@ -1325,6 +2192,14 @@ Redis в продакшене.
 - **Задачи:** обучить модель на арендованных GPU.
 - **Сочетается с:** `ecc/ito-compute`, `ecc/mle-workflow`
 
+### `claude-skills/llm-cost-optimizer`
+
+Контроль затрат на LLM-функции — выбор модели, кэширование, лимиты токенов, расходы по фичам.
+
+- **Ключевые навыки:** маршрутизация; бюджеты; мониторинг затрат.
+- **Задачи:** удержать стоимость ИИ-функций под контролем.
+- **Сочетается с:** `ecc/cost-aware-llm-pipeline`, `ecc/prompt-caching-strategy`
+
 ### `ecc/loop-design-check`
 
 Проектирование или ревью целевого цикла агента на типичные сбои.
@@ -1333,6 +2208,30 @@ Redis в продакшене.
 - **Задачи:** убедиться, что агентный цикл сходится к правильному результату.
 - **Сочетается с:** `ecc/continuous-agent-loop`, `ecc/eval-harness`
 
+### `claude-skills/loop-library`
+
+Каталог повторяемых циклов ИИ-агентов — поиск, сравнение, аудит, адаптация, проектирование.
+
+- **Ключевые навыки:** триггеры; действия; проверка; условия остановки.
+- **Задачи:** подобрать или спроектировать надёжный агентный цикл.
+- **Сочетается с:** `ecc/loop-design-check`, `ecc/continuous-agent-loop`
+
+### `claude-skills/mcp-oauth-triage`
+
+Диагностика MCP-коннектора, который перестал проходить авторизацию.
+
+- **Ключевые навыки:** ошибки 401; обновление токена; аномалии OAuth.
+- **Задачи:** починить сломанный MCP-коннектор.
+- **Сочетается с:** `claude-skills/mcp-server-builder`, `ecc/mcp-server-patterns`
+
+### `claude-skills/mcp-server-builder`
+
+Превращение API в MCP-сервер на Python или TypeScript.
+
+- **Ключевые навыки:** генерация обёрток инструментов; каркас сервера.
+- **Задачи:** подключить свой API к агентам.
+- **Сочетается с:** `ecc/mcp-server-patterns`, `claude-skills/mcp-oauth-triage`
+
 ### `ecc/mcp-server-patterns`
 
 Создание MCP-серверов на Node/TypeScript SDK.
@@ -1340,6 +2239,22 @@ Redis в продакшене.
 - **Ключевые навыки:** инструменты, ресурсы, промпты; валидация Zod; stdio и Streamable HTTP.
 - **Задачи:** написать свой MCP-сервер для подключения сервиса к агенту.
 - **Сочетается с:** `ecc/agent-harness-construction`, `ecc/mcp-dependency-review`
+
+### `claude-skills/memory-engineering`
+
+Проектирование памяти агента — длинный контекст, RAG, граф или агентная память, что забывать.
+
+- **Ключевые навыки:** выбор архитектуры памяти; политика устаревания.
+- **Задачи:** добавить агенту память правильно.
+- **Сочетается с:** `claude-skills/rag-architect`, `ecc/unified-memory`
+
+### `claude-skills/merge`
+
+Слияние победившей ветки AgentHub, архивирование остальных и чистка worktree.
+
+- **Ключевые навыки:** финализация соревнования.
+- **Задачи:** забрать лучший результат.
+- **Сочетается с:** `claude-skills/eval`, `claude-skills/hub-run`
 
 ### `ecc/ml-adoption-playbook`
 
@@ -1389,6 +2304,14 @@ Redis в продакшене.
 - **Задачи:** удешевить и ускорить работу LLM-приложения.
 - **Сочетается с:** `ecc/cost-aware-llm-pipeline`, `ecc/token-budget-advisor`
 
+### `claude-skills/prompt-governance`
+
+Промпты в продакшене — версии, реестр, A/B-тесты, регрессии, eval-конвейер.
+
+- **Ключевые навыки:** процесс выпуска промптов.
+- **Задачи:** управлять промптами как кодом.
+- **Сочетается с:** `claude-skills/senior-prompt-engineer`, `ecc/eval-harness`
+
 ### `ecc/prompt-optimizer`
 
 Анализ черновика промпта и выдача улучшенной версии.
@@ -1404,6 +2327,14 @@ Redis в продакшене.
 - **Ключевые навыки:** пайплайны обучения; архитектуры моделей; загрузка данных; воспроизводимость.
 - **Задачи:** построить и обучить нейросеть.
 - **Сочетается с:** `ecc/mle-workflow`, `ecc/ml-adoption-playbook`
+
+### `claude-skills/rag-architect`
+
+Проектирование RAG-конвейера.
+
+- **Ключевые навыки:** размер чанков; модель эмбеддингов; векторная БД; метрики качества поиска.
+- **Задачи:** построить поиск по своим документам с ИИ.
+- **Сочетается с:** `claude-skills/memory-engineering`, `ecc/iterative-retrieval`
 
 ### `ecc/ralphinho-rfc-pipeline`
 
@@ -1429,6 +2360,78 @@ Redis в продакшене.
 - **Задачи:** дёшево и точно разбирать анкеты, счета, чеки, таблицы.
 - **Сочетается с:** `ecc/cost-aware-llm-pipeline`, `ecc/data-scraper-agent`
 
+### `claude-skills/run-without-you`
+
+Запуск оценённого управляемого агента по расписанию, событию или по запросу.
+
+- **Ключевые навыки:** проверка cron; триггеры.
+- **Задачи:** чтобы агент работал сам каждое утро.
+- **Сочетается с:** `claude-skills/grade-iterate`, `claude-skills/wrap-up`
+
+### `claude-skills/self-eval`
+
+Честная оценка завершённой работы по двум осям с проходом «адвоката дьявола».
+
+- **Ключевые навыки:** защита от завышения оценки.
+- **Задачи:** понять, насколько хорошо выполнена задача.
+- **Сочетается с:** `ecc/agent-self-evaluation`
+
+### `claude-skills/senior-computer-vision`
+
+Модели компьютерного зрения — детекция, сегментация, обучение своей модели, оптимизация инференса.
+
+- **Ключевые навыки:** YOLO, DETR, SAM, ONNX.
+- **Задачи:** решить задачу распознавания изображений.
+- **Сочетается с:** `ecc/pytorch-patterns`, `claude-skills/senior-ml-engineer`
+
+### `claude-skills/senior-ml-engineer`
+
+Вывод ML-моделей и LLM-функций в продакшен.
+
+- **Ключевые навыки:** MLOps; мониторинг дрейфа; RAG; стоимость и ретраи LLM API.
+- **Задачи:** эксплуатировать ML в продакшене.
+- **Сочетается с:** `ecc/mle-workflow`, `claude-skills/rag-architect`
+
+### `claude-skills/senior-prompt-engineer`
+
+Улучшение промптов и измерение качества LLM.
+
+- **Ключевые навыки:** исправление нестабильных промптов; наборы для оценки; оценка поиска RAG; настройки инструментов агента.
+- **Задачи:** сделать ответы LLM стабильными и измеримыми.
+- **Сочетается с:** `claude-skills/prompt-governance`, `ecc/prompt-optimizer`
+
+### `claude-skills/setup`
+
+Запуск нового эксперимента autoresearch — цель, команда оценки, метрика, направление.
+
+- **Ключевые навыки:** настройка эксперимента.
+- **Задачи:** начать автоматическую оптимизацию.
+- **Сочетается с:** `claude-skills/autoresearch-agent`
+
+### `claude-skills/spawn`
+
+Запуск соревнующихся агентов AgentHub в изолированных worktree.
+
+- **Ключевые навыки:** параллельный запуск.
+- **Задачи:** стартовать соревнование агентов.
+- **Сочетается с:** `claude-skills/hub-run`
+
+### `claude-skills/spinning-up-deep-rl`
+
+Глубокое обучение с подкреплением по OpenAI Spinning Up.
+
+- **Ключевые навыки:** policy gradients; VPG, PPO, SAC, TD3, DDPG, TRPO.
+- **Задачи:** обучить RL-агента.
+- **Сочетается с:** `claude-skills/deep-learning-book`, `ecc/pytorch-patterns`
+
+### `claude-skills/stage-launch`
+
+Запуск управляемого агента по готовому листу сборки.
+
+- **Ключевые навыки:** генерация и проверка API-запросов.
+- **Задачи:** задеплоить агента.
+- **Сочетается с:** `claude-skills/interview`, `claude-skills/grade-iterate`
+
 ### `ecc/team-agent-orchestration`
 
 Командная оркестрация отрядов агентов.
@@ -1453,6 +2456,22 @@ Redis в продакшене.
 - **Задачи:** продолжить работу другим агентом без потери контекста.
 - **Сочетается с:** `ecc/ck`, `ecc/knowledge-ops`
 
+### `claude-skills/workflow-builder`
+
+Скрипты Workflow для Claude Code — fan-out, конвейеры, циклы, панели судей субагентов.
+
+- **Ключевые навыки:** оркестрация субагентов кодом.
+- **Задачи:** автоматизировать многоагентный процесс.
+- **Сочетается с:** `ecc/team-agent-orchestration`
+
+### `claude-skills/wrap-up`
+
+Завершение работы над управляемым агентом — инвентаризация созданного.
+
+- **Ключевые навыки:** что вы теперь владеете; документация.
+- **Задачи:** аккуратно закрыть проект агента.
+- **Сочетается с:** `claude-skills/run-without-you`
+
 ---
 
 <a id="cat-eng-process"></a>
@@ -1464,7 +2483,7 @@ Redis в продакшене.
 
 **Типовые связки.** codebase-onboarding → blueprint / plan-* (план) → architecture-decision-records → реализация → change-impact → conventional-commit-review → git-workflow.
 
-Навыков в категории: 27.
+Навыков в категории: 49.
 
 ### `ecc/ai-first-engineering`
 
@@ -1506,6 +2525,22 @@ Redis в продакшене.
 - **Задачи:** оценить «радиус поражения» рискованного изменения — миграции, авторизации, публичного API.
 - **Сочетается с:** `ecc/database-migrations`, `ecc/architecture-decision-records`, `ecc/module-regression`
 
+### `claude-skills/changelog-generator`
+
+Release notes и CHANGELOG.md из коммитов с выбором следующей версии semver.
+
+- **Ключевые навыки:** группировка изменений; определение версии.
+- **Задачи:** подготовить релиз и описание изменений.
+- **Сочетается с:** `claude-skills/commit-craft`, `ecc/github-ops`
+
+### `claude-skills/codebase-onboarding`
+
+Объяснение незнакомого репозитория — архитектурный бриф и документы для онбординга.
+
+- **Ключевые навыки:** структура проекта; точки входа; соглашения.
+- **Задачи:** быстро разобраться в новом проекте.
+- **Сочетается с:** `ecc/codebase-onboarding`, `claude-skills/code-tour`
+
 ### `ecc/codebase-onboarding`
 
 Анализ незнакомой кодовой базы и создание руководства для входа с картой архитектуры и стартовым CLAUDE.md.
@@ -1521,6 +2556,14 @@ Redis в продакшене.
 - **Ключевые навыки:** правила именования; читаемость; ревью качества кода.
 - **Задачи:** ревью кода, когда нет специализированного навыка под фреймворк.
 - **Сочетается с:** `ecc/codehealth-mcp`, `ecc/error-handling`
+
+### `claude-skills/commit-craft`
+
+Превращение смеси изменений в чистые коммиты с хорошими сообщениями.
+
+- **Ключевые навыки:** разбиение на логичные коммиты; блокировка секретов и .env.
+- **Задачи:** аккуратно закоммитить работу.
+- **Сочетается с:** `ecc/conventional-commit-review`, `claude-skills/changelog-generator`
 
 ### `ecc/contract-first`
 
@@ -1538,6 +2581,22 @@ Redis в продакшене.
 - **Задачи:** написать или исправить сообщение коммита.
 - **Сочетается с:** `ecc/git-workflow`, `ecc/github-ops`
 
+### `claude-skills/cto-advisor`
+
+Решения CTO — техдолг, архитектура, масштабирование инженерной команды, выбор технологий, метрики DORA.
+
+- **Ключевые навыки:** оценка технологий; рост команды; метрики поставки.
+- **Задачи:** принять техническое решение уровня руководства.
+- **Сочетается с:** `claude-skills/cto-review`, `ecc/architecture-decision-records`
+
+### `claude-skills/cto-review`
+
+Критика архитектурной ставки, плана масштабирования в 10 раз или решения переписать против купить.
+
+- **Ключевые навыки:** позиция технического директора.
+- **Задачи:** проверить технический план.
+- **Сочетается с:** `claude-skills/cto-advisor`
+
 ### `ecc/dev-team`
 
 Имитация командной сессии с ролями PM, архитектор, разработчик и QA над одной задачей.
@@ -1545,6 +2604,30 @@ Redis в продакшене.
 - **Ключевые навыки:** взгляд с разных ролей; обсуждение компромиссов.
 - **Задачи:** спроектировать фичу; отревьюить решение с нескольких сторон.
 - **Сочетается с:** `ecc/council`, `ecc/blueprint`, `ecc/product-lens`
+
+### `claude-skills/engineering-advanced-skills`
+
+Выбор подходящего продвинутого инженерного навыка — агенты, RAG, MCP, CI/CD, БД, наблюдаемость, релизы.
+
+- **Ключевые навыки:** маршрутизация по навыкам.
+- **Задачи:** понять, какой навык использовать.
+- **Сочетается с:** `claude-skills/engineering-skills`
+
+### `claude-skills/engineering-skills`
+
+Выбор инженерного навыка под задачу — архитектура, фронтенд, бэкенд, QA, DevOps, безопасность, ML, данные, облака.
+
+- **Ключевые навыки:** маршрутизация по навыкам инженерной команды.
+- **Задачи:** найти правильного «специалиста» для задачи.
+- **Сочетается с:** `claude-skills/engineering-advanced-skills`
+
+### `claude-skills/focused-fix`
+
+Исправление целиком сломанной фичи или модуля.
+
+- **Ключевые навыки:** карта всех файлов и зависимостей; сквозное исправление.
+- **Задачи:** заставить работать сломанный модуль.
+- **Сочетается с:** `claude-skills/red-green-proof`, `ecc/orch-fix-defect`
 
 ### `ecc/git-workflow`
 
@@ -1554,6 +2637,30 @@ Git-процессы — ветвление, соглашения коммито
 - **Задачи:** настроить командный git-процесс; навести порядок в истории перед мержем.
 - **Сочетается с:** `ecc/conventional-commit-review`, `ecc/github-ops`
 
+### `claude-skills/git-worktree-manager`
+
+Параллельная работа нескольких веток или агентов в одном репозитории через worktree.
+
+- **Ключевые навыки:** изолированные порты и окружения.
+- **Задачи:** запустить несколько агентов без конфликтов.
+- **Сочетается с:** `ecc/claude-devfleet`, `ecc/team-agent-orchestration`
+
+### `claude-skills/grill-me`
+
+Неустанные вопросы о плане или дизайне до полного взаимопонимания.
+
+- **Ключевые навыки:** проход по дереву решений.
+- **Задачи:** проверить, всё ли продумано в плане.
+- **Сочетается с:** `claude-skills/grill-with-docs`, `ecc/council`
+
+### `claude-skills/grill-with-docs`
+
+Стресс-тест плана против собственной документации проекта — глоссария и ADR.
+
+- **Ключевые навыки:** сверка с CONTEXT.md и docs/adr.
+- **Задачи:** убедиться, что план не противоречит принятым решениям.
+- **Сочетается с:** `claude-skills/grill-me`, `ecc/context-and-decisions`
+
 ### `ecc/hexagonal-architecture`
 
 Архитектура «порты и адаптеры» с чёткими границами домена.
@@ -1561,6 +2668,14 @@ Git-процессы — ветвление, соглашения коммито
 - **Ключевые навыки:** инверсия зависимостей; оркестрация use case; тестируемость.
 - **Задачи:** спроектировать или переработать систему с изолированным доменом.
 - **Сочетается с:** `ecc/android-clean-architecture`, `ecc/architecture-decision-records`
+
+### `claude-skills/human-gate`
+
+Страница ревью для одобрения человеком перед необратимым действием.
+
+- **Ключевые навыки:** план, спецификация, отчёт, миграция на подпись.
+- **Задачи:** получить явное одобрение перед выпуском.
+- **Сочетается с:** `ecc/operator-approval-loop`, `ecc/plan-canvas`
 
 ### `ecc/inherit-legacy-style`
 
@@ -1585,6 +2700,14 @@ Git-процессы — ветвление, соглашения коммито
 - **Ключевые навыки:** сверка с текущим кодом; поиск дублей и прошлых PR; вывод о состоятельности.
 - **Задачи:** разобрать новый баг-репорт или запрос.
 - **Сочетается с:** `ecc/github-ops`, `ecc/change-impact`
+
+### `claude-skills/minimalist`
+
+Писать минимум кода — без переусложнения и лишних зависимостей.
+
+- **Ключевые навыки:** YAGNI; переиспользование; лестница упрощения.
+- **Задачи:** сделать решение проще.
+- **Сочетается с:** `claude-skills/karpathy-coder`
 
 ### `ecc/module-governance`
 
@@ -1682,6 +2805,78 @@ Git-процессы — ветвление, соглашения коммито
 - **Задачи:** не изобретать велосипед.
 - **Сочетается с:** `ecc/documentation-lookup`, `ecc/skill-scout`
 
+### `claude-skills/senior-architect`
+
+Архитектурные решения с письменным обоснованием — монолит или микросервисы, выбор БД, пределы масштабирования.
+
+- **Ключевые навыки:** ADR; диаграммы Mermaid.
+- **Задачи:** принять и задокументировать архитектурное решение.
+- **Сочетается с:** `ecc/architecture-decision-records`, `claude-skills/tech-stack-evaluator`
+
+### `claude-skills/spec-driven-workflow`
+
+Сначала спецификация, потом код — критерии приёмки и тесты из спецификации.
+
+- **Ключевые навыки:** генерация спецификации; тесты по ней.
+- **Задачи:** разработка фичи по спецификации.
+- **Сочетается с:** `ecc/intent-driven-development`, `ecc/tdd-workflow`
+
+### `claude-skills/strict-api`
+
+Никаких выдуманных API — проверка функций и версий библиотек перед использованием.
+
+- **Ключевые навыки:** сверка с документацией.
+- **Задачи:** исключить галлюцинации в коде.
+- **Сочетается с:** `claude-skills/zero-hallucination-coder`, `ecc/documentation-lookup`
+
+### `claude-skills/tc-tracker`
+
+Учёт технических изменений в виде записей и передача работы между сессиями.
+
+- **Ключевые навыки:** создание и проверка записей изменений.
+- **Задачи:** вести журнал изменений между сессиями ИИ.
+- **Сочетается с:** `claude-skills/session-handoff`
+
+### `claude-skills/tech-debt-tracker`
+
+Поиск, ранжирование и учёт техдолга.
+
+- **Ключевые навыки:** приоритизация рефакторинга; модернизация легаси.
+- **Задачи:** решить, что рефакторить первым.
+- **Сочетается с:** `ecc/codehealth-mcp`, `ecc/orch-refine-code`
+
+### `claude-skills/tech-stack-evaluator`
+
+Сравнение фреймворков и стеков перед выбором.
+
+- **Ключевые навыки:** балльная оценка; совокупная стоимость; здоровье экосистемы; риски миграции.
+- **Задачи:** выбрать технологию обоснованно.
+- **Сочетается с:** `claude-skills/senior-architect`
+
+### `claude-skills/vpe-advisor`
+
+Советник VP of Engineering — скорость поставки, найм, структура команды, когда вводить менеджера.
+
+- **Ключевые навыки:** метрики поставки; оргдизайн инженерии.
+- **Задачи:** ускорить и масштабировать разработку.
+- **Сочетается с:** `claude-skills/vpe-review`, `claude-skills/cto-advisor`
+
+### `claude-skills/vpe-review`
+
+Критика плана по скорости поставки, найму, структуре или дежурствам.
+
+- **Ключевые навыки:** позиция VP of Engineering.
+- **Задачи:** проверить инженерный план.
+- **Сочетается с:** `claude-skills/vpe-advisor`
+
+### `claude-skills/zero-hallucination-coder`
+
+Аккуратное кодирование в рискованных задачах (авторизация, БД, миграции) без выдуманных API.
+
+- **Ключевые навыки:** дисциплина планирования; проверка фактов.
+- **Задачи:** многофайловые изменения без ошибок.
+- **Сочетается с:** `claude-skills/strict-api`, `ecc/gateguard`
+
 ---
 
 <a id="cat-claude-setup"></a>
@@ -1693,7 +2888,7 @@ Git-процессы — ветвление, соглашения коммито
 
 **Типовые связки.** configure-ecc → agent-sort (что оставить) → context-budget / token-budget-advisor → config-gc (чистка) → skill-stocktake (ревизия навыков).
 
-Навыков в категории: 27.
+Навыков в категории: 42.
 
 ### `ecc/agent-sort`
 
@@ -1711,6 +2906,14 @@ Git-процессы — ветвление, соглашения коммито
 - **Задачи:** понять состояние автоматизаций прежде, чем что-то чинить.
 - **Сочетается с:** `ecc/config-gc`, `ecc/workspace-surface-audit`
 
+### `claude-skills/book-to-skill`
+
+Превращение книги, папки документации или спецификаций в навык агента.
+
+- **Ключевые навыки:** извлечение из PDF, EPUB, DOCX, HTML, Markdown; структура навыка.
+- **Задачи:** сделать навык из книги или документации.
+- **Сочетается с:** `claude-skills/extract`, `ecc/skill-scout`
+
 ### `ecc/ck`
 
 Постоянная память проекта для Claude Code (Context Keeper) через команды /ck и хук начала сессии.
@@ -1718,6 +2921,22 @@ Git-процессы — ветвление, соглашения коммито
 - **Ключевые навыки:** сохранение состояния и следующих шагов; возобновление работы; краткий бриф проекта при старте.
 - **Задачи:** продолжить проект в новой сессии без повторных объяснений.
 - **Сочетается с:** `ecc/unified-memory`, `ecc/strategic-compact`
+
+### `claude-skills/claude-coach`
+
+Коучинг по эффективному использованию Claude.
+
+- **Ключевые навыки:** оценка ваших промптов; приёмы опытных пользователей.
+- **Задачи:** научиться работать с Claude продуктивнее.
+- **Сочетается с:** `ecc/prompt-optimizer`
+
+### `claude-skills/coding-agent-rollout`
+
+Внедрение Claude Code в команде.
+
+- **Ключевые навыки:** общие и управляемые настройки; одобрение MCP и плагинов; многоуровневый CLAUDE.md; принятие командой.
+- **Задачи:** настроить Claude Code для всей команды.
+- **Сочетается с:** `ecc/configure-ecc`, `claude-skills/claude-coach`
 
 ### `ecc/config-gc`
 
@@ -1799,6 +3018,14 @@ Git-процессы — ветвление, соглашения коммито
 - **Задачи:** расследовать всплеск затрат GitHub App.
 - **Сочетается с:** `ecc/cost-tracking`
 
+### `claude-skills/extract`
+
+Превращение повторяющегося исправления или паттерна в переиспользуемый навык.
+
+- **Ключевые навыки:** SKILL.md; справочные документы; примеры.
+- **Задачи:** сохранить находку как навык.
+- **Сочетается с:** `claude-skills/write-a-skill`, `claude-skills/promote`
+
 ### `ecc/hermes-imports`
 
 Конвертация локальных процессов Hermes в очищенные навыки ECC.
@@ -1814,6 +3041,22 @@ Git-процессы — ветвление, соглашения коммито
 - **Ключевые навыки:** события bash, файлов, промптов и остановки; регулярные выражения и условия.
 - **Задачи:** ввести защитные правила для агента без программирования хуков.
 - **Сочетается с:** `ecc/delivery-gate`, `ecc/gateguard`, `ecc/safety-guard`
+
+### `claude-skills/memory-review`
+
+Ревью авто-памяти агента — что сделать постоянным правилом, что удалить, что объединить.
+
+- **Ключевые навыки:** продвижение правил; чистка устаревшего.
+- **Задачи:** поддерживать память агента в порядке.
+- **Сочетается с:** `claude-skills/memory-status`, `claude-skills/promote`
+
+### `claude-skills/memory-status`
+
+Проверка здоровья авто-памяти — объём, файлы тем, устаревшие записи.
+
+- **Ключевые навыки:** метрики памяти; рекомендации по чистке.
+- **Задачи:** узнать, насколько заполнена память.
+- **Сочетается с:** `claude-skills/memory-review`
 
 ### `ecc/nanoclaw-repl`
 
@@ -1831,6 +3074,31 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Задачи:** установить и контролировать Nasiko.
 - **Сочетается с:** `ecc/configure-ecc`
 
+### `pm-skills/pm-skill-creator`
+
+Создание нового PM-навыка через диалог.
+
+- **Ключевые навыки:** превращение идеи в навык по стандартам.
+- **Задачи:** написать свой продуктовый навык.
+- **Сочетается с:** `pm-skills/skill-authoring-workflow`, `claude-skills/write-a-skill`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `claude-skills/promote`
+
+Перевод проверенного паттерна из авто-памяти в CLAUDE.md или правила.
+
+- **Ключевые навыки:** постоянные правила агента.
+- **Задачи:** закрепить полезное правило.
+- **Сочетается с:** `claude-skills/memory-review`, `claude-skills/remember`
+
+### `claude-skills/remember`
+
+Сохранение важного в авто-память с датой и контекстом.
+
+- **Ключевые навыки:** записи памяти.
+- **Задачи:** чтобы агент запомнил что-то на будущее.
+- **Сочетается с:** `claude-skills/promote`, `claude-skills/memory-review`
+
 ### `ecc/rules-distill`
 
 Извлечение сквозных принципов из навыков и превращение их в правила.
@@ -1838,6 +3106,23 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Ключевые навыки:** поиск повторяющихся принципов; создание и правка файлов правил.
 - **Задачи:** обобщить опыт из навыков в единые правила.
 - **Сочетается с:** `ecc/continuous-learning-v2`, `ecc/skill-stocktake`
+
+### `claude-skills/self-improving-agent`
+
+Превращение выученного агентом в долговечные знания проекта.
+
+- **Ключевые навыки:** ревью MEMORY.md; продвижение в правила.
+- **Задачи:** чтобы агент становился лучше со временем.
+- **Сочетается с:** `claude-skills/memory-review`, `claude-skills/promote`
+
+### `pm-skills/skill-authoring-workflow`
+
+Превращение сырого PM-контента в готовый к публикации навык.
+
+- **Ключевые навыки:** соблюдение стандартов репозитория.
+- **Задачи:** оформить навык правильно.
+- **Сочетается с:** `pm-skills/pm-skill-creator`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
 
 ### `ecc/skill-comply`
 
@@ -1855,6 +3140,14 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Задачи:** подготовить навык к публикации для разных оболочек.
 - **Сочетается с:** `ecc/skill-stocktake`
 
+### `claude-skills/skill-retro`
+
+Оценка навыков по реальной истории сессий — какие действительно работают.
+
+- **Ключевые навыки:** доказательная оценка навыков.
+- **Задачи:** понять, какие навыки оставить.
+- **Сочетается с:** `ecc/skill-stocktake`, `ecc/skill-comply`
+
 ### `ecc/skill-scout`
 
 Поиск существующих навыков перед созданием нового.
@@ -1870,6 +3163,22 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Ключевые навыки:** быстрый скан изменённых; полная ревизия пакетами субагентов.
 - **Задачи:** найти слабые, устаревшие и дублирующиеся навыки.
 - **Сочетается с:** `ecc/config-gc`, `ecc/skill-comply`, `ecc/agent-sort`
+
+### `claude-skills/skill-tester`
+
+Проверка навыка перед выпуском — структура, запуск скриптов, оценка.
+
+- **Ключевые навыки:** валидатор навыков.
+- **Задачи:** выпустить качественный навык.
+- **Сочетается с:** `claude-skills/write-a-skill`, `ecc/skill-host-compat`
+
+### `claude-skills/skillopt-sleep`
+
+Ночной офлайн-цикл самоулучшения агента по прошлому опыту.
+
+- **Ключевые навыки:** «сон» для оптимизации памяти и навыков.
+- **Задачи:** чтобы агент улучшался между сессиями.
+- **Сочетается с:** `claude-skills/self-improving-agent`
 
 ### `ecc/strategic-compact`
 
@@ -1911,6 +3220,14 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Задачи:** понять, что подключить для этого проекта.
 - **Сочетается с:** `ecc/agent-sort`, `ecc/automation-audit-ops`
 
+### `claude-skills/write-a-skill`
+
+Создание новых навыков с правильной структурой и ресурсами.
+
+- **Ключевые навыки:** прогрессивное раскрытие; вложенные ресурсы.
+- **Задачи:** написать свой навык.
+- **Сочетается с:** `claude-skills/skill-tester`, `claude-skills/extract`
+
 ---
 
 <a id="cat-docs"></a>
@@ -1922,7 +3239,15 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 
 **Типовые связки.** documentation-lookup (актуальные доки) → написание → docs-governance / living-docs-governance (аудит) → knowledge-ops (база знаний).
 
-Навыков в категории: 7.
+Навыков в категории: 15.
+
+### `claude-skills/code-tour`
+
+Экскурсии по коду в формате CodeTour.
+
+- **Ключевые навыки:** туры под роль; онбординг; архитектура; ревью PR.
+- **Задачи:** объяснить устройство кода пошагово.
+- **Сочетается с:** `ecc/code-tour`, `claude-skills/codebase-onboarding`
 
 ### `ecc/code-tour`
 
@@ -1940,6 +3265,14 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Задачи:** зафиксировать доменные термины, которые постоянно приходится объяснять.
 - **Сочетается с:** `ecc/architecture-decision-records`, `ecc/docs-governance`
 
+### `claude-skills/design-system`
+
+Настройка брендовых параметров перед конвертацией markdown в HTML.
+
+- **Ключевые навыки:** онбординг из 10 вопросов; цвета, шрифты, стиль страниц.
+- **Задачи:** задать единый стиль для HTML-документов.
+- **Сочетается с:** `claude-skills/markdown-html-orchestrator`, `claude-skills/md-document`
+
 ### `ecc/docs-governance`
 
 Маршрутизация задач по управлению документацией и аудит ролей документов, ссылок и индексов ADR.
@@ -1956,6 +3289,14 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Задачи:** получить точный ответ по свежей версии React, Next.js и других.
 - **Сочетается с:** `ecc/search-first`
 
+### `claude-skills/i18n-localization`
+
+Интернационализация приложения — новые строки, новые языки, ревью переводов.
+
+- **Ключевые навыки:** пропущенные ключи; плейсхолдеры; встраивание i18n.
+- **Задачи:** подготовить приложение к нескольким языкам.
+- **Сочетается с:** `ecc/i18n-sync`
+
 ### `ecc/i18n-sync`
 
 Перевод и синхронизация JSON-файлов локализации приложения.
@@ -1963,6 +3304,14 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Ключевые навыки:** учёт использования ключей; терминология проекта; валидация.
 - **Задачи:** добавить язык или новые ключи и обновить переводы.
 - **Сочетается с:** `ecc/visa-doc-translate`
+
+### `claude-skills/knowledge-ops`
+
+Написание, проверка и чистка регламентов (SOP) и ранбуков.
+
+- **Ключевые навыки:** генерация SOP; проверка полноты 5W2H; ссылки.
+- **Задачи:** навести порядок в инструкциях компании.
+- **Сочетается с:** `claude-skills/process-mapper`, `claude-skills/runbook-generator`
 
 ### `ecc/knowledge-ops`
 
@@ -1980,6 +3329,38 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Задачи:** поддерживать документацию актуальной на протяжении жизни проекта.
 - **Сочетается с:** `ecc/docs-governance`, `ecc/architecture-decision-records`
 
+### `claude-skills/llm-wiki`
+
+«Второй мозг» в Obsidian, который поддерживает LLM.
+
+- **Ключевые навыки:** загрузка статей, книг, работ; связи между заметками.
+- **Задачи:** вести личную базу знаний с помощью ИИ.
+- **Сочетается с:** `claude-skills/deepread`, `ecc/knowledge-ops`
+
+### `claude-skills/markdown-html-orchestrator`
+
+Превращение markdown в одностраничный интерактивный HTML — документ, код-ревью или слайды.
+
+- **Ключевые навыки:** классификация документа; выбор шаблона.
+- **Задачи:** сделать из markdown красивую веб-страницу.
+- **Сочетается с:** `claude-skills/md-document`, `claude-skills/md-slides`, `claude-skills/md-review`
+
+### `claude-skills/md-document`
+
+Длинный markdown (спецификация, RFC, отчёт) в HTML с оглавлением, поиском и копированием кода.
+
+- **Ключевые навыки:** разбор структуры; навигация.
+- **Задачи:** сделать документ удобным для чтения в браузере.
+- **Сочетается с:** `claude-skills/markdown-html-orchestrator`
+
+### `claude-skills/md-review`
+
+Markdown-ревью кода с диффами в двухколоночную HTML-страницу.
+
+- **Ключевые навыки:** разбор диффов; выделение критичности.
+- **Задачи:** красиво оформить ревью кода.
+- **Сочетается с:** `claude-skills/markdown-html-orchestrator`, `claude-skills/code-reviewer`
+
 ---
 
 <a id="cat-content"></a>
@@ -1991,7 +3372,7 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 
 **Типовые связки.** brand-discovery → brand-voice → article-writing / content-engine → crosspost / social-publisher.
 
-Навыков в категории: 8.
+Навыков в категории: 17.
 
 ### `ecc/article-writing`
 
@@ -2009,6 +3390,14 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Задачи:** создать или переосмыслить бренд; подготовить бриф для дизайнеров и копирайтеров.
 - **Сочетается с:** `ecc/brand-voice`, `ecc/article-writing`, `ecc/frontend-design-direction`
 
+### `claude-skills/brand-guidelines`
+
+Создание и применение брендбука — цвета, типографика, логотип, изображения, тон голоса.
+
+- **Ключевые навыки:** правила бренда; проверка материалов на соответствие.
+- **Задачи:** собрать брендбук или проверить макет по нему.
+- **Сочетается с:** `ecc/brand-voice`, `ecc/brand-discovery`
+
 ### `ecc/brand-voice`
 
 Профиль стиля письма на основе реальных текстов автора для повторного использования в контенте и переписке.
@@ -2025,6 +3414,14 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Задачи:** перестроить соцсеть под текущие цели.
 - **Сочетается с:** `ecc/social-graph-ranker`, `ecc/brand-voice`, `ecc/lead-intelligence`
 
+### `claude-skills/content-creator`
+
+Устаревший псевдоним — передаёт написание в content-production, а планирование в content-strategy.
+
+- **Ключевые навыки:** перенаправление.
+- **Задачи:** только для совместимости.
+- **Сочетается с:** `claude-skills/content-production`, `claude-skills/content-strategy`
+
 ### `ecc/content-engine`
 
 Системы контента под каждую платформу — X, LinkedIn, TikTok, YouTube, рассылки.
@@ -2032,6 +3429,38 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Ключевые навыки:** посты и треды; сценарии; контент-календари; переупаковка одного материала под разные платформы.
 - **Задачи:** построить регулярный контент-поток; адаптировать материал под площадки.
 - **Сочетается с:** `ecc/crosspost`, `ecc/brand-voice`, `ecc/social-publisher`
+
+### `claude-skills/content-humanizer`
+
+Делает черновик менее «ИИ-шным» — ритм, конкретика, личность, голос бренда.
+
+- **Ключевые навыки:** устранение шаблонных оборотов; живой стиль.
+- **Задачи:** когда текст звучит как написанный ИИ.
+- **Сочетается с:** `claude-skills/copy-editing`, `ecc/brand-voice`
+
+### `claude-skills/content-production`
+
+Статья или гайд от начала до конца — исследование, план, черновик, SEO, проверки качества.
+
+- **Ключевые навыки:** сквозной процесс производства контента.
+- **Задачи:** написать пост для блога целиком.
+- **Сочетается с:** `claude-skills/content-strategy`, `claude-skills/content-humanizer`, `ecc/seo`
+
+### `claude-skills/copy-editing`
+
+Редактура и вычитка маркетинговых текстов в несколько проходов.
+
+- **Ключевые навыки:** ясность; голос; орфография; конкретика; читаемость; следы ИИ.
+- **Задачи:** довести готовый текст до блеска.
+- **Сочетается с:** `claude-skills/content-humanizer`, `marketing/copy-editing`
+
+### `marketing/copy-editing`
+
+Редактура, сокращение и вычитка существующего текста без переписывания с нуля.
+
+- **Ключевые навыки:** решения по каждой строке — оставить, убрать, изменить.
+- **Задачи:** улучшить уже написанный текст.
+- **Сочетается с:** `marketing/copywriting`, `claude-skills/copy-editing`
 
 ### `ecc/crosspost`
 
@@ -2041,6 +3470,22 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Задачи:** опубликовать материал сразу на нескольких платформах.
 - **Сочетается с:** `ecc/content-engine`, `ecc/social-publisher`, `ecc/x-api`
 
+### `claude-skills/linkedin-content`
+
+Посты для LinkedIn — истории, how-to, карусели, сценарии видео, опросы.
+
+- **Ключевые навыки:** хуки; формат; ревью черновика.
+- **Задачи:** написать сильный пост для LinkedIn.
+- **Сочетается с:** `claude-skills/linkedin-strategy`, `ecc/brand-voice`
+
+### `claude-skills/social-content`
+
+Посты для LinkedIn, X, Instagram, TikTok, Facebook с учётом формата площадки.
+
+- **Ключевые навыки:** хуки; длина; формат.
+- **Задачи:** написать пост для соцсети.
+- **Сочетается с:** `marketing/social`, `ecc/content-engine`
+
 ### `ecc/social-publisher`
 
 Планирование и публикация постов в 13 соцсетях через SocialClaw.
@@ -2048,6 +3493,14 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Ключевые навыки:** X, LinkedIn, Instagram, Facebook и другие; расписание публикаций.
 - **Задачи:** автоматизировать публикации в соцсетях.
 - **Сочетается с:** `ecc/content-engine`, `ecc/crosspost`
+
+### `marketing/social`
+
+Органический контент для LinkedIn, X, Instagram, TikTok, Facebook.
+
+- **Ключевые навыки:** что публиковать; какой формат выбрать; с какой площадки начать.
+- **Задачи:** вести соцсети бренда.
+- **Сочетается с:** `claude-skills/social-content`, `ecc/content-engine`
 
 ### `ecc/x-api`
 
@@ -2068,7 +3521,360 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 
 **Типовые связки.** product-marketing-context (база знаний о продукте) → стратегия (content-strategy, launch-strategy) → тексты (copywriting) → CRO (page-cro) → аналитика (analytics-tracking) → A/B-тесты.
 
-Навыков в категории: 2.
+Навыков в категории: 90.
+
+### `claude-skills/ab-test-setup`
+
+Планирование и запуск A/B, сплит- и мультивариантных тестов с расчётом выборки.
+
+- **Ключевые навыки:** расчёт размера выборки; гипотезы; статистическая значимость результата.
+- **Задачи:** спланировать эксперимент; понять, значим ли результат.
+- **Сочетается с:** `claude-skills/analytics-tracking`, `claude-skills/copywriting`, `marketing/ab-testing`
+
+### `marketing/ab-testing`
+
+Планирование, запуск и чтение A/B-тестов с ответами на спорные вопросы.
+
+- **Ключевые навыки:** реален ли результат; можно ли остановить тест; какая версия победила; стоит ли тестировать.
+- **Задачи:** провести эксперимент и правильно его интерпретировать.
+- **Сочетается с:** `marketing/cro`, `claude-skills/statistical-analyst`
+
+### `pm-skills/acquisition-channel-advisor`
+
+Оценка каналов привлечения по юнит-экономике, качеству клиентов и масштабируемости.
+
+- **Ключевые навыки:** масштабировать, тестировать или закрыть канал.
+- **Задачи:** решить судьбу канала роста.
+- **Сочетается с:** `marketing/attribution`, `pm-skills/saas-economics-efficiency-metrics`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `claude-skills/ad-creative`
+
+Тексты рекламы для Google RSA, Meta, LinkedIn и TikTok с проверкой лимитов площадок.
+
+- **Ключевые навыки:** заголовки и описания под ограничения символов; массовые вариации.
+- **Задачи:** написать рекламные объявления для кампании.
+- **Сочетается с:** `claude-skills/copywriting`, `claude-skills/campaign-analytics`, `marketing/ad-creative`
+
+### `marketing/ad-creative`
+
+Написание и оценка рекламных креативов — заголовки, основной текст, вариации для Google, Meta, LinkedIn.
+
+- **Ключевые навыки:** выбор хуков и углов; какие объявления запускать или отключать.
+- **Задачи:** сделать рекламу, которая работает.
+- **Сочетается с:** `marketing/ads`, `claude-skills/ad-creative`
+
+### `marketing/ads`
+
+Планирование, запуск и исправление платной рекламы в Google, Meta и LinkedIn.
+
+- **Ключевые навыки:** стоит ли реклама денег; выбор канала; структура и бюджет кампаний.
+- **Задачи:** запустить или починить рекламу.
+- **Сочетается с:** `marketing/ad-creative`, `marketing/conversion-tracking`, `claude-skills/paid-ads`
+
+### `claude-skills/aeo`
+
+Оптимизация контента под цитирование в ChatGPT, Perplexity, Claude и Gemini (AEO).
+
+- **Ключевые навыки:** оценка E-E-A-T; структура ответов; переписывание под ответные движки.
+- **Задачи:** добиться, чтобы ИИ-ассистенты ссылались на ваш контент.
+- **Сочетается с:** `ecc/seo`, `claude-skills/content-production`, `marketing/ai-seo`
+
+### `claude-skills/ai-decision-authority`
+
+Политика самостоятельности ИИ в маркетинге — где агент может действовать без проверки человеком.
+
+- **Ключевые навыки:** классификация процессов по уровню автономии ИИ; правила ревью.
+- **Задачи:** решить, что можно доверить ИИ в маркетинге.
+- **Сочетается с:** `claude-skills/marketing-ops`, `ecc/operator-approval-loop`
+
+### `marketing/ai-seo`
+
+Попадание в ответы ИИ — ChatGPT, Perplexity, AI Overviews.
+
+- **Ключевые навыки:** почему ИИ цитирует конкурента; какой контент рекомендуется; оптимизация под ответы.
+- **Задачи:** стать источником для ИИ-ассистентов.
+- **Сочетается с:** `claude-skills/aeo`, `marketing/seo-audit`, `marketing/schema`
+
+### `claude-skills/analytics-tracking`
+
+Настройка, аудит и отладка GA4, Google Tag Manager и отслеживания конверсий.
+
+- **Ключевые навыки:** план событий; теги; поиск сломанных событий.
+- **Задачи:** настроить аналитику сайта правильно.
+- **Сочетается с:** `claude-skills/campaign-analytics`, `claude-skills/ab-test-setup`, `marketing/analytics`
+
+### `marketing/analytics`
+
+Настройка и аудит аналитики, правильность расчёта метрик, план отслеживания и имена событий.
+
+- **Ключевые навыки:** план трекинга; проверка метрик; соглашения по событиям.
+- **Задачи:** доверять цифрам в аналитике.
+- **Сочетается с:** `marketing/conversion-tracking`, `marketing/attribution`
+
+### `claude-skills/app-store-optimization`
+
+Оптимизация страниц приложения в App Store и Google Play (ASO).
+
+- **Ключевые навыки:** оценка листинга; ключевые слова; рейтинги; работа с отзывами.
+- **Задачи:** поднять приложение в поиске магазинов.
+- **Сочетается с:** `claude-skills/copywriting`
+
+### `marketing/aso`
+
+Аудит и оптимизация страницы в App Store или Google Play.
+
+- **Ключевые навыки:** название, ключевые слова, скриншоты; причины падения загрузок.
+- **Задачи:** увеличить установки приложения.
+- **Сочетается с:** `claude-skills/app-store-optimization`
+
+### `marketing/attribution`
+
+Какой маркетинг на самом деле приносит выручку.
+
+- **Ключевые навыки:** модели атрибуции; каким цифрам доверять; распределение заслуг между каналами.
+- **Задачи:** понять, какой канал реально работает.
+- **Сочетается с:** `marketing/analytics`, `claude-skills/campaign-analytics`
+
+### `claude-skills/business-name-fit`
+
+Проверка названия компании, бренда или продукта, в том числе для зарубежных рынков.
+
+- **Ключевые навыки:** культурные ассоциации; произношение; риски названия.
+- **Задачи:** выбрать название до регистрации.
+- **Сочетается с:** `claude-skills/brand-guidelines`, `ecc/brand-discovery`
+
+### `claude-skills/campaign-analytics`
+
+Анализ эффективности кампаний на ваших цифрах.
+
+- **Ключевые навыки:** ROAS, CPA, ROI; мультиканальная атрибуция; провалы воронки.
+- **Задачи:** понять, какой канал работает лучше.
+- **Сочетается с:** `claude-skills/analytics-tracking`, `claude-skills/paid-ads`
+
+### `claude-skills/cmo-advisor`
+
+Советник по руководству маркетингом.
+
+- **Ключевые навыки:** позиционирование; product-led, sales-led или community-led рост; распределение бюджета; команда маркетинга.
+- **Задачи:** выстроить маркетинговую стратегию.
+- **Сочетается с:** `claude-skills/cmo-review`, `claude-skills/marketing-strategy-pmm`
+
+### `claude-skills/cmo-review`
+
+Критика позиционирования, ICP, сообщений или микса каналов перед запуском.
+
+- **Ключевые навыки:** позиция директора по маркетингу.
+- **Задачи:** проверить маркетинговый план до запуска.
+- **Сочетается с:** `claude-skills/cmo-advisor`
+
+### `marketing/co-marketing`
+
+Совместный маркетинг с партнёрами.
+
+- **Ключевые навыки:** подходит ли партнёр; разница в размерах; разделение работы и лидов.
+- **Задачи:** провести совместную кампанию.
+- **Сочетается с:** `claude-skills/partnerships-architect`, `marketing/events`
+
+### `marketing/community-marketing`
+
+Создание и рост онлайн-сообщества.
+
+- **Ключевые навыки:** стоит ли оно того; где размещать (Discord, Slack и др.); почему участники молчат.
+- **Задачи:** построить живое сообщество вокруг продукта.
+- **Сочетается с:** `marketing/social`, `marketing/events`
+
+### `claude-skills/competitor-alternatives`
+
+Страницы сравнения «X vs Y» и «альтернатива продукту».
+
+- **Ключевые навыки:** матрица сравнения; структура страницы.
+- **Задачи:** сделать SEO-страницу сравнения с конкурентом.
+- **Сочетается с:** `marketing/competitors`, `ecc/seo`
+
+### `marketing/competitors`
+
+Страницы сравнения и альтернатив — «X vs Y», «альтернатива X», «лучшие альтернативы X».
+
+- **Ключевые навыки:** что допустимо писать о конкуренте публично; структура страницы.
+- **Задачи:** создать или проверить страницы сравнения.
+- **Сочетается с:** `marketing/competitor-profiling`, `claude-skills/competitor-alternatives`
+
+### `claude-skills/content-strategy`
+
+Решение, какой контент создавать — темы, кластеры, контент-план.
+
+- **Ключевые навыки:** карта тематических кластеров; приоритизация тем.
+- **Задачи:** составить контент-план блога.
+- **Сочетается с:** `marketing/content-strategy`, `claude-skills/content-production`
+
+### `marketing/content-strategy`
+
+Планирование контента — какие темы приоритетны, тематические кластеры.
+
+- **Ключевые навыки:** о чём писать; почему посты не приводят клиентов.
+- **Задачи:** составить контент-стратегию.
+- **Сочетается с:** `claude-skills/content-strategy`, `marketing/seo-audit`
+
+### `marketing/conversion-tracking`
+
+Отслеживание конверсий в Google Ads, Meta, GA4, LinkedIn, TikTok.
+
+- **Ключевые навыки:** настройка; аудит; почему конверсии пропадают или задваиваются.
+- **Задачи:** наладить передачу конверсий в рекламные системы.
+- **Сочетается с:** `marketing/analytics`, `marketing/ads`
+
+### `claude-skills/copywriting`
+
+Заголовки, слоганы, CTA, тексты лендингов, страниц цен и «о нас».
+
+- **Ключевые навыки:** оценка вариантов заголовков; структура продающего текста.
+- **Задачи:** написать конвертирующий текст для сайта.
+- **Сочетается с:** `marketing/copywriting`, `claude-skills/copy-editing`, `claude-skills/ab-test-setup`
+
+### `marketing/copywriting`
+
+Тексты страниц — главная, лендинг, цены, фичи.
+
+- **Ключевые навыки:** выбор заголовка, обещания и главного сообщения; диагностика.
+- **Задачи:** написать или переписать текст страницы.
+- **Сочетается с:** `marketing/product-marketing`, `marketing/cro`, `claude-skills/copywriting`
+
+### `marketing/cro`
+
+Больше конверсий со страницы или формы.
+
+- **Ключевые навыки:** почему страница не конвертирует; что менять первым; добавлять ли поля.
+- **Задачи:** поднять конверсию.
+- **Сочетается с:** `marketing/copywriting`, `marketing/ab-testing`, `claude-skills/page-cro`
+
+### `marketing/directory-submissions`
+
+Размещение продукта в каталогах стартапов, SaaS, ИИ, MCP и отзовиков.
+
+- **Ключевые навыки:** какие каталоги стоят усилий; работают ли размещения.
+- **Задачи:** получить трафик и ссылки из каталогов.
+- **Сочетается с:** `marketing/link-building`, `marketing/launch`
+
+### `claude-skills/email-sequence`
+
+Цепочки писем для подписчиков — приветственные, прогревающие, онбординг, реактивация.
+
+- **Ключевые навыки:** тайминг; триггеры; содержание писем.
+- **Задачи:** настроить автоматическую email-рассылку.
+- **Сочетается с:** `marketing/emails`, `claude-skills/copywriting`
+
+### `marketing/emails`
+
+Автоматические email-цепочки — приветствие, онбординг и другие.
+
+- **Ключевые навыки:** что отправлять и когда; работает ли цепочка.
+- **Задачи:** создать или улучшить email-автоматизацию.
+- **Сочетается с:** `claude-skills/email-sequence`, `marketing/onboarding`
+
+### `marketing/events`
+
+Планирование, проведение, спонсорство и выступления на событиях — вебинары, конференции, стенды, митапы.
+
+- **Ключевые навыки:** окупаемость события; подготовка и фоллоу-ап.
+- **Задачи:** решить, участвовать ли в событии, и получить результат.
+- **Сочетается с:** `claude-skills/webinar-marketing`, `marketing/co-marketing`
+
+### `claude-skills/form-cro`
+
+Оптимизация форм заявки, контакта, демо и оформления заказа.
+
+- **Ключевые навыки:** оценка трения полей; сокращение полей; тексты формы.
+- **Задачи:** повысить конверсию формы.
+- **Сочетается с:** `claude-skills/page-cro`, `marketing/cro`
+
+### `claude-skills/free-tool-strategy`
+
+Бесплатный инструмент как маркетинговый актив — калькулятор, грейдер, генератор.
+
+- **Ключевые навыки:** оценка трафика, лидов и затрат.
+- **Задачи:** решить, стоит ли делать бесплатный инструмент.
+- **Сочетается с:** `marketing/free-tools`, `claude-skills/programmatic-seo`
+
+### `marketing/free-tools`
+
+Бесплатные инструменты как маркетинг — калькуляторы, грейдеры, генераторы.
+
+- **Ключевые навыки:** стоит ли строить; какую идею выбрать.
+- **Задачи:** привлекать трафик и лиды полезным инструментом.
+- **Сочетается с:** `claude-skills/free-tool-strategy`, `marketing/lead-magnets`
+
+### `marketing/influencer-marketing`
+
+Партнёрства с креаторами, инфлюенсерами и амбассадорами.
+
+- **Ключевые навыки:** подбор креаторов; оплата; права на контент; окупаемость интеграции.
+- **Задачи:** запустить работу с блогерами.
+- **Сочетается с:** `marketing/social`, `marketing/referrals`
+
+### `claude-skills/launch-strategy`
+
+План запуска продукта или фичи — оценка готовности и поэтапный план по каналам.
+
+- **Ключевые навыки:** Product Hunt; поэтапный запуск; каналы.
+- **Задачи:** спланировать запуск.
+- **Сочетается с:** `marketing/launch`, `pm-setup/launch-checklist`
+
+### `marketing/launch`
+
+Запуск продукта или фичи.
+
+- **Ключевые навыки:** готов ли продукт; когда объявлять; Product Hunt; бета и ранний доступ.
+- **Задачи:** спланировать громкий запуск.
+- **Сочетается с:** `claude-skills/launch-strategy`, `pm-setup/launch-checklist`
+
+### `marketing/lead-magnets`
+
+Лид-магниты — что отдавать за email и сколько спрашивать.
+
+- **Ключевые навыки:** чек-листы, гайды, шаблоны; закрытие контента; поля формы.
+- **Задачи:** собирать контакты потенциальных клиентов.
+- **Сочетается с:** `marketing/emails`, `marketing/free-tools`
+
+### `marketing/link-building`
+
+Обратные ссылки и упоминания для роста позиций и цитирований ИИ.
+
+- **Ключевые навыки:** безопасные тактики; как получить ссылки.
+- **Задачи:** нарастить ссылочный профиль.
+- **Сочетается с:** `marketing/directory-submissions`, `marketing/public-relations`
+
+### `claude-skills/linkedin-analytics`
+
+Анализ эффективности постов в LinkedIn.
+
+- **Ключевые навыки:** почему упал охват; какие посты сработали; проверка гипотез.
+- **Задачи:** понять, что работает в вашем LinkedIn.
+- **Сочетается с:** `claude-skills/linkedin-content`, `claude-skills/linkedin-strategy`
+
+### `claude-skills/linkedin-skills`
+
+Маршрутизатор органического роста в LinkedIn с проверкой по правилам площадки.
+
+- **Ключевые навыки:** стратегия, профиль, посты, ритм, аутрич, аналитика.
+- **Задачи:** понять, какой LinkedIn-навык нужен.
+- **Сочетается с:** `claude-skills/linkedin-strategy`, `claude-skills/linkedin-content`
+
+### `claude-skills/linkedin-strategy`
+
+План присутствия в LinkedIn — контентные столпы, позиционирование, ритм, рассылка.
+
+- **Ключевые навыки:** стратегия личного бренда.
+- **Задачи:** выстроить системное ведение LinkedIn.
+- **Сочетается с:** `claude-skills/linkedin-content`, `claude-skills/linkedin-analytics`
+
+### `claude-skills/local-seo-manager`
+
+Локальное SEO — Google Business Profile, карты, страницы зон обслуживания, ответы на отзывы.
+
+- **Ключевые навыки:** ранжирование на картах; каталоги; репутация.
+- **Задачи:** привлекать клиентов из локального поиска.
+- **Сочетается с:** `claude-skills/seo-audit`, `ecc/seo`
 
 ### `ecc/marketing-campaign`
 
@@ -2078,6 +3884,288 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Задачи:** провести кампанию под запуск или акцию.
 - **Сочетается с:** `ecc/content-engine`, `ecc/brand-voice`, `ecc/seo`
 
+### `claude-skills/marketing-context`
+
+Общий маркетинговый контекст — ICP, позиционирование, голос бренда — до других маркетинговых навыков.
+
+- **Ключевые навыки:** документ контекста продукта.
+- **Задачи:** начать любой маркетинговый проект с общей основы.
+- **Сочетается с:** `marketing/product-marketing`, `claude-skills/marketing-ops`
+
+### `marketing/marketing-council`
+
+Симуляция совета известных маркетологов (Сет Годин и др.) для решения.
+
+- **Ключевые навыки:** несколько экспертных взглядов на вопрос.
+- **Задачи:** получить разные точки зрения на маркетинговое решение.
+- **Сочетается с:** `ecc/council`, `marketing/marketing-plan`
+
+### `claude-skills/marketing-demand-acquisition`
+
+Генерация спроса и платное привлечение в Google, LinkedIn, Meta, маркетинговый бюджет.
+
+- **Ключевые навыки:** распределение бюджета; сравнение каналов.
+- **Задачи:** спланировать привлечение клиентов.
+- **Сочетается с:** `claude-skills/paid-ads`, `claude-skills/campaign-analytics`
+
+### `claude-skills/marketing-ideas`
+
+Идеи для маркетинга SaaS из 139 тактик по стадии, бюджету и каналу.
+
+- **Ключевые навыки:** подбор тактик под ситуацию.
+- **Задачи:** найти новые способы роста.
+- **Сочетается с:** `marketing/marketing-ideas`, `claude-skills/marketing-ops`
+
+### `marketing/marketing-ideas`
+
+Идеи и тактики роста для софтверного продукта.
+
+- **Ключевые навыки:** что попробовать с малым бюджетом; как получить первых клиентов.
+- **Задачи:** найти новые способы привлечения.
+- **Сочетается с:** `claude-skills/marketing-ideas`, `marketing/marketing-plan`
+
+### `marketing/marketing-loops`
+
+Регулярные маркетинговые задачи, которые ИИ-агент выполняет по расписанию или триггеру.
+
+- **Ключевые навыки:** еженедельные и ежедневные автоматические проверки и действия.
+- **Задачи:** автоматизировать маркетинговую рутину.
+- **Сочетается с:** `claude-skills/ai-decision-authority`, `ecc/continuous-agent-loop`
+
+### `claude-skills/marketing-ops`
+
+Маршрутизатор сложных маркетинговых задач на несколько навыков.
+
+- **Ключевые навыки:** кампании через контент, SEO, CRO и каналы.
+- **Задачи:** скоординировать многоканальную кампанию.
+- **Сочетается с:** `claude-skills/marketing-skills`, `claude-skills/marketing-context`
+
+### `marketing/marketing-plan`
+
+Полный маркетинговый или GTM-план для клиента, компании или своего продукта.
+
+- **Ключевые навыки:** последовательность и приоритеты маркетинговой работы.
+- **Задачи:** составить маркетинговый план.
+- **Сочетается с:** `marketing/product-marketing`, `claude-skills/marketing-strategy-pmm`
+
+### `claude-skills/marketing-psychology`
+
+Этичное применение психологии убеждения к странице, предложению или кампании (70+ моделей).
+
+- **Ключевые навыки:** поведенческая экономика; ментальные модели.
+- **Задачи:** понять, почему люди не покупают, и что изменить.
+- **Сочетается с:** `marketing/marketing-psychology`, `claude-skills/copywriting`
+
+### `marketing/marketing-psychology`
+
+Психология в маркетинге — почему покупатели ведут себя так, как ведут.
+
+- **Ключевые навыки:** ментальные модели; честность тактик убеждения.
+- **Задачи:** применить психологию этично.
+- **Сочетается с:** `claude-skills/marketing-psychology`, `marketing/offers`
+
+### `claude-skills/marketing-skills`
+
+Каталог 44 маркетинговых навыков с маршрутизацией.
+
+- **Ключевые навыки:** список навыков по группам.
+- **Задачи:** найти нужный маркетинговый навык.
+- **Сочетается с:** `claude-skills/marketing-ops`
+
+### `claude-skills/marketing-strategy-pmm`
+
+Продуктовое позиционирование, ICP, battlecards и план выхода на рынок по методу Эйприл Данфорд.
+
+- **Ключевые навыки:** позиционирование; конкурентные карточки; GTM.
+- **Задачи:** сформулировать позиционирование продукта.
+- **Сочетается с:** `pm-skills/positioning-statement`, `claude-skills/competitive-intel`
+
+### `marketing/offers`
+
+Проектирование самого предложения — набор ценности, бонусы, гарантии, честная срочность.
+
+- **Ключевые навыки:** почему предложение не продаётся.
+- **Задачи:** сделать оффер неотразимым.
+- **Сочетается с:** `marketing/pricing`, `marketing/copywriting`
+
+### `claude-skills/onboarding-cro`
+
+Активация пользователя и первый опыт после регистрации.
+
+- **Ключевые навыки:** поиск провала активации; time-to-value.
+- **Задачи:** улучшить онбординг продукта.
+- **Сочетается с:** `marketing/onboarding`, `claude-skills/signup-flow-cro`
+
+### `claude-skills/page-cro`
+
+Аудит неконвертирующей страницы по секциям с ранжированием исправлений.
+
+- **Ключевые навыки:** главная, лендинг, цены, фичи.
+- **Задачи:** поднять конверсию страницы.
+- **Сочетается с:** `marketing/cro`, `claude-skills/copywriting`
+
+### `claude-skills/paid-ads`
+
+Стратегия платной рекламы в Google, Meta, LinkedIn, X.
+
+- **Ключевые навыки:** структура; таргетинг; ставки; ретаргетинг; бюджеты.
+- **Задачи:** настроить рекламные кампании.
+- **Сочетается с:** `marketing/ads`, `claude-skills/ad-creative`
+
+### `claude-skills/paywall-upgrade-cro`
+
+Пейволы, окна апгрейда, ограничения функций и экраны окончания триала.
+
+- **Ключевые навыки:** паттерны момента апгрейда; тексты и дизайн.
+- **Задачи:** повысить конверсию в платный план.
+- **Сочетается с:** `marketing/paywalls`, `claude-skills/pricing-strategy`
+
+### `marketing/paywalls`
+
+Пейволы и моменты апгрейда в приложении.
+
+- **Ключевые навыки:** когда и насколько настойчиво просить оплату.
+- **Задачи:** конвертировать бесплатных пользователей в платных.
+- **Сочетается с:** `claude-skills/paywall-upgrade-cro`, `marketing/pricing`
+
+### `claude-skills/popup-cro`
+
+Попапы, модальные окна, exit-intent, слайдеры и баннеры для конверсии.
+
+- **Ключевые навыки:** триггеры; частота показа; оффер; текст.
+- **Задачи:** сделать попап, который конвертирует и не раздражает.
+- **Сочетается с:** `marketing/popups`, `claude-skills/page-cro`
+
+### `marketing/popups`
+
+Попапы, модальные окна, слайд-ины, липкие плашки и баннеры.
+
+- **Ключевые навыки:** поможет или раздражает; когда показывать.
+- **Задачи:** сделать полезный попап.
+- **Сочетается с:** `claude-skills/popup-cro`, `marketing/lead-magnets`
+
+### `pm-skills/positioning-statement`
+
+Позиционирование в стиле Джеффри Мура.
+
+- **Ключевые навыки:** для кого; какая проблема; категория; отличие.
+- **Задачи:** сформулировать позиционирование.
+- **Сочетается с:** `pm-skills/positioning-workshop`, `marketing/product-marketing`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `pm-skills/positioning-workshop`
+
+Воркшоп по позиционированию.
+
+- **Ключевые навыки:** целевой клиент; потребность; категория; выгоды; отличия.
+- **Задачи:** когда сообщения о продукте звучат плоско.
+- **Сочетается с:** `pm-skills/positioning-statement`, `claude-skills/marketing-strategy-pmm`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `claude-skills/pricing-strategy`
+
+Тарифы SaaS — метрика ценности, упаковка, страница цен, повышение цен.
+
+- **Ключевые навыки:** моделирование выручки по тарифам.
+- **Задачи:** спроектировать тарифную сетку.
+- **Сочетается с:** `marketing/pricing`, `claude-skills/pricing-strategist`
+
+### `marketing/pricing`
+
+Цены и упаковка — тарифы, метрика ценности.
+
+- **Ключевые навыки:** сколько брать; поднимать ли цены; как перевести текущих клиентов.
+- **Задачи:** выстроить ценообразование.
+- **Сочетается с:** `claude-skills/pricing-strategy`, `pm-skills/finance-based-pricing-advisor`
+
+### `marketing/product-marketing`
+
+Документ продуктового маркетингового контекста — основа для всех маркетинговых навыков.
+
+- **Ключевые навыки:** позиционирование, ICP, сообщения в одном файле.
+- **Задачи:** создать или обновить общий маркетинговый контекст.
+- **Сочетается с:** `claude-skills/marketing-context`, `pm-skills/positioning-statement`
+
+### `claude-skills/programmatic-seo`
+
+Массовое создание SEO-страниц по шаблону и данным — локации, интеграции, сравнения, каталоги.
+
+- **Ключевые навыки:** шаблоны; качество данных; защита от тонкого контента.
+- **Задачи:** масштабировать органический трафик.
+- **Сочетается с:** `marketing/programmatic-seo`, `claude-skills/site-architecture`
+
+### `marketing/programmatic-seo`
+
+SEO-страницы в масштабе по шаблонам и данным.
+
+- **Ключевые навыки:** будет ли набор страниц ранжироваться или выглядеть «тонким».
+- **Задачи:** создать сотни полезных страниц.
+- **Сочетается с:** `claude-skills/programmatic-seo`, `marketing/site-architecture`
+
+### `claude-skills/prompt-engineer-toolkit`
+
+Тестирование, версионирование и контроль маркетинговых промптов.
+
+- **Ключевые навыки:** A/B-тесты промптов на кейсах; управление версиями.
+- **Задачи:** навести порядок в промптах маркетинговой команды.
+- **Сочетается с:** `claude-skills/prompt-governance`
+
+### `marketing/public-relations`
+
+Пресса и медиа — питчи, пресс-релизы, кризисы.
+
+- **Ключевые навыки:** что говорить журналисту; есть ли новость; работа в кризисе.
+- **Задачи:** получить публикации в СМИ.
+- **Сочетается с:** `pm-skills/press-release`, `marketing/link-building`
+
+### `claude-skills/referral-program`
+
+Реферальные, партнёрские и амбассадорские программы.
+
+- **Ключевые навыки:** модель выплат и ROI; механика.
+- **Задачи:** запустить или починить реферальную программу.
+- **Сочетается с:** `marketing/referrals`
+
+### `marketing/referrals`
+
+Реферальные и партнёрские программы, сарафанное радио.
+
+- **Ключевые навыки:** что вознаграждать; сколько платить; с какой петли начать.
+- **Задачи:** запустить рост через рекомендации.
+- **Сочетается с:** `claude-skills/referral-program`, `marketing/influencer-marketing`
+
+### `claude-skills/schema-markup`
+
+Структурированные данные JSON-LD и schema.org для расширенных сниппетов.
+
+- **Ключевые навыки:** валидация разметки.
+- **Задачи:** получить расширенные результаты в поиске.
+- **Сочетается с:** `marketing/schema`, `ecc/seo`
+
+### `marketing/schema`
+
+Разметка schema.org (JSON-LD) — добавление, исправление, проверка.
+
+- **Ключевые навыки:** выбор типа; допустимость разметки.
+- **Задачи:** получить расширенные сниппеты.
+- **Сочетается с:** `claude-skills/schema-markup`, `marketing/seo-audit`
+
+### `claude-skills/seo-audit`
+
+Почему сайт не ранжируется — техническое SEO, on-page, мета-теги, здоровье сайта.
+
+- **Ключевые навыки:** аудит сайта; приоритеты исправлений.
+- **Задачи:** найти причины слабых позиций в Google.
+- **Сочетается с:** `marketing/seo-audit`, `ecc/seo`
+
+### `marketing/seo-audit`
+
+Аудит и диагностика SEO.
+
+- **Ключевые навыки:** почему упал трафик; почему страница не ранжируется; canonical, hreflang, редиректы.
+- **Задачи:** найти и исправить SEO-проблемы.
+- **Сочетается с:** `claude-skills/seo-audit`, `marketing/site-architecture`
+
 ### `ecc/seo`
 
 Аудит, план и внедрение SEO.
@@ -2085,6 +4173,78 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Ключевые навыки:** техническое SEO; on-page; структурированные данные; Core Web Vitals; контент-стратегия.
 - **Задачи:** улучшить видимость сайта в поиске.
 - **Сочетается с:** `ecc/article-writing`, `ecc/benchmark`, `ecc/marketing-campaign`
+
+### `claude-skills/signup-flow-cro`
+
+Конверсия регистрации и старта триала.
+
+- **Ключевые навыки:** поиск шага с наибольшим отвалом; упрощение формы.
+- **Задачи:** увеличить число регистраций.
+- **Сочетается с:** `marketing/signup`, `claude-skills/onboarding-cro`
+
+### `marketing/signup`
+
+Регистрация и старт триала.
+
+- **Ключевые навыки:** какие поля и шаги убрать; требовать ли карту; SSO.
+- **Задачи:** повысить число регистраций.
+- **Сочетается с:** `claude-skills/signup-flow-cro`, `marketing/onboarding`
+
+### `claude-skills/site-architecture`
+
+Структура URL, навигация, перелинковка, хабы и «сиротские» страницы.
+
+- **Ключевые навыки:** анализ sitemap; структурное SEO.
+- **Задачи:** исправить структурные SEO-проблемы.
+- **Сочетается с:** `marketing/site-architecture`, `claude-skills/seo-audit`
+
+### `marketing/site-architecture`
+
+Планирование и реструктуризация сайта.
+
+- **Ключевые навыки:** иерархия; навигация; URL; какие страницы нужны.
+- **Задачи:** спроектировать структуру сайта.
+- **Сочетается с:** `claude-skills/site-architecture`, `marketing/seo-audit`
+
+### `marketing/sms`
+
+SMS, MMS и WhatsApp-маркетинг.
+
+- **Ключевые навыки:** брошенная корзина, возврат клиентов, промо; что разрешено законом.
+- **Задачи:** решить, стоит ли SMS-канал, и запустить его.
+- **Сочетается с:** `marketing/emails`
+
+### `claude-skills/social-media-analyzer`
+
+Эффективность соцсетей — вовлечённость, охват, ROI, бенчмарки.
+
+- **Ключевые навыки:** сравнение платформ.
+- **Задачи:** понять, какая соцсеть работает лучше.
+- **Сочетается с:** `claude-skills/social-media-manager`
+
+### `claude-skills/social-media-manager`
+
+Стратегия соцсетей, контент-календарь, работа с сообществом, рост подписчиков.
+
+- **Ключевые навыки:** что и когда публиковать.
+- **Задачи:** системно вести соцсети.
+- **Сочетается с:** `claude-skills/social-content`, `claude-skills/social-media-analyzer`
+
+### `claude-skills/webinar-marketing`
+
+Вебинары и онлайн-события — регистрации, явка, фоллоу-ап, конверсия.
+
+- **Ключевые навыки:** оценка этапов воронки.
+- **Задачи:** провести вебинар с результатом.
+- **Сочетается с:** `marketing/events`
+
+### `claude-skills/x-twitter-growth`
+
+Рост в X/Twitter — твиты, треды, аудит профиля, конкуренты, план публикаций.
+
+- **Ключевые навыки:** аудит профиля; черновики.
+- **Задачи:** расти в X.
+- **Сочетается с:** `ecc/x-api`, `claude-skills/social-content`
 
 ---
 
@@ -2097,7 +4257,128 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 
 **Типовые связки.** lead-intelligence / поиск лидов → cold-email → sales-материалы → customer-success / churn-prevention.
 
-Навыков в категории: 2.
+Навыков в категории: 26.
+
+### `pm-skills/battle-card-builder`
+
+Конкурентная карточка для продавца на основе публичных данных с источниками.
+
+- **Ключевые навыки:** проверяемые утверждения; полевые действия.
+- **Задачи:** дать продажам оружие против конкурента.
+- **Сочетается с:** `marketing/sales-enablement`, `pm-skills/competitive-research-snapshot`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `claude-skills/business-growth-skills`
+
+Маршрутизатор задач роста между customer success, пресейлом, revenue operations и подготовкой договоров.
+
+- **Ключевые навыки:** выбор подходящего навыка роста.
+- **Задачи:** понять, какой навык роста бизнеса использовать.
+- **Сочетается с:** `claude-skills/customer-success-manager`, `claude-skills/contract-and-proposal-writer`
+
+### `claude-skills/channel-economics`
+
+Сравнение прямых и партнёрских каналов продаж.
+
+- **Ключевые навыки:** полная стоимость обслуживания; ROI канала; оптимальный микс.
+- **Задачи:** решить, куда направлять продажи.
+- **Сочетается с:** `claude-skills/commercial-forecaster`, `claude-skills/partnerships-architect`
+
+### `claude-skills/chief-customer-officer-advisor`
+
+Советник по стратегии удержания, сегментации и размеру команды customer success.
+
+- **Ключевые навыки:** GRR и NRR; причины оттока; модели работы CSM.
+- **Задачи:** выстроить стратегию удержания клиентов.
+- **Сочетается с:** `claude-skills/customer-success-manager`, `claude-skills/cco-review`
+
+### `claude-skills/churn-prevention`
+
+Снижение оттока — сценарии отмены подписки, предложения удержания, опросы при уходе, письма о неудачной оплате.
+
+- **Ключевые навыки:** оценка выручки под риском; save offers; dunning.
+- **Задачи:** уменьшить отток клиентов.
+- **Сочетается с:** `claude-skills/customer-success-manager`, `marketing/churn-prevention`
+
+### `marketing/churn-prevention`
+
+Снижение оттока — сценарии отмены, опросы при уходе, предложения удержания.
+
+- **Ключевые навыки:** почему клиенты уходят; давать ли скидку или паузу.
+- **Задачи:** удержать уходящих клиентов.
+- **Сочетается с:** `claude-skills/churn-prevention`, `marketing/onboarding`
+
+### `claude-skills/cold-email`
+
+Холодные письма и цепочки фоллоу-апов для потенциальных клиентов.
+
+- **Ключевые навыки:** оценка длины, персонализации и CTA; последовательности писем.
+- **Задачи:** написать холодную рассылку, которая получает ответы.
+- **Сочетается с:** `marketing/cold-email`, `ecc/lead-intelligence`, `claude-skills/copywriting`
+
+### `marketing/cold-email`
+
+Холодный B2B-аутрич — повод для письма, первые строки, цепочки.
+
+- **Ключевые навыки:** почему никто не отвечает; что работает в холодных письмах.
+- **Задачи:** написать и запустить холодную рассылку.
+- **Сочетается с:** `marketing/prospecting`, `claude-skills/cold-email`
+
+### `claude-skills/commercial-policy`
+
+Правила скидок — матрица скидок, пороги одобрения, исключения.
+
+- **Ключевые навыки:** дисциплина сделок; рамки для отдела продаж.
+- **Задачи:** формализовать политику скидок.
+- **Сочетается с:** `claude-skills/deal-desk`, `claude-skills/pricing-strategy`
+
+### `claude-skills/commercial-skills`
+
+Маршрутизатор коммерческих задач — цены, сделки, скидки, партнёры, каналы, тендеры, прогнозы.
+
+- **Ключевые навыки:** выбор подходящего коммерческого навыка.
+- **Задачи:** понять, какой навык нужен для коммерческого вопроса.
+- **Сочетается с:** `claude-skills/deal-desk`, `claude-skills/commercial-policy`
+
+### `claude-skills/contract-and-proposal-writer`
+
+Договоры для фриланса, коммерческие предложения, SOW, NDA и MSA для США, ЕС, Великобритании и DACH.
+
+- **Ключевые навыки:** структурированный markdown; конвертация в docx.
+- **Задачи:** подготовить договор или КП.
+- **Сочетается с:** `claude-skills/commercial-policy`, `ecc/master-agreement-generator`
+
+### `claude-skills/cro-advisor`
+
+Советник по B2B-выручке — прогнозы, квоты, модель продаж, NRR, отток, цены, мощность отдела.
+
+- **Ключевые навыки:** модель прогноза выручки; планирование квот.
+- **Задачи:** выстроить систему продаж.
+- **Сочетается с:** `claude-skills/cro-review`, `claude-skills/commercial-forecaster`
+
+### `claude-skills/cro-review`
+
+Критика прогноза, падения конверсии или найма продавцов.
+
+- **Ключевые навыки:** позиция директора по выручке.
+- **Задачи:** проверить план продаж.
+- **Сочетается с:** `claude-skills/cro-advisor`
+
+### `claude-skills/customer-success-manager`
+
+Оценка клиентских аккаунтов — здоровье, риск оттока, потенциал расширения.
+
+- **Ключевые навыки:** health score; анализ риска оттока; возможности допродаж.
+- **Задачи:** найти клиентов в зоне риска и под расширение.
+- **Сочетается с:** `claude-skills/churn-prevention`, `claude-skills/chief-customer-officer-advisor`
+
+### `claude-skills/deal-desk`
+
+Проверка сделки со скидкой сверх полномочий, правками договора или неясной экономикой.
+
+- **Ключевые навыки:** скоринг сделки; экономика сделки; одобрения.
+- **Задачи:** решить, закрывать ли сделку на таких условиях.
+- **Сочетается с:** `claude-skills/commercial-policy`, `claude-skills/cro-advisor`
 
 ### `ecc/lead-intelligence`
 
@@ -2106,6 +4387,78 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Ключевые навыки:** скоринг сигналов; поиск тёплых путей; обогащение данных; персонализированные сообщения.
 - **Задачи:** найти и приоритизировать потенциальных клиентов или партнёров.
 - **Сочетается с:** `ecc/exa-search`, `ecc/connections-optimizer`, `ecc/email-ops`
+
+### `claude-skills/linkedin-engagement`
+
+Комментарии, запросы на связь, личные сообщения и аутрич в LinkedIn.
+
+- **Ключевые навыки:** выбор целей для комментариев; безопасные объёмы аутрича.
+- **Задачи:** расширять сеть и находить клиентов в LinkedIn.
+- **Сочетается с:** `claude-skills/linkedin-profile`, `ecc/connections-optimizer`
+
+### `claude-skills/partnerships-architect`
+
+Решение о партнёрстве — уровень (реферал, реселлер, OEM, интегратор, альянс), совместный GTM, разделение выручки.
+
+- **Ключевые навыки:** оценка партнёров; модели партнёрства.
+- **Задачи:** выстроить партнёрскую программу.
+- **Сочетается с:** `claude-skills/channel-economics`, `marketing/co-marketing`
+
+### `claude-skills/pricing-strategist`
+
+Выбор модели цен — за место, по использованию, по ценности, freemium, гибрид.
+
+- **Ключевые навыки:** анализ Van Westendorp; тарифы Good/Better/Best.
+- **Задачи:** определить ценообразование продукта.
+- **Сочетается с:** `claude-skills/pricing-strategy`, `pm-skills/finance-based-pricing-advisor`
+
+### `marketing/prospecting`
+
+Поиск и квалификация потенциальных клиентов для аутрича.
+
+- **Ключевые навыки:** кого целить первым; какие сигналы покупки важнее.
+- **Задачи:** составить список целевых клиентов.
+- **Сочетается с:** `marketing/cold-email`, `ecc/lead-intelligence`
+
+### `claude-skills/revenue-operations`
+
+Проверка воронки и прогнозов — покрытие, точность прогноза, magic number, окупаемость CAC.
+
+- **Ключевые навыки:** метрики RevOps.
+- **Задачи:** понять, хватит ли воронки для плана.
+- **Сочетается с:** `claude-skills/commercial-forecaster`, `marketing/revops`
+
+### `marketing/revops`
+
+Revenue operations — жизненный цикл лида, передача в продажи.
+
+- **Ключевые навыки:** когда лид готов для продаж; согласование маркетинга и продаж.
+- **Задачи:** выстроить процесс передачи лидов.
+- **Сочетается с:** `claude-skills/revenue-operations`, `marketing/sales-enablement`
+
+### `claude-skills/rfp-responder`
+
+Ответы на RFP, RFI, RFQ и анкеты безопасности.
+
+- **Ключевые навыки:** разбор обязательных и взвешенных требований; черновики ответов.
+- **Задачи:** ответить на тендер.
+- **Сочетается с:** `claude-skills/sales-engineer`, `claude-skills/contract-and-proposal-writer`
+
+### `marketing/sales-enablement`
+
+Материалы для продаж — презентации, one-pager, работа с возражениями.
+
+- **Ключевые навыки:** что дать чемпиону или продавцу; ответы на возражения.
+- **Задачи:** вооружить отдел продаж.
+- **Сочетается с:** `pm-skills/battle-card-builder`, `marketing/revops`
+
+### `claude-skills/sales-engineer`
+
+Пресейл — пробелы в RFP, матрицы сравнения функций, планирование и оценка пилотов.
+
+- **Ключевые навыки:** анализ требований; proof of concept.
+- **Задачи:** помочь продажам технически.
+- **Сочетается с:** `claude-skills/rfp-responder`, `claude-skills/competitive-intel`
 
 ### `ecc/social-graph-ranker`
 
@@ -2126,7 +4479,347 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 
 **Типовые связки.** problem-statement / discovery → интервью (user-research) → PRD (prd-writer / prd-development) → приоритизация → roadmap → метрики (metrics-definer) → запуск (launch-checklist).
 
-Навыков в категории: 2.
+Навыков в категории: 61.
+
+### `claude-skills/agile-product-owner`
+
+Работа с бэклогом — пользовательские истории, критерии приёмки, разбиение эпиков, оценка.
+
+- **Ключевые навыки:** истории в формате INVEST; критерии приёмки; приоритизация на спринт.
+- **Задачи:** подготовить бэклог к спринту.
+- **Сочетается с:** `pm-skills/user-story`, `pm-setup/sprint-planner`, `claude-skills/scrum-master`
+
+### `pm-skills/ai-shaped-readiness-advisor`
+
+Оценка зрелости продуктовой работы с ИИ — AI-first или AI-shaped.
+
+- **Ключевые навыки:** диагностика зрелости; следующая способность команды.
+- **Задачи:** понять, как развивать работу с ИИ в продуктовой команде.
+- **Сочетается с:** `pm-skills/context-engineering-advisor`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `claude-skills/code-to-prd`
+
+PRD или спецификация продукта по существующему коду.
+
+- **Ключевые навыки:** обратное проектирование требований; страницы, поля, маршруты, эндпоинты.
+- **Задачи:** задокументировать продукт, у которого нет спецификации.
+- **Сочетается с:** `pm-setup/prd-writer`, `claude-skills/codebase-onboarding`
+
+### `claude-skills/competitive-teardown`
+
+Глубокий разбор конкурента по 12 измерениям — цены, отзывы, найм, SEO, UX.
+
+- **Ключевые навыки:** SWOT; карты позиционирования.
+- **Задачи:** понять, как устроен и чем силён конкурент.
+- **Сочетается с:** `claude-skills/competitive-intel`, `pm-setup/competitive-analysis`
+
+### `claude-skills/cpo-advisor`
+
+Советник по руководству продуктом.
+
+- **Ключевые навыки:** измерение PMF; видение продукта; инвестиции в портфель; продуктовая оргструктура; отчёты совету.
+- **Задачи:** принять продуктовое решение уровня директора.
+- **Сочетается с:** `claude-skills/cpo-review`, `claude-skills/product-strategist`
+
+### `claude-skills/cpo-review`
+
+Критика roadmap, заявления о PMF или закрытия фичи.
+
+- **Ключевые навыки:** позиция директора по продукту.
+- **Задачи:** проверить продуктовый план.
+- **Сочетается с:** `claude-skills/cpo-advisor`
+
+### `pm-skills/customer-journey-mapping-workshop`
+
+Воркшоп по карте пути клиента с адаптивными вопросами.
+
+- **Ключевые навыки:** этапы, боли, возможности.
+- **Задачи:** провести командную сессию по CJM.
+- **Сочетается с:** `pm-skills/customer-journey-map`, `pm-skills/workshop-facilitation`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `pm-skills/customer-journey-map`
+
+Карта пути клиента — этапы, точки контакта, действия, эмоции, метрики.
+
+- **Ключевые навыки:** диагностика сломанного опыта.
+- **Задачи:** выровнять команду вокруг опыта клиента.
+- **Сочетается с:** `pm-skills/customer-journey-mapping-workshop`, `claude-skills/ux-researcher-designer`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `pm-skills/derisk-measurement-advisor`
+
+Что измерять и тестировать, чтобы снизить риск продуктовой или ИИ-идеи.
+
+- **Ключевые навыки:** внутренние риски (DUFV) и внешние (PESTEL).
+- **Задачи:** стресс-тест идеи до вложений.
+- **Сочетается с:** `pm-skills/pol-probe`, `pm-skills/pestel-analysis`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `pm-skills/discovery-interview-prep`
+
+Подготовка интервью с клиентами — цель, сегмент, ограничения, метод.
+
+- **Ключевые навыки:** валидация проблемы; интервью об оттоке.
+- **Задачи:** спланировать discovery-интервью.
+- **Сочетается с:** `pm-skills/discovery-process`, `pm-setup/user-research`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `pm-skills/discovery-process`
+
+Полный цикл discovery от гипотезы проблемы до проверенного решения.
+
+- **Ключевые навыки:** постановка; интервью; синтез; эксперименты.
+- **Задачи:** пройти discovery структурированно.
+- **Сочетается с:** `pm-skills/problem-statement`, `pm-skills/opportunity-solution-tree`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `pm-skills/eol-checklist`
+
+Чек-лист закрытия продукта по фазам с владельцем на каждом пункте.
+
+- **Ключевые навыки:** операционный план сворачивания.
+- **Задачи:** закрыть продукт без потерь.
+- **Сочетается с:** `pm-skills/eol-process`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `pm-skills/eol-internal-enablement`
+
+FAQ поддержки, тезисы для продаж и работа с возражениями перед объявлением о закрытии.
+
+- **Ключевые навыки:** подготовка клиентских команд.
+- **Задачи:** подготовить команду к закрытию продукта.
+- **Сочетается с:** `pm-skills/eol-message`, `pm-skills/eol-process`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `pm-skills/eol-message`
+
+Объявление о закрытии продукта нужного масштаба.
+
+- **Ключевые навыки:** обоснование; влияние на клиентов; следующие шаги.
+- **Задачи:** сообщить клиентам о закрытии.
+- **Сочетается с:** `pm-skills/eol-stakeholder-sequence`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `pm-skills/eol-process`
+
+Закрытие продукта целиком — решение, согласование, план, подготовка, объявление, закрытие.
+
+- **Ключевые навыки:** сквозной процесс EOL.
+- **Задачи:** провести закрытие продукта.
+- **Сочетается с:** `pm-skills/eol-readiness-advisor`, `pm-skills/eol-checklist`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `pm-skills/eol-readiness-advisor`
+
+Оценка «закрывать или нет» и масштаб усилий на закрытие.
+
+- **Ключевые навыки:** go/no-go для вывода продукта.
+- **Задачи:** когда говорят «надо бы это убить», но никто не решает.
+- **Сочетается с:** `pm-skills/lifecycle-play-advisor`, `pm-skills/eol-process`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `pm-skills/eol-stakeholder-sequence`
+
+С кем и в каком порядке говорить о закрытии продукта.
+
+- **Ключевые навыки:** последовательность разговоров; содержание каждого.
+- **Задачи:** избежать конфликтов при закрытии.
+- **Сочетается с:** `pm-skills/stakeholder-mapping`, `pm-skills/eol-message`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `pm-skills/epic-breakdown-advisor`
+
+Разбиение эпиков на истории по паттернам Humanizing Work.
+
+- **Ключевые навыки:** паттерны разбиения.
+- **Задачи:** когда задача слишком велика для оценки и поставки.
+- **Сочетается с:** `pm-skills/user-story-splitting`, `pm-skills/user-story`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `pm-skills/epic-hypothesis`
+
+Формулировка эпика как проверяемой гипотезы.
+
+- **Ключевые навыки:** целевой пользователь; ожидаемый результат; метод проверки.
+- **Задачи:** определить крупную инициативу до roadmap.
+- **Сочетается с:** `pm-skills/epic-breakdown-advisor`, `pm-skills/pol-probe`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `claude-skills/experiment-designer`
+
+Планирование A/B-тестов и продуктовых экспериментов.
+
+- **Ключевые навыки:** гипотезы; размер выборки; приоритет; чтение результатов.
+- **Задачи:** понять, сколько гнать тест и победил ли вариант.
+- **Сочетается с:** `claude-skills/statistical-analyst`, `claude-skills/ab-test-setup`
+
+### `pm-skills/feature-investment-advisor`
+
+Оценка инвестиции в фичу по выручке, затратам, ROI и стратегии.
+
+- **Ключевые навыки:** экономическое обоснование фичи.
+- **Задачи:** решить, стоит ли фича вложений.
+- **Сочетается с:** `pm-skills/prioritization-advisor`, `claude-skills/business-investment-advisor`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `pm-skills/finance-based-pricing-advisor`
+
+Оценка изменения цен по ARPU, конверсии, риску оттока, NRR и окупаемости.
+
+- **Ключевые навыки:** финансовая проверка ценового решения.
+- **Задачи:** решить, выпускать ли изменение цен.
+- **Сочетается с:** `marketing/pricing`, `claude-skills/pricing-strategist`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `pm-skills/incoming-request-advisor`
+
+Разбор входящего запроса — буквальная просьба против реальной «работы».
+
+- **Ключевые навыки:** декодирование сообщений в Slack, email, указаний.
+- **Задачи:** понять, что на самом деле нужно стейкхолдеру.
+- **Сочетается с:** `pm-skills/jobs-to-be-done`, `pm-skills/problem-statement`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `pm-skills/jobs-to-be-done`
+
+Выявление «работ», болей и выгод клиента в формате JTBD.
+
+- **Ключевые навыки:** неудовлетворённые потребности; перепозиционирование.
+- **Задачи:** понять, зачем клиенты «нанимают» продукт.
+- **Сочетается с:** `pm-skills/problem-statement`, `pm-skills/positioning-statement`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `pm-setup/launch-checklist`
+
+Чек-лист готовности к запуску.
+
+- **Ключевые навыки:** предзапусковая проверка.
+- **Задачи:** убедиться, что всё готово к релизу.
+- **Сочетается с:** `marketing/launch`, `claude-skills/launch-strategy`
+
+### `pm-skills/lean-ux-canvas`
+
+Lean UX Canvas v2.
+
+- **Ключевые навыки:** бизнес-проблема; допущения; что изучить дальше.
+- **Задачи:** структурировать продуктовую гипотезу.
+- **Сочетается с:** `pm-skills/problem-framing-canvas`, `pm-skills/pol-probe`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `pm-skills/lifecycle-play-advisor`
+
+Диагностика стадии жизненного цикла продукта и выбор хода — продлить, заменить, вывести.
+
+- **Ключевые навыки:** оценка стадии; рекомендация.
+- **Задачи:** решить судьбу угасающего продукта.
+- **Сочетается с:** `pm-skills/product-lifecycle-plays`, `pm-skills/eol-readiness-advisor`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `pm-setup/metrics-definer`
+
+Определение метрик успеха фичи или инициативы.
+
+- **Ключевые навыки:** KPI; что измерять.
+- **Задачи:** понять, как измерить успех.
+- **Сочетается с:** `claude-skills/product-analytics`
+
+### `marketing/onboarding`
+
+Онбординг и активация — первый опыт, «ага-момент».
+
+- **Ключевые навыки:** почему новые пользователи не остаются; что делать в первой сессии.
+- **Задачи:** улучшить удержание новичков.
+- **Сочетается с:** `claude-skills/onboarding-cro`, `marketing/emails`
+
+### `pm-skills/opportunity-solution-tree`
+
+Дерево возможностей и решений от цели к тестам.
+
+- **Ключевые навыки:** связь результата, возможностей, решений и экспериментов.
+- **Задачи:** превратить запрос стейкхолдера в продуктовую задачу.
+- **Сочетается с:** `pm-skills/discovery-process`, `pm-skills/problem-statement`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `pm-skills/pol-probe-advisor`
+
+Выбор типа пробы под гипотезу, риск и ресурсы.
+
+- **Ключевые навыки:** соответствие метода цели обучения.
+- **Задачи:** подобрать правильный эксперимент.
+- **Сочетается с:** `pm-skills/pol-probe`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `pm-skills/pol-probe`
+
+«Проба жизнеспособности» для дешёвой проверки рискованной гипотезы.
+
+- **Ключевые навыки:** суровая правда до разработки.
+- **Задачи:** проверить идею без полноценного продукта.
+- **Сочетается с:** `pm-skills/pol-probe-advisor`, `pm-skills/epic-hypothesis`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `pm-skills/prd-development`
+
+Структурированный PRD — проблема, пользователи, решение, критерии успеха.
+
+- **Ключевые навыки:** от заметок discovery к документу для разработки.
+- **Задачи:** написать полноценный PRD.
+- **Сочетается с:** `pm-setup/prd-writer`, `pm-skills/user-story`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `pm-setup/prd-writer`
+
+Короткий PRD на 2–3 страницы — чёткий, с примерами.
+
+- **Ключевые навыки:** one-pager; спецификация фичи.
+- **Задачи:** быстро написать PRD.
+- **Сочетается с:** `pm-skills/prd-development`, `pm-skills/user-story`
+
+### `pm-skills/press-release`
+
+Пресс-релиз в стиле Amazon до начала разработки.
+
+- **Ключевые навыки:** определение ценности для клиента заранее.
+- **Задачи:** согласовать видение нового продукта.
+- **Сочетается с:** `pm-skills/prd-development`, `marketing/public-relations`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `pm-skills/prioritization-advisor`
+
+Выбор фреймворка приоритизации — RICE, ICE, ценность и усилия и др.
+
+- **Ключевые навыки:** подбор метода под стадию и контекст.
+- **Задачи:** решить, как приоритизировать бэклог.
+- **Сочетается с:** `claude-skills/product-manager-toolkit`, `pm-skills/feature-investment-advisor`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `pm-skills/problem-framing-canvas`
+
+Канва постановки проблемы MITRE.
+
+- **Ключевые навыки:** чёткая формулировка проблемы до решений.
+- **Задачи:** не бросаться к решению раньше времени.
+- **Сочетается с:** `pm-skills/problem-statement`, `pm-skills/lean-ux-canvas`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `pm-skills/problem-statement`
+
+Формулировка проблемы с позиции пользователя.
+
+- **Ключевые навыки:** кто заблокирован; что пытается сделать; почему важно; что чувствует.
+- **Задачи:** зафиксировать проблему для discovery.
+- **Сочетается с:** `pm-skills/jobs-to-be-done`, `pm-skills/problem-framing-canvas`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `claude-skills/product-analytics`
+
+Продуктовые KPI, дашборды метрик, когортный анализ и удержание.
+
+- **Ключевые навыки:** выбор метрик; когорты; анализ принятия фич.
+- **Задачи:** измерять продукт правильно.
+- **Сочетается с:** `pm-setup/metrics-definer`, `claude-skills/experiment-designer`
 
 ### `ecc/product-capability`
 
@@ -2136,6 +4829,14 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Задачи:** превратить продуктовую идею в план для разработки.
 - **Сочетается с:** `ecc/product-lens`, `ecc/blueprint`, `ecc/intent-driven-development`
 
+### `claude-skills/product-discovery`
+
+Проверка продуктовых идей — карта допущений, discovery-спринты, проверка соответствия проблемы и решения.
+
+- **Ключевые навыки:** допущения; эксперименты; валидация.
+- **Задачи:** понять, стоит ли строить идею.
+- **Сочетается с:** `pm-skills/discovery-process`, `pm-skills/opportunity-solution-tree`
+
 ### `ecc/product-lens`
 
 Проверка «зачем» до разработки через четыре продуктовые диагностики в стиле YC.
@@ -2143,6 +4844,171 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Ключевые навыки:** продуктовый бриф PRODUCT-BRIEF.md; рекомендация делать или нет.
 - **Задачи:** решить, стоит ли вообще строить фичу или продукт.
 - **Сочетается с:** `ecc/product-capability`, `ecc/market-research`, `ecc/council`
+
+### `pm-skills/product-lifecycle-plays`
+
+Стадия жизненного цикла продукта и выбор хода — продление, замена или вывод.
+
+- **Ключевые навыки:** стратегии зрелых и угасающих продуктов.
+- **Задачи:** решить, что делать со зрелым продуктом.
+- **Сочетается с:** `pm-skills/lifecycle-play-advisor`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `claude-skills/product-manager-toolkit`
+
+Набор продакт-менеджера — приоритизация RICE, синтез интервью, PRD, выход на рынок.
+
+- **Ключевые навыки:** ранжирование фич; документы; GTM.
+- **Задачи:** решить, что строить дальше.
+- **Сочетается с:** `pm-skills/prioritization-advisor`, `pm-setup/prd-writer`
+
+### `claude-skills/product-skills`
+
+Маршрутизатор продуктовых навыков — приоритизация, OKR, UX, эксперименты, discovery, roadmap.
+
+- **Ключевые навыки:** выбор навыка.
+- **Задачи:** понять, какой продуктовый навык нужен.
+- **Сочетается с:** `claude-skills/product-manager-toolkit`
+
+### `claude-skills/product-strategist`
+
+Head of Product — каскад OKR, видение продукта, roadmap, структура команды.
+
+- **Ключевые навыки:** квартальные OKR; продуктовое видение.
+- **Задачи:** выстроить продуктовую стратегию.
+- **Сочетается с:** `claude-skills/cpo-advisor`, `pm-skills/roadmap-planning`
+
+### `pm-skills/product-strategy-session`
+
+Сквозная сессия продуктовой стратегии — позиционирование, discovery, roadmap.
+
+- **Ключевые навыки:** проверенное направление до обязательств.
+- **Задачи:** определить стратегию продукта.
+- **Сочетается с:** `pm-skills/positioning-workshop`, `pm-skills/roadmap-planning`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `pm-skills/proto-persona`
+
+Прото-персона на основе текущих данных и знаний команды.
+
+- **Ключевые навыки:** рабочий профиль клиента до глубоких исследований.
+- **Задачи:** быстро определить целевого пользователя.
+- **Сочетается с:** `claude-skills/ux-researcher-designer`, `pm-skills/jobs-to-be-done`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `pm-skills/recommendation-canvas`
+
+Оценка ИИ-идеи продукта по результатам, гипотезам, рискам и позиционированию.
+
+- **Ключевые навыки:** стоит ли ИИ-решение инвестиций.
+- **Задачи:** обосновать или отклонить ИИ-фичу.
+- **Сочетается с:** `pm-skills/derisk-measurement-advisor`, `claude-skills/chief-ai-officer-advisor`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `claude-skills/roadmap-communicator`
+
+Рассказ о roadmap, release notes, changelog и апдейты для стейкхолдеров.
+
+- **Ключевые навыки:** подача планов руководству, инженерам и клиентам.
+- **Задачи:** объяснить планы разным аудиториям.
+- **Сочетается с:** `pm-skills/roadmap-planning`, `claude-skills/changelog-generator`
+
+### `pm-skills/roadmap-planning`
+
+Стратегический roadmap — приоритеты, эпики, согласование, последовательность.
+
+- **Ключевые навыки:** от стратегии к плану релизов.
+- **Задачи:** составить roadmap.
+- **Сочетается с:** `pm-skills/prioritization-advisor`, `claude-skills/roadmap-communicator`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `pm-skills/stakeholder-engagement-advisor`
+
+План взаимодействия с конкретным стейкхолдером.
+
+- **Ключевые навыки:** подготовка к разговору; работа с сопротивлением.
+- **Задачи:** выстроить важные отношения перед ключевым этапом.
+- **Сочетается с:** `pm-skills/stakeholder-mapping`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `pm-skills/stakeholder-identification`
+
+Выявление всех стейкхолдеров до начала взаимодействия.
+
+- **Ключевые навыки:** полная карта заинтересованных сторон.
+- **Задачи:** запустить инициативу без сюрпризов.
+- **Сочетается с:** `pm-skills/stakeholder-mapping`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `pm-skills/stakeholder-mapping`
+
+Приоритизация стейкхолдеров по двум сеткам.
+
+- **Ключевые навыки:** стратегия вовлечения; чей голос усилить.
+- **Задачи:** понять, с кем и как работать.
+- **Сочетается с:** `pm-skills/stakeholder-identification`, `pm-skills/stakeholder-engagement-advisor`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `pm-skills/storyboard`
+
+Сторибординг из шести кадров — путь пользователя от проблемы к решению.
+
+- **Ключевые навыки:** быстрый визуальный нарратив.
+- **Задачи:** согласовать концепцию с командой.
+- **Сочетается с:** `pm-skills/customer-journey-map`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `pm-setup/user-research`
+
+Синтез исследований и интервью.
+
+- **Ключевые навыки:** выводы из интервью; находки.
+- **Задачи:** превратить интервью в инсайты.
+- **Сочетается с:** `claude-skills/interview-mapper`, `pm-skills/discovery-interview-prep`
+
+### `pm-skills/user-story-mapping-workshop`
+
+Воркшоп по карте историй с адаптивными вопросами.
+
+- **Ключевые навыки:** опорные активности; срезы релизов.
+- **Задачи:** провести командную сессию по story mapping.
+- **Сочетается с:** `pm-skills/user-story-mapping`, `pm-skills/workshop-facilitation`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `pm-skills/user-story-mapping`
+
+Карта пользовательских историй — активности, шаги, задачи, релизные срезы.
+
+- **Ключевые навыки:** планирование MVP вокруг пути пользователя.
+- **Задачи:** спланировать бэклог.
+- **Сочетается с:** `pm-skills/user-story-mapping-workshop`, `pm-skills/user-story`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `pm-skills/user-story-splitting`
+
+Разбиение большой истории или эпика на поставляемые части.
+
+- **Ключевые навыки:** проверенные паттерны разбиения.
+- **Задачи:** когда история слишком велика.
+- **Сочетается с:** `pm-skills/epic-breakdown-advisor`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `pm-skills/user-story`
+
+Пользовательские истории в формате Майка Кона с критериями приёмки на Gherkin.
+
+- **Ключевые навыки:** истории, готовые к разработке.
+- **Задачи:** превратить потребности в задачи.
+- **Сочетается с:** `pm-skills/user-story-splitting`, `claude-skills/agile-product-owner`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `claude-skills/ux-researcher-designer`
+
+UX-исследования — персоны, карты пути, планы юзабилити-тестов, синтез.
+
+- **Ключевые навыки:** понимание пользователей.
+- **Задачи:** узнать, кто пользователи и почему им трудно.
+- **Сочетается с:** `pm-skills/customer-journey-map`, `pm-skills/proto-persona`
 
 ---
 
@@ -2155,7 +5021,47 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 
 **Типовые связки.** sprint-planner → ведение задач (jira-*) → статус-отчёты → ретроспектива.
 
-Навыков в категории: 3.
+Навыков в категории: 14.
+
+### `claude-skills/atlassian-admin`
+
+Администрирование Atlassian — пользователи и группы Jira и Confluence, права, SSO, приложения, политики.
+
+- **Ключевые навыки:** аудит прав; управление доступом; безопасность организации.
+- **Задачи:** навести порядок в администрировании Atlassian.
+- **Сочетается с:** `claude-skills/confluence-expert`, `claude-skills/jira-expert`
+
+### `claude-skills/atlassian-templates`
+
+Шаблоны и блупринты Jira и Confluence для повторного использования.
+
+- **Ключевые навыки:** генерация шаблонов страниц и задач.
+- **Задачи:** стандартизировать документы и задачи в организации.
+- **Сочетается с:** `claude-skills/confluence-expert`, `claude-skills/atlassian-admin`
+
+### `claude-skills/confluence-expert`
+
+Построение и реструктуризация пространства Confluence.
+
+- **Ключевые навыки:** иерархия страниц; права; шаблоны; макросы Jira; аудит контента.
+- **Задачи:** навести порядок в базе знаний на Confluence.
+- **Сочетается с:** `claude-skills/atlassian-templates`, `claude-skills/jira-expert`
+
+### `claude-skills/internal-comms`
+
+Внутренние объявления — реорганизация, новые инструменты, политика, смена руководства, сокращения, поглощение.
+
+- **Ключевые навыки:** структура объявления; FAQ; план коммуникаций.
+- **Задачи:** сообщить команде о важных изменениях.
+- **Сочетается с:** `claude-skills/change-management`, `claude-skills/team-communications`
+
+### `claude-skills/jira-expert`
+
+Настройка Jira и запросы — JQL, процессы, поля, автоматизация, дашборды.
+
+- **Ключевые навыки:** поиск и фильтры; workflow; автоматизация.
+- **Задачи:** настроить Jira или найти нужные задачи.
+- **Сочетается с:** `claude-skills/confluence-expert`, `ecc/jira-integration`
 
 ### `ecc/jira-integration`
 
@@ -2165,6 +5071,14 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Задачи:** взять задачу из Jira и обновить её по ходу работы.
 - **Сочетается с:** `ecc/github-ops`, `ecc/project-flow-ops`
 
+### `claude-skills/pm-skills`
+
+Маршрутизатор навыков управления проектами — спринты, портфель, Jira, Confluence, коммуникации.
+
+- **Ключевые навыки:** выбор навыка; цикл поставки.
+- **Задачи:** понять, какой навык управления проектом нужен.
+- **Сочетается с:** `claude-skills/senior-pm`, `claude-skills/scrum-master`
+
 ### `ecc/project-flow-ops`
 
 Управление потоком работ между GitHub и Linear.
@@ -2173,6 +5087,30 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Задачи:** держать задачи и код синхронизированными.
 - **Сочетается с:** `ecc/github-ops`, `ecc/jira-integration`, `ecc/story-lifecycle`
 
+### `claude-skills/scrum-master`
+
+Аналитика спринтов и команды — прогноз скорости, здоровье спринта, ретро, burndown, блокеры.
+
+- **Ключевые навыки:** velocity; ретроспективы.
+- **Задачи:** улучшить работу Scrum-команды.
+- **Сочетается с:** `pm-setup/sprint-planner`, `claude-skills/senior-pm`
+
+### `claude-skills/senior-pm`
+
+Управление проектами и портфелем с несколькими потоками работ.
+
+- **Ключевые навыки:** планы; статус-отчёты; реестр рисков; загрузка; отчёты руководству.
+- **Задачи:** вести сложную программу проектов.
+- **Сочетается с:** `claude-skills/scrum-master`, `claude-skills/team-communications`
+
+### `pm-setup/sprint-planner`
+
+Планирование спринта и организация бэклога.
+
+- **Ключевые навыки:** что брать в работу.
+- **Задачи:** собрать план спринта.
+- **Сочетается с:** `claude-skills/scrum-master`, `claude-skills/agile-product-owner`
+
 ### `ecc/story-lifecycle`
 
 Файловый цикл «эпик → история → спринт» без внешнего трекера.
@@ -2180,6 +5118,23 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Ключевые навыки:** эпики; разбиение на истории; спринты; отслеживание статуса.
 - **Задачи:** вести проект прямо в репозитории.
 - **Сочетается с:** `ecc/project-flow-ops`, `ecc/blueprint`
+
+### `claude-skills/team-communications`
+
+Внутренние коммуникации — 3P-апдейты, статус-отчёты, рассылки, FAQ, отчёты об инцидентах.
+
+- **Ключевые навыки:** шаблоны регулярных отчётов.
+- **Задачи:** написать статус-апдейт.
+- **Сочетается с:** `claude-skills/internal-comms`, `claude-skills/senior-pm`
+
+### `pm-skills/workshop-facilitation`
+
+Проведение воркшопов в многоходовом формате.
+
+- **Ключевые навыки:** темп; варианты; отслеживание прогресса.
+- **Задачи:** провести интерактивную командную сессию.
+- **Сочетается с:** `pm-skills/positioning-workshop`, `pm-skills/user-story-mapping-workshop`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
 
 ---
 
@@ -2192,7 +5147,40 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 
 **Типовые связки.** competitive-platform-analysis → benchmark-methodology → competitive-report-structure; council / C-level советники для решения → executive-материалы.
 
-Навыков в категории: 6.
+Навыков в категории: 64.
+
+### `claude-skills/agent-protocol`
+
+Протокол взаимодействия агентов-советников C-level между собой.
+
+- **Ключевые навыки:** синтаксис вызова; защита от циклов; изоляция; формат ответов.
+- **Задачи:** организовать совещание нескольких виртуальных руководителей.
+- **Сочетается с:** `claude-skills/board-meeting`, `claude-skills/chief-of-staff`
+
+### `claude-skills/andreessen`
+
+Прямой «рыночный» вердикт по идее, бизнесу или карьерной ставке с сильнейшим контраргументом.
+
+- **Ключевые навыки:** рынок прежде всего; контраргументы; ежедневный план на карточке 3×5.
+- **Задачи:** трезво оценить идею до вложений.
+- **Сочетается с:** `ecc/product-lens`, `claude-skills/challenge`
+
+### `pm-skills/ansoff-matrix`
+
+Варианты роста по матрице Ансоффа с оценкой рисков и последовательностью.
+
+- **Ключевые навыки:** рынки и продукты; доказательная база.
+- **Задачи:** решить, откуда брать следующий рост.
+- **Сочетается с:** `pm-skills/organic-growth-advisor`, `pm-skills/porters-five-forces`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `claude-skills/arquiteto-de-empresa`
+
+Описание и проектирование компании целиком в версионируемом markdown («компания как код»).
+
+- **Ключевые навыки:** вики компании, читаемая агентами; структура и процессы в файлах.
+- **Задачи:** задокументировать устройство компании для людей и агентов.
+- **Сочетается с:** `claude-skills/company-os`, `claude-skills/culture-architect`
 
 ### `ecc/benchmark-methodology`
 
@@ -2201,6 +5189,160 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Ключевые навыки:** позиционирование, голос, визуал, упаковка предложения, доказательства, цены; профили конкурентов.
 - **Задачи:** сравнить и оценить конкурентов перед сборкой отчёта.
 - **Сочетается с:** `ecc/competitive-platform-analysis`, `ecc/competitive-report-structure`, `ecc/market-research`
+
+### `claude-skills/board-deck-builder`
+
+Презентация для совета директоров, апдейт инвесторам или QBR с позиций всех руководителей.
+
+- **Ключевые навыки:** структура нарратива; как подавать плохие новости.
+- **Задачи:** подготовить материалы к совету директоров.
+- **Сочетается с:** `claude-skills/board-prep`, `ecc/investor-materials`
+
+### `claude-skills/board-meeting`
+
+Структурированное совещание нескольких виртуальных руководителей в шесть этапов.
+
+- **Ключевые навыки:** контекст; изолированные мнения C-level; дебаты; синтез; решение.
+- **Задачи:** принять стратегическое решение, затрагивающее много функций.
+- **Сочетается с:** `claude-skills/boardroom`, `claude-skills/chief-of-staff`, `claude-skills/decision-logger`
+
+### `claude-skills/board-prep`
+
+Подготовка к совету директоров, апдейту инвесторам или питчу, где цифры будут оспаривать.
+
+- **Ключевые навыки:** знание цифр наизусть; предугадывание трудных вопросов.
+- **Задачи:** подготовиться к жёстким вопросам по цифрам.
+- **Сочетается с:** `claude-skills/board-deck-builder`, `claude-skills/cfo-advisor`
+
+### `claude-skills/boardroom`
+
+Совещание C-suite в шесть этапов по решению, затрагивающему несколько областей.
+
+- **Ключевые навыки:** изменение цен; привлечение денег или сокращение; многофункциональный анализ.
+- **Задачи:** принять решение с учётом всех руководящих позиций.
+- **Сочетается с:** `claude-skills/board-meeting`, `claude-skills/brief`, `claude-skills/decide`
+
+### `claude-skills/brief`
+
+Одностраничный бриф стратегического вопроса — варианты, допущения, критерии успеха.
+
+- **Ключевые навыки:** постановка вопроса до обсуждения.
+- **Задачи:** сформулировать вопрос для совещания руководителей.
+- **Сочетается с:** `claude-skills/boardroom`
+
+### `claude-skills/c-level-agents`
+
+Виртуальная команда руководителей — 13 агентов C-suite и 21 команда.
+
+- **Ключевые навыки:** маршрутизация вопросов; многоролевые обсуждения.
+- **Задачи:** получить совет «команды руководителей» по бизнесу.
+- **Сочетается с:** `claude-skills/boardroom`, `claude-skills/c-level-skills`
+
+### `claude-skills/c-level-skills`
+
+Подбор советника C-level под вопрос — 14 ролей, советы директоров, культура, M&A.
+
+- **Ключевые навыки:** навигация по советникам.
+- **Задачи:** понять, к какому советнику обратиться.
+- **Сочетается с:** `claude-skills/chief-of-staff`, `claude-skills/c-level-agents`
+
+### `claude-skills/caio-review`
+
+Критика плана, связанного с ИИ, с позиции директора по ИИ.
+
+- **Ключевые навыки:** наличие набора оценок; API, дообучение или своя модель; класс по EU AI Act.
+- **Задачи:** проверить ИИ-план на слабые места.
+- **Сочетается с:** `claude-skills/chief-ai-officer-advisor`, `claude-skills/ai-act-readiness`
+
+### `claude-skills/cco-review`
+
+Критика плана по оттоку, удержанию, сегментам или найму в customer success.
+
+- **Ключевые навыки:** позиция директора по клиентам.
+- **Задачи:** проверить план удержания клиентов.
+- **Сочетается с:** `claude-skills/chief-customer-officer-advisor`, `claude-skills/customer-success-manager`
+
+### `claude-skills/cdo-review`
+
+Критика плана, затрагивающего права на данные, архитектуру данных или их монетизацию.
+
+- **Ключевые навыки:** позиция директора по данным.
+- **Задачи:** проверить план работы с данными.
+- **Сочетается с:** `claude-skills/chief-data-officer-advisor`
+
+### `claude-skills/ceo-advisor`
+
+Советник для CEO и основателя по управлению компанией.
+
+- **Ключевые навыки:** проблемы с советом и инвесторами; привлекать или сокращать; стратегические ставки; оргструктура и культура.
+- **Задачи:** принять трудное решение уровня CEO.
+- **Сочетается с:** `claude-skills/board-meeting`, `claude-skills/cfo-advisor`, `claude-skills/challenge`
+
+### `claude-skills/challenge`
+
+Пре-мортем плана — допустим, через год он провалился; какие допущения и риски к этому привели.
+
+- **Ключевые навыки:** поиск рискованных допущений; зависимости; риски исполнения.
+- **Задачи:** проверить план до того, как в него вложиться.
+- **Сочетается с:** `ecc/council`, `claude-skills/ceo-advisor`
+
+### `claude-skills/change-management`
+
+Проведение изменений — реорганизация, пивот, смена инструментов, руководства, закрытие продукта.
+
+- **Ключевые навыки:** модель ADKAR; шаблоны коммуникаций; работа с сопротивлением.
+- **Задачи:** провести изменения с минимальным сопротивлением.
+- **Сочетается с:** `claude-skills/culture-architect`, `claude-skills/internal-comms`
+
+### `claude-skills/chief-of-staff`
+
+Маршрутизация вопросов основателя к нужному советнику C-level и созыв совещаний.
+
+- **Ключевые навыки:** контекст компании; выбор советника; организация обсуждения.
+- **Задачи:** понять, кто из «руководителей» должен ответить.
+- **Сочетается с:** `claude-skills/c-level-skills`, `claude-skills/board-meeting`
+
+### `claude-skills/company-os`
+
+Выбор и настройка операционной системы компании — EOS, Scaling Up или OKR.
+
+- **Ключевые навыки:** карта ответственности; скоркарды; ритм встреч; квартальные приоритеты.
+- **Задачи:** выстроить управленческую систему компании.
+- **Сочетается с:** `claude-skills/coo-advisor`, `claude-skills/strategic-alignment`
+
+### `pm-skills/competitive-analysis-process`
+
+Полный конкурентный анализ в шесть шагов — от ландшафта до стратегического направления.
+
+- **Ключевые навыки:** оркестрация конкурентных навыков.
+- **Задачи:** получить полную картину конкуренции.
+- **Сочетается с:** `pm-skills/market-landscape-scan`, `pm-skills/competitive-research-snapshot`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `pm-setup/competitive-analysis`
+
+Конкурентный анализ по запросу «проанализируй конкурента» или «сравни нас с компанией».
+
+- **Ключевые навыки:** структурированное сравнение.
+- **Задачи:** быстро разобрать конкурента.
+- **Сочетается с:** `claude-skills/competitive-teardown`, `pm-skills/competitive-research-snapshot`
+
+### `pm-skills/competitive-intel-watch`
+
+Регулярный мониторинг изменений у конкурентов относительно прошлого снимка.
+
+- **Ключевые навыки:** только существенные сдвиги; доказательства.
+- **Задачи:** отслеживать конкурентов по расписанию.
+- **Сочетается с:** `pm-skills/pricing-packaging-tracker`, `claude-skills/competitive-intel`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `claude-skills/competitive-intel`
+
+Конкурентная разведка — battlecards, разбор побед и поражений, позиционирование против альтернатив.
+
+- **Ключевые навыки:** система отслеживания конкурентов; материалы для продаж.
+- **Задачи:** выстроить постоянный мониторинг конкурентов.
+- **Сочетается с:** `claude-skills/competitive-teardown`, `ecc/competitive-platform-analysis`
 
 ### `ecc/competitive-platform-analysis`
 
@@ -2218,6 +5360,31 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Задачи:** представить конкурентный анализ руководству или совету директоров.
 - **Сочетается с:** `ecc/benchmark-methodology`, `ecc/competitive-platform-analysis`, `ecc/investor-materials`
 
+### `pm-skills/competitive-research-snapshot`
+
+Снимок конкурентного ландшафта с источниками, матрицей сравнения и выводами.
+
+- **Ключевые навыки:** «и что из этого следует» для продукта.
+- **Задачи:** обосновать продуктовое решение конкурентными данными.
+- **Сочетается с:** `pm-skills/battle-card-builder`, `pm-skills/competitive-intel-watch`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `marketing/competitor-profiling`
+
+Досье на конкурентов с датами — цены, заявления, действия.
+
+- **Ключевые навыки:** проверка выводов о конкуренте; мониторинг изменений.
+- **Задачи:** знать, что делают конкуренты.
+- **Сочетается с:** `marketing/competitors`, `marketing/reverse-engineer-marketing`
+
+### `claude-skills/context-engine`
+
+Загрузка и обновление контекста компании для советников C-level.
+
+- **Ключевые навыки:** проверка свежести контекста; защита данных перед отправкой во внешние сервисы.
+- **Задачи:** обеспечить советникам актуальный контекст.
+- **Сочетается с:** `claude-skills/cs-onboard`, `claude-skills/chief-of-staff`
+
 ### `ecc/council-multi-model`
 
 Дополнительная внешняя критика решения совета другой моделью (Codex) с явного согласия.
@@ -2234,6 +5401,212 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Задачи:** выбрать из нескольких разумных вариантов.
 - **Сочетается с:** `ecc/council-multi-model`, `ecc/recursive-decision-ledger`
 
+### `claude-skills/cross-eval`
+
+Независимая проверка важного меморандума несколькими моделями до обсуждения.
+
+- **Ключевые навыки:** межмодельная критика.
+- **Задачи:** перепроверить важное решение.
+- **Сочетается с:** `ecc/council-multi-model`, `claude-skills/boardroom`
+
+### `claude-skills/cs-onboard`
+
+Первичная настройка советников C-level — интервью основателя о компании.
+
+- **Ключевые навыки:** сбор контекста; обновление после раунда или пивота.
+- **Задачи:** настроить виртуальную команду руководителей.
+- **Сочетается с:** `claude-skills/context-engine`
+
+### `claude-skills/culture-architect`
+
+Ценности компании, перевод их в поведение, оценка культуры, ритуалы.
+
+- **Ключевые навыки:** культура как операционное поведение, а не лозунги.
+- **Задачи:** сформулировать и внедрить ценности.
+- **Сочетается с:** `claude-skills/chro-advisor`, `claude-skills/change-management`
+
+### `claude-skills/decide`
+
+Фиксация одобренного решения совещания руководителей.
+
+- **Ключевые навыки:** журнал решений.
+- **Задачи:** записать решение, чтобы к нему вернуться.
+- **Сочетается с:** `claude-skills/decision-logger`, `claude-skills/boardroom`
+
+### `claude-skills/decision-logger`
+
+Журнал решений после совещаний — обзор прошлых решений и просроченных действий.
+
+- **Ключевые навыки:** хранение протоколов и одобренных решений.
+- **Задачи:** отслеживать исполнение решений.
+- **Сочетается с:** `claude-skills/decide`, `claude-skills/board-meeting`
+
+### `claude-skills/execute`
+
+Превращение одобренного решения в план на 90 дней с недельными вехами и ответственными.
+
+- **Ключевые навыки:** план исполнения; вехи; владельцы.
+- **Задачи:** перейти от решения к действиям.
+- **Сочетается с:** `claude-skills/decide`, `claude-skills/post-mortem`
+
+### `claude-skills/executive-mentor`
+
+Наставник руководителя — стресс-тест плана, трудные решения, подготовка к сложному совету, честный разбор.
+
+- **Ключевые навыки:** жёсткие вопросы; разбор ошибок.
+- **Задачи:** получить честную обратную связь по важному решению.
+- **Сочетается с:** `claude-skills/founder-coach`, `claude-skills/hard-call`
+
+### `claude-skills/founder-coach`
+
+Коучинг основателя, который стал узким местом, не делегирует или выгорает.
+
+- **Ключевые навыки:** делегирование; аудит энергии и календаря; переход от исполнителя к CEO.
+- **Задачи:** разгрузить основателя.
+- **Сочетается с:** `claude-skills/executive-mentor`, `claude-skills/ceo-advisor`
+
+### `claude-skills/founder-mode`
+
+Маршрутизация стратегического вопроса основателя к нужному советнику C-suite.
+
+- **Ключевые навыки:** выбор советника или совещания.
+- **Задачи:** получить совет, когда непонятно, к кому идти.
+- **Сочетается с:** `claude-skills/chief-of-staff`, `claude-skills/office-hours`
+
+### `claude-skills/freeze`
+
+«Заморозка» необратимого решения, принятого под давлением, на период остывания.
+
+- **Ключевые навыки:** защита от поспешных решений.
+- **Задачи:** не принимать необратимое решение сгоряча.
+- **Сочетается с:** `claude-skills/hard-call`, `claude-skills/decide`
+
+### `claude-skills/hard-call`
+
+Решение, когда все варианты болезненны.
+
+- **Ключевые навыки:** метод 10/10/10; минимизация сожалений.
+- **Задачи:** выбрать между сокращениями и плохим раундом, закрыть любимый продукт.
+- **Сочетается с:** `claude-skills/freeze`, `claude-skills/executive-mentor`
+
+### `claude-skills/internal-narrative`
+
+Единый нарратив компании для общих собраний, инвесторов, найма и кризисов.
+
+- **Ключевые навыки:** согласование историй для разных аудиторий.
+- **Задачи:** рассказывать о компании последовательно.
+- **Сочетается с:** `claude-skills/board-deck-builder`, `claude-skills/internal-comms`
+
+### `claude-skills/intl-expansion`
+
+Выход на новую страну — выбор рынка, способ входа, локализация, регулирование, региональный GTM.
+
+- **Ключевые навыки:** оценка рынков; модели входа.
+- **Задачи:** спланировать международную экспансию.
+- **Сочетается с:** `claude-skills/business-name-fit`, `ecc/market-research`
+
+### `claude-skills/ma-playbook`
+
+Покупка или продажа компании — due diligence, оценка, условия, интеграция.
+
+- **Ключевые навыки:** сделки M&A; выход.
+- **Задачи:** провести сделку слияния или поглощения.
+- **Сочетается с:** `claude-skills/financial-analyst`, `claude-skills/general-counsel-advisor`
+
+### `pm-skills/market-landscape-scan`
+
+Карта рынка — сегменты, игроки, заменители, свободные ниши с источниками.
+
+- **Ключевые навыки:** структура рынка.
+- **Задачи:** оценить рынок перед входом.
+- **Сочетается с:** `pm-skills/tam-sam-som-calculator`, `pm-skills/porters-five-forces`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `claude-skills/office-hours`
+
+Совет основателю после шести вопросов в стиле YC.
+
+- **Ключевые навыки:** диагностика ситуации; совет.
+- **Задачи:** когда непонятно, что спрашивать.
+- **Сочетается с:** `claude-skills/founder-mode`
+
+### `claude-skills/onboard`
+
+Интервью основателя для заполнения контекста компании виртуального C-suite.
+
+- **Ключевые навыки:** файл company-context.md.
+- **Задачи:** дать советникам контекст.
+- **Сочетается с:** `claude-skills/cs-onboard`
+
+### `claude-skills/org-health-diagnostic`
+
+Проверка здоровья компании по 8 измерениям со светофором.
+
+- **Ключевые навыки:** оценка функций; зоны риска.
+- **Задачи:** найти слабые места компании перед советом.
+- **Сочетается с:** `claude-skills/strategic-alignment`
+
+### `pm-skills/organic-growth-advisor`
+
+Выбор пути органического роста — новые сегменты, география, каналы, продукты.
+
+- **Ключевые навыки:** где ограничение роста.
+- **Задачи:** найти следующий источник роста.
+- **Сочетается с:** `pm-skills/ansoff-matrix`, `pm-skills/acquisition-channel-advisor`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `pm-skills/pestel-analysis`
+
+PESTEL-анализ — политические, экономические, социальные, технологические, экологические и правовые факторы.
+
+- **Ключевые навыки:** внешние силы, влияющие на продукт.
+- **Задачи:** учесть внешние риски в стратегии.
+- **Сочетается с:** `pm-skills/pestel-delta-monitor`, `pm-skills/swot-analysis`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `pm-skills/pestel-delta-monitor`
+
+Квартальный пересмотр PESTEL — что изменилось, какие допущения сломались.
+
+- **Ключевые навыки:** мониторинг внешних факторов.
+- **Задачи:** держать стратегию актуальной.
+- **Сочетается с:** `pm-skills/pestel-analysis`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `pm-skills/porters-five-forces`
+
+Анализ отрасли по пяти силам Портера с сигналами по каждой оценке.
+
+- **Ключевые навыки:** структура отрасли; пул прибыли.
+- **Задачи:** оценить привлекательность рынка.
+- **Сочетается с:** `pm-skills/market-landscape-scan`, `pm-skills/swot-analysis`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `claude-skills/post-mortem`
+
+Разбор решения через 90 дней или при срабатывании критериев остановки.
+
+- **Ключевые навыки:** сверка с исходными допущениями; выводы.
+- **Задачи:** проверить, оправдалось ли решение.
+- **Сочетается с:** `claude-skills/decide`, `claude-skills/postmortem`
+
+### `claude-skills/postmortem`
+
+Безвинный разбор провала — запуск, квартал, неудачный найм.
+
+- **Ключевые навыки:** 5 почему; реестр изменений.
+- **Задачи:** извлечь уроки из неудачи.
+- **Сочетается с:** `claude-skills/post-mortem`, `claude-skills/challenge`
+
+### `pm-skills/pricing-packaging-tracker`
+
+Отслеживание цен и упаковки конкурентов как временного ряда.
+
+- **Ключевые навыки:** тарифы, ограничения, изменения цен.
+- **Задачи:** мониторить цены конкурентов ежемесячно.
+- **Сочетается с:** `pm-skills/competitive-intel-watch`, `marketing/pricing`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
 ### `ecc/recursive-decision-ledger`
 
 Многократные прогоны рассуждений с журналом решений.
@@ -2241,6 +5614,64 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Ключевые навыки:** испытания; оценки; проверки согласованности; гейты продвижения.
 - **Задачи:** принять сложное решение через серию проверяемых итераций.
 - **Сочетается с:** `ecc/council`
+
+### `marketing/reverse-engineer-marketing`
+
+Как вырос другой бизнес и что можно скопировать.
+
+- **Ключевые навыки:** журнал действий конкурента по датам.
+- **Задачи:** учиться на росте конкурентов.
+- **Сочетается с:** `marketing/competitor-profiling`
+
+### `claude-skills/roast`
+
+Разгром идеи панелью из пяти ролей и вердикт судьи GO, RESHAPE или KILL.
+
+- **Ключевые навыки:** критик, защитник, аналитик, следователь, клиент.
+- **Задачи:** проверить идею на прочность.
+- **Сочетается с:** `claude-skills/challenge`, `ecc/council`
+
+### `claude-skills/scenario-war-room`
+
+Моделирование составных сценариев «что если X и Y одновременно» с каскадом последствий.
+
+- **Ключевые навыки:** сценарный анализ по функциям.
+- **Задачи:** подготовиться к кризисным сценариям.
+- **Сочетается с:** `claude-skills/stress-test`, `claude-skills/hard-call`
+
+### `claude-skills/strategic-alignment`
+
+Согласование стратегии, когда команды тянут в разные стороны.
+
+- **Ключевые навыки:** каскад стратегии; «осиротевшие» OKR; локальная оптимизация.
+- **Задачи:** выстроить всех в одну линию.
+- **Сочетается с:** `claude-skills/company-os`, `claude-skills/org-health-diagnostic`
+
+### `claude-skills/stress-test`
+
+Стресс-тест плана на непроверенных допущениях.
+
+- **Ключевые навыки:** проверка «хоккейных клюшек» и долгих пилотов.
+- **Задачи:** понять, выдержит ли план реальность.
+- **Сочетается с:** `claude-skills/challenge`, `claude-skills/scenario-war-room`
+
+### `pm-skills/swot-analysis`
+
+SWOT компании по публичным источникам с перекрёстными выводами S-O и W-T.
+
+- **Ключевые навыки:** доказательный SWOT.
+- **Задачи:** стратегический обзор своей компании или конкурента.
+- **Сочетается с:** `pm-skills/pestel-analysis`, `pm-skills/porters-five-forces`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `pm-skills/tam-sam-som-calculator`
+
+Расчёт TAM, SAM и SOM с явными допущениями и оговорками.
+
+- **Ключевые навыки:** методы оценки рынка.
+- **Задачи:** оценить рынок для бизнес-кейса.
+- **Сочетается с:** `claude-skills/market-research`, `pm-skills/market-landscape-scan`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
 
 ---
 
@@ -2253,7 +5684,48 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 
 **Типовые связки.** финансовая модель → анализ (financial-analyst) → investor-materials → investor-outreach; биллинг — customer-billing-ops / finance-billing-ops.
 
-Навыков в категории: 4.
+Навыков в категории: 20.
+
+### `pm-skills/business-health-diagnostic`
+
+Диагностика здоровья SaaS — рост, удержание, эффективность, капитал.
+
+- **Ключевые навыки:** комплексная оценка; приоритет срочных исправлений.
+- **Задачи:** подготовить бизнес-ревью.
+- **Сочетается с:** `pm-skills/saas-revenue-growth-metrics`, `pm-skills/saas-economics-efficiency-metrics`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `claude-skills/business-investment-advisor`
+
+Оценка капитальных затрат — оборудование, недвижимость, покупка бизнеса, найм, технологии.
+
+- **Ключевые навыки:** ROI, IRR, NPV, срок окупаемости; build vs buy.
+- **Задачи:** решить, окупится ли вложение.
+- **Сочетается с:** `claude-skills/cfo-advisor`, `claude-skills/financial-analyst`
+
+### `claude-skills/cfo-advisor`
+
+Финансы стартапа — runway и burn, юнит-экономика, фандрайзинг и размытие.
+
+- **Ключевые навыки:** LTV, CAC, окупаемость; прогноз денег; условия раунда.
+- **Задачи:** понять, на сколько хватит денег и как привлечь ещё.
+- **Сочетается с:** `claude-skills/financial-analyst`, `claude-skills/board-prep`, `ecc/investor-materials`
+
+### `claude-skills/cfo-review`
+
+Критика плана, требующего реальных расходов — волна найма, раунд, рекламный бюджет.
+
+- **Ключевые навыки:** позиция финансового директора.
+- **Задачи:** проверить, выдержит ли бюджет план.
+- **Сочетается с:** `claude-skills/cfo-advisor`
+
+### `claude-skills/commercial-forecaster`
+
+Прогноз бронирований, ARR, воронки и NRR.
+
+- **Ключевые навыки:** сценарии commit, best case и pipeline; цифра для совета.
+- **Задачи:** построить прогноз выручки.
+- **Сочетается с:** `claude-skills/cro-advisor`, `claude-skills/financial-analyst`
 
 ### `ecc/customer-billing-ops`
 
@@ -2271,6 +5743,31 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Задачи:** понять реальные цифры выручки и проблемы биллинга.
 - **Сочетается с:** `ecc/customer-billing-ops`, `ecc/investor-materials`
 
+### `pm-skills/finance-metrics-quickref`
+
+Быстрый справочник SaaS-метрик — формулы и бенчмарки.
+
+- **Ключевые навыки:** определения; формулы; ориентиры.
+- **Задачи:** быстро вспомнить метрику во время анализа.
+- **Сочетается с:** `claude-skills/saas-metrics-coach`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `claude-skills/finance-skills`
+
+Выбор финансового навыка — коэффициенты, DCF, прогнозы, SaaS-метрики, закрытие месяца.
+
+- **Ключевые навыки:** маршрутизация по финансовым навыкам.
+- **Задачи:** понять, какой навык нужен для финансового вопроса.
+- **Сочетается с:** `claude-skills/financial-analyst`, `claude-skills/saas-metrics-coach`
+
+### `claude-skills/financial-analyst`
+
+Анализ отчётности, оценка компании по DCF, анализ отклонений бюджета, скользящие прогнозы.
+
+- **Ключевые навыки:** финансовые коэффициенты; DCF; прогнозирование.
+- **Задачи:** понять финансовое состояние и стоимость компании.
+- **Сочетается с:** `claude-skills/cfo-advisor`, `claude-skills/stock-analysis`
+
 ### `ecc/investor-materials`
 
 Питч-деки, one-pager, инвестмеморандумы, заявки в акселераторы и финмодели.
@@ -2287,6 +5784,72 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Задачи:** провести коммуникацию в ходе привлечения инвестиций.
 - **Сочетается с:** `ecc/investor-materials`, `ecc/brand-voice`
 
+### `claude-skills/month-end-close`
+
+Закрытие месяца или квартала — чек-лист, календарь, сверки, ускорение.
+
+- **Ключевые навыки:** процесс закрытия; сверки счетов.
+- **Задачи:** закрывать месяц быстрее и без ошибок.
+- **Сочетается с:** `claude-skills/financial-analyst`
+
+### `claude-skills/passive-deal-screener`
+
+Проверка частной инвестиционной сделки для пассивного инвестора.
+
+- **Ключевые навыки:** стресс-тест синдикаций, preferred equity, бридж-фондов, частного кредита.
+- **Задачи:** решить, участвовать ли в сделке.
+- **Сочетается с:** `claude-skills/business-investment-advisor`
+
+### `claude-skills/research-finance`
+
+Деньги программы НИОКР — бюджеты, накладные расходы, burn и runway по вехам, капитализация или расход.
+
+- **Ключевые навыки:** многолетние бюджеты; учёт затрат на R&D.
+- **Задачи:** спланировать финансы исследования.
+- **Сочетается с:** `claude-skills/financial-analyst`, `claude-skills/grants`
+
+### `pm-skills/saas-economics-efficiency-metrics`
+
+Юнит-экономика и эффективность капитала SaaS.
+
+- **Ключевые навыки:** CAC payback, burn multiple и др.
+- **Задачи:** понять, может ли бизнес эффективно масштабироваться.
+- **Сочетается с:** `pm-skills/saas-revenue-growth-metrics`, `claude-skills/saas-metrics-coach`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `claude-skills/saas-metrics-coach`
+
+Разбор SaaS-метрик — ARR, MRR, отток, LTV, CAC, NRR.
+
+- **Ключевые навыки:** расчёт и интерпретация; бенчмарки.
+- **Задачи:** понять, как дела у SaaS-бизнеса.
+- **Сочетается с:** `pm-skills/saas-economics-efficiency-metrics`, `claude-skills/cfo-advisor`
+
+### `pm-skills/saas-revenue-growth-metrics`
+
+Метрики выручки, удержания и роста SaaS.
+
+- **Ключевые навыки:** моментум; отток; расширение; сигналы PMF.
+- **Задачи:** диагностировать рост бизнеса.
+- **Сочетается с:** `pm-skills/business-health-diagnostic`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `claude-skills/stock-analysis`
+
+Анализ и оценка публичной компании (США, мир, NSE, BSE) на проверенных данных.
+
+- **Ключевые навыки:** коэффициенты; скоринги; оценка стоимости.
+- **Задачи:** проанализировать акцию.
+- **Сочетается с:** `claude-skills/financial-analyst`
+
+### `claude-skills/stripe-integration-expert`
+
+Интеграция Stripe — подписки, триалы, проратация, checkout, оплата по использованию, вебхуки, портал, счета.
+
+- **Ключевые навыки:** биллинг в Next.js и других стеках.
+- **Задачи:** подключить оплату.
+- **Сочетается с:** `ecc/customer-billing-ops`, `claude-skills/saas-scaffolder`
+
 ---
 
 <a id="cat-compliance"></a>
@@ -2298,7 +5861,167 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 
 **Типовые связки.** оценка готовности (*-readiness) → риск-менеджмент → документы QMS → внутренний аудит → CAPA.
 
-Навыков в категории: 2.
+Навыков в категории: 32.
+
+### `claude-skills/access-lifecycle`
+
+Ревизия доступов пользователей и сервисных учётных записей.
+
+- **Ключевые навыки:** проверка отзыва доступа у уволившихся; поиск «осиротевших» сервисных аккаунтов; ответы аудиторам.
+- **Задачи:** провести периодический пересмотр доступов.
+- **Сочетается с:** `claude-skills/ciso-advisor`, `claude-skills/compliance-os`
+
+### `claude-skills/agent-decision-receipts`
+
+«Квитанции» о действиях автономного агента с побочными эффектами для последующего доказательства.
+
+- **Ключевые навыки:** журнал деплоев, удалений, платежей, выдачи доступов; требования EU AI Act ст. 12.
+- **Задачи:** обеспечить аудиторский след действий агента.
+- **Сочетается с:** `claude-skills/ai-act-readiness`, `ecc/agent-security-hardening`
+
+### `claude-skills/ai-act-readiness`
+
+Готовность к EU AI Act — класс риска, обязанности, сроки.
+
+- **Ключевые навыки:** классификация ИИ-системы; перечень обязанностей; дедлайны.
+- **Задачи:** понять, применяется ли закон и что делать.
+- **Сочетается с:** `claude-skills/aims-audit`, `claude-skills/agent-decision-receipts`
+
+### `claude-skills/aims-audit`
+
+Проверка готовности системы управления ИИ по ISO 42001.
+
+- **Ключевые навыки:** требования стандарта; подготовка к аудиту этапа 1 или внутреннему.
+- **Задачи:** подготовиться к сертификации ISO 42001.
+- **Сочетается с:** `claude-skills/ai-act-readiness`, `claude-skills/compliance-os`
+
+### `claude-skills/capa-officer`
+
+CAPA в системе качества медизделий.
+
+- **Ключевые навыки:** анализ первопричин (5 почему, Исикава); планы корректирующих действий; проверка эффективности; метрики CAPA.
+- **Задачи:** провести и отследить корректирующие действия.
+- **Сочетается с:** `claude-skills/quality-manager-qms-iso13485`, `ecc/quality-nonconformance`
+
+### `claude-skills/cmmc-readiness`
+
+Подготовка оборонного подрядчика к CMMC 2.0 уровня 2.
+
+- **Ключевые навыки:** самооценка; оценка C3PAO; расчёт балла SPRS.
+- **Задачи:** подготовиться к сертификации CMMC.
+- **Сочетается с:** `claude-skills/compliance-os`
+
+### `claude-skills/compliance-os`
+
+Одновременная работа с несколькими стандартами комплаенса.
+
+- **Ключевые навыки:** выбор применимых стандартов; пересечения контролей; пробный аудит; общий чек-лист доказательств.
+- **Задачи:** вести SOC 2, ISO 27001 и другие стандарты одной системой.
+- **Сочетается с:** `claude-skills/compliance-readiness`, `claude-skills/aims-audit`
+
+### `claude-skills/compliance-readiness`
+
+Проверка готовности перед добавлением стандарта или планированием годового календаря аудитов.
+
+- **Ключевые навыки:** оценка пробелов; план аудитов.
+- **Задачи:** спланировать комплаенс на год.
+- **Сочетается с:** `claude-skills/compliance-os`
+
+### `claude-skills/eu-ai-act-specialist`
+
+Специалист по EU AI Act — класс риска, процедура оценки соответствия, техническая документация.
+
+- **Ключевые навыки:** классификация; маршрут по ст. 43; приложение IV.
+- **Задачи:** привести ИИ-систему в соответствие с регламентом.
+- **Сочетается с:** `claude-skills/ai-act-readiness`, `claude-skills/iso42001-specialist`
+
+### `claude-skills/fda-consultant-specialist`
+
+Консультант по FDA для медизделий.
+
+- **Ключевые навыки:** 510(k), De Novo или PMA; предикаты; QMSR (21 CFR 820); кибербезопасность устройств.
+- **Задачи:** выбрать путь регистрации медизделия в США.
+- **Сочетается с:** `claude-skills/regulatory-affairs-head`, `claude-skills/fda-qsr-audit-prep`
+
+### `claude-skills/fda-qsr-audit-prep`
+
+Подготовка к инспекции FDA, внутреннему аудиту QMSR или ответу на форму 483.
+
+- **Ключевые навыки:** чек-листы; доказательства; ответы на замечания.
+- **Задачи:** пройти инспекцию FDA.
+- **Сочетается с:** `claude-skills/fda-consultant-specialist`, `claude-skills/qms-audit-expert`
+
+### `claude-skills/gc-review`
+
+Критика term sheet, договора с клиентом, передачи IP или регуляторных рисков перед подписанием.
+
+- **Ключевые навыки:** позиция главного юриста.
+- **Задачи:** проверить документ до подписи.
+- **Сочетается с:** `claude-skills/general-counsel-advisor`
+
+### `claude-skills/gdpr-audit-prep`
+
+Подготовка к проверке по GDPR, аудиту после утечки или расследованию регулятора.
+
+- **Ключевые навыки:** чек-лист доказательств; пробелы.
+- **Задачи:** пройти проверку GDPR.
+- **Сочетается с:** `claude-skills/gdpr-dsgvo-expert`
+
+### `claude-skills/gdpr-dsgvo-expert`
+
+Работа по GDPR — сканирование кода на риски приватности, DPIA, запросы субъектов данных.
+
+- **Ключевые навыки:** оценка воздействия; сроки ответа по ст. 12(3).
+- **Задачи:** обеспечить соответствие продукта GDPR.
+- **Сочетается с:** `claude-skills/gdpr-audit-prep`, `ecc/healthcare-phi-compliance`
+
+### `claude-skills/general-counsel-advisor`
+
+Юридический советник — договоры и term sheet, стратегия IP, регуляторные риски.
+
+- **Ключевые навыки:** MSA, SaaS, NDA, DPA, трудовые договоры; HIPAA, GDPR, FDA, финтех.
+- **Задачи:** проверить договор или оценить правовой риск.
+- **Сочетается с:** `claude-skills/gc-review`, `claude-skills/contract-and-proposal-writer`
+
+### `claude-skills/information-security-manager-iso27001`
+
+Построение и ведение СУИБ по ISO 27001 в HealthTech и MedTech.
+
+- **Ключевые навыки:** оценка рисков; внедрение контролей; сертификация.
+- **Задачи:** выстроить систему управления информационной безопасностью.
+- **Сочетается с:** `claude-skills/isms-audit-expert`, `claude-skills/iso27001-audit-prep`
+
+### `claude-skills/isms-audit-expert`
+
+Аудит по ISO 27001 — внутренний или надзорный, доказательства по Приложению А, SoA, несоответствия.
+
+- **Ключевые навыки:** проведение аудита; классификация замечаний.
+- **Задачи:** провести или пройти аудит ISO 27001.
+- **Сочетается с:** `claude-skills/information-security-manager-iso27001`, `claude-skills/iso27001-audit-prep`
+
+### `claude-skills/iso13485-audit-prep`
+
+Подготовка к внутреннему аудиту ISO 13485 или закрытию DHF.
+
+- **Ключевые навыки:** чек-листы; сбор доказательств.
+- **Задачи:** пройти аудит системы качества медизделий.
+- **Сочетается с:** `claude-skills/qms-audit-expert`, `claude-skills/quality-manager-qms-iso13485`
+
+### `claude-skills/iso27001-audit-prep`
+
+Подготовка к внутреннему, надзорному или первому аудиту ISO 27001.
+
+- **Ключевые навыки:** чек-листы; доказательства.
+- **Задачи:** пройти аудит ISO 27001.
+- **Сочетается с:** `claude-skills/isms-audit-expert`
+
+### `claude-skills/iso42001-specialist`
+
+Система управления ИИ по ISO/IEC 42001.
+
+- **Ключевые навыки:** анализ разрывов по разделам 4–10; реестр рисков ИИ; контроли Приложения А.
+- **Задачи:** внедрить или проверить систему управления ИИ.
+- **Сочетается с:** `claude-skills/aims-audit`, `claude-skills/eu-ai-act-specialist`
 
 ### `ecc/master-agreement-generator`
 
@@ -2308,6 +6031,46 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Задачи:** быстро подготовить договор на ревью юристу.
 - **Сочетается с:** `ecc/esign-field-placement`
 
+### `claude-skills/mdr-745-specialist`
+
+Работа по EU MDR 2017/745.
+
+- **Ключевые навыки:** классификация по Приложению VIII; техфайл; клиническая оценка; PMS и PSUR.
+- **Задачи:** вывести медизделие на рынок ЕС.
+- **Сочетается с:** `claude-skills/regulatory-affairs-head`, `claude-skills/risk-management-specialist`
+
+### `claude-skills/qms-audit-expert`
+
+Внутренние аудиты ISO 13485 — программа, проведение, классификация замечаний, подготовка к внешнему.
+
+- **Ключевые навыки:** план аудита; находки.
+- **Задачи:** провести внутренний аудит СМК.
+- **Сочетается с:** `claude-skills/iso13485-audit-prep`, `claude-skills/quality-manager-qms-iso13485`
+
+### `claude-skills/quality-documentation-manager`
+
+Управление документацией СМК — нумерация, версии, контроль изменений, электронные подписи 21 CFR Part 11.
+
+- **Ключевые навыки:** валидация документов.
+- **Задачи:** вести документацию системы качества.
+- **Сочетается с:** `claude-skills/quality-manager-qms-iso13485`
+
+### `claude-skills/quality-manager-qmr`
+
+Обязанности представителя руководства по качеству по ISO 13485 п. 5.5.2.
+
+- **Ключевые навыки:** анализ со стороны руководства; политика и цели качества; KPI; стоимость качества.
+- **Задачи:** вести анализ СМК руководством.
+- **Сочетается с:** `claude-skills/quality-manager-qms-iso13485`
+
+### `claude-skills/quality-manager-qms-iso13485`
+
+Построение и ведение СМК медизделий по ISO 13485.
+
+- **Ключевые навыки:** проектирование; документация; CAPA; подготовка к аудиту.
+- **Задачи:** пройти сертификацию ISO 13485.
+- **Сочетается с:** `claude-skills/capa-officer`, `claude-skills/qms-audit-expert`
+
 ### `ecc/quality-nonconformance`
 
 Контроль качества и управление несоответствиями в регулируемом производстве (FDA 21 CFR 820, IATF 16949, AS9100).
@@ -2315,6 +6078,46 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Ключевые навыки:** жизненный цикл NCR; 5 почему, Исикава; CAPA; статистический контроль.
 - **Задачи:** разобрать несоответствие и провести корректирующие действия.
 - **Сочетается с:** `ecc/production-scheduling`, `ecc/returns-reverse-logistics`
+
+### `claude-skills/ra-qm-skills`
+
+Маршрутизатор регуляторных и квалити-навыков — ISO 13485, MDR, FDA, ISO 14971, CAPA, ISO 27001, ISO 42001, EU AI Act, GDPR, SOC 2.
+
+- **Ключевые навыки:** выбор навыка.
+- **Задачи:** понять, какой регуляторный навык нужен.
+- **Сочетается с:** `claude-skills/regulatory-affairs-head`
+
+### `claude-skills/regulatory-affairs-head`
+
+Стратегия доступа медизделий на рынки — FDA 510(k), De Novo, PMA, CE по MDR, встречи с регулятором.
+
+- **Ключевые навыки:** регуляторная стратегия; ответы на замечания.
+- **Задачи:** спланировать регистрацию медизделия.
+- **Сочетается с:** `claude-skills/fda-consultant-specialist`, `claude-skills/mdr-745-specialist`
+
+### `claude-skills/risk-management-specialist`
+
+Управление рисками медизделий по ISO 14971.
+
+- **Ключевые навыки:** анализ опасностей; FMEA; деревья отказов; меры контроля; польза–риск.
+- **Задачи:** провести анализ рисков устройства.
+- **Сочетается с:** `claude-skills/mdr-745-specialist`, `claude-skills/capa-officer`
+
+### `claude-skills/soc2-audit-prep`
+
+Подготовка к аудиту SOC 2 Type II или работа в период наблюдения.
+
+- **Ключевые навыки:** доказательства; чек-листы.
+- **Задачи:** пройти аудит SOC 2.
+- **Сочетается с:** `claude-skills/soc2-compliance`
+
+### `claude-skills/soc2-compliance`
+
+Подготовка к SOC 2 — критерии доверия, матрица контролей, доказательства, анализ разрывов.
+
+- **Ключевые навыки:** Trust Service Criteria; контроли.
+- **Задачи:** выстроить соответствие SOC 2.
+- **Сочетается с:** `claude-skills/soc2-audit-prep`, `claude-skills/compliance-os`
 
 ---
 
@@ -2327,7 +6130,23 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 
 **Типовые связки.** inventory-demand-planning → production-scheduling → carrier-relationship-management → logistics-exception-management → returns-reverse-logistics.
 
-Навыков в категории: 7.
+Навыков в категории: 13.
+
+### `claude-skills/business-operations-skills`
+
+Маршрутизатор внутренних операционных задач — процессы, поставщики, мощности, коммуникации, регламенты, закупки.
+
+- **Ключевые навыки:** выбор подходящего BizOps-навыка.
+- **Задачи:** понять, какой навык нужен для операционной задачи.
+- **Сочетается с:** `claude-skills/capacity-planner`, `claude-skills/coo-advisor`
+
+### `claude-skills/capacity-planner`
+
+Расчёт численности операционной или поддерживающей команды.
+
+- **Ключевые навыки:** модели очередей Erlang C; риск перегрузки; порядок найма.
+- **Задачи:** понять, сколько людей нужно в поддержку или операции.
+- **Сочетается с:** `claude-skills/coo-advisor`, `claude-skills/chro-advisor`
 
 ### `ecc/carrier-relationship-management`
 
@@ -2336,6 +6155,14 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Ключевые навыки:** проверка перевозчиков; переговоры о ставках и топливных надбавках; тендеры и маршрутные гайды; скоринг перевозчиков.
 - **Задачи:** провести тендер на перевозки; оценить и перераспределить объёмы между перевозчиками.
 - **Сочетается с:** `ecc/logistics-exception-management`, `ecc/inventory-demand-planning`
+
+### `claude-skills/coo-advisor`
+
+Советник по операционному управлению.
+
+- **Ключевые навыки:** дизайн процессов; исполнение OKR; ритм работы; узкие места; масштабирование.
+- **Задачи:** выстроить операционную эффективность.
+- **Сочетается с:** `claude-skills/company-os`, `claude-skills/capacity-planner`
 
 ### `ecc/customs-trade-compliance`
 
@@ -2369,6 +6196,22 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Задачи:** разрулить проблемную поставку.
 - **Сочетается с:** `ecc/carrier-relationship-management`, `ecc/returns-reverse-logistics`
 
+### `claude-skills/process-mapper`
+
+Описание сквозного бизнес-процесса и поиск, где работа ждёт.
+
+- **Ключевые навыки:** диаграмма процесса; узкие места; передачи.
+- **Задачи:** оптимизировать процесс закупок, онбординга и др.
+- **Сочетается с:** `claude-skills/knowledge-ops`, `claude-skills/coo-advisor`
+
+### `claude-skills/procurement-optimizer`
+
+Снижение расходов на ПО и поставщиков.
+
+- **Ключевые навыки:** аудит SaaS-подписок; анализ категорий расходов; консолидация поставщиков.
+- **Задачи:** сократить расходы компании.
+- **Сочетается с:** `claude-skills/vendor-management`
+
 ### `ecc/production-scheduling`
 
 Планирование производства — очередность заказов, балансировка линий, переналадки, узкие места.
@@ -2385,6 +6228,192 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Задачи:** выстроить процесс возвратов.
 - **Сочетается с:** `ecc/logistics-exception-management`, `ecc/customer-billing-ops`
 
+### `claude-skills/vendor-management`
+
+Оценка и аудит поставщиков — скоркарды, SLA и компенсации, уровень риска третьих сторон.
+
+- **Ключевые навыки:** ревью ключевых поставщиков.
+- **Задачи:** управлять поставщиками.
+- **Сочетается с:** `claude-skills/procurement-optimizer`
+
+---
+
+<a id="cat-career"></a>
+## Карьера и HR
+
+**Область применения.** Резюме, сопроводительные письма, поиск работы, собеседования, переговоры о зарплате, найм.
+
+**Решаемые задачи.** Проверка резюме под ATS; адаптация резюме под вакансию; сопроводительные письма; анализ соответствия вакансии; подготовка к интервью; переговоры о компенсации.
+
+**Типовые связки.** job-fit-analyzer → resume-customizer → ats-resume-checker → cover-letter-writer → подготовка к интервью → переговоры о зарплате.
+
+Навыков в категории: 20.
+
+### `career/academic-research-cv`
+
+Академическое резюме для исследовательских и преподавательских позиций.
+
+- **Ключевые навыки:** публикации, гранты, преподавание, служение по нормам дисциплины.
+- **Задачи:** подготовить CV для научной карьеры.
+- **Сочетается с:** `career/cover-letter-writer`, `academic/academic-paper`
+
+### `pm-skills/altitude-horizon-framework`
+
+Переход от PM к директору через мышление «высотой» и «горизонтом».
+
+- **Ключевые навыки:** диагностика масштаба, горизонта и уровня лидерства.
+- **Задачи:** понять, чего не хватает для роста до директора.
+- **Сочетается с:** `pm-skills/director-readiness-advisor`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `career/ats-resume-checker`
+
+Проверка и исправление резюме для систем ATS.
+
+- **Ключевые навыки:** проблемы форматирования; пункты с метриками; ключевые слова вакансии; оценка готовности.
+- **Задачи:** чтобы резюме проходило автоматический отбор.
+- **Сочетается с:** `career/resume-customizer`, `career/job-fit-analyzer`
+
+### `career/career-pivot-planner`
+
+Пошаговый план смены карьеры.
+
+- **Ключевые навыки:** переносимые навыки; перевод опыта в новую отрасль; история перехода; мосты.
+- **Задачи:** сменить профессию или отрасль.
+- **Сочетается с:** `career/linkedin-profile-booster`, `career/resume-customizer`
+
+### `claude-skills/chro-advisor`
+
+Стратегия по людям — планы найма, вилки зарплат, оргструктура, производительность, удержание.
+
+- **Ключевые навыки:** кого нанимать; сколько платить; как выстроить структуру.
+- **Задачи:** решить кадровые вопросы компании.
+- **Сочетается с:** `claude-skills/culture-architect`, `claude-skills/capacity-planner`
+
+### `career/compensation-negotiator`
+
+Переговоры о полном пакете компенсации.
+
+- **Ключевые навыки:** рыночные ставки; письмо с контрпредложением; разбор total comp; сравнение офферов.
+- **Задачи:** получить лучшую зарплату и условия.
+- **Сочетается с:** `career/mock-interview-coach`
+
+### `career/cover-letter-writer`
+
+Персонализированные сопроводительные письма.
+
+- **Ключевые навыки:** связь опыта с требованиями; цепляющее начало; объяснение пробелов.
+- **Задачи:** написать письмо под вакансию.
+- **Сочетается с:** `career/resume-customizer`, `career/job-fit-analyzer`
+
+### `pm-skills/director-readiness-advisor`
+
+Переход от PM к директору — подготовка, собеседования, первые месяцы.
+
+- **Ключевые навыки:** практические шаги при росте масштаба.
+- **Задачи:** вырасти до директора продукта.
+- **Сочетается с:** `pm-skills/altitude-horizon-framework`, `pm-skills/vp-cpo-readiness-advisor`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `career/executive-leadership-resume`
+
+Резюме для позиций VP, директора и C-level.
+
+- **Ключевые навыки:** лидерский бренд; истории трансформаций; метрики P&L.
+- **Задачи:** подготовить резюме руководителя.
+- **Сочетается с:** `career/linkedin-profile-booster`, `pm-skills/vp-cpo-readiness-advisor`
+
+### `pm-skills/executive-onboarding-playbook`
+
+План 30-60-90 дней для нового VP или CPO продукта.
+
+- **Ключевые навыки:** диагностический вход; отказ от преждевременных изменений.
+- **Задачи:** успешно начать на руководящей позиции.
+- **Сочетается с:** `pm-skills/vp-cpo-readiness-advisor`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `claude-skills/interview-system-designer`
+
+Проектирование процесса найма — этапы интервью, матрица компетенций, рубрики, банк вопросов.
+
+- **Ключевые навыки:** калибровка интервьюеров; оценочные рубрики.
+- **Задачи:** выстроить честный и эффективный найм.
+- **Сочетается с:** `claude-skills/chro-advisor`
+
+### `career/job-fit-analyzer`
+
+Анализ вакансии на соответствие вам.
+
+- **Ключевые навыки:** оценка совпадения; пробелы в навыках; красные флаги; стоит ли откликаться.
+- **Задачи:** решить, подаваться ли на вакансию.
+- **Сочетается с:** `career/resume-customizer`, `pm-skills/company-research`
+
+### `career/linkedin-profile-booster`
+
+Профиль LinkedIn для рекрутеров.
+
+- **Ключевые навыки:** заголовок; раздел «О себе»; ключевые слова; полнота профиля.
+- **Задачи:** чтобы рекрутеры находили вас.
+- **Сочетается с:** `claude-skills/linkedin-profile`, `career/career-pivot-planner`
+
+### `claude-skills/linkedin-profile`
+
+Аудит и переписывание профиля LinkedIn.
+
+- **Ключевые навыки:** заголовок; раздел «О себе»; опыт; Featured.
+- **Задачи:** сделать профиль сильнее.
+- **Сочетается с:** `career/linkedin-profile-booster`, `claude-skills/linkedin-strategy`
+
+### `career/mock-interview-coach`
+
+Тренировочные собеседования с ИИ-коучем.
+
+- **Ключевые навыки:** истории по STAR; поведенческие ответы; «расскажите о себе»; подготовка рекомендателей.
+- **Задачи:** подготовиться к собеседованию.
+- **Сочетается с:** `pm-skills/product-sense-interview-answer`, `career/compensation-negotiator`
+
+### `career/portfolio-case-study`
+
+Кейсы для портфолио и креативные резюме, совместимые с ATS.
+
+- **Ключевые навыки:** история проекта; результаты до и после.
+- **Задачи:** показать работу так, чтобы звали на интервью.
+- **Сочетается с:** `career/ats-resume-checker`
+
+### `pm-skills/product-sense-interview-answer`
+
+Структура устного ответа на продуктовом собеседовании.
+
+- **Ключевые навыки:** допущения; сегментация; приоритизация болей; компромиссы MVP.
+- **Задачи:** подготовиться к product sense интервью.
+- **Сочетается с:** `career/mock-interview-coach`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `career/resume-customizer`
+
+Адаптация резюме под вакансию.
+
+- **Ключевые навыки:** порядок разделов; ключевые слова; версии резюме; оценка совпадения.
+- **Задачи:** подогнать резюме под конкретную позицию.
+- **Сочетается с:** `career/ats-resume-checker`, `career/cover-letter-writer`
+
+### `career/software-engineer-resume`
+
+Резюме разработчика, которое приводит к собеседованиям.
+
+- **Ключевые навыки:** стек; пункты с метриками; проекты; профиль GitHub.
+- **Задачи:** составить сильное резюме инженера.
+- **Сочетается с:** `career/ats-resume-checker`, `career/portfolio-case-study`
+
+### `pm-skills/vp-cpo-readiness-advisor`
+
+Переход на позицию VP или CPO — подготовка, собеседования, первые месяцы.
+
+- **Ключевые навыки:** рост исполнительного масштаба.
+- **Задачи:** вырасти до руководителя продукта.
+- **Сочетается с:** `pm-skills/executive-onboarding-playbook`, `pm-skills/director-readiness-advisor`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
 ---
 
 <a id="cat-research"></a>
@@ -2396,7 +6425,78 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 
 **Типовые связки.** deep-research (сбор) → literature-review / scholar-evaluation (оценка) → academic-paper (написание) → academic-paper-reviewer (рецензия).
 
-Навыков в категории: 10.
+Навыков в категории: 37.
+
+### `academic/academic-paper-reviewer`
+
+Многостороннее рецензирование статьи панелью из пяти ролей.
+
+- **Ключевые навыки:** соответствие журналу; рецензенты по методам и предмету; редакторское решение.
+- **Задачи:** получить рецензию до подачи в журнал.
+- **Сочетается с:** `academic/academic-paper`, `ecc/scientific-thinking-scholar-evaluation`
+- **Лицензия:** CC-BY-NC-4.0 — только некоммерческое использование
+
+### `academic/academic-paper`
+
+Конвейер написания научной статьи из 12 агентов с 11 режимами.
+
+- **Ключевые навыки:** план, структура, ревизия, аннотация, обзор литературы, конвертация формата, проверка цитат.
+- **Задачи:** написать или доработать научную статью.
+- **Сочетается с:** `academic/academic-paper-reviewer`, `academic/academic-pipeline`
+- **Лицензия:** CC-BY-NC-4.0 — только некоммерческое использование
+
+### `academic/academic-pipeline`
+
+Оркестратор полного научного конвейера — исследование, написание, проверка, рецензия, доработки.
+
+- **Ключевые навыки:** этапы с проверками добросовестности.
+- **Задачи:** пройти путь от идеи до готовой статьи.
+- **Сочетается с:** `academic/deep-research`, `academic/academic-paper`, `academic/academic-paper-reviewer`
+- **Лицензия:** CC-BY-NC-4.0 — только некоммерческое использование
+
+### `pm-skills/autonomous-investigation`
+
+Протокол автономного исследования для всех навыков-расследований.
+
+- **Ключевые навыки:** план поиска; метки «факт, вывод, допущение»; уровни уверенности.
+- **Задачи:** доверить ИИ исследование без контроля на каждом шаге.
+- **Сочетается с:** `pm-skills/company-intel`, `ecc/deep-research`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `pm-skills/company-intel`
+
+Исследование компании, отрасли или группы конкурентов через семь аналитических линз.
+
+- **Ключевые навыки:** веб-поиск; структурированная разведка для дальнейших решений.
+- **Задачи:** собрать данные о компании или рынке.
+- **Сочетается с:** `pm-skills/company-research`, `pm-skills/autonomous-investigation`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `pm-skills/company-research`
+
+Бриф о компании — цитаты руководителей, продуктовая стратегия, оргконтекст.
+
+- **Ключевые навыки:** подготовка к интервью, партнёрству, конкурентному анализу.
+- **Задачи:** узнать компанию перед встречей или собеседованием.
+- **Сочетается с:** `claude-skills/dossier`, `career/job-fit-analyzer`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `marketing/customer-research`
+
+Проведение и синтез исследований клиентов — цитаты, отзывы, обратная связь.
+
+- **Ключевые навыки:** что на самом деле значат отзывы; какие выводы безопасны.
+- **Задачи:** понять клиентов по реальным данным.
+- **Сочетается с:** `pm-skills/voice-of-customer-miner`, `marketing/product-marketing`
+
+### `academic/deep-research`
+
+Команда из 13 агентов для строгого академического исследования любой темы.
+
+- **Ключевые навыки:** 8 режимов — полное исследование, краткий бриф, разбор статьи и др.
+- **Задачи:** провести глубокое исследование с академической строгостью.
+- **Сочетается с:** `academic/academic-pipeline`, `ecc/deep-research`
+- **Лицензия:** CC-BY-NC-4.0 — только некоммерческое использование
 
 ### `ecc/deep-research`
 
@@ -2406,6 +6506,22 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Задачи:** подготовить обоснованный обзор темы.
 - **Сочетается с:** `ecc/exa-search`, `ecc/research-ops`, `ecc/market-research`
 
+### `claude-skills/deepread`
+
+Глубокое чтение книги, статьи, PDF или набора документов.
+
+- **Ключевые навыки:** извлечение утверждений и доказательств; карта знаний; обучение по тексту.
+- **Задачи:** по-настоящему понять сложный материал.
+- **Сочетается с:** `claude-skills/research-summarizer`, `claude-skills/llm-wiki`
+
+### `claude-skills/dossier`
+
+Досье на компанию, человека или организацию для due diligence или подготовки к встрече.
+
+- **Ключевые навыки:** проверка фактов; ключевые сведения; вопросы к встрече.
+- **Задачи:** подготовиться к переговорам или проверить контрагента.
+- **Сочетается с:** `ecc/osint-investigation`, `ecc/market-research`
+
 ### `ecc/exa-search`
 
 Нейропоиск через Exa MCP по вебу, коду, компаниям и людям.
@@ -2413,6 +6529,56 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Ключевые навыки:** веб-поиск; поиск примеров кода; разведка по компаниям; поиск людей.
 - **Задачи:** быстро найти актуальную информацию или примеры для исследования.
 - **Сочетается с:** `ecc/deep-research`, `ecc/lead-intelligence`, `ecc/market-research`
+
+### `claude-skills/grants`
+
+Поиск грантов NIH под исследование.
+
+- **Ключевые навыки:** подбор институтов и секций; объявления о финансировании.
+- **Задачи:** найти источник финансирования исследования.
+- **Сочетается с:** `claude-skills/litreview`, `academic/academic-pipeline`
+
+### `pm-skills/intel-discipline-advisor`
+
+Выбор дисциплин разведки, периодичности и навыка для конкурентного или рыночного вопроса.
+
+- **Ключевые навыки:** триаж исследовательских вопросов.
+- **Задачи:** понять, как исследовать вопрос.
+- **Сочетается с:** `pm-skills/intelligence-collection-disciplines`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `pm-skills/intelligence-collection-disciplines`
+
+Конкурентная разведка по методикам спецслужб — восемь дисциплин от OSINT до MASINT.
+
+- **Ключевые навыки:** цепочки «сигнал–вывод»; слияние источников.
+- **Задачи:** провести глубокую конкурентную разведку.
+- **Сочетается с:** `pm-skills/intel-discipline-advisor`, `ecc/osint-investigation`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `claude-skills/interview-mapper`
+
+Кодирование транскрипта интервью — клиентского, JTBD, экспертного, юзабилити, выходного.
+
+- **Ключевые навыки:** выдержки с цитатами; темы; инсайты.
+- **Задачи:** разобрать интервью на факты и выводы.
+- **Сочетается с:** `claude-skills/product-research`, `pm-setup/user-research`
+
+### `claude-skills/litreview`
+
+Обзор литературы — план поиска (PICO, SPIDER), поиск, отбор и синтез.
+
+- **Ключевые навыки:** выбор фреймворка; стратегии поиска; отбор источников.
+- **Задачи:** начать литературный обзор или проект на его основе.
+- **Сочетается с:** `ecc/scientific-thinking-literature-review`, `academic/sr-screener`
+
+### `claude-skills/market-research`
+
+Оценка размера рынка TAM, SAM, SOM сверху вниз и снизу вверх, выборки опросов, скоринг сегментов.
+
+- **Ключевые навыки:** расчёт рынка; размер выборки.
+- **Задачи:** оценить рынок для бизнес-плана.
+- **Сочетается с:** `pm-skills/tam-sam-som-calculator`, `ecc/market-research`
 
 ### `ecc/market-research`
 
@@ -2422,6 +6588,22 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Задачи:** оценить рынок, конкурентов или стартап перед инвестицией.
 - **Сочетается с:** `ecc/deep-research`, `ecc/competitive-platform-analysis`, `ecc/investor-materials`
 
+### `claude-skills/meta-research`
+
+Исследование, когда ошибка дорога — стратегия, сравнение продуктов и рынков, проверка гипотезы.
+
+- **Ключевые навыки:** многоисточниковая проверка; оценка достоверности.
+- **Задачи:** получить надёжный ответ на важный вопрос.
+- **Сочетается с:** `claude-skills/research`, `ecc/deep-research`
+
+### `claude-skills/notebooklm`
+
+Работа с Google NotebookLM — запросы, источники, аудио- и видеообзоры, отчёты, карточки, слайды.
+
+- **Ключевые навыки:** управление блокнотами.
+- **Задачи:** использовать NotebookLM для изучения материалов.
+- **Сочетается с:** `claude-skills/deepread`
+
 ### `ecc/osint-investigation`
 
 Методика OSINT-расследования по скудным зацепкам.
@@ -2430,6 +6612,38 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Задачи:** собрать картину по человеку, компании или событию из открытых источников.
 - **Сочетается с:** `ecc/exa-search`, `ecc/deep-research`
 
+### `claude-skills/patent`
+
+Патентный поиск — уровень техники, свобода действий, патентный ландшафт, due diligence, споры.
+
+- **Ключевые навыки:** выбор сценария; стратегия поиска; анализ патентов.
+- **Задачи:** проверить, можно ли запатентовать или выпускать продукт.
+- **Сочетается с:** `ecc/scientific-db-uspto-database`
+
+### `claude-skills/product-research`
+
+Планирование и синтез пользовательских исследований.
+
+- **Ключевые навыки:** выбор метода; число участников; превращение заметок в инсайты.
+- **Задачи:** провести исследование пользователей.
+- **Сочетается с:** `claude-skills/interview-mapper`, `pm-setup/user-research`
+
+### `claude-skills/pulse`
+
+Что говорят о теме прямо сейчас — Reddit, Hacker News и другие сообщества.
+
+- **Ключевые навыки:** тренды; настроения; жалобы; сравнения инструментов.
+- **Задачи:** узнать реальное мнение сообщества.
+- **Сочетается с:** `claude-skills/research`, `ecc/exa-search`
+
+### `claude-skills/research-ops-skills`
+
+Маршрутизатор корпоративных исследований — клинические, финансы R&D, размер рынка, пользователи.
+
+- **Ключевые навыки:** выбор навыка.
+- **Задачи:** понять, какой исследовательский навык нужен.
+- **Сочетается с:** `claude-skills/clinical-research`, `claude-skills/market-research`
+
 ### `ecc/research-ops`
 
 Исследование актуального состояния дел по свежим публичным данным.
@@ -2437,6 +6651,22 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Ключевые навыки:** сбор фактов; сравнения; обогащение; рекомендации.
 - **Задачи:** получить свежие факты и обоснованную рекомендацию.
 - **Сочетается с:** `ecc/deep-research`, `ecc/exa-search`
+
+### `claude-skills/research-summarizer`
+
+Сводка научной статьи, отчёта или нескольких источников с цитатами.
+
+- **Ключевые навыки:** структурированный бриф; извлечение цитат.
+- **Задачи:** быстро понять суть работы.
+- **Сочетается с:** `claude-skills/deepread`, `claude-skills/litreview`
+
+### `claude-skills/research`
+
+Маршрутизатор исследовательских запросов к нужному специалисту.
+
+- **Ключевые навыки:** классификация запроса.
+- **Задачи:** исследовать тему, когда неясно, каким навыком.
+- **Сочетается с:** `claude-skills/meta-research`, `claude-skills/pulse`
 
 ### `ecc/scientific-db-pubmed-database`
 
@@ -2478,6 +6708,32 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Задачи:** отрецензировать статью, заявку или обзор.
 - **Сочетается с:** `ecc/scientific-thinking-literature-review`
 
+### `academic/sr-screener`
+
+Отбор исследований для систематических, обзорных и быстрых обзоров по протоколу.
+
+- **Ключевые навыки:** правила включения из протокола или PROSPERO; скрининг.
+- **Задачи:** провести отбор статей для систематического обзора.
+- **Сочетается с:** `claude-skills/litreview`, `ecc/scientific-thinking-literature-review`
+- **Лицензия:** CC-BY-NC-4.0 — только некоммерческое использование
+
+### `claude-skills/syllabus`
+
+Дополнительная литература к учебному курсу.
+
+- **Ключевые навыки:** группировка тем; свежие работы по темам.
+- **Задачи:** расширить программу курса.
+- **Сочетается с:** `claude-skills/litreview`
+
+### `pm-skills/voice-of-customer-miner`
+
+Анализ отзывов, магазинов приложений и форумов — неудовлетворённые потребности и слабости конкурентов.
+
+- **Ключевые навыки:** цитаты как доказательства; триггеры переключения.
+- **Задачи:** узнать, чего хотят клиенты, без интервью.
+- **Сочетается с:** `marketing/customer-research`, `pm-skills/jobs-to-be-done`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
 ---
 
 <a id="cat-productivity"></a>
@@ -2489,7 +6745,47 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 
 **Типовые связки.** email-ops / messages-ops (входящие) → планирование (weekly-review) → deep-work → заметки и база знаний.
 
-Навыков в категории: 8.
+Навыков в категории: 23.
+
+### `claude-skills/behuman`
+
+Отвечать по-человечески — прямо и тепло, без списков и оговорок.
+
+- **Ключевые навыки:** естественный разговорный стиль.
+- **Задачи:** когда ответы звучат слишком роботизированно.
+- **Сочетается с:** `claude-skills/content-humanizer`
+
+### `claude-skills/capture`
+
+Разбор хаотичного «выгруза мыслей» в структурированные задачи, идеи и планы.
+
+- **Ключевые навыки:** категоризация; извлечение задач; приоритеты.
+- **Задачи:** превратить поток мыслей в понятный план.
+- **Сочетается с:** `claude-skills/weekly-review`, `claude-skills/deep-work`
+
+### `claude-skills/caveman`
+
+Сжатый режим ответов — без воды и вежливостей, примерно на 75% меньше токенов.
+
+- **Ключевые навыки:** краткость при сохранении точности.
+- **Задачи:** когда нужны короткие экономные ответы.
+- **Сочетается с:** `ecc/token-budget-advisor`
+
+### `claude-skills/collab-proof`
+
+Ретроспектива сессии — что сделал Claude, а что вы.
+
+- **Ключевые навыки:** доказательное разделение вклада.
+- **Задачи:** оценить вклад ИИ в работу.
+- **Сочетается с:** `claude-skills/agent-run-forensics`
+
+### `claude-skills/deep-work`
+
+Планирование дня глубокой работы — тайм-блоки, бюджет поверхностной работы, защита часов фокуса.
+
+- **Ключевые навыки:** блокировка календаря; сокращение мелких задач; отслеживание фокуса.
+- **Задачи:** организовать продуктивный день без отвлечений.
+- **Сочетается с:** `claude-skills/weekly-review`, `claude-skills/capture`
 
 ### `ecc/email-ops`
 
@@ -2507,6 +6803,14 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Задачи:** подготовить документ к электронной подписи без ошибок в полях.
 - **Сочетается с:** `ecc/master-agreement-generator`, `ecc/browser-qa`
 
+### `claude-skills/google-workspace-cli`
+
+Администрирование и автоматизация Google Workspace через gws CLI.
+
+- **Ключевые навыки:** Gmail, Drive, Sheets, Calendar, Docs, Chat, Tasks; настройка авторизации.
+- **Задачи:** автоматизировать работу с Google Workspace из терминала.
+- **Сочетается с:** `ecc/google-workspace-ops`
+
 ### `ecc/google-workspace-ops`
 
 Работа с Google Drive, Docs, Sheets и Slides как с единым рабочим пространством.
@@ -2522,6 +6826,46 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Ключевые навыки:** первопричина; переносимое правило; узнаваемый сигнал.
 - **Задачи:** превратить опыт в уроки, а не в дневник событий.
 - **Сочетается с:** `ecc/continuous-learning-v2`, `ecc/rules-distill`
+
+### `claude-skills/handoff`
+
+Сжатие текущего разговора в документ передачи для другого агента.
+
+- **Ключевые навыки:** ссылки на PRD, планы, ADR и задачи.
+- **Задачи:** передать работу без потери контекста.
+- **Сочетается с:** `claude-skills/session-handoff`, `ecc/unified-memory`
+
+### `claude-skills/inbox-setup`
+
+Первичная настройка сортировки почты через интервью о приоритетах.
+
+- **Ключевые навыки:** база знаний для разбора входящих.
+- **Задачи:** настроить автоматический разбор почты.
+- **Сочетается с:** `claude-skills/inbox-triage`
+
+### `claude-skills/inbox-triage`
+
+Разбор входящих писем по вашей базе приоритетов.
+
+- **Ключевые навыки:** классификация писем; что ответить, что отложить.
+- **Задачи:** быстро обработать почту.
+- **Сочетается с:** `claude-skills/inbox-setup`, `ecc/email-ops`
+
+### `claude-skills/meeting-analyzer`
+
+Анализ транскриптов встреч — как вы звучите.
+
+- **Ключевые навыки:** доля речи; перебивания; вопросы; стиль общения.
+- **Задачи:** улучшить поведение на встречах.
+- **Сочетается с:** `claude-skills/meetings`
+
+### `claude-skills/meetings`
+
+Стоит ли собирать встречу, сколько она стоит, повестка с таймбоксами и целью.
+
+- **Ключевые навыки:** цена встречи; повестка; итоги.
+- **Задачи:** проводить меньше и лучше встреч.
+- **Сочетается с:** `claude-skills/meeting-analyzer`, `claude-skills/deep-work`
 
 ### `ecc/messages-ops`
 
@@ -2539,6 +6883,30 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Задачи:** автоматизировать работу с документами.
 - **Сочетается с:** `ecc/esign-field-placement`
 
+### `claude-skills/reflect`
+
+Шаг назад — проверка, на правильном ли пути работа.
+
+- **Ключевые навыки:** сверка с целью; поиск отклонений.
+- **Задачи:** когда работа ушла глубоко в детали.
+- **Сочетается с:** `claude-skills/weekly-review`, `ecc/agent-self-evaluation`
+
+### `claude-skills/session-handoff`
+
+Документ передачи для новой сессии или другого агента — цель, состояние, решения, следующие шаги.
+
+- **Ключевые навыки:** точное продолжение работы.
+- **Задачи:** передать работу без потерь.
+- **Сочетается с:** `claude-skills/handoff`, `ecc/ck`
+
+### `claude-skills/swedish-mentor`
+
+Наставник по шведскому языку — путь обучения, видео и подкасты по уровню CEFR.
+
+- **Ключевые навыки:** SFI; Lätt Svenska; подбор материалов.
+- **Задачи:** учить шведский системно.
+- **Сочетается с:** `claude-skills/capture`
+
 ### `ecc/unified-notifications-ops`
 
 Единый процесс уведомлений из GitHub, Linear, десктопа, хуков и мессенджеров.
@@ -2555,6 +6923,14 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Задачи:** подготовить перевод документов для визы.
 - **Сочетается с:** `ecc/nutrient-document-processing`
 
+### `claude-skills/weekly-review`
+
+Еженедельный обзор — закрыть хвосты, проверить зависшие проекты, вернуть доверие к своей системе.
+
+- **Ключевые навыки:** ревизия задач и обязательств.
+- **Задачи:** проводить регулярный недельный обзор.
+- **Сочетается с:** `claude-skills/capture`, `claude-skills/deep-work`
+
 ---
 
 <a id="cat-media"></a>
@@ -2566,7 +6942,7 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 
 **Типовые связки.** сценарий (content-engine) → генерация медиа (fal-ai-media) → видео (remotion-video-creation / manim-video) → монтаж (video-editing).
 
-Навыков в категории: 12.
+Навыков в категории: 18.
 
 ### `ecc/blender-motion-state-inspection`
 
@@ -2575,6 +6951,14 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Ключевые навыки:** ретаргетинг анимации; контакт с землёй; направление взгляда; соответствие модели и движения.
 - **Задачи:** найти ошибки в 3D-анимации персонажа.
 - **Сочетается с:** `ecc/video-editing`
+
+### `claude-skills/demo-video`
+
+Демо-видео, обзор продукта или GIF по скриншотам или описанию сцен.
+
+- **Ключевые навыки:** оркестрация Playwright и монтажа; сценарий показа.
+- **Задачи:** сделать видеопрезентацию фичи.
+- **Сочетается с:** `ecc/ui-demo`, `ecc/video-editing`
 
 ### `ecc/fal-ai-media`
 
@@ -2592,6 +6976,14 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Задачи:** сделать презентацию для доклада или продукта.
 - **Сочетается с:** `ecc/investor-materials`, `ecc/frontend-design-direction`
 
+### `marketing/image`
+
+Создание, генерация, редактирование и оптимизация маркетинговых изображений.
+
+- **Ключевые навыки:** выбор между генерацией, дизайном и фотосъёмкой; обложки блога и соцсетей.
+- **Задачи:** сделать визуал для маркетинга.
+- **Сочетается с:** `ecc/fal-ai-media`, `marketing/social`
+
 ### `ecc/manim-video`
 
 Анимационные объяснения технических концепций на Manim.
@@ -2599,6 +6991,14 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Ключевые навыки:** графики; схемы систем; продуктовые демонстрации.
 - **Задачи:** сделать обучающее видео об идее или системе.
 - **Сочетается с:** `ecc/video-editing`, `ecc/remotion-video-creation`
+
+### `claude-skills/md-slides`
+
+Markdown в HTML-презентацию с навигацией с клавиатуры, заметками докладчика и печатью в PDF.
+
+- **Ключевые навыки:** слайды из текста.
+- **Задачи:** быстро сделать презентацию из заметок.
+- **Сочетается с:** `claude-skills/markdown-html-orchestrator`, `ecc/frontend-slides`
 
 ### `ecc/remotion-video-creation`
 
@@ -2648,6 +7048,14 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Задачи:** сделать видео-обзор веб-приложения.
 - **Сочетается с:** `ecc/video-editing`, `ecc/remotion-video-creation`
 
+### `claude-skills/video-content-strategist`
+
+Видеостратегия — сценарии, YouTube SEO, короткие форматы (Reels, TikTok, Shorts).
+
+- **Ключевые навыки:** превращение длинного контента в видео.
+- **Задачи:** выстроить видеоконтент.
+- **Сочетается с:** `marketing/video`, `claude-skills/youtube-full`
+
 ### `ecc/video-editing`
 
 Монтаж видео с помощью ИИ — от исходников до готового ролика.
@@ -2663,6 +7071,22 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Ключевые навыки:** индексы речи и сцен; поиск по видео; работа с потоками RTSP.
 - **Задачи:** найти нужный момент в видео или смонтировать нарезку.
 - **Сочетается с:** `ecc/video-editing`
+
+### `marketing/video`
+
+Создание видео с ИИ или кодом.
+
+- **Ключевые навыки:** выбор подхода — запись экрана, ИИ-аватар, генерация, шаблоны.
+- **Задачи:** сделать маркетинговое видео.
+- **Сочетается с:** `ecc/remotion-video-creation`, `claude-skills/video-content-strategist`
+
+### `claude-skills/youtube-full`
+
+Работа с YouTube — транскрипты, поиск видео, каналы, плейлисты, мониторинг новых видео.
+
+- **Ключевые навыки:** получение данных по URL, ID или @handle.
+- **Задачи:** получить расшифровку или данные канала.
+- **Сочетается с:** `claude-skills/video-content-strategist`
 
 ---
 
@@ -2845,7 +7269,15 @@ VPN-сервер WireGuard для доступа к домашней сети.
 
 **Типовые связки.** healthcare-emr-patterns → healthcare-cdss-patterns → healthcare-phi-compliance / hipaa-compliance → healthcare-eval-harness.
 
-Навыков в категории: 5.
+Навыков в категории: 6.
+
+### `claude-skills/clinical-research`
+
+Дизайн проспективного клинического исследования.
+
+- **Ключевые навыки:** первичные и вторичные конечные точки; размер выборки и мощность; оценка осуществимости.
+- **Задачи:** спланировать клиническое исследование.
+- **Сочетается с:** `claude-skills/litreview`, `academic/academic-pipeline`
 
 ### `ecc/healthcare-cdss-patterns`
 
@@ -2886,550 +7318,3 @@ VPN-сервер WireGuard для доступа к домашней сети.
 - **Ключевые навыки:** требования HIPAA; соглашения с подрядчиками; реагирование на утечки.
 - **Задачи:** проверить продукт на соответствие HIPAA.
 - **Сочетается с:** `ecc/healthcare-phi-compliance`, `ecc/security-review`
-
----
-
-## Пока без русского описания
-
-- `academic/academic-paper` — 12-agent academic paper writing pipeline.
-- `academic/academic-paper-reviewer` — Multi-perspective academic paper review with dynamic reviewer personas.
-- `academic/academic-pipeline` — Orchestrator for the full academic research pipeline: research -> write -> integrity check -> review -> revise -> re-review -> re-revise ->…
-- `academic/deep-research` — Universal deep research agent team.
-- `academic/sr-screener` — Protocol-driven study screening for systematic, scoping and rapid reviews.
-- `career/academic-research-cv` — Build an academic CV for research and faculty roles — format publications, grants, teaching, and service sections by discipline convention
-- `career/ats-resume-checker` — Check and fix resume ATS compatibility — scan for formatting issues, rewrite weak bullets with metrics, match keywords to job descriptions,…
-- `career/career-pivot-planner` — Plan your career pivot step by step — map transferable skills, translate experience to a new industry, write transition narratives, and ide…
-- `career/compensation-negotiator` — Negotiate your full compensation package — research market rates, draft counter-offer emails, break down total comp, and compare multiple o…
-- `career/cover-letter-writer` — Generate personalized cover letters — connect resume experience to job requirements with industry-appropriate tone, hook openings, and gap-…
-- `career/executive-leadership-resume` — Write an executive resume for VP, Director, and C-suite roles — leadership branding, transformation narratives, P&L metrics, and board-read…
-- `career/job-fit-analyzer` — Analyze any job posting to see if you're a fit — match score, skill gap breakdown, red flag detection, and whether it's worth applying
-- `career/linkedin-profile-booster` — Boost your LinkedIn profile for recruiter visibility — rewrite headlines, craft About sections, place searchable keywords, and audit profil…
-- `career/mock-interview-coach` — Practice mock interviews with AI coaching — build STAR stories, rehearse behavioral answers, craft "tell me about yourself" scripts, and pr…
-- `career/portfolio-case-study` — Write portfolio case studies that win interviews — structure project narratives with before/after results, and build ATS-safe creative resu…
-- `career/resume-customizer` — Customize your resume for any job posting — reorder sections, integrate keywords, manage multiple versions, and score your match before app…
-- `career/software-engineer-resume` — Build a software engineer resume that gets interviews — format tech stacks, write metrics-driven bullets, showcase projects, and optimize y…
-- `claude-skills/a11y-audit` — Use for any accessibility audit or a11y fix (WCAG 2.2 A/AA, color contrast, compliance report, CI check) in React, Next.js, Vue, Angular, S…
-- `claude-skills/ab-test-setup` — Use before planning or launching any A/B, split or multivariate test, or when asked if a result is significant.
-- `claude-skills/access-lifecycle` — Use when preparing or running a user access review, checking that leavers lost their access, finding orphaned or ownerless service accounts…
-- `claude-skills/ad-creative` — Use for any ad copy request (RSA headlines, Meta, LinkedIn or TikTok ads, bulk variations), before writing.
-- `claude-skills/adversarial-reviewer` — Tough, critical review of a diff or PR before merge, through hostile reviewer personas that catch shared blind spots.
-- `claude-skills/aeo` — Use when content should be cited by ChatGPT, Perplexity, Claude or Gemini (answer engine optimization), before rewriting it.
-- `claude-skills/agent-decision-receipts` — Use when an autonomous agent takes a side-effecting action (deploy, delete, pay, grant access) that may need proving later, or for EU AI Ac…
-- `claude-skills/agent-designer` — Design multi-agent systems (supervisor, swarm, pipeline) and tool schemas; find bottlenecks in run logs.
-- `claude-skills/agent-harness` — Use when an agent should drive a goal in one of this repo's domains to a verified close, before starting the work.
-- `claude-skills/agent-launcher-orchestrator` — Use when someone wants to build, launch, grade or schedule a Claude Managed Agent in their own Anthropic account ('build me an agent', 'run…
-- `claude-skills/agent-memory` — Use when an agent keeps relearning the same correction, CLAUDE.md has grown unreadable, or you need to trace where a remembered rule came f…
-- `claude-skills/agent-protocol` — Use when C-suite advisor agents need to call each other or run a multi-role meeting.
-- `claude-skills/agent-regression-evals` — Use before shipping any agent, prompt, model or tool change, or when a pass-rate drop needs a verdict.
-- `claude-skills/agent-run-forensics` — Use when asked why an agent did something, what a past session or run changed, whether tests really passed, or to verify a session summary.
-- `claude-skills/agent-workflow-designer` — Use when architecting a multi-step LLM or agent pipeline, choosing single vs multi-agent, or fixing context bloat and broken handoffs.
-- `claude-skills/agenthub` — Run several agents on one task in parallel and keep the best result: faster code, copy variants, research angles.
-- `claude-skills/agile-product-owner` — Use for backlog work: writing user stories and acceptance criteria, splitting epics, estimating or prioritizing for a sprint.
-- `claude-skills/ai-act-readiness` — EU AI Act readiness: risk tier, duties, deadlines.
-- `claude-skills/ai-decision-authority` — Use before letting AI or an agent act on a marketing or GTM task without human review, or when writing an AI review policy.
-- `claude-skills/ai-security` — Use when assessing an AI/ML system or LLM agent for prompt injection, jailbreaks, model inversion, data poisoning or tool abuse.
-- `claude-skills/aims-audit` — ISO 42001 AI readiness check.
-- `claude-skills/analytics-tracking` — Use for any GA4, Google Tag Manager, event-tracking or conversion-tracking setup, audit or broken-event debug, before touching tags.
-- `claude-skills/andreessen` — Blunt market-first verdict on an idea, venture or career bet, leading with the strongest counterargument, or a 3x5-card daily plan.
-- `claude-skills/api-design-reviewer` — Use for any PR or spec that adds or changes REST endpoints, before approving it.
-- `claude-skills/api-test-suite-builder` — Use when asked to write API, integration or contract tests for REST endpoints.
-- `claude-skills/app-store-optimization` — Use for any App Store or Google Play listing, keyword, ranking or review question, before writing metadata.
-- `claude-skills/apple-hig-expert` — Use when designing or reviewing iOS, macOS, watchOS or visionOS UI against Apple's Human Interface Guidelines, including Liquid Glass, cont…
-- `claude-skills/ar-loop` — Use for /ar-loop, or to run an autoresearch experiment on a schedule (10 min to monthly) with CronCreate.
-- `claude-skills/ar-resume` — Use for /ar-resume, or to continue a paused autoresearch experiment from its branch and results history.
-- `claude-skills/ar-run` — Use for /ar-run, or to run one manual autoresearch iteration: edit, evaluate, keep or discard.
-- `claude-skills/ar-status` — Show autoresearch results and progress.
-- `claude-skills/arquiteto-de-empresa` — Use when a founder wants to document or design a whole company as version-controlled markdown (company as code, a company wiki agents can r…
-- `claude-skills/atlassian-admin` — Use for Atlassian org administration: Jira or Confluence users and groups, permissions, SSO, marketplace apps or security policy.
-- `claude-skills/atlassian-templates` — Use when creating or changing Jira or Confluence templates, blueprints or page layouts for reuse across the org.
-- `claude-skills/autoresearch-agent` — Make a file measurably better by trial: faster code, smaller bundle, higher pass rate or prompt score.
-- `claude-skills/aws-solution-architect` — Use when designing or costing an AWS architecture (serverless, Lambda, API Gateway, DynamoDB, ECS, Aurora, CloudFormation, migration to AWS…
-- `claude-skills/azure-cloud-architect` — Use when designing or costing an Azure architecture (AKS, App Service, Functions, Cosmos DB, Bicep or ARM, Azure DevOps, migration to Azure…
-- `claude-skills/behuman` — Reply like a real person, direct and warm, without lists or hedging.
-- `claude-skills/board` — Use to post or read messages on the AgentHub coordination board between competing agents.
-- `claude-skills/board-deck-builder` — Use when building a board deck, investor update or QBR from all C-suite perspectives.
-- `claude-skills/board-meeting` — Use for /c-level-agents:boardroom or a strategic question that needs a structured multi-executive deliberation.
-- `claude-skills/board-prep` — Use before a board meeting, investor update or fundraising pitch where the numbers will be challenged.
-- `claude-skills/boardroom` — Use for /c-level-agents:boardroom, or a decision spanning several executive domains (a pricing change, raise vs cut).
-- `claude-skills/book-to-skill` — Use when turning a book, docs folder or spec collection (PDF, EPUB, DOCX, HTML, Markdown) into an agent skill, before summarizing it by han…
-- `claude-skills/boost-asio-pro` — Use for any C++ networking code with Boost.Asio or standalone Asio (TCP/UDP, SSL, timers, strands, io_context, co_spawn, awaitable, complet…
-- `claude-skills/brand-guidelines` — Use when writing or enforcing brand guidelines (colors, typography, logo rules, imagery, tone of voice), or checking an asset against them.
-- `claude-skills/brief` — Use for /c-level-agents:brief, or to frame a strategic question (options, assumptions, success criteria) as a one-page brief before deliber…
-- `claude-skills/browser-automation` — Automate a browser: scrape websites, fill forms, pull structured data from web pages.
-- `claude-skills/browserstack` — Use when running Playwright tests on BrowserStack or across a browser matrix ('browserstack', 'cross-browser', 'test on safari or firefox',…
-- `claude-skills/business-growth-skills` — Use when a growth request needs routing between customer-success-manager, sales-engineer, revenue-operations and contract-and-proposal-writ…
-- `claude-skills/business-investment-advisor` — Use when deciding whether a capital expense is worth it (equipment, property, an acquisition, hiring, technology), or for ROI, IRR, NPV, pa…
-- `claude-skills/business-name-fit` — Use when naming a company, brand or product, or checking whether a name works abroad, before committing to one.
-- `claude-skills/business-operations-skills` — Route internal operations requests to the right BizOps skill: process, vendors, capacity, internal comms, SOPs, procurement.
-- `claude-skills/c-level-agents` — Use when the founder wants a virtual executive team or a /c-level-agents command.
-- `claude-skills/c-level-skills` — Find which C-level advisor fits a question: 14 C-suite roles, board meetings, culture, M&A.
-- `claude-skills/caio-review` — Use for /c-level-agents:caio-review, or to challenge a plan involving AI (no eval set, API vs fine-tune vs self-host, EU AI Act class).
-- `claude-skills/campaign-analytics` — Analyze campaign performance on the user's numbers: ROAS, CPA, ROI, multi-touch attribution and funnel drop-off.
-- `claude-skills/capa-officer` — Use for CAPA work in a medical device QMS: root cause analysis (5-Why, fishbone), corrective action plans, effectiveness checks or CAPA met…
-- `claude-skills/capacity-planner` — Size an ops or support team and plan headcount: Erlang C queue models, utilization risk, hiring order.
-- `claude-skills/capture` — Use whenever the user unloads a messy brain dump of ideas, tasks and plans ('capture this', 'brain dump', a long unstructured paste) and wa…
-- `claude-skills/caveman` — Terse mode: drop filler, articles and pleasantries, keep technical accuracy, about 75% fewer tokens, and stay in it.
-- `claude-skills/cco-review` — Challenge a churn, retention, segment or CS hiring plan.
-- `claude-skills/cdo-review` — Use for /c-level-agents:cdo-review, or to challenge a plan touching training-data rights, data architecture or data monetization.
-- `claude-skills/ceo-advisor` — Advice for a CEO or founder on running the company: board and investor trouble, raise or cut, strategy bets, org and culture.
-- `claude-skills/cfo-advisor` — Startup finance: runway and burn, unit economics (LTV, CAC, payback), fundraising and dilution.
-- `claude-skills/cfo-review` — Challenge a plan that spends real money: hiring wave, raise, channel budget.
-- `claude-skills/challenge` — Pre-mortem a plan: assume it failed in 12 months and work back to the assumptions, dependencies and execution risks.
-- `claude-skills/change-management` — Use when rolling out a reorg, pivot, tool switch, leadership change or product kill.
-- `claude-skills/changelog-generator` — Write release notes and CHANGELOG.md from commits and pick the next semver version.
-- `claude-skills/channel-economics` — Use for a direct vs partner channel review: fully loaded cost to serve, channel ROI and the best channel mix under constraints.
-- `claude-skills/chaos-engineering` — Use before running a chaos experiment, gameday or fault injection, or after one to write it up.
-- `claude-skills/chief-ai-officer-advisor` — Use for AI strategy decisions: API vs fine-tune vs build, EU AI Act or US state risk classification, when self-hosting pays off, or AI hiri…
-- `claude-skills/chief-customer-officer-advisor` — Use for retention strategy, customer segmentation or CS team sizing decisions (GRR vs NRR, churn causes, pooled vs named CSMs).
-- `claude-skills/chief-data-officer-advisor` — Use for data strategy decisions: training models on customer data, warehouse vs lakehouse vs mesh, valuing data for a raise or M&A, or data…
-- `claude-skills/chief-of-staff` — Use when a founder question needs routing to the right C-suite advisor, or a cross-functional decision needs a board meeting convened.
-- `claude-skills/chro-advisor` — People strategy: hiring plans, comp bands, org structure, performance, retention.
-- `claude-skills/churn-prevention` — Use when designing a cancel flow, save offers, exit surveys or dunning emails, or cutting failed-payment churn.
-- `claude-skills/ci-cd-pipeline-builder` — Generate a CI/CD workflow for a repo from its detected stack: lint, test, build, deploy.
-- `claude-skills/ciso-advisor` — Use for security leadership decisions: a security program, budget justification in dollars, SOC 2 vs ISO 27001 vs HIPAA roadmap, or board s…
-- `claude-skills/ciso-review` — Challenge a plan touching customer data, compliance or prod access.
-- `claude-skills/claude-coach` — Use when the user wants to get better at using Claude ('coach me', 'teach me Claude tricks', 'make me a power user').
-- `claude-skills/clinical-research` — Use when designing a prospective clinical study: choosing primary and secondary endpoints, estimating sample size and power, or scoring fea…
-- `claude-skills/cloud-security` — Use when checking AWS, Azure or GCP for security misconfigurations: IAM privilege escalation, public buckets, open security groups, IaC gap…
-- `claude-skills/cmmc-readiness` — Use when a defense contractor or subcontractor is preparing for a CMMC 2.0 Level 2 self-assessment or C3PAO assessment, calculating or chec…
-- `claude-skills/cmo-advisor` — Marketing leadership: positioning, product-led vs sales-led vs community-led growth, budget split across channels, marketing team design.
-- `claude-skills/cmo-review` — Use for /c-level-agents:cmo-review, or to challenge positioning, ICP, messaging or channel mix before a launch.
-- `claude-skills/code-reviewer` — Use for any code review: a pull request, a diff, a commit, or a pasted function, handler or file in TypeScript, JavaScript, Python, Go, Swi…
-- `claude-skills/code-to-prd` — Use when asked to write a PRD or product spec from an existing codebase (reverse-engineer requirements, document pages, fields, routes and…
-- `claude-skills/code-tour` — Use when asked for a CodeTour .tour file or a step-by-step code walkthrough (onboarding, architecture, PR review, how X works).
-- `claude-skills/codebase-onboarding` — Explain an unfamiliar repo: architecture brief and onboarding docs.
-- `claude-skills/coding-agent-rollout` — Roll out Claude Code to a team: shared or managed settings, MCP and plugin approval, layered CLAUDE.md, adoption.
-- `claude-skills/cold-email` — Use for any cold outreach or SDR email or follow-up sequence to prospects who did not opt in, before drafting.
-- `claude-skills/collab-proof` — Use for /collab-proof or a session retrospective on what Claude contributed versus what the user drove.
-- `claude-skills/commercial-forecaster` — Use when building a bookings, ARR, pipeline or NRR forecast, or a commit, best-case and pipeline board number.
-- `claude-skills/commercial-policy` — Use when writing or revising discount rules: discount matrix, approver thresholds, exception flows and the deal framework sales works under.
-- `claude-skills/commercial-skills` — Use when a commercial request needs routing (pricing, deal review, discounts, partners, channels, policy, RFPs, forecasts): 'review this de…
-- `claude-skills/commit-craft` — Turn a mix of changes into clean, reviewable commits with good messages, blocking staged secrets and .env files.
-- `claude-skills/company-os` — Use when choosing or setting up how the company runs: EOS, Scaling Up or OKRs, accountability chart, scorecard, meeting rhythm, quarterly r…
-- `claude-skills/competitive-intel` — Use for competitor analysis, battlecards, win/loss review or positioning against alternatives.
-- `claude-skills/competitive-teardown` — Deep competitor teardown: pricing, reviews, hiring, SEO, UX, scored across 12 dimensions with SWOT and positioning maps.
-- `claude-skills/competitor-alternatives` — Use when creating an 'X vs Y', '[product] alternative' or comparison page, before drafting.
-- `claude-skills/compliance-os` — Use when running several compliance frameworks at once: which apply, where controls overlap, a mock audit or one evidence checklist.
-- `claude-skills/compliance-readiness` — Use for /compliance-os:compliance-readiness, or before adding a framework or planning the annual audit calendar.
-- `claude-skills/confluence-expert` — Use when building or restructuring a Confluence space: page hierarchy, permissions, templates, Jira macros or a content audit.
-- `claude-skills/content-creator` — Use when someone asks for 'content creator' by name.
-- `claude-skills/content-humanizer` — Make a draft sound less like AI: fix generic, robotic text with rhythm, specifics, personality and brand voice.
-- `claude-skills/content-production` — Write a blog post, article or guide end to end: research, outline, draft, SEO pass and quality gates.
-- `claude-skills/content-strategy` — Use when deciding what content to create (topics, clusters, a blog or content plan), before listing ideas.
-- `claude-skills/context-engine` — Use when starting a C-suite advisor session, when company context is missing or older than 90 days, or before company data goes to an exter…
-- `claude-skills/contract-and-proposal-writer` — Use when drafting a freelance contract, proposal, SOW, NDA or MSA for US, EU, UK or DACH jurisdictions.
-- `claude-skills/coo-advisor` — Use for operations leadership: process design, OKR execution, operating cadence, bottlenecks or scaling playbooks.
-- `claude-skills/copy-editing` — Edit, proofread and tighten existing marketing copy in focused passes: clarity, voice, proofreading, specificity, readability and AI tells.
-- `claude-skills/copywriting` — Use for any headline, tagline, CTA, landing, pricing or about-page copy request, before drafting.
-- `claude-skills/coverage` — Find what is not tested: map untested pages and flows and coverage gaps.
-- `claude-skills/cpo-advisor` — Product leadership: PMF measurement, product vision, portfolio investment, product org design, board product reporting.
-- `claude-skills/cpo-review` — Challenge a roadmap, PMF claim or feature kill.
-- `claude-skills/cro-advisor` — Use for B2B revenue leadership: forecasting, quotas, sales model, NRR and churn, pricing or sales capacity.
-- `claude-skills/cro-review` — Challenge a forecast, win-rate drop or sales hires.
-- `claude-skills/cross-eval` — Use for /c-level-agents:cross-eval, or when a high-stakes memo needs independent review by several models before the boardroom.
-- `claude-skills/cs-onboard` — Use when setting up the C-suite advisors for the first time, or when company context is missing or stale after a raise or pivot.
-- `claude-skills/cto-advisor` — CTO decisions: tech debt, architecture direction, scaling the engineering team, technology evaluation, DORA metrics.
-- `claude-skills/cto-review` — Challenge an architecture bet, 10x scaling plan or rebuild vs buy.
-- `claude-skills/culture-architect` — Use when defining company values, turning them into behaviors, assessing culture health or designing rituals.
-- `claude-skills/customer-success-manager` — Use when reviewing customer accounts for health, churn risk or expansion.
-- `claude-skills/data-quality-auditor` — Use before analysis or model training on any dataset, or when asked to profile data or hunt missing values and outliers.
-- `claude-skills/database-designer` — Design a database schema: tables, relationships, indexes, normalization, SQL vs NoSQL, migration plans.
-- `claude-skills/database-schema-designer` — Use when asked for an ERD, table relationships, normalization or a schema migration plan.
-- `claude-skills/deal-desk` — Use before closing a deal that needs a discount beyond AE authority, has a redlined MSA or unclear per-deal economics.
-- `claude-skills/decide` — Use for /c-level-agents:decide, or right after the founder approves a boardroom memo, to log it as a durable decision.
-- `claude-skills/decision-logger` — Use when logging a decision after a board meeting, reviewing past decisions or checking overdue actions.
-- `claude-skills/deep-learning-book` — Use when studying or applying Goodfellow, Bengio and Courville's Deep Learning, or asking if its advice still holds.
-- `claude-skills/deep-work` — Use when someone wants to plan a deep work day, time-block their calendar or task list, budget or cut shallow work, protect focus hours, tr…
-- `claude-skills/deepread` — Use when the user asks to deeply read a book, article, PDF, or document set; extract claims and evidence; build a knowledge map; or learn t…
-- `claude-skills/demo-video` — Use when asked for a demo video, product walkthrough, feature showcase or GIF from screenshots or scene descriptions.
-- `claude-skills/dependency-auditor` — Audit project dependencies for CVEs and licenses and plan safe upgrades.
-- `claude-skills/design-qa` — Use when a UI screen, page or component is about to be called done, handed off or shipped, or when generated UI looks generic or half-finis…
-- `claude-skills/design-system` — Use when setting up brand settings before the first markdown-to-HTML conversion, or changing them.
-- `claude-skills/docker-development` — Use for any Dockerfile or docker-compose file to write, optimize or review, before editing it.
-- `claude-skills/dossier` — Use for diligence or meeting prep on a specific company, person or organization ('prep me for a meeting with X', 'due diligence on Y').
-- `claude-skills/email-sequence` — Use for any drip, nurture, onboarding, welcome or re-engagement email sequence to opted-in users, before writing emails.
-- `claude-skills/email-template-builder` — Use when adding or reworking transactional email (React Email templates, Resend, Postmark, SendGrid or SES, preview, i18n, dark mode, deliv…
-- `claude-skills/embedded-iot-mentor` — Use for any embedded or IoT hardware project (ESP32, STM32, Arduino, Pico, firmware, PCB, MQTT, Home Assistant, sensor dashboards), before…
-- `claude-skills/engineering-advanced-skills` — Pick the right advanced engineering skill: agents, RAG, MCP, CI/CD, databases, observability, release.
-- `claude-skills/engineering-skills` — Find which engineering skill fits a task: architecture, frontend, backend, QA, DevOps, security, AI/ML, data, cloud.
-- `claude-skills/env-secrets-manager` — Use when auditing .env files, planning credential rotation, chasing a missing env var in production or hardening a repo against leaked secr…
-- `claude-skills/epic-design` — Use for any landing page, hero section or scroll-driven web design that should feel cinematic (parallax, scrollytelling, overlapping sectio…
-- `claude-skills/eu-ai-act-specialist` — Use for EU AI Act (Regulation 2024/1689) compliance work: classifying an AI system's risk tier, planning the Art.
-- `claude-skills/eval` — Rank finished AgentHub agents by metric or judge.
-- `claude-skills/execute` — Use for /c-level-agents:execute, or to turn an approved decision into a 90-day plan with weekly milestones and owners.
-- `claude-skills/executive-mentor` — Use when a founder or executive needs a plan stress-tested, a dreaded decision made, a hard board meeting prepared or an honest post-mortem.
-- `claude-skills/experiment-designer` — Plan A/B tests and product experiments: hypotheses, sample size, priority, reading results.
-- `claude-skills/extract` — Turn a fix or pattern that keeps coming up into a reusable skill with SKILL.md, reference docs and examples.
-- `claude-skills/fable-goal` — Use when the user wants a /goal prompt rather than the build itself ('/fable-goal', 'turn this into a goal prompt', 'write the prompt that…
-- `claude-skills/fda-consultant-specialist` — Use for FDA medical device questions: 510(k) vs De Novo vs PMA, predicates and substantial equivalence, QMSR (21 CFR 820), HIPAA or device…
-- `claude-skills/fda-qsr-audit-prep` — Use for /compliance-os:fda-qsr-audit-prep, or before an FDA inspection, QMSR internal audit or Form 483 response.
-- `claude-skills/feature-flags-architect` — Use before adding, rolling out or retiring a feature flag or kill switch, or when flag debt piles up.
-- `claude-skills/finance-skills` — Pick the right finance skill: ratios, DCF, forecasts (financial-analyst), ARR, churn, CAC, LTV (saas-metrics-coach), month-end-close.
-- `claude-skills/financial-analyst` — Analyze financial statements, value a company with a DCF, explain budget variance, build rolling forecasts.
-- `claude-skills/fix` — Diagnose and fix a failing or flaky Playwright test.
-- `claude-skills/focused-fix` — Use when a whole feature or module is broken and needs fixing end to end ('make X work', 'the Y module is broken').
-- `claude-skills/form-cro` — Use when a lead, contact, demo or checkout form is underperforming or being designed, before changing fields.
-- `claude-skills/founder-coach` — Use when a founder is the bottleneck, can't delegate, is burning out or is moving from IC to CEO.
-- `claude-skills/founder-mode` — Use for /c-level-agents:founder-mode, or any founder strategy question that hasn't been routed yet.
-- `claude-skills/free-tool-strategy` — Use when considering a free calculator, grader, checker or generator as a marketing asset, before building it.
-- `claude-skills/freeze` — Use for /c-level-agents:freeze, or to put a cooling-off lock on an irreversible decision made under pressure.
-- `claude-skills/full-page-screenshot` — Use when asked for a full-page or long screenshot of a web page.
-- `claude-skills/gc-review` — Use for /c-level-agents:gc-review, or to challenge a term sheet, customer MSA, IP assignment or regulatory exposure before signing.
-- `claude-skills/gcp-cloud-architect` — Design, deploy and cut the cost of Google Cloud setups: Cloud Run, GKE, Functions, Cloud SQL, BigQuery, moving to GCP.
-- `claude-skills/gdpr-audit-prep` — Use for /compliance-os:gdpr-audit-prep, or before a GDPR review, post-breach audit or DPA investigation.
-- `claude-skills/gdpr-dsgvo-expert` — Use for GDPR or DSGVO work: scanning a codebase for privacy risks, writing a DPIA or tracking data subject requests against the Art.
-- `claude-skills/general-counsel-advisor` — Legal review of contracts and term sheets (MSA, SaaS, NDA, DPA, employment), IP strategy and regulatory exposure (HIPAA, GDPR, FDA, fintech…
-- `claude-skills/generate` — Use when asked to write Playwright or e2e tests for a page, component or feature ('write tests', 'add tests for', 'e2e test').
-- `claude-skills/git-worktree-manager` — Use when running several branches or agents in parallel on one repo.
-- `claude-skills/google-workspace-cli` — Use for Google Workspace admin or automation from the gws CLI (Gmail, Drive, Sheets, Calendar, Docs, Chat, Tasks).
-- `claude-skills/grade-iterate` — Use when a launched managed agent needs grading against a rubric and improving ('grade my agent', 'is it good enough').
-- `claude-skills/grants` — Use for any NIH funding question ('find grants for my research', 'which NIH institute').
-- `claude-skills/grill-me` — Interview the user relentlessly about a plan or design until reaching shared understanding, resolving each branch of the decision tree.
-- `claude-skills/grill-with-docs` — Use when a plan should be stress-tested against the project's own docs (CONTEXT.md glossary, docs/adr decisions), or the user says 'grill w…
-- `claude-skills/handoff` — Compact the current conversation into a handoff document for another agent to pick up, referencing existing artifacts (PRDs, plans, ADRs, i…
-- `claude-skills/hard-call` — Use for a decision where every option hurts (layoff vs down round, killing a loved product).
-- `claude-skills/helm-chart-builder` — Use for any Helm chart to create, review or harden (values.yaml, templates, subcharts, RBAC, pod security), before editing it.
-- `claude-skills/hivemind` — Use when delegating grunt work to free opencode workers instead of spending Claude tokens: one worker or a scout, coder and tester swarm in…
-- `claude-skills/hub-init` — Use for /hub-init, or to start an AgentHub competition: task, agent count and evaluation criteria.
-- `claude-skills/hub-run` — Use for /hub-run, or to run a whole AgentHub competition end to end: init, baseline, spawn, eval and merge.
-- `claude-skills/hub-status` — Use for /hub-status, or to check AgentHub agent progress, branches and DAG state.
-- `claude-skills/human-gate` — Use before shipping anything that needs human sign-off (a plan, spec, report, page, migration or irreversible action).
-- `claude-skills/i18n-localization` — Use when adding UI text, adding or shipping a language, reviewing translation files, or building i18n into an app.
-- `claude-skills/inbox-setup` — Use when setting up email triage for the first time, before inbox-triage, or when priorities change.
-- `claude-skills/inbox-triage` — Use when the user wants their inbox processed ('triage my inbox', 'check my email').
-- `claude-skills/incident-commander` — Use when declaring or running a production incident or outage, or writing its post-incident review.
-- `claude-skills/incident-response` — Handle a suspected security breach: triage, SEV1-SEV4 severity, escalation and forensic evidence, per NIST SP 800-61.
-- `claude-skills/information-security-manager-iso27001` — Use when designing or running an ISO 27001 ISMS in HealthTech or MedTech: risk assessment, control implementation, certification or securit…
-- `claude-skills/internal-comms` — Use when announcing a reorg, tool rollout, policy change, leadership change, layoff or acquisition internally.
-- `claude-skills/internal-narrative` — Use when preparing an all-hands, investor update, recruiting pitch or crisis message, or when stories told to different audiences drift apa…
-- `claude-skills/interview` — Use when someone has an agent idea to scope before launch ('help me scope an agent').
-- `claude-skills/interview-mapper` — Use when coding or making sense of one interview transcript (customer, JTBD, expert, usability, exit).
-- `claude-skills/interview-system-designer` — Use when designing a hiring loop, competency matrix, scoring rubric or question bank, or checking interviewer calibration.
-- `claude-skills/intl-expansion` — Use when expanding to a new country: market selection, entry mode, localization, regulation and regional go-to-market.
-- `claude-skills/isms-audit-expert` — Use for ISO 27001 audit work: internal or surveillance audits, Annex A control evidence, Statement of Applicability, nonconformities, Stage…
-- `claude-skills/iso13485-audit-prep` — Use for /compliance-os:iso13485-audit-prep, or before an ISO 13485 internal audit or DHF closure.
-- `claude-skills/iso27001-audit-prep` — Use for /compliance-os:iso27001-audit-prep, or before an ISO 27001 internal, surveillance or stage 1 audit.
-- `claude-skills/iso42001-specialist` — Use for ISO/IEC 42001 AI management system work: gap analysis against Clauses 4-10, the AI risk register and Annex A controls, or the inter…
-- `claude-skills/jira-expert` — Jira setup and queries: JQL, workflows, custom fields, automation, dashboards.
-- `claude-skills/karpathy-coder` — Check a diff for overbuilt code: hidden assumptions, needless abstraction, non-surgical changes, unverified goals (Karpathy's four principl…
-- `claude-skills/knowledge-ops` — Use when writing, checking or cleaning up SOPs and runbooks.
-- `claude-skills/kubernetes-operator` — Use when building a Kubernetes operator or CRD (controller-runtime, kubebuilder, operator-sdk, KOPF), before writing the controller.
-- `claude-skills/landing` — Use when asked for a premium single-file HTML landing page with 3D CSS, GSAP scroll effects and parallax.
-- `claude-skills/landing-page-generator` — Use when asked for a landing, marketing or campaign page as a Next.js TSX component with Tailwind.
-- `claude-skills/launch-strategy` — Plan a product or feature launch: readiness score and a phased plan by channel.
-- `claude-skills/linkedin-analytics` — Use when someone asks why their LinkedIn reach dropped, which posts worked, whether a pattern is real or how to test one.
-- `claude-skills/linkedin-content` — Write, edit or review a LinkedIn post: story, how-to, carousel, video script or poll.
-- `claude-skills/linkedin-engagement` — Use for LinkedIn comments, connection notes, DMs or outreach plans, or checking outreach volume is safe.
-- `claude-skills/linkedin-profile` — Use when auditing or rewriting a LinkedIn profile (headline, About, experience, Featured).
-- `claude-skills/linkedin-skills` — Use for any organic LinkedIn growth request (strategy, profile, posts, cadence, outreach, analytics).
-- `claude-skills/linkedin-strategy` — Build a LinkedIn plan rather than a post: content pillars, positioning, a sustainable cadence, whether to start a newsletter.
-- `claude-skills/litreview` — Use when starting a literature review or a literature-based project.
-- `claude-skills/llm-cost-optimizer` — Use whenever an LLM feature is being built or its costs come up (model choice, prompt caching, token limits, per-feature spend).
-- `claude-skills/llm-wiki` — Use when building or maintaining an Obsidian second brain that an LLM keeps up to date, or when ingesting a paper, article or book into it.
-- `claude-skills/local-seo-manager` — Use for any local business's Google Business Profile, Maps ranking, service-area pages, citations or review replies, before writing.
-- `claude-skills/loop-library` — Discover, find, compare, audit, repair, adapt, and design repeatable AI-agent loops with explicit triggers, actions, verification, stopping…
-- `claude-skills/ma-playbook` — Buy a company or sell yours: diligence, valuation, terms, integration.
-- `claude-skills/markdown-html-orchestrator` — Use when the user wants a markdown file turned into a single-file interactive HTML page (document, code review or slide deck).
-- `claude-skills/market-research` — Use for market sizing (TAM, SAM, SOM both top-down and bottom-up), survey sample sizes or segment scoring.
-- `claude-skills/marketing-context` — Use at the start of any marketing project, or when ICP, positioning or brand voice are missing, before other marketing skills.
-- `claude-skills/marketing-demand-acquisition` — Use when planning demand generation, paid acquisition across Google, LinkedIn and Meta, or a marketing budget, before allocating spend.
-- `claude-skills/marketing-ideas` — Use when asked for marketing or growth ideas for a SaaS or software product.
-- `claude-skills/marketing-ops` — Use when a marketing request spans several skills (a campaign across content, SEO, CRO and channels) or it is unclear which skill fits.
-- `claude-skills/marketing-psychology` — Apply persuasion and behavioral science ethically to a page, offer or campaign, from 70+ mental models.
-- `claude-skills/marketing-skills` — Use when looking for which of the 44 marketing skills fits a task.
-- `claude-skills/marketing-strategy-pmm` — Use for product positioning, ICP, competitive battlecards or a go-to-market plan, before drafting.
-- `claude-skills/mcp-oauth-triage` — Use when an MCP connector that used to authenticate now fails (tool calls 401 after a good token exchange, breaks after refresh, returns an…
-- `claude-skills/mcp-server-builder` — Use when exposing an API as an MCP server or scaffolding a new MCP server in Python or TypeScript, before hand-writing tool wrappers.
-- `claude-skills/md-document` — Use when converting long-form markdown (spec, RFC, report, plan) into a single-file HTML page with sticky TOC, search and code-copy.
-- `claude-skills/md-review` — Use when converting a markdown code review with diff blocks and severity callouts into a two-column HTML review.
-- `claude-skills/md-slides` — Turn a markdown file into a single-file HTML slide deck with keyboard navigation, presenter notes and print-to-PDF.
-- `claude-skills/mdr-745-specialist` — Use for EU MDR 2017/745 work: device classification under Annex VIII, technical file gaps (Annex II/III), clinical evaluation, PMS and PSUR…
-- `claude-skills/meeting-analyzer` — Use when the user shares meeting transcripts (.vtt, .srt, .txt, Otter, Granola, Zoom) or asks how they come across in meetings.
-- `claude-skills/meetings` — Use when someone wants to decide whether a meeting is worth calling, price a meeting in dollars, build a timeboxed agenda with desired outc…
-- `claude-skills/memory-engineering` — Use before adding memory to an agent or when a memory store keeps growing (long context vs RAG vs graph vs agentic memory, what to expire).
-- `claude-skills/memory-review` — Review what the agent has learned in auto-memory: what to promote to permanent rules, stale entries to prune, duplicates to merge.
-- `claude-skills/memory-status` — Health check of agent auto-memory: line counts, topic files, capacity, stale entries and what to prune.
-- `claude-skills/merge` — Use to land the winning AgentHub branch, archive the others and clean up worktrees.
-- `claude-skills/meta-research` — Use when a wrong answer is expensive: strategy research, comparing several products or markets, validating a hypothesis with outside data.
-- `claude-skills/migrate` — Use when moving tests from Cypress or Selenium to Playwright ('migrate tests', 'convert tests', 'replace selenium').
-- `claude-skills/migration-architect` — Plan a migration with zero or minimal downtime: phased plan, compatibility check, rollback scripts, for schemas, databases and services.
-- `claude-skills/minimalist` — Write the least code: no over-engineering, fewer dependencies.
-- `claude-skills/monorepo-navigator` — Use for Turborepo, Nx, pnpm-workspace or Lerna setup, affected-only builds, remote caching or a multi-repo to monorepo move.
-- `claude-skills/month-end-close` — Use when running, planning or speeding up a month-end (or quarter-end) close — building or reviewing the close checklist and calendar, reco…
-- `claude-skills/ms365-tenant-manager` — Use for Microsoft 365 tenant administration (Entra ID users, Exchange Online, Teams, licenses, Conditional Access, compliance reports).
-- `claude-skills/named-persona-adversarial-review` — Use when a PR has architectural or UX impact, or automated review feels generic, and you want it reviewed through named engineers' document…
-- `claude-skills/notebooklm` — Use for anything in Google NotebookLM: querying notebooks, adding sources, generating Audio or Video Overviews, reports, flashcards or slid…
-- `claude-skills/observability-designer` — Use when adding metrics, logs and traces to a service, fixing noisy alerts or designing dashboards.
-- `claude-skills/office-hours` — Founder advice after six YC-style questions.
-- `claude-skills/onboard` — Use for /cs-onboard, or when the virtual C-suite lacks company context.
-- `claude-skills/onboarding-cro` — Use when activation, time-to-value or a first-run experience after signup needs work, before redesigning it.
-- `claude-skills/org-health-diagnostic` — Use for a whole-company health check before a board review or when functions seem at risk.
-- `claude-skills/page-cro` — Fix a page that is not converting: section by section audit with fixes ranked by impact.
-- `claude-skills/paid-ads` — Use for paid campaign strategy on Google, Meta, LinkedIn or X: structure, targeting, bids, retargeting and budgets.
-- `claude-skills/partnerships-architect` — Use when deciding whether to sign a partner, at which tier (referral, reseller, OEM, SI, alliance), with what joint GTM and revshare.
-- `claude-skills/passive-deal-screener` — Use when a passive investor shares a private deal (syndication, preferred equity, bridge fund, private credit) to screen as an LP.
-- `claude-skills/patent` — Use for prior-art search, freedom-to-operate, patent landscape, acquisition diligence or litigation prior art.
-- `claude-skills/paywall-upgrade-cro` — Use when designing or fixing an in-app paywall, upgrade modal, feature gate or trial-expiry screen.
-- `claude-skills/performance-profiler` — Use for a slow endpoint, memory leak, CPU spike, large bundle or performance budget in Node.js, Python or Go, before optimizing.
-- `claude-skills/pm-skills` — Router for project-management skills: sprints, portfolio health, Jira, Confluence, stakeholder comms, plus a delivery loop.
-- `claude-skills/popup-cro` — Use when creating or fixing a popup, modal, exit-intent, slide-in or banner meant to convert.
-- `claude-skills/post-mortem` — Use for /c-level-agents:post-mortem, or when a decision hits its 90-day review or kill criteria.
-- `claude-skills/postmortem` — Use after a failed launch, missed quarter or bad hire.
-- `claude-skills/pr-review-expert` — File-by-file pull request review for bugs, security and quality, with a merge verdict.
-- `claude-skills/pricing-strategist` — Use when choosing or revisiting pricing: seat, usage, value-based, freemium or hybrid, Van Westendorp willingness-to-pay analysis, or Good/…
-- `claude-skills/pricing-strategy` — Use for SaaS pricing tiers, value metric, packaging, a pricing page or a price increase, before proposing numbers.
-- `claude-skills/process-mapper` — Use when documenting an end-to-end business process (procurement, onboarding, handoffs) and finding where work waits.
-- `claude-skills/procurement-optimizer` — Cut spend on software and suppliers: SaaS audit, category spend review, slow purchasing cycles, supplier consolidation.
-- `claude-skills/product-analytics` — Use when defining product KPIs, building metric dashboards, running cohort or retention analysis, or interpreting feature adoption trends a…
-- `claude-skills/product-discovery` — Validate product ideas: map assumptions, plan discovery sprints, test problem-solution fit.
-- `claude-skills/product-manager-toolkit` — PM toolkit: RICE prioritization, customer interview synthesis, PRDs and go-to-market.
-- `claude-skills/product-research` — Use when planning or synthesizing user research: choosing the method, deciding how many participants, or turning coded notes into insights.
-- `claude-skills/product-skills` — Use when a product request needs routing across the product-team skills (prioritization, OKRs, UX research, experiments, discovery, roadmap…
-- `claude-skills/product-strategist` — Head of Product: quarterly OKRs cascaded from company to team, product vision, roadmap, team structure.
-- `claude-skills/programmatic-seo` — Use when building many SEO pages from a template and data (location, integration, comparison or directory pages), before generating them.
-- `claude-skills/promote` — Graduate a proven pattern from auto-memory (MEMORY.md) to CLAUDE.md or .claude/rules/ for permanent enforcement.
-- `claude-skills/prompt-engineer-toolkit` — Use when a marketing team's AI prompts need testing, versioning or governance, before shipping a prompt.
-- `claude-skills/prompt-governance` — Use when prompts run in production and need versioning, a registry, A/B tests, regression checks or an eval pipeline.
-- `claude-skills/pulse` — Use for what people are saying right now about a topic (trends, sentiment, complaints, tool comparisons) across Reddit, Hacker News and the…
-- `claude-skills/pw` — Use for any Playwright or end-to-end browser testing work: writing tests, fixing flaky ones, migrating from Cypress or Selenium, CI setup,…
-- `claude-skills/pw-init` — Use when setting up Playwright in a project ('set up playwright', 'add e2e tests', 'configure playwright', 'init playwright').
-- `claude-skills/pw-review` — Use when reviewing Playwright tests for quality ('review tests', 'audit tests', 'playwright best practices check').
-- `claude-skills/qms-audit-expert` — Use for ISO 13485 internal audits: planning the program, running an audit, classifying findings or preparing for an external audit.
-- `claude-skills/quality-documentation-manager` — Use for QMS document control: numbering, versioning, change control or 21 CFR Part 11 e-signatures.
-- `claude-skills/quality-manager-qmr` — Use for QMR duties under ISO 13485 5.5.2: management review, quality policy and objectives, quality KPIs and cost of quality.
-- `claude-skills/quality-manager-qms-iso13485` — Build or maintain an ISO 13485 medical device QMS: design, documentation, CAPA, audit prep.
-- `claude-skills/ra-qm-skills` — Router for regulatory and quality skills: ISO 13485, MDR, FDA, ISO 14971, CAPA, ISO 27001, ISO 42001, EU AI Act, GDPR, SOC 2.
-- `claude-skills/rag-architect` — Design a RAG pipeline: chunk size, embedding model, vector database and retrieval quality metrics.
-- `claude-skills/red-green-proof` — Turns a suspected bug into a proven one.
-- `claude-skills/red-team` — Use when planning or running an authorized red team engagement or attack path analysis.
-- `claude-skills/referral-program` — Use when designing or fixing a referral, affiliate or ambassador program, before setting rewards.
-- `claude-skills/reflect` — Use when the user says 'step back', 'zoom out', 'are we on track' or 'sanity check this', or work has gone deep into details without a chec…
-- `claude-skills/regulatory-affairs-head` — Use for medical device market access strategy: FDA 510(k), De Novo or PMA packages, CE marking under MDR, pre-sub meetings, agency deficien…
-- `claude-skills/remember` — Save something important to auto-memory with a timestamp and context.
-- `claude-skills/report` — Summarize Playwright results.
-- `claude-skills/research` — Use for any research request that doesn't clearly match a research specialist ('research X', 'look into Y').
-- `claude-skills/research-finance` — Use for R&D program money: multi-period budgets with indirect cost split, burn and runway against milestones, or capitalize vs expense rout…
-- `claude-skills/research-ops-skills` — Use when an enterprise research request needs routing (clinical study design, R&D finance, market sizing, user research): 'what sample size…
-- `claude-skills/research-summarizer` — Use when summarizing a research paper, article or report, comparing several sources or extracting citations into a brief.
-- `claude-skills/revenue-operations` — Check sales pipeline and forecasts: pipeline coverage, forecast accuracy, magic number, CAC payback.
-- `claude-skills/rfp-responder` — Use when an RFP, RFI, RFQ or security or vendor questionnaire arrives.
-- `claude-skills/risk-management-specialist` — Use for ISO 14971 medical device risk management: hazard analysis, FMEA, fault trees, risk controls, benefit-risk or residual risk.
-- `claude-skills/roadmap-communicator` — Write roadmap narratives, release notes, changelogs, stakeholder updates.
-- `claude-skills/roast` — Roast an idea: a 5-angle panel (Critic, Champion, Analyst, Investigator, Customer) attacks it, then a Judge returns one GO / RESHAPE / KILL…
-- `claude-skills/run-without-you` — Use when a graded managed agent should run on a schedule, on an event trigger or on demand ('run it every morning').
-- `claude-skills/runbook-generator` — Use when a service needs runbooks for deploy, incident response, maintenance or rollback, before launch.
-- `claude-skills/saas-metrics-coach` — Use when someone shares SaaS revenue or customer numbers, or asks about ARR, MRR, churn, LTV, CAC, NRR or how their SaaS is doing.
-- `claude-skills/saas-scaffolder` — Use when starting a new SaaS app with auth, database, Stripe billing and a dashboard (Next.js App Router, TypeScript, Tailwind, shadcn/ui,…
-- `claude-skills/sales-engineer` — Use for pre-sales work: RFP coverage gaps, competitive feature matrices or planning and scoring a proof of concept.
-- `claude-skills/scenario-war-room` — Use for compound what-if questions ('what if X and Y both happen?') with major downside across functions.
-- `claude-skills/schema-markup` — Use for any JSON-LD, schema.org, rich-result or structured-data request, before writing markup.
-- `claude-skills/scrum-master` — Use for sprint and team analytics: velocity forecasts, sprint health, retrospectives, burndown or blockers.
-- `claude-skills/secrets-vault-manager` — Use when setting up HashiCorp Vault, AWS Secrets Manager, Azure Key Vault or GCP Secret Manager, rotating secrets or auditing secret access.
-- `claude-skills/security-guidance` — Use when installing or tuning the PreToolUse security hook that warns before Claude writes command injection, XSS, SQL injection, unsafe de…
-- `claude-skills/security-pen-testing` — Authorized penetration testing of an app or API: vulnerability scans, OWASP Top 10 checks, dependency audits and a pentest report.
-- `claude-skills/self-eval` — Grade finished work honestly on two axes with a devil's-advocate pass against inflation.
-- `claude-skills/self-improving-agent` — Curate what the agent has learned into durable project knowledge.
-- `claude-skills/senior-architect` — System architecture decisions with a written rationale: monolith vs microservices, database choice, scaling limits, ADRs, Mermaid diagrams.
-- `claude-skills/senior-backend` — Build and fix backend services: REST or GraphQL APIs, auth, microservices, PostgreSQL queries, migrations and load tests.
-- `claude-skills/senior-computer-vision` — Computer vision models: object detection, segmentation, training a custom model, and optimizing or deploying inference (YOLO, DETR, SAM, ON…
-- `claude-skills/senior-data-engineer` — Data pipelines: Airflow DAGs, Spark, dbt, Kafka, ETL/ELT, data quality checks.
-- `claude-skills/senior-data-scientist` — Design experiments and analyze tabular data: A/B tests, causal inference, feature engineering, model evaluation.
-- `claude-skills/senior-devops` — Set up CI/CD pipelines, infrastructure as code, containers and deployments on AWS, GCP or Azure.
-- `claude-skills/senior-frontend` — Build and review React, Next.js, TypeScript or Tailwind frontends: components, scaffolding, performance and bundle size.
-- `claude-skills/senior-fullstack` — Start a fullstack project or audit a codebase: pick a stack (Next.js, FastAPI, MERN, Django), scaffold it and score code quality.
-- `claude-skills/senior-ml-engineer` — Use for putting ML models or LLM features into production: deployment, MLOps, drift monitoring, RAG pipelines, LLM API cost and retries.
-- `claude-skills/senior-pm` — Project and portfolio management for multi-workstream programs: plans, status reports, risk registers, capacity, executive reporting.
-- `claude-skills/senior-prompt-engineer` — Improve prompts and measure LLM quality: fix inconsistent prompts, build eval sets, score RAG retrieval, check agent tool configs.
-- `claude-skills/senior-qa` — Write and improve tests for React or Next.js apps: Jest, React Testing Library, MSW mocks, Playwright E2E, coverage gaps.
-- `claude-skills/senior-secops` — Find and fix application security problems: security reviews, CVE remediation, hardening, secrets and auth, SOC 2, PCI-DSS, HIPAA and GDPR…
-- `claude-skills/senior-security` — Check if a design or code is secure: STRIDE threat model, DREAD risk scores, leaked secret scan.
-- `claude-skills/seo-audit` — Find why a site is not ranking: technical SEO, on-page issues, meta tags, site health.
-- `claude-skills/session-handoff` — Write a handoff document so a fresh session or another agent can pick up exactly where this one left off: goal, current state, decisions, n…
-- `claude-skills/setup` — Use for /autoresearch-agent:setup, or to start a new autoresearch experiment: target, eval command, metric, direction, evaluator.
-- `claude-skills/ship-gate` — Use before deploying or going live ('am I ready to ship', 'can I deploy', 'preflight check').
-- `claude-skills/signup-flow-cro` — Use when signup, registration or trial-start conversion is low or a signup flow is being designed.
-- `claude-skills/site-architecture` — Use for URL structure, navigation, internal linking, hub pages or orphan pages, or when SEO problems are structural.
-- `claude-skills/skill-retro` — Use when the user wants their skills graded from real session history, asks which installed skills actually work, or wants evidence-backed…
-- `claude-skills/skill-security-auditor` — Use before installing any skill or plugin from an untrusted source, or when asked if a skill is safe.
-- `claude-skills/skill-tester` — Use when authoring or auditing a skill in this ecosystem, before release.
-- `claude-skills/skillopt-sleep` — Use when the user wants their Claude agent to self-improve from past usage, asks about a nightly/offline 'sleep' or 'dream' cycle, memory/s…
-- `claude-skills/slo-architect` — Use when defining or reviewing SLOs, SLIs, error budgets or burn-rate alerts.
-- `claude-skills/snowflake-development` — Use for Snowflake work: SQL, Dynamic Tables, Streams and Tasks, Cortex AI functions and agents, Snowpark Python, dbt on Snowflake, or Snowf…
-- `claude-skills/soc2-audit-prep` — Use for /compliance-os:soc2-audit-prep, or before or during a SOC 2 Type II observation period.
-- `claude-skills/soc2-compliance` — Use when the user asks to prepare for SOC 2 audits, map Trust Service Criteria, build control matrices, collect audit evidence, perform gap…
-- `claude-skills/social-content` — Write a LinkedIn post, X thread, Instagram, TikTok or Facebook post with each platform's hook, length and format.
-- `claude-skills/social-media-analyzer` — Score social performance: engagement rate, reach, ROI per platform, benchmarks.
-- `claude-skills/social-media-manager` — Plan social media: strategy, content calendar, community management, follower growth.
-- `claude-skills/spawn` — Launch the competing agents in isolated worktrees.
-- `claude-skills/spec-driven-workflow` — Use when a feature should be specified before coding (acceptance criteria, spec-first, tests from specs).
-- `claude-skills/spec-to-repo` — Use when the user says 'build me an app', 'create a project from this spec', 'scaffold a new repo', 'generate a starter', 'turn this idea i…
-- `claude-skills/spinning-up-deep-rl` — Learn or apply deep reinforcement learning with OpenAI Spinning Up: policy gradients, VPG, PPO, SAC, TD3, DDPG, TRPO.
-- `claude-skills/sql-database-assistant` — Write, fix and speed up SQL: slow queries, EXPLAIN plans, indexes, ORM migrations (Prisma, Drizzle, SQLAlchemy).
-- `claude-skills/stage-launch` — Use when a managed-agent build sheet is ready to launch ('launch it', 'deploy the agent').
-- `claude-skills/statistical-analyst` — Is a difference real?
-- `claude-skills/stock-analysis` — Analyze, research or value a listed stock or company (US, global, NSE or BSE) with verified data, ratios, scores and valuation.
-- `claude-skills/strategic-alignment` — Use when teams pull in different directions, OKRs don't connect or departments optimize locally.
-- `claude-skills/stress-test` — Stress-test a plan built on untested assumptions.
-- `claude-skills/strict-api` — Use when the user says 'no hallucinations', 'verify APIs' or 'don't invent functions', or code depends on a library version you have not ch…
-- `claude-skills/stripe-integration-expert` — Use for any Stripe integration: subscriptions, trials, proration, checkout, usage billing, webhooks, customer portal or invoicing in Next.j…
-- `claude-skills/swedish-mentor` — Use when someone learning Swedish wants a learning path or YouTube clips and podcasts matched to their CEFR level and skill (SFI, Lätt Sven…
-- `claude-skills/syllabus` — Use when the user shares a course syllabus or outline and wants supplementary readings.
-- `claude-skills/tc-tracker` — Use when tracking technical changes as records, or handing work between AI sessions with a change record.
-- `claude-skills/tdd-guide` — Test-first development and test generation for Jest, Pytest, JUnit, Vitest or Mocha: red-green-refactor, fixtures and mocks, coverage gaps.
-- `claude-skills/team-communications` — Use for any internal communication: 3P updates, weekly or status reports, newsletters, FAQs, incident reports, leadership updates ('write m…
-- `claude-skills/tech-debt-tracker` — Find, rank and track tech debt in a codebase.
-- `claude-skills/tech-stack-evaluator` — Compare frameworks or tech stacks before committing: side-by-side scoring, total cost of ownership, ecosystem health and migration risk.
-- `claude-skills/terraform-patterns` — Use for any Terraform module, state backend, provider setup or IaC security review, before editing .tf files.
-- `claude-skills/testrail` — Use when syncing Playwright tests with TestRail ('testrail', 'sync test cases', 'push results to testrail', 'import from testrail').
-- `claude-skills/threat-detection` — Use when hunting threats, sweeping IOCs or looking for anomalies in logs and telemetry.
-- `claude-skills/ui-design-system` — Use when building a design system: tokens, component docs, responsive scales or developer handoff.
-- `claude-skills/universal-scraping-architect` — Build a scraper or extractor for sites, PDFs or paginated APIs and validate the fields (Firecrawl or local Python).
-- `claude-skills/ux-researcher-designer` — UX research: personas, journey maps, usability test plans, synthesis.
-- `claude-skills/vendor-management` — Use when scoring or auditing vendors: scorecards, SLA compliance and service credits, third-party risk tier or a tier-1 vendor review.
-- `claude-skills/video-content-strategist` — Use for video strategy, scripts, YouTube SEO, short-form pipelines (Reels, TikTok, Shorts) or turning long content into video, before scrip…
-- `claude-skills/vpe-advisor` — Use when delivery is slowing, eng hiring is broken, team structure is unclear or you need to decide when to add an eng manager.
-- `claude-skills/vpe-review` — Challenge a plan on delivery speed, eng hiring, team structure or on-call.
-- `claude-skills/webinar-marketing` — Use when planning, promoting or fixing a webinar or virtual event (registrations, show-up, follow-up, conversion).
-- `claude-skills/weekly-review` — Use when someone wants to run a weekly review, close open loops, audit stalled projects and commitments, get their system back to trusted,…
-- `claude-skills/workflow-builder` — Use when writing or running a Claude Code Workflow-tool script (.js in .claude/workflows/) for fan-out, pipeline, loop or judge-panel sub-a…
-- `claude-skills/wrap-up` — Use when closing out a launched managed agent ('wrap up', 'what do I own now').
-- `claude-skills/write-a-skill` — Create new agent skills with proper structure, progressive disclosure, and bundled resources.
-- `claude-skills/x-twitter-growth` — Use for growing on X/Twitter: tweets, threads, profile audit, competitors or posting plan.
-- `claude-skills/youtube-full` — Use for any YouTube URL, video ID or @handle, or a request for transcripts, video search, channel, playlist or new-upload monitoring.
-- `claude-skills/zero-hallucination-coder` — Use before high-stakes or multi-file coding (auth, databases, migrations), or when asked to plan carefully and avoid invented APIs.
-- `marketing/ab-testing` — When the user wants to plan, run, or read A/B tests, or asks a judgement call on one: is the result real, can we stop, which version won, i…
-- `marketing/ad-creative` — When the user wants to write or judge ad creative, or asks which ad, hook, or angle to run or kill: headlines, primary text, and variations…
-- `marketing/ads` — When the user wants to plan, run, or fix paid ads on Google, Meta, and LinkedIn, or asks a judgement call on them: are ads worth it, which…
-- `marketing/ai-seo` — When the user wants to get cited and recommended in AI answers (ChatGPT, Perplexity, AI Overviews), or asks why AI cites a competitor, whic…
-- `marketing/analytics` — When the user wants to set up or audit analytics, or asks whether a metric or number is calculated right, what to track, or how to name eve…
-- `marketing/aso` — When the user wants to audit or optimize an App Store or Google Play listing, or asks which title, keywords, or screenshots to pick or why…
-- `marketing/attribution` — When the user wants to work out which marketing drives revenue, or asks whether a channel is really working, which numbers to trust, or how…
-- `marketing/churn-prevention` — When the user wants to reduce churn, or asks why customers cancel, whether to offer a discount or pause: cancellation flows, exit surveys,…
-- `marketing/co-marketing` — When the user wants co-marketing partners or joint campaigns, or asks whether a partner fits, a size mismatch matters, or how to split work…
-- `marketing/cold-email` — When the user wants to write or run B2B cold outbound, or asks whether an opener, reason to reach out, or email works or why nobody replies…
-- `marketing/community-marketing` — When the user wants to build or grow an online community, or asks whether a community is worth it, where to host it, or why members stay qu…
-- `marketing/competitor-profiling` — When the user wants to research competitors into dated profiles, or asks what a rival charges, claims, or is doing, or whether a conclusion…
-- `marketing/competitors` — When the user wants to create or audit comparison and alternative pages ('X vs Y', 'X alternative', 'best X alternatives'), or asks what a…
-- `marketing/content-strategy` — When the user wants to plan content, or asks which topic or piece to prioritize, what to write about, or why posts bring no customers: topi…
-- `marketing/conversion-tracking` — When the user wants to set up, audit, or fix conversion tracking to Google Ads, Meta, GA4, LinkedIn, and TikTok, or asks why conversions ar…
-- `marketing/copy-editing` — When the user wants to edit, tighten, proofread, or refresh existing copy, or asks whether to keep, cut, or change a line in it, without re…
-- `marketing/copywriting` — When the user wants to write or rewrite page copy (homepage, landing, pricing, feature), or asks which headline, promise, or message to lea…
-- `marketing/cro` — When the user wants more conversions from a page or form, or asks why a page isn't converting, what to change first, or whether to add or r…
-- `marketing/customer-research` — When the user wants to run or synthesize customer research, or asks what customer quotes, reviews, or feedback really mean, what is safe to…
-- `marketing/directory-submissions` — When the user wants to list a product in startup, SaaS, AI, MCP, and review directories, or asks which directories are worth it or whether…
-- `marketing/emails` — When the user wants to create or improve automated email sequences, or asks what to send, when, or whether an email or flow is working: wel…
-- `marketing/events` — When the user wants to plan, run, sponsor, or speak at events, or asks whether an event or booth is worth the money: webinars, conferences,…
-- `marketing/free-tools` — When the user wants to plan or build a free tool as marketing, or asks whether a tool idea is worth building or which one to pick: calculat…
-- `marketing/image` — When the user wants to create, generate, edit, or optimize marketing images, or asks which approach to take (generate, design, or photograp…
-- `marketing/influencer-marketing` — When the user wants creator, influencer, or ambassador partnerships, or asks which creators fit, what to pay, which rights to buy, or wheth…
-- `marketing/launch` — When the user wants to plan a product or feature launch, or asks whether it's ready, when to announce, or how to get noticed: Product Hunt,…
-- `marketing/lead-magnets` — When the user wants to plan or improve a lead magnet, or asks what to give away for emails or how much to ask in return (gating, form field…
-- `marketing/link-building` — When the user wants backlinks and mentions that lift rankings and AI citations, or asks how to get sites to link or whether a link tactic i…
-- `marketing/marketing-council` — When the user wants several expert takes on a marketing decision, or asks what a famous marketer would say about it: a simulated board (Set…
-- `marketing/marketing-ideas` — When the user wants marketing ideas or growth tactics for a software product, or asks what to try to get attention or the next customers wi…
-- `marketing/marketing-loops` — When the user wants a recurring marketing job an AI agent runs on a cadence or trigger, or asks what a weekly or daily automated check shou…
-- `marketing/marketing-plan` — When the user wants a full marketing or go-to-market plan for a client, an advised company, or their own product, or asks how to sequence o…
-- `marketing/marketing-psychology` — When the user wants to apply psychology to marketing, or asks why buyers behave or value things as they do, or whether a persuasion tactic…
-- `marketing/offers` — When the user wants to design or improve the offer itself, or asks why it isn't selling or how to add urgency honestly: value stacking, bon…
-- `marketing/onboarding` — When the user wants better onboarding and activation, or asks why new users don't stick or what the first session should do: first-run expe…
-- `marketing/paywalls` — When the user wants to create or improve in-app paywalls and upgrade moments, or asks when or how hard to ask free users to pay (after they…
-- `marketing/popups` — When the user wants to create or improve popups, modals, slide-ins, sticky bars, and banners, or asks whether one will help or annoy and wh…
-- `marketing/pricing` — When the user wants to set pricing and packaging, or asks what to charge, whether to raise prices, or how to move existing customers: tiers…
-- `marketing/product-marketing` — When the user wants to create or update the product marketing context doc (.agents/product-marketing.md), or asks what belongs in it or whe…
-- `marketing/programmatic-seo` — When the user wants SEO pages at scale from templates and data, or asks whether a page set will rank or look thin: location, integration, c…
-- `marketing/prospecting` — When the user wants to find and qualify prospects for outbound, or asks who to target first, which signal to prioritize, or where to spot b…
-- `marketing/public-relations` — When the user wants press and media coverage, or asks what to say to a reporter, whether a story is newsworthy, or how to handle a crisis:…
-- `marketing/referrals` — When the user wants referral and affiliate programs or word of mouth, or asks what to reward, how much to pay, or which loop to start with:…
-- `marketing/reverse-engineer-marketing` — When the user wants to know how another company grew and what to copy, or asks what a competitor did and when: a dated log of their moves a…
-- `marketing/revops` — When the user wants to design revenue operations, or asks when a lead is ready for sales or why sales and marketing disagree on lead qualit…
-- `marketing/sales-enablement` — When the user wants sales collateral, or asks what to give a champion or rep, or how to answer an objection or make the case: decks, one-pa…
-- `marketing/schema` — When the user wants to add, fix, or validate schema markup (JSON-LD), or asks which type fits a page or whether some markup is allowed: pro…
-- `marketing/seo-audit` — When the user wants to audit or diagnose SEO, or asks why traffic dropped, a page won't rank, or whether a setup like canonicals, hreflang,…
-- `marketing/signup` — When the user wants better signup, registration, and trial start flows, or asks which fields or steps to cut or whether to require a card:…
-- `marketing/site-architecture` — When the user wants to plan or restructure a website, or asks which pages they need or where something belongs: hierarchy, navigation, URL…
-- `marketing/sms` — When the user wants SMS, MMS, or WhatsApp marketing, or asks whether texting is worth it or a message is allowed: abandoned cart, win-back,…
-- `marketing/social` — When the user wants organic social content for LinkedIn, X, Instagram, TikTok, or Facebook, or asks what to post, which format to favor, or…
-- `marketing/video` — When the user wants to create video with AI tools or code, or asks which approach to use (screen recording, AI avatar, generated, or templa…
-- `pm-setup/competitive-analysis` — Activate on "analyze competitor", "competitive analysis", "compare us to [company]".
-- `pm-setup/launch-checklist` — Activate on "launch checklist", "pre-launch check", "ready to launch?", "launch prep".
-- `pm-setup/metrics-definer` — Activate on "define metrics", "what should I measure", "success metrics for [feature]", "KPIs for [initiative]".
-- `pm-setup/prd-writer` — Activate on "write a PRD", "create a PRD", "draft a PRD", "PRD for [feature]", "spec out [feature]", or "one pager for [feature]".
-- `pm-setup/sprint-planner` — Activate on "plan sprint", "sprint planning", "what should we work on", "organize the backlog".
-- `pm-setup/user-research` — Activate on "synthesize research", "analyze interviews", "research findings", "interview synthesis".
-- `pm-skills/acquisition-channel-advisor` — Evaluate acquisition channels using unit economics, customer quality, and scalability.
-- `pm-skills/agent-orchestration-advisor` — Design multi-agent AI workflows with clear boundaries, handoffs, and monitoring.
-- `pm-skills/ai-shaped-readiness-advisor` — Assess whether your product work is AI-first or AI-shaped.
-- `pm-skills/altitude-horizon-framework` — Understand the PM-to-Director transition through altitude and horizon thinking.
-- `pm-skills/ansoff-matrix` — Map evidence-backed growth options across the Ansoff Matrix with risk-rated sequencing.
-- `pm-skills/autonomous-investigation` — The protocol behind every investigation skill.
-- `pm-skills/battle-card-builder` — Research and draft a competitive battle card from public evidence — every claim labeled and sourced.
-- `pm-skills/business-health-diagnostic` — Diagnose SaaS business health across growth, retention, efficiency, and capital.
-- `pm-skills/company-intel` — Research a company, industry, or competitor set using web search and seven analytical lenses.
-- `pm-skills/company-research` — Create a company research brief with executive quotes, product strategy, and org context.
-- `pm-skills/competitive-analysis-process` — Orchestrate a complete competitive analysis across six steps, from landscape to strategic direction.
-- `pm-skills/competitive-intel-watch` — Scheduled delta monitoring against a prior competitive snapshot.
-- `pm-skills/competitive-research-snapshot` — Research a competitive landscape with cited snapshots, a comparison matrix, and so-what implications.
-- `pm-skills/context-engineering-advisor` — Diagnose context stuffing vs.
-- `pm-skills/customer-journey-map` — Create a customer journey map across stages, touchpoints, actions, emotions, and metrics.
-- `pm-skills/customer-journey-mapping-workshop` — Run a customer journey mapping workshop with adaptive questions and outputs.
-- `pm-skills/derisk-measurement-advisor` — Identify what to measure, test, or track to de-risk a product or AI idea.
-- `pm-skills/director-readiness-advisor` — Guide the PM-to-Director transition across preparing, interviewing, landing, and recalibrating.
-- `pm-skills/discovery-interview-prep` — Plan customer discovery interviews with the right goal, segment, constraints, and method.
-- `pm-skills/discovery-process` — Run a full discovery cycle from problem hypothesis to validated solution.
-- `pm-skills/eol-checklist` — Build a phase-gated EOL checklist sized to the sunset, with a named owner on every item.
-- `pm-skills/eol-internal-enablement` — Build the support FAQ, sales talking points, and objection handling teams need before an EOL announcement.
-- `pm-skills/eol-message` — Write a right-sized EOL announcement — brief notice through full phased comms — with rationale, customer impact, and next steps.
-- `pm-skills/eol-process` — Run a product sunset end to end — decide, align, plan, prepare, announce, close.
-- `pm-skills/eol-readiness-advisor` — Run a go/no-go assessment for retiring a product or feature, then right-size the effort.
-- `pm-skills/eol-stakeholder-sequence` — Plan who to talk to about a sunset, in what order, and what each conversation must cover.
-- `pm-skills/epic-breakdown-advisor` — Break down epics into user stories with Humanizing Work split patterns.
-- `pm-skills/epic-hypothesis` — Frame an epic as a testable hypothesis with target user, expected outcome, and validation method.
-- `pm-skills/executive-onboarding-playbook` — Plan a VP or CPO 30-60-90 day diagnostic onboarding path.
-- `pm-skills/feature-investment-advisor` — Evaluate feature investments using revenue impact, cost structure, ROI, and strategy.
-- `pm-skills/finance-based-pricing-advisor` — Evaluate pricing changes using ARPU, conversion, churn risk, NRR, and payback.
-- `pm-skills/finance-metrics-quickref` — Look up SaaS finance metrics, formulas, and benchmarks fast.
-- `pm-skills/incoming-request-advisor` — Decode an incoming message into a structured breakdown separating the literal ask from the job-to-be-done.
-- `pm-skills/intel-discipline-advisor` — Triage a competitive or market question into the right intelligence disciplines, cadence, and executing skill.
-- `pm-skills/intelligence-collection-disciplines` — Run competitive research like an intelligence agency: eight collection disciplines (OSINT to MASINT), signal-to-inference chains, and fusio…
-- `pm-skills/jobs-to-be-done` — Uncover customer jobs, pains, and gains in a structured JTBD format.
-- `pm-skills/lean-ux-canvas` — Guide teams through Lean UX Canvas v2.
-- `pm-skills/lifecycle-play-advisor` — Diagnose where a product sits in its lifecycle and which play fits — extend, replace, or retire.
-- `pm-skills/market-landscape-scan` — Map a market's segments, players, substitutes, and whitespace with cited evidence.
-- `pm-skills/opportunity-solution-tree` — Build an Opportunity Solution Tree from outcomes to opportunities, solutions, and tests.
-- `pm-skills/organic-growth-advisor` — Identify which organic growth path to pursue — new segments, geographies, channels, or products.
-- `pm-skills/pestel-analysis` — Analyze political, economic, social, technological, environmental, and legal forces.
-- `pm-skills/pestel-delta-monitor` — Quarterly re-scan of a prior PESTEL analysis.
-- `pm-skills/pm-skill-creator` — Design a new PM skill through guided conversation.
-- `pm-skills/pol-probe` — Define a Proof of Life probe to test a risky hypothesis cheaply.
-- `pm-skills/pol-probe-advisor` — Select the right Proof of Life (PoL) probe based on hypothesis, risk, and resources.
-- `pm-skills/porters-five-forces` — Read an industry's structure through Porter's Five Forces with documented signals per rating, ending at the profit pool.
-- `pm-skills/positioning-statement` — Create a Geoffrey Moore-style positioning statement.
-- `pm-skills/positioning-workshop` — Run a positioning workshop that surfaces target customer, unmet need, category, benefits, and differentiation.
-- `pm-skills/prd-development` — Build a structured PRD that connects problem, users, solution, and success criteria.
-- `pm-skills/press-release` — Write an Amazon-style press release that defines customer value before building.
-- `pm-skills/pricing-packaging-tracker` — Track competitor pricing and packaging as a diffable time series.
-- `pm-skills/prioritization-advisor` — Choose a prioritization framework based on stage, team context, and stakeholder needs.
-- `pm-skills/problem-framing-canvas` — Guide teams through MITRE's Problem Framing Canvas.
-- `pm-skills/problem-statement` — Write a user-centered problem statement with who is blocked, what they are trying to do, why it matters, and how it feels.
-- `pm-skills/product-lifecycle-plays` — Map a product's lifecycle stage and choose between extension, replacement, and retirement plays.
-- `pm-skills/product-sense-interview-answer` — Structure a spoken PM product-sense answer with assumptions, segmentation, pain-point prioritization, and MVP tradeoffs.
-- `pm-skills/product-strategy-session` — Run an end-to-end product strategy session across positioning, discovery, and roadmap planning.
-- `pm-skills/proto-persona` — Create a proto-persona from current research, market signals, and team knowledge.
-- `pm-skills/recommendation-canvas` — Evaluate an AI product idea across outcomes, hypotheses, risks, and positioning.
-- `pm-skills/roadmap-planning` — Plan a strategic roadmap across prioritization, epic definition, stakeholder alignment, and sequencing.
-- `pm-skills/saas-economics-efficiency-metrics` — Evaluate SaaS unit economics and capital efficiency.
-- `pm-skills/saas-revenue-growth-metrics` — Calculate SaaS revenue, retention, and growth metrics.
-- `pm-skills/skill-authoring-workflow` — Turn raw PM content into a compliant, publish-ready skill.
-- `pm-skills/stakeholder-engagement-advisor` — Plan engagement for a specific stakeholder.
-- `pm-skills/stakeholder-identification` — Map every stakeholder before engaging anyone.
-- `pm-skills/stakeholder-mapping` — Prioritize stakeholders using two complementary grids.
-- `pm-skills/storyboard` — Create a six-frame storyboard that shows a user's journey from problem to solution.
-- `pm-skills/swot-analysis` — Build an evidence-cited SWOT of one company — yours or a competitor's — from public sources, ending with the S-O/W-T crossings.
-- `pm-skills/tam-sam-som-calculator` — Calculate TAM, SAM, and SOM with explicit assumptions, methods, and caveats.
-- `pm-skills/user-story` — Create user stories with Mike Cohn format and Gherkin acceptance criteria.
-- `pm-skills/user-story-mapping` — Create a user story map that lays out activities, steps, tasks, and release slices.
-- `pm-skills/user-story-mapping-workshop` — Run a user story mapping workshop with adaptive questions and a structured map output.
-- `pm-skills/user-story-splitting` — Break a large story or epic into smaller deliverable stories using proven split patterns.
-- `pm-skills/voice-of-customer-miner` — Mine public reviews, app stores, and forums for unmet needs, competitor weaknesses, and switching triggers — with quoted evidence.
-- `pm-skills/vp-cpo-readiness-advisor` — Guide the transition to VP or CPO across preparing, interviewing, landing, and recalibrating.
-- `pm-skills/workshop-facilitation` — Facilitate workshop sessions in a one-step, multi-turn flow.
