@@ -1,0 +1,128 @@
+# Контракт маршрутизации. Не является измерением работы модели.
+schema_version: 1
+cases:
+- id: landing
+  query: Напиши текст для лендинга продукта
+  expected: marketing/copywriting
+  available: []
+- id: headlines
+  query: Для copywriting нужен headline_scorer
+  expected: claude-skills/copywriting
+  available: []
+- id: editing
+  query: Сократи существующий текст страницы
+  expected: marketing/copy-editing
+  available: []
+- id: ideas
+  query: Предложи маркетинговые идеи для SaaS
+  expected: marketing/marketing-ideas
+  available: []
+- id: pseo
+  query: Нужен programmatic-seo для тысяч страниц
+  expected: marketing/programmatic-seo
+  available: []
+- id: pseo-tool
+  query: Нужен programmatic-seo и url_pattern_generator
+  expected: claude-skills/programmatic-seo
+  available: []
+- id: ads
+  query: Подготовь рекламные креативы
+  expected: marketing/ad-creative
+  available: []
+- id: churn
+  query: Как сократить отток подписчиков
+  expected: marketing/churn-prevention
+  available: []
+- id: cold
+  query: Напиши холодное письмо потенциальному клиенту
+  expected: marketing/cold-email
+  available: []
+- id: content
+  query: Подготовь контент-план на месяц
+  expected: marketing/content-strategy
+  available: []
+- id: psychology
+  query: 'Психология маркетинга: почему покупатели откладывают решение'
+  expected: marketing/marketing-psychology
+  available: []
+- id: seo
+  query: Проведи SEO-аудит сайта
+  expected: marketing/seo-audit
+  available: []
+- id: site
+  query: Спроектируй структуру сайта
+  expected: marketing/site-architecture
+  available: []
+- id: tour
+  query: Создай CodeTour для этого проекта
+  expected: ecc/code-tour
+  available: []
+- id: onboard
+  query: Помоги разобраться с незнакомым репозиторием
+  expected: claude-skills/codebase-onboarding
+  available: []
+- id: tokens
+  query: Извлеки дизайн-систему из существующего интерфейса
+  expected: ecc/design-system
+  available: []
+- id: brand
+  query: Настрой бренд для Markdown в HTML
+  expected: claude-skills/design-system
+  available: []
+- id: knowledge
+  query: Организуй базу знаний
+  expected: ecc/knowledge-ops
+  available: []
+- id: sop
+  query: Подготовь runbook для дежурного
+  expected: claude-skills/knowledge-ops
+  available: []
+- id: market
+  query: Проведи исследование рынка
+  expected: ecc/market-research
+  available: []
+- id: tam
+  query: Рассчитай TAM SAM SOM рынка
+  expected: claude-skills/market-research
+  available: []
+- id: lit
+  query: Подготовь систематический обзор литературы
+  expected: scientific/literature-review
+  available: []
+- id: review
+  query: Подготовь рецензию научной статьи
+  expected: scientific/peer-review
+  available: []
+- id: architecture
+  query: Спроектируй архитектуру агентов
+  expected: claude-skills/agent-designer
+  available: []
+- id: power
+  query: Обоснуй размер выборки
+  expected: scientific/statistical-power
+  available: []
+- id: exa-mcp
+  query: Найди источники через Exa
+  expected: ecc/exa-search
+  available:
+  - exa-mcp
+- id: exa-api
+  query: Найди источники через Exa
+  expected: scientific/exa-search
+  available:
+  - exa-api
+- id: exa-blocked
+  query: Найди источники через Exa
+  expected: null
+  status: blocked
+  available: []
+- id: explicit
+  query: Используй claude-skills/copywriting для текста лендинга
+  expected: claude-skills/copywriting
+  available: []
+- id: commercial-blocked
+  query: Используй academic/deep-research
+  commercial: true
+  expected: null
+  status: blocked
+  available: []

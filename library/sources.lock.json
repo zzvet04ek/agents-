@@ -3,48 +3,56 @@
     "repo": "https://github.com/affaan-m/ECC",
     "ref": null,
     "commit": "d2ef2680594f9a17526a6e1a2e18b3d242c5d17b",
-    "license": "MIT"
+    "license": "MIT",
+    "config_sha256": "e7dcb1f19fc8e14ae52909fa42d48100a091a5f1bff557ac60cfac6c12ac6719"
   },
   "claude-skills": {
     "repo": "https://github.com/alirezarezvani/claude-skills",
     "ref": null,
     "commit": "91a1ddaab1ae8fe95b8ecd3e98419458db86a992",
-    "license": "MIT"
+    "license": "MIT",
+    "config_sha256": "ccf8f720836831475a3d3683057946a383509480d2a86cd3fa0631949704cbea"
   },
   "marketing": {
     "repo": "https://github.com/coreyhaines31/marketingskills",
     "ref": null,
     "commit": "9d6d7ce8d18eb155dc2f9762435f097e60cdad7c",
-    "license": "MIT"
+    "license": "MIT",
+    "config_sha256": "5e5f3d6588d500d093f702500f8f46333932654b5457339030461eb368f36176"
   },
   "pm-skills": {
     "repo": "https://github.com/deanpeters/Product-Manager-Skills",
     "ref": null,
     "commit": "cfcb697f14b8891d8b3ec43c16c3547df3e70e13",
-    "license": "CC-BY-NC-SA-4.0"
+    "license": "CC-BY-NC-SA-4.0",
+    "config_sha256": "5eb7bace043796e3c17cbd22f61578e6f340f81bfe0dcfee50969364a8305567"
   },
   "pm-setup": {
     "repo": "https://github.com/aakashg/pm-claude-code-setup",
     "ref": null,
     "commit": "9be80c62b3a49b3284bf07cd309f6c0add37d7c9",
-    "license": "MIT"
+    "license": "MIT",
+    "config_sha256": "fe11ffb736aaf4bd607543ebdbe4cacf5a850d53609b3decd74e0eeff5435766"
   },
   "career": {
     "repo": "https://github.com/art2url/career-agent-skills",
     "ref": "develop",
     "commit": "d7cce4b7eada07d08e094165aafbbb03a9928e58",
-    "license": "MIT"
+    "license": "MIT",
+    "config_sha256": "a8fc55970a9042db33fb45d440b2dd775e10e2e0453a7fe361cf901e23aba0bc"
   },
   "academic": {
     "repo": "https://github.com/Imbad0202/academic-research-skills",
     "ref": null,
     "commit": "06a2e6bd9743b68bb0ef2c5d161cf70abc00323e",
-    "license": "CC-BY-NC-4.0"
+    "license": "CC-BY-NC-4.0",
+    "config_sha256": "c8fc75df575da34ff1c8ce71d6f6823789b075a18ae21f81c310869ebdceb516"
   },
   "scientific": {
     "repo": "https://github.com/K-Dense-AI/scientific-agent-skills",
     "ref": null,
     "commit": "2d2065fb4520fa3f3f2bcf61cff26ec8b7eba4b5",
-    "license": "MIT"
+    "license": "MIT",
+    "config_sha256": "d0f0ce5c6a5b097350434534deb76d30ec82fbf73c0a1eb75483db0af5258a71"
   }
 }

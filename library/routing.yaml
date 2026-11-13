@@ -1,0 +1,357 @@
+# Политика выбора: явный collection/name приоритетнее правил. Не удаляет альтернативы.
+schema_version: 1
+routes:
+- id: copywriting
+  primary: marketing/copywriting
+  match:
+  - копирайтинг|copywriting
+  - текст.{0,30}(лендинг|посадочн)|заголов.{0,30}(лендинг|страниц)
+  priority: 10
+  requires: []
+  use_when: Основной маршрут для указанного назначения.
+  alternatives:
+  - skill: claude-skills/copywriting
+    requires: []
+    use_when: Дополнительная реализация по указанным условиям.
+    when:
+    - headline_scorer|оцен.{0,15}заголов
+- id: copy-editing
+  primary: marketing/copy-editing
+  match:
+  - copy-editing|редакт.{0,20}(текст|копи)|сократ.{0,20}текст
+  priority: 10
+  requires: []
+  use_when: Основной маршрут для указанного назначения.
+  alternatives:
+  - skill: claude-skills/copy-editing
+    requires: []
+    use_when: Дополнительная реализация по указанным условиям.
+    when:
+    - readability|автоматическ.{0,15}провер
+- id: marketing-ideas
+  primary: marketing/marketing-ideas
+  match:
+  - marketing-ideas|иде[ияй].{0,25}(маркетинг|продвижен)|маркетингов.{0,15}иде
+  priority: 10
+  requires: []
+  use_when: База 139 идей; альтернативу не загружать вместе с основным вариантом.
+  alternatives:
+  - skill: claude-skills/marketing-ideas
+    requires: []
+    use_when: Дополнительная реализация по указанным условиям.
+    when:
+    - вариант claude-skills
+- id: programmatic-seo
+  primary: marketing/programmatic-seo
+  match:
+  - programmatic-seo|программ.{0,10}seo|seo.{0,20}(шаблон|тысяч|масштаб)|массов.{0,15}seo
+  priority: 10
+  requires: []
+  use_when: Основной маршрут для указанного назначения.
+  alternatives:
+  - skill: claude-skills/programmatic-seo
+    requires: []
+    use_when: Дополнительная реализация по указанным условиям.
+    when:
+    - url_pattern_generator|генератор.{0,15}url
+- id: ad-creative
+  primary: marketing/ad-creative
+  match:
+  - ad-creative
+  - рекламн.{0,15}(креатив|объявлен)|креатив.{0,15}реклам
+  priority: 10
+  requires: []
+  use_when: Основной маршрут для указанного назначения.
+  alternatives:
+  - skill: claude-skills/ad-creative
+    requires: []
+    use_when: Дополнительная реализация по указанным условиям.
+    when:
+    - ad_copy_validator
+- id: churn-prevention
+  primary: marketing/churn-prevention
+  match:
+  - churn-prevention
+  - отток|отмен.{0,10}подпис|churn
+  priority: 10
+  requires: []
+  use_when: Основной маршрут для указанного назначения.
+  alternatives:
+  - skill: claude-skills/churn-prevention
+    requires: []
+    use_when: Дополнительная реализация по указанным условиям.
+    when:
+    - churn_impact_calculator
+- id: cold-email
+  primary: marketing/cold-email
+  match:
+  - cold-email
+  - холодн.{0,15}(письм|рассыл)|cold.email
+  priority: 10
+  requires: []
+  use_when: Основной маршрут для указанного назначения.
+  alternatives:
+  - skill: claude-skills/cold-email
+    requires: []
+    use_when: Дополнительная реализация по указанным условиям.
+    when:
+    - email_sequence_analyzer
+- id: content-strategy
+  primary: marketing/content-strategy
+  match:
+  - content-strategy
+  - контент.{0,10}(стратег|план)|план.{0,15}контент
+  priority: 10
+  requires: []
+  use_when: Основной маршрут для указанного назначения.
+  alternatives:
+  - skill: claude-skills/content-strategy
+    requires: []
+    use_when: Дополнительная реализация по указанным условиям.
+    when:
+    - topic_cluster_mapper
+- id: marketing-psychology
+  primary: marketing/marketing-psychology
+  match:
+  - marketing-psychology
+  - психологи.{0,15}маркетинг|убеждени.{0,15}покупател
+  priority: 10
+  requires: []
+  use_when: Основной маршрут для указанного назначения.
+  alternatives:
+  - skill: claude-skills/marketing-psychology
+    requires: []
+    use_when: Дополнительная реализация по указанным условиям.
+    when:
+    - автоматическ.{0,10}оцен
+- id: seo-audit
+  primary: marketing/seo-audit
+  match:
+  - seo-audit
+  - seo-аудит|seo.audit|аудит.{0,10}seo|падени.{0,10}трафик
+  priority: 10
+  requires: []
+  use_when: Основной маршрут для указанного назначения.
+  alternatives:
+  - skill: claude-skills/seo-audit
+    requires: []
+    use_when: Дополнительная реализация по указанным условиям.
+    when:
+    - seo_analyzer|скрипт.{0,10}аудит
+- id: site-architecture
+  primary: marketing/site-architecture
+  match:
+  - site-architecture
+  - архитектур.{0,15}сайт|структур.{0,15}сайт|внутренн.{0,10}перелинков
+  priority: 10
+  requires: []
+  use_when: Основной маршрут для указанного назначения.
+  alternatives:
+  - skill: claude-skills/site-architecture
+    requires: []
+    use_when: Дополнительная реализация по указанным условиям.
+    when:
+    - sitemap_analyzer
+- id: code-tour
+  primary: ecc/code-tour
+  match:
+  - code-tour|codetour|\.tour\b|тур.{0,10}код
+  priority: 10
+  requires: []
+  use_when: Создать .tour; для обычного объяснения кода этот артефакт не обязателен.
+  alternatives:
+  - skill: claude-skills/code-tour
+    requires: []
+    use_when: Дополнительная реализация по указанным условиям.
+    when:
+    - коротк.{0,10}тур
+- id: codebase-onboarding
+  primary: claude-skills/codebase-onboarding
+  match:
+  - codebase-onboarding|разбер.{0,20}репозитор|онбординг.{0,15}код|незнаком.{0,15}(код|репозитор)
+  priority: 10
+  requires: []
+  use_when: Основной маршрут для указанного назначения.
+  alternatives:
+  - skill: ecc/codebase-onboarding
+    requires: []
+    use_when: Дополнительная реализация по указанным условиям.
+    when:
+    - CLAUDE\.md
+- id: ui-design-system
+  primary: ecc/design-system
+  match:
+  - design-system|дизайн-систем|токен.{0,15}интерфейс
+  priority: 10
+  requires: []
+  use_when: Основной маршрут для указанного назначения.
+  alternatives: []
+- id: markdown-brand
+  primary: claude-skills/design-system
+  match:
+  - бренд.{0,25}markdown|markdown.{0,20}(html|бренд)|палитр.{0,20}markdown
+  priority: 30
+  requires: []
+  use_when: Бренд-настройки конвертации Markdown в HTML, не аудит UI.
+  alternatives: []
+- id: knowledge-ingestion
+  primary: ecc/knowledge-ops
+  match:
+  - knowledge-ops|баз.{0,10}знаний|синхронизац.{0,15}знаний
+  priority: 10
+  requires: []
+  use_when: Основной маршрут для указанного назначения.
+  alternatives: []
+- id: runbooks
+  primary: claude-skills/knowledge-ops
+  match:
+  - runbook|\bsop\b|операционн.{0,15}инструкц
+  priority: 30
+  requires: []
+  use_when: Основной маршрут для указанного назначения.
+  alternatives: []
+- id: market-evidence
+  primary: ecc/market-research
+  match:
+  - market-research|исследовани.{0,15}рынк|конкурентн.{0,15}анализ
+  priority: 10
+  requires: []
+  use_when: Основной маршрут для указанного назначения.
+  alternatives: []
+- id: market-sizing
+  primary: claude-skills/market-research
+  match:
+  - \btam\b|\bsam\b|\bsom\b|оцен.{0,10}объ.м.{0,10}рынк|размер.{0,10}рынк
+  priority: 30
+  requires: []
+  use_when: Основной маршрут для указанного назначения.
+  alternatives: []
+- id: market-report
+  primary: scientific/market-research-reports
+  match:
+  - разв.рнут.{0,15}рыночн.{0,10}отч.т|рыночн.{0,10}отч.т
+  priority: 30
+  requires: []
+  use_when: Основной маршрут для указанного назначения.
+  alternatives: []
+- id: web-research
+  primary: ecc/deep-research
+  match:
+  - deep-research|глубок.{0,15}(исследован|веб)|исследовани.{0,15}веб
+  priority: 10
+  requires:
+  - exa-mcp
+  - firecrawl
+  use_when: Основной маршрут для указанного назначения.
+  alternatives:
+  - skill: scientific/research-lookup
+    requires:
+    - parallel-api
+    use_when: Дополнительная реализация по указанным условиям.
+- id: academic-research
+  primary: academic/deep-research
+  match:
+  - академическ.{0,15}исследовани|полный.{0,10}академическ.{0,10}процесс
+  priority: 30
+  requires: []
+  use_when: Полный академический процесс; NC, для коммерческих задач не выбирать.
+  alternatives: []
+- id: exa
+  primary: ecc/exa-search
+  match:
+  - \bexa\b|exa-search
+  priority: 10
+  requires:
+  - exa-mcp
+  use_when: Exa MCP по умолчанию; научный API-вариант доступен при объявленном exa-api.
+  alternatives:
+  - skill: scientific/exa-search
+    requires:
+    - exa-api
+    use_when: Дополнительная реализация по указанным условиям.
+- id: scientific-literature
+  primary: scientific/literature-review
+  match:
+  - обзор.{0,10}литератур|систематическ.{0,10}обзор|literature.review
+  priority: 10
+  requires: []
+  use_when: Основной маршрут для указанного назначения.
+  alternatives:
+  - skill: claude-skills/litreview
+    requires: []
+    use_when: Дополнительная реализация по указанным условиям.
+    when:
+    - \bpico\b|\bspider\b|ориентационн.{0,10}docx
+  - skill: ecc/scientific-thinking-literature-review
+    requires: []
+    use_when: Дополнительная реализация по указанным условиям.
+    when:
+    - кратк.{0,10}маршрут
+- id: peer-review
+  primary: scientific/peer-review
+  match:
+  - рецензи.{0,20}(стат|рукопис)|научн.{0,10}рецензи|peer.review
+  priority: 10
+  requires: []
+  use_when: Основной маршрут для указанного назначения.
+  alternatives:
+  - skill: academic/academic-paper-reviewer
+    requires: []
+    use_when: Дополнительная реализация по указанным условиям.
+    when:
+    - многоракурсн|панел.{0,10}реценз
+- id: scientific-writing
+  primary: scientific/scientific-writing
+  match:
+  - научн.{0,10}(текст|рукопис)|напис.{0,15}научн.{0,10}стат
+  priority: 10
+  requires: []
+  use_when: Основной маршрут для указанного назначения.
+  alternatives:
+  - skill: academic/academic-paper
+    requires: []
+    use_when: Дополнительная реализация по указанным условиям.
+    when:
+    - полный.{0,10}процесс.{0,10}стат
+- id: agent-architecture
+  primary: claude-skills/agent-designer
+  match:
+  - архитектур.{0,15}агент|спроектир.{0,15}агент|agent.architecture|мультиагент
+  priority: 10
+  requires: []
+  use_when: Основной маршрут для указанного назначения.
+  alternatives:
+  - skill: ecc/agent-architecture-audit
+    requires: []
+    use_when: Дополнительная реализация по указанным условиям.
+    when:
+    - аудит|диагност|сбо
+- id: statistics
+  primary: scientific/statistical-analysis
+  match:
+  - статистическ.{0,15}анализ|статистическ.{0,15}тест|гипотез.{0,15}проверк
+  priority: 10
+  requires: []
+  use_when: Основной маршрут для указанного назначения.
+  alternatives: []
+- id: power
+  primary: scientific/statistical-power
+  match:
+  - размер.{0,10}выборк|мощност.{0,10}тест|число.{0,10}участник
+  priority: 30
+  requires: []
+  use_when: Основной маршрут для указанного назначения.
+  alternatives: []
+- id: handoff
+  primary: claude-skills/handoff
+  match:
+  - переда.{0,15}(контекст|работ)|handoff|следующ.{0,10}сесси
+  priority: 10
+  requires: []
+  use_when: Основной маршрут для указанного назначения.
+  alternatives:
+  - skill: claude-skills/session-handoff
+    requires: []
+    use_when: Дополнительная реализация по указанным условиям.
+    when:
+    - настро.{0,15}handoff|redaction|редакци.{0,10}секрет

@@ -29,6 +29,17 @@ jobs:
 
       - run: python3 library/tools/library.py sync
 
+      - name: Diagnose updated library
+        id: library_check
+        continue-on-error: true
+        run: python3 library/tools/library.py check --generated > "$RUNNER_TEMP/library-check.json"
+
+      - name: Upload diagnostic report
+        uses: actions/upload-artifact@v4
+        with:
+          name: library-check
+          path: ${{ runner.temp }}/library-check.json
+
       - name: Open pull request with changes
         env:
           GH_TOKEN: ${{ github.token }}
@@ -48,4 +59,4 @@ jobs:
           gh pr view "$branch" >/dev/null 2>&1 || gh pr create \
             --base "${{ github.ref_name }}" --head "$branch" \
             --title "Library sync $(date -u +%Y-%m-%d)" \
-            --body "Автообновление коллекций навыков из исходных репозиториев. ${summary}"
+            --body "Автообновление коллекций навыков из исходных репозиториев. ${summary} Диагностика: ${{ steps.library_check.outcome }}; отчёт приложен к запуску Actions."
