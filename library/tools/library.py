@@ -30,7 +30,7 @@ LOCK = LIB / "sources.lock.json"
 FAVORITES = LIB / "favorites.yaml"
 INDEX = LIB / "INDEX.md"
 CATALOG = LIB / "CATALOG.md"
-ACTIVE = REPO / ".claude" / "skills"
+ACTIVE_DIRS = (REPO / ".claude" / "skills", REPO / ".agents" / "skills")
 FAVORITE_MARKER = ".library-favorite"
 PROTECTED = {"my"}
 # SKILL.md files under these folder names are samples/fixtures, not real skills.
@@ -264,28 +264,29 @@ def apply_favorites(skills: list[dict]) -> None:
     wanted = []
     if FAVORITES.exists():
         wanted = (yaml.safe_load(FAVORITES.read_text(encoding="utf-8")) or {}).get("favorites") or []
-    ACTIVE.mkdir(parents=True, exist_ok=True)
-    # Remove previously promoted favorites; hand-made active skills are untouched.
-    for d in ACTIVE.iterdir():
-        if (d / FAVORITE_MARKER).exists():
-            shutil.rmtree(d)
-    for ref in wanted:
-        cid, _, name = ref.rpartition("/")
-        matches = [s for s in skills if s["name"] == name and (not cid or s["collection"] == cid)]
-        if not matches:
-            print(f"  ! favorite '{ref}' not found")
-            continue
-        if len(matches) > 1:
-            print(f"  ! favorite '{ref}' is ambiguous, using {matches[0]['collection']}/{name}"
-                  f" (write it as collection/name)")
-        src = REPO / Path(matches[0]["path"]).parent
-        dst = ACTIVE / name
-        if dst.exists():
-            print(f"  ! .claude/skills/{name} already exists (not a favorite), skipped")
-            continue
-        shutil.copytree(src, dst, ignore=make_ignore([]))
-        (dst / FAVORITE_MARKER).write_text(f"{matches[0]['collection']}/{name}\n", encoding="utf-8")
-        print(f"  ★ {matches[0]['collection']}/{name}")
+    for active in ACTIVE_DIRS:
+        active.mkdir(parents=True, exist_ok=True)
+        # Remove previously promoted favorites; hand-made active skills are untouched.
+        for d in active.iterdir():
+            if (d / FAVORITE_MARKER).exists():
+                shutil.rmtree(d)
+        for ref in wanted:
+            cid, _, name = ref.rpartition("/")
+            matches = [s for s in skills if s["name"] == name and (not cid or s["collection"] == cid)]
+            if not matches:
+                print(f"  ! favorite '{ref}' not found")
+                continue
+            if len(matches) > 1:
+                print(f"  ! favorite '{ref}' is ambiguous, using {matches[0]['collection']}/{name}"
+                      f" (write it as collection/name)")
+            src = REPO / Path(matches[0]["path"]).parent
+            dst = active / name
+            if dst.exists():
+                print(f"  ! {active.relative_to(REPO)}/{name} already exists (not a favorite), skipped")
+                continue
+            shutil.copytree(src, dst, ignore=make_ignore([]))
+            (dst / FAVORITE_MARKER).write_text(f"{matches[0]['collection']}/{name}\n", encoding="utf-8")
+            print(f"  ★ {matches[0]['collection']}/{name}")
 
 
 RU_DIR = LIB / "ru"

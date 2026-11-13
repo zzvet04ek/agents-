@@ -41,7 +41,7 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -B "$branch"
-          git add -A library .claude/skills
+          git add -A library .claude/skills .agents/skills
           git commit -q -m "Library sync $(date -u +%Y-%m-%d)"
           git push -f origin "$branch"
           summary=$(git diff --stat HEAD~1 -- library/sources.lock.json library/INDEX.md | tail -1)
