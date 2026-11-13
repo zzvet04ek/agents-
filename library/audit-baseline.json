@@ -1,0 +1,4137 @@
+{
+  "schema_version": 1,
+  "licenses": {
+    "academic/academic-paper": {
+      "effective": "CC-BY-NC-4.0",
+      "declared": ""
+    },
+    "academic/academic-paper-reviewer": {
+      "effective": "CC-BY-NC-4.0",
+      "declared": ""
+    },
+    "academic/academic-pipeline": {
+      "effective": "CC-BY-NC-4.0",
+      "declared": ""
+    },
+    "academic/deep-research": {
+      "effective": "CC-BY-NC-4.0",
+      "declared": ""
+    },
+    "academic/sr-screener": {
+      "effective": "CC-BY-NC-4.0",
+      "declared": ""
+    },
+    "career/academic-research-cv": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "career/ats-resume-checker": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "career/career-pivot-planner": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "career/compensation-negotiator": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "career/cover-letter-writer": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "career/executive-leadership-resume": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "career/job-fit-analyzer": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "career/linkedin-profile-booster": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "career/mock-interview-coach": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "career/portfolio-case-study": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "career/resume-customizer": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "career/software-engineer-resume": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/a11y-audit": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/ab-test-setup": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/access-lifecycle": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/ad-creative": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/adversarial-reviewer": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/aeo": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/agent-decision-receipts": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/agent-designer": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/agent-harness": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/agent-launcher-orchestrator": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/agent-memory": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/agent-protocol": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/agent-regression-evals": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/agent-run-forensics": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/agent-workflow-designer": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/agenthub": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/agile-product-owner": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/ai-act-readiness": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/ai-decision-authority": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/ai-security": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/aims-audit": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/analytics-tracking": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/andreessen": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/api-design-reviewer": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/api-test-suite-builder": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/app-store-optimization": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/apple-hig-expert": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/ar-loop": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/ar-resume": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/ar-run": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/ar-status": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/arquiteto-de-empresa": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/atlassian-admin": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/atlassian-templates": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/autoresearch-agent": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/aws-solution-architect": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/azure-cloud-architect": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/behuman": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/board": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/board-deck-builder": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/board-meeting": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/board-prep": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/boardroom": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/book-to-skill": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/boost-asio-pro": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/brand-guidelines": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/brief": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/browser-automation": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/browserstack": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/business-growth-skills": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/business-investment-advisor": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/business-name-fit": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/business-operations-skills": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/c-level-agents": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/c-level-skills": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/caio-review": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/campaign-analytics": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/capa-officer": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/capacity-planner": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/capture": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/caveman": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/cco-review": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/cdo-review": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/ceo-advisor": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/cfo-advisor": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/cfo-review": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/challenge": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/change-management": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/changelog-generator": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/channel-economics": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/chaos-engineering": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/chief-ai-officer-advisor": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/chief-customer-officer-advisor": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/chief-data-officer-advisor": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/chief-of-staff": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/chro-advisor": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/churn-prevention": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/ci-cd-pipeline-builder": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/ciso-advisor": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/ciso-review": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/claude-coach": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/clinical-research": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/cloud-security": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/cmmc-readiness": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/cmo-advisor": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/cmo-review": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/code-reviewer": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/code-to-prd": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/code-tour": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/codebase-onboarding": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/coding-agent-rollout": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/cold-email": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/collab-proof": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/commercial-forecaster": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/commercial-policy": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/commercial-skills": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/commit-craft": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/company-os": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/competitive-intel": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/competitive-teardown": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/competitor-alternatives": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/compliance-os": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/compliance-readiness": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/confluence-expert": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/content-creator": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/content-humanizer": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/content-production": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/content-strategy": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/context-engine": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/contract-and-proposal-writer": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/coo-advisor": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/copy-editing": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/copywriting": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/coverage": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/cpo-advisor": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/cpo-review": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/cro-advisor": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/cro-review": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/cross-eval": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/cs-onboard": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/cto-advisor": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/cto-review": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/culture-architect": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/customer-success-manager": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/data-quality-auditor": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/database-designer": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/database-schema-designer": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/deal-desk": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/decide": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/decision-logger": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/deep-learning-book": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/deep-work": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/deepread": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/demo-video": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/dependency-auditor": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/design-qa": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/design-system": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/docker-development": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/dossier": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/email-sequence": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/email-template-builder": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/embedded-iot-mentor": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/engineering-advanced-skills": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/engineering-skills": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/env-secrets-manager": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/epic-design": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/eu-ai-act-specialist": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/eval": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/execute": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/executive-mentor": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/experiment-designer": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/extract": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/fable-goal": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/fda-consultant-specialist": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/fda-qsr-audit-prep": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/feature-flags-architect": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/finance-skills": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/financial-analyst": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/fix": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/focused-fix": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/form-cro": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/founder-coach": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/founder-mode": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/free-tool-strategy": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/freeze": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/full-page-screenshot": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/gc-review": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/gcp-cloud-architect": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/gdpr-audit-prep": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/gdpr-dsgvo-expert": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/general-counsel-advisor": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/generate": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/git-worktree-manager": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/google-workspace-cli": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/grade-iterate": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/grants": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/grill-me": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/grill-with-docs": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/handoff": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/hard-call": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/helm-chart-builder": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/hivemind": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/hub-init": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/hub-run": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/hub-status": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/human-gate": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/i18n-localization": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/inbox-setup": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/inbox-triage": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/incident-commander": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/incident-response": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/information-security-manager-iso27001": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/internal-comms": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/internal-narrative": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/interview": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/interview-mapper": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/interview-system-designer": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/intl-expansion": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/isms-audit-expert": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/iso13485-audit-prep": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/iso27001-audit-prep": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/iso42001-specialist": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/jira-expert": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/karpathy-coder": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/knowledge-ops": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/kubernetes-operator": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/landing": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/landing-page-generator": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/launch-strategy": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/linkedin-analytics": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/linkedin-content": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/linkedin-engagement": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/linkedin-profile": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/linkedin-skills": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/linkedin-strategy": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/litreview": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/llm-cost-optimizer": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/llm-wiki": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/local-seo-manager": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/loop-library": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/ma-playbook": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/markdown-html-orchestrator": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/market-research": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/marketing-context": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/marketing-demand-acquisition": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/marketing-ideas": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/marketing-ops": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/marketing-psychology": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/marketing-skills": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/marketing-strategy-pmm": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/mcp-oauth-triage": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/mcp-server-builder": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/md-document": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/md-review": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/md-slides": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/mdr-745-specialist": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/meeting-analyzer": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/meetings": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/memory-engineering": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/memory-review": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/memory-status": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/merge": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/meta-research": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/migrate": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/migration-architect": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/minimalist": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/monorepo-navigator": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/month-end-close": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/ms365-tenant-manager": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/named-persona-adversarial-review": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/notebooklm": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/observability-designer": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/office-hours": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/onboard": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/onboarding-cro": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/org-health-diagnostic": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/page-cro": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/paid-ads": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/partnerships-architect": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/passive-deal-screener": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/patent": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/paywall-upgrade-cro": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/performance-profiler": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/pm-skills": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/popup-cro": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/post-mortem": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/postmortem": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/pr-review-expert": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/pricing-strategist": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/pricing-strategy": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/process-mapper": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/procurement-optimizer": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/product-analytics": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/product-discovery": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/product-manager-toolkit": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/product-research": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/product-skills": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/product-strategist": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/programmatic-seo": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/promote": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/prompt-engineer-toolkit": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/prompt-governance": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/pulse": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/pw": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/pw-init": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/pw-review": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/qms-audit-expert": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/quality-documentation-manager": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/quality-manager-qmr": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/quality-manager-qms-iso13485": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/ra-qm-skills": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/rag-architect": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/red-green-proof": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/red-team": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/referral-program": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/reflect": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/regulatory-affairs-head": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/remember": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/report": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/research": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/research-finance": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/research-ops-skills": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/research-summarizer": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/revenue-operations": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/rfp-responder": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/risk-management-specialist": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/roadmap-communicator": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/roast": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/run-without-you": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/runbook-generator": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/saas-metrics-coach": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/saas-scaffolder": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/sales-engineer": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/scenario-war-room": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/schema-markup": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/scrum-master": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/secrets-vault-manager": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/security-guidance": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/security-pen-testing": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/self-eval": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/self-improving-agent": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/senior-architect": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/senior-backend": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/senior-computer-vision": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/senior-data-engineer": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/senior-data-scientist": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/senior-devops": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/senior-frontend": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/senior-fullstack": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/senior-ml-engineer": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/senior-pm": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/senior-prompt-engineer": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/senior-qa": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/senior-secops": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/senior-security": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/seo-audit": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/session-handoff": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/setup": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/ship-gate": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/signup-flow-cro": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/site-architecture": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/skill-retro": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/skill-security-auditor": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/skill-tester": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/skillopt-sleep": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/slo-architect": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/snowflake-development": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/soc2-audit-prep": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/soc2-compliance": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/social-content": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/social-media-analyzer": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/social-media-manager": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/spawn": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/spec-driven-workflow": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/spec-to-repo": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/spinning-up-deep-rl": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/sql-database-assistant": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/stage-launch": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/statistical-analyst": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/stock-analysis": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/strategic-alignment": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/stress-test": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/strict-api": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/stripe-integration-expert": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/swedish-mentor": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/syllabus": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/tc-tracker": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/tdd-guide": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/team-communications": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/tech-debt-tracker": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/tech-stack-evaluator": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/terraform-patterns": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/testrail": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/threat-detection": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/ui-design-system": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/universal-scraping-architect": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/ux-researcher-designer": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/vendor-management": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/video-content-strategist": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/vpe-advisor": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/vpe-review": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "claude-skills/webinar-marketing": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/weekly-review": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/workflow-builder": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/wrap-up": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/write-a-skill": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/x-twitter-growth": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/youtube-full": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "claude-skills/zero-hallucination-coder": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/accessibility": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/agent-architecture-audit": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/agent-eval": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "ecc/agent-harness-construction": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/agent-introspection-debugging": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/agent-payment-x402": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/agent-runtime-gateway-smoke-test": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/agent-security-hardening": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/agent-self-evaluation": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/agent-sort": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/agentic-engineering": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/agentic-os": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/ai-first-engineering": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/ai-regression-testing": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/android-clean-architecture": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/angular-developer": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/api-connector-builder": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/api-design": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/architecture-decision-records": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/article-writing": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/automation-audit-ops": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/autonomous-agent-harness": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/autonomous-loops": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/backend-patterns": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/benchmark": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "ecc/benchmark-methodology": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "ecc/benchmark-optimization-loop": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "ecc/bengali-nlp": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/blender-motion-state-inspection": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/blueprint": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/brand-discovery": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/brand-voice": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/brownfield-retrospective": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/browser-qa": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/bun-runtime": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/canary-watch": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/carrier-relationship-management": {
+      "effective": "MIT",
+      "declared": "Apache-2.0"
+    },
+    "ecc/change-impact": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/cisco-ios-patterns": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/ck": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/claude-devfleet": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/click-path-audit": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/clickhouse-io": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/code-tour": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/codebase-onboarding": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/codehealth-mcp": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/coding-standards": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/competitive-platform-analysis": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/competitive-report-structure": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/compose-multiplatform-patterns": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/config-gc": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/configure-ecc": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/connections-optimizer": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/content-engine": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/content-hash-cache-pattern": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/context-and-decisions": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/context-budget": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/continuous-agent-loop": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/continuous-learning": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/continuous-learning-v2": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/contract-first": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/conventional-commit-review": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/cost-aware-llm-pipeline": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/cost-tracking": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/council": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/council-multi-model": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/counterparty-channel-discipline": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/cpp-coding-standards": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/cpp-testing": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/crosspost": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/csharp-testing": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/customer-billing-ops": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/customs-trade-compliance": {
+      "effective": "MIT",
+      "declared": "Apache-2.0"
+    },
+    "ecc/dart-flutter-patterns": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/dashboard-builder": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/data-scraper-agent": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/data-throughput-accelerator": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "ecc/database-migrations": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/deep-research": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/deepseek-harness-setup": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/defi-amm-security": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/delivery-gate": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/deployment-patterns": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/design-system": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/dev-team": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/django-celery": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/django-patterns": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/django-security": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/django-tdd": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/django-verification": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/dmux-workflows": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/docker-patterns": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/docs-governance": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/documentation-lookup": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/dotnet-patterns": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/dynamic-workflow-mode": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/e2e-testing": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/ecc-guide": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/ecc-recipes": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/ecc-tools-cost-audit": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/email-ops": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/energy-procurement": {
+      "effective": "MIT",
+      "declared": "Apache-2.0"
+    },
+    "ecc/enterprise-agent-ops": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/error-handling": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/esign-field-placement": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/eval-harness": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/evm-token-decimals": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/exa-search": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/fal-ai-media": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/fastapi-patterns": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/finance-billing-ops": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/flox-environments": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/flutter-dart-code-review": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/foundation-models-on-device": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/frontend-a11y": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/frontend-design-direction": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/frontend-patterns": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/frontend-slides": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/fsharp-testing": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/gan-style-harness": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/gateguard": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/generating-python-installer": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/git-workflow": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/github-ops": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/golang-patterns": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/golang-testing": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/google-workspace-ops": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/growth-log": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/healthcare-cdss-patterns": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/healthcare-emr-patterns": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/healthcare-eval-harness": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/healthcare-phi-compliance": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/hermes-imports": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/hexagonal-architecture": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/hipaa-compliance": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/homelab-network-readiness": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/homelab-network-setup": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/homelab-pihole-dns": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/homelab-vlan-segmentation": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/homelab-wireguard-vpn": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/hookify-rules": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/i18n-sync": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/inherit-legacy-style": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/intent-driven-development": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/inventory-demand-planning": {
+      "effective": "MIT",
+      "declared": "Apache-2.0"
+    },
+    "ecc/investor-materials": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/investor-outreach": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/ios-icon-gen": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/issue-review": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/iterative-retrieval": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/ito-baskets": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/ito-compute": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/ito-inference": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/ito-training": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/java-coding-standards": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/jira-integration": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/jpa-patterns": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/knowledge-ops": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/kotlin-coroutines-flows": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/kotlin-exposed-patterns": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/kotlin-ktor-patterns": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/kotlin-patterns": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/kotlin-testing": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/kubernetes-patterns": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/laravel-patterns": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/laravel-plugin-discovery": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/laravel-security": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/laravel-tdd": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/laravel-verification": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/latency-critical-systems": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "ecc/lead-intelligence": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/liquid-glass-design": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/living-docs-governance": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/llm-trading-agent-security": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/logistics-exception-management": {
+      "effective": "MIT",
+      "declared": "Apache-2.0"
+    },
+    "ecc/loop-design-check": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/mailtrap-email-integration": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/make-interfaces-feel-better": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/manim-video": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/market-research": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/marketing-campaign": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/master-agreement-generator": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/mcp-dependency-review": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/mcp-server-patterns": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/messages-ops": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/ml-adoption-playbook": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/mle-workflow": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "ecc/module-governance": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/module-regression": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/motion-advanced": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/motion-foundations": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/motion-patterns": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/mybatis-patterns": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/mysql-patterns": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/nanoclaw-repl": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/nasiko-control-plane": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/nestjs-patterns": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/netmiko-ssh-automation": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/network-bgp-diagnostics": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/network-config-validation": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/network-interface-health": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/nextjs-turbopack": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/nodejs-keccak256": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/nutrient-document-processing": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/nuxt4-patterns": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/openclaw-persona-forge": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/opensource-pipeline": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/operator-approval-loop": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/orch-add-feature": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/orch-build-mvp": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/orch-change-feature": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/orch-fix-defect": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/orch-pipeline": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/orch-refine-code": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/osint-investigation": {
+      "effective": "MIT",
+      "declared": "CC-BY-SA-4.0"
+    },
+    "ecc/parallel-execution-optimizer": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "ecc/perl-patterns": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/perl-security": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/perl-testing": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/plan-canvas": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/plan-orchestrate": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/plankton-code-quality": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/postgres-patterns": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/prediction-market-oracle-research": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/prediction-market-risk-review": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/prisma-patterns": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/product-capability": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/product-lens": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/production-audit": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/production-scheduling": {
+      "effective": "MIT",
+      "declared": "Apache-2.0"
+    },
+    "ecc/project-flow-ops": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/prompt-caching-strategy": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/prompt-optimizer": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/python-patterns": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/python-testing": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/pytorch-patterns": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/quality-nonconformance": {
+      "effective": "MIT",
+      "declared": "Apache-2.0"
+    },
+    "ecc/quarkus-patterns": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/quarkus-security": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/quarkus-tdd": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/quarkus-verification": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/rails-patterns": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/ralphinho-rfc-pipeline": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/react-native-patterns": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/react-patterns": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/react-performance": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/react-testing": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/recsys-pipeline-architect": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/recursive-decision-ledger": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "ecc/redis-patterns": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/regex-vs-llm-structured-text": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/remotion-video-creation": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/repo-scan": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/research-ops": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/returns-reverse-logistics": {
+      "effective": "MIT",
+      "declared": "Apache-2.0"
+    },
+    "ecc/rules-distill": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/rust-patterns": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/rust-testing": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/safety-guard": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/santa-method": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/scientific-db-pubmed-database": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/scientific-db-uspto-database": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/scientific-pkg-gget": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/scientific-thinking-literature-review": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/scientific-thinking-scholar-evaluation": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/search-first": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/security-bounty-hunter": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/security-review": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/security-scan": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/seo": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/skill-comply": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/skill-host-compat": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/skill-scout": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/skill-stocktake": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/social-graph-ranker": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/social-publisher": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/springboot-patterns": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/springboot-security": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/springboot-tdd": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/springboot-verification": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/story-lifecycle": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/strategic-compact": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/swift-actor-persistence": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/swift-concurrency-6-2": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/swift-protocol-di-testing": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/swiftui-patterns": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/taste": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/taste-application": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/taste-distillation": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/tasteforge-video": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/tdd-workflow": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/team-agent-orchestration": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/team-builder": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/terminal-opener": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/terminal-ops": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/test-collaboration": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/tinystruct-patterns": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/token-budget-advisor": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/token-card": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/typescript-patterns": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/ui-demo": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/ui-to-vue": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/uncloud": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/unified-memory": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/unified-notifications-ops": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/verification-loop": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "ecc/video-editing": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/videodb": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/visa-doc-translate": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/vite-patterns": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/vue-patterns": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/windows-desktop-e2e": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/workspace-surface-audit": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "ecc/x-api": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/ab-testing": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/ad-creative": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/ads": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/ai-seo": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/analytics": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/aso": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/attribution": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/churn-prevention": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/co-marketing": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/cold-email": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/community-marketing": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/competitor-profiling": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/competitors": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/content-strategy": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/conversion-tracking": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/copy-editing": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/copywriting": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/cro": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/customer-research": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/directory-submissions": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/emails": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/events": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/free-tools": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/image": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/influencer-marketing": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/launch": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/lead-magnets": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/link-building": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/marketing-council": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/marketing-ideas": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/marketing-loops": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/marketing-plan": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/marketing-psychology": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/offers": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/onboarding": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/paywalls": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/popups": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/pricing": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/product-marketing": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/programmatic-seo": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/prospecting": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/public-relations": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/referrals": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/reverse-engineer-marketing": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/revops": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/sales-enablement": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/schema": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/seo-audit": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/signup": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/site-architecture": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/sms": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/social": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "marketing/video": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "pm-setup/competitive-analysis": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "pm-setup/launch-checklist": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "pm-setup/metrics-definer": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "pm-setup/prd-writer": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "pm-setup/sprint-planner": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "pm-setup/user-research": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "pm-skills/acquisition-channel-advisor": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/agent-orchestration-advisor": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/ai-shaped-readiness-advisor": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/altitude-horizon-framework": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/ansoff-matrix": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/autonomous-investigation": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/battle-card-builder": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/business-health-diagnostic": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/company-intel": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/company-research": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/competitive-analysis-process": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/competitive-intel-watch": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/competitive-research-snapshot": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/context-engineering-advisor": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/customer-journey-map": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/customer-journey-mapping-workshop": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/derisk-measurement-advisor": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/director-readiness-advisor": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/discovery-interview-prep": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/discovery-process": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/eol-checklist": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/eol-internal-enablement": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/eol-message": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/eol-process": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/eol-readiness-advisor": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/eol-stakeholder-sequence": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/epic-breakdown-advisor": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/epic-hypothesis": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/executive-onboarding-playbook": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/feature-investment-advisor": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/finance-based-pricing-advisor": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/finance-metrics-quickref": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/incoming-request-advisor": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/intel-discipline-advisor": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/intelligence-collection-disciplines": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/jobs-to-be-done": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/lean-ux-canvas": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/lifecycle-play-advisor": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/market-landscape-scan": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/opportunity-solution-tree": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/organic-growth-advisor": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/pestel-analysis": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/pestel-delta-monitor": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/pm-skill-creator": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/pol-probe": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/pol-probe-advisor": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/porters-five-forces": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/positioning-statement": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/positioning-workshop": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/prd-development": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/press-release": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/pricing-packaging-tracker": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/prioritization-advisor": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/problem-framing-canvas": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/problem-statement": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/product-lifecycle-plays": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/product-sense-interview-answer": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/product-strategy-session": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/proto-persona": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/recommendation-canvas": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/roadmap-planning": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/saas-economics-efficiency-metrics": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/saas-revenue-growth-metrics": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/skill-authoring-workflow": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/stakeholder-engagement-advisor": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/stakeholder-identification": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/stakeholder-mapping": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/storyboard": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/swot-analysis": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/tam-sam-som-calculator": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/user-story": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/user-story-mapping": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/user-story-mapping-workshop": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/user-story-splitting": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/voice-of-customer-miner": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/vp-cpo-readiness-advisor": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "pm-skills/workshop-facilitation": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": ""
+    },
+    "scientific/13c-metabolic-flux": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/adaptyv": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/aeon": {
+      "effective": "MIT",
+      "declared": "BSD-3-Clause license"
+    },
+    "scientific/alphagenome": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/analytical-method-validation": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/anndata": {
+      "effective": "MIT",
+      "declared": "BSD-3-Clause license"
+    },
+    "scientific/arbor": {
+      "effective": "MIT",
+      "declared": "MIT license"
+    },
+    "scientific/arboreto": {
+      "effective": "MIT",
+      "declared": "BSD-3-Clause license"
+    },
+    "scientific/astropy": {
+      "effective": "MIT",
+      "declared": "BSD-3-Clause license"
+    },
+    "scientific/autoskill": {
+      "effective": "MIT",
+      "declared": "MIT license"
+    },
+    "scientific/benchling-integration": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/bgpt-paper-search": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/bids": {
+      "effective": "MIT",
+      "declared": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "scientific/biopython": {
+      "effective": "MIT",
+      "declared": "Biopython License Agreement"
+    },
+    "scientific/bioservices": {
+      "effective": "MIT",
+      "declared": "GPLv3 license"
+    },
+    "scientific/bulk-rnaseq": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/cantera": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/cellprofiler": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/cellxgene-census": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/cirq": {
+      "effective": "MIT",
+      "declared": "Apache-2.0 license"
+    },
+    "scientific/citation-management": {
+      "effective": "MIT",
+      "declared": "MIT License"
+    },
+    "scientific/clinical-decision-support": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/clinical-reports": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/cobrapy": {
+      "effective": "MIT",
+      "declared": "GPL-2.0 license"
+    },
+    "scientific/consciousness-council": {
+      "effective": "MIT",
+      "declared": "MIT license"
+    },
+    "scientific/dask": {
+      "effective": "MIT",
+      "declared": "BSD-3-Clause license"
+    },
+    "scientific/database-lookup": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/datalad": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/datamol": {
+      "effective": "MIT",
+      "declared": "Apache-2.0 license"
+    },
+    "scientific/deepchem": {
+      "effective": "MIT",
+      "declared": "MIT license"
+    },
+    "scientific/deepspot-m": {
+      "effective": "PolyForm-Noncommercial-1.0.0",
+      "declared": "PolyForm-Noncommercial-1.0.0"
+    },
+    "scientific/deeptools": {
+      "effective": "MIT",
+      "declared": "BSD license"
+    },
+    "scientific/depmap": {
+      "effective": "MIT",
+      "declared": "CC-BY-4.0"
+    },
+    "scientific/dhdna-profiler": {
+      "effective": "MIT",
+      "declared": "MIT license"
+    },
+    "scientific/diffdock": {
+      "effective": "MIT",
+      "declared": "MIT license"
+    },
+    "scientific/dnanexus-integration": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/esm": {
+      "effective": "MIT",
+      "declared": "MIT license"
+    },
+    "scientific/etetoolkit": {
+      "effective": "MIT",
+      "declared": "GPL-3.0-or-later"
+    },
+    "scientific/exa-search": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/experimental-design": {
+      "effective": "MIT",
+      "declared": "MIT license"
+    },
+    "scientific/exploratory-data-analysis": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/fictiv": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/flowio": {
+      "effective": "MIT",
+      "declared": "BSD-3-Clause license"
+    },
+    "scientific/flowkit": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/fluidsim": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/folklore-variant-evidence": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/generate-image": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/geniml": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/genomic-coordinates": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/genomic-intelligence": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/geomaster": {
+      "effective": "MIT",
+      "declared": "MIT License"
+    },
+    "scientific/geopandas": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/get-available-resources": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/gget": {
+      "effective": "MIT",
+      "declared": "BSD-2-Clause license"
+    },
+    "scientific/ginkgo-cloud-lab": {
+      "effective": "MIT",
+      "declared": "MIT license"
+    },
+    "scientific/glycoengineering": {
+      "effective": "MIT",
+      "declared": "Unknown"
+    },
+    "scientific/gtars": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/histolab": {
+      "effective": "MIT",
+      "declared": "Apache-2.0 license"
+    },
+    "scientific/hugging-science": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "scientific/hypogenic": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/hypothesis-generation": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/imaging-data-commons": {
+      "effective": "MIT",
+      "declared": "This skill is provided under the MIT License. IDC data itself has individual licensing (mostly CC-BY, some CC-NC) that must be respected when using the data."
+    },
+    "scientific/infographics": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "scientific/iso-standards-readiness": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/lab-hardware-cad": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/labarchive-integration": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/lamindb": {
+      "effective": "MIT",
+      "declared": "Apache-2.0 license"
+    },
+    "scientific/latchbio-integration": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/latex-posters": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "scientific/liteparse": {
+      "effective": "MIT",
+      "declared": "Apache-2.0"
+    },
+    "scientific/literature-review": {
+      "effective": "MIT",
+      "declared": "MIT license"
+    },
+    "scientific/mageck": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/marine-carbonate-chemistry": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/markdown-mermaid-writing": {
+      "effective": "MIT",
+      "declared": "Apache-2.0"
+    },
+    "scientific/market-research-reports": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/markitdown": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/matchms": {
+      "effective": "MIT",
+      "declared": "Apache-2.0"
+    },
+    "scientific/matlab": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/matplotlib": {
+      "effective": "MIT",
+      "declared": "https://github.com/matplotlib/matplotlib/tree/main/LICENSE"
+    },
+    "scientific/medchem": {
+      "effective": "MIT",
+      "declared": "Apache-2.0 license"
+    },
+    "scientific/modal": {
+      "effective": "MIT",
+      "declared": "Apache-2.0"
+    },
+    "scientific/molecular-dynamics": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/molfeat": {
+      "effective": "MIT",
+      "declared": "Apache-2.0 license"
+    },
+    "scientific/ncats-arax": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/networkx": {
+      "effective": "MIT",
+      "declared": "3-clause BSD license"
+    },
+    "scientific/neurokit2": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/neuropixels-analysis": {
+      "effective": "MIT",
+      "declared": "MIT license"
+    },
+    "scientific/nextflow": {
+      "effective": "MIT",
+      "declared": "Apache-2.0"
+    },
+    "scientific/nmrglue": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/nwb-conversion": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/omero-integration": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/onekgpd": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/ontology-term-resolution": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/open-notebook": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/openpiv": {
+      "effective": "MIT",
+      "declared": "BSD-3-Clause"
+    },
+    "scientific/opentrons-integration": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/optimize-for-gpu": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/pacsomatic": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/paper-lookup": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/paperclip": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/paperzilla": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/parallel-web": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/pathml": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/pathogen-variant-surveillance": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/pathway-enrichment": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/peer-review": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/pennylane": {
+      "effective": "MIT",
+      "declared": "Apache-2.0 license"
+    },
+    "scientific/phylogenetics": {
+      "effective": "MIT",
+      "declared": "Unknown"
+    },
+    "scientific/pi-agent": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/pkpd-modeling": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/polars": {
+      "effective": "MIT",
+      "declared": "https://github.com/pola-rs/polars/blob/main/LICENSE"
+    },
+    "scientific/polars-bio": {
+      "effective": "MIT",
+      "declared": "Apache-2.0"
+    },
+    "scientific/pptx-posters": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/primekg": {
+      "effective": "MIT",
+      "declared": "Unknown"
+    },
+    "scientific/primer-design": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/protocolsio-integration": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/pufferlib": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/pybamm": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/pycalphad": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/pydeseq2": {
+      "effective": "MIT",
+      "declared": "MIT license"
+    },
+    "scientific/pydicom": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/pyhealth": {
+      "effective": "MIT",
+      "declared": ""
+    },
+    "scientific/pylabrobot": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/pymatgen": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/pymc": {
+      "effective": "MIT",
+      "declared": "Apache License, Version 2.0"
+    },
+    "scientific/pymoo": {
+      "effective": "MIT",
+      "declared": "Apache-2.0 license"
+    },
+    "scientific/pyopenms": {
+      "effective": "MIT",
+      "declared": "3 clause BSD license"
+    },
+    "scientific/pysam": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/pytdc": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/pytorch-lightning": {
+      "effective": "MIT",
+      "declared": "Apache-2.0 license"
+    },
+    "scientific/pyzotero": {
+      "effective": "MIT",
+      "declared": "MIT License"
+    },
+    "scientific/qiime2-amplicon": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/qiskit": {
+      "effective": "MIT",
+      "declared": "Apache-2.0"
+    },
+    "scientific/qutip": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/rdkit": {
+      "effective": "MIT",
+      "declared": "BSD-3-Clause license"
+    },
+    "scientific/relion": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/relsa-severity-assessment": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/research-grants": {
+      "effective": "MIT",
+      "declared": "MIT license"
+    },
+    "scientific/research-lookup": {
+      "effective": "MIT",
+      "declared": "MIT license"
+    },
+    "scientific/rowan": {
+      "effective": "MIT",
+      "declared": "Proprietary (API key required)"
+    },
+    "scientific/scanpy": {
+      "effective": "MIT",
+      "declared": "BSD-3-Clause"
+    },
+    "scientific/scholar-evaluation": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/scientific-brainstorming": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/scientific-critical-thinking": {
+      "effective": "MIT",
+      "declared": "MIT license"
+    },
+    "scientific/scientific-schematics": {
+      "effective": "MIT",
+      "declared": "MIT license"
+    },
+    "scientific/scientific-slides": {
+      "effective": "MIT",
+      "declared": "MIT license"
+    },
+    "scientific/scientific-visualization": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/scientific-writing": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/scikit-bio": {
+      "effective": "MIT",
+      "declared": "BSD-3-Clause license"
+    },
+    "scientific/scikit-learn": {
+      "effective": "MIT",
+      "declared": "BSD-3-Clause license"
+    },
+    "scientific/scikit-survival": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/scvelo": {
+      "effective": "MIT",
+      "declared": "BSD-3-Clause"
+    },
+    "scientific/scvi-tools": {
+      "effective": "MIT",
+      "declared": "BSD-3-Clause license"
+    },
+    "scientific/seaborn": {
+      "effective": "MIT",
+      "declared": "BSD-3-Clause license"
+    },
+    "scientific/shap": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/simpy": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/stable-baselines3": {
+      "effective": "MIT",
+      "declared": "MIT license"
+    },
+    "scientific/statistical-analysis": {
+      "effective": "MIT",
+      "declared": "MIT license"
+    },
+    "scientific/statistical-power": {
+      "effective": "MIT",
+      "declared": "MIT license"
+    },
+    "scientific/statsmodels": {
+      "effective": "MIT",
+      "declared": "BSD-3-Clause license"
+    },
+    "scientific/sympy": {
+      "effective": "MIT",
+      "declared": "https://github.com/sympy/sympy/blob/master/LICENSE"
+    },
+    "scientific/tamarind": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/tellurium": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/tiledbvcf": {
+      "effective": "MIT",
+      "declared": "MIT license"
+    },
+    "scientific/timesfm-forecasting": {
+      "effective": "MIT",
+      "declared": "Apache-2.0 license"
+    },
+    "scientific/torch-geometric": {
+      "effective": "MIT",
+      "declared": "MIT license"
+    },
+    "scientific/torchdrug": {
+      "effective": "MIT",
+      "declared": "Apache-2.0 license"
+    },
+    "scientific/transformers": {
+      "effective": "MIT",
+      "declared": "Apache-2.0 license"
+    },
+    "scientific/treatment-plans": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/umap-learn": {
+      "effective": "MIT",
+      "declared": "BSD-3-Clause license"
+    },
+    "scientific/uncertainty-and-units": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/usfiscaldata": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/vaex": {
+      "effective": "MIT",
+      "declared": "MIT license"
+    },
+    "scientific/venue-templates": {
+      "effective": "MIT",
+      "declared": "MIT license"
+    },
+    "scientific/waypoint-bio": {
+      "effective": "MIT",
+      "declared": "MIT"
+    },
+    "scientific/what-if-oracle": {
+      "effective": "CC-BY-NC-SA-4.0",
+      "declared": "CC BY-NC-SA 4.0"
+    },
+    "scientific/zarr-python": {
+      "effective": "MIT",
+      "declared": "MIT license"
+    }
+  }
+}

@@ -1,0 +1,3221 @@
+{
+  "schema_version": 1,
+  "physical_files": 183,
+  "agents": [
+    {
+      "id": "agent-b2dab1fa629771b9",
+      "sha256": "b2dab1fa629771b97c7f315a536c153fa672391c75dc89814c2681ad7e651d3b",
+      "kind": "template",
+      "name": "Agent Name",
+      "description": "One paragraph describing what this agent does, who it's for, and when to activate it.",
+      "tools": "Read, Write, Bash, Grep, Glob",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/agents/personas/TEMPLATE.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-1ef7e94a58555016",
+      "sha256": "1ef7e94a585550163da187e9e7eaf989e35a61c44a264cdb284ddd9c996b5d78",
+      "kind": "documentation",
+      "name": "CLAUDE",
+      "description": "This guide provides comprehensive instructions for creating **cs-* prefixed agents** that seamlessly integrate with the 346 production skills in this repository (count derived via `scripts/derive_counters.py`).",
+      "tools": "",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/agents/CLAUDE.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-109906e23c8da5f5",
+      "sha256": "109906e23c8da5f510f2511aca248e4646c1fa88c3d414374161db2a0316511d",
+      "kind": "agent_instructions",
+      "name": "Content Strategist",
+      "description": "Builds content engines that rank, convert, and compound. Thinks in systems — topic clusters, not individual posts. Every piece earns its place or gets killed. Use when content needs to behave like a system rather than a stream of posts — e.g., designing a topic-cluster plan to grow organic traffic from zero, or auditing an editorial calendar and killing pieces that don't convert after 90 days. (For single-asset, on-brand copy production, see cs-content-creator.)",
+      "tools": "Read, Write, Bash, Grep, Glob",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/agents/personas/content-strategist.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-16d1e0528d047ede",
+      "sha256": "16d1e0528d047ede9b9b92d1d2ec9dfbb59ad088b73d244573a2ebf853c29b14",
+      "kind": "agent_instructions",
+      "name": "DevOps Engineer",
+      "description": "Builds infrastructure that scales without babysitting. Automates everything worth automating. Monitors before it breaks. Treats clicking in consoles as a production incident waiting to happen. Use when infrastructure or delivery needs automation and observability — e.g., designing a CI/CD pipeline for a small team that deploys daily, or adding monitoring, alerts, and runbooks before a launch.",
+      "tools": "Read, Write, Bash, Grep, Glob",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/agents/personas/devops-engineer.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-ecf6b28ffad618f3",
+      "sha256": "ecf6b28ffad618f3adcd7cc7b5407180c3e7f358ba16582bd70762002433bd2d",
+      "kind": "agent_instructions",
+      "name": "Finance Lead",
+      "description": "Startup CFO who builds models that survive contact with reality. Handles fundraising, unit economics, pricing, burn rate, and board reporting. Speaks fluent spreadsheet but translates to English for founders who'd rather build product. Use when a money question needs a model, not a vibe — e.g., building an 18-month runway plan with three scenarios, or pressure-testing unit economics and pricing before a fundraise. (For DCF and SaaS-metrics tooling, see cs-financial-analyst.)",
+      "tools": "Read, Write, Bash, Grep, Glob",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/agents/personas/finance-lead.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-25b74225e365440b",
+      "sha256": "25b74225e365440b524b7233a2eb28ec3110ecf40d6a1f06f62305608acdf949",
+      "kind": "agent_instructions",
+      "name": "Growth Marketer",
+      "description": "Growth marketing specialist for bootstrapped startups and indie hackers. Builds content engines, optimizes funnels, runs launch sequences, and finds scalable acquisition channels — all on a budget that makes enterprise marketers cry. Use when growth has to come before budget — e.g., planning a Product Hunt launch sequence, or choosing which organic channel (SEO, content, community) to invest in first at zero ad spend. (For funnel diagnostics with paid budget, see cs-demand-gen-specialist.)",
+      "tools": "Read, Write, Bash, Grep, Glob",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/agents/personas/growth-marketer.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-ccf05429f5914768",
+      "sha256": "ccf05429f591476806056b6f0ac50d562f6185abc73522062d802265bed1db0e",
+      "kind": "agent_instructions",
+      "name": "Product Manager",
+      "description": "Ships outcomes, not features. Writes specs engineers actually read. Prioritizes ruthlessly. Kills darlings when the data says so. Operates at the intersection of user needs, business goals, and engineering reality. Use when product work needs ruthless prioritization and a success metric — e.g., turning vague stakeholder asks into a 2-page spec, or deciding which of three competing roadmap bets to fund this quarter. (For framework-heavy RICE/PRD tooling, see cs-product-manager.)",
+      "tools": "Read, Write, Bash, Grep, Glob",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/agents/personas/product-manager.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-b5c0af2536ce754c",
+      "sha256": "b5c0af2536ce754ce06a85e45143ad8c876f2ee72f0cf4d59ba1985010a7428d",
+      "kind": "documentation",
+      "name": "README",
+      "description": "Pre-configured agent personas with curated skill loadouts, workflows, and distinct personalities.",
+      "tools": "",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/agents/personas/README.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-19eaa5cb6fb1012b",
+      "sha256": "19eaa5cb6fb1012b299a1a334b94d2a000ad8c3b619590d2f98615b62ac100f8",
+      "kind": "agent_instructions",
+      "name": "Solo Founder",
+      "description": "Your co-founder who doesn't exist yet. Covers product, engineering, marketing, and strategy for one-person startups — because nobody's stopping you from making bad decisions and somebody should. Use when a solo founder or indie hacker needs a cross-functional thinking partner — e.g., deciding what to cut from an MVP to ship this month, or choosing between building one more feature and talking to ten users.",
+      "tools": "Read, Write, Bash, Grep, Glob",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/agents/personas/solo-founder.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-1254f87c48c83217",
+      "sha256": "1254f87c48c832173fd6ad64c19d802db94c3a929b4c6daca6f5c71930084901",
+      "kind": "agent_instructions",
+      "name": "Startup CTO",
+      "description": "Technical co-founder who's been through two startups and learned what actually matters. Makes architecture decisions, selects tech stacks, builds engineering culture, and prepares for technical due diligence — all while shipping fast with a small team. Use when an early-stage team needs pragmatic, ship-first technical leadership — e.g., picking a boring-but-fast stack for an MVP with two engineers, or prepping architecture answers for investor due diligence. (For company-scale CTO strategy, see cs-cto-advisor.)",
+      "tools": "Read, Write, Bash, Grep, Glob",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/agents/personas/startup-cto.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-a07ba6aa5dbc8c87",
+      "sha256": "a07ba6aa5dbc8c87a8a829ba0619810fba6dec37c240231739ff6da31e74288d",
+      "kind": "agent_instructions",
+      "name": "abstract_bilingual_agent",
+      "description": "Writes and translates abstracts in English and the target language to journal format standards",
+      "tools": "",
+      "source_licenses": {
+        "academic": "CC-BY-NC-4.0"
+      },
+      "paths": [
+        "library/collections/academic/academic-paper/agents/abstract_bilingual_agent.md"
+      ],
+      "owner_skills": [
+        "academic/academic-paper"
+      ],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-54c855027859dd9c",
+      "sha256": "54c855027859dd9c4f3db59e3eb89d5ef31e14260b52b90f5bd17d2552266b58",
+      "kind": "agent_instructions",
+      "name": "argument_builder_agent",
+      "description": "Constructs the papers core argument and logical reasoning structure",
+      "tools": "",
+      "source_licenses": {
+        "academic": "CC-BY-NC-4.0"
+      },
+      "paths": [
+        "library/collections/academic/academic-paper/agents/argument_builder_agent.md"
+      ],
+      "owner_skills": [
+        "academic/academic-paper"
+      ],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-7d8f93dda16738b1",
+      "sha256": "7d8f93dda16738b1fd66127148003222a40dc7191918a0c05cf059653ec82dea",
+      "kind": "agent_instructions",
+      "name": "bibliography_agent",
+      "description": "Systematic literature search and curation; identifies, annotates, and formats sources in APA 7.0",
+      "tools": "",
+      "source_licenses": {
+        "academic": "CC-BY-NC-4.0"
+      },
+      "paths": [
+        "library/collections/academic/deep-research/agents/bibliography_agent.md"
+      ],
+      "owner_skills": [
+        "academic/deep-research"
+      ],
+      "referenced_by": [
+        "academic/deep-research"
+      ],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-c998ec3371487e42",
+      "sha256": "c998ec3371487e42f2aadc3f86bf919c528715fb8989de8255cd7e42b0a4881e",
+      "kind": "agent_instructions",
+      "name": "citation_compliance_agent",
+      "description": "Verifies citations against the target journals format requirements and flags non-compliant entries",
+      "tools": "",
+      "source_licenses": {
+        "academic": "CC-BY-NC-4.0"
+      },
+      "paths": [
+        "library/collections/academic/academic-paper/agents/citation_compliance_agent.md"
+      ],
+      "owner_skills": [
+        "academic/academic-paper"
+      ],
+      "referenced_by": [
+        "academic/academic-paper"
+      ],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-ae72a7f464a372ed",
+      "sha256": "ae72a7f464a372ed507e3e36f8bd4808dd9d7f1aa1e47e5313eaaea6f730df41",
+      "kind": "agent_instructions",
+      "name": "claim_ref_alignment_audit_agent",
+      "description": "L3 claim-faithfulness audit — judges every cited claim against the retrieved reference text, surfaces uncited assertions and constraint violations, and feeds the Stage 4→5 formatter hard gate",
+      "tools": "",
+      "source_licenses": {
+        "academic": "CC-BY-NC-4.0"
+      },
+      "paths": [
+        "library/collections/academic/academic-pipeline/agents/claim_ref_alignment_audit_agent.md"
+      ],
+      "owner_skills": [
+        "academic/academic-pipeline"
+      ],
+      "referenced_by": [
+        "academic/academic-pipeline"
+      ],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-cb7b351696e5f85e",
+      "sha256": "cb7b351696e5f85e80255f4478db047fa0f8819dc9a2b290a09bd836246fc641",
+      "kind": "agent_instructions",
+      "name": "collaboration_depth_agent",
+      "description": "Post-hoc observer scoring user-AI collaboration depth against the canonical rubric; advisory-only, never blocks pipeline progression",
+      "tools": "",
+      "source_licenses": {
+        "academic": "CC-BY-NC-4.0"
+      },
+      "paths": [
+        "library/collections/academic/academic-pipeline/agents/collaboration_depth_agent.md"
+      ],
+      "owner_skills": [
+        "academic/academic-pipeline"
+      ],
+      "referenced_by": [
+        "academic/academic-pipeline"
+      ],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-cf51ff7a3bf3fb40",
+      "sha256": "cf51ff7a3bf3fb40fa072e465974fdd934c4922392f57cb6609f24bd4cbef0b9",
+      "kind": "agent_instructions",
+      "name": "compliance_agent",
+      "description": "Runs PRISMA-trAIce + RAISE compliance checks at Stage 2.5 / 4.5 integrity gates and emits Schema 12 compliance_report",
+      "tools": "",
+      "source_licenses": {
+        "academic": "CC-BY-NC-4.0"
+      },
+      "paths": [
+        "library/collections/academic/shared/agents/compliance_agent.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-aefd6ba2b5a1cf95",
+      "sha256": "aefd6ba2b5a1cf95124d052fc6dd2eef6f26fefb85fc659c4fe681059a720148",
+      "kind": "agent_instructions",
+      "name": "cs-access-reviewer",
+      "description": "Use when someone is preparing or checking a user access review, needs to prove leavers lost their access, is chasing orphaned or ownerless service accounts, or must answer an auditor's access-control request for SOC 2, ISO 27001, PCI DSS, HIPAA or NIST 800-53. Diffs the HR roster against account exports, tests the review campaign, and maps every exception to the controls it breaks through three deterministic scripts.",
+      "tools": "",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/ra-qm-team/access-lifecycle/agents/cs-access-reviewer.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-30af97ae40d90633",
+      "sha256": "30af97ae40d90633bec0f17d55804fde9a7c8c85a26e8f4092a9dd908dd3f977",
+      "kind": "agent_instructions",
+      "name": "cs-aeo",
+      "description": "Answer Engine Optimization (AEO) specialist agent. Use when content needs to be optimized for citation by AI language models (ChatGPT, Perplexity, Claude, Gemini, Mistral) rather than for traditional search rankings. Orchestrates the aeo skill — runs E-E-A-T audit, generates optimization variants in conservative/balanced/aggressive modes, and maintains a citation tracking ledger. Industry-aware (8 industries with calibrated thresholds). Distinguishes AEO from SEO and refuses to optimize for one channel at the expense of the other. Voice — pragmatic content strategist; respects existing SEO investments; insists on real first-person evidence over fabricated authority signals.",
+      "tools": "['Read', 'Write', 'Bash', 'WebFetch', 'WebSearch']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/agents/marketing/cs-aeo.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-1dcf20de4429878e",
+      "sha256": "1dcf20de4429878efed28f653c1458d6800320d510889137ee4cc3474a41267a",
+      "kind": "agent_instructions",
+      "name": "cs-agent-deployer",
+      "description": "Phase-4 specialist for making a Claude Managed Agent run without you. Turns a graded agent into a recurring POSIX-cron scheduled deployment (optionally self-grading each firing), an event-driven curl trigger, or confirmed on-demand use, then finalizes NEXT-DIRECTIONS. Invoke for phase=run-without-you. Uses deployment_builder.py, cron_validator.py, next_directions_writer.py. Always tests with a manual run before trusting the schedule; surfaces wall-clock DST caveats. Signature question — \"What cadence, and did you fire one manual run first?\"",
+      "tools": "Read, Write, Edit, Glob, Grep, Bash, AskUserQuestion",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/agent-launcher/agents/cs-agent-deployer.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-328812443237839c",
+      "sha256": "328812443237839cf7859d1c66272d749b3f9d33b139a998f6694b6ce5f38423",
+      "kind": "agent_instructions",
+      "name": "cs-agent-grader",
+      "description": "Phase-3 specialist for the bounded grade→iterate loop when building a Claude Managed Agent. Defines a CMA outcome (required rubric, max_iterations clamped 1..20), reads each grader verdict, decides the next move (sharpen / re-run / escalate / promote), and runs held-back eval cases in parallel once a version passes. Invoke for phase=grade-iterate. Uses outcome_builder.py, verdict_reader.py, eval_scaffold.py. Never emits an unbounded loop. Signature question — \"What are the 3–5 rubric lines a good run must satisfy?\"",
+      "tools": "Read, Write, Edit, Glob, Grep, Bash, AskUserQuestion",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/agent-launcher/agents/cs-agent-grader.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-bcd165d1b4f09d93",
+      "sha256": "bcd165d1b4f09d938591d5ac6eab40724131ea61db0fa27c12a03c011031e585",
+      "kind": "agent_instructions",
+      "name": "cs-agent-interviewer",
+      "description": "Phase-1 specialist for building a Claude Managed Agent — interviews the founder through the six intake slots (job, trigger, inputs, actions, definition-of-done, recurrence) and produces a validated build sheet (primitives table + v1/v2 deferrals + eval plan) without needing an API key. Invoke for phase=interview. Uses interview_planner.py, build_sheet_builder.py, primitives_validator.py. Mocks connectors in v0 (schema-true custom tools); real MCP servers become v1 deferrals. Signature question — \"What one job — singular — should this agent do end-to-end?\"",
+      "tools": "Read, Write, Edit, Glob, Grep, Bash, AskUserQuestion",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/agent-launcher/agents/cs-agent-interviewer.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-53d6008e6fe77ae7",
+      "sha256": "53d6008e6fe77ae7a22e03c112f4b2110296edae4b83b5b905935834f4734451",
+      "kind": "agent_instructions",
+      "name": "cs-agent-launcher-orchestrator",
+      "description": "Session-goal router for building Claude Managed Agents. Reads ./my-agent/goal.json, routes deterministically to a phase skill (interview → stage-launch → grade-iterate → run-without-you → wrap-up) via goal_router.py, and compiles the goal+phase into a single-pass workflow, a bounded grade→iterate loop, or a recurring cron deployment loop via loop_compiler.py. Forks context so build sheets, payloads, and eval cases stay out of the parent thread. Never makes API calls — emits BYOK curl. Signature forcing question — \"What one job should this agent do end-to-end, and what would a good run look like?\"",
+      "tools": "Read, Write, Edit, Glob, Grep, Bash, Skill, AskUserQuestion",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/agent-launcher/agents/cs-agent-launcher-orchestrator.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-7202406b11bfee5c",
+      "sha256": "7202406b11bfee5cc76fed4e480ed5e2b8f8afebb260ea2f70487a5cec9926cc",
+      "kind": "agent_instructions",
+      "name": "cs-agile-product-owner",
+      "description": "Agile product owner agent for epic breakdown, sprint planning, backlog refinement, and INVEST-compliant user story generation. Use when preparing work for a development team — e.g., decomposing a large epic into INVEST-compliant stories with acceptance criteria, or refining a messy backlog ahead of sprint planning.",
+      "tools": "['Read', 'Write', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/agents/product/cs-agile-product-owner.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-c2bd9faa66470649",
+      "sha256": "c2bd9faa66470649a5ecd9a97cd483867adb1e283c64576752dbde30a51efbc7",
+      "kind": "agent_instructions",
+      "name": "cs-ai-act-compliance",
+      "description": "EU AI Act (Regulation (EU) 2024/1689) Article-cited compliance operator. Three decisions: AI system risk tier (Article 5 / 6+ Annex III / 50 / minimal), conformity assessment routing (Article 43 Module A vs H + Annex IV docs), per-role obligation matrix (provider/deployer/importer/distributor + GPAI). NOT executive AI strategy (see cs-caio-advisor). NOT a legal substitute (engage counsel for novel cases).",
+      "tools": "['Read', 'Write', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/compliance-os/agents/cs-ai-act-compliance.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-00200729ea38da33",
+      "sha256": "00200729ea38da33e8d3df53f01857651ddb18fc519dc7f1f56b9c08c5d13410",
+      "kind": "agent_instructions",
+      "name": "cs-aims-iso42001",
+      "description": "ISO/IEC 42001:2023 AI Management System (AIMS) implementation + internal audit operator. Three decisions: AIMS gaps against Clauses 4-10, AI risk register per Annex A + ISO 23894, Clause 9.2 internal audit plan. NOT executive AI strategy (see cs-caio-advisor). NOT EU AI Act conformity (see cs-ai-act-compliance).",
+      "tools": "['Read', 'Write', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/compliance-os/agents/cs-aims-iso42001.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-dde0a4fbbd99f2f8",
+      "sha256": "dde0a4fbbd99f2f8768df35b217efff5ab45938ef15cf9a0148aea7a5d980473",
+      "kind": "agent_instructions",
+      "name": "cs-andreessen",
+      "description": "Marc Andreessen-mode operator. Runs on a fixed anti-sycophancy operating prompt — leads with the strongest counterargument, never validates premises or praises the question, no disclaimers, no morals lectures, explicit confidence levels (high/moderate/low/unknown), never apologizes for disagreeing, never capitulates without new evidence. Pressure-tests ventures/ideas/features/career bets through Andreessen's documented frameworks: market dominates team and product, product/market fit is the only milestone that matters, bias to build. Issues hard verdicts (BUILD-POUR-FUEL / MARKET-FIRST-DERISK / KILL-OR-REPICK-MARKET) backed by deterministic tools. Also runs the 3x5-card + Anti-Todo daily routine. Refuses to soften a dead-market verdict. Refuses to cite a quote without a confidence level.",
+      "tools": "['Read', 'Bash']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/productivity/andreessen/agents/cs-andreessen.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-cbacce7950435c49",
+      "sha256": "cbacce7950435c492499dd77dac63e2e6a3c8c25b475e69b3a211e51ba1e1e06",
+      "kind": "agent_instructions",
+      "name": "cs-arquiteto",
+      "description": "Company Architect — a senior chief of staff who builds a business from scratch as an OKF (Open Knowledge Format) bundle: a tree of version-controllable .md files with frontmatter type, links forming a graph, and reserved index.md/log.md. Guides the founder through a 12-phase interview (foundation, strategy, market, financial, sales, marketing, product, operations, tech, people, legal, governance), one phase at a time, at most 3-5 questions per block, confirming before generating each concept. Trigger when the user wants to create, structure, or document an entire company as folders and markdown files, or mentions company as code, company knowledge base for AI, OKF, or knowledge bundle. Works in English. Never dumps the company all at once — it interviews, validates, and builds phase by phase.",
+      "tools": "['Read', 'Write', 'Edit', 'Bash']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/c-level-advisor/arquiteto-de-empresa/agents/cs-arquiteto.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-27e7fd77ff8cd8c4",
+      "sha256": "27e7fd77ff8cd8c4273284061a5cdf069f28f37916e379657604fee89bc29672",
+      "kind": "agent_instructions",
+      "name": "cs-backend-engineer",
+      "description": "Backend-engineering orchestrator. Walks the 7 Matt Pocock forcing questions (read/write ratio + QPS, tenancy, sync vs async, data sensitivity, pattern, RPO/RTO, SLO), picks the language + pattern profile, forks into specialists (api-design-reviewer, database-designer, migration-architect, observability-designer, slo-architect — listed alphabetically; workflow order is dependency-driven) rather than reimplementing their scope. Forks own context. Invoke via /cs-backend-review or Agent({subagent_type:\"cs-backend-engineer\",...}).",
+      "tools": "['Read', 'Write', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/agents/engineering/cs-backend-engineer.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-d5892b658b963101",
+      "sha256": "d5892b658b9631010461dcc6225976f3398ce1b90f78c8121380d5d8a833fa55",
+      "kind": "agent_instructions",
+      "name": "cs-bizops-orchestrator",
+      "description": "Process-obsessed BizOps lead. Routes internal-operations inquiries (process / vendor / capacity / comms / SOP / procurement) to the right sub-skill via the business-operations-skills orchestrator. Forks context to keep heavy ingestion (vendor catalogs, process transcripts, multi-doc SOPs) out of the parent thread. Signature forcing question — \"Where does the work spend most of its time waiting?\"",
+      "tools": "Read, Write, Edit, Glob, Grep, Bash, Skill",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/business-operations/agents/cs-bizops-orchestrator.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-b1807b697c59277d",
+      "sha256": "b1807b697c59277d9f69e7ad8190231ef0a2cd973a84ed87c902c58e1f817a89",
+      "kind": "agent_instructions",
+      "name": "cs-book-to-skill",
+      "description": "Book-to-skill converter persona. Interrogates whether a source is worth converting before spending a generation pass on it, then drives extract → analyze → chapters → supporting files → master SKILL.md → validate → package. Refuses to convert a source it cannot see on disk, to generate without a pre-flight cost estimate, to dump a large source into context, or to package a compiled skill for redistribution without a stated rights basis.",
+      "tools": "['Read', 'Write', 'Edit', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/engineering/book-to-skill/agents/cs-book-to-skill.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-1b0b019f5d0729cf",
+      "sha256": "1b0b019f5d0729cfecf6ca5f2e9f9d2d22509eafa6bd19a0aae1ab1462cda9ef",
+      "kind": "agent_instructions",
+      "name": "cs-caio-advisor",
+      "description": "Eval-demanding Chief AI Officer advisor for model build-vs-buy decisions, AI risk classification under EU AI Act + US state laws, AI cost economics (API vs self-hosted), and AI team org evolution. Strategic only — does not duplicate engineering AI/ML skills.",
+      "tools": "['Read', 'Write', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/c-level-agents/agents/cs-caio-advisor.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-8f73eb117411fae0",
+      "sha256": "8f73eb117411fae064d11d3c8bb551a3dcb22c55fb99cfbcf9b3158722dbd15d",
+      "kind": "agent_instructions",
+      "name": "cs-capture",
+      "description": "Brain-dump organizer persona. Catches unstructured streams of mixed thoughts/tasks/ideas and transforms them into a 4-section actionable system with zero information loss. Refuses to fabricate workspace connections. Refuses to corporate-ify the user's voice. Refuses to act on dump items without explicit pick. Asks at most ONE mid-organization clarifying question per dump.",
+      "tools": "['Read', 'Write', 'Glob', 'Grep', 'Bash']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/productivity/capture/agents/cs-capture.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-3290bbe883c54d35",
+      "sha256": "3290bbe883c54d351eb5d40b4be3a8ce81e0ede54fa9db8be63f3920e498538b",
+      "kind": "agent_instructions",
+      "name": "cs-caveman-mode",
+      "description": "Caveman-mode operator. Persistent ultra-compressed communication mode. Drops articles, filler, pleasantries, and hedging while preserving all technical substance. Auto-clarity exception for security warnings, irreversible actions, multi-step sequences, and clarification requests. Activated by user phrases (\"caveman mode\", \"talk like caveman\", \"use caveman\", \"less tokens\", \"be brief\") or /cs-caveman command.",
+      "tools": "['Read', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/engineering/caveman/agents/cs-caveman-mode.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-4657549d8b241e42",
+      "sha256": "4657549d8b241e428784029732b56f917aa882bde845090a2afe3dc7b0d8d840",
+      "kind": "agent_instructions",
+      "name": "cs-cco-advisor",
+      "description": "Retention-obsessed Chief Customer Officer advisor for honest retention decomposition (GRR vs NRR), customer segmentation (differential investment), CS team coverage (pooled vs named), and CS team org evolution. Strategic only — does not duplicate engineering or business-growth tactical skills.",
+      "tools": "['Read', 'Write', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/c-level-agents/agents/cs-cco-advisor.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-38240390fc444e80",
+      "sha256": "38240390fc444e80086c4397627b4ed0937498d26979de71bea69475ec0a70de",
+      "kind": "agent_instructions",
+      "name": "cs-cdo-advisor",
+      "description": "Decision-driven Chief Data Officer advisor for AI training data rights, data product strategy (warehouse/lakehouse/mesh + build-vs-buy), B2B customer-data-as-asset valuation, and data team org evolution. Strategic only — does not duplicate engineering data skills.",
+      "tools": "['Read', 'Write', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/c-level-agents/agents/cs-cdo-advisor.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-0ee7c981bafca3ce",
+      "sha256": "0ee7c981bafca3cec870e30fe569e0bc3d25803d1eb1287d8b0d4c6a2d2e5023",
+      "kind": "agent_instructions",
+      "name": "cs-ceo-advisor",
+      "description": "Strategic leadership advisor for CEOs covering vision, strategy, board management, investor relations, and organizational culture. Use when a founder or CEO faces a company-level strategic decision — e.g., preparing the narrative and metrics for a quarterly board meeting, or stress-testing a pivot or market-expansion decision against vision, runway, and stakeholder expectations.",
+      "tools": "['Read', 'Write', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/agents/c-level/cs-ceo-advisor.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-c6d9e3e2c27c4655",
+      "sha256": "c6d9e3e2c27c465570781c800e3e36ebd0fc223f64c24dd4dec4520e00389dc9",
+      "kind": "agent_instructions",
+      "name": "cs-cfo-advisor",
+      "description": "Numerate-skeptic CFO advisor for unit economics, runway, fundraising, dilution, and board-grade financial decisions",
+      "tools": "['Read', 'Write', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/c-level-agents/agents/cs-cfo-advisor.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-db418a9abab6074e",
+      "sha256": "db418a9abab6074ed52b25db3d08f926f798ff5564f891fdb11f6d5c58b41f99",
+      "kind": "agent_instructions",
+      "name": "cs-chief-of-staff",
+      "description": "Routing-and-synthesis chief of staff for orchestrating the virtual boardroom, logging decisions, and surfacing stale ones",
+      "tools": "['Read', 'Write', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/c-level-agents/agents/cs-chief-of-staff.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-d5d2cb4a3a2ff771",
+      "sha256": "d5d2cb4a3a2ff77160c716e62d1ea30c26a6a782aa85d95041962cdc707a3830",
+      "kind": "agent_instructions",
+      "name": "cs-chro-advisor",
+      "description": "People-systems CHRO advisor for hiring strategy, comp bands, leveling ladders, org design, and retention",
+      "tools": "['Read', 'Write', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/c-level-agents/agents/cs-chro-advisor.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-4990f66e6948abec",
+      "sha256": "4990f66e6948abec1d9c5bcb76e78ce12b3d74aecf06b37b8af8850b308d3774",
+      "kind": "agent_instructions",
+      "name": "cs-ciso-advisor",
+      "description": "Risk-paranoid CISO advisor for threat modeling, compliance, incident response, and security architecture",
+      "tools": "['Read', 'Write', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/c-level-agents/agents/cs-ciso-advisor.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-e7d410db5facf878",
+      "sha256": "e7d410db5facf8781e193670c7a7f8dae5bf7d4718eee609b97b9a2104f10d02",
+      "kind": "agent_instructions",
+      "name": "cs-ciso-iso27001",
+      "description": "ISO/IEC 27001:2022 ISMS audit + implementation persona. Sample-driven; samples real records, not curated demos. Coordinates with SOC 2 (75% overlap), ISO 42001 (60% reuse for AIMS data + supplier controls), and GDPR Article 32 organizational measures. NOT executive cybersecurity strategy (see cs-ciso-advisor for that).",
+      "tools": "['Read', 'Write', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/compliance-os/agents/cs-ciso-iso27001.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-dba06d5a763cb26a",
+      "sha256": "dba06d5a763cb26a9037e300503fab2467c17baca915a5e0e42d4a94a42cf0d6",
+      "kind": "agent_instructions",
+      "name": "cs-claude-coach",
+      "description": "Use proactively after any user message in a Claude.ai or Claude Code session where the user is learning to prompt better or has explicitly activated coaching. Default persona for the claude-coach skill. Watches each turn for missed power-user opportunities and surfaces at most one ⚡ tip when a tip would genuinely 10x the next attempt.",
+      "tools": "Read, Grep, Glob, Bash",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/engineering/claude-coach/agents/cs-claude-coach.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-406ecbff243771e3",
+      "sha256": "406ecbff243771e3e41bdbeecda77f77fc55b4b64d5dcc23e9c01b350b85c1ef",
+      "kind": "agent_instructions",
+      "name": "cs-claude-code-rollout",
+      "description": "Use when a team or organization is rolling out Claude Code, or auditing one already in use — shared and managed settings, permission rules, MCP server and plugin approval, CLAUDE.md layering, and whether people actually use it. Runs four deterministic scripts and returns findings ranked by severity with the fix for each.",
+      "tools": "",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/engineering/coding-agent-rollout/agents/cs-claude-code-rollout.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-21103b211e5c2497",
+      "sha256": "21103b211e5c24973cc8b188b0f4b82ead23df1439736af1b2b05806ed92d34f",
+      "kind": "agent_instructions",
+      "name": "cs-close-controller",
+      "description": "Use when someone is running, planning or trying to shorten a month-end or quarter-end close, reconciling a bank statement or sub-ledger to the general ledger, or writing or reviewing flux explanations. Plans the close on its critical path, proves reconciliations and gates flux explanations through three deterministic scripts, and names the human who signs each step.",
+      "tools": "",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/finance/month-end-close/agents/cs-close-controller.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-ba71cad370672e3f",
+      "sha256": "ba71cad370672e3f68fff574ac9a729233f777e39da18cdf6e92f26446e936df",
+      "kind": "agent_instructions",
+      "name": "cs-cmmc-assessor",
+      "description": "Use when a defense contractor is preparing for a CMMC 2.0 Level 2 self-assessment or C3PAO assessment, checking an SPRS score, deciding what can go on a POA&M, racing a POA&M closeout deadline, or scoping an enclave and cloud providers that hold CUI. Scores the 110 NIST SP 800-171 Rev 2 requirements with the 32 CFR 170.24 weights and classifies assets under 170.19 through three deterministic scripts.",
+      "tools": "",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/ra-qm-team/cmmc-readiness/agents/cs-cmmc-assessor.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-5fd9b573c45bd7b8",
+      "sha256": "5fd9b573c45bd7b88ff0e40ce24956b87f15c6c84b8cfa5257801d32bc74c240",
+      "kind": "agent_instructions",
+      "name": "cs-cmo-advisor",
+      "description": "Narrative-first CMO advisor for ICP definition, positioning, message house, channel mix, and category creation",
+      "tools": "['Read', 'Write', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/c-level-agents/agents/cs-cmo-advisor.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-8191824ccf80272c",
+      "sha256": "8191824ccf80272cde8cbb43f6cf974e2c86b852c701510de215815b1f8b54cd",
+      "kind": "agent_instructions",
+      "name": "cs-commercial-orchestrator",
+      "description": "Margin-protective Commercial lead. Routes per-deal-and-packaging inquiries (pricing / deal / partner / channel / policy / RFP / forecast) to the right sub-skill via the commercial-skills orchestrator. Forks context to keep heavy intake (RFP PDFs, pipeline exports, partner agreements) out of the parent thread. Signature forcing question — \"What's the margin on this deal at full discount?\"",
+      "tools": "Read, Write, Edit, Glob, Grep, Bash, Skill",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/commercial/agents/cs-commercial-orchestrator.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-e67010be5ae42bee",
+      "sha256": "e67010be5ae42beeac98d76f2ed4de1a6147257550b3c281a63eaab2bdeb215f",
+      "kind": "agent_instructions",
+      "name": "cs-commit-craft",
+      "description": "Use when a working tree holds mixed changes about to be committed, before a push, or when asked to split work into commits, stage it or write commit messages. Plans a reviewable series in build-safe order, blocks staged secrets and .env files, and lints messages for vague subjects and missing why, through three deterministic scripts.",
+      "tools": "",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/engineering/commit-craft/agents/cs-commit-craft.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-63e4a11abf53f7ba",
+      "sha256": "63e4a11abf53f7ba0eaa9b7a7eac515e711acbfd07f575e1a67abd0bd09700a6",
+      "kind": "agent_instructions",
+      "name": "cs-compliance-officer",
+      "description": "Multi-framework compliance officer orchestrating cross-framework programs. Routes per-framework deep work to specialist skills (ISO 42001, EU AI Act, ISO 27001, SOC 2, GDPR, ISO 13485, etc.). Owns framework selection, cross-framework overlap, audit calendar, unified evidence pool. NOT a per-framework deep-dive (those live in ra-qm-team specialist skills).",
+      "tools": "['Read', 'Write', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/compliance-os/agents/cs-compliance-officer.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-60c12560bc7ccad3",
+      "sha256": "60c12560bc7ccad35018499b0cb9ae5f0481a578706adbcb329687f10fa70f6f",
+      "kind": "agent_instructions",
+      "name": "cs-content-creator",
+      "description": "Long-form marketing content producer orchestrating the content-production skill (research → brief → draft → optimize → gate). Use when content must be written, scored, or made publish-ready — e.g., drafting a 2,000-word blog post against a target keyword and blocking publish until content_quality_gates.py passes, or auditing a draft for brand-voice drift with brand_voice_analyzer.py before it ships. Routes planning requests (topic clusters, calendars) to content-strategy. Supersedes the deprecated content-creator skill.",
+      "tools": "['Read', 'Write', 'Bash', 'Grep']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/agents/marketing/cs-content-creator.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-e27179611e078b42",
+      "sha256": "e27179611e078b42f9a3f2248dfbdbd921e4d8e96eb5abbb05e6d405febae062",
+      "kind": "agent_instructions",
+      "name": "cs-coo-advisor",
+      "description": "Execution-OS COO advisor for operating cadence, OKRs, scorecards, DRI clarity, and scaling playbooks",
+      "tools": "['Read', 'Write', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/c-level-agents/agents/cs-coo-advisor.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-e1d57a0eaffdc4b3",
+      "sha256": "e1d57a0eaffdc4b3a04875566e5a3442f7cfcdb79c095be9e30803c0a21706c9",
+      "kind": "agent_instructions",
+      "name": "cs-cpo-advisor",
+      "description": "JTBD-driven CPO advisor for product vision, portfolio strategy, PMF, North Star metrics, and roadmap focus",
+      "tools": "['Read', 'Write', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/c-level-agents/agents/cs-cpo-advisor.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-84b047e727e273d6",
+      "sha256": "84b047e727e273d61c008036b3bdb1d1556316151cf5cf07dd3ae84bffb78fec",
+      "kind": "agent_instructions",
+      "name": "cs-cqm-iso13485",
+      "description": "ISO 13485:2016 QMS audit persona — Design Control + CAPA + Process Validation focused. Coordinates with ISO 14971 (risk file), MDR 745 (technical documentation), FDA QSR (substantially harmonized post-Feb 2026). NOT executive product strategy (see cs-cpo-advisor for that).",
+      "tools": "['Read', 'Write', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/compliance-os/agents/cs-cqm-iso13485.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-24c94d30492bca05",
+      "sha256": "24c94d30492bca05e7f70e84eab2560ff969b3bd2c9a1bdad65539e15aef02bd",
+      "kind": "agent_instructions",
+      "name": "cs-cro-advisor",
+      "description": "Pipeline-paranoid CRO advisor for revenue forecasting, sales motion, NRR, ramp time, and pipeline coverage",
+      "tools": "['Read', 'Write', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/c-level-agents/agents/cs-cro-advisor.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-d465144ca58217d8",
+      "sha256": "d465144ca58217d853bb8dc91916436d624fc6d3228789e617a6fdacd053b0d2",
+      "kind": "agent_instructions",
+      "name": "cs-cto-advisor",
+      "description": "Technical leadership advisor for CTOs covering technology strategy, team scaling, architecture decisions, and engineering excellence. Use when a CTO or technical founder needs company-level technology judgment — e.g., deciding build-vs-buy for a core platform component, or planning how to scale the engineering org from 5 to 30 engineers without losing delivery velocity.",
+      "tools": "['Read', 'Write', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/agents/c-level/cs-cto-advisor.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-3d479c9d786ed654",
+      "sha256": "3d479c9d786ed654eda6d5e538256acaa043beb6722250b3d565d2764506c3c6",
+      "kind": "agent_instructions",
+      "name": "cs-deep-learning-tutor",
+      "description": "Study companion for the Deep Learning textbook (Goodfellow, Bengio & Courville, 2016). Plans a prerequisite-closed reading path, answers chapter questions from the compiled knowledge base, diagnoses training runs against Chapter 11's decision tree, and flags every place the 2016 text has been superseded. Use for studying the book, teaching from it, or checking whether one of its recommendations is still current.",
+      "tools": "",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/engineering/deep-learning-book/agents/cs-deep-learning-tutor.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-31bf98dc404c2f64",
+      "sha256": "31bf98dc404c2f64de28bda8d96bf0122bb7d1bee649238c08c0fc5b2a311cc9",
+      "kind": "agent_instructions",
+      "name": "cs-deep-work",
+      "description": "Plans a deep work day the Cal Newport way — audits a task list deep vs shallow against a 30-50% shallow budget, builds an energy-first time-blocked schedule (deep blocks of at least 90 minutes in the earliest hours, a hard 4-hour deep ceiling, shallow work batched into at most two windows, 10-minute buffers, an immovable hard stop), logs focus sessions against a weekly target, and closes the day with a shutdown ritual. Respects the scripts' exit-2 refusals: deep demand past the cap and overflow past the hard stop are named and deferred, never squeezed in. Use to plan or re-plan a focused day, cut shallow work, or track deep-hours streaks.",
+      "tools": "['Read', 'Bash']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/productivity/deep-work/agents/cs-deep-work.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-558d24923cf585a8",
+      "sha256": "558d24923cf585a87b18e0c1b3fca3754bd60b9ae6c6dc19bdb430364d2ca5ff",
+      "kind": "agent_instructions",
+      "name": "cs-demand-gen-specialist",
+      "description": "Demand generation and acquisition-funnel specialist orchestrating the marketing-demand-acquisition, paid-ads, and email-sequence skills. Use when building or fixing the acquisition engine — e.g., comparing channel CAC against B2B SaaS benchmarks before reallocating a $40k/month budget, scoring paid-ads account health with ad_health_scorer.py before scaling spend, or designing a nurture sequence that must score 70+ on sequence_analyzer.py before launch. Covers channel mix, CAC/ROAS math, MQL→SQL workflows, attribution, and nurture design.",
+      "tools": "['Read', 'Write', 'Bash', 'Grep']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/agents/marketing/cs-demand-gen-specialist.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-caa17e5baa1257d9",
+      "sha256": "caa17e5baa1257d9b663aa371723b92504aded42d32d5a910f54313f794b957f",
+      "kind": "agent_instructions",
+      "name": "cs-design-qa",
+      "description": "Use when a UI screen, page, component or generated front end is about to be called done, handed off or shipped, or looks generic or half-finished. Checks the rendered build, not the design file - inert controls, placeholder copy, removed focus rings, missing loading/empty/error states, contrast, target size, focus and reflow measured in the browser - through three deterministic scripts.",
+      "tools": "",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/product-team/design-qa/agents/cs-design-qa.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-6d3fa59edd60ced0",
+      "sha256": "6d3fa59edd60ced0e33a9faebfcdc1cf9c09b0d2014c53296bb44845274f1d19",
+      "kind": "agent_instructions",
+      "name": "cs-dossier",
+      "description": "Decision-grade entity research persona. Walks 6 forcing intake questions (subject identity + subject type + purpose + hypothesis-MANDATORY + depth + sensitivities). Refuses to produce a dossier without Q4 hypothesis stated. Allocates ≥30% of search budget to disconfirming evidence (refuses confirmation-biased dossiers). Tags every flag with source-reliability tier (primary/secondary/tertiary). Outputs 9-section .docx with verdict on hypothesis (SUPPORTED/PARTIALLY/DISPROVEN/INCONCLUSIVE) + 3-5 finding-tied conversation hooks.",
+      "tools": "['Read', 'Write', 'Bash', 'WebFetch', 'WebSearch']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/research/dossier/agents/cs-dossier.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-ee3ae48aef04f6bc",
+      "sha256": "ee3ae48aef04f6bce6a000e28fba456a676798ab5641bfef34ad04692a2b2b99",
+      "kind": "agent_instructions",
+      "name": "cs-dpo-gdpr",
+      "description": "GDPR / DSGVO Data Protection Officer audit persona. Lawful-basis-discipline + DPIA-quality + Schrems-II-transfer-aware. Coordinates with ISO 27001 Article 32 organizational measures, EU AI Act Article 27 FRIA (overlapping artefact), and SOC 2 Privacy criteria. NOT executive privacy strategy — DPO is operationally independent per Article 38.",
+      "tools": "['Read', 'Write', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/compliance-os/agents/cs-dpo-gdpr.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-be5fc87fea487c86",
+      "sha256": "be5fc87fea487c860c75048ff5cfa125faf0d5de8517c2c82d491f08e386ac20",
+      "kind": "agent_instructions",
+      "name": "cs-engineering-lead",
+      "description": "Engineering Team Lead agent for coordinating QA, security, data engineering, ML, and frontend/backend teams. Orchestrates engineering-team skills for team-level technical decisions. Spawn when users need team coordination, tech stack evaluation, incident response, or cross-functional engineering work.",
+      "tools": "['Read', 'Write', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/agents/engineering-team/cs-engineering-lead.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-5f970a71de6f3604",
+      "sha256": "5f970a71de6f36042a15213098e5258723255991087e44d62e59df30fc7ee8b7",
+      "kind": "agent_instructions",
+      "name": "cs-eval-gatekeeper",
+      "description": "Use when someone wants to know whether an agent, prompt, model or tool change made their agent worse, is setting up a regression eval suite or CI eval gate, or is arguing about whether a pass-rate drop is real. Runs repeated-trial evals through three deterministic scripts and returns a PASS / WARN / BLOCK verdict with the statistics behind it.",
+      "tools": "",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/engineering/agent-regression-evals/agents/cs-eval-gatekeeper.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-98d18e96d3ee92ea",
+      "sha256": "98d18e96d3ee92eabff6f93f5b0e581b2693aa091c9844b1e93e59aef70e2bab",
+      "kind": "agent_instructions",
+      "name": "cs-fda-qsr-auditor",
+      "description": "FDA 21 CFR 820 (QSR / QMSR) auditor persona. Substantially harmonized with ISO 13485 post-Feb 2026 via FDA Final Rule incorporating ISO 13485 by reference. Adds FDA-specific overlays: labeling (21 CFR 801), complaint handling (21 CFR 820.198), MDR reporting (21 CFR 803), 510(k) / PMA submissions. NOT FDA submission strategy (route to fda-consultant-specialist for that).",
+      "tools": "['Read', 'Write', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/compliance-os/agents/cs-fda-qsr-auditor.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-245892bf1451dbec",
+      "sha256": "245892bf1451dbec3cbdb263a64477d03f986071807998c79ff2627c4bb29184",
+      "kind": "agent_instructions",
+      "name": "cs-financial-analyst",
+      "description": "Financial Analyst agent for DCF valuation, financial modeling, budgeting, forecasting, and SaaS metrics (ARR, MRR, churn, CAC, LTV, NRR). Orchestrates finance skills. Spawn when users need financial analysis, valuation models, budget planning, ratio analysis, SaaS health checks, or unit economics projections.",
+      "tools": "['Read', 'Write', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/agents/finance/cs-financial-analyst.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-c2509d3f231bdc08",
+      "sha256": "c2509d3f231bdc08a3241ca36ffd7f8acdc19be66ae2bf9d8fc176d803ae7c3f",
+      "kind": "agent_instructions",
+      "name": "cs-frontend-engineer",
+      "description": "Frontend-engineering orchestrator. Walks the 7 Matt Pocock forcing questions (device, LCP target, rendering, bundle budget, SEO vs auth, design system, WCAG), picks the framework/rendering profile, forks into specialists (a11y-audit, apple-hig-expert, epic-design, performance-profiler, playwright-pro — listed alphabetically; workflow order is dependency-driven) rather than reimplementing their scope. Forks own context. Invoke via /cs-frontend-review or Agent({subagent_type:\"cs-frontend-engineer\",...}).",
+      "tools": "['Read', 'Write', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/agents/engineering/cs-frontend-engineer.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-439c533e66d02834",
+      "sha256": "439c533e66d02834ee666e3f89dfb5deb0bbf758d2ca888f242c646f35e99862",
+      "kind": "agent_instructions",
+      "name": "cs-fullstack-engineer",
+      "description": "Fullstack-engineering orchestrator. Walks the Matt Pocock 7-question forcing-question grill, runs the deterministic profile picker, then forks into the POWERFUL-tier specialists (api-design-reviewer, ci-cd-pipeline-builder, database-designer, performance-profiler, slo-architect — listed alphabetically; workflow order is dependency-driven) rather than reimplementing their scope. Forks own context so heavy ingestion does not pollute parent thread. Invoke via /cs-fullstack-review or Agent({subagent_type:\"cs-fullstack-engineer\",...}).",
+      "tools": "['Read', 'Write', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/agents/engineering/cs-fullstack-engineer.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-e3dd98cf6151faf0",
+      "sha256": "e3dd98cf6151faf0c727ef8c88d09d8395330d20a90847d5b3c6d06188a8d56a",
+      "kind": "agent_instructions",
+      "name": "cs-general-counsel-advisor",
+      "description": "Risk-paranoid General Counsel advisor for contract review, IP strategy, term sheet decoding, and regulatory landscape mapping. Not legal advice; surfaces questions for outside counsel.",
+      "tools": "['Read', 'Write', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/c-level-agents/agents/cs-general-counsel-advisor.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-62cdca222063aef6",
+      "sha256": "62cdca222063aef6f9e7eeb0b97662e36816d3017b562f37600ffa948cacba79",
+      "kind": "agent_instructions",
+      "name": "cs-grants",
+      "description": "NIH grant research persona for clinical researchers. Walks 6 forcing intake questions (research idea + career stage + prelim data + environment + submission posture + known institute targets) before any search. Runs 5-facet Consensus positioning analysis + RePORTER POST queries (NEVER web_fetch for RePORTER — it's POST-only) + NOSI fetches. Refuses parallel Consensus calls (1 q/sec). Refuses mechanism recommendations based on career stage alone (scope matters). Always includes program officer recommendation (mandatory). Outputs 9-section .docx with audit log.",
+      "tools": "['Read', 'Write', 'Bash', 'WebFetch']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/research/grants/agents/cs-grants.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-2155296787ca0220",
+      "sha256": "2155296787ca02205de6ec2b28da385286a6711f9f7b345fc6eb1778237fa0da",
+      "kind": "agent_instructions",
+      "name": "cs-grill-master",
+      "description": "Relentless plan-and-design interrogator. Walks decision trees one branch at a time, asks one question per turn with recommended answer + rationale, explores codebase before asking, tracks session state across turns. Refuses to bundle questions. Refuses to ask questions the codebase can answer.",
+      "tools": "['Read', 'Write', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/engineering/grill-me/agents/cs-grill-master.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-0b0eda0470c08314",
+      "sha256": "0b0eda0470c083146ff037e7ef94b1202ca5cf10a68829fe33ac1e7e3525c9c9",
+      "kind": "agent_instructions",
+      "name": "cs-grill-with-docs",
+      "description": "Docs-anchored plan interrogator. Walks a plan's decision tree against the project's existing language (CONTEXT.md) and recorded decisions (docs/adr/). Pre-flights the glossary + ADR linters before asking the first question. Refuses to grill in a vacuum when documented language exists. Refuses to offer ADRs unless all 3 criteria are met (hard-to-reverse, surprising-without-context, real-trade-off).",
+      "tools": "['Read', 'Write', 'Edit', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/engineering/grill-with-docs/agents/cs-grill-with-docs.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-5435106d81814abf",
+      "sha256": "5435106d81814abfd5b343e9c661d0d661253ee1255f16f26e15bfba5931c597",
+      "kind": "agent_instructions",
+      "name": "cs-growth-strategist",
+      "description": "Growth Strategist agent for revenue operations, sales engineering, customer success, and business development. Orchestrates business-growth skills. Spawn when users need pipeline analysis, churn prevention, expansion scoring, sales demos, or proposal writing.",
+      "tools": "['Read', 'Write', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/agents/business-growth/cs-growth-strategist.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-1fcf3ee3b84a5942",
+      "sha256": "1fcf3ee3b84a5942ad33bc38caf80975b51f3948a66c558f429073efefce1a21",
+      "kind": "agent_instructions",
+      "name": "cs-handoff-author",
+      "description": "Conversation-handoff author. Compacts the current session into a markdown handoff for a fresh agent. Tailors content to next-session focus. Refuses to duplicate content from PRDs/plans/ADRs/issues/commits — references them by path or URL instead. Recommends specific skills for the next session.",
+      "tools": "['Read', 'Write', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/engineering/handoff/agents/cs-handoff-author.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-b749c870c53285e7",
+      "sha256": "b749c870c53285e74136bbdf2833e50f5fff94768b1111805f871f9ee35db375",
+      "kind": "agent_instructions",
+      "name": "cs-handoff-author",
+      "description": "Productivity persona for writing handoff documents. Terse, no-duplication, references-not-copies. Invoke when the user signals intent to pass work to a fresh agent ('hand this off', 'summarize this for a new session', 'I'm ending this session', 'pick this up later'), or when implicit signals appear (user switching machines, ending the day mid-task, conversation growing long without a natural stopping point). Walks the mandatory handoff_prompt.md checklist before writing; runs the redaction linter before save; suggests 3-5 skills (never more) for the next session.",
+      "tools": "['Read', 'Write', 'Edit', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/productivity/handoff/agents/cs-handoff-author.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-282cf8c890dad2b6",
+      "sha256": "282cf8c890dad2b6bc618638f782d7d666676e3291f3422c9fcd637e6e20f551",
+      "kind": "agent_instructions",
+      "name": "cs-human-gate",
+      "description": "Runs the human-verification lane of an agent loop. Builds a single-file review page for a Markdown or HTML artifact, hands the reviewer a path and ends the turn (never blocks polling for a human), collects batched feedback as structured batch.v1 data, and runs a gate that refuses to close while a BLOCKER is open, the reviewer is unnamed, or nobody has reviewed at all. Use before shipping a plan, spec, RFC, report, or any irreversible action, and whenever the user says \"let me review that\", \"get sign-off\", or \"don't ship until I've seen it\".",
+      "tools": "['Read', 'Write', 'Edit', 'Glob', 'Grep', 'Bash']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/engineering/human-gate/agents/cs-human-gate.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-4e89fa712d7b1dd3",
+      "sha256": "4e89fa712d7b1dd385731918e1f71e6db02de2f4e9481a0da505cafe73ab19c1",
+      "kind": "agent_instructions",
+      "name": "cs-i18n-engineer",
+      "description": "Use when an app is adding or shipping a language, when translation files changed, or when UI text is being added to a localized app. Checks translation files for missing keys, broken placeholders and CLDR plural forms, finds hardcoded UI strings, and builds a pseudo-locale for layout testing, through three deterministic scripts.",
+      "tools": "",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/engineering/i18n-localization/agents/cs-i18n-engineer.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-eebde8e3b2b537a7",
+      "sha256": "eebde8e3b2b537a71c8f25bc0f46a9bda8157c89bef1c2d61713638b7ba31d16",
+      "kind": "agent_instructions",
+      "name": "cs-inbox-setup",
+      "description": "One-time email-triage onboarding persona. Conducts an 8-section interactive interview (~25-31 grill-me questions) to build a personalized knowledge base of 7 markdown files in ${WORKSPACE}/Email/ that powers the companion inbox-triage skill. Refuses to batch questions. Refuses to skip the sample-emails ask (S3). Refuses to overwrite existing files without per-file consent on re-run. Refuses to persist sensitive credentials.",
+      "tools": "['Read', 'Write', 'Edit', 'Bash', 'Glob', 'Grep']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/productivity/email/agents/cs-inbox-setup.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-0b81bdb743287223",
+      "sha256": "0b81bdb743287223a61e2b6c861202975d51d4185113c342acd275fbbd26de71",
+      "kind": "agent_instructions",
+      "name": "cs-inbox-triage",
+      "description": "Recurring email-triage execution persona. Reads the 7-file KB produced by inbox-setup, classifies recent emails via the user's taxonomy, researches new senders, generates recommendations, drafts replies, delivers a report, and updates the KB with learnings. NEVER SENDS — drafts only, non-negotiable. Halts with clear message if KB files are missing (directs user to run inbox-setup first). Light-intake — max 2 optional override questions.",
+      "tools": "['Read', 'Write', 'Edit', 'Bash', 'Glob', 'Grep', 'WebFetch', 'WebSearch']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/productivity/email/agents/cs-inbox-triage.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-71cfabdfad22d68c",
+      "sha256": "71cfabdfad22d68cba0e05d46e932170f3a2952958d37b55628f7430cb9e7ae7",
+      "kind": "agent_instructions",
+      "name": "cs-interview-mapper",
+      "description": "Transcript-level interview analyst. Refuses to accept a conclusion without a verbatim quote checked against the source, refuses to call a cross-run analytic label settled until independent re-runs agree, and refuses to call a cross-interview pattern an insight below the triangulation threshold. Routes to the interview-mapper skill's 16 lenses and its S0-S8 pipeline.",
+      "tools": "['Read', 'Write', 'Edit', 'Glob', 'Grep', 'Bash', 'Skill']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/research-ops/agents/cs-interview-mapper.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-78255378597476b6",
+      "sha256": "78255378597476b6c84d62f6e145e6697847fca2b0593dfe00f2a586d3c19d66",
+      "kind": "agent_instructions",
+      "name": "cs-karpathy-reviewer",
+      "description": "Reviews staged git changes against Karpathy's 4 coding principles. Runs complexity_checker on changed files, diff_surgeon on the diff, and produces a verdict with specific fix recommendations. Spawn before committing, when the user says \"karpathy check\", \"review my diff\", or when the /karpathy-check command is invoked.",
+      "tools": "['Read', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/agents/engineering/cs-karpathy-reviewer.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-3286411213f9690e",
+      "sha256": "3286411213f9690e9f3c2f0df9d7a7f3fc30660ea69ab20beb7875de38c7540f",
+      "kind": "agent_instructions",
+      "name": "cs-landing",
+      "description": "Premium HTML landing page generator persona. Walks 3-4 forcing intake questions (product+pitch, audience register, brand overrides, tone) before writing any markup. Refuses vague product descriptions. Refuses to skip gsap.set() initial states (causes FOUC). Refuses to hardcode brand colors. Refuses external CSS/JS files (everything inline except Google Fonts + GSAP CDN). Outputs one self-contained .html file with GSAP 3D animations, scroll-triggered reveals, and mouse-parallax depth.",
+      "tools": "['Read', 'Write', 'Bash', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/marketing/landing/agents/cs-landing.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-9e64f704b9fef7e5",
+      "sha256": "9e64f704b9fef7e50b043288dfd54059a275604c221926eaa108c06625860dc0",
+      "kind": "agent_instructions",
+      "name": "cs-linkedin-editor",
+      "description": "Drafts, edits, and lints LinkedIn posts to a publishable standard — hook that survives the ~140-character mobile fold, one idea, real numbers, no engagement bait, no Unicode pseudo-bold, alt text and captions written. Runs post_linter.py to a clean exit rather than declaring a draft done, picks the format the material actually supports, and splits long sources into standalone units against a reuse ledger so nothing goes out twice. Refuses to invent a metric, client, result, or quote. Use when someone wants a LinkedIn post written, reviewed, rewritten, or repurposed from an article, talk, or transcript.",
+      "tools": "['Read', 'Bash', 'Write', 'Edit']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/marketing/linkedin/agents/cs-linkedin-editor.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-5fdcd366b2a492d6",
+      "sha256": "5fdcd366b2a492d673e0b5c6be8bb72df72f76c4777181e022d016711eadc367",
+      "kind": "agent_instructions",
+      "name": "cs-linkedin-orchestrator",
+      "description": "Routes any LinkedIn organic-growth request to the right lane and gates it against LinkedIn's User Agreement before a word is drafted. Runs the policy gate (ALLOW / CONSTRAIN / REFUSE against §8.2 — automation, scraping, engagement pods, bulk DMs, fake identity, fabricated proof, prohibited third-party tools), then the deterministic five-lane router (profile / strategy / content / engagement / analytics), then walks the forcing questions until the chosen lane can run honestly. Holds no LinkedIn credentials and sends nothing. Use when someone wants to grow an organic LinkedIn presence, fix a profile, plan content, write posts, do outreach, or understand their numbers.",
+      "tools": "['Read', 'Bash', 'Write', 'Edit']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/marketing/linkedin/agents/cs-linkedin-orchestrator.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-21302a5b9dc1dd61",
+      "sha256": "21302a5b9dc1dd61df971e0b01fd3f235e85eae4d92a918e6468c28c2cab67e5",
+      "kind": "agent_instructions",
+      "name": "cs-litreview",
+      "description": "Academic literature orientation persona. Walks 3 forcing intake questions (research question specificity + framework hint + tentative depth) before any search, then runs reconnaissance + targeted searches per depth tier via the free keyless lane (PubMed E-utilities + OpenAlex; Consensus MCP added only when connected), then halts at an interactive checkpoint for framework + sub-area + depth confirmation before consuming search budget. Refuses parallel search calls (1 q/sec is non-negotiable). Refuses to cite training knowledge as session results. Refuses to skip the post-Phase-2 checkpoint. Outputs an 8-section .docx research guide as a 'launching pad' for a researcher entering an unfamiliar field.",
+      "tools": "['Read', 'Write', 'Bash', 'WebFetch']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/research/litreview/agents/cs-litreview.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-42a4d09eda021c8e",
+      "sha256": "42a4d09eda021c8e30bba513d9c69cf4d973e544301294f8f790354252163217",
+      "kind": "agent_instructions",
+      "name": "cs-markdown-html-orchestrator",
+      "description": "Density-first markdown-to-HTML converter. Routes long markdown files (≥ 100 lines per Shihipar's threshold) to one of three converter sub-skills (md-document / md-review / md-slides) via the markdown-html-orchestrator skill. Refuses below threshold or when the design-system isn't onboarded. Forks context so the full markdown body, diffs, and slide content stay out of the parent thread. Signature forcing question — \"What decision does this HTML drive — is the reader skimming, deciding, or presenting?\"",
+      "tools": "Read, Write, Edit, Glob, Grep, Bash, Skill",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/markdown-html/agents/cs-markdown-html-orchestrator.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-3901da10fb077d4b",
+      "sha256": "3901da10fb077d4be21125bba272e92591d4125df7ea69dd799e701184c959bf",
+      "kind": "agent_instructions",
+      "name": "cs-meeting-discipline",
+      "description": "Enforces personal meeting hygiene end to end. Before a meeting it runs the cost gate (attendees x minutes x rate, optionally + 23-minute refocus overhead per attendee) and refuses to schedule anything without a decision, an agenda, and a named owner — verdict is ASYNC / NOT-READY / MEET, never a shrug. If the meeting survives, it builds a timeboxed, decision-first agenda where every topic has a desired outcome. After the meeting it extracts action items from raw notes into an owner + due-date checklist and flags every ORPHAN and NO-DUE item. Use before calling a meeting or after one ends with messy notes.",
+      "tools": "['Read', 'Bash']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/productivity/meetings/agents/cs-meeting-discipline.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-6652bab949aa08df",
+      "sha256": "6652bab949aa08df0ae483e6491508c45735acc276e437f552b4a73084802019",
+      "kind": "agent_instructions",
+      "name": "cs-memory-curator",
+      "description": "Curates the tiered agent-memory store. Use when reviewing what the agent has learned from past sessions, adopting staged promotions into CLAUDE.md, resolving a contested claim, or tracing where a remembered line came from. Refuses to adopt anything it cannot cite, and refuses to adopt a redacted claim at all.",
+      "tools": "",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/engineering/agent-memory/agents/cs-memory-curator.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-f9eedd22ef9c82b7",
+      "sha256": "f9eedd22ef9c82b72c8ca320b1e76309b556495f1f06c8bca03c51477352ae04",
+      "kind": "agent_instructions",
+      "name": "cs-memory-engineer",
+      "description": "Use when someone is adding memory to an agent, choosing a memory architecture, auditing an existing memory store, or asking why their memory system is expensive, slow, or wrong. Prices the write path, names which cost the design is paying, classifies what the store actually holds, and refuses to sign off a design with no forgetting policy.",
+      "tools": "",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/engineering/memory-engineering/agents/cs-memory-engineer.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-a4045c23f1f81f2f",
+      "sha256": "a4045c23f1f81f2f8bb84e0f0dc184e2a14e4f190b2703c00f190895723d031d",
+      "kind": "agent_instructions",
+      "name": "cs-meta-research",
+      "description": "Rigor-first meta-research persona for high-stakes questions. Reframes the question into 2-4 falsifiable hypotheses, writes a plan, discovers available channels/APIs, fans out parallel search sub-agents, triangulates every thesis against >=3 independent differently-typed sources, saves each source to its own file with verbatim quotes, runs a mandatory adversarial pass, and emits an auditable, reusable research folder with a refresh protocol. Refuses to fabricate citations (empty fetch = empty claim). Refuses to state a claim backed by fewer than 3 independent sources as fact. Refuses to skip the adversarial pass on medium/deep investigations. Refuses to run sub-agents sequentially.",
+      "tools": "['Read', 'Write', 'Bash', 'WebFetch', 'WebSearch', 'Task']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/research/meta-research/agents/cs-meta-research.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-576f6e9a4be2e0cf",
+      "sha256": "576f6e9a4be2e0cf85e2f53646766873431f53f835ac1f80654ba199604dcdbb",
+      "kind": "agent_instructions",
+      "name": "cs-notebooklm",
+      "description": "NotebookLM browser-automation persona. Walks 2-4 forcing intake questions (Q1 action: read / add source / Studio output / create new; Q2-Q4 branch per action). Refuses to start without action commitment. Refuses to handle login flows automatically. Refuses to wait synchronously for Studio generations (fire-and-notify). Always opens Studio customization menu and writes detailed custom prompt (default prompts produce mediocre output). Screenshot-first discipline. find()-before-click. Fails fast when browser automation unavailable.",
+      "tools": "['Read', 'Write', 'Bash']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/research/notebooklm/agents/cs-notebooklm.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-bc96a083b8d702db",
+      "sha256": "bc96a083b8d702db21d1dcf66ca77343ee49bd005da2e36b7cdfccca9ed3f912",
+      "kind": "agent_instructions",
+      "name": "cs-patent",
+      "description": "Patent prior-art + landscape intelligence persona. Walks 6 forcing intake questions with mandatory sub-use-case commitment (novelty / FTO / landscape / diligence / litigation). Refuses to start without a sub-use-case picked. Refuses generic \"patent help\" requests. Searches Google Patents + Espacenet + USPTO + optional Lens.org sequentially at 1 q/sec. Always includes legal disclaimer for novelty + FTO sub-use-cases (signal, not legal advice). Family-resolves duplicates across jurisdictions. Outputs 8-section .docx with verdict + audit log.",
+      "tools": "['Read', 'Write', 'Bash', 'WebFetch', 'WebSearch']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/research/patent/agents/cs-patent.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-4f7d6bcd0289d024",
+      "sha256": "4f7d6bcd0289d0240d6a852fb32fe49195f87ed45bbf7bb3be7273bbb217261b",
+      "kind": "agent_instructions",
+      "name": "cs-pm-orchestrator",
+      "description": "Flow-first delivery lead. Routes project-management inquiries (sprint/velocity, portfolio health, Jira/JQL, Confluence, Atlassian admin, templates, meetings, comms) to the right sub-skill via the pm-skills orchestrator, and drives delivery goals through bounded agentic loops with machine-checkable gates. Forks context to keep heavy intake (Jira snapshots, retro logs, transcripts) out of the parent thread. Signature forcing question — \"What single observable outcome means DONE, and which command proves it?\"",
+      "tools": "Read, Write, Edit, Glob, Grep, Bash, Skill",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/project-management/agents/cs-pm-orchestrator.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-0e8e9e66b02f063d",
+      "sha256": "0e8e9e66b02f063d1c5124d4c7883c544a60d4ff6b03f311492df62924aea18d",
+      "kind": "agent_instructions",
+      "name": "cs-product-analyst",
+      "description": "Product analytics agent for KPI definition, dashboard setup, experiment design, and test result interpretation. Use when a product question needs numbers — e.g., defining activation/retention KPIs and a dashboard spec for a new feature, or sizing an A/B test and judging whether the result is significant enough to ship.",
+      "tools": "['Read', 'Write', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/agents/product/cs-product-analyst.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-6414ca7f10fce392",
+      "sha256": "6414ca7f10fce3929e822b629f261fef287f74747d2db1e61ff1aebd56ec4035",
+      "kind": "agent_instructions",
+      "name": "cs-product-manager",
+      "description": "Product management agent for feature prioritization, customer discovery, PRD development, and roadmap planning using RICE framework. Use when a product decision needs structure and evidence — e.g., RICE-scoring a backlog of 20 feature requests before quarterly planning, or drafting a PRD from raw customer-interview notes.",
+      "tools": "['Read', 'Write', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/agents/product/cs-product-manager.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-cb3ba7721b9c2c1c",
+      "sha256": "cb3ba7721b9c2c1c28ca05db2b938f426c140d0c1d7c4df8b5717619e75f11e7",
+      "kind": "agent_instructions",
+      "name": "cs-product-orchestrator",
+      "description": "Outcome-first product lead. Routes product inquiries (prioritization, OKRs, UX research, design systems, competitive, analytics, experiments, discovery, roadmaps, scaffolding, stories, HIG, code-to-PRD, summarization) to the right sub-skill via the product-skills orchestrator, and drives the continuous-discovery loop with machine gates (cadence tracker + OST linter). Forks context to keep heavy intake (interview logs, event exports, competitor data) out of the parent thread. Signature forcing question — \"What outcome does this serve, and which tested assumption says it will?\"",
+      "tools": "Read, Write, Edit, Glob, Grep, Bash, Skill",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/product-team/agents/cs-product-orchestrator.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-836c72bd8b33690e",
+      "sha256": "836c72bd8b33690ec5c93e04e6448df37683b65922b90ff4b82396a397f256cd",
+      "kind": "agent_instructions",
+      "name": "cs-product-strategist",
+      "description": "Product strategy agent for quarterly OKR planning, competitive landscape analysis, product vision development, and strategy pivot evaluation. Use when the question is direction rather than delivery — e.g., cascading company OKRs into product-team objectives for next quarter, or running a competitive teardown to decide whether to enter an adjacent market.",
+      "tools": "['Read', 'Write', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/agents/product/cs-product-strategist.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-a91359a355601487",
+      "sha256": "a91359a355601487638a776208b6e4ce56497302b7d4e503312b32a5551da663",
+      "kind": "agent_instructions",
+      "name": "cs-project-manager",
+      "description": "Project Manager agent for sprint planning, Jira/Confluence workflows, Scrum ceremonies, and stakeholder reporting. Orchestrates project-management skills. Use when running delivery operations — e.g., planning a sprint with capacity and carry-over math in Jira, or assembling a portfolio health report for stakeholders from ticket and velocity data.",
+      "tools": "['Read', 'Write', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/agents/project-management/cs-project-manager.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-fc57de5ef7a6511a",
+      "sha256": "fc57de5ef7a6511ad5b2eac07b26f7a8ad912a2c6f14cab74200a25a8acab94e",
+      "kind": "agent_instructions",
+      "name": "cs-pulse",
+      "description": "Multi-source recency research persona. Walks 2–4 forcing intake questions one at a time (topic specificity, angle, time window, platform scope), runs Reddit + HN + Web in parallel (1 q/sec per platform), optionally pulls X/Twitter, and synthesizes cross-platform patterns into a citation-disciplined briefing. Refuses vague topics. Refuses to bundle intake questions. Refuses to fabricate sources or cite training knowledge as session results.",
+      "tools": "['Read', 'Write', 'Bash', 'WebFetch', 'WebSearch']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/research/pulse/agents/cs-pulse.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-9937d449621d65dc",
+      "sha256": "9937d449621d65dc872de193660ea00b98a54ebfc87ad54dbbcad8b81ca3d94e",
+      "kind": "agent_instructions",
+      "name": "cs-quality-regulatory",
+      "description": "Quality & Regulatory agent for ISO 13485 QMS, MDR compliance, FDA submissions, GDPR/DSGVO, and ISMS audits. Orchestrates ra-qm-team skills. Spawn when users need regulatory strategy, audit preparation, CAPA management, risk management, or compliance documentation.",
+      "tools": "['Read', 'Write', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/agents/ra-qm-team/cs-quality-regulatory.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-3cb01deabf1f80e8",
+      "sha256": "3cb01deabf1f80e8ad42627bb72a1c1f0b2cfa53cde0b9cfd392ac57c7accb63",
+      "kind": "agent_instructions",
+      "name": "cs-reflect",
+      "description": "Mid-conversation reflection persona. Halts the current thread, re-reads full conversation from original goal forward, runs 5-dimension analysis (Macro / Gap / Reflective / Bias / Contextual), and delivers flowing prose ending with Continue / Pivot / Pause recommendation. Refuses to manufacture problems when path is solid. Refuses vague reassurance. Refuses structured-report output (headers, bullets) when prose is required. Asks at most 1 optional clarifier (only when context is too thin to reassess).",
+      "tools": "['Read']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/productivity/reflect/agents/cs-reflect.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-c7f8eb571fe984dd",
+      "sha256": "c7f8eb571fe984ddbe995b4ede64e6829648b778a01015c34d9a487f3bbb7980",
+      "kind": "agent_instructions",
+      "name": "cs-research",
+      "description": "Hybrid research router + fallback persona. Walks 2-4 minimal intake questions (Q1 question + Q2 output preference; Q3 disambiguation only when classification is ambiguous; Q4 only if fallback). Deterministically classifies research questions by keyword signals and routes to one of 6 specialists (pulse / grants / litreview / syllabus / patent / dossier) at ≥2-signal confidence. Falls back to own plan-decompose-search-synthesize workflow when no specialist matches. NEVER delegates silently — always surfaces routing decision and accepts override. Refuses LLM-reasoned classification (must be deterministic keyword matching). Refuses to pre-answer specialist questions (lets specialists run their own intake).",
+      "tools": "['Read', 'Write', 'Bash', 'WebSearch', 'WebFetch']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/research/research/agents/cs-research.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-6c7cc54ff3fdd113",
+      "sha256": "6c7cc54ff3fdd113075aa9edb67135c1716e26c8294a9cef6deb1854da4298fd",
+      "kind": "agent_instructions",
+      "name": "cs-research-ops-orchestrator",
+      "description": "Evidence-first R&D operations lead. Routes enterprise research inquiries (clinical study design / R&D finance / market research / product research) to the right sub-skill via the research-ops-skills orchestrator. Forks context to keep heavy intake (protocol drafts, program ledgers, survey exports, interview transcripts) out of the parent thread. Signature forcing question — \"What decision does this research drive, and what's your confidence?\"",
+      "tools": "Read, Write, Edit, Glob, Grep, Bash, Skill",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/research-ops/agents/cs-research-ops-orchestrator.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-0a4d0c0f695f73d4",
+      "sha256": "0a4d0c0f695f73d48e844d31fd5c41d9dd1bca4c6fa60a4f73ec90ccb01b0a3f",
+      "kind": "agent_instructions",
+      "name": "cs-roast-judge",
+      "description": "Convenes a 5-angle adversarial panel (Critic, Champion, Analyst, Investigator, Customer) on a business idea, then acts as the Judge to deliver one GO / RESHAPE / KILL verdict with the cheapest 48-hour test to de-risk it. Fires all five reviewers in parallel as general-purpose subagents with the same brief, refuses to average the scores, names and resolves the real tension, and never softens the call. Use to pressure-test or stress-test an idea before building it.",
+      "tools": "['Read', 'Bash', 'Task', 'WebSearch']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/productivity/roast/agents/cs-roast-judge.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-a10ff6b18873dccd",
+      "sha256": "a10ff6b18873dccdffb114d5ae44e1f23424161b3e5be35e084b87b66a4f2a1f",
+      "kind": "agent_instructions",
+      "name": "cs-run-forensics",
+      "description": "Use when asked why an agent did something, what a past session or overnight run changed, whether its tests really passed, or to check a summary or handoff against what happened. Reads the recorded transcript, walks back from the step in question, and keeps recorded facts apart from inferences.",
+      "tools": "",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/engineering/agent-run-forensics/agents/cs-run-forensics.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-b12cf5c5f107c588",
+      "sha256": "b12cf5c5f107c5888609dccc6c7507f5b555730c19c13b5dff8d7c31ed4c389a",
+      "kind": "agent_instructions",
+      "name": "cs-scraping-architect",
+      "description": "Use when the user wants to scrape a website, crawl docs, extract data from PDFs/Excel/CSV/HTML, parse an API response into a dataset, or debug a brittle scraping script. Designs validated extraction pipelines (Firecrawl, local Python, or hybrid) — never one-off scripts that ship unvalidated data.",
+      "tools": "Read, Write, Edit, Bash, Grep, Glob",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/engineering/universal-scraping-architect/agents/cs-scraping-architect.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-9ebe4b9f30e13878",
+      "sha256": "9ebe4b9f30e13878d6182f0ad5ad2169d9bf60cafa2ff69530a68fd4b9d75f63",
+      "kind": "agent_instructions",
+      "name": "cs-senior-engineer",
+      "description": "Senior Engineer agent for architecture decisions, code review, DevOps, and API design. Orchestrates engineering and engineering-team skills for technical implementation work. Spawn when users need system design, code quality review, CI/CD pipeline setup, or infrastructure decisions.",
+      "tools": "['Read', 'Write', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/agents/engineering/cs-senior-engineer.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-25988d30d7bd790d",
+      "sha256": "25988d30d7bd790dc4dd0d7e19de5075ff57897584847ba5b8877073f97c1a03",
+      "kind": "agent_instructions",
+      "name": "cs-skill-author",
+      "description": "Skill-author persona. Forcing-question interrogator before any new-skill commit. Runs Matt Pocock's 6-item review checklist as a 6-question gate. Refuses to accept skills with stale time-bound claims, vague descriptions, missing \"Use when\" triggers, or SKILL.md > 100 lines without progressive disclosure.",
+      "tools": "['Read', 'Write', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/engineering/write-a-skill/agents/cs-skill-author.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-2930b69523080825",
+      "sha256": "2930b69523080825af2cdd7420c854b72d2aa13ff3c421b2b367ebe79d000d53",
+      "kind": "agent_instructions",
+      "name": "cs-skill-retro",
+      "description": "Use when someone wants their agent setup graded from real conversation history, asks which of their installed skills actually fire, wonders whether their skills are earning their keep, or wants evidence-backed edits to a skill that keeps failing. Harvests recent local sessions, judges them against fixed rubrics, and proposes only the skill changes the evidence justifies.",
+      "tools": "",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/engineering/skill-retro/agents/cs-skill-retro.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-b9b9c5fcffaaa2fb",
+      "sha256": "b9b9c5fcffaaa2fb87ad3f443f236319685c92f3e0e8eb0796d5fee180120975",
+      "kind": "agent_instructions",
+      "name": "cs-soc2-auditor",
+      "description": "SOC 2 Type II auditor persona — observation-period discipline + AICPA TSC focused. Coordinates with ISO 27001 (75% overlap, the canonical cross-walk pair) and GDPR (if Privacy TSC in scope). NOT executive cybersecurity strategy (see cs-ciso-advisor); NOT external audit firm engagement (that's the licensed CPA firm's role).",
+      "tools": "['Read', 'Write', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/compliance-os/agents/cs-soc2-auditor.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-9c129293dcaa8bbc",
+      "sha256": "9c129293dcaa8bbcffce282223389b91473e5483e7602f816a18196f04d0a54e",
+      "kind": "agent_instructions",
+      "name": "cs-spinning-up-deep-rl",
+      "description": "Answers from the knowledge base compiled from Spinning Up in Deep RL by Joshua Achiam (OpenAI). Loads the master frameworks first and reads a single chapter file on demand rather than the whole source. Refuses to answer beyond what the source covers.",
+      "tools": "['Read', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/engineering/spinning-up-deep-rl/agents/cs-spinning-up-deep-rl.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-7b82524c3c659445",
+      "sha256": "7b82524c3c6594454a10a9f769876ff276dae3e734aa81960af9fd8a789c1f9a",
+      "kind": "agent_instructions",
+      "name": "cs-syllabus",
+      "description": "Course supplementary reading list persona. Walks 3 forcing intake questions (syllabus input format + course audience + year range) before parsing. Halts at grouping checkpoint after Phase 2 (proceed/merge/split/add/remove). Searches Consensus sequentially at 1 q/sec with applied-domain weaving (e.g., 'enzyme kinetics food processing' not just 'enzyme kinetics'). Calibrates summary jargon to audience (undergrad defines every term; grad assumes technical fluency). Writes Bloom higher-order discussion questions tied to learning outcomes. Generates .docx via bundled JS script.",
+      "tools": "['Read', 'Write', 'Bash']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/research/syllabus/agents/cs-syllabus.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-c47bc14dd95537dc",
+      "sha256": "c47bc14dd95537dc4254908e0e34f74903a21632f21748157920e57e70fcca18",
+      "kind": "agent_instructions",
+      "name": "cs-ux-researcher",
+      "description": "UX research agent for research planning, persona generation, journey mapping, and usability test analysis. Use when product decisions need user evidence — e.g., planning interview scripts and recruiting criteria for a discovery study, or synthesizing usability-test sessions into prioritized findings and updated personas.",
+      "tools": "['Read', 'Write', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/agents/product/cs-ux-researcher.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-2c61e655b2d5f690",
+      "sha256": "2c61e655b2d5f6902798920e0358428ee14596c58cfd8c059c0a131faa65ead4",
+      "kind": "agent_instructions",
+      "name": "cs-vpe-advisor",
+      "description": "Throughput-first VP of Engineering advisor for delivery throughput (DORA 4 metrics), engineering hiring funnel, eng team structure (squad/tribe + manager-trigger), and production discipline. NOT a CTO skill — VPE owns how the team ships, CTO owns what to build.",
+      "tools": "['Read', 'Write', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/c-level-agents/agents/cs-vpe-advisor.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-72a829708a1d13cc",
+      "sha256": "72a829708a1d13cceae5d906051552aa7a348e90e027c7d2f5df07842ed47f2e",
+      "kind": "agent_instructions",
+      "name": "cs-webinar-marketer",
+      "description": "Webinar & virtual-event marketing specialist agent. Use when planning, promoting, running, or rescuing a webinar, virtual event, live demo, workshop, masterclass, fireside chat, or virtual summit. Orchestrates the webinar-marketing skill — sizes the funnel backward from the business goal, builds the promotion runway, designs the show-up and live-to-close sequences, scores an existing funnel to find the broken stage, and plans evergreen/on-demand automation. Treats a webinar as a funnel, not an event. Voice — outcome-obsessed demand operator; refuses to celebrate registrations when nobody shows up or buys; fixes the stage that's actually broken instead of rewriting the landing page by reflex.",
+      "tools": "['Read', 'Write', 'Bash', 'WebFetch', 'WebSearch']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/agents/marketing/cs-webinar-marketer.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-f89e8ab6fa9b65d0",
+      "sha256": "f89e8ab6fa9b65d0f11e1f43497af1865d838378d77ab1fc3da463bb498dea73",
+      "kind": "agent_instructions",
+      "name": "cs-weekly-review",
+      "description": "Walks a user through a complete GTD weekly review — GET CLEAR (collect, process inboxes to zero, empty your head), GET CURRENT (next actions, previous + upcoming calendar, waiting-for, project lists), GET CREATIVE (someday/maybe, new ideas) — using deterministic scripts to inventory open loops, gate the checklist, and score commitment health. Refuses a COMPLETE verdict while any GET CURRENT step is unaccounted for, and never lets the review become a guilt ritual. Use to run a weekly review, close open loops, or restart a lapsed review habit.",
+      "tools": "['Read', 'Glob', 'Grep', 'Bash']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/productivity/weekly-review/agents/cs-weekly-review.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-73e6443e85ecc549",
+      "sha256": "73e6443e85ecc549060e20b58decebcb8b0f60594e68bfd49a2f86451e467837",
+      "kind": "agent_instructions",
+      "name": "cs-wiki-ingestor",
+      "description": "Dispatched sub-agent that ingests a new source into an LLM Wiki vault. Reads the source, proposes TL;DR and key claims, identifies which entity/concept/synthesis pages will be touched, flags contradictions with existing pages, and — after user confirmation — writes the source summary, updates cross-references across 5-15 pages, regenerates the index, and appends a standardized log entry. Spawn when the user says \"ingest this\", \"add this paper/article/book to the wiki\", or drops a file into raw/.",
+      "tools": "['Read', 'Write', 'Edit', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/agents/engineering/cs-wiki-ingestor.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-96aeb59003d980ac",
+      "sha256": "96aeb59003d980accc82fd80b4e8e2c3c25346aaf7b3cb5b258cb0c1e27627b0",
+      "kind": "agent_instructions",
+      "name": "cs-wiki-librarian",
+      "description": "Dispatched sub-agent that answers queries against an LLM Wiki vault. Reads index.md first, drills into 3-10 relevant pages across categories, synthesizes an answer with inline [[wikilink]] citations, and offers to file the answer back into the wiki as a new comparison or synthesis page. Spawn when the user asks a substantive question the wiki might answer, says \"what does the wiki say about X\", \"compare A and B across my sources\", or wants to explore a topic.",
+      "tools": "['Read', 'Write', 'Edit', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/agents/engineering/cs-wiki-librarian.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-dd9e43e85829e232",
+      "sha256": "dd9e43e85829e2329f37bdafcb30415a3121c1a1bd98452cd039c80543f08712",
+      "kind": "agent_instructions",
+      "name": "cs-wiki-linter",
+      "description": "Dispatched sub-agent that runs a periodic health check on an LLM Wiki vault. Runs mechanical checks via scripts (orphans, broken links, stale pages, missing frontmatter, duplicate titles, log gaps), does semantic checks (contradictions, stale claims, cross-reference gaps, concepts missing their own page), and produces a markdown report with suggested actions. Spawn weekly, after batch ingests, or when the user says \"check the wiki\" / \"lint my wiki\" / \"audit the vault\".",
+      "tools": "['Read', 'Write', 'Edit', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/agents/engineering/cs-wiki-linter.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-d243bcecac29140b",
+      "sha256": "d243bcecac29140be5ec43348bb0bb75fe0e3a0cb998c2d8781fe614199152cd",
+      "kind": "agent_instructions",
+      "name": "cs-workflow-architect",
+      "description": "Workflow-architect persona. Opens every workflow-creation session with the intake question set, infers-and-proposes when the user is vague (never interrogates in a loop), and refuses to write a workflow file before the topology is confirmed. Enforces the hard rules (pure-literal meta, no non-determinism, guarded loops, parallel thunks) via the validator before any run.",
+      "tools": "['Read', 'Write', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/engineering/workflow-builder/agents/cs-workflow-architect.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-3ba6982754ee0098",
+      "sha256": "3ba6982754ee00989a8a280edf719606041839b896ffd417ae077821259e774d",
+      "kind": "agent_instructions",
+      "name": "cs-workspace-admin",
+      "description": "Google Workspace administration agent using the gws CLI. Orchestrates workspace setup, Gmail/Drive/Sheets/Calendar automation, security audits, and recipe execution. Spawn when users need Google Workspace automation, gws CLI help, or workspace administration.",
+      "tools": "['Read', 'Write', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/agents/engineering-team/cs-workspace-admin.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-5fb2e444f6487536",
+      "sha256": "5fb2e444f6487536a37e1ffc8fadea8868eba33bdbf3e5fd20ac1681c2effe1b",
+      "kind": "agent_instructions",
+      "name": "devils-advocate",
+      "description": "Adversarial reviewer for executive plans, proposals, and decisions. Returns exactly three specific concerns, each severity-rated CRITICAL / HIGH / MEDIUM, with the evidence that would confirm or kill it. Use before committing resources to a plan, before a board or investor presentation, or when feedback so far has been one-sidedly positive. Not a code reviewer.",
+      "tools": "",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/c-level-advisor/executive-mentor/agents/devils-advocate.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-568a72b6f2bf28ec",
+      "sha256": "568a72b6f2bf28ec9af156eb8f7c78c1bd061d837dd1251f50883d309d56e3c3",
+      "kind": "agent_instructions",
+      "name": "devils_advocate_agent",
+      "description": "Challenges assumptions, tests logical chains, and stress-tests research arguments at mandatory checkpoints",
+      "tools": "",
+      "source_licenses": {
+        "academic": "CC-BY-NC-4.0"
+      },
+      "paths": [
+        "library/collections/academic/deep-research/agents/devils_advocate_agent.md"
+      ],
+      "owner_skills": [
+        "academic/deep-research"
+      ],
+      "referenced_by": [
+        "academic/deep-research"
+      ],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-a3ddde4c1e26e9e8",
+      "sha256": "a3ddde4c1e26e9e8603f71e47b3afb0c83131e0428b84048c0c3e634f19e5b5c",
+      "kind": "agent_instructions",
+      "name": "devils_advocate_reviewer_agent",
+      "description": "Challenges core arguments and logical coherence as the devils advocate reviewer in the editorial panel",
+      "tools": "",
+      "source_licenses": {
+        "academic": "CC-BY-NC-4.0"
+      },
+      "paths": [
+        "library/collections/academic/academic-paper-reviewer/agents/devils_advocate_reviewer_agent.md"
+      ],
+      "owner_skills": [
+        "academic/academic-paper-reviewer"
+      ],
+      "referenced_by": [
+        "academic/academic-paper-reviewer"
+      ],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-706a70fab08a37df",
+      "sha256": "706a70fab08a37dff52f6e097787cf8d5712fff02bcce87ac0a184109f478f55",
+      "kind": "agent_instructions",
+      "name": "domain_reviewer_agent",
+      "description": "Peer Reviewer 2; assesses domain expertise, substantive accuracy, and field-specific adequacy",
+      "tools": "",
+      "source_licenses": {
+        "academic": "CC-BY-NC-4.0"
+      },
+      "paths": [
+        "library/collections/academic/academic-paper-reviewer/agents/domain_reviewer_agent.md"
+      ],
+      "owner_skills": [
+        "academic/academic-paper-reviewer"
+      ],
+      "referenced_by": [
+        "academic/academic-paper-reviewer"
+      ],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-50b78a42cce70338",
+      "sha256": "50b78a42cce703385e2991cd42e6c9b32144f4605a316d2920c83dd65d8035bc",
+      "kind": "agent_instructions",
+      "name": "draft_writer_agent",
+      "description": "Writes the full paper draft section by section from the structured outline and Paper Configuration Record",
+      "tools": "",
+      "source_licenses": {
+        "academic": "CC-BY-NC-4.0"
+      },
+      "paths": [
+        "library/collections/academic/academic-paper/agents/draft_writer_agent.md"
+      ],
+      "owner_skills": [
+        "academic/academic-paper"
+      ],
+      "referenced_by": [
+        "academic/academic-paper"
+      ],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-28b5ad256d0078e3",
+      "sha256": "28b5ad256d0078e3750eb848e61f7b9c3e9a95e9b653724c02dfe436bad47f2d",
+      "kind": "agent_instructions",
+      "name": "editor_in_chief_agent",
+      "description": "Q1 journal editorial review; delivers Accept/Reject verdict with actionable feedback on research reports",
+      "tools": "",
+      "source_licenses": {
+        "academic": "CC-BY-NC-4.0"
+      },
+      "paths": [
+        "library/collections/academic/deep-research/agents/editor_in_chief_agent.md"
+      ],
+      "owner_skills": [
+        "academic/deep-research"
+      ],
+      "referenced_by": [
+        "academic/deep-research"
+      ],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-75209938bfcb77ae",
+      "sha256": "75209938bfcb77ae203435580f74cc539b522168312429606137b8c3557e3b6f",
+      "kind": "agent_instructions",
+      "name": "editorial_synthesizer_agent",
+      "description": "Synthesizes all reviewer reports into a unified editorial decision letter and revision roadmap",
+      "tools": "",
+      "source_licenses": {
+        "academic": "CC-BY-NC-4.0"
+      },
+      "paths": [
+        "library/collections/academic/academic-paper-reviewer/agents/editorial_synthesizer_agent.md"
+      ],
+      "owner_skills": [
+        "academic/academic-paper-reviewer"
+      ],
+      "referenced_by": [
+        "academic/academic-paper-reviewer"
+      ],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-9690e570d081bfcd",
+      "sha256": "9690e570d081bfcdef6da23fb93064af4028c9d6b766fcbcf0cf0981463d492f",
+      "kind": "agent_instructions",
+      "name": "eic_agent",
+      "description": "Journal-Fit Reviewer seat; contributes the journal-fit / originality / overall-quality review card — the final editorial decision is editorial_synthesizer_agent's Phase 2 work",
+      "tools": "",
+      "source_licenses": {
+        "academic": "CC-BY-NC-4.0"
+      },
+      "paths": [
+        "library/collections/academic/academic-paper-reviewer/agents/eic_agent.md"
+      ],
+      "owner_skills": [
+        "academic/academic-paper-reviewer"
+      ],
+      "referenced_by": [
+        "academic/academic-paper-reviewer"
+      ],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-ad0e369651b45f2a",
+      "sha256": "ad0e369651b45f2ab82e9aa8b0419d551c918614ba70d84b43f3ca74faf57092",
+      "kind": "agent_instructions",
+      "name": "enrichment-agent",
+      "description": "Pulls detailed profile, company, and activity data for qualified leads. Enriches prospects with recent news, funding data, content interests, and mutual overlap.",
+      "tools": "['Bash', 'Read', 'WebSearch', 'WebFetch']",
+      "source_licenses": {
+        "ecc": "MIT"
+      },
+      "paths": [
+        "library/collections/ecc/skills/lead-intelligence/agents/enrichment-agent.md"
+      ],
+      "owner_skills": [
+        "ecc/lead-intelligence"
+      ],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-319037c79e3709c3",
+      "sha256": "319037c79e3709c369410654f6ada445dcb29b94e431ee27694af5ec910a977e",
+      "kind": "agent_instructions",
+      "name": "ethics_review_agent",
+      "description": "Research ethics self-check (before a human committee/IRB, not a replacement); confirms Critical integrity concerns before delivery — stops the user once, overridable, never a veto",
+      "tools": "",
+      "source_licenses": {
+        "academic": "CC-BY-NC-4.0"
+      },
+      "paths": [
+        "library/collections/academic/deep-research/agents/ethics_review_agent.md"
+      ],
+      "owner_skills": [
+        "academic/deep-research"
+      ],
+      "referenced_by": [
+        "academic/deep-research"
+      ],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-82c23c3d014c252b",
+      "sha256": "82c23c3d014c252b913c259f4e018dd83c389478f18a7e5b226e86ec0769d22a",
+      "kind": "agent_instructions",
+      "name": "experiment-runner",
+      "description": "Runs one iteration of an autoresearch experiment loop. Reads experiment state from .autoresearch/{domain}/{name}/, makes exactly ONE change to the target file, commits it, evaluates via run_experiment.py, and reports KEEP / DISCARD / CRASH. Spawned per iteration by /ar-run and /ar-loop. Never modifies the evaluator. Not for general refactoring or multi-change edits.",
+      "tools": "",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/engineering/autoresearch-agent/agents/experiment-runner.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-26dacdebdfdd7037",
+      "sha256": "26dacdebdfdd70373cf93167c7b02cca41306fe21f9a25a5d615f7aea61dadee",
+      "kind": "agent_instructions",
+      "name": "field_analyst_agent",
+      "description": "Identifies the papers field and dynamically configures the reviewer teams identities and expertise",
+      "tools": "",
+      "source_licenses": {
+        "academic": "CC-BY-NC-4.0"
+      },
+      "paths": [
+        "library/collections/academic/academic-paper-reviewer/agents/field_analyst_agent.md"
+      ],
+      "owner_skills": [
+        "academic/academic-paper-reviewer"
+      ],
+      "referenced_by": [
+        "academic/academic-paper-reviewer"
+      ],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-f8a7ab7c017ed415",
+      "sha256": "f8a7ab7c017ed415eebe2eb0db63f02098649d0cf58fd2b41e7af50feb3e3405",
+      "kind": "agent_instructions",
+      "name": "formatter_agent",
+      "description": "Formats the final manuscript output to target journal style requirements",
+      "tools": "",
+      "source_licenses": {
+        "academic": "CC-BY-NC-4.0"
+      },
+      "paths": [
+        "library/collections/academic/academic-paper/agents/formatter_agent.md"
+      ],
+      "owner_skills": [
+        "academic/academic-paper"
+      ],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-37fcdb79dcaaea7a",
+      "sha256": "37fcdb79dcaaea7af3c51d7e88f3ac062566718aeea2497f7d99ef9aa4196610",
+      "kind": "agent_instructions",
+      "name": "harness-runner",
+      "description": "Drives one agent-harness loop iteration to completion — reads the plan and state files, executes exactly one task with the task skill's own tools, lets the controller verify it, and reports the directive. Use when a goal has been compiled into an agent-harness plan and tasks need executing (\"run the next harness task\", \"drive this loop until it escalates or closes\"). Use PROACTIVELY after goal_compiler.py writes a plan. NOT for compiling goals (main session does that), authoring workflows (cs-workflow-architect), or tournaments (hub-coordinator).",
+      "tools": "Read, Bash, Grep, Glob, Edit, Write",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/engineering/agent-harness/agents/harness-runner.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-5db08690666ba0c1",
+      "sha256": "5db08690666ba0c1a8ddf37411d0b20b3da774e45404d023c0464ea1e17e9fc0",
+      "kind": "agent_instructions",
+      "name": "hive-coder",
+      "description": "Focused coder - implements exactly the assigned subtask in its worktree",
+      "tools": "",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/engineering/hivemind/assets/agents/coder.md"
+      ],
+      "owner_skills": [
+        "claude-skills/hivemind"
+      ],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-4d29b12c6db4dff0",
+      "sha256": "4d29b12c6db4dff0b53e04441f9c6a56d5f3340a0def245c1b78d9ea343fded4",
+      "kind": "agent_instructions",
+      "name": "hive-scout",
+      "description": "Read-only codebase scout - research and reporting, zero writes",
+      "tools": "{'write': False, 'edit': False, 'bash': False, 'patch': False}",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/engineering/hivemind/assets/agents/scout.md"
+      ],
+      "owner_skills": [
+        "claude-skills/hivemind"
+      ],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-d866b68c06de998c",
+      "sha256": "d866b68c06de998ce28fb96b2f98f66e22442eb26be6f8f6707acf7a86f6437f",
+      "kind": "agent_instructions",
+      "name": "hive-tester",
+      "description": "Test runner - executes tests and diagnoses failures, never edits source",
+      "tools": "{'write': False, 'edit': False, 'patch': False}",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/engineering/hivemind/assets/agents/tester.md"
+      ],
+      "owner_skills": [
+        "claude-skills/hivemind"
+      ],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-1893300b7c1937b8",
+      "sha256": "1893300b7c1937b8a57e6a932737145d968ea2aca53aec238e36a04172f1afa1",
+      "kind": "agent_instructions",
+      "name": "hive-verifier",
+      "description": "Adversarial fact-checker - re-derives another worker's claims from the source files and tries to refute them",
+      "tools": "{'write': False, 'edit': False, 'bash': False, 'patch': False}",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/engineering/hivemind/assets/agents/verifier.md"
+      ],
+      "owner_skills": [
+        "claude-skills/hivemind"
+      ],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-8d93fade4aa0ea9a",
+      "sha256": "8d93fade4aa0ea9adec1e7d3bda233ee694d4d733e9b0f29b489d5bb37cf333d",
+      "kind": "agent_instructions",
+      "name": "hub-coordinator",
+      "description": "Coordinator for AgentHub multi-agent collaboration sessions. Dispatches N parallel subagents in isolated git worktrees via the Agent tool, monitors progress via the message board, evaluates results by metric command or LLM judge, and merges the winning branch. Acts as the main Claude Code session role for `/agenthub:*` commands.",
+      "tools": "Agent, Read, Write, Edit, Glob, Grep, Bash(git worktree *), Bash(git branch *), Bash(git checkout *), Bash(git merge *), Bash(git tag *), Bash(git log *), Bash(git diff *), Bash(git status *), Bash(python *), Bash(mkdir *), Bash(ls *), Bash(cat *)",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/engineering/agenthub/agents/hub-coordinator.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-f56e407370efaf93",
+      "sha256": "f56e407370efaf93591944255bca95e39a4708681a06a81f09fce150bcc8982b",
+      "kind": "agent_instructions",
+      "name": "intake_agent",
+      "description": "Conducts the paper configuration interview and produces the Paper Configuration Record for downstream agents",
+      "tools": "",
+      "source_licenses": {
+        "academic": "CC-BY-NC-4.0"
+      },
+      "paths": [
+        "library/collections/academic/academic-paper/agents/intake_agent.md"
+      ],
+      "owner_skills": [
+        "academic/academic-paper"
+      ],
+      "referenced_by": [
+        "academic/academic-paper"
+      ],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-3cf110c39e08b358",
+      "sha256": "3cf110c39e08b358bcf5748047f8866aca0031f40e6767fdbc1f26bb866b436b",
+      "kind": "agent_instructions",
+      "name": "integrity_verification_agent",
+      "description": "Runs coverage-bounded checks on registered references, citation contexts, data surfaces, and claims before review and after revision",
+      "tools": "",
+      "source_licenses": {
+        "academic": "CC-BY-NC-4.0"
+      },
+      "paths": [
+        "library/collections/academic/academic-pipeline/agents/integrity_verification_agent.md"
+      ],
+      "owner_skills": [
+        "academic/academic-pipeline"
+      ],
+      "referenced_by": [
+        "academic/academic-pipeline"
+      ],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-4586eae2989e55e4",
+      "sha256": "4586eae2989e55e4eb349e816b925ec05c0f217c156247ea52357a34d1f79c4b",
+      "kind": "agent_instructions",
+      "name": "karpathy-reviewer",
+      "description": "Reviews staged git changes against Karpathy's 4 coding principles. Runs complexity_checker on changed files, diff_surgeon on the diff, and produces a verdict with specific fix recommendations. Spawn before committing, when the user says \"karpathy check\", \"review my diff\", or when the /karpathy-check command is invoked.",
+      "tools": "['Read', 'Grep', 'Glob', 'Bash(git diff *)', 'Bash(git log *)', 'Bash(git status *)', 'Bash(python *)']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/engineering/karpathy-coder/agents/karpathy-reviewer.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-ce051707df426120",
+      "sha256": "ce051707df4261209ed39cbbb82f40aee4ec72c20f5612aec1e5711b7bd12bbb",
+      "kind": "agent_instructions",
+      "name": "literature_strategist_agent",
+      "description": "Designs the literature search strategy and manages source selection for the paper",
+      "tools": "",
+      "source_licenses": {
+        "academic": "CC-BY-NC-4.0"
+      },
+      "paths": [
+        "library/collections/academic/academic-paper/agents/literature_strategist_agent.md"
+      ],
+      "owner_skills": [
+        "academic/academic-paper"
+      ],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-b11f6c047ece6e5c",
+      "sha256": "b11f6c047ece6e5c096e94ee937dbf583f63b9cc70ae7f063013d87f9e72ce76",
+      "kind": "agent_instructions",
+      "name": "memory-analyst",
+      "description": "Read-only analyst for `~/.claude/projects/<project>/memory/`. Identifies promotion candidates (entries proven enough for CLAUDE.md), stale references, consolidation opportunities, conflicts with existing CLAUDE.md rules, and reports health metrics (capacity, freshness, organization). Spawned by `/si:memory-review`.",
+      "tools": "Read, Glob, Grep",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/engineering-team/self-improving-agent/agents/memory-analyst.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-5cdbd35fb03d9ebd",
+      "sha256": "5cdbd35fb03d9ebd160507d92681c161c09fe08dd010801480b32d891679d655",
+      "kind": "agent_instructions",
+      "name": "meta_analysis_agent",
+      "description": "Quantitative synthesis of included studies; computes effect sizes, assesses heterogeneity, and applies GRADE framework",
+      "tools": "",
+      "source_licenses": {
+        "academic": "CC-BY-NC-4.0"
+      },
+      "paths": [
+        "library/collections/academic/deep-research/agents/meta_analysis_agent.md"
+      ],
+      "owner_skills": [
+        "academic/deep-research"
+      ],
+      "referenced_by": [
+        "academic/deep-research"
+      ],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-7369527eb99f1ca2",
+      "sha256": "7369527eb99f1ca2a7351a338a4e7ef0df482d3fb516056d271a944eb7d6d8b9",
+      "kind": "agent_instructions",
+      "name": "methodology_reviewer_agent",
+      "description": "Peer Reviewer 1; assesses methodological soundness, research design validity, and statistical rigor",
+      "tools": "",
+      "source_licenses": {
+        "academic": "CC-BY-NC-4.0"
+      },
+      "paths": [
+        "library/collections/academic/academic-paper-reviewer/agents/methodology_reviewer_agent.md"
+      ],
+      "owner_skills": [
+        "academic/academic-paper-reviewer"
+      ],
+      "referenced_by": [
+        "academic/academic-paper-reviewer"
+      ],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-0b8748119bed73c1",
+      "sha256": "0b8748119bed73c1b557debc2205798f44fb14183847241a17ae0e2cd8e500c0",
+      "kind": "agent_instructions",
+      "name": "migration-planner",
+      "description": "Analyzes Cypress or Selenium test suites and creates a file-by-file migration plan. Invoked by /pw:migrate before conversion starts.",
+      "tools": "['Read', 'Grep', 'Glob', 'LS']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/engineering-team/playwright-pro/agents/migration-planner.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-76179537d4be1679",
+      "sha256": "76179537d4be16795bd78d30f88931befc60a2cb564b41a77abf4653694c5aee",
+      "kind": "agent_instructions",
+      "name": "monitoring_agent",
+      "description": "Post-research literature monitoring; helps users track new publications and developments after a research project is complete",
+      "tools": "",
+      "source_licenses": {
+        "academic": "CC-BY-NC-4.0"
+      },
+      "paths": [
+        "library/collections/academic/deep-research/agents/monitoring_agent.md"
+      ],
+      "owner_skills": [
+        "academic/deep-research"
+      ],
+      "referenced_by": [
+        "academic/deep-research"
+      ],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-fb741c0f2ee3d08d",
+      "sha256": "fb741c0f2ee3d08df81f7569424a5e542c4549ce6d16c90296bfffa3b1049ba9",
+      "kind": "agent_instructions",
+      "name": "mutual-mapper",
+      "description": "Maps the user's social graph (X following, LinkedIn connections) against scored prospects to find mutual connections and rank them by introduction potential.",
+      "tools": "['Bash', 'Read', 'Grep', 'WebSearch', 'WebFetch']",
+      "source_licenses": {
+        "ecc": "MIT"
+      },
+      "paths": [
+        "library/collections/ecc/skills/lead-intelligence/agents/mutual-mapper.md"
+      ],
+      "owner_skills": [
+        "ecc/lead-intelligence"
+      ],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-320d50ff2965efea",
+      "sha256": "320d50ff2965efeabd6f07c2be134e11da160293e958c1bc27c309d613839ad2",
+      "kind": "agent_instructions",
+      "name": "observer",
+      "description": "Background agent that analyzes session observations to detect patterns and create instincts. Uses Haiku for cost-efficiency. v2.1 adds project-scoped instincts.",
+      "tools": "",
+      "source_licenses": {
+        "ecc": "MIT"
+      },
+      "paths": [
+        "library/collections/ecc/skills/continuous-learning-v2/agents/observer.md"
+      ],
+      "owner_skills": [
+        "ecc/continuous-learning-v2"
+      ],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-e7406e69a0f3dfb8",
+      "sha256": "e7406e69a0f3dfb8e6457bd43e51e8624c54fea43e3ad77a696d723a325c789c",
+      "kind": "agent_instructions",
+      "name": "outreach-drafter",
+      "description": "Generates personalized outreach messages for qualified leads. Creates warm intro requests, cold emails, X DMs, and follow-up sequences using enriched profile data.",
+      "tools": "['Read', 'Grep']",
+      "source_licenses": {
+        "ecc": "MIT"
+      },
+      "paths": [
+        "library/collections/ecc/skills/lead-intelligence/agents/outreach-drafter.md"
+      ],
+      "owner_skills": [
+        "ecc/lead-intelligence"
+      ],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-b10b2caafcb63404",
+      "sha256": "b10b2caafcb634047a41f65d85f7399ebebedb53573e32649f6bc98422632779",
+      "kind": "agent_instructions",
+      "name": "peer_reviewer_agent",
+      "description": "Simulates peer review to identify weaknesses and suggest improvements before submission",
+      "tools": "",
+      "source_licenses": {
+        "academic": "CC-BY-NC-4.0"
+      },
+      "paths": [
+        "library/collections/academic/academic-paper/agents/peer_reviewer_agent.md"
+      ],
+      "owner_skills": [
+        "academic/academic-paper"
+      ],
+      "referenced_by": [
+        "academic/academic-paper"
+      ],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-a99386515c1e9e5b",
+      "sha256": "a99386515c1e9e5b73e91f3f9cd62f6ec3660f03e229371ad53531fa165cf007",
+      "kind": "agent_instructions",
+      "name": "perspective_reviewer_agent",
+      "description": "Peer Reviewer 3; evaluates cross-disciplinary relevance, broader impact, and alternative interpretations",
+      "tools": "",
+      "source_licenses": {
+        "academic": "CC-BY-NC-4.0"
+      },
+      "paths": [
+        "library/collections/academic/academic-paper-reviewer/agents/perspective_reviewer_agent.md"
+      ],
+      "owner_skills": [
+        "academic/academic-paper-reviewer"
+      ],
+      "referenced_by": [
+        "academic/academic-paper-reviewer"
+      ],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-8f7126803e8da083",
+      "sha256": "8f7126803e8da0834d34ae7be3de2261d4fdab26ab930ade45a94ffb8c067320",
+      "kind": "agent_instructions",
+      "name": "pipeline_orchestrator_agent",
+      "description": "Orchestrates the full multi-skill academic research pipeline and manages agent handoffs across phases",
+      "tools": "",
+      "source_licenses": {
+        "academic": "CC-BY-NC-4.0"
+      },
+      "paths": [
+        "library/collections/academic/academic-pipeline/agents/pipeline_orchestrator_agent.md"
+      ],
+      "owner_skills": [
+        "academic/academic-pipeline"
+      ],
+      "referenced_by": [
+        "academic/academic-pipeline"
+      ],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-99dd7482340eb180",
+      "sha256": "99dd7482340eb18094cfebdfd8ca60bdf2922ba90911a6a3340b8b1315f1fb2c",
+      "kind": "agent_instructions",
+      "name": "protocol_architect_agent",
+      "description": "Turns a proposal or protocol into confirmed, stage-split screening rules and a screening config before any record is screened",
+      "tools": "",
+      "source_licenses": {
+        "academic": "CC-BY-NC-4.0"
+      },
+      "paths": [
+        "library/collections/academic/sr-screener/agents/protocol_architect_agent.md"
+      ],
+      "owner_skills": [
+        "academic/sr-screener"
+      ],
+      "referenced_by": [
+        "academic/sr-screener"
+      ],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-913010222ea9ca87",
+      "sha256": "913010222ea9ca8718068280b2e4946d229c257634977f758ed2f0ff9f8565c7",
+      "kind": "agent_instructions",
+      "name": "qc_auditor_agent",
+      "description": "Reports seeds, agreement, conflicts and recheck results after the pilot and the full run, and proposes protocol clarifications",
+      "tools": "",
+      "source_licenses": {
+        "academic": "CC-BY-NC-4.0"
+      },
+      "paths": [
+        "library/collections/academic/sr-screener/agents/qc_auditor_agent.md"
+      ],
+      "owner_skills": [
+        "academic/sr-screener"
+      ],
+      "referenced_by": [
+        "academic/sr-screener"
+      ],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-145752dc27339127",
+      "sha256": "145752dc27339127606499d28ffae333fece49658766b1eeab9335f3c8e0b034",
+      "kind": "agent_instructions",
+      "name": "report-compiler-agent",
+      "description": "Transforms research findings into polished APA 7.0 academic reports; activated in Phase 4 and Phase 6",
+      "tools": "Read, Write, Edit, Grep, Glob",
+      "source_licenses": {
+        "academic": "CC-BY-NC-4.0"
+      },
+      "paths": [
+        "library/collections/academic/agents/report_compiler_agent.md",
+        "library/collections/academic/deep-research/agents/report_compiler_agent.md"
+      ],
+      "owner_skills": [
+        "academic/deep-research"
+      ],
+      "referenced_by": [
+        "academic/deep-research"
+      ],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-53ad1bbdbb5b9de5",
+      "sha256": "53ad1bbdbb5b9de5c1e9d56a358dbcc243714ffe1a1dfb334eec5b67c365141c",
+      "kind": "agent_instructions",
+      "name": "reporter_agent",
+      "description": "Builds the screening deliverables (log, RIS groups, PRISMA counts, methods draft, corpus handoff) from complete decisions",
+      "tools": "",
+      "source_licenses": {
+        "academic": "CC-BY-NC-4.0"
+      },
+      "paths": [
+        "library/collections/academic/sr-screener/agents/reporter_agent.md"
+      ],
+      "owner_skills": [
+        "academic/sr-screener"
+      ],
+      "referenced_by": [
+        "academic/sr-screener"
+      ],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-160f813381e39e6c",
+      "sha256": "160f813381e39e6c2281693fd007e6c885fff857231783e5cd85f064c38f71f8",
+      "kind": "agent_instructions",
+      "name": "research-architect-agent",
+      "description": "Designs the methodological blueprint; selects research paradigm, method, data strategy, and analytical framework",
+      "tools": "Read, Write, Edit, Grep, Glob",
+      "source_licenses": {
+        "academic": "CC-BY-NC-4.0"
+      },
+      "paths": [
+        "library/collections/academic/agents/research_architect_agent.md",
+        "library/collections/academic/deep-research/agents/research_architect_agent.md"
+      ],
+      "owner_skills": [
+        "academic/deep-research"
+      ],
+      "referenced_by": [
+        "academic/deep-research"
+      ],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-fcaf6bd50f877f5a",
+      "sha256": "fcaf6bd50f877f5acd6f6552f6db2ccf48869f9501f48c8914badb40c89723f4",
+      "kind": "agent_instructions",
+      "name": "research_question_agent",
+      "description": "Transforms vague topics into precise, FINER-evaluated researchable questions through iterative refinement",
+      "tools": "",
+      "source_licenses": {
+        "academic": "CC-BY-NC-4.0"
+      },
+      "paths": [
+        "library/collections/academic/deep-research/agents/research_question_agent.md"
+      ],
+      "owner_skills": [
+        "academic/deep-research"
+      ],
+      "referenced_by": [
+        "academic/deep-research"
+      ],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-d833e953034db451",
+      "sha256": "d833e953034db451c5f1ad353c5a9a8e49121a463afb33979885bf8f54f330ae",
+      "kind": "agent_instructions",
+      "name": "revision_coach_agent",
+      "description": "Parses reviewer or real-committee comments into source-accounted plans and response skeletons",
+      "tools": "",
+      "source_licenses": {
+        "academic": "CC-BY-NC-4.0"
+      },
+      "paths": [
+        "library/collections/academic/academic-paper/agents/revision_coach_agent.md"
+      ],
+      "owner_skills": [
+        "academic/academic-paper"
+      ],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-f5f2d094e79ac7dc",
+      "sha256": "f5f2d094e79ac7dcc37d402d132402eeb7f7119b80d4e10f34b01704f40fef09",
+      "kind": "agent_instructions",
+      "name": "risk_of_bias_agent",
+      "description": "Assesses risk of bias in included studies using RoB 2 (RCTs) and ROBINS-I (non-randomized studies)",
+      "tools": "",
+      "source_licenses": {
+        "academic": "CC-BY-NC-4.0"
+      },
+      "paths": [
+        "library/collections/academic/deep-research/agents/risk_of_bias_agent.md"
+      ],
+      "owner_skills": [
+        "academic/deep-research"
+      ],
+      "referenced_by": [
+        "academic/deep-research"
+      ],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-7411ec9df3e52b7f",
+      "sha256": "7411ec9df3e52b7f037797728da1b6f7f22c5fb7fe42b06661742f1136d6700f",
+      "kind": "agent_instructions",
+      "name": "screening-reviewer-agent",
+      "description": "Blinded screening reviewer for sr-screener: applies a confirmed protocol to one batch of records or one full-text report and returns one decision per record",
+      "tools": "Read, Grep",
+      "source_licenses": {
+        "academic": "CC-BY-NC-4.0"
+      },
+      "paths": [
+        "library/collections/academic/agents/screening_reviewer_agent.md",
+        "library/collections/academic/sr-screener/agents/screening_reviewer_agent.md"
+      ],
+      "owner_skills": [
+        "academic/sr-screener"
+      ],
+      "referenced_by": [
+        "academic/sr-screener"
+      ],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-d6aa79f50c93259e",
+      "sha256": "d6aa79f50c93259e37d20adc6cbe8cc6629b1ecde621cfa3e45508e8d53d20c5",
+      "kind": "agent_instructions",
+      "name": "signal-scorer",
+      "description": "Searches and ranks prospects by relevance signals across X, Exa, and LinkedIn. Assigns weighted scores based on role, industry, activity, influence, and location.",
+      "tools": "['Bash', 'Read', 'Grep', 'Glob', 'WebSearch', 'WebFetch']",
+      "source_licenses": {
+        "ecc": "MIT"
+      },
+      "paths": [
+        "library/collections/ecc/skills/lead-intelligence/agents/signal-scorer.md"
+      ],
+      "owner_skills": [
+        "ecc/lead-intelligence"
+      ],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-699a2030930cbaa7",
+      "sha256": "699a2030930cbaa77c5a8a6bcb01399660826b70f7bb2d21e49759017a5f9371",
+      "kind": "agent_instructions",
+      "name": "skill-extractor",
+      "description": "Transforms a proven pattern or debugging solution into a standalone, portable skill package. Generates `SKILL.md` with proper frontmatter, reference docs, and examples that work in any project (no hardcoded paths or project-specific values). Spawned by `/si:extract` when a recurring solution should become reusable.",
+      "tools": "Read, Write, Edit, Glob, Grep",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/engineering-team/self-improving-agent/agents/skill-extractor.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-3bdb9d42c3b7d303",
+      "sha256": "3bdb9d42c3b7d303c79c936ec04e6e00a33ba74b6e0d5bf0fdd519a842ec1321",
+      "kind": "agent_instructions",
+      "name": "socratic_mentor_agent",
+      "description": "Guides paper authors through Socratic questions to sharpen arguments and surface unstated assumptions",
+      "tools": "",
+      "source_licenses": {
+        "academic": "CC-BY-NC-4.0"
+      },
+      "paths": [
+        "library/collections/academic/academic-paper/agents/socratic_mentor_agent.md"
+      ],
+      "owner_skills": [
+        "academic/academic-paper"
+      ],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-ce54f162926dc55d",
+      "sha256": "ce54f162926dc55d8d95e17a3a938b20e31c23ca3e9dc89bb1dcc97a1c997480",
+      "kind": "agent_instructions",
+      "name": "socratic_mentor_agent",
+      "description": "Guides researchers through Socratic questioning to clarify and sharpen their research thinking",
+      "tools": "",
+      "source_licenses": {
+        "academic": "CC-BY-NC-4.0"
+      },
+      "paths": [
+        "library/collections/academic/deep-research/agents/socratic_mentor_agent.md"
+      ],
+      "owner_skills": [
+        "academic/deep-research"
+      ],
+      "referenced_by": [
+        "academic/deep-research"
+      ],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-52c3550a986880bb",
+      "sha256": "52c3550a986880bb2fbd1dacd1b25ceb837803cf0750781c3b4cff3dc9ca7f9a",
+      "kind": "agent_instructions",
+      "name": "source_verification_agent",
+      "description": "Grades evidence, detects predatory publications, and fact-checks claims entering the research pipeline",
+      "tools": "",
+      "source_licenses": {
+        "academic": "CC-BY-NC-4.0"
+      },
+      "paths": [
+        "library/collections/academic/deep-research/agents/source_verification_agent.md"
+      ],
+      "owner_skills": [
+        "academic/deep-research"
+      ],
+      "referenced_by": [
+        "academic/deep-research"
+      ],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-787b994b72723545",
+      "sha256": "787b994b727235451ca885f5be51ce3590dca9fd7134c66f38ba6ac4287eca26",
+      "kind": "agent_instructions",
+      "name": "state_tracker_agent",
+      "description": "Tracks pipeline state and maintains the research session history across multi-phase workflows",
+      "tools": "",
+      "source_licenses": {
+        "academic": "CC-BY-NC-4.0"
+      },
+      "paths": [
+        "library/collections/academic/academic-pipeline/agents/state_tracker_agent.md"
+      ],
+      "owner_skills": [
+        "academic/academic-pipeline"
+      ],
+      "referenced_by": [
+        "academic/academic-pipeline"
+      ],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-4a3806109cf651c8",
+      "sha256": "4a3806109cf651c8c3467d34cb13e976ec9442e30b79d674efdf202e8ff3ca86",
+      "kind": "agent_instructions",
+      "name": "structure_architect_agent",
+      "description": "Designs the papers section architecture and detailed outline before drafting begins",
+      "tools": "",
+      "source_licenses": {
+        "academic": "CC-BY-NC-4.0"
+      },
+      "paths": [
+        "library/collections/academic/academic-paper/agents/structure_architect_agent.md"
+      ],
+      "owner_skills": [
+        "academic/academic-paper"
+      ],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-9609022ee0af2ee7",
+      "sha256": "9609022ee0af2ee758eb0fb3039061ee17dce11e5cdcf26fa10ef1f24a92a86d",
+      "kind": "agent_instructions",
+      "name": "synthesis-agent",
+      "description": "Integrates findings across sources, resolves evidence conflicts, and maps knowledge gaps",
+      "tools": "Read, Write, Edit, Grep, Glob",
+      "source_licenses": {
+        "academic": "CC-BY-NC-4.0"
+      },
+      "paths": [
+        "library/collections/academic/agents/synthesis_agent.md",
+        "library/collections/academic/deep-research/agents/synthesis_agent.md"
+      ],
+      "owner_skills": [
+        "academic/deep-research"
+      ],
+      "referenced_by": [
+        "academic/deep-research"
+      ],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-8439f959d8663ef9",
+      "sha256": "8439f959d8663ef9f9e5f1637d493331e9268cefd2163e5f6cdbf403ee4db2ac",
+      "kind": "agent_instructions",
+      "name": "test-architect",
+      "description": "Plans test strategy for complex applications. Invoked by /pw:generate and /pw:coverage when the app has multiple routes, complex state, or requires a structured test plan before writing tests.",
+      "tools": "['Read', 'Grep', 'Glob', 'LS']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/engineering-team/playwright-pro/agents/test-architect.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-b26c919c5328944f",
+      "sha256": "b26c919c5328944f2c7ffb45831de5691c7c0d3e7a11dd2b86fd7878ea16a19e",
+      "kind": "agent_instructions",
+      "name": "test-debugger",
+      "description": "Diagnoses flaky or failing Playwright tests using systematic taxonomy. Invoked by /pw:fix when a test needs deep analysis including running tests, reading traces, and identifying root causes.",
+      "tools": "['Read', 'Grep', 'Glob', 'LS', 'Bash(npx playwright test *)', 'Bash(npx playwright show-trace *)', 'Bash(npx playwright codegen *)', 'Bash(node *)', 'Bash(npm test *)', 'Bash(npm run *)']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/engineering-team/playwright-pro/agents/test-debugger.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-7aa38e981e9a34ea",
+      "sha256": "7aa38e981e9a34ea167a4f1739a2e7d0f09f2eb487c1c67e3c01882b6479595e",
+      "kind": "agent_instructions",
+      "name": "timeline_extraction_agent",
+      "description": "Extracts per-source temporal facts and citation provenance into Phase 2 sidecar artifacts; activated in Phase 2 (Investigation)",
+      "tools": "",
+      "source_licenses": {
+        "academic": "CC-BY-NC-4.0"
+      },
+      "paths": [
+        "library/collections/academic/deep-research/agents/timeline_extraction_agent.md"
+      ],
+      "owner_skills": [
+        "academic/deep-research"
+      ],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-c22ba5e209bf4901",
+      "sha256": "c22ba5e209bf4901a81e8770657ff165e3996d451efa402dec0c2f3f3901bb22",
+      "kind": "agent_instructions",
+      "name": "visualization_agent",
+      "description": "Generates publication-quality figure specifications and chart descriptions for inclusion in the paper",
+      "tools": "",
+      "source_licenses": {
+        "academic": "CC-BY-NC-4.0"
+      },
+      "paths": [
+        "library/collections/academic/academic-paper/agents/visualization_agent.md"
+      ],
+      "owner_skills": [
+        "academic/academic-paper"
+      ],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-2bc13660d9c49e59",
+      "sha256": "2bc13660d9c49e590144b308700fcc8e6490306e63ea2f9a812095700a0bc732",
+      "kind": "agent_instructions",
+      "name": "wiki-ingestor",
+      "description": "Dispatched sub-agent that ingests a new source into an LLM Wiki vault. Reads the source, proposes TL;DR and key claims, identifies which entity/concept/synthesis pages will be touched, flags contradictions with existing pages, and — after user confirmation — writes the source summary, updates cross-references across 5-15 pages, regenerates the index, and appends a standardized log entry. Spawn when the user says \"ingest this\", \"add this paper/article/book to the wiki\", or drops a file into raw/.",
+      "tools": "['Read', 'Write', 'Edit', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/engineering/llm-wiki/agents/wiki-ingestor.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-5f5aa832925fc1f8",
+      "sha256": "5f5aa832925fc1f80cc987163155dce1ed855d0b71236efe366de678c41be317",
+      "kind": "agent_instructions",
+      "name": "wiki-librarian",
+      "description": "Dispatched sub-agent that answers queries against an LLM Wiki vault. Reads index.md first, drills into 3-10 relevant pages across categories, synthesizes an answer with inline [[wikilink]] citations, and offers to file the answer back into the wiki as a new comparison or synthesis page. Spawn when the user asks a substantive question the wiki might answer, says \"what does the wiki say about X\", \"compare A and B across my sources\", or wants to explore a topic.",
+      "tools": "['Read', 'Write', 'Edit', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/engineering/llm-wiki/agents/wiki-librarian.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    },
+    {
+      "id": "agent-88c7cd335e1249f9",
+      "sha256": "88c7cd335e1249f9cfbafa3b38e0ffe0aba637fd9aaf2c3d180cdfa754ea7ae7",
+      "kind": "agent_instructions",
+      "name": "wiki-linter",
+      "description": "Dispatched sub-agent that runs a periodic health check on an LLM Wiki vault. Runs mechanical checks via scripts (orphans, broken links, stale pages, missing frontmatter, duplicate titles, log gaps), does semantic checks (contradictions, stale claims, cross-reference gaps, concepts missing their own page), and produces a markdown report with suggested actions. Spawn weekly, after batch ingests, or when the user says \"check the wiki\" / \"lint my wiki\" / \"audit the vault\".",
+      "tools": "['Read', 'Write', 'Edit', 'Bash', 'Grep', 'Glob']",
+      "source_licenses": {
+        "claude-skills": "MIT"
+      },
+      "paths": [
+        "library/collections/claude-skills/engineering/llm-wiki/agents/wiki-linter.md"
+      ],
+      "owner_skills": [],
+      "referenced_by": [],
+      "host_registration": "source-only; not auto-installed"
+    }
+  ]
+}
