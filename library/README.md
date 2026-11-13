@@ -1,6 +1,6 @@
 # Библиотека навыков
 
-Около 850 навыков из 7 коллекций плюс ваши собственные. Они **не** загружаются
+Более 1000 навыков из 8 коллекций плюс ваши собственные. Они **не** загружаются
 в контекст автоматически: агент находит нужный навык через библиотекаря
 по индексу `INDEX.md`, по запросу на русском. Claude Code использует
 `.claude/skills/skill-library`, Codex — `.agents/skills/skill-library`.
@@ -21,7 +21,7 @@
 
 Просмотреть всё глазами:
 - **[SKILLS_RU.md](SKILLS_RU.md)** — подробное описание каждого навыка на
-  русском по 27 категориям: суть, ключевые навыки, решаемые задачи, с чем
+  русском по 31 категории: суть, ключевые навыки, решаемые задачи, с чем
   сочетать; для каждой категории — область применения и типовые связки.
 - **[CATALOG.md](CATALOG.md)** — краткий список по коллекциям (на английском).
 
@@ -37,7 +37,7 @@ library/
   CATALOG.md              ← каталог для вас (генерируется)
   tools/library.py        ← sync / index
   collections/
-    ecc/ claude-skills/ marketing/ pm-skills/ pm-setup/ career/ academic/
+    ecc/ claude-skills/ marketing/ pm-skills/ pm-setup/ career/ academic/ scientific/
     my/                   ← ВАШИ навыки — синхронизация их не трогает
 ```
 
@@ -86,3 +86,15 @@ Library sync → Run workflow.
 
 Файлы лицензий лежат в папке каждой коллекции. NC-коллекции подходят для
 личных проектов; для платной работы их не используйте.
+
+## Scientific Agent Skills
+
+Коллекция `scientific` подключена из [K-Dense-AI/scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills).
+Обновление: `python3 library/tools/library.py sync scientific`.
+Русские описания находятся в `ru/skills/scientific.yaml`. Проверка пересечений,
+рекомендации по выбору и лицензионные исключения — в [SCIENTIFIC_REVIEW.md](SCIENTIFIC_REVIEW.md).
+
+Лицензия корневого репозитория — MIT; индивидуальные некоммерческие условия
+`deepspot-m` и `what-if-oracle` сохранены в `sources.yaml` → `skill_licenses`
+и отображаются в индексе и справочниках. Для библиотек, данных, весов моделей
+и внешних сервисов действуют их собственные условия, указанные в исходных навыках.

@@ -11,6 +11,7 @@
 #   title_ru  — название для CATALOG.md
 #   include   — пути в репозитории, которые копировать ("*" = все видимые папки верхнего уровня)
 #   exclude   — имена файлов/папок, которые пропускать на любом уровне (glob)
+#   skill_licenses — исключения из лицензии коллекции по имени навыка
 #
 # Коллекция `my` здесь не описывается: это ваши собственные навыки,
 # синхронизация её никогда не трогает.
@@ -62,3 +63,13 @@ collections:
     license: CC-BY-NC-4.0
     title_ru: "Академические исследования — статьи, рецензии, обзоры литературы"
     include: [academic-paper, academic-paper-reviewer, academic-pipeline, deep-research, sr-screener, shared, agents]
+
+  scientific:
+    repo: https://github.com/K-Dense-AI/scientific-agent-skills
+    license: MIT
+    title_ru: "Scientific Agent Skills — научные вычисления, биомедицина и исследования"
+    include: [skills]
+    # Сохраняем явно заявленные некоммерческие ограничения отдельных навыков.
+    skill_licenses:
+      deepspot-m: PolyForm-Noncommercial-1.0.0
+      what-if-oracle: CC-BY-NC-SA-4.0

@@ -2,7 +2,7 @@
 
 Генерируется `library/tools/library.py index` из `library/ru/`. Правьте описания в `library/ru/skills/*.yaml`, не здесь.
 
-Описано навыков: **856** из 856.
+Описано навыков: **1033** из 1033.
 
 Для каждого навыка: суть, ключевые навыки, решаемые задачи и с чем сочетать. Идентификатор `коллекция/имя` можно назвать Claude напрямую: «возьми навык marketing/copywriting».
 
@@ -15,28 +15,32 @@
 | [Мобильная и десктопная разработка](#cat-dev-mobile) | 13 |
 | [Тестирование и контроль качества кода](#cat-testing) | 52 |
 | [Безопасность](#cat-security) | 26 |
-| [DevOps, инфраструктура, деплой и мониторинг](#cat-devops) | 32 |
-| [Базы данных, данные и аналитика](#cat-data) | 23 |
-| [AI, LLM и агентные системы](#cat-ai-agents) | 85 |
+| [DevOps, инфраструктура, деплой и мониторинг](#cat-devops) | 35 |
+| [Базы данных, данные и аналитика](#cat-data) | 37 |
+| [AI, LLM и агентные системы](#cat-ai-agents) | 98 |
 | [Архитектура, планирование и процесс разработки](#cat-eng-process) | 49 |
-| [Настройка Claude Code и экосистемы ECC](#cat-claude-setup) | 42 |
-| [Документация и управление знаниями](#cat-docs) | 15 |
+| [Настройка Claude Code и экосистемы ECC](#cat-claude-setup) | 44 |
+| [Документация и управление знаниями](#cat-docs) | 20 |
 | [Контент, тексты и бренд](#cat-content) | 17 |
 | [Маркетинг, SEO и рост](#cat-marketing) | 90 |
 | [Продажи, клиенты и поддержка](#cat-sales) | 26 |
 | [Продакт-менеджмент](#cat-product) | 61 |
 | [Управление проектами и командами](#cat-project) | 14 |
-| [Стратегия бизнеса и C-level](#cat-strategy) | 64 |
-| [Финансы, биллинг и инвестиции](#cat-finance) | 20 |
-| [Регуляторика, комплаенс и качество (QMS)](#cat-compliance) | 32 |
+| [Стратегия бизнеса и C-level](#cat-strategy) | 65 |
+| [Финансы, биллинг и инвестиции](#cat-finance) | 21 |
+| [Регуляторика, комплаенс и качество (QMS)](#cat-compliance) | 34 |
 | [Операции, логистика и закупки](#cat-operations) | 13 |
 | [Карьера и HR](#cat-career) | 20 |
-| [Исследования и наука](#cat-research) | 37 |
+| [Исследования и наука](#cat-research) | 57 |
 | [Личная продуктивность и коммуникации](#cat-productivity) | 23 |
-| [Видео, графика и мультимедиа](#cat-media) | 18 |
+| [Видео, графика и мультимедиа](#cat-media) | 27 |
 | [Сети и homelab](#cat-network) | 10 |
 | [Блокчейн, Web3 и трейдинг](#cat-web3) | 8 |
-| [Медицина и здравоохранение](#cat-healthcare) | 6 |
+| [Медицина и здравоохранение](#cat-healthcare) | 21 |
+| [Биоинформатика, геномика и исследовательские изображения](#cat-bioinformatics) | 47 |
+| [Химия, молекулярное моделирование и белки](#cat-chemistry) | 18 |
+| [Физика, материалы и научные вычисления](#cat-scientific-computing) | 17 |
+| [Лабораторная автоматизация и оборудование](#cat-lab-automation) | 10 |
 
 ---
 
@@ -1322,7 +1326,7 @@ Spring Security.
 
 **Типовые связки.** docker-patterns → deployment-patterns / kubernetes-patterns → canary-watch после релиза → dashboard-builder для мониторинга → incident-разбор при сбоях.
 
-Навыков в категории: 32.
+Навыков в категории: 35.
 
 ### `claude-skills/aws-solution-architect`
 
@@ -1436,6 +1440,14 @@ Docker и Docker Compose — локальная разработка, безоп
 - **Задачи:** построить решение в GCP.
 - **Сочетается с:** `claude-skills/aws-solution-architect`, `claude-skills/cloud-security`
 
+### `scientific/get-available-resources`
+
+Оценка реально доступных вычислительных ресурсов до тяжёлого запуска.
+
+- **Ключевые навыки:** CPU/RAM/disk; лимиты контейнера; ускорители
+- **Задачи:** Составить консервативный план вычислений по фактическим ограничениям.
+- **Сочетается с:** `scientific/optimize-for-gpu`
+
 ### `ecc/github-ops`
 
 Операции с репозиториями GitHub через gh CLI.
@@ -1484,6 +1496,14 @@ Kubernetes для продакшена.
 - **Задачи:** снизить и подтвердить задержки в критичной системе.
 - **Сочетается с:** `ecc/benchmark-optimization-loop`, `ecc/redis-patterns`
 
+### `scientific/modal`
+
+Запуск Python и GPU-вычислений в облаке Modal.
+
+- **Ключевые навыки:** serverless jobs; model serving; batch и SDK
+- **Задачи:** Подготовить облачный вычислительный процесс с явной конфигурацией.
+- **Сочетается с:** `scientific/get-available-resources`
+
 ### `claude-skills/monorepo-navigator`
 
 Монорепозитории — Turborepo, Nx, pnpm-workspace, Lerna.
@@ -1507,6 +1527,14 @@ Kubernetes для продакшена.
 - **Ключевые навыки:** SLI; настройка алертов.
 - **Задачи:** сделать сервис наблюдаемым.
 - **Сочетается с:** `claude-skills/slo-architect`, `ecc/dashboard-builder`
+
+### `scientific/optimize-for-gpu`
+
+Ускорение научного Python на NVIDIA GPU с проверкой результата и времени.
+
+- **Ключевые навыки:** CUDA-профилирование; CuPy/cuDF; память и transfer
+- **Задачи:** Подтвердить численную корректность и фактическое ускорение процесса.
+- **Сочетается с:** `scientific/get-available-resources`
 
 ### `claude-skills/performance-profiler`
 
@@ -1591,7 +1619,7 @@ SLO, SLI, бюджеты ошибок и алерты по скорости сж
 
 **Типовые связки.** *-patterns СУБД → database-migrations → data-throughput-accelerator для объёмов → dashboard-builder / аналитические навыки для отчётов.
 
-Навыков в категории: 23.
+Навыков в категории: 37.
 
 ### `claude-skills/browser-automation`
 
@@ -1616,6 +1644,14 @@ ClickHouse для высоконагруженной аналитики — сх
 - **Ключевые навыки:** движки таблиц; партиционирование; оптимизация медленных аналитических запросов.
 - **Задачи:** спроектировать схему или ускорить аналитический запрос в ClickHouse.
 - **Сочетается с:** `ecc/data-throughput-accelerator`, `ecc/dashboard-builder`
+
+### `scientific/dask`
+
+Обработка массивов и таблиц за пределами памяти или на кластере с Dask.
+
+- **Ключевые навыки:** DataFrame/Array; Futures; чанки и scheduler
+- **Задачи:** Распределить вычисления с учётом зависимостей и памяти.
+- **Сочетается с:** `scientific/get-available-resources`, `scientific/zarr-python`
 
 ### `claude-skills/data-quality-auditor`
 
@@ -1649,6 +1685,14 @@ ClickHouse для высоконагруженной аналитики — сх
 - **Задачи:** спроектировать хранение данных приложения.
 - **Сочетается с:** `claude-skills/database-schema-designer`, `ecc/postgres-patterns`, `ecc/database-migrations`
 
+### `scientific/database-lookup`
+
+Воспроизводимые запросы к документированным публичным базам данных.
+
+- **Ключевые навыки:** endpoint и фильтры; пагинация; provenance
+- **Задачи:** Получить факты из заданного источника вместо предположений.
+- **Сочетается с:** `scientific/paper-lookup`
+
 ### `ecc/database-migrations`
 
 Безопасные обратимые миграции БД без простоя.
@@ -1664,6 +1708,30 @@ ER-диаграмма, нормализация и план миграции с�
 - **Ключевые навыки:** ERD; нормализованный DDL; шаги миграции.
 - **Задачи:** получить схему БД с диаграммой.
 - **Сочетается с:** `claude-skills/database-designer`, `ecc/database-migrations`
+
+### `scientific/exploratory-data-analysis`
+
+Ограниченный локальный разведочный анализ поддерживаемых научных форматов.
+
+- **Ключевые навыки:** профили CSV/JSON; пропуски; утечки и выбросы
+- **Задачи:** Подготовить проверяемый EDA-отчёт без неявной поддержки неизвестных форматов.
+- **Сочетается с:** `scientific/statistical-analysis`
+
+### `scientific/geomaster`
+
+Геопространственные исследования и обработка данных наблюдения Земли.
+
+- **Ключевые навыки:** растры и векторы; STAC; пространственная статистика
+- **Задачи:** Согласовать координаты и сетки для воспроизводимого GIS-анализа.
+- **Сочетается с:** `scientific/geopandas`
+
+### `scientific/geopandas`
+
+Анализ векторных геоданных непосредственно в GeoPandas.
+
+- **Ключевые навыки:** GeoDataFrame; spatial join; CRS и ввод-вывод
+- **Задачи:** Проверить геометрию и выполнить пространственные операции.
+- **Сочетается с:** `scientific/geomaster`
 
 ### `ecc/jpa-patterns`
 
@@ -1705,6 +1773,22 @@ MySQL и MariaDB для продакшена.
 - **Задачи:** спроектировать схему или ускорить запросы MySQL.
 - **Сочетается с:** `ecc/database-migrations`, `ecc/mybatis-patterns`
 
+### `scientific/networkx`
+
+Построение и анализ сетей и графов с NetworkX.
+
+- **Ключевые навыки:** пути и центральность; сообщества; модели графов
+- **Задачи:** Исследовать структуру социальной, биологической или иной сети.
+- **Сочетается с:** `scientific/torch-geometric`
+
+### `scientific/polars`
+
+Быстрая табличная обработка и ETL на Polars.
+
+- **Ключевые навыки:** выражения; lazy/streaming; Arrow
+- **Задачи:** Преобразовать большие таблицы и перенести pandas-процессы.
+- **Сочетается с:** `scientific/polars-bio`, `scientific/dask`
+
 ### `ecc/postgres-patterns`
 
 PostgreSQL по лучшим практикам Supabase.
@@ -1721,6 +1805,14 @@ Prisma ORM для TypeScript-бэкендов.
 - **Задачи:** работать с БД через Prisma без сюрпризов.
 - **Сочетается с:** `ecc/postgres-patterns`, `ecc/database-migrations`, `ecc/typescript-patterns`
 
+### `scientific/pymc`
+
+Построение и проверка байесовских моделей в PyMC.
+
+- **Ключевые навыки:** NUTS/MCMC; posterior predictive; PSIS-LOO
+- **Задачи:** Оценить распределения параметров и неопределённость с диагностикой модели.
+- **Сочетается с:** `scientific/statistical-analysis`
+
 ### `ecc/redis-patterns`
 
 Redis в продакшене.
@@ -1728,6 +1820,14 @@ Redis в продакшене.
 - **Ключевые навыки:** структуры данных; стратегии кэширования; распределённые блокировки; rate limiting; pub/sub.
 - **Задачи:** добавить кэш, очереди или блокировки на Redis.
 - **Сочетается с:** `ecc/postgres-patterns`, `ecc/django-celery`
+
+### `scientific/scikit-survival`
+
+Модели выживаемости с цензурированием и конкурирующими рисками.
+
+- **Ключевые навыки:** patient-safe preprocessing; survival metrics; выбор модели
+- **Задачи:** Проверить прогнозы времени до события с учётом цензурирования.
+- **Сочетается с:** `scientific/statistical-analysis`, `scientific/pyhealth`
 
 ### `claude-skills/senior-data-engineer`
 
@@ -1761,6 +1861,14 @@ Redis в продакшене.
 - **Задачи:** ускорить медленный запрос.
 - **Сочетается с:** `ecc/postgres-patterns`, `ecc/database-migrations`
 
+### `scientific/statistical-analysis`
+
+Выбор статистических методов и анализ исследовательских данных.
+
+- **Ключевые навыки:** проверка предпосылок; размеры эффектов; APA-отчётность
+- **Задачи:** Проанализировать группы, связи или регрессии с оценкой неопределённости.
+- **Сочетается с:** `scientific/statistical-power`, `scientific/statsmodels`
+
 ### `claude-skills/statistical-analyst`
 
 Реальна ли разница — тесты значимости, доверительные интервалы, размер выборки, длительность теста.
@@ -1769,6 +1877,22 @@ Redis в продакшене.
 - **Задачи:** проверить результат эксперимента.
 - **Сочетается с:** `claude-skills/experiment-designer`, `claude-skills/senior-data-scientist`
 
+### `scientific/statistical-power`
+
+Расчёт размера выборки и мощности до сбора данных.
+
+- **Ключевые навыки:** MDE; кривые мощности; Monte Carlo
+- **Задачи:** Обосновать число участников или реплик под выбранный дизайн.
+- **Сочетается с:** `scientific/experimental-design`, `scientific/statistical-analysis`
+
+### `scientific/statsmodels`
+
+Оценка и диагностика статистических моделей с statsmodels.
+
+- **Ключевые навыки:** OLS/GLM; mixed models; ARIMA/SARIMAX
+- **Задачи:** Проверить коэффициенты, остатки и интервалы прогноза.
+- **Сочетается с:** `scientific/statistical-analysis`
+
 ### `claude-skills/universal-scraping-architect`
 
 Скрейпер для сайтов, PDF и API с пагинацией с проверкой полей (Firecrawl или Python).
@@ -1776,6 +1900,22 @@ Redis в продакшене.
 - **Ключевые навыки:** извлечение; валидация данных.
 - **Задачи:** собрать структурированные данные из источника.
 - **Сочетается с:** `claude-skills/browser-automation`, `ecc/data-scraper-agent`
+
+### `scientific/vaex`
+
+Обработка таблиц больше оперативной памяти с Vaex.
+
+- **Ключевые навыки:** виртуальные выражения; потоковые статистики; binning
+- **Задачи:** Получить ограниченные агрегаты без случайной материализации всего набора.
+- **Сочетается с:** `scientific/dask`, `scientific/polars`
+
+### `scientific/zarr-python`
+
+Хранение многомерных научных массивов в Zarr-Python 3.
+
+- **Ключевые навыки:** чанки и sharding; codecs; S3/GCS
+- **Задачи:** Настроить формат и ограниченный ввод-вывод с сохранением метаданных.
+- **Сочетается с:** `scientific/dask`, `scientific/anndata`
 
 ---
 
@@ -1788,7 +1928,15 @@ Redis в продакшене.
 
 **Типовые связки.** agent-harness-construction (инструменты агента) → autonomous-agent-harness / continuous-agent-loop (цикл) → eval-harness / agent-eval (оценка) → cost-aware-llm-pipeline (стоимость) → agent-security-hardening (защита).
 
-Навыков в категории: 85.
+Навыков в категории: 98.
+
+### `scientific/aeon`
+
+Машинное обучение на временных рядах с aeon.
+
+- **Ключевые навыки:** классификация; forecasting; сегментация и сходство
+- **Задачи:** Выбрать временную модель вместо неспециализированного ML-подхода.
+- **Сочетается с:** `scientific/scikit-learn`, `scientific/timesfm-forecasting`
 
 ### `ecc/agent-architecture-audit`
 
@@ -1958,6 +2106,14 @@ Redis в продакшене.
 - **Ключевые навыки:** сводка метрик; история итераций.
 - **Задачи:** узнать, как идёт эксперимент.
 - **Сочетается с:** `claude-skills/autoresearch-agent`
+
+### `scientific/arbor`
+
+Управление исследовательскими экспериментами по Arbor Hypothesis Tree Refinement.
+
+- **Ключевые навыки:** деревья гипотез; изолированные прогоны; held-out сравнение
+- **Задачи:** Вести проверяемый поиск улучшений модели или агентной системы.
+- **Сочетается с:** `scientific/hypothesis-generation`
 
 ### `ecc/autonomous-agent-harness`
 
@@ -2152,6 +2308,22 @@ Redis в продакшене.
 - **Задачи:** узнать, как идут агенты.
 - **Сочетается с:** `claude-skills/hub-run`
 
+### `scientific/hugging-science`
+
+Поиск научных моделей, наборов данных и Spaces в Hugging Science.
+
+- **Ключевые навыки:** каталог ресурсов; версии; проверка интерфейсов
+- **Задачи:** Выбрать подходящий научный ML-ресурс и проверить способ его использования.
+- **Сочетается с:** `scientific/transformers`
+
+### `scientific/hypogenic`
+
+Планирование и аудит LLM-генерации гипотез из размеченных текстов в HypoGeniC.
+
+- **Ключевые навыки:** HypoRefine; task configs; банки гипотез
+- **Задачи:** Подготовить проверяемый эксперимент на размеченных текстовых данных.
+- **Сочетается с:** `scientific/hypothesis-generation`
+
 ### `claude-skills/interview`
 
 Интервью для определения рамок агента перед запуском.
@@ -2320,6 +2492,22 @@ Redis в продакшене.
 - **Задачи:** превратить сырой запрос в сильный промпт.
 - **Сочетается с:** `ecc/ecc-recipes`, `ecc/search-first`
 
+### `scientific/pufferlib`
+
+Версионно корректная работа с RL-средами и обучением PufferLib.
+
+- **Ключевые навыки:** vectorization; PuffeRL; checkpoint review
+- **Задачи:** Подготовить RL-эксперимент с учётом различий API 3/4/5.
+- **Сочетается с:** `scientific/stable-baselines3`
+
+### `scientific/pytorch-lightning`
+
+Организация обучения нейросетей с PyTorch Lightning.
+
+- **Ключевые навыки:** LightningModule; Trainer; DDP/FSDP и callbacks
+- **Задачи:** Собрать воспроизводимый обучающий процесс и мониторинг.
+- **Сочетается с:** `scientific/get-available-resources`
+
 ### `ecc/pytorch-patterns`
 
 Глубокое обучение на PyTorch.
@@ -2368,6 +2556,14 @@ Redis в продакшене.
 - **Задачи:** чтобы агент работал сам каждое утро.
 - **Сочетается с:** `claude-skills/grade-iterate`, `claude-skills/wrap-up`
 
+### `scientific/scikit-learn`
+
+Классическое машинное обучение и воспроизводимые pipeline в scikit-learn.
+
+- **Ключевые навыки:** preprocessing; CV; подбор гиперпараметров
+- **Задачи:** Обучить и оценить модель с корректным разбиением данных.
+- **Сочетается с:** `scientific/shap`, `scientific/statistical-analysis`
+
 ### `claude-skills/self-eval`
 
 Честная оценка завершённой работы по двум осям с проходом «адвоката дьявола».
@@ -2408,6 +2604,14 @@ Redis в продакшене.
 - **Задачи:** начать автоматическую оптимизацию.
 - **Сочетается с:** `claude-skills/autoresearch-agent`
 
+### `scientific/shap`
+
+Объяснение и аудит прогнозов машинного обучения с SHAP.
+
+- **Ключевые навыки:** explainers и maskers; атрибуции; multi-output
+- **Задачи:** Проверить интерпретацию локальных и глобальных вкладов признаков.
+- **Сочетается с:** `scientific/scikit-learn`
+
 ### `claude-skills/spawn`
 
 Запуск соревнующихся агентов AgentHub в изолированных worktree.
@@ -2423,6 +2627,14 @@ Redis в продакшене.
 - **Ключевые навыки:** policy gradients; VPG, PPO, SAC, TD3, DDPG, TRPO.
 - **Задачи:** обучить RL-агента.
 - **Сочетается с:** `claude-skills/deep-learning-book`, `ecc/pytorch-patterns`
+
+### `scientific/stable-baselines3`
+
+Обучение одиночного RL-агента с Stable Baselines3.
+
+- **Ключевые навыки:** PPO/SAC/DQN; Gymnasium; normalization и checkpoints
+- **Задачи:** Подготовить воспроизводимые rollout и оценку политики.
+- **Сочетается с:** `scientific/pufferlib`
 
 ### `claude-skills/stage-launch`
 
@@ -2447,6 +2659,38 @@ Redis в продакшене.
 - **Ключевые навыки:** поиск доступных персон; группировка по доменам; выбор состава.
 - **Задачи:** собрать команду агентов для проекта.
 - **Сочетается с:** `ecc/team-agent-orchestration`, `ecc/dev-team`
+
+### `scientific/timesfm-forecasting`
+
+Прогнозирование временных рядов с TimesFM и проверкой на отложенном периоде.
+
+- **Ключевые навыки:** регулярная сетка; квантили; XReg
+- **Задачи:** Подготовить прогноз с явной версией модели и условиями лицензии весов.
+- **Сочетается с:** `scientific/aeon`, `scientific/statsmodels`
+
+### `scientific/torch-geometric`
+
+Графовые нейросети в PyTorch Geometric.
+
+- **Ключевые навыки:** GCN/GAT/GraphSAGE; heterogeneous graphs; sampling
+- **Задачи:** Собрать и проверить модель для узлов, рёбер или целых графов.
+- **Сочетается с:** `scientific/networkx`, `scientific/torchdrug`
+
+### `scientific/transformers`
+
+Загрузка, вывод и дообучение моделей Hugging Face Transformers.
+
+- **Ключевые навыки:** AutoModel/tokenizers; pipeline; Trainer
+- **Задачи:** Реализовать NLP, vision, audio или мультимодальную задачу.
+- **Сочетается с:** `scientific/hugging-science`, `scientific/pytorch-lightning`
+
+### `scientific/umap-learn`
+
+Нелинейное снижение размерности с UMAP-learn.
+
+- **Ключевые навыки:** 2D/3D; DensMAP; supervised/parametric UMAP
+- **Задачи:** Получить исследовательские эмбеддинги и проверить чувствительность представления.
+- **Сочетается с:** `scientific/scikit-learn`, `scientific/scanpy`
 
 ### `ecc/unified-memory`
 
@@ -2888,7 +3132,7 @@ Git-процессы — ветвление, соглашения коммито
 
 **Типовые связки.** configure-ecc → agent-sort (что оставить) → context-budget / token-budget-advisor → config-gc (чистка) → skill-stocktake (ревизия навыков).
 
-Навыков в категории: 42.
+Навыков в категории: 44.
 
 ### `ecc/agent-sort`
 
@@ -2905,6 +3149,14 @@ Git-процессы — ветвление, соглашения коммито
 - **Ключевые навыки:** сбор доказательств; поиск пересечений; карта автоматизаций.
 - **Задачи:** понять состояние автоматизаций прежде, чем что-то чинить.
 - **Сочетается с:** `ecc/config-gc`, `ecc/workspace-surface-audit`
+
+### `scientific/autoskill`
+
+Поиск повторяющихся исследовательских процессов в явно разрешённой истории Screenpipe.
+
+- **Ключевые навыки:** локальная кластеризация; подбор навыков; черновики
+- **Задачи:** Предложить навык или связку по запросу пользователя без скрытого анализа истории.
+- **Сочетается с:** `scientific/scientific-critical-thinking`
 
 ### `claude-skills/book-to-skill`
 
@@ -3074,6 +3326,14 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Задачи:** установить и контролировать Nasiko.
 - **Сочетается с:** `ecc/configure-ecc`
 
+### `scientific/pi-agent`
+
+Настройка и расширение терминального агентного инструмента Pi.
+
+- **Ключевые навыки:** провайдеры; SDK/RPC; skills и extensions
+- **Задачи:** Подготовить конфигурацию или интеграцию агентного процесса Pi.
+- **Сочетается с:** `scientific/arbor`
+
 ### `pm-skills/pm-skill-creator`
 
 Создание нового PM-навыка через диалог.
@@ -3239,7 +3499,7 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 
 **Типовые связки.** documentation-lookup (актуальные доки) → написание → docs-governance / living-docs-governance (аудит) → knowledge-ops (база знаний).
 
-Навыков в категории: 15.
+Навыков в категории: 20.
 
 ### `claude-skills/code-tour`
 
@@ -3321,6 +3581,14 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Задачи:** собрать и поддерживать личную или командную базу знаний.
 - **Сочетается с:** `ecc/unified-memory`, `ecc/google-workspace-ops`
 
+### `scientific/liteparse`
+
+Локальное извлечение текста и пространственной разметки из документов.
+
+- **Ключевые навыки:** PDF/Office; OCR; bounding boxes и JSON
+- **Задачи:** Подготовить документы к поиску или RAG с сохранением структуры.
+- **Сочетается с:** `scientific/markitdown`
+
 ### `ecc/living-docs-governance`
 
 Защита документации долгоживущего проекта от устаревания.
@@ -3345,6 +3613,22 @@ NanoClaw — REPL от ECC без зависимостей с сессиями �
 - **Задачи:** сделать из markdown красивую веб-страницу.
 - **Сочетается с:** `claude-skills/md-document`, `claude-skills/md-slides`, `claude-skills/md-review`
 
+### `scientific/markdown-mermaid-writing`
+
+Научная документация в Markdown и структурные диаграммы Mermaid.
+
+- **Ключевые навыки:** схемы; шаблоны; проверка рендеринга
+- **Задачи:** Описать процесс или взаимосвязи в редактируемом текстовом виде.
+- **Сочетается с:** `scientific/scientific-writing`
+
+### `scientific/markitdown`
+
+Преобразование поддерживаемых документов и медиа в Markdown с MarkItDown.
+
+- **Ключевые навыки:** Office/PDF; конвертеры; проверка потерь
+- **Задачи:** Получить текстовую версию файла для анализа и поиска.
+- **Сочетается с:** `scientific/liteparse`
+
 ### `claude-skills/md-document`
 
 Длинный markdown (спецификация, RFC, отчёт) в HTML с оглавлением, поиском и копированием кода.
@@ -3360,6 +3644,22 @@ Markdown-ревью кода с диффами в двухколоночную H
 - **Ключевые навыки:** разбор диффов; выделение критичности.
 - **Задачи:** красиво оформить ревью кода.
 - **Сочетается с:** `claude-skills/markdown-html-orchestrator`, `claude-skills/code-reviewer`
+
+### `scientific/open-notebook`
+
+Организация исследовательских источников через Open Notebook REST API.
+
+- **Ключевые навыки:** импорт источников; поиск; заметки и cited chat
+- **Задачи:** Настроить исследовательский блокнот и проверяемое получение материалов.
+- **Сочетается с:** `scientific/paper-lookup`
+
+### `scientific/pyzotero`
+
+Программное управление библиографической библиотекой Zotero через pyzotero.
+
+- **Ключевые навыки:** items/collections; теги; вложения и экспорт
+- **Задачи:** Подготовить авторизованную автоматизацию ссылок и коллекций.
+- **Сочетается с:** `scientific/citation-management`
 
 ---
 
@@ -5147,7 +5447,7 @@ UX-исследования — персоны, карты пути, планы 
 
 **Типовые связки.** competitive-platform-analysis → benchmark-methodology → competitive-report-structure; council / C-level советники для решения → executive-материалы.
 
-Навыков в категории: 64.
+Навыков в категории: 65.
 
 ### `claude-skills/agent-protocol`
 
@@ -5522,6 +5822,14 @@ UX-исследования — персоны, карты пути, планы 
 - **Сочетается с:** `pm-skills/tam-sam-som-calculator`, `pm-skills/porters-five-forces`
 - **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
 
+### `scientific/market-research-reports`
+
+Рыночные отчёты с прослеживаемыми источниками и сценариями допущений.
+
+- **Ключевые навыки:** границы рынка; TAM/SAM/SOM; конкурентный анализ
+- **Задачи:** Подготовить исследовательский отчёт, отделяя наблюдения от прогнозных допущений.
+- **Сочетается с:** `scientific/paper-lookup`, `ecc/market-research`
+
 ### `claude-skills/office-hours`
 
 Совет основателю после шести вопросов в стиле YC.
@@ -5684,7 +5992,7 @@ SWOT компании по публичным источникам с перек
 
 **Типовые связки.** финансовая модель → анализ (financial-analyst) → investor-materials → investor-outreach; биллинг — customer-billing-ops / finance-billing-ops.
 
-Навыков в категории: 20.
+Навыков в категории: 21.
 
 ### `pm-skills/business-health-diagnostic`
 
@@ -5850,6 +6158,14 @@ SWOT компании по публичным источникам с перек
 - **Задачи:** подключить оплату.
 - **Сочетается с:** `ecc/customer-billing-ops`, `claude-skills/saas-scaffolder`
 
+### `scientific/usfiscaldata`
+
+Запросы к U.S. Treasury Fiscal Data REST API без API-ключа.
+
+- **Ключевые навыки:** госдолг; аукционы; бюджет и курсы
+- **Задачи:** Получить воспроизводимые финансовые ряды из официального источника.
+- **Сочетается с:** `scientific/database-lookup`
+
 ---
 
 <a id="cat-compliance"></a>
@@ -5861,7 +6177,7 @@ SWOT компании по публичным источникам с перек
 
 **Типовые связки.** оценка готовности (*-readiness) → риск-менеджмент → документы QMS → внутренний аудит → CAPA.
 
-Навыков в категории: 32.
+Навыков в категории: 34.
 
 ### `claude-skills/access-lifecycle`
 
@@ -5894,6 +6210,14 @@ SWOT компании по публичным источникам с перек
 - **Ключевые навыки:** требования стандарта; подготовка к аудиту этапа 1 или внутреннему.
 - **Задачи:** подготовиться к сертификации ISO 42001.
 - **Сочетается с:** `claude-skills/ai-act-readiness`, `claude-skills/compliance-os`
+
+### `scientific/analytical-method-validation`
+
+Планирование валидации, верификации и переноса аналитических методик.
+
+- **Ключевые навыки:** ICH Q2/Q14/M10; точность; LOD/LOQ и robustness
+- **Задачи:** Подготовить протокол и критерии пригодности методики для заявленной цели.
+- **Сочетается с:** `scientific/statistical-analysis`, `scientific/uncertainty-and-units`
 
 ### `claude-skills/capa-officer`
 
@@ -5998,6 +6322,14 @@ CAPA в системе качества медизделий.
 - **Ключевые навыки:** проведение аудита; классификация замечаний.
 - **Задачи:** провести или пройти аудит ISO 27001.
 - **Сочетается с:** `claude-skills/information-security-manager-iso27001`, `claude-skills/iso27001-audit-prep`
+
+### `scientific/iso-standards-readiness`
+
+Подготовка свидетельств готовности по ISO 13485, 14971, 17025 и 15189.
+
+- **Ключевые навыки:** контролируемые документы; traceability; CAPA
+- **Задачи:** Организовать пакет доказательств, различая сертификацию, аккредитацию и регуляторные решения.
+- **Сочетается с:** `claude-skills/quality-manager-qms-iso13485`
 
 ### `claude-skills/iso13485-audit-prep`
 
@@ -6425,7 +6757,7 @@ CAPA в системе качества медизделий.
 
 **Типовые связки.** deep-research (сбор) → literature-review / scholar-evaluation (оценка) → academic-paper (написание) → academic-paper-reviewer (рецензия).
 
-Навыков в категории: 37.
+Навыков в категории: 57.
 
 ### `academic/academic-paper-reviewer`
 
@@ -6463,6 +6795,22 @@ CAPA в системе качества медизделий.
 - **Сочетается с:** `pm-skills/company-intel`, `ecc/deep-research`
 - **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
 
+### `scientific/bgpt-paper-search`
+
+Поиск научных работ и извлечение свидетельств через BGPT.
+
+- **Ключевые навыки:** поиск по теме/DOI; эксперименты; provenance
+- **Задачи:** Найти детали результатов и ограничения за пределами аннотации.
+- **Сочетается с:** `scientific/literature-review`
+
+### `scientific/citation-management`
+
+Поиск и проверка библиографических записей для научных текстов.
+
+- **Ключевые навыки:** DOI/PMID; BibTeX; metadata validation
+- **Задачи:** Собрать корректные ссылки без выдуманных реквизитов.
+- **Сочетается с:** `scientific/paper-lookup`, `scientific/pyzotero`
+
 ### `pm-skills/company-intel`
 
 Исследование компании, отрасли или группы конкурентов через семь аналитических линз.
@@ -6480,6 +6828,14 @@ CAPA в системе качества медизделий.
 - **Задачи:** узнать компанию перед встречей или собеседованием.
 - **Сочетается с:** `claude-skills/dossier`, `career/job-fit-analyzer`
 - **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `scientific/consciousness-council`
+
+Структурированное сопоставление перспектив для сложных решений.
+
+- **Ключевые навыки:** архетипы рассуждения; допущения; условный синтез
+- **Задачи:** Сравнить альтернативы с разделением свидетельств и ценностей.
+- **Сочетается с:** `scientific/what-if-oracle`, `scientific/scientific-critical-thinking`
 
 ### `marketing/customer-research`
 
@@ -6530,6 +6886,22 @@ CAPA в системе качества медизделий.
 - **Задачи:** быстро найти актуальную информацию или примеры для исследования.
 - **Сочетается с:** `ecc/deep-research`, `ecc/lead-intelligence`, `ecc/market-research`
 
+### `scientific/exa-search`
+
+Научный и технический веб-поиск через Exa с извлечением страниц.
+
+- **Ключевые навыки:** academic filters; URL/PDF; пакетная выборка
+- **Задачи:** Получить актуальные источники и тексты для исследования.
+- **Сочетается с:** `scientific/paper-lookup`, `ecc/exa-search`
+
+### `scientific/experimental-design`
+
+Планирование эксперимента до сбора данных.
+
+- **Ключевые навыки:** рандомизация; блокирование; factorial/DOE и репликация
+- **Задачи:** Выбрать дизайн, снижающий смешение факторов и псевдорепликацию.
+- **Сочетается с:** `scientific/statistical-power`, `scientific/statistical-analysis`
+
 ### `claude-skills/grants`
 
 Поиск грантов NIH под исследование.
@@ -6537,6 +6909,14 @@ CAPA в системе качества медизделий.
 - **Ключевые навыки:** подбор институтов и секций; объявления о финансировании.
 - **Задачи:** найти источник финансирования исследования.
 - **Сочетается с:** `claude-skills/litreview`, `academic/academic-pipeline`
+
+### `scientific/hypothesis-generation`
+
+Формулирование научных гипотез и различающих предсказаний по имеющимся фактам.
+
+- **Ключевые навыки:** конкурирующие объяснения; измерения; preregistration
+- **Задачи:** Преобразовать наблюдения в проверяемый исследовательский план.
+- **Сочетается с:** `scientific/experimental-design`, `scientific/scientific-critical-thinking`
 
 ### `pm-skills/intel-discipline-advisor`
 
@@ -6563,6 +6943,14 @@ CAPA в системе качества медизделий.
 - **Ключевые навыки:** выдержки с цитатами; темы; инсайты.
 - **Задачи:** разобрать интервью на факты и выводы.
 - **Сочетается с:** `claude-skills/product-research`, `pm-setup/user-research`
+
+### `scientific/literature-review`
+
+Систематические, scoping и нарративные обзоры литературы.
+
+- **Ключевые навыки:** стратегия поиска; screening; синтез и цитаты
+- **Задачи:** Подготовить воспроизводимый обзор с явными границами охвата.
+- **Сочетается с:** `scientific/paper-lookup`, `scientific/citation-management`
 
 ### `claude-skills/litreview`
 
@@ -6612,6 +7000,38 @@ CAPA в системе качества медизделий.
 - **Задачи:** собрать картину по человеку, компании или событию из открытых источников.
 - **Сочетается с:** `ecc/exa-search`, `ecc/deep-research`
 
+### `scientific/paper-lookup`
+
+Поиск публикаций, препринтов и метаданных через научные API.
+
+- **Ключевые навыки:** PubMed/OpenAlex/Crossref; OA; citation graph
+- **Задачи:** Найти источники и получить воспроизводимые идентификаторы и тексты.
+- **Сочетается с:** `scientific/citation-management`, `scientific/literature-review`
+
+### `scientific/paperclip`
+
+Поиск и чтение биомедицинских и регуляторных материалов через GXL Paperclip.
+
+- **Ключевые навыки:** full-text grep; metadata SQL; line-pinned citations
+- **Задачи:** Извлечь проверяемые свидетельства из публикаций и FDA/PMDA/EMA документов.
+- **Сочетается с:** `scientific/literature-review`
+
+### `scientific/paperzilla`
+
+Работа с рекомендациями и проектными лентами Paperzilla через pz CLI.
+
+- **Ключевые навыки:** projects; recommendations; JSON и Atom
+- **Задачи:** Получить актуальную подборку работ и проверить карточки источников.
+- **Сочетается с:** `scientific/paper-lookup`
+
+### `scientific/parallel-web`
+
+Поиск, извлечение страниц и глубокое исследование через Parallel CLI.
+
+- **Ключевые навыки:** web search; extraction; structured enrichment
+- **Задачи:** Собрать текущие веб-свидетельства и проверяемые материалы исследования.
+- **Сочетается с:** `scientific/research-lookup`
+
 ### `claude-skills/patent`
 
 Патентный поиск — уровень техники, свобода действий, патентный ландшафт, due diligence, споры.
@@ -6619,6 +7039,14 @@ CAPA в системе качества медизделий.
 - **Ключевые навыки:** выбор сценария; стратегия поиска; анализ патентов.
 - **Задачи:** проверить, можно ли запатентовать или выпускать продукт.
 - **Сочетается с:** `ecc/scientific-db-uspto-database`
+
+### `scientific/peer-review`
+
+Конструктивные черновики научных рецензий с привязкой к свидетельствам.
+
+- **Ключевые навыки:** методы и статистика; reproducibility; источники
+- **Задачи:** Подготовить структурированную оценку рукописи в разрешённом контексте.
+- **Сочетается с:** `scientific/scientific-critical-thinking`, `scientific/scientific-writing`
 
 ### `claude-skills/product-research`
 
@@ -6635,6 +7063,22 @@ CAPA в системе качества медизделий.
 - **Ключевые навыки:** тренды; настроения; жалобы; сравнения инструментов.
 - **Задачи:** узнать реальное мнение сообщества.
 - **Сочетается с:** `claude-skills/research`, `ecc/exa-search`
+
+### `scientific/research-grants`
+
+Подготовка и проверка исследовательских грантовых заявок.
+
+- **Ключевые навыки:** aims; критерии конкурса; бюджет и resubmission
+- **Задачи:** Собрать заявку под конкретный конкурс и проверить полноту требований.
+- **Сочетается с:** `scientific/experimental-design`, `scientific/scientific-writing`
+
+### `scientific/research-lookup`
+
+Сбор актуальных научных свидетельств для рукописи или исследовательской записки.
+
+- **Ключевые навыки:** Parallel Search/Extract; competing findings; provenance
+- **Задачи:** Подготовить пакет источников под явно заданный исследовательский вопрос.
+- **Сочетается с:** `scientific/literature-review`, `scientific/citation-management`
 
 ### `claude-skills/research-ops-skills`
 
@@ -6667,6 +7111,30 @@ CAPA в системе качества медизделий.
 - **Ключевые навыки:** классификация запроса.
 - **Задачи:** исследовать тему, когда неясно, каким навыком.
 - **Сочетается с:** `claude-skills/meta-research`, `claude-skills/pulse`
+
+### `scientific/scholar-evaluation`
+
+Развивающая оценка научных работ по прослеживаемым свидетельствам.
+
+- **Ключевые навыки:** качественные рубрики; evidence checks; локальный QC
+- **Задачи:** Проверить аргументацию работы без ранжирования людей и кадровых решений.
+- **Сочетается с:** `scientific/peer-review`, `scientific/scientific-critical-thinking`
+
+### `scientific/scientific-brainstorming`
+
+Научный поиск идей с явными допущениями и проверкой альтернатив.
+
+- **Ключевые навыки:** независимая генерация; критерии; decision log
+- **Задачи:** Сформировать и приоритизировать кандидатные направления исследования.
+- **Сочетается с:** `scientific/hypothesis-generation`, `scientific/experimental-design`
+
+### `scientific/scientific-critical-thinking`
+
+Критическая оценка научных утверждений и качества свидетельств.
+
+- **Ключевые навыки:** bias/confounding; GRADE; интерпретация статистики
+- **Задачи:** Найти слабые места аргументов и сформулировать ограничения выводов.
+- **Сочетается с:** `scientific/peer-review`, `scientific/statistical-analysis`
 
 ### `ecc/scientific-db-pubmed-database`
 
@@ -6708,6 +7176,14 @@ CAPA в системе качества медизделий.
 - **Задачи:** отрецензировать статью, заявку или обзор.
 - **Сочетается с:** `ecc/scientific-thinking-literature-review`
 
+### `scientific/scientific-writing`
+
+Подготовка научных текстов с проверяемыми фактами и источниками.
+
+- **Ключевые навыки:** reporting guidelines; claim registry; consistency checks
+- **Задачи:** Написать или проверить рукопись без выдуманных результатов и ссылок.
+- **Сочетается с:** `scientific/citation-management`, `scientific/scientific-visualization`
+
 ### `academic/sr-screener`
 
 Отбор исследований для систематических, обзорных и быстрых обзоров по протоколу.
@@ -6725,6 +7201,14 @@ CAPA в системе качества медизделий.
 - **Задачи:** расширить программу курса.
 - **Сочетается с:** `claude-skills/litreview`
 
+### `scientific/venue-templates`
+
+Оформление рукописей, постеров и заявок под требования конкретной площадки.
+
+- **Ключевые навыки:** LaTeX-шаблоны; анонимность; page limits и PDF
+- **Задачи:** Проверить актуальные правила и подготовить формат подачи.
+- **Сочетается с:** `scientific/scientific-writing`, `scientific/latex-posters`
+
 ### `pm-skills/voice-of-customer-miner`
 
 Анализ отзывов, магазинов приложений и форумов — неудовлетворённые потребности и слабости конкурентов.
@@ -6732,6 +7216,15 @@ CAPA в системе качества медизделий.
 - **Ключевые навыки:** цитаты как доказательства; триггеры переключения.
 - **Задачи:** узнать, чего хотят клиенты, без интервью.
 - **Сочетается с:** `marketing/customer-research`, `pm-skills/jobs-to-be-done`
+- **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
+
+### `scientific/what-if-oracle`
+
+Сценарный анализ исследовательских планов с явными допущениями. Лицензия навыка — CC BY-NC-SA 4.0.
+
+- **Ключевые навыки:** reference/adverse/wild-card; последствия; decision triggers
+- **Задачи:** Проверить устойчивость плана без выдачи сценариев за вероятностный прогноз.
+- **Сочетается с:** `scientific/experimental-design`, `scientific/consciousness-council`
 - **Лицензия:** CC-BY-NC-SA-4.0 — только некоммерческое использование
 
 ---
@@ -6942,7 +7435,7 @@ CAPA в системе качества медизделий.
 
 **Типовые связки.** сценарий (content-engine) → генерация медиа (fal-ai-media) → видео (remotion-video-creation / manim-video) → монтаж (video-editing).
 
-Навыков в категории: 18.
+Навыков в категории: 27.
 
 ### `ecc/blender-motion-state-inspection`
 
@@ -6976,6 +7469,14 @@ CAPA в системе качества медизделий.
 - **Задачи:** сделать презентацию для доклада или продукта.
 - **Сочетается с:** `ecc/investor-materials`, `ecc/frontend-design-direction`
 
+### `scientific/generate-image`
+
+Генерация и редактирование изображений через OpenRouter Image API.
+
+- **Ключевые навыки:** выбор модели; reference images; запросы и форматы
+- **Задачи:** Подготовить иллюстрацию по заданию с проверкой результата.
+- **Сочетается с:** `scientific/scientific-schematics`
+
 ### `marketing/image`
 
 Создание, генерация, редактирование и оптимизация маркетинговых изображений.
@@ -6983,6 +7484,22 @@ CAPA в системе качества медизделий.
 - **Ключевые навыки:** выбор между генерацией, дизайном и фотосъёмкой; обложки блога и соцсетей.
 - **Задачи:** сделать визуал для маркетинга.
 - **Сочетается с:** `ecc/fal-ai-media`, `marketing/social`
+
+### `scientific/infographics`
+
+Создание инфографики по предоставленным данным через OpenRouter.
+
+- **Ключевые навыки:** макеты; палитры; проверка читаемости
+- **Задачи:** Подготовить визуальное объяснение процесса или сравнения.
+- **Сочетается с:** `scientific/scientific-visualization`
+
+### `scientific/latex-posters`
+
+Научные постеры в LaTeX с beamerposter, tikzposter или baposter.
+
+- **Ключевые навыки:** колонки; типографика; PDF preflight
+- **Задачи:** Сверстать конференционный постер с проверкой итогового PDF.
+- **Сочетается с:** `scientific/scientific-visualization`
 
 ### `ecc/manim-video`
 
@@ -6992,6 +7509,14 @@ CAPA в системе качества медизделий.
 - **Задачи:** сделать обучающее видео об идее или системе.
 - **Сочетается с:** `ecc/video-editing`, `ecc/remotion-video-creation`
 
+### `scientific/matplotlib`
+
+Настраиваемые статические научные графики в Matplotlib.
+
+- **Ключевые навыки:** axes/artists; аннотации; экспорт PDF/SVG/PNG
+- **Задачи:** Построить точный график и контролировать оформление каждого элемента.
+- **Сочетается с:** `scientific/scientific-visualization`
+
 ### `claude-skills/md-slides`
 
 Markdown в HTML-презентацию с навигацией с клавиатуры, заметками докладчика и печатью в PDF.
@@ -7000,6 +7525,14 @@ Markdown в HTML-презентацию с навигацией с клавиа�
 - **Задачи:** быстро сделать презентацию из заметок.
 - **Сочетается с:** `claude-skills/markdown-html-orchestrator`, `ecc/frontend-slides`
 
+### `scientific/pptx-posters`
+
+Редактируемые научные постеры в PowerPoint без макросов.
+
+- **Ключевые навыки:** физические размеры; печать; доступность и provenance
+- **Задачи:** Собрать PPTX-постер из согласованных материалов и проверить пакет.
+- **Сочетается с:** `scientific/scientific-visualization`
+
 ### `ecc/remotion-video-creation`
 
 Видео на React через Remotion.
@@ -7007,6 +7540,38 @@ Markdown в HTML-презентацию с навигацией с клавиа�
 - **Ключевые навыки:** 3D; анимации; аудио; субтитры; графики; переходы.
 - **Задачи:** собрать видео программно.
 - **Сочетается с:** `ecc/video-editing`, `ecc/manim-video`, `ecc/ui-demo`
+
+### `scientific/scientific-schematics`
+
+Черновики научных схем с генерацией и итеративной проверкой качества.
+
+- **Ключевые навыки:** архитектуры; flowcharts; биологические пути
+- **Задачи:** Подготовить схему с проверкой подписей и научного содержания.
+- **Сочетается с:** `scientific/markdown-mermaid-writing`
+
+### `scientific/scientific-slides`
+
+Презентации научных докладов в PowerPoint или LaTeX Beamer.
+
+- **Ключевые навыки:** структура доклада; тайминг; визуальная проверка
+- **Задачи:** Подготовить слайды для конференции, семинара или защиты.
+- **Сочетается с:** `scientific/scientific-visualization`, `scientific/scientific-writing`
+
+### `scientific/scientific-visualization`
+
+Достоверные и доступные научные рисунки для публикации.
+
+- **Ключевые навыки:** multi-panel; неопределённость; цвет и экспорт
+- **Задачи:** Проверить графическое представление данных и подготовить журнальные файлы.
+- **Сочетается с:** `scientific/matplotlib`, `scientific/seaborn`
+
+### `scientific/seaborn`
+
+Статистические графики Seaborn с явной агрегацией данных.
+
+- **Ключевые навыки:** распределения; categorical plots; heatmaps
+- **Задачи:** Исследовать отношения и сравнения с корректным отображением неопределённости.
+- **Сочетается с:** `scientific/matplotlib`, `scientific/scientific-visualization`
 
 ### `ecc/taste-application`
 
@@ -7269,7 +7834,23 @@ VPN-сервер WireGuard для доступа к домашней сети.
 
 **Типовые связки.** healthcare-emr-patterns → healthcare-cdss-patterns → healthcare-phi-compliance / hipaa-compliance → healthcare-eval-harness.
 
-Навыков в категории: 6.
+Навыков в категории: 21.
+
+### `scientific/clinical-decision-support`
+
+Подготовка исследовательских материалов оценки клинической поддержки решений.
+
+- **Ключевые навыки:** когорты; survival; biomarker/model и governance
+- **Задачи:** Описать и проверить агрегированную исследовательскую оценку без применения к лечению.
+- **Сочетается с:** `scientific/scikit-survival`, `scientific/pyhealth`
+
+### `scientific/clinical-reports`
+
+Черновики клинических и исследовательских отчётов по проверенным фактам.
+
+- **Ключевые навыки:** case/trial/safety; manifests; локальные проверки
+- **Задачи:** Подготовить структуру отчёта из обезличенных или синтетических данных для экспертной проверки.
+- **Сочетается с:** `scientific/scientific-writing`
 
 ### `claude-skills/clinical-research`
 
@@ -7278,6 +7859,22 @@ VPN-сервер WireGuard для доступа к домашней сети.
 - **Ключевые навыки:** первичные и вторичные конечные точки; размер выборки и мощность; оценка осуществимости.
 - **Задачи:** спланировать клиническое исследование.
 - **Сочетается с:** `claude-skills/litreview`, `academic/academic-pipeline`
+
+### `scientific/dhdna-profiler`
+
+Исследовательская рубрика DHDNA для анализа рассуждений в предоставленном тексте.
+
+- **Ключевые навыки:** текстовые свидетельства; сравнение паттернов; ограничения оценки
+- **Задачи:** Описать особенности текстового образца без психологической диагностики личности.
+- **Сочетается с:** `scientific/scientific-critical-thinking`
+
+### `scientific/folklore-variant-evidence`
+
+Получение публичных свидетельств о генах и вариантах через Folklore MCP.
+
+- **Ключевые навыки:** ClinGen; GRCh38 SNV/indel; происхождение источников
+- **Задачи:** Собрать ограниченный исследовательский пакет доказательств по публичному варианту.
+- **Сочетается с:** `scientific/genomic-coordinates`
 
 ### `ecc/healthcare-cdss-patterns`
 
@@ -7318,3 +7915,880 @@ VPN-сервер WireGuard для доступа к домашней сети.
 - **Ключевые навыки:** требования HIPAA; соглашения с подрядчиками; реагирование на утечки.
 - **Задачи:** проверить продукт на соответствие HIPAA.
 - **Сочетается с:** `ecc/healthcare-phi-compliance`, `ecc/security-review`
+
+### `scientific/imaging-data-commons`
+
+Поиск публичных онкологических изображений NCI Imaging Data Commons.
+
+- **Ключевые навыки:** CT/MR/PET; DICOM; metadata SQL
+- **Задачи:** Подобрать набор изображений с проверкой лицензий и происхождения.
+- **Сочетается с:** `scientific/pydicom`
+
+### `scientific/ncats-arax`
+
+Ограниченные запросы биомедицинских связей через NCATS Translator ARAX.
+
+- **Ключевые навыки:** Biolink/TRAPI; нормализация сущностей; one/two-hop
+- **Задачи:** Получить связи и их источники без подмены причинными или клиническими выводами.
+- **Сочетается с:** `scientific/primekg`
+
+### `scientific/neurokit2`
+
+Исследовательская обработка физиологических временных рядов в NeuroKit2.
+
+- **Ключевые навыки:** очистка сигналов; события; вариабельность и сложность
+- **Задачи:** Построить воспроизводимый анализ биосигналов с проверкой частоты, единиц и артефактов.
+- **Сочетается с:** `scientific/statistical-analysis`, `scientific/uncertainty-and-units`
+
+### `scientific/neuropixels-analysis`
+
+Обработка внеклеточных Neuropixels-записей через SpikeInterface.
+
+- **Ключевые навыки:** SpikeGLX/Open Ephys; Kilosort4; QC и курация
+- **Задачи:** Подготовить spike sorting и проверить качество выделенных нейронных единиц.
+- **Сочетается с:** `scientific/nwb-conversion`
+
+### `scientific/nwb-conversion`
+
+Конвертация нейрофизиологических данных в Neurodata Without Borders.
+
+- **Ключевые навыки:** NeuroConv/PyNWB; TIFF и position CSV; временная синхронизация
+- **Задачи:** Создать проверенный NWB-файл для описанного imaging/behavior процесса; поддержка произвольных форматов не заявлена.
+- **Сочетается с:** `scientific/bids`
+
+### `scientific/pkpd-modeling`
+
+Исследовательское фармакокинетическое и фармакодинамическое моделирование.
+
+- **Ключевые навыки:** NCA/popPK; exposure-response; биоэквивалентность
+- **Задачи:** Оценить параметры концентрация-время и неопределённость модельных сценариев.
+- **Сочетается с:** `scientific/pymc`, `scientific/statistical-analysis`
+
+### `scientific/primekg`
+
+Запросы к зафиксированной версии Precision Medicine Knowledge Graph.
+
+- **Ключевые навыки:** типы узлов; прямые связи; пути и provenance
+- **Задачи:** Получить воспроизводимые ассоциации генов, препаратов и заболеваний.
+- **Сочетается с:** `scientific/ncats-arax`
+
+### `scientific/pydicom`
+
+Локальная обработка медицинских изображений и метаданных DICOM.
+
+- **Ключевые навыки:** transfer syntax; pixels; частные элементы и обезличивание
+- **Задачи:** Проверить или преобразовать DICOM-набор с учётом его структуры.
+- **Сочетается с:** `scientific/imaging-data-commons`
+
+### `scientific/pyhealth`
+
+Исследовательские модели клинических данных с PyHealth.
+
+- **Ключевые навыки:** EHR/сигналы; patient-level split; медицинские коды
+- **Задачи:** Построить и проверить ML-конвейер с разделением на уровне пациентов.
+- **Сочетается с:** `scientific/scikit-survival`, `scientific/shap`
+
+### `scientific/relsa-severity-assessment`
+
+Оценка тяжести состояний лабораторных животных по RELSA.
+
+- **Ключевые навыки:** нормализация; welfare-показатели; интервалы ARIMA
+- **Задачи:** Исследовать динамику тяжести и неопределённость прогнозов для экспертной оценки.
+- **Сочетается с:** `scientific/statsmodels`
+
+### `scientific/treatment-plans`
+
+Оформление планов лечения по уже принятым и проверенным решениям клиницистов.
+
+- **Ключевые навыки:** источники; цели и checkpoints; согласование документов
+- **Задачи:** Проверить структуру и прослеживаемость документа без выбора лечения.
+- **Сочетается с:** `scientific/clinical-reports`
+
+---
+
+<a id="cat-bioinformatics"></a>
+## Биоинформатика, геномика и исследовательские изображения
+
+**Область применения.** Последовательности, геномные интервалы, bulk и single-cell RNA-seq, микробиом, цитометрия, филогенетика и вычислительная патология.
+
+**Решаемые задачи.** Контроль форматов и координат; подготовка counts; интеграция клеток; анализ путей; проверка сегментации и происхождения данных.
+
+**Типовые связки.** bulk-rnaseq → pydeseq2 → pathway-enrichment; anndata → scanpy → scvi-tools; genomic-coordinates → pysam / polars-bio.
+
+Навыков в категории: 47.
+
+### `scientific/alphagenome`
+
+Исследовательская оценка влияния геномных вариантов с помощью AlphaGenome и Atlas.
+
+- **Ключевые навыки:** регуляторные варианты; AVI и SHAP; сравнение REF/ALT
+- **Задачи:** Приоритизировать варианты GRCh38 и сформулировать проверяемые механистические гипотезы.
+- **Сочетается с:** `scientific/genomic-coordinates`
+
+### `scientific/anndata`
+
+Хранение и преобразование аннотированных матриц одноклеточных данных AnnData.
+
+- **Ключевые навыки:** h5ad и Zarr; метаданные клеток; совместимость scverse
+- **Задачи:** Подготовить согласованную матрицу экспрессии для анализа.
+- **Сочетается с:** `scientific/scanpy`, `scientific/scvi-tools`
+
+### `scientific/arboreto`
+
+Построение кандидатных генных регуляторных сетей из данных экспрессии.
+
+- **Ключевые навыки:** GRNBoost2 и GENIE3; ранжирование связей; устойчивость сети
+- **Задачи:** Найти предполагаемые связи транскрипционных факторов и генов-мишеней.
+- **Сочетается с:** `scientific/scanpy`, `scientific/networkx`
+
+### `scientific/bids`
+
+Организация нейрофизиологических и биомедицинских данных по стандарту BIDS.
+
+- **Ключевые навыки:** метаданные; DICOM-конвертация; валидация структуры
+- **Задачи:** Подготовить воспроизводимый набор MRI, EEG, EMG или других поддерживаемых записей.
+- **Сочетается с:** `scientific/nwb-conversion`, `scientific/pydicom`
+
+### `scientific/biopython`
+
+Обработка биологических последовательностей и запросы к NCBI через Biopython.
+
+- **Ключевые навыки:** FASTA/GenBank/PDB; BLAST; Bio.Entrez
+- **Задачи:** Автоматизировать пакетную обработку последовательностей и получение аннотаций.
+- **Сочетается с:** `scientific/gget`, `scientific/bioservices`
+
+### `scientific/bioservices`
+
+Объединение биоинформатических сервисов через единый Python-интерфейс BioServices.
+
+- **Ключевые навыки:** UniProt и KEGG; Reactome; сопоставление идентификаторов
+- **Задачи:** Собрать аннотации белков и путей из нескольких баз.
+- **Сочетается с:** `scientific/gget`, `scientific/pathway-enrichment`
+
+### `scientific/bulk-rnaseq`
+
+Подготовка bulk RNA-seq от FASTQ и результатов квантификации до генных счётчиков.
+
+- **Ключевые навыки:** STAR/Salmon; nf-core/rnaseq; репликация и QC
+- **Задачи:** Собрать проверенную матрицу counts для анализа дифференциальной экспрессии.
+- **Сочетается с:** `scientific/nextflow`, `scientific/pydeseq2`
+
+### `scientific/cellprofiler`
+
+Воспроизводимый анализ микроскопических изображений в CellProfiler.
+
+- **Ключевые навыки:** сегментация ядер; интенсивность флуоресценции; контроль качества
+- **Задачи:** Построить пакетный конвейер подсчёта клеток и измерения объектов.
+- **Сочетается с:** `scientific/scientific-visualization`
+
+### `scientific/cellxgene-census`
+
+Выборка публичных одноклеточных и пространственных данных CZ CELLxGENE Census.
+
+- **Ключевые навыки:** версии Census; метаданные клеток; срезы экспрессии
+- **Задачи:** Найти референсный атлас и получить ограниченную выборку данных.
+- **Сочетается с:** `scientific/anndata`, `scientific/scanpy`
+
+### `scientific/cobrapy`
+
+Метаболическое моделирование с ограничениями с помощью COBRApy.
+
+- **Ключевые навыки:** FBA/pFBA/FVA; нокауты; проверка SBML
+- **Задачи:** Исследовать допустимые потоки и влияние среды или генетических изменений.
+- **Сочетается с:** `scientific/13c-metabolic-flux`, `scientific/tellurium`
+
+### `scientific/datalad`
+
+Версионирование научных наборов данных и вычислительного происхождения в DataLad.
+
+- **Ключевые навыки:** git-annex; run/rerun; удалённые хранилища
+- **Задачи:** Получить реальные данные вместо указателей и обеспечить повторяемость обработки.
+- **Сочетается с:** `scientific/lamindb`
+
+### `scientific/deepspot-m`
+
+Предсказание пространственной экспрессии по гистологическим изображениям с DeepSpot-M. Код и веса имеют некоммерческие ограничения.
+
+- **Ключевые навыки:** H&E-тайлы; масштаб изображения; панели генов
+- **Задачи:** Получить исследовательские прогнозы экспрессии и проверить границы их интерпретации.
+- **Сочетается с:** `scientific/histolab`, `scientific/scanpy`
+- **Лицензия:** PolyForm-Noncommercial-1.0.0 — только некоммерческое использование
+
+### `scientific/deeptools`
+
+Контроль качества и визуализация NGS-данных с deepTools.
+
+- **Ключевые навыки:** BAM/bigWig; PCA и корреляции; профили TSS
+- **Задачи:** Построить воспроизводимые профили и тепловые карты RNA-seq, ChIP-seq или ATAC-seq.
+- **Сочетается с:** `scientific/pysam`, `scientific/scientific-visualization`
+
+### `scientific/depmap`
+
+Работа с версиями Cancer Dependency Map и зависимостями опухолевых моделей.
+
+- **Ключевые навыки:** CRISPR Chronos; PRISM; идентификаторы моделей
+- **Задачи:** Найти кандидатные зависимости и биомаркеры с учётом статистических ограничений.
+- **Сочетается с:** `scientific/mageck`, `scientific/pathway-enrichment`
+
+### `scientific/dnanexus-integration`
+
+Разработка и запуск воспроизводимых геномных процессов в DNAnexus.
+
+- **Ключевые навыки:** dx/dxpy; apps/applets; мониторинг и перенос данных
+- **Задачи:** Подготовить облачный геномный конвейер и проверить выполнение.
+- **Сочетается с:** `scientific/nextflow`
+
+### `scientific/etetoolkit`
+
+Редактирование, сравнение и визуализация готовых филогенетических деревьев в ETE 4.
+
+- **Ключевые навыки:** Newick/Nexus; топологии; таксономия и SmartView
+- **Задачи:** Аннотировать дерево и сравнить эволюционные структуры.
+- **Сочетается с:** `scientific/phylogenetics`
+
+### `scientific/flowio`
+
+Низкоуровневое чтение и запись файлов проточной цитометрии FCS через FlowIO.
+
+- **Ключевые навыки:** FCS 2.0/3.0/3.1; каналы; NumPy events
+- **Задачи:** Проверить метаданные и извлечь события без выполнения gating.
+- **Сочетается с:** `scientific/flowkit`
+
+### `scientific/flowkit`
+
+Анализ проточной цитометрии с компенсацией и gating в FlowKit.
+
+- **Ключевые навыки:** spillover; logicle; FlowJo/GatingML
+- **Задачи:** Воспроизвести выделение популяций и проверить доли клеток.
+- **Сочетается с:** `scientific/flowio`
+
+### `scientific/geniml`
+
+Локальные модели геномных интервалов и планирование Geniml-процессов.
+
+- **Ключевые навыки:** BED-контракты; Region2Vec/scEmbed; совместимость токенизаторов
+- **Задачи:** Проверить входные интервалы и подготовить воспроизводимый запуск модели.
+- **Сочетается с:** `scientific/gtars`, `scientific/genomic-coordinates`
+
+### `scientific/genomic-coordinates`
+
+Проверка и преобразование геномных координат между форматами и сборками.
+
+- **Ключевые навыки:** BED/GTF/VCF; 0-based и 1-based; нормализация инделов
+- **Задачи:** Найти ошибки границ, сборок и имён контигов до анализа.
+- **Сочетается с:** `scientific/pysam`, `scientific/polars-bio`
+
+### `scientific/genomic-intelligence`
+
+Запросы к размещённым DNA-моделям Genomic Intelligence.
+
+- **Ключевые навыки:** промоторы и сплайсинг; аннотация генов; прогноз экспрессии
+- **Задачи:** Получить исследовательские предсказания по последовательности или области генома.
+- **Сочетается с:** `scientific/alphagenome`
+
+### `scientific/gget`
+
+Быстрые геномные запросы через CLI и Python-пакет gget.
+
+- **Ключевые навыки:** BLAST/BLAT; аннотации генов; PDB и обогащение
+- **Задачи:** Найти сведения о генах и последовательностях с сохранением источников.
+- **Сочетается с:** `scientific/biopython`, `scientific/bioservices`
+
+### `scientific/gtars`
+
+Локальная алгебра геномных интервалов и подготовка наборов BED.
+
+- **Ключевые навыки:** пересечения и покрытие; консенсус; токенизация
+- **Задачи:** Проверить интервалы и подготовить данные для моделей и поиска.
+- **Сочетается с:** `scientific/genomic-coordinates`, `scientific/polars-bio`
+
+### `scientific/histolab`
+
+Извлечение и подготовка тайлов из полноразмерных гистологических изображений.
+
+- **Ключевые навыки:** маски ткани; сеточные тайлы; нормализация H&E
+- **Задачи:** Подготовить набор изображений для вычислительной патологии.
+- **Сочетается с:** `scientific/pathml`, `scientific/deepspot-m`
+
+### `scientific/lamindb`
+
+Каталогизация биологических данных и моделей с происхождением в LaminDB.
+
+- **Ключевые навыки:** артефакты и lineage; схемы; онтологии Bionty
+- **Задачи:** Организовать проверяемое хранилище исследовательских данных.
+- **Сочетается с:** `scientific/ontology-term-resolution`, `scientific/datalad`
+
+### `scientific/latchbio-integration`
+
+Разработка и эксплуатация биоинформатических процессов на Latch.
+
+- **Ключевые навыки:** SDK и CLI; Registry; Nextflow/Snakemake
+- **Задачи:** Развернуть конвейер, настроить ресурсы и отслеживать запуски.
+- **Сочетается с:** `scientific/nextflow`
+
+### `scientific/mageck`
+
+Анализ пуловых CRISPR-скринингов с MAGeCK.
+
+- **Ключевые навыки:** FASTQ и guide-counts; QC реплик; FDR и эффекты
+- **Задачи:** Проверить библиотеку направляющих и ранжировать генные хиты.
+- **Сочетается с:** `scientific/depmap`, `scientific/pathway-enrichment`
+
+### `scientific/nextflow`
+
+Создание, запуск и отладка Nextflow DSL2 и nf-core конвейеров.
+
+- **Ключевые навыки:** process/channel; контейнеры; HPC и возобновление
+- **Задачи:** Подготовить воспроизводимый pipeline и разобрать сбои выполнения.
+- **Сочетается с:** `scientific/bulk-rnaseq`, `scientific/pacsomatic`
+
+### `scientific/onekgpd`
+
+Запросы по участникам и вариантам проекта 1000 Genomes.
+
+- **Ключевые навыки:** GRCh38; носительство вариантов; частоты и аннотации
+- **Задачи:** Получить публичные когортные сведения по заданным генам или областям.
+- **Сочетается с:** `scientific/genomic-coordinates`
+
+### `scientific/ontology-term-resolution`
+
+Сопоставление научных названий с проверенными онтологическими идентификаторами.
+
+- **Ключевые навыки:** OLS4; CURIE; Bioregistry и ZOOMA
+- **Задачи:** Аннотировать ткани, типы клеток, заболевания и методы контролируемыми терминами.
+- **Сочетается с:** `scientific/lamindb`
+
+### `scientific/pacsomatic`
+
+Подготовка nf-core/pacsomatic для парных tumor-normal PacBio HiFi данных.
+
+- **Ключевые навыки:** samplesheet; Nextflow; планировщики кластеров
+- **Задачи:** Собрать проверенные файлы запуска и диагностировать старт процесса.
+- **Сочетается с:** `scientific/nextflow`, `scientific/pysam`
+
+### `scientific/pathml`
+
+Локальные исследовательские процессы вычислительной патологии с PathML.
+
+- **Ключевые навыки:** WSI и тайлы; QC; h5path и пространственные графы
+- **Задачи:** Подготовить и проанализировать изображения с ограниченным модельным выводом.
+- **Сочетается с:** `scientific/histolab`, `scientific/deepspot-m`
+
+### `scientific/pathogen-variant-surveillance`
+
+Описательный геномный надзор за патогенами через публичные GenSpectrum LAPIS данные.
+
+- **Ключевые навыки:** линии Pango; доли последовательностей; задержки отчётности
+- **Задачи:** Оценить изменения в поданных последовательностях без подмены распространённости инфекций.
+- **Сочетается с:** `scientific/genomic-coordinates`
+
+### `scientific/pathway-enrichment`
+
+Обогащение биологических путей и генных наборов с явным фоном сравнения.
+
+- **Ключевые навыки:** ORA/GSEA; GO/KEGG/Reactome; FDR
+- **Задачи:** Интерпретировать списки генов и ранги с проверкой идентификаторов.
+- **Сочетается с:** `scientific/pydeseq2`, `scientific/scanpy`
+
+### `scientific/phylogenetics`
+
+Построение филогенетических деревьев из гомологичных последовательностей.
+
+- **Ключевые навыки:** MAFFT; IQ-TREE; поддержка ветвей
+- **Задачи:** Подготовить выравнивание и оценить устойчивость филогенетических выводов.
+- **Сочетается с:** `scientific/biopython`, `scientific/etetoolkit`
+
+### `scientific/polars-bio`
+
+Геномные интервальные операции и биоформаты в Polars DataFrame.
+
+- **Ключевые навыки:** overlap/nearest/coverage; BED/VCF/BAM; ленивый ввод
+- **Задачи:** Выполнить координатно корректные объединения и анализ покрытия.
+- **Сочетается с:** `scientific/polars`, `scientific/genomic-coordinates`
+
+### `scientific/primer-design`
+
+Проектирование и проверка PCR и RT-qPCR праймеров с Primer3.
+
+- **Ключевые навыки:** термодинамика; off-target; координаты и isoforms
+- **Задачи:** Подготовить кандидатные праймеры и провести ограниченную in-silico проверку.
+- **Сочетается с:** `scientific/biopython`, `scientific/genomic-coordinates`
+
+### `scientific/pydeseq2`
+
+Дифференциальная экспрессия bulk RNA-seq с PyDESeq2.
+
+- **Ключевые навыки:** дизайн и контрасты; Wald-тесты; LFC shrinkage и FDR
+- **Задачи:** Получить проверенные результаты по биологическим репликам.
+- **Сочетается с:** `scientific/bulk-rnaseq`, `scientific/pathway-enrichment`
+
+### `scientific/pysam`
+
+Чтение, индексирование и преобразование геномных форматов через Python/HTSlib.
+
+- **Ключевые навыки:** SAM/BAM/CRAM; VCF/BCF; pileup и tabix
+- **Задачи:** Извлечь покрытие или варианты и проверить соответствие референсу.
+- **Сочетается с:** `scientific/genomic-coordinates`, `scientific/polars-bio`
+
+### `scientific/qiime2-amplicon`
+
+Обработка парных 16S-ампликонов в QIIME 2 с сохранением происхождения.
+
+- **Ключевые навыки:** FASTQ-манифесты; ASV; праймеры и таксономия
+- **Задачи:** Получить проверенные ампликонные таблицы и оценить удержание чтений.
+- **Сочетается с:** `scientific/scikit-bio`, `scientific/waypoint-bio`
+
+### `scientific/relion`
+
+Подготовка и проверка single-particle cryo-EM процессов RELION.
+
+- **Ключевые навыки:** STAR; half sets; маски и FSC
+- **Задачи:** Проверить согласованность частиц и численное качество refinement.
+- **Сочетается с:** `scientific/scientific-visualization`
+
+### `scientific/scanpy`
+
+Исследовательский анализ single-cell RNA-seq в Scanpy.
+
+- **Ключевые навыки:** QC и нормализация; PCA/UMAP; кластеры и маркеры
+- **Задачи:** Подготовить одноклеточный анализ с явным происхождением counts.
+- **Сочетается с:** `scientific/anndata`, `scientific/scvi-tools`
+
+### `scientific/scikit-bio`
+
+Биологические последовательности и разнообразие с scikit-bio.
+
+- **Ключевые навыки:** выравнивания; UniFrac; PCoA и PERMANOVA
+- **Задачи:** Оценить разнообразие микробиома и структуру биологических выборок.
+- **Сочетается с:** `scientific/qiime2-amplicon`, `scientific/phylogenetics`
+
+### `scientific/scvelo`
+
+Анализ RNA velocity по spliced/unspliced счётчикам с scVelo.
+
+- **Ключевые навыки:** кинетические модели; velocity-граф; latent time
+- **Задачи:** Проверить направленные гипотезы траекторий без причинных утверждений.
+- **Сочетается с:** `scientific/scanpy`, `scientific/anndata`
+
+### `scientific/scvi-tools`
+
+Вероятностные модели одноклеточных и мультимодальных данных в scvi-tools.
+
+- **Ключевые навыки:** scVI/scANVI; totalVI/MultiVI; неопределённость
+- **Задачи:** Интегрировать партии, аннотировать клетки и оценить модельные различия.
+- **Сочетается с:** `scientific/scanpy`, `scientific/anndata`
+
+### `scientific/tiledbvcf`
+
+Хранение и запросы когортных вариантов с TileDB-VCF.
+
+- **Ключевые навыки:** VCF/BCF ingestion; регионы и образцы; потоковая выборка
+- **Задачи:** Организовать расширяемую когорту и получить ограниченные срезы вариантов.
+- **Сочетается с:** `scientific/pysam`
+
+### `scientific/waypoint-bio`
+
+Модели микробиома Outpost Bio Waypoint и их воспроизводимая оценка.
+
+- **Ключевые навыки:** эмбеддинги; дообучение; Atlas и Compass
+- **Задачи:** Преобразовать таблицы таксонов и проверить модель на задачах микробиома.
+- **Сочетается с:** `scientific/qiime2-amplicon`, `scientific/scikit-bio`
+
+---
+
+<a id="cat-chemistry"></a>
+## Химия, молекулярное моделирование и белки
+
+**Область применения.** Хемоинформатика, молекулярные признаки, масс-спектрометрия, дизайн белков, docking, динамика и метаболическое моделирование.
+
+**Решаемые задачи.** Подготовка молекул; проверка структур; поиск кандидатных поз; анализ спектров; воспроизводимые расчёты и ограничение интерпретаций.
+
+**Типовые связки.** datamol / rdkit → molfeat → deepchem; diffdock → molecular-dynamics; cobrapy + 13c-metabolic-flux для разных типов потокового анализа.
+
+Навыков в категории: 18.
+
+### `scientific/13c-metabolic-flux`
+
+Оценка метаболических потоков по стационарным углерод-13 изотопным измерениям.
+
+- **Ключевые навыки:** атомные карты; mfapy; многократная оптимизация
+- **Задачи:** Проверить, какие потоки ограничены наблюдаемыми изотопными данными.
+- **Сочетается с:** `scientific/cobrapy`, `scientific/uncertainty-and-units`
+
+### `scientific/datamol`
+
+Типовые хемоинформатические процессы через упрощённый интерфейс RDKit.
+
+- **Ключевые навыки:** SMILES; дескрипторы; конформеры и кластеризация
+- **Задачи:** Подготовить и стандартизировать набор малых молекул.
+- **Сочетается с:** `scientific/rdkit`, `scientific/medchem`
+
+### `scientific/deepchem`
+
+Модели молекулярных свойств и бенчмарки MoleculeNet с DeepChem.
+
+- **Ключевые навыки:** фичеризация; scaffold-разбиения; графовые модели
+- **Задачи:** Построить проверяемый прогноз ADMET или других химических свойств.
+- **Сочетается с:** `scientific/molfeat`, `scientific/pytdc`
+
+### `scientific/diffdock`
+
+Предсказание поз связывания белка и малой молекулы с DiffDock.
+
+- **Ключевые навыки:** PDB/SMILES; пакетный docking; проверка уверенности
+- **Задачи:** Получить кандидатные позы без подмены оценки аффинности.
+- **Сочетается с:** `scientific/rdkit`, `scientific/molecular-dynamics`
+
+### `scientific/esm`
+
+Белковые модели ESM3, ESMC и ESMFold2 через Biohub esm SDK.
+
+- **Ключевые навыки:** генерация последовательностей; эмбеддинги; фолдинг
+- **Задачи:** Подготовить локальный или размещённый вывод с учётом версии модели.
+- **Сочетается с:** `scientific/tamarind`
+
+### `scientific/glycoengineering`
+
+Исследование гликозилирования белков с опорой на проверяемые аннотации.
+
+- **Ключевые навыки:** N-гликосайты; S/T-области; гликановое экранирование
+- **Задачи:** Подготовить гипотезы инженерии гликопротеинов и проверку сайтов.
+- **Сочетается с:** `scientific/biopython`
+
+### `scientific/matchms`
+
+Сравнение масс-спектров и поиск малых молекул по спектральным библиотекам.
+
+- **Ключевые навыки:** очистка метаданных; similarity; сопоставление пиков
+- **Задачи:** Подготовить воспроизводимый спектральный поиск и оценить совпадения.
+- **Сочетается с:** `scientific/pyopenms`
+
+### `scientific/medchem`
+
+Медицинско-химическая фильтрация кандидатных соединений.
+
+- **Ключевые навыки:** Lipinski/Veber; PAINS и alerts; сложность молекул
+- **Задачи:** Отобрать соединения для дальнейшего исследования с явными критериями.
+- **Сочетается с:** `scientific/datamol`, `scientific/rdkit`
+
+### `scientific/molecular-dynamics`
+
+Молекулярная динамика и анализ траекторий с OpenMM и MDAnalysis.
+
+- **Ключевые навыки:** силовые поля; минимизация; RMSD/RMSF
+- **Задачи:** Подготовить симуляцию и оценить структурную динамику системы.
+- **Сочетается с:** `scientific/rdkit`, `scientific/rowan`
+
+### `scientific/molfeat`
+
+Молекулярные признаки для QSAR/QSPR и химического машинного обучения.
+
+- **Ключевые навыки:** ECFP/MACCS; дескрипторы; pretrained embeddings
+- **Задачи:** Построить воспроизводимые признаки с корректным соответствием меткам.
+- **Сочетается с:** `scientific/rdkit`, `scientific/deepchem`
+
+### `scientific/nmrglue`
+
+Обработка одномерных ЯМР-сигналов с nmrglue.
+
+- **Ключевые навыки:** FID; Фурье-преобразование; фазировка и интегрирование
+- **Задачи:** Получить откалиброванный спектр и проверяемые области интеграции.
+- **Сочетается с:** `scientific/uncertainty-and-units`
+
+### `scientific/pyopenms`
+
+Обработка протеомных и метаболомных масс-спектрометрических данных с pyOpenMS.
+
+- **Ключевые навыки:** детекция признаков; идентификация; количественный анализ
+- **Задачи:** Собрать LC-MS/MS-конвейер с проверкой форматов и результатов.
+- **Сочетается с:** `scientific/matchms`
+
+### `scientific/pytdc`
+
+Наборы данных и бенчмарки Therapeutics Data Commons через PyTDC.
+
+- **Ключевые навыки:** реестр задач; разбиения; метрики и molecular oracles
+- **Задачи:** Сравнить модели на терапевтических задачах без утечки выборок.
+- **Сочетается с:** `scientific/deepchem`, `scientific/scikit-learn`
+
+### `scientific/rdkit`
+
+Точное управление молекулярными структурами и реакциями в RDKit.
+
+- **Ключевые навыки:** SMILES/SDF; fingerprints; подструктуры и 3D
+- **Задачи:** Реализовать специализированный хемоинформатический процесс.
+- **Сочетается с:** `scientific/datamol`, `scientific/medchem`
+
+### `scientific/rowan`
+
+Облачное молекулярное моделирование через Rowan Python API.
+
+- **Ключевые навыки:** pKa; конформеры; docking и cofolding
+- **Задачи:** Подготовить пакетный расчёт химических свойств и структур.
+- **Сочетается с:** `scientific/rdkit`, `scientific/molecular-dynamics`
+
+### `scientific/tamarind`
+
+Облачный запуск моделей структурной биологии через Tamarind Bio API или MCP.
+
+- **Ключевые навыки:** фолдинг; дизайн белков; docking и динамика
+- **Задачи:** Собрать пакетные задания без локальных GPU и проверить результаты.
+- **Сочетается с:** `scientific/esm`, `scientific/diffdock`
+
+### `scientific/tellurium`
+
+Кинетические модели биохимических реакций в Tellurium и libRoadRunner.
+
+- **Ключевые навыки:** SBML/Antimony; единицы; SED-ML/COMBINE
+- **Задачи:** Смоделировать динамику концентраций и воспроизвести вычислительный эксперимент.
+- **Сочетается с:** `scientific/cobrapy`, `scientific/uncertainty-and-units`
+
+### `scientific/torchdrug`
+
+Молекулярные графы и модели поиска лекарств в TorchDrug.
+
+- **Ключевые навыки:** свойства молекул; генерация; белковые представления
+- **Задачи:** Подготовить и отладить исследовательский графовый ML-процесс.
+- **Сочетается с:** `scientific/torch-geometric`, `scientific/pytdc`
+
+---
+
+<a id="cat-scientific-computing"></a>
+## Физика, материалы и научные вычисления
+
+**Область применения.** Символьная математика, квантовые схемы и динамика, гидродинамика, химические реакторы, батареи, фазовые равновесия и астрономия.
+
+**Решаемые задачи.** Выбор модели и solver; проверка единиц; численная сходимость; анализ чувствительности; воспроизводимая симуляция.
+
+**Типовые связки.** uncertainty-and-units → предметный solver → statistical-analysis → scientific-visualization; qiskit / cirq / pennylane выбираются по целевой платформе.
+
+Навыков в категории: 17.
+
+### `scientific/astropy`
+
+Астрономические вычисления и форматы данных в Astropy.
+
+- **Ключевые навыки:** единицы и координаты; FITS; время и WCS
+- **Задачи:** Обработать астрономические наблюдения с согласованными физическими величинами.
+- **Сочетается с:** `scientific/uncertainty-and-units`
+
+### `scientific/cantera`
+
+Моделирование химических реакторов и воспламенения в Cantera.
+
+- **Ключевые навыки:** механизмы реакций; балансы; численная сходимость
+- **Задачи:** Оценить задержку воспламенения при заданных физических допущениях.
+- **Сочетается с:** `scientific/uncertainty-and-units`
+
+### `scientific/cirq`
+
+Квантовые схемы и шумовые модели в Google Cirq.
+
+- **Ключевые навыки:** Google Quantum AI; симуляция; характеризация
+- **Задачи:** Подготовить и проверить квантовый эксперимент для целевой платформы.
+- **Сочетается с:** `scientific/qiskit`, `scientific/pennylane`
+
+### `scientific/fluidsim`
+
+Планирование и анализ вычислительных гидродинамических симуляций FluidSim.
+
+- **Ключевые навыки:** выбор solver; FFT/MPI; рестарты и диагностика
+- **Задачи:** Подготовить ограниченную симуляцию и проверить численную достоверность.
+- **Сочетается с:** `scientific/openpiv`, `scientific/get-available-resources`
+
+### `scientific/marine-carbonate-chemistry`
+
+Карбонатная химия морской воды с PyCO2SYS.
+
+- **Ключевые навыки:** щелочность и DIC; pH/pCO2; насыщение минералов
+- **Задачи:** Рассчитать параметры карбонатной системы с переносом неопределённости.
+- **Сочетается с:** `scientific/uncertainty-and-units`
+
+### `scientific/matlab`
+
+Численные вычисления и исследовательские процессы в MATLAB и Octave.
+
+- **Ключевые навыки:** матрицы; визуализация; численные методы
+- **Задачи:** Написать или проверить научный код для совместимого MATLAB/Octave окружения.
+- **Сочетается с:** `scientific/sympy`
+
+### `scientific/openpiv`
+
+Измерение полей скорости по парам изображений методом PIV.
+
+- **Ключевые навыки:** корреляция окон; фильтрация векторов; завихренность
+- **Задачи:** Получить проверенное поле течения из экспериментальных изображений.
+- **Сочетается с:** `scientific/fluidsim`, `scientific/uncertainty-and-units`
+
+### `scientific/pennylane`
+
+Дифференцируемые квантовые схемы и гибридные модели в PennyLane.
+
+- **Ключевые навыки:** VQE/QAOA; PyTorch/JAX; симуляторы
+- **Задачи:** Проверить вариационный квантовый алгоритм до переноса на оборудование.
+- **Сочетается с:** `scientific/qiskit`, `scientific/cirq`
+
+### `scientific/pybamm`
+
+Электрохимические симуляции литий-ионных батарей в PyBaMM.
+
+- **Ключевые навыки:** SPM/DFN; циклы заряда; сеточная сходимость
+- **Задачи:** Сравнить расчётные кривые напряжения с измерениями.
+- **Сочетается с:** `scientific/uncertainty-and-units`
+
+### `scientific/pycalphad`
+
+Расчёт фазовых равновесий CALPHAD с pycalphad.
+
+- **Ключевые навыки:** TDB; фазовые доли; температурные серии
+- **Задачи:** Оценить устойчивость фаз сплава с явными составами и условиями.
+- **Сочетается с:** `scientific/pymatgen`
+
+### `scientific/pymatgen`
+
+Обработка структур и расчётных свойств материалов в pymatgen.
+
+- **Ключевые навыки:** симметрия; фазовые диаграммы; Materials Project
+- **Задачи:** Проверить структуру и подготовить воспроизводимый материаловедческий анализ.
+- **Сочетается с:** `scientific/pycalphad`
+
+### `scientific/pymoo`
+
+Одно- и многокритериальная оптимизация с pymoo.
+
+- **Ключевые навыки:** NSGA-II/III; ограничения; Парето-фронт
+- **Задачи:** Настроить задачу и проверить качество приближённых решений.
+- **Сочетается с:** `scientific/statistical-analysis`
+
+### `scientific/qiskit`
+
+Квантовые схемы и выполнение на IBM Quantum с Qiskit.
+
+- **Ключевые навыки:** транспиляция; Sampler/Estimator; шум и mitigation
+- **Задачи:** Подготовить схему, проверить симуляцию и настроить целевое выполнение.
+- **Сочетается с:** `scientific/cirq`, `scientific/pennylane`
+
+### `scientific/qutip`
+
+Моделирование открытых и закрытых квантовых систем в QuTiP 5.
+
+- **Ключевые навыки:** траектории; стационарные состояния; спектры
+- **Задачи:** Проверить физические размерности и сходимость квантовой динамики.
+- **Сочетается с:** `scientific/uncertainty-and-units`
+
+### `scientific/simpy`
+
+Дискретно-событийное моделирование процессов и очередей в SimPy.
+
+- **Ключевые навыки:** ресурсы; прерывания; независимые репликации
+- **Задачи:** Построить воспроизводимую симуляцию и оценить её выходные показатели.
+- **Сочетается с:** `scientific/statistical-analysis`
+
+### `scientific/sympy`
+
+Точная символьная математика в SymPy.
+
+- **Ключевые навыки:** алгебра; анализ; уравнения и LaTeX
+- **Задачи:** Получить символьное решение с явными предположениями.
+- **Сочетается с:** `scientific/uncertainty-and-units`
+
+### `scientific/uncertainty-and-units`
+
+Контроль физических единиц и перенос неопределённости измерений.
+
+- **Ключевые навыки:** pint/uncertainties; GUM; Монте-Карло
+- **Задачи:** Проверить размерности, бюджет неопределённости и физическую правдоподобность результата.
+- **Сочетается с:** `scientific/statistical-analysis`
+
+---
+
+<a id="cat-lab-automation"></a>
+## Лабораторная автоматизация и оборудование
+
+**Область применения.** ELN и реестры образцов, роботизированное дозирование, облачные лаборатории, параметрические лабораторные детали и изготовление.
+
+**Решаемые задачи.** Интеграция метаданных; подготовка протоколов и симуляция; проектирование деталей; проверка входов, стоимости и разрешённого действия перед запуском или заказом.
+
+**Типовые связки.** lab-hardware-cad → fictiv; experimental-design → protocolsio-integration → opentrons-integration / pylabrobot; benchling-integration → lamindb.
+
+Навыков в категории: 10.
+
+### `scientific/adaptyv`
+
+Планирование белковых экспериментов через Adaptyv Foundry API и SDK.
+
+- **Ключевые навыки:** ассеи; оценка стоимости; задания и результаты
+- **Задачи:** Подготовить последовательности и контролировать лабораторный заказ в рамках разрешённого действия.
+- **Сочетается с:** `scientific/esm`
+
+### `scientific/benchling-integration`
+
+Автоматизация лабораторных данных через Benchling SDK и REST API.
+
+- **Ключевые навыки:** Registry; Inventory; ELN и Workflows
+- **Задачи:** Связать записи и образцы в проверяемом лабораторном процессе.
+- **Сочетается с:** `scientific/lamindb`
+
+### `scientific/fictiv`
+
+Работа с платформой изготовления деталей Fictiv в браузере.
+
+- **Ключевые навыки:** CAD-загрузка; DFM; материалы и допуски
+- **Задачи:** Подготовить конфигурацию изготовления, смету или проверку статуса заказа.
+- **Сочетается с:** `scientific/lab-hardware-cad`
+
+### `scientific/ginkgo-cloud-lab`
+
+Подготовка и заказ поддерживаемых экспериментов Ginkgo Cloud Lab.
+
+- **Ключевые навыки:** экспрессия белков; SPR; оценка входов и цены
+- **Задачи:** Выбрать протокол и подготовить проверяемый план лабораторной услуги.
+- **Сочетается с:** `scientific/adaptyv`
+
+### `scientific/lab-hardware-cad`
+
+Параметрическое проектирование лабораторных деталей с build123d.
+
+- **Ключевые навыки:** держатели и адаптеры; STEP/STL/DXF; сопряжения
+- **Задачи:** Подготовить геометрию для печати, CNC или лазерной обработки.
+- **Сочетается с:** `scientific/fictiv`
+
+### `scientific/labarchive-integration`
+
+Интеграция с официальными API LabArchives ELN и Inventory.
+
+- **Ключевые навыки:** региональные endpoint; подписанные запросы; UID
+- **Задачи:** Подготовить авторизованный обмен лабораторными записями.
+- **Сочетается с:** `scientific/benchling-integration`
+
+### `scientific/omero-integration`
+
+Управление исследовательскими изображениями и метаданными через OMERO.
+
+- **Ключевые навыки:** поиск изображений; ROI; импорт и экспорт
+- **Задачи:** Подготовить ограниченную выборку изображений или проверенный план записи.
+- **Сочетается с:** `scientific/histolab`
+
+### `scientific/opentrons-integration`
+
+Подготовка протоколов Opentrons Python Protocol API v2 для Flex и OT-2.
+
+- **Ключевые навыки:** labware и deck; пипетки; симуляция
+- **Задачи:** Написать, проверить или мигрировать протокол дозирования.
+- **Сочетается с:** `scientific/pylabrobot`
+
+### `scientific/protocolsio-integration`
+
+Чтение и проверка конкретных версий протоколов protocols.io.
+
+- **Ключевые навыки:** REST/MCP; экспорт; планы изменений
+- **Задачи:** Получить прослеживаемую копию протокола без неявного выполнения изменений.
+- **Сочетается с:** `scientific/experimental-design`
+
+### `scientific/pylabrobot`
+
+Подготовка и проверка автоматизации лабораторного оборудования с PyLabRobot.
+
+- **Ключевые навыки:** ресурсы; жидкостные планы; офлайн-симуляция
+- **Задачи:** Составить протокол для поддерживаемых устройств с операторской проверкой перед физическим запуском.
+- **Сочетается с:** `scientific/opentrons-integration`
