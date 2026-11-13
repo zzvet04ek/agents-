@@ -25,7 +25,7 @@ mostly in English.
      `Grep pattern="резюме|вакансi" path="library/SKILLS_RU.md" -B6`
      (the `### \`collection/name\`` heading is a few lines above the match).
      Its «Сочетается с» line suggests skills to chain for multi-step tasks.
-3. **Pick 1–3 best matches.** The same name can exist in several collections
+3. **Pick 1–5 best matches.** The same name can exist in several collections
    (e.g. `marketing/copywriting` and `claude-skills/copywriting`): compare the
    descriptions and pick the more specific one; mention the alternative.
 4. **Read the chosen `SKILL.md`** and follow it as if it were an active skill.
