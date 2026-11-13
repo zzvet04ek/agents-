@@ -1,0 +1,1065 @@
+# Русские описания Scientific Agent Skills; исходные SKILL.md — в collections/scientific/skills/.
+scientific/13c-metabolic-flux:
+  cat: chemistry
+  what: Оценка метаболических потоков по стационарным углерод-13 изотопным измерениям.
+  skills: атомные карты; mfapy; многократная оптимизация
+  tasks: Проверить, какие потоки ограничены наблюдаемыми изотопными данными.
+  with: scientific/cobrapy scientific/uncertainty-and-units
+scientific/adaptyv:
+  cat: lab-automation
+  what: Планирование белковых экспериментов через Adaptyv Foundry API и SDK.
+  skills: ассеи; оценка стоимости; задания и результаты
+  tasks: Подготовить последовательности и контролировать лабораторный заказ в рамках разрешённого действия.
+  with: scientific/esm
+scientific/aeon:
+  cat: ai-agents
+  what: Машинное обучение на временных рядах с aeon.
+  skills: классификация; forecasting; сегментация и сходство
+  tasks: Выбрать временную модель вместо неспециализированного ML-подхода.
+  with: scientific/scikit-learn scientific/timesfm-forecasting
+scientific/alphagenome:
+  cat: bioinformatics
+  what: Исследовательская оценка влияния геномных вариантов с помощью AlphaGenome и Atlas.
+  skills: регуляторные варианты; AVI и SHAP; сравнение REF/ALT
+  tasks: Приоритизировать варианты GRCh38 и сформулировать проверяемые механистические гипотезы.
+  with: scientific/genomic-coordinates
+scientific/analytical-method-validation:
+  cat: compliance
+  what: Планирование валидации, верификации и переноса аналитических методик.
+  skills: ICH Q2/Q14/M10; точность; LOD/LOQ и robustness
+  tasks: Подготовить протокол и критерии пригодности методики для заявленной цели.
+  with: scientific/statistical-analysis scientific/uncertainty-and-units
+scientific/anndata:
+  cat: bioinformatics
+  what: Хранение и преобразование аннотированных матриц одноклеточных данных AnnData.
+  skills: h5ad и Zarr; метаданные клеток; совместимость scverse
+  tasks: Подготовить согласованную матрицу экспрессии для анализа.
+  with: scientific/scanpy scientific/scvi-tools
+scientific/arbor:
+  cat: ai-agents
+  what: Управление исследовательскими экспериментами по Arbor Hypothesis Tree Refinement.
+  skills: деревья гипотез; изолированные прогоны; held-out сравнение
+  tasks: Вести проверяемый поиск улучшений модели или агентной системы.
+  with: scientific/hypothesis-generation
+scientific/arboreto:
+  cat: bioinformatics
+  what: Построение кандидатных генных регуляторных сетей из данных экспрессии.
+  skills: GRNBoost2 и GENIE3; ранжирование связей; устойчивость сети
+  tasks: Найти предполагаемые связи транскрипционных факторов и генов-мишеней.
+  with: scientific/scanpy scientific/networkx
+scientific/astropy:
+  cat: scientific-computing
+  what: Астрономические вычисления и форматы данных в Astropy.
+  skills: единицы и координаты; FITS; время и WCS
+  tasks: Обработать астрономические наблюдения с согласованными физическими величинами.
+  with: scientific/uncertainty-and-units
+scientific/autoskill:
+  cat: claude-setup
+  what: Поиск повторяющихся исследовательских процессов в явно разрешённой истории Screenpipe.
+  skills: локальная кластеризация; подбор навыков; черновики
+  tasks: Предложить навык или связку по запросу пользователя без скрытого анализа истории.
+  with: scientific/scientific-critical-thinking
+scientific/benchling-integration:
+  cat: lab-automation
+  what: Автоматизация лабораторных данных через Benchling SDK и REST API.
+  skills: Registry; Inventory; ELN и Workflows
+  tasks: Связать записи и образцы в проверяемом лабораторном процессе.
+  with: scientific/lamindb
+scientific/bgpt-paper-search:
+  cat: research
+  what: Поиск научных работ и извлечение свидетельств через BGPT.
+  skills: поиск по теме/DOI; эксперименты; provenance
+  tasks: Найти детали результатов и ограничения за пределами аннотации.
+  with: scientific/literature-review
+scientific/bids:
+  cat: bioinformatics
+  what: Организация нейрофизиологических и биомедицинских данных по стандарту BIDS.
+  skills: метаданные; DICOM-конвертация; валидация структуры
+  tasks: Подготовить воспроизводимый набор MRI, EEG, EMG или других поддерживаемых записей.
+  with: scientific/nwb-conversion scientific/pydicom
+scientific/biopython:
+  cat: bioinformatics
+  what: Обработка биологических последовательностей и запросы к NCBI через Biopython.
+  skills: FASTA/GenBank/PDB; BLAST; Bio.Entrez
+  tasks: Автоматизировать пакетную обработку последовательностей и получение аннотаций.
+  with: scientific/gget scientific/bioservices
+scientific/bioservices:
+  cat: bioinformatics
+  what: Объединение биоинформатических сервисов через единый Python-интерфейс BioServices.
+  skills: UniProt и KEGG; Reactome; сопоставление идентификаторов
+  tasks: Собрать аннотации белков и путей из нескольких баз.
+  with: scientific/gget scientific/pathway-enrichment
+scientific/bulk-rnaseq:
+  cat: bioinformatics
+  what: Подготовка bulk RNA-seq от FASTQ и результатов квантификации до генных счётчиков.
+  skills: STAR/Salmon; nf-core/rnaseq; репликация и QC
+  tasks: Собрать проверенную матрицу counts для анализа дифференциальной экспрессии.
+  with: scientific/nextflow scientific/pydeseq2
+scientific/cantera:
+  cat: scientific-computing
+  what: Моделирование химических реакторов и воспламенения в Cantera.
+  skills: механизмы реакций; балансы; численная сходимость
+  tasks: Оценить задержку воспламенения при заданных физических допущениях.
+  with: scientific/uncertainty-and-units
+scientific/cellprofiler:
+  cat: bioinformatics
+  what: Воспроизводимый анализ микроскопических изображений в CellProfiler.
+  skills: сегментация ядер; интенсивность флуоресценции; контроль качества
+  tasks: Построить пакетный конвейер подсчёта клеток и измерения объектов.
+  with: scientific/scientific-visualization
+scientific/cellxgene-census:
+  cat: bioinformatics
+  what: Выборка публичных одноклеточных и пространственных данных CZ CELLxGENE Census.
+  skills: версии Census; метаданные клеток; срезы экспрессии
+  tasks: Найти референсный атлас и получить ограниченную выборку данных.
+  with: scientific/anndata scientific/scanpy
+scientific/cirq:
+  cat: scientific-computing
+  what: Квантовые схемы и шумовые модели в Google Cirq.
+  skills: Google Quantum AI; симуляция; характеризация
+  tasks: Подготовить и проверить квантовый эксперимент для целевой платформы.
+  with: scientific/qiskit scientific/pennylane
+scientific/citation-management:
+  cat: research
+  what: Поиск и проверка библиографических записей для научных текстов.
+  skills: DOI/PMID; BibTeX; metadata validation
+  tasks: Собрать корректные ссылки без выдуманных реквизитов.
+  with: scientific/paper-lookup scientific/pyzotero
+scientific/clinical-decision-support:
+  cat: healthcare
+  what: Подготовка исследовательских материалов оценки клинической поддержки решений.
+  skills: когорты; survival; biomarker/model и governance
+  tasks: Описать и проверить агрегированную исследовательскую оценку без применения к лечению.
+  with: scientific/scikit-survival scientific/pyhealth
+scientific/clinical-reports:
+  cat: healthcare
+  what: Черновики клинических и исследовательских отчётов по проверенным фактам.
+  skills: case/trial/safety; manifests; локальные проверки
+  tasks: Подготовить структуру отчёта из обезличенных или синтетических данных для экспертной проверки.
+  with: scientific/scientific-writing
+scientific/cobrapy:
+  cat: bioinformatics
+  what: Метаболическое моделирование с ограничениями с помощью COBRApy.
+  skills: FBA/pFBA/FVA; нокауты; проверка SBML
+  tasks: Исследовать допустимые потоки и влияние среды или генетических изменений.
+  with: scientific/13c-metabolic-flux scientific/tellurium
+scientific/consciousness-council:
+  cat: research
+  what: Структурированное сопоставление перспектив для сложных решений.
+  skills: архетипы рассуждения; допущения; условный синтез
+  tasks: Сравнить альтернативы с разделением свидетельств и ценностей.
+  with: scientific/what-if-oracle scientific/scientific-critical-thinking
+scientific/dask:
+  cat: data
+  what: Обработка массивов и таблиц за пределами памяти или на кластере с Dask.
+  skills: DataFrame/Array; Futures; чанки и scheduler
+  tasks: Распределить вычисления с учётом зависимостей и памяти.
+  with: scientific/get-available-resources scientific/zarr-python
+scientific/database-lookup:
+  cat: data
+  what: Воспроизводимые запросы к документированным публичным базам данных.
+  skills: endpoint и фильтры; пагинация; provenance
+  tasks: Получить факты из заданного источника вместо предположений.
+  with: scientific/paper-lookup
+scientific/datalad:
+  cat: bioinformatics
+  what: Версионирование научных наборов данных и вычислительного происхождения в DataLad.
+  skills: git-annex; run/rerun; удалённые хранилища
+  tasks: Получить реальные данные вместо указателей и обеспечить повторяемость обработки.
+  with: scientific/lamindb
+scientific/datamol:
+  cat: chemistry
+  what: Типовые хемоинформатические процессы через упрощённый интерфейс RDKit.
+  skills: SMILES; дескрипторы; конформеры и кластеризация
+  tasks: Подготовить и стандартизировать набор малых молекул.
+  with: scientific/rdkit scientific/medchem
+scientific/deepchem:
+  cat: chemistry
+  what: Модели молекулярных свойств и бенчмарки MoleculeNet с DeepChem.
+  skills: фичеризация; scaffold-разбиения; графовые модели
+  tasks: Построить проверяемый прогноз ADMET или других химических свойств.
+  with: scientific/molfeat scientific/pytdc
+scientific/deepspot-m:
+  cat: bioinformatics
+  what: Предсказание пространственной экспрессии по гистологическим изображениям с DeepSpot-M. Код и веса имеют
+    некоммерческие ограничения.
+  skills: H&E-тайлы; масштаб изображения; панели генов
+  tasks: Получить исследовательские прогнозы экспрессии и проверить границы их интерпретации.
+  with: scientific/histolab scientific/scanpy
+scientific/deeptools:
+  cat: bioinformatics
+  what: Контроль качества и визуализация NGS-данных с deepTools.
+  skills: BAM/bigWig; PCA и корреляции; профили TSS
+  tasks: Построить воспроизводимые профили и тепловые карты RNA-seq, ChIP-seq или ATAC-seq.
+  with: scientific/pysam scientific/scientific-visualization
+scientific/depmap:
+  cat: bioinformatics
+  what: Работа с версиями Cancer Dependency Map и зависимостями опухолевых моделей.
+  skills: CRISPR Chronos; PRISM; идентификаторы моделей
+  tasks: Найти кандидатные зависимости и биомаркеры с учётом статистических ограничений.
+  with: scientific/mageck scientific/pathway-enrichment
+scientific/dhdna-profiler:
+  cat: healthcare
+  what: Исследовательская рубрика DHDNA для анализа рассуждений в предоставленном тексте.
+  skills: текстовые свидетельства; сравнение паттернов; ограничения оценки
+  tasks: Описать особенности текстового образца без психологической диагностики личности.
+  with: scientific/scientific-critical-thinking
+scientific/diffdock:
+  cat: chemistry
+  what: Предсказание поз связывания белка и малой молекулы с DiffDock.
+  skills: PDB/SMILES; пакетный docking; проверка уверенности
+  tasks: Получить кандидатные позы без подмены оценки аффинности.
+  with: scientific/rdkit scientific/molecular-dynamics
+scientific/dnanexus-integration:
+  cat: bioinformatics
+  what: Разработка и запуск воспроизводимых геномных процессов в DNAnexus.
+  skills: dx/dxpy; apps/applets; мониторинг и перенос данных
+  tasks: Подготовить облачный геномный конвейер и проверить выполнение.
+  with: scientific/nextflow
+scientific/esm:
+  cat: chemistry
+  what: Белковые модели ESM3, ESMC и ESMFold2 через Biohub esm SDK.
+  skills: генерация последовательностей; эмбеддинги; фолдинг
+  tasks: Подготовить локальный или размещённый вывод с учётом версии модели.
+  with: scientific/tamarind
+scientific/etetoolkit:
+  cat: bioinformatics
+  what: Редактирование, сравнение и визуализация готовых филогенетических деревьев в ETE 4.
+  skills: Newick/Nexus; топологии; таксономия и SmartView
+  tasks: Аннотировать дерево и сравнить эволюционные структуры.
+  with: scientific/phylogenetics
+scientific/exa-search:
+  cat: research
+  what: Научный и технический веб-поиск через Exa с извлечением страниц.
+  skills: academic filters; URL/PDF; пакетная выборка
+  tasks: Получить актуальные источники и тексты для исследования.
+  with: scientific/paper-lookup ecc/exa-search
+scientific/experimental-design:
+  cat: research
+  what: Планирование эксперимента до сбора данных.
+  skills: рандомизация; блокирование; factorial/DOE и репликация
+  tasks: Выбрать дизайн, снижающий смешение факторов и псевдорепликацию.
+  with: scientific/statistical-power scientific/statistical-analysis
+scientific/exploratory-data-analysis:
+  cat: data
+  what: Ограниченный локальный разведочный анализ поддерживаемых научных форматов.
+  skills: профили CSV/JSON; пропуски; утечки и выбросы
+  tasks: Подготовить проверяемый EDA-отчёт без неявной поддержки неизвестных форматов.
+  with: scientific/statistical-analysis
+scientific/fictiv:
+  cat: lab-automation
+  what: Работа с платформой изготовления деталей Fictiv в браузере.
+  skills: CAD-загрузка; DFM; материалы и допуски
+  tasks: Подготовить конфигурацию изготовления, смету или проверку статуса заказа.
+  with: scientific/lab-hardware-cad
+scientific/flowio:
+  cat: bioinformatics
+  what: Низкоуровневое чтение и запись файлов проточной цитометрии FCS через FlowIO.
+  skills: FCS 2.0/3.0/3.1; каналы; NumPy events
+  tasks: Проверить метаданные и извлечь события без выполнения gating.
+  with: scientific/flowkit
+scientific/flowkit:
+  cat: bioinformatics
+  what: Анализ проточной цитометрии с компенсацией и gating в FlowKit.
+  skills: spillover; logicle; FlowJo/GatingML
+  tasks: Воспроизвести выделение популяций и проверить доли клеток.
+  with: scientific/flowio
+scientific/fluidsim:
+  cat: scientific-computing
+  what: Планирование и анализ вычислительных гидродинамических симуляций FluidSim.
+  skills: выбор solver; FFT/MPI; рестарты и диагностика
+  tasks: Подготовить ограниченную симуляцию и проверить численную достоверность.
+  with: scientific/openpiv scientific/get-available-resources
+scientific/folklore-variant-evidence:
+  cat: healthcare
+  what: Получение публичных свидетельств о генах и вариантах через Folklore MCP.
+  skills: ClinGen; GRCh38 SNV/indel; происхождение источников
+  tasks: Собрать ограниченный исследовательский пакет доказательств по публичному варианту.
+  with: scientific/genomic-coordinates
+scientific/generate-image:
+  cat: media
+  what: Генерация и редактирование изображений через OpenRouter Image API.
+  skills: выбор модели; reference images; запросы и форматы
+  tasks: Подготовить иллюстрацию по заданию с проверкой результата.
+  with: scientific/scientific-schematics
+scientific/geniml:
+  cat: bioinformatics
+  what: Локальные модели геномных интервалов и планирование Geniml-процессов.
+  skills: BED-контракты; Region2Vec/scEmbed; совместимость токенизаторов
+  tasks: Проверить входные интервалы и подготовить воспроизводимый запуск модели.
+  with: scientific/gtars scientific/genomic-coordinates
+scientific/genomic-coordinates:
+  cat: bioinformatics
+  what: Проверка и преобразование геномных координат между форматами и сборками.
+  skills: BED/GTF/VCF; 0-based и 1-based; нормализация инделов
+  tasks: Найти ошибки границ, сборок и имён контигов до анализа.
+  with: scientific/pysam scientific/polars-bio
+scientific/genomic-intelligence:
+  cat: bioinformatics
+  what: Запросы к размещённым DNA-моделям Genomic Intelligence.
+  skills: промоторы и сплайсинг; аннотация генов; прогноз экспрессии
+  tasks: Получить исследовательские предсказания по последовательности или области генома.
+  with: scientific/alphagenome
+scientific/geomaster:
+  cat: data
+  what: Геопространственные исследования и обработка данных наблюдения Земли.
+  skills: растры и векторы; STAC; пространственная статистика
+  tasks: Согласовать координаты и сетки для воспроизводимого GIS-анализа.
+  with: scientific/geopandas
+scientific/geopandas:
+  cat: data
+  what: Анализ векторных геоданных непосредственно в GeoPandas.
+  skills: GeoDataFrame; spatial join; CRS и ввод-вывод
+  tasks: Проверить геометрию и выполнить пространственные операции.
+  with: scientific/geomaster
+scientific/get-available-resources:
+  cat: devops
+  what: Оценка реально доступных вычислительных ресурсов до тяжёлого запуска.
+  skills: CPU/RAM/disk; лимиты контейнера; ускорители
+  tasks: Составить консервативный план вычислений по фактическим ограничениям.
+  with: scientific/optimize-for-gpu
+scientific/gget:
+  cat: bioinformatics
+  what: Быстрые геномные запросы через CLI и Python-пакет gget.
+  skills: BLAST/BLAT; аннотации генов; PDB и обогащение
+  tasks: Найти сведения о генах и последовательностях с сохранением источников.
+  with: scientific/biopython scientific/bioservices
+scientific/ginkgo-cloud-lab:
+  cat: lab-automation
+  what: Подготовка и заказ поддерживаемых экспериментов Ginkgo Cloud Lab.
+  skills: экспрессия белков; SPR; оценка входов и цены
+  tasks: Выбрать протокол и подготовить проверяемый план лабораторной услуги.
+  with: scientific/adaptyv
+scientific/glycoengineering:
+  cat: chemistry
+  what: Исследование гликозилирования белков с опорой на проверяемые аннотации.
+  skills: N-гликосайты; S/T-области; гликановое экранирование
+  tasks: Подготовить гипотезы инженерии гликопротеинов и проверку сайтов.
+  with: scientific/biopython
+scientific/gtars:
+  cat: bioinformatics
+  what: Локальная алгебра геномных интервалов и подготовка наборов BED.
+  skills: пересечения и покрытие; консенсус; токенизация
+  tasks: Проверить интервалы и подготовить данные для моделей и поиска.
+  with: scientific/genomic-coordinates scientific/polars-bio
+scientific/histolab:
+  cat: bioinformatics
+  what: Извлечение и подготовка тайлов из полноразмерных гистологических изображений.
+  skills: маски ткани; сеточные тайлы; нормализация H&E
+  tasks: Подготовить набор изображений для вычислительной патологии.
+  with: scientific/pathml scientific/deepspot-m
+scientific/hugging-science:
+  cat: ai-agents
+  what: Поиск научных моделей, наборов данных и Spaces в Hugging Science.
+  skills: каталог ресурсов; версии; проверка интерфейсов
+  tasks: Выбрать подходящий научный ML-ресурс и проверить способ его использования.
+  with: scientific/transformers
+scientific/hypogenic:
+  cat: ai-agents
+  what: Планирование и аудит LLM-генерации гипотез из размеченных текстов в HypoGeniC.
+  skills: HypoRefine; task configs; банки гипотез
+  tasks: Подготовить проверяемый эксперимент на размеченных текстовых данных.
+  with: scientific/hypothesis-generation
+scientific/hypothesis-generation:
+  cat: research
+  what: Формулирование научных гипотез и различающих предсказаний по имеющимся фактам.
+  skills: конкурирующие объяснения; измерения; preregistration
+  tasks: Преобразовать наблюдения в проверяемый исследовательский план.
+  with: scientific/experimental-design scientific/scientific-critical-thinking
+scientific/imaging-data-commons:
+  cat: healthcare
+  what: Поиск публичных онкологических изображений NCI Imaging Data Commons.
+  skills: CT/MR/PET; DICOM; metadata SQL
+  tasks: Подобрать набор изображений с проверкой лицензий и происхождения.
+  with: scientific/pydicom
+scientific/infographics:
+  cat: media
+  what: Создание инфографики по предоставленным данным через OpenRouter.
+  skills: макеты; палитры; проверка читаемости
+  tasks: Подготовить визуальное объяснение процесса или сравнения.
+  with: scientific/scientific-visualization
+scientific/iso-standards-readiness:
+  cat: compliance
+  what: Подготовка свидетельств готовности по ISO 13485, 14971, 17025 и 15189.
+  skills: контролируемые документы; traceability; CAPA
+  tasks: Организовать пакет доказательств, различая сертификацию, аккредитацию и регуляторные решения.
+  with: claude-skills/quality-manager-qms-iso13485
+scientific/lab-hardware-cad:
+  cat: lab-automation
+  what: Параметрическое проектирование лабораторных деталей с build123d.
+  skills: держатели и адаптеры; STEP/STL/DXF; сопряжения
+  tasks: Подготовить геометрию для печати, CNC или лазерной обработки.
+  with: scientific/fictiv
+scientific/labarchive-integration:
+  cat: lab-automation
+  what: Интеграция с официальными API LabArchives ELN и Inventory.
+  skills: региональные endpoint; подписанные запросы; UID
+  tasks: Подготовить авторизованный обмен лабораторными записями.
+  with: scientific/benchling-integration
+scientific/lamindb:
+  cat: bioinformatics
+  what: Каталогизация биологических данных и моделей с происхождением в LaminDB.
+  skills: артефакты и lineage; схемы; онтологии Bionty
+  tasks: Организовать проверяемое хранилище исследовательских данных.
+  with: scientific/ontology-term-resolution scientific/datalad
+scientific/latchbio-integration:
+  cat: bioinformatics
+  what: Разработка и эксплуатация биоинформатических процессов на Latch.
+  skills: SDK и CLI; Registry; Nextflow/Snakemake
+  tasks: Развернуть конвейер, настроить ресурсы и отслеживать запуски.
+  with: scientific/nextflow
+scientific/latex-posters:
+  cat: media
+  what: Научные постеры в LaTeX с beamerposter, tikzposter или baposter.
+  skills: колонки; типографика; PDF preflight
+  tasks: Сверстать конференционный постер с проверкой итогового PDF.
+  with: scientific/scientific-visualization
+scientific/liteparse:
+  cat: docs
+  what: Локальное извлечение текста и пространственной разметки из документов.
+  skills: PDF/Office; OCR; bounding boxes и JSON
+  tasks: Подготовить документы к поиску или RAG с сохранением структуры.
+  with: scientific/markitdown
+scientific/literature-review:
+  cat: research
+  what: Систематические, scoping и нарративные обзоры литературы.
+  skills: стратегия поиска; screening; синтез и цитаты
+  tasks: Подготовить воспроизводимый обзор с явными границами охвата.
+  with: scientific/paper-lookup scientific/citation-management
+scientific/mageck:
+  cat: bioinformatics
+  what: Анализ пуловых CRISPR-скринингов с MAGeCK.
+  skills: FASTQ и guide-counts; QC реплик; FDR и эффекты
+  tasks: Проверить библиотеку направляющих и ранжировать генные хиты.
+  with: scientific/depmap scientific/pathway-enrichment
+scientific/marine-carbonate-chemistry:
+  cat: scientific-computing
+  what: Карбонатная химия морской воды с PyCO2SYS.
+  skills: щелочность и DIC; pH/pCO2; насыщение минералов
+  tasks: Рассчитать параметры карбонатной системы с переносом неопределённости.
+  with: scientific/uncertainty-and-units
+scientific/markdown-mermaid-writing:
+  cat: docs
+  what: Научная документация в Markdown и структурные диаграммы Mermaid.
+  skills: схемы; шаблоны; проверка рендеринга
+  tasks: Описать процесс или взаимосвязи в редактируемом текстовом виде.
+  with: scientific/scientific-writing
+scientific/market-research-reports:
+  cat: strategy
+  what: Рыночные отчёты с прослеживаемыми источниками и сценариями допущений.
+  skills: границы рынка; TAM/SAM/SOM; конкурентный анализ
+  tasks: Подготовить исследовательский отчёт, отделяя наблюдения от прогнозных допущений.
+  with: scientific/paper-lookup ecc/market-research
+scientific/markitdown:
+  cat: docs
+  what: Преобразование поддерживаемых документов и медиа в Markdown с MarkItDown.
+  skills: Office/PDF; конвертеры; проверка потерь
+  tasks: Получить текстовую версию файла для анализа и поиска.
+  with: scientific/liteparse
+scientific/matchms:
+  cat: chemistry
+  what: Сравнение масс-спектров и поиск малых молекул по спектральным библиотекам.
+  skills: очистка метаданных; similarity; сопоставление пиков
+  tasks: Подготовить воспроизводимый спектральный поиск и оценить совпадения.
+  with: scientific/pyopenms
+scientific/matlab:
+  cat: scientific-computing
+  what: Численные вычисления и исследовательские процессы в MATLAB и Octave.
+  skills: матрицы; визуализация; численные методы
+  tasks: Написать или проверить научный код для совместимого MATLAB/Octave окружения.
+  with: scientific/sympy
+scientific/matplotlib:
+  cat: media
+  what: Настраиваемые статические научные графики в Matplotlib.
+  skills: axes/artists; аннотации; экспорт PDF/SVG/PNG
+  tasks: Построить точный график и контролировать оформление каждого элемента.
+  with: scientific/scientific-visualization
+scientific/medchem:
+  cat: chemistry
+  what: Медицинско-химическая фильтрация кандидатных соединений.
+  skills: Lipinski/Veber; PAINS и alerts; сложность молекул
+  tasks: Отобрать соединения для дальнейшего исследования с явными критериями.
+  with: scientific/datamol scientific/rdkit
+scientific/modal:
+  cat: devops
+  what: Запуск Python и GPU-вычислений в облаке Modal.
+  skills: serverless jobs; model serving; batch и SDK
+  tasks: Подготовить облачный вычислительный процесс с явной конфигурацией.
+  with: scientific/get-available-resources
+scientific/molecular-dynamics:
+  cat: chemistry
+  what: Молекулярная динамика и анализ траекторий с OpenMM и MDAnalysis.
+  skills: силовые поля; минимизация; RMSD/RMSF
+  tasks: Подготовить симуляцию и оценить структурную динамику системы.
+  with: scientific/rdkit scientific/rowan
+scientific/molfeat:
+  cat: chemistry
+  what: Молекулярные признаки для QSAR/QSPR и химического машинного обучения.
+  skills: ECFP/MACCS; дескрипторы; pretrained embeddings
+  tasks: Построить воспроизводимые признаки с корректным соответствием меткам.
+  with: scientific/rdkit scientific/deepchem
+scientific/ncats-arax:
+  cat: healthcare
+  what: Ограниченные запросы биомедицинских связей через NCATS Translator ARAX.
+  skills: Biolink/TRAPI; нормализация сущностей; one/two-hop
+  tasks: Получить связи и их источники без подмены причинными или клиническими выводами.
+  with: scientific/primekg
+scientific/networkx:
+  cat: data
+  what: Построение и анализ сетей и графов с NetworkX.
+  skills: пути и центральность; сообщества; модели графов
+  tasks: Исследовать структуру социальной, биологической или иной сети.
+  with: scientific/torch-geometric
+scientific/neurokit2:
+  cat: healthcare
+  what: Исследовательская обработка физиологических временных рядов в NeuroKit2.
+  skills: очистка сигналов; события; вариабельность и сложность
+  tasks: Построить воспроизводимый анализ биосигналов с проверкой частоты, единиц и артефактов.
+  with: scientific/statistical-analysis scientific/uncertainty-and-units
+scientific/neuropixels-analysis:
+  cat: healthcare
+  what: Обработка внеклеточных Neuropixels-записей через SpikeInterface.
+  skills: SpikeGLX/Open Ephys; Kilosort4; QC и курация
+  tasks: Подготовить spike sorting и проверить качество выделенных нейронных единиц.
+  with: scientific/nwb-conversion
+scientific/nextflow:
+  cat: bioinformatics
+  what: Создание, запуск и отладка Nextflow DSL2 и nf-core конвейеров.
+  skills: process/channel; контейнеры; HPC и возобновление
+  tasks: Подготовить воспроизводимый pipeline и разобрать сбои выполнения.
+  with: scientific/bulk-rnaseq scientific/pacsomatic
+scientific/nmrglue:
+  cat: chemistry
+  what: Обработка одномерных ЯМР-сигналов с nmrglue.
+  skills: FID; Фурье-преобразование; фазировка и интегрирование
+  tasks: Получить откалиброванный спектр и проверяемые области интеграции.
+  with: scientific/uncertainty-and-units
+scientific/nwb-conversion:
+  cat: healthcare
+  what: Конвертация нейрофизиологических данных в Neurodata Without Borders.
+  skills: NeuroConv/PyNWB; TIFF и position CSV; временная синхронизация
+  tasks: Создать проверенный NWB-файл для описанного imaging/behavior процесса; поддержка произвольных форматов
+    не заявлена.
+  with: scientific/bids
+scientific/omero-integration:
+  cat: lab-automation
+  what: Управление исследовательскими изображениями и метаданными через OMERO.
+  skills: поиск изображений; ROI; импорт и экспорт
+  tasks: Подготовить ограниченную выборку изображений или проверенный план записи.
+  with: scientific/histolab
+scientific/onekgpd:
+  cat: bioinformatics
+  what: Запросы по участникам и вариантам проекта 1000 Genomes.
+  skills: GRCh38; носительство вариантов; частоты и аннотации
+  tasks: Получить публичные когортные сведения по заданным генам или областям.
+  with: scientific/genomic-coordinates
+scientific/ontology-term-resolution:
+  cat: bioinformatics
+  what: Сопоставление научных названий с проверенными онтологическими идентификаторами.
+  skills: OLS4; CURIE; Bioregistry и ZOOMA
+  tasks: Аннотировать ткани, типы клеток, заболевания и методы контролируемыми терминами.
+  with: scientific/lamindb
+scientific/open-notebook:
+  cat: docs
+  what: Организация исследовательских источников через Open Notebook REST API.
+  skills: импорт источников; поиск; заметки и cited chat
+  tasks: Настроить исследовательский блокнот и проверяемое получение материалов.
+  with: scientific/paper-lookup
+scientific/openpiv:
+  cat: scientific-computing
+  what: Измерение полей скорости по парам изображений методом PIV.
+  skills: корреляция окон; фильтрация векторов; завихренность
+  tasks: Получить проверенное поле течения из экспериментальных изображений.
+  with: scientific/fluidsim scientific/uncertainty-and-units
+scientific/opentrons-integration:
+  cat: lab-automation
+  what: Подготовка протоколов Opentrons Python Protocol API v2 для Flex и OT-2.
+  skills: labware и deck; пипетки; симуляция
+  tasks: Написать, проверить или мигрировать протокол дозирования.
+  with: scientific/pylabrobot
+scientific/optimize-for-gpu:
+  cat: devops
+  what: Ускорение научного Python на NVIDIA GPU с проверкой результата и времени.
+  skills: CUDA-профилирование; CuPy/cuDF; память и transfer
+  tasks: Подтвердить численную корректность и фактическое ускорение процесса.
+  with: scientific/get-available-resources
+scientific/pacsomatic:
+  cat: bioinformatics
+  what: Подготовка nf-core/pacsomatic для парных tumor-normal PacBio HiFi данных.
+  skills: samplesheet; Nextflow; планировщики кластеров
+  tasks: Собрать проверенные файлы запуска и диагностировать старт процесса.
+  with: scientific/nextflow scientific/pysam
+scientific/paper-lookup:
+  cat: research
+  what: Поиск публикаций, препринтов и метаданных через научные API.
+  skills: PubMed/OpenAlex/Crossref; OA; citation graph
+  tasks: Найти источники и получить воспроизводимые идентификаторы и тексты.
+  with: scientific/citation-management scientific/literature-review
+scientific/paperclip:
+  cat: research
+  what: Поиск и чтение биомедицинских и регуляторных материалов через GXL Paperclip.
+  skills: full-text grep; metadata SQL; line-pinned citations
+  tasks: Извлечь проверяемые свидетельства из публикаций и FDA/PMDA/EMA документов.
+  with: scientific/literature-review
+scientific/paperzilla:
+  cat: research
+  what: Работа с рекомендациями и проектными лентами Paperzilla через pz CLI.
+  skills: projects; recommendations; JSON и Atom
+  tasks: Получить актуальную подборку работ и проверить карточки источников.
+  with: scientific/paper-lookup
+scientific/parallel-web:
+  cat: research
+  what: Поиск, извлечение страниц и глубокое исследование через Parallel CLI.
+  skills: web search; extraction; structured enrichment
+  tasks: Собрать текущие веб-свидетельства и проверяемые материалы исследования.
+  with: scientific/research-lookup
+scientific/pathml:
+  cat: bioinformatics
+  what: Локальные исследовательские процессы вычислительной патологии с PathML.
+  skills: WSI и тайлы; QC; h5path и пространственные графы
+  tasks: Подготовить и проанализировать изображения с ограниченным модельным выводом.
+  with: scientific/histolab scientific/deepspot-m
+scientific/pathogen-variant-surveillance:
+  cat: bioinformatics
+  what: Описательный геномный надзор за патогенами через публичные GenSpectrum LAPIS данные.
+  skills: линии Pango; доли последовательностей; задержки отчётности
+  tasks: Оценить изменения в поданных последовательностях без подмены распространённости инфекций.
+  with: scientific/genomic-coordinates
+scientific/pathway-enrichment:
+  cat: bioinformatics
+  what: Обогащение биологических путей и генных наборов с явным фоном сравнения.
+  skills: ORA/GSEA; GO/KEGG/Reactome; FDR
+  tasks: Интерпретировать списки генов и ранги с проверкой идентификаторов.
+  with: scientific/pydeseq2 scientific/scanpy
+scientific/peer-review:
+  cat: research
+  what: Конструктивные черновики научных рецензий с привязкой к свидетельствам.
+  skills: методы и статистика; reproducibility; источники
+  tasks: Подготовить структурированную оценку рукописи в разрешённом контексте.
+  with: scientific/scientific-critical-thinking scientific/scientific-writing
+scientific/pennylane:
+  cat: scientific-computing
+  what: Дифференцируемые квантовые схемы и гибридные модели в PennyLane.
+  skills: VQE/QAOA; PyTorch/JAX; симуляторы
+  tasks: Проверить вариационный квантовый алгоритм до переноса на оборудование.
+  with: scientific/qiskit scientific/cirq
+scientific/phylogenetics:
+  cat: bioinformatics
+  what: Построение филогенетических деревьев из гомологичных последовательностей.
+  skills: MAFFT; IQ-TREE; поддержка ветвей
+  tasks: Подготовить выравнивание и оценить устойчивость филогенетических выводов.
+  with: scientific/biopython scientific/etetoolkit
+scientific/pi-agent:
+  cat: claude-setup
+  what: Настройка и расширение терминального агентного инструмента Pi.
+  skills: провайдеры; SDK/RPC; skills и extensions
+  tasks: Подготовить конфигурацию или интеграцию агентного процесса Pi.
+  with: scientific/arbor
+scientific/pkpd-modeling:
+  cat: healthcare
+  what: Исследовательское фармакокинетическое и фармакодинамическое моделирование.
+  skills: NCA/popPK; exposure-response; биоэквивалентность
+  tasks: Оценить параметры концентрация-время и неопределённость модельных сценариев.
+  with: scientific/pymc scientific/statistical-analysis
+scientific/polars:
+  cat: data
+  what: Быстрая табличная обработка и ETL на Polars.
+  skills: выражения; lazy/streaming; Arrow
+  tasks: Преобразовать большие таблицы и перенести pandas-процессы.
+  with: scientific/polars-bio scientific/dask
+scientific/polars-bio:
+  cat: bioinformatics
+  what: Геномные интервальные операции и биоформаты в Polars DataFrame.
+  skills: overlap/nearest/coverage; BED/VCF/BAM; ленивый ввод
+  tasks: Выполнить координатно корректные объединения и анализ покрытия.
+  with: scientific/polars scientific/genomic-coordinates
+scientific/pptx-posters:
+  cat: media
+  what: Редактируемые научные постеры в PowerPoint без макросов.
+  skills: физические размеры; печать; доступность и provenance
+  tasks: Собрать PPTX-постер из согласованных материалов и проверить пакет.
+  with: scientific/scientific-visualization
+scientific/primekg:
+  cat: healthcare
+  what: Запросы к зафиксированной версии Precision Medicine Knowledge Graph.
+  skills: типы узлов; прямые связи; пути и provenance
+  tasks: Получить воспроизводимые ассоциации генов, препаратов и заболеваний.
+  with: scientific/ncats-arax
+scientific/primer-design:
+  cat: bioinformatics
+  what: Проектирование и проверка PCR и RT-qPCR праймеров с Primer3.
+  skills: термодинамика; off-target; координаты и isoforms
+  tasks: Подготовить кандидатные праймеры и провести ограниченную in-silico проверку.
+  with: scientific/biopython scientific/genomic-coordinates
+scientific/protocolsio-integration:
+  cat: lab-automation
+  what: Чтение и проверка конкретных версий протоколов protocols.io.
+  skills: REST/MCP; экспорт; планы изменений
+  tasks: Получить прослеживаемую копию протокола без неявного выполнения изменений.
+  with: scientific/experimental-design
+scientific/pufferlib:
+  cat: ai-agents
+  what: Версионно корректная работа с RL-средами и обучением PufferLib.
+  skills: vectorization; PuffeRL; checkpoint review
+  tasks: Подготовить RL-эксперимент с учётом различий API 3/4/5.
+  with: scientific/stable-baselines3
+scientific/pybamm:
+  cat: scientific-computing
+  what: Электрохимические симуляции литий-ионных батарей в PyBaMM.
+  skills: SPM/DFN; циклы заряда; сеточная сходимость
+  tasks: Сравнить расчётные кривые напряжения с измерениями.
+  with: scientific/uncertainty-and-units
+scientific/pycalphad:
+  cat: scientific-computing
+  what: Расчёт фазовых равновесий CALPHAD с pycalphad.
+  skills: TDB; фазовые доли; температурные серии
+  tasks: Оценить устойчивость фаз сплава с явными составами и условиями.
+  with: scientific/pymatgen
+scientific/pydeseq2:
+  cat: bioinformatics
+  what: Дифференциальная экспрессия bulk RNA-seq с PyDESeq2.
+  skills: дизайн и контрасты; Wald-тесты; LFC shrinkage и FDR
+  tasks: Получить проверенные результаты по биологическим репликам.
+  with: scientific/bulk-rnaseq scientific/pathway-enrichment
+scientific/pydicom:
+  cat: healthcare
+  what: Локальная обработка медицинских изображений и метаданных DICOM.
+  skills: transfer syntax; pixels; частные элементы и обезличивание
+  tasks: Проверить или преобразовать DICOM-набор с учётом его структуры.
+  with: scientific/imaging-data-commons
+scientific/pyhealth:
+  cat: healthcare
+  what: Исследовательские модели клинических данных с PyHealth.
+  skills: EHR/сигналы; patient-level split; медицинские коды
+  tasks: Построить и проверить ML-конвейер с разделением на уровне пациентов.
+  with: scientific/scikit-survival scientific/shap
+scientific/pylabrobot:
+  cat: lab-automation
+  what: Подготовка и проверка автоматизации лабораторного оборудования с PyLabRobot.
+  skills: ресурсы; жидкостные планы; офлайн-симуляция
+  tasks: Составить протокол для поддерживаемых устройств с операторской проверкой перед физическим запуском.
+  with: scientific/opentrons-integration
+scientific/pymatgen:
+  cat: scientific-computing
+  what: Обработка структур и расчётных свойств материалов в pymatgen.
+  skills: симметрия; фазовые диаграммы; Materials Project
+  tasks: Проверить структуру и подготовить воспроизводимый материаловедческий анализ.
+  with: scientific/pycalphad
+scientific/pymc:
+  cat: data
+  what: Построение и проверка байесовских моделей в PyMC.
+  skills: NUTS/MCMC; posterior predictive; PSIS-LOO
+  tasks: Оценить распределения параметров и неопределённость с диагностикой модели.
+  with: scientific/statistical-analysis
+scientific/pymoo:
+  cat: scientific-computing
+  what: Одно- и многокритериальная оптимизация с pymoo.
+  skills: NSGA-II/III; ограничения; Парето-фронт
+  tasks: Настроить задачу и проверить качество приближённых решений.
+  with: scientific/statistical-analysis
+scientific/pyopenms:
+  cat: chemistry
+  what: Обработка протеомных и метаболомных масс-спектрометрических данных с pyOpenMS.
+  skills: детекция признаков; идентификация; количественный анализ
+  tasks: Собрать LC-MS/MS-конвейер с проверкой форматов и результатов.
+  with: scientific/matchms
+scientific/pysam:
+  cat: bioinformatics
+  what: Чтение, индексирование и преобразование геномных форматов через Python/HTSlib.
+  skills: SAM/BAM/CRAM; VCF/BCF; pileup и tabix
+  tasks: Извлечь покрытие или варианты и проверить соответствие референсу.
+  with: scientific/genomic-coordinates scientific/polars-bio
+scientific/pytdc:
+  cat: chemistry
+  what: Наборы данных и бенчмарки Therapeutics Data Commons через PyTDC.
+  skills: реестр задач; разбиения; метрики и molecular oracles
+  tasks: Сравнить модели на терапевтических задачах без утечки выборок.
+  with: scientific/deepchem scientific/scikit-learn
+scientific/pytorch-lightning:
+  cat: ai-agents
+  what: Организация обучения нейросетей с PyTorch Lightning.
+  skills: LightningModule; Trainer; DDP/FSDP и callbacks
+  tasks: Собрать воспроизводимый обучающий процесс и мониторинг.
+  with: scientific/get-available-resources
+scientific/pyzotero:
+  cat: docs
+  what: Программное управление библиографической библиотекой Zotero через pyzotero.
+  skills: items/collections; теги; вложения и экспорт
+  tasks: Подготовить авторизованную автоматизацию ссылок и коллекций.
+  with: scientific/citation-management
+scientific/qiime2-amplicon:
+  cat: bioinformatics
+  what: Обработка парных 16S-ампликонов в QIIME 2 с сохранением происхождения.
+  skills: FASTQ-манифесты; ASV; праймеры и таксономия
+  tasks: Получить проверенные ампликонные таблицы и оценить удержание чтений.
+  with: scientific/scikit-bio scientific/waypoint-bio
+scientific/qiskit:
+  cat: scientific-computing
+  what: Квантовые схемы и выполнение на IBM Quantum с Qiskit.
+  skills: транспиляция; Sampler/Estimator; шум и mitigation
+  tasks: Подготовить схему, проверить симуляцию и настроить целевое выполнение.
+  with: scientific/cirq scientific/pennylane
+scientific/qutip:
+  cat: scientific-computing
+  what: Моделирование открытых и закрытых квантовых систем в QuTiP 5.
+  skills: траектории; стационарные состояния; спектры
+  tasks: Проверить физические размерности и сходимость квантовой динамики.
+  with: scientific/uncertainty-and-units
+scientific/rdkit:
+  cat: chemistry
+  what: Точное управление молекулярными структурами и реакциями в RDKit.
+  skills: SMILES/SDF; fingerprints; подструктуры и 3D
+  tasks: Реализовать специализированный хемоинформатический процесс.
+  with: scientific/datamol scientific/medchem
+scientific/relion:
+  cat: bioinformatics
+  what: Подготовка и проверка single-particle cryo-EM процессов RELION.
+  skills: STAR; half sets; маски и FSC
+  tasks: Проверить согласованность частиц и численное качество refinement.
+  with: scientific/scientific-visualization
+scientific/relsa-severity-assessment:
+  cat: healthcare
+  what: Оценка тяжести состояний лабораторных животных по RELSA.
+  skills: нормализация; welfare-показатели; интервалы ARIMA
+  tasks: Исследовать динамику тяжести и неопределённость прогнозов для экспертной оценки.
+  with: scientific/statsmodels
+scientific/research-grants:
+  cat: research
+  what: Подготовка и проверка исследовательских грантовых заявок.
+  skills: aims; критерии конкурса; бюджет и resubmission
+  tasks: Собрать заявку под конкретный конкурс и проверить полноту требований.
+  with: scientific/experimental-design scientific/scientific-writing
+scientific/research-lookup:
+  cat: research
+  what: Сбор актуальных научных свидетельств для рукописи или исследовательской записки.
+  skills: Parallel Search/Extract; competing findings; provenance
+  tasks: Подготовить пакет источников под явно заданный исследовательский вопрос.
+  with: scientific/literature-review scientific/citation-management
+scientific/rowan:
+  cat: chemistry
+  what: Облачное молекулярное моделирование через Rowan Python API.
+  skills: pKa; конформеры; docking и cofolding
+  tasks: Подготовить пакетный расчёт химических свойств и структур.
+  with: scientific/rdkit scientific/molecular-dynamics
+scientific/scanpy:
+  cat: bioinformatics
+  what: Исследовательский анализ single-cell RNA-seq в Scanpy.
+  skills: QC и нормализация; PCA/UMAP; кластеры и маркеры
+  tasks: Подготовить одноклеточный анализ с явным происхождением counts.
+  with: scientific/anndata scientific/scvi-tools
+scientific/scholar-evaluation:
+  cat: research
+  what: Развивающая оценка научных работ по прослеживаемым свидетельствам.
+  skills: качественные рубрики; evidence checks; локальный QC
+  tasks: Проверить аргументацию работы без ранжирования людей и кадровых решений.
+  with: scientific/peer-review scientific/scientific-critical-thinking
+scientific/scientific-brainstorming:
+  cat: research
+  what: Научный поиск идей с явными допущениями и проверкой альтернатив.
+  skills: независимая генерация; критерии; decision log
+  tasks: Сформировать и приоритизировать кандидатные направления исследования.
+  with: scientific/hypothesis-generation scientific/experimental-design
+scientific/scientific-critical-thinking:
+  cat: research
+  what: Критическая оценка научных утверждений и качества свидетельств.
+  skills: bias/confounding; GRADE; интерпретация статистики
+  tasks: Найти слабые места аргументов и сформулировать ограничения выводов.
+  with: scientific/peer-review scientific/statistical-analysis
+scientific/scientific-schematics:
+  cat: media
+  what: Черновики научных схем с генерацией и итеративной проверкой качества.
+  skills: архитектуры; flowcharts; биологические пути
+  tasks: Подготовить схему с проверкой подписей и научного содержания.
+  with: scientific/markdown-mermaid-writing
+scientific/scientific-slides:
+  cat: media
+  what: Презентации научных докладов в PowerPoint или LaTeX Beamer.
+  skills: структура доклада; тайминг; визуальная проверка
+  tasks: Подготовить слайды для конференции, семинара или защиты.
+  with: scientific/scientific-visualization scientific/scientific-writing
+scientific/scientific-visualization:
+  cat: media
+  what: Достоверные и доступные научные рисунки для публикации.
+  skills: multi-panel; неопределённость; цвет и экспорт
+  tasks: Проверить графическое представление данных и подготовить журнальные файлы.
+  with: scientific/matplotlib scientific/seaborn
+scientific/scientific-writing:
+  cat: research
+  what: Подготовка научных текстов с проверяемыми фактами и источниками.
+  skills: reporting guidelines; claim registry; consistency checks
+  tasks: Написать или проверить рукопись без выдуманных результатов и ссылок.
+  with: scientific/citation-management scientific/scientific-visualization
+scientific/scikit-bio:
+  cat: bioinformatics
+  what: Биологические последовательности и разнообразие с scikit-bio.
+  skills: выравнивания; UniFrac; PCoA и PERMANOVA
+  tasks: Оценить разнообразие микробиома и структуру биологических выборок.
+  with: scientific/qiime2-amplicon scientific/phylogenetics
+scientific/scikit-learn:
+  cat: ai-agents
+  what: Классическое машинное обучение и воспроизводимые pipeline в scikit-learn.
+  skills: preprocessing; CV; подбор гиперпараметров
+  tasks: Обучить и оценить модель с корректным разбиением данных.
+  with: scientific/shap scientific/statistical-analysis
+scientific/scikit-survival:
+  cat: data
+  what: Модели выживаемости с цензурированием и конкурирующими рисками.
+  skills: patient-safe preprocessing; survival metrics; выбор модели
+  tasks: Проверить прогнозы времени до события с учётом цензурирования.
+  with: scientific/statistical-analysis scientific/pyhealth
+scientific/scvelo:
+  cat: bioinformatics
+  what: Анализ RNA velocity по spliced/unspliced счётчикам с scVelo.
+  skills: кинетические модели; velocity-граф; latent time
+  tasks: Проверить направленные гипотезы траекторий без причинных утверждений.
+  with: scientific/scanpy scientific/anndata
+scientific/scvi-tools:
+  cat: bioinformatics
+  what: Вероятностные модели одноклеточных и мультимодальных данных в scvi-tools.
+  skills: scVI/scANVI; totalVI/MultiVI; неопределённость
+  tasks: Интегрировать партии, аннотировать клетки и оценить модельные различия.
+  with: scientific/scanpy scientific/anndata
+scientific/seaborn:
+  cat: media
+  what: Статистические графики Seaborn с явной агрегацией данных.
+  skills: распределения; categorical plots; heatmaps
+  tasks: Исследовать отношения и сравнения с корректным отображением неопределённости.
+  with: scientific/matplotlib scientific/scientific-visualization
+scientific/shap:
+  cat: ai-agents
+  what: Объяснение и аудит прогнозов машинного обучения с SHAP.
+  skills: explainers и maskers; атрибуции; multi-output
+  tasks: Проверить интерпретацию локальных и глобальных вкладов признаков.
+  with: scientific/scikit-learn
+scientific/simpy:
+  cat: scientific-computing
+  what: Дискретно-событийное моделирование процессов и очередей в SimPy.
+  skills: ресурсы; прерывания; независимые репликации
+  tasks: Построить воспроизводимую симуляцию и оценить её выходные показатели.
+  with: scientific/statistical-analysis
+scientific/stable-baselines3:
+  cat: ai-agents
+  what: Обучение одиночного RL-агента с Stable Baselines3.
+  skills: PPO/SAC/DQN; Gymnasium; normalization и checkpoints
+  tasks: Подготовить воспроизводимые rollout и оценку политики.
+  with: scientific/pufferlib
+scientific/statistical-analysis:
+  cat: data
+  what: Выбор статистических методов и анализ исследовательских данных.
+  skills: проверка предпосылок; размеры эффектов; APA-отчётность
+  tasks: Проанализировать группы, связи или регрессии с оценкой неопределённости.
+  with: scientific/statistical-power scientific/statsmodels
+scientific/statistical-power:
+  cat: data
+  what: Расчёт размера выборки и мощности до сбора данных.
+  skills: MDE; кривые мощности; Monte Carlo
+  tasks: Обосновать число участников или реплик под выбранный дизайн.
+  with: scientific/experimental-design scientific/statistical-analysis
+scientific/statsmodels:
+  cat: data
+  what: Оценка и диагностика статистических моделей с statsmodels.
+  skills: OLS/GLM; mixed models; ARIMA/SARIMAX
+  tasks: Проверить коэффициенты, остатки и интервалы прогноза.
+  with: scientific/statistical-analysis
+scientific/sympy:
+  cat: scientific-computing
+  what: Точная символьная математика в SymPy.
+  skills: алгебра; анализ; уравнения и LaTeX
+  tasks: Получить символьное решение с явными предположениями.
+  with: scientific/uncertainty-and-units
+scientific/tamarind:
+  cat: chemistry
+  what: Облачный запуск моделей структурной биологии через Tamarind Bio API или MCP.
+  skills: фолдинг; дизайн белков; docking и динамика
+  tasks: Собрать пакетные задания без локальных GPU и проверить результаты.
+  with: scientific/esm scientific/diffdock
+scientific/tellurium:
+  cat: chemistry
+  what: Кинетические модели биохимических реакций в Tellurium и libRoadRunner.
+  skills: SBML/Antimony; единицы; SED-ML/COMBINE
+  tasks: Смоделировать динамику концентраций и воспроизвести вычислительный эксперимент.
+  with: scientific/cobrapy scientific/uncertainty-and-units
+scientific/tiledbvcf:
+  cat: bioinformatics
+  what: Хранение и запросы когортных вариантов с TileDB-VCF.
+  skills: VCF/BCF ingestion; регионы и образцы; потоковая выборка
+  tasks: Организовать расширяемую когорту и получить ограниченные срезы вариантов.
+  with: scientific/pysam
+scientific/timesfm-forecasting:
+  cat: ai-agents
+  what: Прогнозирование временных рядов с TimesFM и проверкой на отложенном периоде.
+  skills: регулярная сетка; квантили; XReg
+  tasks: Подготовить прогноз с явной версией модели и условиями лицензии весов.
+  with: scientific/aeon scientific/statsmodels
+scientific/torch-geometric:
+  cat: ai-agents
+  what: Графовые нейросети в PyTorch Geometric.
+  skills: GCN/GAT/GraphSAGE; heterogeneous graphs; sampling
+  tasks: Собрать и проверить модель для узлов, рёбер или целых графов.
+  with: scientific/networkx scientific/torchdrug
+scientific/torchdrug:
+  cat: chemistry
+  what: Молекулярные графы и модели поиска лекарств в TorchDrug.
+  skills: свойства молекул; генерация; белковые представления
+  tasks: Подготовить и отладить исследовательский графовый ML-процесс.
+  with: scientific/torch-geometric scientific/pytdc
+scientific/transformers:
+  cat: ai-agents
+  what: Загрузка, вывод и дообучение моделей Hugging Face Transformers.
+  skills: AutoModel/tokenizers; pipeline; Trainer
+  tasks: Реализовать NLP, vision, audio или мультимодальную задачу.
+  with: scientific/hugging-science scientific/pytorch-lightning
+scientific/treatment-plans:
+  cat: healthcare
+  what: Оформление планов лечения по уже принятым и проверенным решениям клиницистов.
+  skills: источники; цели и checkpoints; согласование документов
+  tasks: Проверить структуру и прослеживаемость документа без выбора лечения.
+  with: scientific/clinical-reports
+scientific/umap-learn:
+  cat: ai-agents
+  what: Нелинейное снижение размерности с UMAP-learn.
+  skills: 2D/3D; DensMAP; supervised/parametric UMAP
+  tasks: Получить исследовательские эмбеддинги и проверить чувствительность представления.
+  with: scientific/scikit-learn scientific/scanpy
+scientific/uncertainty-and-units:
+  cat: scientific-computing
+  what: Контроль физических единиц и перенос неопределённости измерений.
+  skills: pint/uncertainties; GUM; Монте-Карло
+  tasks: Проверить размерности, бюджет неопределённости и физическую правдоподобность результата.
+  with: scientific/statistical-analysis
+scientific/usfiscaldata:
+  cat: finance
+  what: Запросы к U.S. Treasury Fiscal Data REST API без API-ключа.
+  skills: госдолг; аукционы; бюджет и курсы
+  tasks: Получить воспроизводимые финансовые ряды из официального источника.
+  with: scientific/database-lookup
+scientific/vaex:
+  cat: data
+  what: Обработка таблиц больше оперативной памяти с Vaex.
+  skills: виртуальные выражения; потоковые статистики; binning
+  tasks: Получить ограниченные агрегаты без случайной материализации всего набора.
+  with: scientific/dask scientific/polars
+scientific/venue-templates:
+  cat: research
+  what: Оформление рукописей, постеров и заявок под требования конкретной площадки.
+  skills: LaTeX-шаблоны; анонимность; page limits и PDF
+  tasks: Проверить актуальные правила и подготовить формат подачи.
+  with: scientific/scientific-writing scientific/latex-posters
+scientific/waypoint-bio:
+  cat: bioinformatics
+  what: Модели микробиома Outpost Bio Waypoint и их воспроизводимая оценка.
+  skills: эмбеддинги; дообучение; Atlas и Compass
+  tasks: Преобразовать таблицы таксонов и проверить модель на задачах микробиома.
+  with: scientific/qiime2-amplicon scientific/scikit-bio
+scientific/what-if-oracle:
+  cat: research
+  what: Сценарный анализ исследовательских планов с явными допущениями. Лицензия навыка — CC BY-NC-SA 4.0.
+  skills: reference/adverse/wild-card; последствия; decision triggers
+  tasks: Проверить устойчивость плана без выдачи сценариев за вероятностный прогноз.
+  with: scientific/experimental-design scientific/consciousness-council
+scientific/zarr-python:
+  cat: data
+  what: Хранение многомерных научных массивов в Zarr-Python 3.
+  skills: чанки и sharding; codecs; S3/GCS
+  tasks: Настроить формат и ограниченный ввод-вывод с сохранением метаданных.
+  with: scientific/dask scientific/anndata

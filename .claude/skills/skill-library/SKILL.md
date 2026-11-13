@@ -1,6 +1,6 @@
 ---
 name: skill-library
-description: Librarian for the project's skill library — ~850 specialized skills in library/collections/ that are not loaded by default. Covers software engineering (languages, frameworks, testing, security, DevOps, databases, AI agents), marketing and SEO, product management, business/finance/C-level advice, career and resumes, academic research, productivity. Use at the start of any non-trivial task to find a matching skill, when the user names a skill not in the active list, or asks to add, update, find or promote skills ("найди навык", "какие есть навыки для…", "добавь коллекцию").
+description: Librarian for the project's skill library — 1000+ specialized skills in library/collections/ that are not loaded by default. Covers software engineering (languages, frameworks, testing, security, DevOps, databases, AI agents), marketing and SEO, product management, business/finance/C-level advice, career and resumes, academic research, productivity. Use at the start of any non-trivial task to find a matching skill, when the user names a skill not in the active list, or asks to add, update, find or promote skills ("найди навык", "какие есть навыки для…", "добавь коллекцию").
 ---
 
 # Skill library (библиотекарь)

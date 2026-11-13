@@ -47,7 +47,8 @@ def load_lock() -> dict:
 
 
 def is_nc(license_id: str) -> bool:
-    return "-NC" in (license_id or "").upper()
+    value = (license_id or "").upper()
+    return "-NC" in value or "NONCOMMERCIAL" in value
 
 
 def parse_frontmatter(text: str) -> dict:
@@ -180,7 +181,9 @@ def collect_skills() -> list[dict]:
         seen[(cid, name)] = digest
         inner = rel_parts[1:-2]
         category = next((p for p in inner if p not in ("skills", ".claude")), "")
-        lic = sources.get(cid, {}).get("license", "own" if cid == "my" else "?")
+        source = sources.get(cid, {})
+        lic = source.get("skill_licenses", {}).get(
+            name, source.get("license", "own" if cid == "my" else "?"))
         skills.append({
             "name": name, "collection": cid, "category": category, "license": lic,
             "path": str(skill_md.relative_to(REPO)),
@@ -245,6 +248,14 @@ def write_catalog(skills: list[dict]) -> None:
         commit = lock.get(cid, {}).get("commit", "")[:7]
         src = f"{spec['repo']} @ {commit}" if spec else "—"
         out.append(f"| [{cid}](#{cid}) | {len(by_col[cid])} | {lic} | {src} |")
+    exceptions = [s for s in skills if s["name"] in
+                  sources.get(s["collection"], {}).get("skill_licenses", {})]
+    if exceptions:
+        out += ["", "### Лицензионные исключения", "",
+                "Лицензия коллекции не заменяет индивидуальные условия этих навыков:", ""]
+        for s in sorted(exceptions, key=lambda s: (s["collection"], s["name"])):
+            out.append(f"- `{s['collection']}/{s['name']}` — {s['license']}"
+                       + (" — только некоммерческое использование" if is_nc(s['license']) else ""))
     for cid in order:
         title = sources.get(cid, {}).get("title_ru", "Мои навыки" if cid == "my" else cid)
         out += ["", f"<a id=\"{cid}\"></a>", f"## {title}", f"`{cid}`"]
