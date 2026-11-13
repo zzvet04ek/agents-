@@ -1,7 +1,7 @@
 # Каталог навыков
 
 Генерируется `library/tools/library.py` — не редактируйте вручную.
-Всего навыков: **856**. Как пользоваться — см. `library/README.md`.
+Всего навыков: **857**. Как пользоваться — см. `library/README.md`.
 
 | Коллекция | Навыков | Лицензия | Источник |
 |---|---|---|---|
@@ -12,6 +12,7 @@
 | [pm-setup](#pm-setup) | 6 | MIT | https://github.com/aakashg/pm-claude-code-setup @ 9be80c6 |
 | [career](#career) | 12 | MIT | https://github.com/art2url/career-agent-skills @ d7cce4b |
 | [academic](#academic) | 5 | CC-BY-NC-4.0 ⚠️ некоммерч. | https://github.com/Imbad0202/academic-research-skills @ 06a2e6b |
+| [my](#my) | 1 | свои | — |
 
 <a id="ecc"></a>
 ## ECC — разработка, агенты, DevOps, безопасность, контент
@@ -962,3 +963,9 @@
 - **academic-pipeline** — Orchestrator for the full academic research pipeline: research -> write -> integrity check -> review -> revise -> re-review -> re-revise ->…
 - **deep-research** — Universal deep research agent team.
 - **sr-screener** — Protocol-driven study screening for systematic, scoping and rapid reviews.
+
+<a id="my"></a>
+## Мои навыки
+`my`
+
+- **skill-sufficiency** — Проверка достаточности навыков и полноты ответа.

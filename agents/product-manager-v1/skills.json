@@ -1,11 +1,20 @@
 {
   "agent": "Product Manager v.1",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "core_count": 5,
   "on_demand_count": 3,
-  "load_policy": "Assigned competencies, not eager loading. Read 1–3 relevant SKILL.md per task; at most 5 when needed.",
+  "load_policy": "Always run my/skill-sufficiency before work and before delivery; load 1–3 relevant domain skills, at most 5 when needed.",
   "reviewed_at": "2026-11-13",
   "skills": [
+    {
+      "id": "my/skill-sufficiency",
+      "mode": "mandatory",
+      "path": "library/collections/my/skill-sufficiency/SKILL.md",
+      "license": "own",
+      "purpose": "Проверка достаточности навыков и полноты результата",
+      "trigger": "До нетривиального задания, при изменении объёма и перед итоговым ответом",
+      "limitations": "Не заменяет источники, доступ, полномочия и фактическую проверку результата"
+    },
     {
       "id": "claude-skills/senior-pm",
       "mode": "core",
@@ -87,5 +96,6 @@
       "limitations": "Не заменять безопасность изделия реестром сроков/бюджета; критерии задаёт уполномоченный владелец"
     }
   ],
-  "extension_policy": "Verify path, license, applicability and tooling; record rationale and change. Re-read skills when upstream blob changes; hashes record reviewed versions, not frozen dependencies."
+  "extension_policy": "Verify path, license, applicability and tooling; record rationale and change. Re-read skills when upstream blob changes; hashes record reviewed versions, not frozen dependencies.",
+  "mandatory_count": 1
 }
