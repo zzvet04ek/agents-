@@ -2,7 +2,7 @@
 
 Генерируется `library/tools/library.py index` из `library/ru/`. Правьте описания в `library/ru/skills/*.yaml`, не здесь.
 
-Описано навыков: **857** из 857.
+Описано навыков: **857** из 879. Без описания: 22 (см. конец файла).
 
 Для каждого навыка: суть, ключевые навыки, решаемые задачи и с чем сочетать. Идентификатор `коллекция/имя` можно назвать Claude напрямую: «возьми навык marketing/copywriting».
 
@@ -7326,3 +7326,30 @@ VPN-сервер WireGuard для доступа к домашней сети.
 - **Ключевые навыки:** требования HIPAA; соглашения с подрядчиками; реагирование на утечки.
 - **Задачи:** проверить продукт на соответствие HIPAA.
 - **Сочетается с:** `ecc/healthcare-phi-compliance`, `ecc/security-review`
+
+---
+
+## Пока без русского описания
+
+- `claude-skills/cinematic-shot-prompting` — Use when creating camera movement, cinematic angles, or motion prompts for AI video generators like Runway Gen-3, Kling, and Luma.
+- `claude-skills/cra-readiness` — Use when a company that sells software, connected devices or firmware in the EU asks whether the Cyber Resilience Act (CRA, Regulation 2024…
+- `claude-skills/medical-device-software` — Use for any question about the software inside a medical device, SaMD or regulated health app - which IEC 62304 safety class (A/B/C) it is…
+- `claude-skills/monetize` — Use when someone asks how to earn more from their own experience: side income, side hustle, monetizing a skill, salary ceiling, career leve…
+- `pm-skills/activation-design` — Define the moment a new customer first gets real value, then design the shortest path to it.
+- `pm-skills/assumption-mapping` — List the assumptions behind an idea and rank them by importance and evidence.
+- `pm-skills/backlog-refinement-advisor` — Get backlog items ready for planning: understood, small, testable.
+- `pm-skills/buying-journey-enablement` — Map how a buying group buys, then assign the enablement asset for each stage and role, for direct sales and partners.
+- `pm-skills/decision-rights-matrix` — Define who decides, who is consulted, and who is told for key product decisions, with one accountable person each.
+- `pm-skills/discovery-habits-advisor` — Set up a steady rhythm of customer contact that feeds decisions.
+- `pm-skills/launch-metrics` — Define launch success metrics, decision triggers, and 30/90/180-day reviews before launch.
+- `pm-skills/launch-plan` — Build a launch plan sized by tier: owners, dates, go/no-go criteria, and a readiness scorecard.
+- `pm-skills/message-house` — Build a message house: one roof message, three value pillars, sourced proof, a foundation, and role and channel variants.
+- `pm-skills/pm-role-charter` — Write a one-page charter for a PM role: what it owns, decides, influences, and is measured on.
+- `pm-skills/pm-skills-navigator` — Find the right PM skill for the situation on your desk.
+- `pm-skills/release-readiness` — Check a release is safe to ship: tests, rollout, monitoring, rollback, support.
+- `pm-skills/research-synthesis` — Turn raw interview notes and feedback into themes, insights, and opportunity statements.
+- `pm-skills/retention-diagnostic-advisor` — Find why customers leave or go quiet, then pick the fix that fits.
+- `pm-skills/sales-value-narrative` — Build a sales value narrative: why change, why now, why us, value by buying-group role, objections, and a do-not-say list.
+- `pm-skills/sprint-planning` — Plan a sprint around a goal, real capacity, and named risks.
+- `pm-skills/survey-design-advisor` — Decide whether a survey is the right tool, then shape it.
+- `pm-skills/usage-data-investigation` — Investigate what customers actually do from product analytics, with every claim labeled Fact, Inference, or Assumption.

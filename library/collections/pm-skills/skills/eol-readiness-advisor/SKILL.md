@@ -135,6 +135,8 @@ Evidence that argues against retiring *now*, even when the retire signals are lo
 Use [`workshop-facilitation`](../workshop-facilitation/SKILL.md) as the default interaction
 protocol for this skill.
 
+**Default entry mode:** Guided · set in `pm-skills.config.yaml` (library-wide default or a per-skill override); the user's own choice in the session always wins. On the first turn, offer all three modes, then open in the default without waiting for a pick: Guided asks the first question, Context dump invites the paste, Best guess asks for a one-sentence minimum and drafts with every assumption labeled.
+
 This skill asks **up to 4 adaptive questions**, then delivers a verdict, an intensity level, and
 numbered next steps. Give the heads-up at the start: four questions, roughly fifteen minutes, and
 they can dump context at any point to skip ahead.
@@ -448,7 +450,7 @@ simply saying "Level 2" when you start; there's no handoff format to preserve.
 - [`eol-message`](../eol-message/SKILL.md) — the customer-facing announcement
 - [`incoming-request-advisor`](../incoming-request-advisor/SKILL.md) — when the EOL request arrived
   as a message you need to decode first
-- [`stakeholder-map`](../stakeholder-map/SKILL.md) — general stakeholder mapping
+- [`stakeholder-mapping`](../stakeholder-mapping/SKILL.md) — general stakeholder mapping
 - [`business-health-diagnostic`](../business-health-diagnostic/SKILL.md) — when the trigger is
   financial and you want the numbers examined properly
 - [`workshop-facilitation`](../workshop-facilitation/SKILL.md) — the interaction protocol

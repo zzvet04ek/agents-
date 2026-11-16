@@ -144,6 +144,8 @@ Use the template: "We believe [business outcome] will be achieved if [user] atta
 
 Use [`workshop-facilitation`](../workshop-facilitation/SKILL.md) as the default interaction protocol for this skill.
 
+**Default entry mode:** Guided · set in `pm-skills.config.yaml` (library-wide default or a per-skill override); the user's own choice in the session always wins. On the first turn, offer all three modes, then open in the default without waiting for a pick: Guided asks the first question, Context dump invites the paste, Best guess asks for a one-sentence minimum and drafts with every assumption labeled.
+
 It defines:
 - session heads-up + entry mode (Guided, Context dump, Best guess)
 - one-question turns with plain-language prompts
@@ -556,13 +558,13 @@ Mini example excerpt:
 ## References
 
 ### Related Skills
-- **[problem-statement](skills/problem-statement/SKILL.md)** (Component) — Frame problem before filling Box 1
-- **[problem-framing-canvas](skills/problem-framing-canvas/SKILL.md)** (Interactive) — MITRE Problem Framing before canvas
-- **[proto-persona](skills/proto-persona/SKILL.md)** (Component) — Create personas for Box 3
-- **[jobs-to-be-done](skills/jobs-to-be-done/SKILL.md)** (Component) — Identify user benefits for Box 4
-- **[epic-hypothesis](skills/epic-hypothesis/SKILL.md)** (Component) — Write testable hypotheses (Box 6)
-- **[discovery-interview-prep](skills/discovery-interview-prep/SKILL.md)** (Interactive) — Design customer interviews for Box 8
-- **[pol-probe-advisor](skills/pol-probe-advisor/SKILL.md)** (Interactive) — Choose experiment type for Box 8
+- **[problem-statement](../problem-statement/SKILL.md)** (Component) — Frame problem before filling Box 1
+- **[problem-framing-canvas](../problem-framing-canvas/SKILL.md)** (Interactive) — MITRE Problem Framing before canvas
+- **[proto-persona](../proto-persona/SKILL.md)** (Component) — Create personas for Box 3
+- **[jobs-to-be-done](../jobs-to-be-done/SKILL.md)** (Component) — Identify user benefits for Box 4
+- **[epic-hypothesis](../epic-hypothesis/SKILL.md)** (Component) — Write testable hypotheses (Box 6)
+- **[discovery-interview-prep](../discovery-interview-prep/SKILL.md)** (Interactive) — Design customer interviews for Box 8
+- **[pol-probe-advisor](../pol-probe-advisor/SKILL.md)** (Interactive) — Choose experiment type for Box 8
 
 ### External Frameworks
 - **Jeff Gothelf** — *Lean UX: Designing Great Products with Agile Teams* (O'Reilly, 2013; 2nd ed. 2016)

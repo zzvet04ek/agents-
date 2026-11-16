@@ -1,17 +1,17 @@
 # Каталог навыков
 
 Генерируется `library/tools/library.py` — не редактируйте вручную.
-Всего навыков: **857**. Как пользоваться — см. `library/README.md`.
+Всего навыков: **879**. Как пользоваться — см. `library/README.md`.
 
 | Коллекция | Навыков | Лицензия | Источник |
 |---|---|---|---|
 | [ecc](#ecc) | 314 | MIT | https://github.com/affaan-m/ECC @ d2ef268 |
-| [claude-skills](#claude-skills) | 389 | MIT | https://github.com/alirezarezvani/claude-skills @ 91a1dda |
-| [marketing](#marketing) | 53 | MIT | https://github.com/coreyhaines31/marketingskills @ 9d6d7ce |
-| [pm-skills](#pm-skills) | 77 | CC-BY-NC-SA-4.0 ⚠️ некоммерч. | https://github.com/deanpeters/Product-Manager-Skills @ cfcb697 |
+| [claude-skills](#claude-skills) | 393 | MIT | https://github.com/alirezarezvani/claude-skills @ 4680893 |
+| [marketing](#marketing) | 53 | MIT | https://github.com/coreyhaines31/marketingskills @ 1f83744 |
+| [pm-skills](#pm-skills) | 95 | CC-BY-NC-SA-4.0 ⚠️ некоммерч. | https://github.com/deanpeters/Product-Manager-Skills @ 476ae12 |
 | [pm-setup](#pm-setup) | 6 | MIT | https://github.com/aakashg/pm-claude-code-setup @ 9be80c6 |
 | [career](#career) | 12 | MIT | https://github.com/art2url/career-agent-skills @ d7cce4b |
-| [academic](#academic) | 5 | CC-BY-NC-4.0 ⚠️ некоммерч. | https://github.com/Imbad0202/academic-research-skills @ 06a2e6b |
+| [academic](#academic) | 5 | CC-BY-NC-4.0 ⚠️ некоммерч. | https://github.com/Imbad0202/academic-research-skills @ 23bd688 |
 | [my](#my) | 1 | свои | — |
 
 <a id="ecc"></a>
@@ -653,6 +653,7 @@
 - **business-name-fit** — Use when naming a company, brand or product, or checking whether a name works abroad, before committing to one.
 - **campaign-analytics** — Analyze campaign performance on the user's numbers: ROAS, CPA, ROI, multi-touch attribution and funnel drop-off.
 - **churn-prevention** — Use when designing a cancel flow, save offers, exit surveys or dunning emails, or cutting failed-payment churn.
+- **cinematic-shot-prompting** — Use when creating camera movement, cinematic angles, or motion prompts for AI video generators like Runway Gen-3, Kling, and Luma.
 - **cold-email** — Use for any cold outreach or SDR email or follow-up sequence to prospects who did not opt in, before drafting.
 - **competitor-alternatives** — Use when creating an 'X vs Y', '[product] alternative' or comparison page, before drafting.
 - **content-creator** — Use when someone asks for 'content creator' by name.
@@ -724,6 +725,7 @@
 - **inbox-setup** — Use when setting up email triage for the first time, before inbox-triage, or when priorities change.
 - **inbox-triage** — Use when the user wants their inbox processed ('triage my inbox', 'check my email').
 - **meetings** — Use when someone wants to decide whether a meeting is worth calling, price a meeting in dollars, build a timeboxed agenda with desired outc…
+- **monetize** — Use when someone asks how to earn more from their own experience: side income, side hustle, monetizing a skill, salary ceiling, career leve…
 - **reflect** — Use when the user says 'step back', 'zoom out', 'are we on track' or 'sanity check this', or work has gone deep into details without a chec…
 - **roast** — Roast an idea: a 5-angle panel (Critic, Champion, Analyst, Investigator, Customer) attacks it, then a Judge returns one GO / RESHAPE / KILL…
 - **session-handoff** — Write a handoff document so a fresh session or another agent can pick up exactly where this one left off: goal, current state, decisions, n…
@@ -748,6 +750,7 @@
 - **agent-decision-receipts** — Use when an autonomous agent takes a side-effecting action (deploy, delete, pay, grant access) that may need proving later, or for EU AI Ac…
 - **capa-officer** — Use for CAPA work in a medical device QMS: root cause analysis (5-Why, fishbone), corrective action plans, effectiveness checks or CAPA met…
 - **cmmc-readiness** — Use when a defense contractor or subcontractor is preparing for a CMMC 2.0 Level 2 self-assessment or C3PAO assessment, calculating or chec…
+- **cra-readiness** — Use when a company that sells software, connected devices or firmware in the EU asks whether the Cyber Resilience Act (CRA, Regulation 2024…
 - **eu-ai-act-specialist** — Use for EU AI Act (Regulation 2024/1689) compliance work: classifying an AI system's risk tier, planning the Art.
 - **fda-consultant-specialist** — Use for FDA medical device questions: 510(k) vs De Novo vs PMA, predicates and substantial equivalence, QMSR (21 CFR 820), HIPAA or device…
 - **gdpr-dsgvo-expert** — Use for GDPR or DSGVO work: scanning a codebase for privacy risks, writing a DPIA or tracking data subject requests against the Art.
@@ -755,6 +758,7 @@
 - **isms-audit-expert** — Use for ISO 27001 audit work: internal or surveillance audits, Annex A control evidence, Statement of Applicability, nonconformities, Stage…
 - **iso42001-specialist** — Use for ISO/IEC 42001 AI management system work: gap analysis against Clauses 4-10, the AI risk register and Annex A controls, or the inter…
 - **mdr-745-specialist** — Use for EU MDR 2017/745 work: device classification under Annex VIII, technical file gaps (Annex II/III), clinical evaluation, PMS and PSUR…
+- **medical-device-software** — Use for any question about the software inside a medical device, SaMD or regulated health app - which IEC 62304 safety class (A/B/C) it is…
 - **qms-audit-expert** — Use for ISO 13485 internal audits: planning the program, running an audit, classifying findings or preparing for an external audit.
 - **quality-documentation-manager** — Use for QMS document control: numbering, versioning, change control or 21 CFR Part 11 e-signatures.
 - **quality-manager-qmr** — Use for QMR duties under ISO 13485 5.5.2: management review, quality policy and objectives, quality KPIs and cost of quality.
@@ -849,13 +853,17 @@
 `pm-skills`
 
 - **acquisition-channel-advisor** — Evaluate acquisition channels using unit economics, customer quality, and scalability.
+- **activation-design** — Define the moment a new customer first gets real value, then design the shortest path to it.
 - **agent-orchestration-advisor** — Design multi-agent AI workflows with clear boundaries, handoffs, and monitoring.
 - **ai-shaped-readiness-advisor** — Assess whether your product work is AI-first or AI-shaped.
 - **altitude-horizon-framework** — Understand the PM-to-Director transition through altitude and horizon thinking.
 - **ansoff-matrix** — Map evidence-backed growth options across the Ansoff Matrix with risk-rated sequencing.
+- **assumption-mapping** — List the assumptions behind an idea and rank them by importance and evidence.
 - **autonomous-investigation** — The protocol behind every investigation skill.
+- **backlog-refinement-advisor** — Get backlog items ready for planning: understood, small, testable.
 - **battle-card-builder** — Research and draft a competitive battle card from public evidence — every claim labeled and sourced.
 - **business-health-diagnostic** — Diagnose SaaS business health across growth, retention, efficiency, and capital.
+- **buying-journey-enablement** — Map how a buying group buys, then assign the enablement asset for each stage and role, for direct sales and partners.
 - **company-intel** — Research a company, industry, or competitor set using web search and seven analytical lenses.
 - **company-research** — Create a company research brief with executive quotes, product strategy, and org context.
 - **competitive-analysis-process** — Orchestrate a complete competitive analysis across six steps, from landscape to strategic direction.
@@ -864,8 +872,10 @@
 - **context-engineering-advisor** — Diagnose context stuffing vs.
 - **customer-journey-map** — Create a customer journey map across stages, touchpoints, actions, emotions, and metrics.
 - **customer-journey-mapping-workshop** — Run a customer journey mapping workshop with adaptive questions and outputs.
+- **decision-rights-matrix** — Define who decides, who is consulted, and who is told for key product decisions, with one accountable person each.
 - **derisk-measurement-advisor** — Identify what to measure, test, or track to de-risk a product or AI idea.
 - **director-readiness-advisor** — Guide the PM-to-Director transition across preparing, interviewing, landing, and recalibrating.
+- **discovery-habits-advisor** — Set up a steady rhythm of customer contact that feeds decisions.
 - **discovery-interview-prep** — Plan customer discovery interviews with the right goal, segment, constraints, and method.
 - **discovery-process** — Run a full discovery cycle from problem hypothesis to validated solution.
 - **eol-checklist** — Build a phase-gated EOL checklist sized to the sunset, with a named owner on every item.
@@ -884,14 +894,19 @@
 - **intel-discipline-advisor** — Triage a competitive or market question into the right intelligence disciplines, cadence, and executing skill.
 - **intelligence-collection-disciplines** — Run competitive research like an intelligence agency: eight collection disciplines (OSINT to MASINT), signal-to-inference chains, and fusio…
 - **jobs-to-be-done** — Uncover customer jobs, pains, and gains in a structured JTBD format.
+- **launch-metrics** — Define launch success metrics, decision triggers, and 30/90/180-day reviews before launch.
+- **launch-plan** — Build a launch plan sized by tier: owners, dates, go/no-go criteria, and a readiness scorecard.
 - **lean-ux-canvas** — Guide teams through Lean UX Canvas v2.
 - **lifecycle-play-advisor** — Diagnose where a product sits in its lifecycle and which play fits — extend, replace, or retire.
 - **market-landscape-scan** — Map a market's segments, players, substitutes, and whitespace with cited evidence.
+- **message-house** — Build a message house: one roof message, three value pillars, sourced proof, a foundation, and role and channel variants.
 - **opportunity-solution-tree** — Build an Opportunity Solution Tree from outcomes to opportunities, solutions, and tests.
 - **organic-growth-advisor** — Identify which organic growth path to pursue — new segments, geographies, channels, or products.
 - **pestel-analysis** — Analyze political, economic, social, technological, environmental, and legal forces.
 - **pestel-delta-monitor** — Quarterly re-scan of a prior PESTEL analysis.
+- **pm-role-charter** — Write a one-page charter for a PM role: what it owns, decides, influences, and is measured on.
 - **pm-skill-creator** — Design a new PM skill through guided conversation.
+- **pm-skills-navigator** — Find the right PM skill for the situation on your desk.
 - **pol-probe** — Define a Proof of Life probe to test a risky hypothesis cheaply.
 - **pol-probe-advisor** — Select the right Proof of Life (PoL) probe based on hypothesis, risk, and resources.
 - **porters-five-forces** — Read an industry's structure through Porter's Five Forces with documented signals per rating, ending at the profit pool.
@@ -908,16 +923,23 @@
 - **product-strategy-session** — Run an end-to-end product strategy session across positioning, discovery, and roadmap planning.
 - **proto-persona** — Create a proto-persona from current research, market signals, and team knowledge.
 - **recommendation-canvas** — Evaluate an AI product idea across outcomes, hypotheses, risks, and positioning.
+- **release-readiness** — Check a release is safe to ship: tests, rollout, monitoring, rollback, support.
+- **research-synthesis** — Turn raw interview notes and feedback into themes, insights, and opportunity statements.
+- **retention-diagnostic-advisor** — Find why customers leave or go quiet, then pick the fix that fits.
 - **roadmap-planning** — Plan a strategic roadmap across prioritization, epic definition, stakeholder alignment, and sequencing.
 - **saas-economics-efficiency-metrics** — Evaluate SaaS unit economics and capital efficiency.
 - **saas-revenue-growth-metrics** — Calculate SaaS revenue, retention, and growth metrics.
+- **sales-value-narrative** — Build a sales value narrative: why change, why now, why us, value by buying-group role, objections, and a do-not-say list.
 - **skill-authoring-workflow** — Turn raw PM content into a compliant, publish-ready skill.
+- **sprint-planning** — Plan a sprint around a goal, real capacity, and named risks.
 - **stakeholder-engagement-advisor** — Plan engagement for a specific stakeholder.
 - **stakeholder-identification** — Map every stakeholder before engaging anyone.
 - **stakeholder-mapping** — Prioritize stakeholders using two complementary grids.
 - **storyboard** — Create a six-frame storyboard that shows a user's journey from problem to solution.
+- **survey-design-advisor** — Decide whether a survey is the right tool, then shape it.
 - **swot-analysis** — Build an evidence-cited SWOT of one company — yours or a competitor's — from public sources, ending with the S-O/W-T crossings.
 - **tam-sam-som-calculator** — Calculate TAM, SAM, and SOM with explicit assumptions, methods, and caveats.
+- **usage-data-investigation** — Investigate what customers actually do from product analytics, with every claim labeled Fact, Inference, or Assumption.
 - **user-story** — Create user stories with Mike Cohn format and Gherkin acceptance criteria.
 - **user-story-mapping** — Create a user story map that lays out activities, steps, tasks, and release slices.
 - **user-story-mapping-workshop** — Run a user story mapping workshop with adaptive questions and a structured map output.

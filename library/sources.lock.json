@@ -8,19 +8,19 @@
   "claude-skills": {
     "repo": "https://github.com/alirezarezvani/claude-skills",
     "ref": null,
-    "commit": "91a1ddaab1ae8fe95b8ecd3e98419458db86a992",
+    "commit": "4680893d91f2aee6f77ca1519fd1b86b7a104c87",
     "license": "MIT"
   },
   "marketing": {
     "repo": "https://github.com/coreyhaines31/marketingskills",
     "ref": null,
-    "commit": "9d6d7ce8d18eb155dc2f9762435f097e60cdad7c",
+    "commit": "1f837447b20bb6f0e72d87b80ece1c221c362c7d",
     "license": "MIT"
   },
   "pm-skills": {
     "repo": "https://github.com/deanpeters/Product-Manager-Skills",
     "ref": null,
-    "commit": "cfcb697f14b8891d8b3ec43c16c3547df3e70e13",
+    "commit": "476ae12917b8e77609eb956bcc2203a4e4ec857d",
     "license": "CC-BY-NC-SA-4.0"
   },
   "pm-setup": {
@@ -38,7 +38,7 @@
   "academic": {
     "repo": "https://github.com/Imbad0202/academic-research-skills",
     "ref": null,
-    "commit": "06a2e6bd9743b68bb0ef2c5d161cf70abc00323e",
+    "commit": "23bd688bbc121da6ae98ec3c4d4a7675cefc4c83",
     "license": "CC-BY-NC-4.0"
   }
 }
