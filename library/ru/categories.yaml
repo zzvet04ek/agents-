@@ -163,6 +163,30 @@ healthcare:
   tasks: Архитектура EMR; системы поддержки клинических решений; соответствие HIPAA и защита PHI; оценка медицинских ИИ-моделей.
   chains: "healthcare-emr-patterns → healthcare-cdss-patterns → healthcare-phi-compliance / hipaa-compliance → healthcare-eval-harness."
 
+bioinformatics:
+  title: Биоинформатика, геномика и исследовательские изображения
+  scope: Последовательности, геномные интервалы, bulk и single-cell RNA-seq, микробиом, цитометрия, филогенетика и вычислительная патология.
+  tasks: Контроль форматов и координат; подготовка counts; интеграция клеток; анализ путей; проверка сегментации и происхождения данных.
+  chains: "bulk-rnaseq → pydeseq2 → pathway-enrichment; anndata → scanpy → scvi-tools; genomic-coordinates → pysam / polars-bio."
+
+chemistry:
+  title: Химия, молекулярное моделирование и белки
+  scope: Хемоинформатика, молекулярные признаки, масс-спектрометрия, дизайн белков, docking, динамика и метаболическое моделирование.
+  tasks: Подготовка молекул; проверка структур; поиск кандидатных поз; анализ спектров; воспроизводимые расчёты и ограничение интерпретаций.
+  chains: "datamol / rdkit → molfeat → deepchem; diffdock → molecular-dynamics; cobrapy + 13c-metabolic-flux для разных типов потокового анализа."
+
+scientific-computing:
+  title: Физика, материалы и научные вычисления
+  scope: Символьная математика, квантовые схемы и динамика, гидродинамика, химические реакторы, батареи, фазовые равновесия и астрономия.
+  tasks: Выбор модели и solver; проверка единиц; численная сходимость; анализ чувствительности; воспроизводимая симуляция.
+  chains: "uncertainty-and-units → предметный solver → statistical-analysis → scientific-visualization; qiskit / cirq / pennylane выбираются по целевой платформе."
+
+lab-automation:
+  title: Лабораторная автоматизация и оборудование
+  scope: ELN и реестры образцов, роботизированное дозирование, облачные лаборатории, параметрические лабораторные детали и изготовление.
+  tasks: Интеграция метаданных; подготовка протоколов и симуляция; проектирование деталей; проверка входов, стоимости и разрешённого действия перед запуском или заказом.
+  chains: "lab-hardware-cad → fictiv; experimental-design → protocolsio-integration → opentrons-integration / pylabrobot; benchling-integration → lamindb."
+
 other:
   title: Прочее
   scope: Узкоспециализированные навыки, не попавшие в другие категории.

@@ -1,4 +1,5 @@
-# Избранные навыки — копируются в .claude/skills/ и .agents/skills/.
+# Избранные навыки — устанавливаются адаптерами в .claude/skills/ и .agents/skills/.
+# Имена адаптеров: marketing-copywriting, ecc-python-patterns; ресурсы остаются в коллекции.
 # Остальные доступны через библиотекаря (skill-library).
 #
 # Пишите как коллекция/имя (имя смотрите в CATALOG.md), например:

@@ -1,6 +1,6 @@
 # Библиотека навыков
 
-Около 850 навыков из 7 коллекций плюс ваши собственные. Они **не** загружаются
+Более 1000 навыков из 9 коллекций плюс ваши собственные. Они **не** загружаются
 в контекст автоматически: агент находит нужный навык через библиотекаря
 по индексу `INDEX.md`, по запросу на русском. Claude Code использует
 `.claude/skills/skill-library`, Codex — `.agents/skills/skill-library`.
@@ -15,20 +15,20 @@
 Опишите задачу по-русски или укажите `коллекция/имя`. Codex прочитает нужные
 инструкции по запросу. Для избранного добавьте навык в `favorites.yaml` и
 запустите `python3 library/tools/library.py index` (нужны Python 3.10+ и PyYAML).
-Избранное копируется в обе среды; при необходимости начните новую сессию,
+Адаптеры избранного устанавливаются в обе среды; при необходимости начните новую сессию,
 чтобы обновился список доступных навыков. Инструменты и интеграции, которые
 требуются отдельным навыкам, подключаются отдельно.
 
 Просмотреть всё глазами:
 - **[SKILLS_RU.md](SKILLS_RU.md)** — подробное описание каждого навыка на
-  русском по 27 категориям: суть, ключевые навыки, решаемые задачи, с чем
+  русском по 31 категории: суть, ключевые навыки, решаемые задачи, с чем
   сочетать; для каждой категории — область применения и типовые связки.
 - **[CATALOG.md](CATALOG.md)** — краткий список по коллекциям (на английском).
 
 ```
 .claude/skills/
   skill-library/          ← библиотекарь (всегда активен)
-  <избранные>             ← копируются сюда из favorites.yaml
+  <избранные>             ← адаптеры из favorites.yaml
 library/
   sources.yaml            ← реестр коллекций: репозиторий, лицензия, что брать
   sources.lock.json       ← на каком коммите каждая коллекция (генерируется)
@@ -37,7 +37,7 @@ library/
   CATALOG.md              ← каталог для вас (генерируется)
   tools/library.py        ← sync / index
   collections/
-    ecc/ claude-skills/ marketing/ pm-skills/ pm-setup/ career/ academic/
+    ecc/ claude-skills/ marketing/ pm-skills/ pm-setup/ career/ academic/ scientific/ resume-skills/
     my/                   ← ВАШИ навыки — синхронизация их не трогает
 ```
 
@@ -80,9 +80,42 @@ Library sync → Run workflow.
 
 | Коллекция | Лицензия |
 |---|---|
-| ecc, claude-skills, marketing, pm-setup, career | MIT — можно всё, сохраняя файл лицензии |
+| ecc, claude-skills, marketing, pm-setup, career, resume-skills | MIT — можно всё, сохраняя файл лицензии |
 | pm-skills | CC BY-NC-SA 4.0 — только некоммерческое использование |
 | academic | CC BY-NC 4.0 — только некоммерческое использование |
 
 Файлы лицензий лежат в папке каждой коллекции. NC-коллекции подходят для
 личных проектов; для платной работы их не используйте.
+
+## Scientific Agent Skills
+
+Коллекция `scientific` подключена из [K-Dense-AI/scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills).
+Обновление: `python3 library/tools/library.py sync scientific`.
+Русские описания находятся в `ru/skills/scientific.yaml`. Проверка пересечений,
+рекомендации по выбору и лицензионные исключения — в [SCIENTIFIC_REVIEW.md](SCIENTIFIC_REVIEW.md).
+
+Лицензия корневого репозитория — MIT; индивидуальные некоммерческие условия
+`deepspot-m` и `what-if-oracle` сохранены в `sources.yaml` → `skill_licenses`
+и отображаются в индексе и справочниках. Для библиотек, данных, весов моделей
+и внешних сервисов действуют их собственные условия, указанные в исходных навыках.
+
+## Оптимизация и контроль повторяемости
+
+[Правила выбора, избранное, реестр агентов и проверки](GOVERNANCE.md).
+`routing.yaml` задаёт основной вариант для пересекающихся задач;
+`AGENTS_INDEX.md` и `agents.index.json` объединяют одинаковые инструкции логически,
+сохраняя исходники. `restore --locked` восстанавливает закреплённые версии.
+
+Перед коммитом: `python3 library/tools/library.py check --generated` и
+`python3 library/tools/library.py eval-routes`. Реальные модельные прогоны
+запускаются отдельно; их доступность отражена в `evals/model-status.json`.
+
+## ResumeSkills
+
+Коллекция `resume-skills` подключена из [Paramchoudhary/ResumeSkills](https://github.com/Paramchoudhary/ResumeSkills):
+22 навыка по резюме, откликам, собеседованиям и переговорам. Обновление:
+`python3 library/tools/library.py sync resume-skills`. Русские описания —
+`ru/skills/resume-skills.yaml`, сравнение с `career` и ограничения исходных
+рекомендаций — [RESUME_SKILLS_REVIEW.md](RESUME_SKILLS_REVIEW.md).
+Исходные инструкции доступны по `resume-skills/<имя>`; пересекающиеся задачи
+выбираются через `routing.yaml`, без одновременной загрузки обеих реализаций.
