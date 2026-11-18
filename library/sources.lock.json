@@ -54,5 +54,12 @@
     "commit": "2d2065fb4520fa3f3f2bcf61cff26ec8b7eba4b5",
     "license": "MIT",
     "config_sha256": "d0f0ce5c6a5b097350434534deb76d30ec82fbf73c0a1eb75483db0af5258a71"
+  },
+  "resume-skills": {
+    "repo": "https://github.com/Paramchoudhary/ResumeSkills",
+    "ref": null,
+    "commit": "74ae19e7c62b0516d1c298328e5544976c12da5d",
+    "license": "MIT",
+    "config_sha256": "d4e99d9701fdb0f10a9c91d1e90bc60b9cc03a6e49bada41ee6026b206cbe87b"
   }
 }

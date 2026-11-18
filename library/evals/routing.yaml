@@ -126,3 +126,103 @@ cases:
   expected: null
   status: blocked
   available: []
+- id: career-academic-cv-builder
+  query: Академическое CV для преподавательской позиции
+  expected: career/academic-research-cv
+  available: []
+- id: career-application-form-filler
+  query: Подготовь ответы на вопросы анкеты трудоустройства
+  expected: resume-skills/application-form-filler
+  available: []
+- id: career-career-changer-translator
+  query: Помоги описать карьерный переход в другую отрасль
+  expected: career/career-pivot-planner
+  available: []
+- id: career-cold-email-writer
+  query: Напиши холодное письмо рекрутеру
+  expected: resume-skills/cold-email-writer
+  available: []
+- id: career-cover-letter-generator
+  query: Напиши сопроводительное письмо к вакансии
+  expected: career/cover-letter-writer
+  available: []
+- id: career-creative-portfolio-resume
+  query: Подготовь визуальное резюме дизайнера
+  expected: resume-skills/creative-portfolio-resume
+  available: []
+- id: career-executive-resume-writer
+  query: Составь резюме руководителя уровня VP
+  expected: career/executive-leadership-resume
+  available: []
+- id: career-interview-prep-generator
+  query: Подготовь меня к собеседованию по резюме
+  expected: career/mock-interview-coach
+  available: []
+- id: career-job-description-analyzer
+  query: Оцени соответствие моего опыта вакансии
+  expected: career/job-fit-analyzer
+  available: []
+- id: career-linkedin-profile-optimizer
+  query: Улучши LinkedIn-профиль для поиска работы
+  expected: career/linkedin-profile-booster
+  available: []
+- id: career-offer-comparison-analyzer
+  query: Сравни предложения о работе и офферы
+  expected: resume-skills/offer-comparison-analyzer
+  available: []
+- id: career-portfolio-case-study-writer
+  query: Подготовь кейс для портфолио
+  expected: career/portfolio-case-study
+  available: []
+- id: career-reference-list-builder
+  query: Составь список рекомендателей для работодателя
+  expected: resume-skills/reference-list-builder
+  available: []
+- id: career-resume-ats-optimizer
+  query: Проверь резюме на совместимость с ATS
+  expected: career/ats-resume-checker
+  available: []
+- id: career-resume-bullet-writer
+  query: Улучши пункты опыта в резюме
+  expected: resume-skills/resume-bullet-writer
+  available: []
+- id: career-resume-formatter
+  query: Отформатируй резюме для отправки
+  expected: resume-skills/resume-formatter
+  available: []
+- id: career-resume-quantifier
+  query: Найди подтверждаемые метрики для резюме
+  expected: resume-skills/resume-quantifier
+  available: []
+- id: career-resume-section-builder
+  query: Составь раздел навыков в резюме
+  expected: resume-skills/resume-section-builder
+  available: []
+- id: career-resume-tailor
+  query: Адаптируй резюме под конкретную вакансию
+  expected: career/resume-customizer
+  available: []
+- id: career-resume-version-manager
+  query: Организуй версии резюме для откликов
+  expected: resume-skills/resume-version-manager
+  available: []
+- id: career-salary-negotiation-prep
+  query: Подготовь переговоры о зарплате
+  expected: career/compensation-negotiator
+  available: []
+- id: career-tech-resume-optimizer
+  query: Подготовь техническое резюме разработчика
+  expected: career/software-engineer-resume
+  available: []
+- id: resume-new-resume-tailor
+  query: 'Используй ResumeSkills: адаптируй резюме под вакансию'
+  expected: resume-skills/resume-tailor
+  available: []
+- id: resume-new-cold-email-writer
+  query: Напиши холодное письмо работодателю, а не письмо потенциальному клиенту
+  expected: resume-skills/cold-email-writer
+  available: []
+- id: resume-new-resume-quantifier
+  query: Используй resume-skills/resume-quantifier без выдуманных чисел
+  expected: resume-skills/resume-quantifier
+  available: []

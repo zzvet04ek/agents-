@@ -1,6 +1,6 @@
 # Библиотека навыков
 
-Более 1000 навыков из 8 коллекций плюс ваши собственные. Они **не** загружаются
+Более 1000 навыков из 9 коллекций плюс ваши собственные. Они **не** загружаются
 в контекст автоматически: агент находит нужный навык через библиотекаря
 по индексу `INDEX.md`, по запросу на русском. Claude Code использует
 `.claude/skills/skill-library`, Codex — `.agents/skills/skill-library`.
@@ -37,7 +37,7 @@ library/
   CATALOG.md              ← каталог для вас (генерируется)
   tools/library.py        ← sync / index
   collections/
-    ecc/ claude-skills/ marketing/ pm-skills/ pm-setup/ career/ academic/ scientific/
+    ecc/ claude-skills/ marketing/ pm-skills/ pm-setup/ career/ academic/ scientific/ resume-skills/
     my/                   ← ВАШИ навыки — синхронизация их не трогает
 ```
 
@@ -80,7 +80,7 @@ Library sync → Run workflow.
 
 | Коллекция | Лицензия |
 |---|---|
-| ecc, claude-skills, marketing, pm-setup, career | MIT — можно всё, сохраняя файл лицензии |
+| ecc, claude-skills, marketing, pm-setup, career, resume-skills | MIT — можно всё, сохраняя файл лицензии |
 | pm-skills | CC BY-NC-SA 4.0 — только некоммерческое использование |
 | academic | CC BY-NC 4.0 — только некоммерческое использование |
 
@@ -109,3 +109,13 @@ Library sync → Run workflow.
 Перед коммитом: `python3 library/tools/library.py check --generated` и
 `python3 library/tools/library.py eval-routes`. Реальные модельные прогоны
 запускаются отдельно; их доступность отражена в `evals/model-status.json`.
+
+## ResumeSkills
+
+Коллекция `resume-skills` подключена из [Paramchoudhary/ResumeSkills](https://github.com/Paramchoudhary/ResumeSkills):
+22 навыка по резюме, откликам, собеседованиям и переговорам. Обновление:
+`python3 library/tools/library.py sync resume-skills`. Русские описания —
+`ru/skills/resume-skills.yaml`, сравнение с `career` и ограничения исходных
+рекомендаций — [RESUME_SKILLS_REVIEW.md](RESUME_SKILLS_REVIEW.md).
+Исходные инструкции доступны по `resume-skills/<имя>`; пересекающиеся задачи
+выбираются через `routing.yaml`, без одновременной загрузки обеих реализаций.

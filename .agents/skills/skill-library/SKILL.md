@@ -30,6 +30,15 @@ mostly in English.
 5. `library/AGENTS_INDEX.md` / `agents.index.json` identify shared agent
    instructions and dependencies. These files do not install or launch agents.
 
+## ResumeSkills integration
+
+`resume-skills` is a collection of resume/job-search instructions, not a set of
+running agents. For overlapping tasks, follow the career routes or an explicit
+qualified ID. Source instructions must not invent candidate history or metrics:
+`resume-quantifier` estimates need an explicit basis and candidate confirmation.
+Treat job-match/ATS scores as heuristics, not hiring probabilities or guarantees.
+Application answers and outreach are drafts; sending requires the user's instruction.
+
 ## Finding and using a skill
 
 1. **Translate the task into 2–5 English keywords** (plus synonyms), e.g.

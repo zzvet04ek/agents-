@@ -73,3 +73,9 @@ collections:
     skill_licenses:
       deepspot-m: PolyForm-Noncommercial-1.0.0
       what-if-oracle: CC-BY-NC-SA-4.0
+
+  resume-skills:
+    repo: https://github.com/Paramchoudhary/ResumeSkills
+    license: MIT
+    title_ru: "Resume Skills — резюме, отклики, собеседования и карьерные переходы"
+    include: [skills]
