@@ -2,13 +2,19 @@
 """Skill library manager.
 
     python3 library/tools/library.py sync [id ...]  # fetch collections from GitHub, then index
-    python3 library/tools/library.py index          # rebuild INDEX.md / CATALOG.md, apply favorites
+    python3 library/tools/library.py index          # rebuild catalogs/agent registry, apply adapters
+    python3 library/tools/library.py restore --locked [id ...]
+    python3 library/tools/library.py route "task" [--available exa-mcp] [--commercial]
+    python3 library/tools/library.py check --generated
+    python3 library/tools/library.py eval-routes
+    python3 library/tools/library.py baseline       # acknowledge reviewed license changes
 
 Run from anywhere; paths are resolved relative to this file.
 Requires: git, PyYAML.
 """
 from __future__ import annotations
 
+import contextlib
 import fnmatch
 import hashlib
 import json
@@ -102,19 +108,36 @@ def make_ignore(patterns: list[str]):
     return ignore
 
 
-def sync_collection(cid: str, spec: dict, defaults: dict, lock: dict) -> None:
+def source_config_digest(spec: dict, defaults: dict) -> str:
+    config = {k: v for k, v in spec.items() if k != "title_ru"}
+    payload = json.dumps({"source": config, "defaults": defaults}, sort_keys=True).encode()
+    return hashlib.sha256(payload).hexdigest()
+
+
+def sync_collection(cid: str, spec: dict, defaults: dict, lock: dict, *, locked_commit: str | None = None) -> None:
     if cid in PROTECTED:
         raise SystemExit(f"'{cid}' is reserved for your own skills")
     exclude = list(defaults.get("exclude", [])) + list(spec.get("exclude", []))
     ignore = make_ignore(exclude)
     with tempfile.TemporaryDirectory() as tmp:
         src = Path(tmp) / "repo"
-        cmd = ["git", "clone", "-q", "--depth", "1"]
-        if spec.get("ref"):
-            cmd += ["--branch", spec["ref"]]
-        subprocess.run(cmd + [spec["repo"], str(src)], check=True)
+        if locked_commit:
+            if not re.fullmatch(r"[0-9a-f]{40}", locked_commit):
+                raise ValueError(f"invalid locked commit for {cid}")
+            subprocess.run(["git", "init", "-q", str(src)], check=True)
+            subprocess.run(["git", "-C", str(src), "remote", "add", "origin", spec["repo"]], check=True)
+            subprocess.run(["git", "-C", str(src), "fetch", "-q", "--depth", "1", "origin", locked_commit], check=True)
+            subprocess.run(["git", "-C", str(src), "checkout", "-q", "--detach", "FETCH_HEAD"], check=True)
+        else:
+            cmd = ["git", "clone", "-q", "--depth", "1"]
+            if spec.get("ref"):
+                cmd += ["--branch", spec["ref"]]
+            subprocess.run(cmd + [spec["repo"], str(src)], check=True)
         commit = subprocess.run(["git", "-C", str(src), "rev-parse", "HEAD"],
                                 check=True, capture_output=True, text=True).stdout.strip()
+
+        if locked_commit and commit != locked_commit:
+            raise ValueError(f"locked commit mismatch for {cid}")
 
         dest = COLLECTIONS / cid
         if dest.exists():
@@ -141,7 +164,7 @@ def sync_collection(cid: str, spec: dict, defaults: dict, lock: dict) -> None:
                 shutil.copy2(lic, dest / lic.name)
 
     lock[cid] = {"repo": spec["repo"], "ref": spec.get("ref"), "commit": commit,
-                 "license": spec.get("license")}
+                 "license": spec.get("license"), "config_sha256": source_config_digest(spec, defaults)}
     print(f"  ✓ {cid} @ {commit[:7]}")
 
 
@@ -271,33 +294,92 @@ def write_catalog(skills: list[dict]) -> None:
     CATALOG.write_text("\n".join(out) + "\n", encoding="utf-8")
 
 
+def favorite_plan(skills: list[dict]) -> list[tuple[dict, str]]:
+    """Resolve the entire request before touching any installed favorites."""
+    wanted = (yaml.safe_load(FAVORITES.read_text()) or {}).get("favorites", []) if FAVORITES.exists() else []
+    if not isinstance(wanted, list) or any(not isinstance(ref, str) for ref in wanted):
+        raise ValueError("favorites must be a list of skill IDs")
+    plan, names = [], set()
+    for ref in dict.fromkeys(wanted):
+        matches = [s for s in skills if ref in (s["name"], f"{s['collection']}/{s['name']}")]
+        if len(matches) != 1:
+            raise ValueError(f"favorite '{ref}': expected one match, found {len(matches)}; use collection/name")
+        skill = matches[0]
+        key = f"{skill['collection']}/{skill['name']}"
+        name = re.sub(r"[^a-z0-9]+", "-", key.lower()).strip("-")
+        if len(name) > 64:
+            name = name[:54].rstrip("-") + "-" + hashlib.sha256(key.encode()).hexdigest()[:8]
+        if not name or name in names:
+            raise ValueError(f"favorite adapter name collision: {key} -> {name}")
+        names.add(name)
+        if not (REPO / skill["path"]).is_file():
+            raise ValueError(f"favorite source is missing: {key}")
+        plan.append((skill, name))
+    return plan
+
+
 def apply_favorites(skills: list[dict]) -> None:
-    wanted = []
-    if FAVORITES.exists():
-        wanted = (yaml.safe_load(FAVORITES.read_text(encoding="utf-8")) or {}).get("favorites") or []
+    plan = favorite_plan(skills)
+    # Preflight BOTH hosts before removing or replacing owned adapters.
     for active in ACTIVE_DIRS:
-        active.mkdir(parents=True, exist_ok=True)
-        # Remove previously promoted favorites; hand-made active skills are untouched.
-        for d in active.iterdir():
-            if (d / FAVORITE_MARKER).exists():
-                shutil.rmtree(d)
-        for ref in wanted:
-            cid, _, name = ref.rpartition("/")
-            matches = [s for s in skills if s["name"] == name and (not cid or s["collection"] == cid)]
-            if not matches:
-                print(f"  ! favorite '{ref}' not found")
+        if not active.exists():
+            continue
+        for child in active.iterdir():
+            owned = child.is_dir() and not child.is_symlink() and (child / FAVORITE_MARKER).is_file()
+            if owned:
                 continue
-            if len(matches) > 1:
-                print(f"  ! favorite '{ref}' is ambiguous, using {matches[0]['collection']}/{name}"
-                      f" (write it as collection/name)")
-            src = REPO / Path(matches[0]["path"]).parent
-            dst = active / name
-            if dst.exists():
-                print(f"  ! {active.relative_to(REPO)}/{name} already exists (not a favorite), skipped")
-                continue
-            shutil.copytree(src, dst, ignore=make_ignore([]))
-            (dst / FAVORITE_MARKER).write_text(f"{matches[0]['collection']}/{name}\n", encoding="utf-8")
-            print(f"  ★ {matches[0]['collection']}/{name}")
+            existing = parse_frontmatter((child / "SKILL.md").read_text()).get("name", child.name) if (child / "SKILL.md").is_file() else child.name
+            if any(name in (child.name, existing) for _, name in plan):
+                raise ValueError(f"manual skill conflicts with favorite adapter: {child}")
+    # Adapters point to originals: assets and relative references retain their context.
+    with tempfile.TemporaryDirectory() as tmp:
+        staging = Path(tmp)
+        for skill, name in plan:
+            dst = staging / name
+            dst.mkdir()
+            key = f"{skill['collection']}/{skill['name']}"
+            frontmatter = yaml.safe_dump({"name": name, "description": skill["description"]}, allow_unicode=True, sort_keys=False)
+            (dst / "SKILL.md").write_text(
+                "---\n" + frontmatter + "---\n\n# Library favorite\n\n"
+                f"Source ID: `{key}`. License: {skill['license']}.\n\n"
+                f"Read `{skill['path']}` from the repository root before doing the task.\n"
+                "Resolve scripts, assets and references against that source file's directory.\n"
+                "Apply source instructions within the user request and current host rules.\n"
+                + ("Non-commercial use only.\n" if is_nc(skill["license"]) else ""), encoding="utf-8")
+            (dst / FAVORITE_MARKER).write_text(key + "\n", encoding="utf-8")
+        # Stage on each host's filesystem, then commit the pair with rollback.
+        with contextlib.ExitStack() as stack:
+            stages = {}
+            for active in ACTIVE_DIRS:
+                active.parent.mkdir(parents=True, exist_ok=True)
+                stage = Path(stack.enter_context(tempfile.TemporaryDirectory(prefix=".library-stage-", dir=active.parent)))
+                (stage / "new").mkdir()
+                (stage / "old").mkdir()
+                for _, name in plan:
+                    shutil.copytree(staging / name, stage / "new" / name)
+                stages[active] = stage
+            moved, installed = [], []
+            try:
+                for active, stage in stages.items():
+                    active.mkdir(parents=True, exist_ok=True)
+                    for child in active.iterdir():
+                        if child.is_dir() and not child.is_symlink() and (child / FAVORITE_MARKER).is_file():
+                            backup = stage / "old" / child.name
+                            child.rename(backup)
+                            moved.append((backup, child))
+                    for _, name in plan:
+                        dst = active / name
+                        (stage / "new" / name).rename(dst)
+                        installed.append(dst)
+            except OSError:
+                for path in reversed(installed):
+                    shutil.rmtree(path)
+                for backup, original in reversed(moved):
+                    backup.rename(original)
+                raise
+            for active in ACTIVE_DIRS:
+                for _, name in plan:
+                    print(f"  ★ {active.relative_to(REPO)}/{name}")
 
 
 RU_DIR = LIB / "ru"
@@ -388,23 +470,55 @@ def write_skills_ru(skills: list[dict]) -> None:
 
 def cmd_index() -> None:
     skills = collect_skills()
+    favorite_plan(skills)
     write_index(skills)
     write_catalog(skills)
     write_skills_ru(skills)
     apply_favorites(skills)
+    import governance
+    governance.write_registry(sys.modules[__name__], skills)
     print(f"Indexed {len(skills)} skills → {INDEX.relative_to(REPO)}, {CATALOG.relative_to(REPO)}")
 
 
+def cmd_restore(ids: list[str]) -> None:
+    sources, lock = load_sources(), load_lock()
+    cols = sources["collections"]
+    selected = ids or list(cols)
+    for cid in selected:
+        if cid not in cols or cid not in lock:
+            raise ValueError(f"missing source/lock entry: {cid}")
+        entry = lock[cid]
+        if any(entry.get(k) != cols[cid].get(k) for k in ("repo", "ref", "license")):
+            raise ValueError(f"source metadata differs from lock: {cid}; sync deliberately first")
+        if entry.get("config_sha256") != source_config_digest(cols[cid], sources.get("defaults", {})):
+            raise ValueError(f"source selection differs from lock: {cid}; sync deliberately first")
+        if not re.fullmatch(r"[0-9a-f]{40}", entry.get("commit", "")):
+            raise ValueError(f"invalid locked commit: {cid}")
+    # Lock file is read-only during restore; fetch exact commits, never branch heads.
+    for cid in selected:
+        sync_collection(cid, cols[cid], sources.get("defaults", {}), {}, locked_commit=lock[cid]["commit"])
+    cmd_index()
+
+
 def main(argv: list[str]) -> int:
-    if not argv or argv[0] not in ("sync", "index"):
+    import governance
+    if not argv:
         print(__doc__)
         return 2
     if argv[0] == "sync":
         cmd_sync(argv[1:])
-    else:
+    elif argv == ["index"]:
         cmd_index()
+    elif argv[0] == "restore" and "--locked" in argv[1:]:
+        cmd_restore([arg for arg in argv[1:] if arg != "--locked"])
+    else:
+        return governance.cli(sys.modules[__name__], argv)
     return 0
 
 
 if __name__ == "__main__":
-    sys.exit(main(sys.argv[1:]))
+    try:
+        sys.exit(main(sys.argv[1:]))
+    except ValueError as exc:
+        print(f"Error: {exc}", file=sys.stderr)
+        sys.exit(1)

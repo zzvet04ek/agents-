@@ -1,0 +1,133 @@
+# ResumeSkills: русские описания; оригинальные инструкции сохранены без изменений.
+resume-skills/academic-cv-builder:
+  cat: career
+  what: Академическое CV для исследовательских и преподавательских позиций.
+  skills: публикации; гранты; преподавание и порядок разделов
+  tasks: Подготовить CV по требованиям академической вакансии.
+  with: career/academic-research-cv
+resume-skills/application-form-filler:
+  cat: career
+  what: Черновики ответов на вопросы анкеты трудоустройства по резюме и вакансии.
+  skills: краткие ответы; релевантные проекты; проверка фактов
+  tasks: Заполнить текстовые поля анкеты без выдуманного опыта и автоматической отправки.
+  with: resume-skills/job-description-analyzer resume-skills/resume-tailor
+resume-skills/career-changer-translator:
+  cat: career
+  what: Перевод профессионального опыта на язык новой отрасли.
+  skills: переносимые навыки; соответствие ролям; история перехода
+  tasks: Объяснить применимость реального опыта к новой карьерной цели.
+  with: career/career-pivot-planner
+resume-skills/cold-email-writer:
+  cat: career
+  what: Персональные письма руководителям и основателям по поводу трудоустройства.
+  skills: конкретный повод; опыт кандидата; краткое предложение разговора
+  tasks: Подготовить адресный черновик письма без отправки сообщения.
+  with: resume-skills/cover-letter-generator resume-skills/linkedin-profile-optimizer
+resume-skills/cover-letter-generator:
+  cat: career
+  what: Сопроводительное письмо на основе резюме и конкретной вакансии.
+  skills: мотивация; связь опыта с требованиями; структура письма
+  tasks: Подготовить правдивое и адресное сопроводительное письмо.
+  with: career/cover-letter-writer resume-skills/job-description-analyzer
+resume-skills/creative-portfolio-resume:
+  cat: career
+  what: Резюме творческого специалиста с раздельным учётом дизайна и ATS.
+  skills: визуальная версия; машиночитаемая версия; ссылки на портфолио
+  tasks: Выбрать формат резюме под способ подачи заявки.
+  with: career/portfolio-case-study resume-skills/resume-formatter
+resume-skills/executive-resume-writer:
+  cat: career
+  what: Резюме для руководителей уровня VP и C-suite.
+  skills: стратегия; масштаб ответственности; подтверждённые бизнес-результаты
+  tasks: Показать управленческий опыт под конкретную руководящую позицию.
+  with: career/executive-leadership-resume
+resume-skills/interview-prep-generator:
+  cat: career
+  what: Материалы подготовки к собеседованию по резюме кандидата.
+  skills: истории STAR; вероятные вопросы; тезисы ответов
+  tasks: Собрать подтверждённые примеры и план репетиции интервью.
+  with: career/mock-interview-coach
+resume-skills/job-description-analyzer:
+  cat: career
+  what: Разбор вакансии и сопоставление требований с опытом кандидата.
+  skills: must-have/nice-to-have; пробелы; эвристическая оценка соответствия
+  tasks: Обосновать стратегию отклика; оценку не трактовать как вероятность найма.
+  with: career/job-fit-analyzer resume-skills/resume-tailor
+resume-skills/linkedin-profile-optimizer:
+  cat: career
+  what: Редактирование LinkedIn-профиля для поиска работы и согласованности с резюме.
+  skills: headline; About; ключевые слова и опыт
+  tasks: Подготовить обновления профиля с проверкой фактов перед публикацией.
+  with: career/linkedin-profile-booster
+resume-skills/offer-comparison-analyzer:
+  cat: career
+  what: Сравнение предложений о работе по вознаграждению и нематериальным условиям.
+  skills: зарплата; бонусы и equity; риски и предпочтения
+  tasks: Построить прозрачное сравнение офферов с явными допущениями.
+  with: career/compensation-negotiator resume-skills/salary-negotiation-prep
+resume-skills/portfolio-case-study-writer:
+  cat: career
+  what: Развёрнутые кейсы портфолио из реальных достижений и проектов.
+  skills: контекст; роль кандидата; процесс и результат
+  tasks: Описать проект с разграничением личного вклада и результата команды.
+  with: career/portfolio-case-study
+resume-skills/reference-list-builder:
+  cat: career
+  what: Подготовка списка профессиональных рекомендателей и сопутствующих материалов.
+  skills: контакты; отношение к кандидату; запрос согласия
+  tasks: Собрать корректный список рекомендаций из предоставленных данных.
+  with: resume-skills/interview-prep-generator
+resume-skills/resume-ats-optimizer:
+  cat: career
+  what: Проверка машиночитаемости резюме и соответствия ключевым словам вакансии.
+  skills: формат; заголовки разделов; ключевые требования
+  tasks: Выявить проблемы ATS без обещания прохождения конкретной системы.
+  with: career/ats-resume-checker resume-skills/resume-formatter
+resume-skills/resume-bullet-writer:
+  cat: career
+  what: Переработка пунктов опыта в понятные достижения.
+  skills: XYZ/STAR/CAR; действия; подтверждённые результаты
+  tasks: Улучшить формулировки без выдуманных показателей и обязанностей.
+  with: resume-skills/resume-quantifier resume-skills/resume-section-builder
+resume-skills/resume-formatter:
+  cat: career
+  what: Чистая и читаемая вёрстка резюме с учётом ATS.
+  skills: разделы; шрифты и интервалы; согласованность оформления
+  tasks: Подготовить структуру документа под конкретный способ подачи.
+  with: resume-skills/resume-ats-optimizer
+resume-skills/resume-quantifier:
+  cat: career
+  what: Поиск подтверждаемых численных характеристик профессионального опыта.
+  skills: масштаб; время и деньги; источники и допущения
+  tasks: Собрать метрики; использовать оценки только с явным основанием и подтверждением кандидата.
+  with: resume-skills/resume-bullet-writer
+resume-skills/resume-section-builder:
+  cat: career
+  what: Подготовка отдельных разделов резюме под роль и уровень опыта.
+  skills: summary; skills; опыт и проекты
+  tasks: Собрать нужный раздел на основе фактов кандидата.
+  with: resume-skills/resume-bullet-writer resume-skills/resume-tailor
+resume-skills/resume-tailor:
+  cat: career
+  what: Адаптация резюме к требованиям конкретной вакансии.
+  skills: приоритет опыта; формулировки; ключевые слова
+  tasks: Подготовить целевую версию без подмены профессиональной истории.
+  with: career/resume-customizer resume-skills/job-description-analyzer
+resume-skills/resume-version-manager:
+  cat: career
+  what: Управление основным резюме и версиями под разные отклики.
+  skills: master resume; история изменений; имена версий
+  tasks: Организовать варианты документов с прослеживаемостью фактов.
+  with: resume-skills/resume-tailor
+resume-skills/salary-negotiation-prep:
+  cat: career
+  what: Подготовка к переговорам о зарплате и полном пакете вознаграждения.
+  skills: рыночные данные; аргументы; контрпредложения
+  tasks: Составить план переговоров по реальным предложениям и проверяемым данным.
+  with: career/compensation-negotiator resume-skills/offer-comparison-analyzer
+resume-skills/tech-resume-optimizer:
+  cat: career
+  what: Резюме для инженерных, продуктовых и других технических позиций.
+  skills: стек; проекты; подтверждённый вклад и масштаб
+  tasks: Показать технический опыт под выбранную роль без неподтверждённых достижений.
+  with: career/software-engineer-resume

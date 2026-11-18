@@ -1,0 +1,24 @@
+name: Library checks
+on:
+  pull_request:
+  push:
+    branches: ['claude/relaxed-knuth-wj4kux']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: pip install pyyaml==6.0.2
+      - run: python3 -m unittest discover -s library/tools/tests -v
+      - run: python3 library/tools/library.py check --generated
+      - run: python3 library/tools/library.py eval-routes
+      # Model/API calls are opt-in; never made by this offline check.

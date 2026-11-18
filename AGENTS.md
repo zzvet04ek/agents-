@@ -6,8 +6,9 @@
 ## Подбор навыков
 
 Перед нетривиальной задачей прочитайте
-`.agents/skills/skill-library/SKILL.md` и найдите подходящие навыки через
-`rg` в `library/INDEX.md`. Для русских запросов используйте также
+`.agents/skills/skill-library/SKILL.md` и сначала выполните `python3 library/tools/library.py route "<задача>"`.
+Учитывайте фактические инструменты и коммерческое назначение. При `no_route`
+найдите подходящие навыки через `rg` в `library/INDEX.md`. Для русских запросов используйте также
 `library/SKILLS_RU.md`. Не загружайте весь каталог в контекст.
 Читайте только выбранные `SKILL.md` и нужные связанные материалы.
 Сообщайте, какой навык применяете. Если подходящего нет, выполняйте задачу
@@ -21,7 +22,7 @@
 - Источники задаются в `library/sources.yaml`, избранное — в
   `library/favorites.yaml`, русские описания — в `library/ru/skills/*.yaml`.
 - Не правьте вручную `library/INDEX.md`, `library/CATALOG.md`,
-  `library/SKILLS_RU.md` и копии избранного с маркером `.library-favorite`.
+  `library/SKILLS_RU.md`, `library/AGENTS_INDEX.md`, `library/agents.index.json` и копии избранного с маркером `.library-favorite`.
 - После изменений метаданных запускайте `python3 library/tools/library.py index`.
   Команда обновляет каталоги и избранное в `.claude/skills/` и `.agents/skills/`.
 - `python3 library/tools/library.py sync [collection]` обновляет исходные
@@ -37,3 +38,13 @@
 После изменений генератора выполните `python3 library/tools/library.py index`
 и `git diff --check`. Проверьте, что повторная индексация не меняет результат,
 а избранное появляется и удаляется в обеих средах, сохраняя ручные навыки.
+
+Маршруты: `library/routing.yaml`. Избранное устанавливается адаптерами с
+уникальным именем `коллекция-имя`; исходные инструкции и ресурсы остаются на месте.
+
+Перед коммитом: `python3 -m unittest discover -s library/tools/tests -v`,
+`python3 library/tools/library.py check --generated` и
+`python3 library/tools/library.py eval-routes`. Модельные прогоны запускаются
+отдельно и не подменяются результатами детерминированного маршрутизатора.
+`restore --locked` восстанавливает закреплённые источники; `baseline` обновляет
+лицензионный эталон только после явной проверки изменений.
