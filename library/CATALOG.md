@@ -1,7 +1,7 @@
 # Каталог навыков
 
 Генерируется `library/tools/library.py` — не редактируйте вручную.
-Всего навыков: **1055**. Как пользоваться — см. `library/README.md`.
+Всего навыков: **1056**. Как пользоваться — см. `library/README.md`.
 
 | Коллекция | Навыков | Лицензия | Источник |
 |---|---|---|---|
@@ -14,6 +14,7 @@
 | [academic](#academic) | 5 | CC-BY-NC-4.0 ⚠️ некоммерч. | https://github.com/Imbad0202/academic-research-skills @ 06a2e6b |
 | [scientific](#scientific) | 177 | MIT | https://github.com/K-Dense-AI/scientific-agent-skills @ 2d2065f |
 | [resume-skills](#resume-skills) | 22 | MIT | https://github.com/Paramchoudhary/ResumeSkills @ 74ae19e |
+| [my](#my) | 1 | свои | — |
 
 ### Лицензионные исключения
 
@@ -1180,3 +1181,9 @@
 - **resume-version-manager** — Track different resume versions, maintain master resume, manage tailored versions
 - **salary-negotiation-prep** — Research market rates, build negotiation strategy, and create counter-offer scripts
 - **tech-resume-optimizer** — Optimize resumes for software engineering, PM, and technical roles
+
+<a id="my"></a>
+## Мои навыки
+`my`
+
+- **skill-sufficiency** — Проверка достаточности навыков и полноты ответа.

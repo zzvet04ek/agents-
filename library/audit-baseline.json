@@ -3093,6 +3093,10 @@
       "effective": "MIT",
       "declared": ""
     },
+    "my/skill-sufficiency": {
+      "effective": "own",
+      "declared": ""
+    },
     "pm-setup/competitive-analysis": {
       "effective": "MIT",
       "declared": ""
