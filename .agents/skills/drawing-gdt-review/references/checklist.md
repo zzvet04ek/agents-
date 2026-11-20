@@ -1,39 +1,40 @@
-# Drawing review checklist
+# Чек-лист проверки чертежа
 
-## Title block & notes
-- [ ] Part number, revision, title, material (with spec/condition), finish/coating, scale, units, projection symbol
-- [ ] General tolerance note (ISO 2768-mK or a block-tolerance table)
-- [ ] Standard note (ASME Y14.5-2018 / ISO 8015)
-- [ ] Edge-break, deburr, and surface-finish defaults (Ra)
-- [ ] Heat treatment / hardness, with the test location if relevant
-- [ ] Revision table matches the revision letter
+Для каждого раздела: проверено / не применимо / не проверено (причина).
+Используй только установленную нормативную систему и редакции. Основание и неопределённость отражай по правилам SKILL.md.
 
-## Views
-- [ ] Enough views to define every feature without ambiguity, and no redundant views
-- [ ] Hidden lines only where they clarify
-- [ ] Section views labelled; cutting-plane arrows point the right way
-- [ ] Detail views labelled, with scale stated
+## Основная надпись и примечания
+- Обозначение, название, ревизия и соответствие таблице изменений.
+- Материал, стандарт/состояние поставки, покрытие и термообработка, если требуются.
+- Единицы, масштаб, метод проецирования; стандарт и редакция определены отдельно.
+- Общие допуски и их область действия; отсутствие противоречий частным требованиям.
+- Кромки, заусенцы и шероховатость; требования обоснованы функцией.
 
-## Dimensioning
-- [ ] Every feature fully defined in size and location (no missing dimensions)
-- [ ] No double dimensioning (over-constraint) unless marked as reference (in parentheses)
-- [ ] No chained dimensions where a stack-up matters; dimension from datums instead
-- [ ] Dimensions are on the view where the feature shows its true shape
-- [ ] Diameters on the longitudinal view for turned parts; radii called out correctly
-- [ ] Hole callouts complete: Ø, depth, thread spec (M6×1-6H), counterbore/countersink, quantity (4×)
-- [ ] Units consistent; decimal places follow convention (inch: places imply tolerance; metric: no trailing zeros in ASME)
+## Виды и разрезы
+- Все элементы однозначно определены; виды согласованы.
+- Разрезы, сечения, направления стрелок, выносные элементы и масштабы читаемы.
+- Невидимые линии не создают неоднозначности.
 
-## GD&T
-- [ ] Datum features chosen by function; datum feature symbols placed on surfaces or features of size correctly
-- [ ] Feature control frames are syntactically valid: symbol | tol (Ø if cylindrical zone) | modifiers | datums
-- [ ] Basic dimensions boxed for every positioned or profiled feature
-- [ ] Modifiers (Ⓜ Ⓛ Ⓕ Ⓟ) used only where valid
-- [ ] Tolerance hierarchy: form ≤ orientation ≤ location ≤ size
-- [ ] Composite / multiple single-segment frames read correctly
-- [ ] No obsolete symbols (concentricity, symmetry) under Y14.5-2018
+## Размеры
+- Размер и расположение каждого необходимого элемента заданы.
+- Нет противоречащих друг другу или неоправданно дублирующих размеров.
+- Цепи размеров проверены там, где важна накопленная погрешность; цепь сама по себе не ошибка.
+- Диаметры, радиусы, количество и тип отверстий, глубины, резьбы, зенковки/цековки заданы в применимом случае.
+- Отличены размер элемента с допуском, теоретически точный размер и справочный размер.
+- Единицы и запись чисел оценены по применимым правилам, без переноса соглашений между системами.
 
-## Manufacturability & inspection
-- [ ] Tolerances achievable by the intended process
-- [ ] Every critical dimension measurable (with a datum simulator possible)
-- [ ] Threads, inserts, and keyways call out standards
-- [ ] Surface finish specified on mating and sealing surfaces
+## Базы и геометрические допуски
+- Базовые элементы физически определены, доступны и соответствуют функции.
+- Все ссылки на базы разрешаются; приоритет и ограничение степеней свободы согласованы с контролем.
+- Рамки, зоны, модификаторы и составные требования читаемы и проверены по стандарту.
+- Положение/профиль имеют достаточное определение номинальной геометрии и расположения.
+- Не перепутаны поверхность и производный элемент размера.
+- Форма и размер проверены с учётом принципа оболочки/независимости и исключений.
+- Нет автоматического требования универсальной иерархии величин допусков.
+- Допустимость символов проверена по системе и редакции, а не по одному общему списку.
+
+## Изготовление и контроль
+- Критические требования измеримы; возможно воспроизведение базирования.
+- Достижимость допусков подтверждена данными процесса либо оставлена вопросом.
+- Сопряжения и функциональные поверхности имеют необходимые требования.
+- Непрочитанные области и недоступные нормативные основания перечислены.
